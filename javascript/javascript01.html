@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 데이터 저장하기</title>
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: 'GmarketSans';
+
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        header{
+            padding: 2vw;
+            border-bottom: 1px dashed #cdcdcd;
+        }
+        header h1{
+            font-size: 4vw;
+            margin-bottom: 2vw;
+        }
+        header nav ul li {
+            display: inline-block;
+        }
+        header nav ul li a {
+            border: 1px solid #000;
+            padding: 0.3vw 1vw 0.3vw 1vw;
+            transition: all 0.3s;
+            margin-bottom: 0.7vw;
+            display: inline-block;
+        }
+        header nav ul li a:hover{
+            background-color: #000;
+            color: #fff;
+        }
+        #main { /* id */
+            padding: 2vw;
+        }
+        .list{/* class */
+            font-size: 18px;
+            line-height: 1.8;
+            border-bottom: 1px dashed #cdcdcd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <div class="list">
+            <ul>
+                <li>01. 변수 : 데이터 저장</li>
+                <li>02. 변수 : 데이터 저장 + 데이터 변경</li>
+                <li>03. 변수 : 데이터 저장 + 데이터 변경 + 데이터</li>
+                <li>04. 변수 : 지역변수 + 전역변수 + 매개변수</li>
+                <li>05. 상수 : 데이터 저장 + 데이터 변경 X</li>
+                <li>06. 배열 : 여러개인 데이터를 저장 : 표현 방법 1번째</li>
+                <li>07. 배열 : 여러개인 데이터를 저장 : 표현 방법 2번째</li>
+                <li>08. 배열 : 여러개인 데이터를 저장 : 표현 방법 3번째</li>
+                <li>09. 배열 : 여러개인 데이터를 저장 : 표현 방법 4번째</li>
+                <li>10. 객체 : 데이터를 저장(키와 값) : 표현 방법 1번째</li>
+                <li>11. 객체 : 데이터를 저장(키와 값) : 표현 방법 2번째</li>
+                <li>12. 객체 : 데이터를 저장(키와 값) : 표현 방법 3번째</li>
+                <li>13. 객체 : 데이터를 저장(키와 값) : 표현 방법 4번째</li>
+                <li>14. 객체 : 데이터를 저장(키와 값) : 표현 방법 5번째</li>
+                <li>15. 객체 : 데이터를 저장(키와 값) : 표현 방법 6번째</li>
+                <li>16. 객체 : 데이터를 저장(키와 값) : 표현 방법 7번째</li>
+                <li>17. 객체 : 데이터를 저장(키와 값) : 표현 방법 8번째</li>
+            </ul>
+        </div>
+    </main>
+    <script>
+        //01. 변수 : 데이터 저장//
+        {
+            var x = 100; //변수 x 저장소에 숫자 100을 저장함
+            var y = 200; //변수 y 저장소에 숫자 200을 저장함
+            var z = "javascript"; //변수 z 저장소에 "javascript" 문자열을 저장함
+
+            document.write("01. 변수<br>");
+            document.write(x, "<br>");
+            document.write(y, "<br>");
+            document.write(z, "<br>");
+        }
+        //02. 변수 : 데이터 저장 + 데이터 변경
+        {
+            let x = 100;
+            let y = 200;
+            let z = "javascript";
+
+            x=300; // 변수 x의 값이 300으로 변경
+            y=400; // 변수 y의 값이 400으로 변경
+            z="jquery"; // 변수 z의 값이 jquery으로 변경
+
+            document.write("<br>02. 변수<br>");
+            document.write(x, "<br>");
+            document.write(y, "<br>");
+            document.write(z, "<br>");
+        }
+        //03. 변수 : 데이터 저장 + 데이터 변경 + 데이터
+        {
+            let x = 100;
+            let y = 200;
+            let z = "javascript";
+            
+            x += 300; // x = x + 300과 같은 결과
+            y += 400; // y = y + 400과 같은 결과
+            z += "jquery"; // z = javascript + jquery와 같은 결과
+
+            document.write("<br>03. 변수<br>");
+            document.write(x, "<br>");
+            document.write(y, "<br>");
+            document.write(z, "<br>");
+        }
+        //04. 변수 : 종류(지역변수 + 전역변수)
+        //변수, 배열, 객체 --> 함수(실행문)
+        {
+            let x = 100; //전역변수
+            let y = 200;
+
+            x=300; //지역변수 x의 값이 100에서 300으로 바뀐다
+            
+            function func(){ //지역변수 : 함수 안에서만 실행
+                let x = 100;
+                let y = 200;
+                
+                
+                document.write("<br>04. 변수 함수 : 안<br>");
+                document.write(x, "<br>");
+                document.write(y, "<br>");
+            }
+            func();
+
+            document.write("<br>04. 변수 : 함수 밖<br>");
+            document.write(x, "<br>");
+            document.write(y, "<br>");
+        }
+        //05. 상수 : 데이터 저장 + 데이터 변경 X
+        {
+            const x = 100 ; //데이터 값이 변하지 않을때는 const
+            const y = 100 ;
+            const z = 100 ;
+
+            //const를 썻기 때문에 x=500; 사용 불가
+
+            document.write("<br>05. 상수<br>");
+            document.write(x, "<br>");
+            document.write(y, "<br>");
+            document.write(z, "<br>");
+        }
+        //06. 배열 : 여러개인 데이터를 저장 : 표현 방법 1번째
+        {
+            const arr = new Array();
+            arr[0] = 100;
+            arr[1] = 200;
+            arr[2] = "javascript";
+
+            document.write("<br>06. 배열 1번째<br>");
+            document.write(arr[0], "<br>");
+            document.write(arr[1], "<br>");
+            document.write(arr[2], "<br>");
+        }
+        //07. 배열 : 여러개인 데이터를 저장 : 표현 방법 2번째
+        {
+            const arr = new Array(100, 200, "javascript");
+            document.write("<br>07. 배열 2번째<br>");
+            document.write(arr[0], "<br>");
+            document.write(arr[1], "<br>");
+            document.write(arr[2], "<br>");
+        }
+        //08. 배열 : 여러개인 데이터를 저장 : 표현 방법 3번째
+        {
+            const arr = [];
+            arr[0] = 100;
+            arr[1] = 200;
+            arr[2] = "javascript";
+
+            document.write("<br>08. 배열 3번째<br>");
+            document.write(arr[0], "<br>");
+            document.write(arr[1], "<br>");
+            document.write(arr[2], "<br>");
+        }
+        //09. 배열 : 여러개인 데이터를 저장 : 표현 방법 4번째
+        {
+            const arr = [100, 200, "javascript"];
+
+            document.write("<br>09. 배열 4번째<br>");
+            document.write(arr[0], "<br>");
+            document.write(arr[1], "<br>");
+            document.write(arr[2], "<br>");
+        }
+    </script>
+</body>
+</html>
