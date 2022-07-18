@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기본 규칙</title>
+    
+    <link rel="stylesheet" href="css/dracula.css">
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
     <style>
         *{
@@ -19,9 +21,10 @@
             border-bottom: 1px dashed #dedede;
         }
         #header h1{
-            margin-bottom: 3vw;
+            margin-bottom: 2vw;
             font-size: 4vw;
         }
+    
         #header nav{}
         #header nav ul{}
         #header nav ul li{
@@ -119,6 +122,33 @@
             background-color: #ffffff;
             padding: 10px;
         }
+        .article .table{
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse; /*겹친 선 없앰 */
+            margin-bottom: 10px;
+        }
+        .article .table tr th{
+            border: 1px solid #dedede;
+            padding: 10px;
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+        .article .table tr td{
+            border: 1px solid #dedede;
+            padding: 10px;
+            font-weight: lighter;
+        }
+        .article .table .center{
+            text-align: center;
+        }
+        .sample{
+            height: 400px;
+            width: 100%;
+            background-color: #000;
+            border-radius: 0 0 10px 10px;
+            color: #fff;
+        }
         /* 미디어 쿼리 */
         @media (max-width: 800px){
             #header{
@@ -140,42 +170,72 @@
 </head>
 <body>
     <header id="header">
-        <h1>Javascript</h1>
+        <h1>JavaScript</h1>
         <nav>
             <ul>
-                <li><a href="basic.html">HTML</a></li>
-                <li><a href="command.html">JAVASCRIPT</a></li>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
             </ul>
         </nav>
     </header>
     <section id="contents">
         <nav class="menu">
             <ul>
-                <li><a href="command.html">기본 문서</a></li>
-                <li><a href="commandreal.html">기본 명령어</a></li>
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="command.html">기본 명령어</a></li>
             </ul>
         </nav>
         <article class="article">
-            <h2>02 기본 규칙</h2>
-
-            <!-- 1번 -->
-            <h3>1. 하나의 실행문이 끝나면 마지막에 세미콜론(;)을 붙여 줍니다.</h3>
-            <p>하나의 실행문을 확인하고 넘어가는 차원에서 세미콜론을 붙여 코딩하는것이 좋습니다.</p>
-            <p class="box">
-                var num=5;<br>documnet.write(num);
-            </p>
-            <h3>2. 대소문자를 구분합니다.</h3>
-            <p class="box">
-                var num=5;<br>documnet.write(num);<br>document.write(Num)
-            </p>
-            <h3>3. 가독성을 위해 들여쓰기를 사용합니다.</h3>
-            <p class="box">
-                var avgDistance = function(){<br>var speed = distance * time;<br>}
-            </p>
-            <h3>4. 주석(comment)처리 방법에는 한 줄 주석처리와 여러 줄 주석처리가 있습니다.</h3>
-            <p class="box">
-                // 한 줄 주석 처리 방법입니다.<br>/* 여러 줄 <br> 주석처리 방법입니다. */
-            </p>
+            <h2>05 기본 명령어</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="center">분류</th>
+                        <th class="center">명령어</th>
+                    </tr>
+                    <tr>
+                        <td class="center">입력</td>
+                        <td>prompt('입력 제목', '입력 내용'</td>
+                    </tr>
+                    <tr>
+                        <td class="center" rowspan="3">출력</td>
+                        <td>document.write('출력 내용')</td>
+                    </tr>
+                    <tr>
+                        <td>alert('출력 내용')</td>
+                    </tr>
+                    <tr>
+                        <td>console.log('출력 내용')</td>
+                    </tr>
+                    <tr>
+                        <td class="center">확인</td>
+                        <td>confirm('확인 내용')</td>
+                    </tr>
+                </thead>
+            </table>
+            <div class="sample">
+            <pre ><code class="language-js">{
+    &lt;!doctype html&gt;
+    &lt;html lang="ko"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;기본명령어&lt;/title&gt;
+        &lt;script&gt;
+            prompt('출력 페이지 수를입력하세요!','');// ''는 작은따옴표 두 개 입니다.
+            alert('자바스크립트');
+            document.write('자바스크립트');
+            console.log('자바스크립트');
+            confirm('정말 삭제 하시겠습니까?');
+        &lt;script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+}
+            </code></pre>
+            </div>
             
         </article>
     </section>

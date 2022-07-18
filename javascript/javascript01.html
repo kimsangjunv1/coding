@@ -37,19 +37,21 @@
         #header nav ul li {
             display: inline-block;
         }
-        #header nav ul li a {
+        #header nav ul li a{
+            text-decoration: none;
+            color: #000;
             border: 1px solid #000;
-            padding: 0.3vw 1vw 0.3vw 1vw;
-            transition: all 0.3s;
-            margin-bottom: 0.7vw;
+            padding: 0.9vw;
             display: inline-block;
         }
         #header nav ul li a:hover{
             background-color: #000;
             color: #fff;
+            transition: 0.3s;
         }
         #main { /* id */
             padding: 2vw; /*화면을 100등분 해서 2칸정도 준다 */
+            border-bottom: 1px dashed #cdcdcd;
         }
         #main .list { /* id */
             font-size: 18px;
@@ -64,16 +66,39 @@
             border-bottom: 1px dashed #cdcdcd;
         }
         #plist {
-            padding: 4vw 2vw;
-            border-bottom: 1px dashed #cdcdcd;
-            display: inline; /* 가로 정렬 */
+            padding: 2vw;
+            border-bottom: 1px dashed #dedede; /*선 생성*/
+            
+        }
+        
+        #plist ul li{
+            list-style: none;
+            display: inline;
         }
 
         #plist ul li a {
+            text-decoration: none;
+            border: 1px solid #000;
             background-color: #000;
             color: #fff;
-            padding: 5px 10px;
-            font-size: 18px;
+            padding: 1vw;
+            word-break: keep-all;
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+            display: inline-block;
+        }
+
+        #plist ul li a:hover {
+            text-decoration: none;
+            border: 1px solid #000;
+            background-color: #fff;
+            transition: 0.2s;
+            color: #000;
+            padding: 1vw;
+            word-break: keep-all;
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+            display: inline-block;
         }
 
         .script{
