@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    
+    <!-- 폰트 링크 -->
+    <!-- 이서윤 -->
+    <link href="https://webfontworld.github.io/heungkuk/LeeSeoyun.css" rel="stylesheet">
+
+    <style>
+        /* 리셋 */
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'LeeSeoyun';
+        }
+        #main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+            border: 8px solid #444;
+            box-sizing: border-box;
+        }
+        #main h1{
+            font-size: 15vw;
+            text-align: center;
+            color:#444;
+            line-height: 1.0;
+            margin-bottom: 4vw;
+            
+        }
+        #main h1 em{
+            display:block ;
+            font-style: normal;
+            
+        }
+        #main{}
+        #main nav{}
+        #main nav ul{}
+        #main nav ul li{
+            list-style: none; /* 점 없앰 */
+            display: inline; /* 가로로 눕힘 */
+            padding: 20px;
+        }
+        #main nav ul li a{
+            background-color: transparent;
+
+            text-decoration: none;
+            color: #444;
+            border: 1px solid #444;
+            border-radius: 50px;
+            font-size: 18px;
+            padding: 2vw;
+        }
+        #main nav ul li a:hover{
+            background-color: #444;
+            transition: 0.5s;
+            color: #fff;
+        }
+        
+    </style>
+</head>
+<body>
+    <main id="main">
+        <h1>HTML <em>레퍼런스 북</em></h1>
+        <nav>
+            <ul>
+                <li><a href="basic.html">기초</a></li>
+                <li><a href="../css/index.html">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </main>
+</body>
+</html>

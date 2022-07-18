@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 규칙</title>
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'GmarketSans';
+        }
+
+        /*헤더*/
+        #header{
+            padding: 2vw;
+            border-bottom: 1px dashed #dedede;
+        }
+        #header h1{
+            margin-bottom: 3vw;
+            font-size: 4vw;
+        }
+        #header nav{}
+        #header nav ul{}
+        #header nav ul li{
+            list-style: none; /* 점 없앰 */
+            display: inline; /* 가로 정렬 */
+        }
+        #header nav ul li a{
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.9vw;
+            display: inline-block;
+        }
+        #header nav ul li a:hover{
+            background-color: #000;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        /*컨텐츠*/
+        #contents{
+            padding: 2vw;
+        }
+
+        #contents .menu {
+            border-bottom: 1px dashed #dedede; /*선 생성*/
+            padding-bottom: 2vw;
+        }
+        #contents .menu ul li {
+            list-style: none;
+            display: inline;
+        }
+        #contents .menu ul li a{
+            text-decoration: none;
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+            padding: 1vw;
+            word-break: keep-all;
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+            display: inline-block;
+        }
+        #contents .menu ul li a:hover{
+            text-decoration: none;
+            border: 1px solid #000;
+            background-color: #fff;
+            transition: 0.2s;
+            color: #000;
+            padding: 1vw;
+            word-break: keep-all;
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+            display: inline-block;
+        }
+        .article {
+            padding: 2vw 0;
+            line-height: 1.6;
+        }
+        .article h2 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article h3 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article p{
+            margin-bottom: 10px;
+        }
+        .article .table{
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse; /*겹친 선 없앰 */
+            margin-bottom: 10px;
+        }
+        .article .table tr th{
+            border: 1px solid #dedede;
+            padding: 10px;
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+        .article .table tr td{
+            border: 1px solid #dedede;
+            padding: 10px;
+        }
+        .article .table .center{
+            text-align: center;
+        }
+        .article .box{
+            background-color: #f5f5f5;
+            padding: 10px;
+        }
+        .article .box2{
+            background-color: #ffffff;
+            padding: 10px;
+        }
+        /* 미디어 쿼리 */
+        @media (max-width: 800px){
+            #header{
+                padding: 16px;
+            }
+            #header h1{
+                font-size: 40px;
+            }
+            #header nav ul li a{
+                padding: 5px 10px;
+                font-size: 18px;
+            }
+            #contents{
+                padding: 16px;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>Javascript</h1>
+        <nav>
+            <ul>
+                <li><a href="basic.html">HTML</a></li>
+                <li><a href="command.html">JAVASCRIPT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contents">
+        <nav class="menu">
+            <ul>
+                <li><a href="command.html">기본 문서</a></li>
+                <li><a href="commandreal.html">기본 명령어</a></li>
+            </ul>
+        </nav>
+        <article class="article">
+            <h2>02 기본 규칙</h2>
+
+            <!-- 1번 -->
+            <h3>1. 하나의 실행문이 끝나면 마지막에 세미콜론(;)을 붙여 줍니다.</h3>
+            <p>하나의 실행문을 확인하고 넘어가는 차원에서 세미콜론을 붙여 코딩하는것이 좋습니다.</p>
+            <p class="box">
+                var num=5;<br>documnet.write(num);
+            </p>
+            <h3>2. 대소문자를 구분합니다.</h3>
+            <p class="box">
+                var num=5;<br>documnet.write(num);<br>document.write(Num)
+            </p>
+            <h3>3. 가독성을 위해 들여쓰기를 사용합니다.</h3>
+            <p class="box">
+                var avgDistance = function(){<br>var speed = distance * time;<br>}
+            </p>
+            <h3>4. 주석(comment)처리 방법에는 한 줄 주석처리와 여러 줄 주석처리가 있습니다.</h3>
+            <p class="box">
+                // 한 줄 주석 처리 방법입니다.<br>/* 여러 줄 <br> 주석처리 방법입니다. */
+            </p>
+            
+        </article>
+    </section>
+</body>
+</html>

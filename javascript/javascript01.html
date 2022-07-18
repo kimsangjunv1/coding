@@ -9,7 +9,10 @@
     <!-- 오후에 자바스크립트 수업을 했습니다 2. -->
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="asset/css/dracula.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <style>
+
         *{
             margin: 0px;
             padding: 0px;
@@ -23,40 +26,99 @@
             text-decoration: none;
             color: #000;
         }
-        header{
+        #header{
             padding: 2vw;
             border-bottom: 1px dashed #cdcdcd;
         }
-        header h1{
+        #header h1{
             font-size: 4vw;
             margin-bottom: 2vw;
         }
-        header nav ul li {
+        #header nav ul li {
             display: inline-block;
         }
-        header nav ul li a {
+        #header nav ul li a {
             border: 1px solid #000;
             padding: 0.3vw 1vw 0.3vw 1vw;
             transition: all 0.3s;
             margin-bottom: 0.7vw;
             display: inline-block;
         }
-        header nav ul li a:hover{
+        #header nav ul li a:hover{
             background-color: #000;
             color: #fff;
         }
         #main { /* id */
-            padding: 2vw;
+            padding: 2vw; /*화면을 100등분 해서 2칸정도 준다 */
+        }
+        #main .list { /* id */
+            font-size: 18px;
+            line-height: 1.8;
+            border-bottom: 1px dashed #cdcdcd;
+            padding-bottom: 16px;
+            margin-bottom: 4vw;
         }
         .list{/* class */
             font-size: 18px;
             line-height: 1.8;
             border-bottom: 1px dashed #cdcdcd;
         }
+        #plist {
+            padding: 4vw 2vw;
+            border-bottom: 1px dashed #cdcdcd;
+            display: inline; /* 가로 정렬 */
+        }
+
+        #plist ul li a {
+            background-color: #000;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 18px;
+        }
+
+        .script{
+
+        }
+        .sample{
+            margin-bottom: 20px;
+        }
+        .sample h2{
+            font-weight: normal;
+            background-color: #f5f5f5;
+            font-size: 20px;
+            padding: 15px 20px;
+            border-radius: 10px 10px 0 0;
+        }
+        .sample .code{
+            height: 400px;
+            width: 100%;
+            background-color: #000;
+            border-radius: 0 0 10px 10px;
+            color: #fff;
+        }
+
+        @media (max-width: 800px){
+            #header{
+                padding: 16px;
+            }
+            #header h1{
+                font-size: 40px;
+            }
+            #header nav ul li a{
+                padding: 5px 10px;
+                font-size: 18px;
+            }
+            #plist{
+                padding: 16px;
+            }
+            #main{
+                padding: 16px;
+            }
+        }/*추가*/
     </style>
 </head>
 <body>
-    <header>
+    <header id="header">
         <h1>JavaScript</h1>
         <nav>
             <ul>
@@ -67,6 +129,14 @@
             </ul>
         </nav>
     </header>
+
+    <section id="plist">
+        <ul >
+            <li><a href="basic.html">기본 규칙</a></li>
+            <li><a href="command.html">기본 명령어</a></li>
+        </ul>
+    </section>
+
     <main id="main">
         <div class="list">
             <ul>
@@ -89,7 +159,207 @@
                 <li>17. 객체 : 데이터를 저장(키와 값) : 표현 방법 8번째</li>
             </ul>
         </div>
+        <!-- 1번 -->
+        <div class="script">
+            <div id="sample01" class="sample">
+                <h2>01. 변수 : 데이터 저장</h2>
+                <div class="code">
+<pre><code class="language-js">{
+    var x = 100; //변수 x 저장소에 숫자 100을 저장함
+    var y = 200; //변수 y 저장소에 숫자 200을 저장함
+    var z = "javascript"; //변수 z 저장소에 "javascript" 문자열을 저장함
+
+    document.write("01. 변수");
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+                </div>
+            </div>
+        </div>
+        <!-- 1번 마감 -->
+        <!-- 2번 -->
+        <div class="script">
+            <div id="sample01" class="sample">
+                <h2>02. 변수 : 데이터 저장 + 데이터 변경</h2>
+                <div class="code">
+<pre><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x=300; // 변수 x의 값이 300으로 변경
+    y=400; // 변수 y의 값이 400으로 변경
+    z="jquery"; // 변수 z의 값이 jquery으로 변경
+
+    document.write("<br>02. 변수<br>");
+    document.write(x, "<br>");
+    document.write(y, "<br>");
+    document.write(z, "<br>");
+}
+</code></pre>
+                </div>
+            </div>
+        </div>
+        <!-- 2번 마감 -->
+        <!-- 3번 -->
+        <div class="script">
+            <div id="sample01" class="sample">
+                <h2>03. 변수 : 데이터 저장 + 데이터 변경 + 데이터</h2>
+                <div class="code">
+<pre><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+    
+    x += 300; // x = x + 300과 같은 결과
+    y += 400; // y = y + 400과 같은 결과
+    z += "jquery"; // z = javascript + jquery와 같은 결과
+
+    document.write("<br>03. 변수<br>");
+    document.write(x, "<br>");
+    document.write(y, "<br>");
+    document.write(z, "<br>");
+}
+</code></pre>
+                </div>
+            </div>
+        </div>
+        <!-- 3번 마감 -->
+        <!-- 4번 -->
+        <div class="script">
+            <div id="sample01" class="sample">
+                <h2>04. 변수 : 종류(지역변수 + 전역변수)</h2>
+                <div class="code">
+<pre><code class="language-js">{
+    let x = 100; //전역변수
+    let y = 200;
+
+    x=300; //지역변수 x의 값이 100에서 300으로 바뀐다
+    
+    function func(){ //지역변수 : 함수 안에서만 실행
+        let x = 100;
+        let y = 200;
+        
+        
+        document.write("<br>04. 변수 함수 : 안<br>");
+        document.write(x, "<br>");
+        document.write(y, "<br>");
+    }
+    func();
+
+    document.write("<br>04. 변수 : 함수 밖<br>");
+    document.write(x, "<br>");
+    document.write(y, "<br>");
+}
+</code></pre>
+                </div>
+            </div>
+        </div>
+        <!-- 4번 마감 -->
+        <!-- 5번 -->
+        <div class="script">
+            <div id="sample01" class="sample">
+                <h2>05. 상수 : 데이터 저장 + 데이터 변경 X</h2>
+                <div class="code">
+<pre><code class="language-js">{
+    const x = 100 ; //데이터 값이 변하지 않을때는 const
+    const y = 100 ;
+    const z = 100 ;
+
+    //const를 썻기 때문에 x=500; 사용 불가
+
+    document.write("<br>05. 상수<br>");
+    document.write(x, "<br>");
+    document.write(y, "<br>");
+    document.write(z, "<br>");
+}
+</code></pre>
+                </div>
+            </div>
+        </div>
+        <!-- 5번 마감 -->
+        <!-- 6번 -->
+        <div class="script">
+            <div id="sample01" class="sample">
+                <h2>06. 배열 : 여러개인 데이터를 저장 : 표현 방법 1번째</h2>
+                <div class="code">
+<pre><code class="language-js">{
+    const arr = new Array();
+    arr[0] = 100;
+    arr[1] = 200;
+    arr[2] = "javascript";
+
+    document.write("<br>06. 배열 1번째<br>");
+    document.write(arr[0], "<br>");
+    document.write(arr[1], "<br>");
+    document.write(arr[2], "<br>");
+}
+</code></pre>
+                </div>
+            </div>
+        </div>
+        <!-- 6번 마감 -->
+        <!-- 7번 -->
+        <div class="script">
+            <div id="sample01" class="sample">
+                <h2>07. 배열 : 여러개인 데이터를 저장 : 표현 방법 2번째</h2>
+                <div class="code">
+<pre><code class="language-js">{
+    const arr = new Array(100, 200, "javascript");
+    document.write("<br>07. 배열 2번째<br>");
+    document.write(arr[0], "<br>");
+    document.write(arr[1], "<br>");
+    document.write(arr[2], "<br>");
+}
+</code></pre>
+                </div>
+            </div>
+        </div>
+        <!-- 7번 마감 -->
+        <!-- 8번 -->
+        <div class="script">
+            <div id="sample01" class="sample">
+                <h2>08. 배열 : 여러개인 데이터를 저장 : 표현 방법 3번째</h2>
+                <div class="code">
+<pre><code class="language-js">{
+    const arr = [];
+    arr[0] = 100;
+    arr[1] = 200;
+    arr[2] = "javascript";
+
+    document.write("<br>08. 배열 3번째<br>");
+    document.write(arr[0], "<br>");
+    document.write(arr[1], "<br>");
+    document.write(arr[2], "<br>");
+}
+</code></pre>
+                </div>
+            </div>
+        </div>
+        <!-- 8번 마감 -->
+        <!-- 9번 -->
+        <div class="script">
+            <div id="sample01" class="sample">
+                <h2>09. 배열 : 여러개인 데이터를 저장 : 표현 방법 4번째</h2>
+                <div class="code">
+<pre><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+
+    document.write("<br>09. 배열 4번째<br>");
+    document.write(arr[0], "<br>");
+    document.write(arr[1], "<br>");
+    document.write(arr[2], "<br>");
+}
+</code></pre>
+                </div>
+            </div>
+        </div>
+        <!-- 9번 마감 -->
+        <!-- div 태그는 인라인(텍스트) 블록(박스) 로 구분할 수 있다 -->
     </main>
+    <script>hljs.highlightAll();</script>
     <script>
         //01. 변수 : 데이터 저장//
         {
