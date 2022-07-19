@@ -58,7 +58,7 @@
                 <li><a href="#sample18">18. 객체 : 데이터 저장(키와 값) : 표현방법 9</a></li>
             </ul>
         </div>
-        <!-- 메인 샘플 시작 -->
+        <!-- 01번 메인 샘플 시작 -->
         <div class="main_sample">
             <div id="sample01" class="sample">
                 <h3>01. 변수 : 데이터 저장</h3>
@@ -91,12 +91,12 @@
                 </div>
             </div>
         </div>
-        <!-- 메인 샘플 끝 -->
+        <!-- 01번 메인 샘플 끝 -->
 
-        <!-- 메인 샘플 시작 -->
+        <!-- 02번 메인 샘플 시작 -->
         <div class="main_sample">
             <div id="sample02" class="sample">
-                <h3>02. 변수 : 데이터 저장</h3>
+                <h3>02. 변수 : 데이터 저장 + 데이터 변경</h3>
                 <p>
                     변수는 데이터를 저장하는 저장소 입니다.
                     이 저장소에서는 숫자, 문자, 함수, 객체 등을 저장할 수 있습니다.
@@ -115,7 +115,6 @@
     document.write(x);
     document.write(y);
     document.write(z);
-
 }
 </code></pre>
                 </div>
@@ -131,8 +130,137 @@
                 </div>
             </div>
         </div>
-        <!-- 메인 샘플 끝 -->
-        <div class="main_desc"></div>
+        <!-- 02번 메인 샘플 끝 -->
+
+        <!-- 03번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample03" class="sample">
+                <h3>03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</h3>
+                <p>
+                    변수는 데이터를 저장하고, 변경하고, 추가 할 수 있습니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x+=300; //변수 x의 값이 100에 300을 더해줌
+    y+=400; //변수 y의 값이 100에 400을 더해줌
+    z+="jquery" //변수 z의 값이 javascript에 jquery를 추가함
+
+    document.write(x); 출력 : 400
+    document.write(y); 출력 : 600
+    document.write(z); 출력 : javascriptjquery
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample03_result">
+                            
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 03번 메인 샘플 끝 -->
+
+        <!-- 04번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample04" class="sample">
+                <h3>04. 변수 : 지역변수 + 전역 변수 + 매개 변수</h3>
+                <p>
+                    '전역 변수'는 함수 블록{} 밖이나 안에서 자유롭게 사용 가능하지만 '지역 변수'는 함수 블록{} 내에서만 사용할 수 있습니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+            let x1 = 100;       //전역변수
+            let y1 = 200;       //전역변수
+
+            function func(){
+                let x1 = 100;           //지역변수
+                let z1 = "javascript";  //지역변수
+                x1=200;                 //지역변수 100 -> 200
+                y1=300;                 //전역변수 200 -> 300
+
+                document.write("함수 안");
+                document.write(x1);
+                document.write(y1);
+                document.write(z1);
+            }
+            func();
+            document.write("함수 밖");
+            document.write(x1);
+            document.write(y1);
+            document.write(z1);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample04_result">
+                            함수 안<br>
+                            200<br>
+                            300<br>
+                            javascript<br><br>
+                            
+                            함수 밖<br>
+                            100<br>
+                            300
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 04번 메인 샘플 끝 -->
+
+        <!-- 05번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample05" class="sample">
+                <h3>05. 상수 : 데이터 저장 + 데이터 변경(X)</h3>
+                <p>
+                    상수는 데이터를 저장 할 수 있지만 변경 할 수는 없습니다.
+                    상수(const)는 이미 선언한 상수에 대해 중복해서 선언할 수 없고,
+                    상수의 값은 재지정할 수도 없습니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    const x = 100;        //상수
+    const y = 200;        //상수
+    const z = "javascript";        //상수
+
+    //x=300;        //변경할 수 없음.
+    //y=400;        //변경할 수 없음.
+    //z="jquery"        //변경할 수 없음.
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample05_result">
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 05번 메인 샘플 끝 -->
     </main>
     <!-- //main -->
     
@@ -149,12 +277,14 @@
             var y = 200;
             var z = "javascript";
 
-            document.write(x);
-            document.write(y);
-            document.write(z);
+            //document.write(x);
+            //document.write(y);
+            //document.write(z);
             // innerText / innerHTML 두가지가 있다.
             document.querySelector(".sample01_result").innerHTML=x+"<br>"+y+"<br>"+z
         }
+    //01 끝
+
     //02
         {
             let x = 100;
@@ -165,12 +295,73 @@
             y=400; //변수 y의 값이 100에서 300으로 변경됨
             z="jquery" //변수 z의 값이 javascript에서 jquery로 변경됨
 
-            document.write(x);
-            document.write(y);
-            document.write(z);
+            //document.write(x);
+            //document.write(y);
+            //ocument.write(z);
 
             document.querySelector(".sample02_result").innerHTML=x+"<br>"+y+"<br>"+z
         }
+    //02 끝
+
+    //03
+        {
+            let x = 100;
+            let y = 200;
+            let z = "javascript";
+
+            x+=300; //변수 x의 값이 100에서 300으로 변경됨
+            y+=400; //변수 y의 값이 100에서 300으로 변경됨
+            z+="jquery" //변수 z의 값이 javascript에 jquery를 추가함
+
+            //document.write(x); 출력 : 400
+            //document.write(y); 출력 : 600
+            //ocument.write(z); 출력 : javascriptjquery
+
+            document.querySelector(".sample03_result").innerHTML=x+"<br>"+y+"<br>"+z
+        }
+    //03 끝
+
+    //04
+        {
+            let x1 = 100;       //전역변수
+            let y1 = 200;       //전역변수
+
+            function func(){
+                let x1 = 100;           //지역변수
+                let z1 = "javascript";  //지역변수
+                x1=200;                 //지역변수 100 -> 200
+                y1=300;                 //전역변수 200 -> 300
+
+                document.write("함수 안", "<br>");
+                document.write(x1, "<br>");
+                document.write(y1, "<br>");
+                document.write(z1, "<br>"); //undefined
+            }
+            //func();
+            //document.write("<br>함수 밖<br>");
+            //document.write(x1, "<br>");
+            //document.write(y1, "<br>");
+            //document.write(z1);
+        }
+    //04 끝
+
+    //05
+        {
+            const x = 100;        //상수
+            const y = 200;        //상수
+            const z = "javascript";        //상수
+
+            //x=300;        //변경할 수 없음.
+            //y=400;        //변경할 수 없음.
+            //z="jquery"        //변경할 수 없음.
+
+            //document.write(x);
+            //document.write(y);
+            //document.write(z);
+
+            document.querySelector(".sample05_result").innerHTML=x+"<br>"+y+"<br>"+z
+        }
+    //05 끝
     </script>
 </body>
 </html>

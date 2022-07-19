@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            let x = 100;
+            let y = 200;
+
+            function func(){
+                let x = 100;
+                let z = "javascript";
+                
+                x=200;
+                y=300;
+
+                document.write("함수 안", "<br>");
+                document.write(x, "<br>");
+                document.write(y, "<br>");
+                document.write(z, "<br>");
+
+            }
+            func(); func 함수 출력값은 함수 안, 200, 300, javascript
+            document.write("함수 밖", "<br>");
+            document.write(x,"<br>");
+            document.write(y,"<br>");
+            document.write(z);
+
+            document.querySelector(".sample04_result").innerHTML=x+"<br>"+y+"<br>"+z
+        }
+    </script>
+    
+</body>
+</html>
