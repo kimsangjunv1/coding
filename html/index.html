@@ -4,75 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML</title>
-    
-    <!-- 폰트 링크 -->
-    <!-- 이서윤 -->
-    <link href="https://webfontworld.github.io/heungkuk/LeeSeoyun.css" rel="stylesheet">
+    <title>자바스크립트</title>
 
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/ico/favicon2.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/favicon2_114.png">
+    <link rel="icon" href="../assets/ico/icon2.png">
+    <link rel="icon" href="../assets/ico/favicon2_57.png" sizes="16x16">
+    <link rel="icon" href="../assets/ico/favicon2_72.png" sizes="32x32">
+    <link rel="icon" href="../assets/ico/favicon2_114.png" sizes="48x48">
+    <link rel="icon" href="../assets/ico/favicon2_114.png" sizes="64x64">
+    <link rel="icon" href="../assets/ico/favicon2_114.png" sizes="128x128">
+
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/utoImagetree/UtoImageTree.css" rel="stylesheet">
     <style>
-        /* 리셋 */
-        *{
+        * {
             margin: 0;
             padding: 0;
-            font-family: 'LeeSeoyun';
+            font-family: 'UtoImageTree';
         }
-        #main{
+        main {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
             flex-direction: column;
-            border: 8px solid #444;
+            height: 100vh;
+            text-align: center;
+            padding: 2vw;
+            border: 8px solid #4b4b4b;
             box-sizing: border-box;
         }
-        #main h1{
-            font-size: 15vw;
-            text-align: center;
-            color:#444;
-            line-height: 1.0;
-            margin-bottom: 4vw;
-            
+        h1 {
+            font-size: 13vw;
+            color: #4b4b4b;
+            margin-bottom: 2vw;
         }
-        #main h1 em{
-            display:block ;
-            font-style: normal;
-            
-        }
-        #main{}
-        #main nav{}
-        #main nav ul{}
-        #main nav ul li{
-            list-style: none; /* 점 없앰 */
-            display: inline; /* 가로로 눕힘 */
-            padding: 20px;
-        }
-        #main nav ul li a{
-            background-color: transparent;
+        nav ul li{
+            display: inline;
+            list-style: none;
 
+        }
+        nav ul li a{
             text-decoration: none;
-            color: #444;
-            border: 1px solid #444;
+            border: 1px solid #dcdcdc;
+            /* 원래는 1.2vw 3vw */
+            padding: 1.2vw 3vw;
+            display: inline-block;
+            margin: 0.5vw;
             border-radius: 50px;
-            font-size: 18px;
-            padding: 2vw;
+            /* 원래는 18px */
+            font-size: 1.5vw; 
+            transition: all 0.3s;
         }
-        #main nav ul li a:hover{
-            background-color: #444;
-            transition: 0.5s;
-            color: #fff;
+        nav ul li a:hover {
+            background-color: #4b4b4b;
+            color: #ffffff;
         }
-        
     </style>
 </head>
 <body>
-    <main id="main">
-        <h1 a href="index.html">HTML <em>레퍼런스 북</em></h1>
+    <main>
+        <h1>HTML</h1>
         <nav>
             <ul>
                 <li><a href="basic.html">기초</a></li>
-                <li><a href="../css/index.html">주제</a></li>
+                <li><a href="#">주제</a></li>
                 <li><a href="#">알파벳</a></li>
+            
             </ul>
         </nav>
     </main>

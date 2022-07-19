@@ -35,9 +35,18 @@ body{
     border-bottom: 1px dashed #dcdcdc;
     padding-bottom: 40px;
 }
+/* javascript 01~04 사용중 */
 #main {
-    padding: 40px 0;
+    padding: 43px 0;
     border-bottom: 1px dashed #dcdcdc;
+}
+/* basic,command,counting 사용중 */
+#contents{
+    padding: 20px 0;
+    border-bottom: 1px dashed #dcdcdc;
+}
+#contents h2{
+    font-size: 20px;
 }
 #footer {
     padding: 40px 0;
@@ -71,8 +80,8 @@ body{
 
 .header_nav ul li a:hover {
     /* a태그는 박스나 인라인같은것이 안먹는다 */
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     transition: 0.3s;
 }
 
