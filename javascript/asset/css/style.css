@@ -90,9 +90,9 @@ body{
 
 /* 메인 샘플 --------------*/
 .main_sample{
-    margin-top: 40px;
-    border-top: 1px dashed #dcdcdc;
-    padding-top: 40px;
+    /*margin-top: 40px;*/
+    /*border-top: 1px dashed #dcdcdc;*/
+    /*padding-top: 40px;*/
 }
 
 /* 01 변수 : 데이터 저장 --------------*/
