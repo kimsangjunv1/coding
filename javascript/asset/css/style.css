@@ -28,6 +28,7 @@ body{
 }
 #header {
     border-bottom: 1px dashed #dcdcdc;
+    padding-bottom: 40px;
 }
 #main {
     border-bottom: 1px dashed #dcdcdc;
