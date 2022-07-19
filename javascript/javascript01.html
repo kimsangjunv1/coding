@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 : 데이터 저장하기</title>
     <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/dracula.css"> <!-- 0. 드라큘라 적용 (맨 밑으로)-->
 </head>
 <body>
     <header id="header">
@@ -37,27 +38,62 @@
     <main id="main">
         <div class="main_menu">
             <ul><!--ul>li*17>a[href="#"]{$$} 사용함-->
-                <li><a href="#">01. 변수 : 데이터 저장</a></li>
-                <li><a href="#">02. 변수 : 데이터 저장 + 데이터 변경</a></li>
-                <li><a href="#">03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</a></li>
-                <li><a href="#">04. 변수 : 지역변수 + 전역 변수 + 매개 변수</a></li>
-                <li><a href="#">05. 상수 : 데이터 저장 + 데이터 변경(X)</a></li>
-                <li><a href="#">06. 배열 : 데이터 저장(여러개) : 표현방법 1</a></li>
-                <li><a href="#">07. 배열 : 데이터 저장(여러개) : 표현방법 2</a></li>
-                <li><a href="#">08. 배열 : 데이터 저장(여러개) : 표현방법 3</a></li>
-                <li><a href="#">09. 배열 : 데이터 저장(여러개) : 표현방법 4</a></li>
-                <li><a href="#">10. 객체 : 데이터 저장(키와 값) : 표현방법 1</a></li>
-                <li><a href="#">11. 객체 : 데이터 저장(키와 값) : 표현방법 2</a></li>
-                <li><a href="#">12. 객체 : 데이터 저장(키와 값) : 표현방법 3</a></li>
-                <li><a href="#">13. 객체 : 데이터 저장(키와 값) : 표현방법 4</a></li>
-                <li><a href="#">14. 객체 : 데이터 저장(키와 값) : 표현방법 5</a></li>
-                <li><a href="#">15. 객체 : 데이터 저장(키와 값) : 표현방법 6</a></li>
-                <li><a href="#">16. 객체 : 데이터 저장(키와 값) : 표현방법 7</a></li>
-                <li><a href="#">17. 객체 : 데이터 저장(키와 값) : 표현방법 8</a></li>
-                <li><a href="#">18. 객체 : 데이터 저장(키와 값) : 표현방법 9</a></li>
+                <li><a href="#sample01">01. 변수 : 데이터 저장</a></li>
+                <li><a href="#sample02">02. 변수 : 데이터 저장 + 데이터 변경</a></li>
+                <li><a href="#sample03">03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</a></li>
+                <li><a href="#sample04">04. 변수 : 지역변수 + 전역 변수 + 매개 변수</a></li>
+                <li><a href="#sample05">05. 상수 : 데이터 저장 + 데이터 변경(X)</a></li>
+                <li><a href="#sample06">06. 배열 : 데이터 저장(여러개) : 표현방법 1</a></li>
+                <li><a href="#sample07">07. 배열 : 데이터 저장(여러개) : 표현방법 2</a></li>
+                <li><a href="#sample08">08. 배열 : 데이터 저장(여러개) : 표현방법 3</a></li>
+                <li><a href="#sample09">09. 배열 : 데이터 저장(여러개) : 표현방법 4</a></li>
+                <li><a href="#sample10">10. 객체 : 데이터 저장(키와 값) : 표현방법 1</a></li>
+                <li><a href="#sample11">11. 객체 : 데이터 저장(키와 값) : 표현방법 2</a></li>
+                <li><a href="#sample12">12. 객체 : 데이터 저장(키와 값) : 표현방법 3</a></li>
+                <li><a href="#sample13">13. 객체 : 데이터 저장(키와 값) : 표현방법 4</a></li>
+                <li><a href="#sample14">14. 객체 : 데이터 저장(키와 값) : 표현방법 5</a></li>
+                <li><a href="#sample15">15. 객체 : 데이터 저장(키와 값) : 표현방법 6</a></li>
+                <li><a href="#sample16">16. 객체 : 데이터 저장(키와 값) : 표현방법 7</a></li>
+                <li><a href="#sample17">17. 객체 : 데이터 저장(키와 값) : 표현방법 8</a></li>
+                <li><a href="#sample18">18. 객체 : 데이터 저장(키와 값) : 표현방법 9</a></li>
             </ul>
         </div>
-        <div class="main_script"></div>
+        <!-- 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>01. 변수 : 데이터 저장</h3>
+                <p>
+                    변수는 데이터를 저장하는 저장소 입니다.
+                    이 저장소에서는 숫자, 문자, 함수, 객체 등을 저장할 수 있습니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    var x = 100;
+    var y = 200;
+    var z = "javascript";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            "javascript"
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 메인 샘플 끝 -->
         <div class="main_desc"></div>
     </main>
     <!-- //main -->
@@ -66,6 +102,7 @@
         <a href="mailto:to_before@naver.com">to_before@naver.com</a>
     </footer>
     <!-- //footer -->
-
+    <script src="asset/js/highlight.min.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>hljs.highlightAll();</script><!-- 2. 스크립트 실행 (살짝 위로) -->
 </body>
 </html>
