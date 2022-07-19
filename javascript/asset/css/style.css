@@ -115,6 +115,49 @@ body{
     margin-bottom: 80px;
 }
 
+.article {
+    padding: 2vw 0;
+    line-height: 1.6;
+}
+.article h2 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.article h3 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.article p{
+    margin-bottom: 10px;
+}
+.article .table{
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse; /*겹친 선 없앰 */
+    margin-bottom: 10px;
+}
+.article .table tr th{
+    border: 1px solid #dedede;
+    padding: 10px;
+    font-weight: normal;
+    background-color: #f5f5f5;
+}
+.article .table tr td{
+    border: 1px solid #dedede;
+    padding: 10px;
+}
+.article .table .center{
+    text-align: center;
+}
+.article .box{
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+.article .box2{
+    background-color: #ffffff;
+    padding: 10px;
+}
+
 @media (max-width: 800px){
     body {
         padding: 20px;

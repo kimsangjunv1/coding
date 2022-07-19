@@ -85,6 +85,10 @@
             font-weight: normal;
             margin-bottom: 10px;
         }
+        .article h3 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
         .article p{
             margin-bottom: 10px;
         }
@@ -157,59 +161,39 @@
             </ul>
         </nav>
         <article class="article">
-            <h2>HTML 기본 문서</h2>
-            <p> <!-- &lt; / &gt;-->
-                html 요소는 &lt;head&gt; 요소와 &lt;body 요소&gt; 로 구성되어 있으며,<br>
-                &lt;head&gt; 요소 안에는 &lt;meta&gt;, &lt;title&gt;, &lt;link&gt;, &lt;style&gt;, &lt;script&gt; 등의 요소들이 올 수 있습니다
+            <h2>02. font-size, 단위의 고찰</h2>
+            <p>글자 크기 명시 안할경우 16px</p>
+
+            <!-- 1번 -->
+            <h3>1. px</h3>
+            <p>해상도에 따라 상대적으로 달라지는 기본 단위</p>
+            <p class="box">font-size: 12px;</p>
+            <p>특별한 설정이 없다면 16px이 100% 기본, 150%는 24px가 됨. 부모 요소가 10px 일시 150%는 15px가 됨.
             </p>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>요소명</th>
-                        <th>설명</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="center">&lt;meta&gt;</td>
-                        <td>HTML 문서의 설명, 키워드, 문서의 작성자 등을 지정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;title&gt;</td>
-                        <td>HTML 문서의 제목을 지정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;link&gt;</td>
-                        <td>외부의 CSS 파일을 HTML 문서에 연결할 때 사용합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;style&gt;</td>
-                        <td>HTML 문서 내에서 스타일(CSS)을 정의합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;script&gt;</td>
-                        <td>자바스크립트를 HTML 문서 내부에서 정의하거나 외부에서 자바스크립트 파일을 불러올 때 사용합니다.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>
-                [예시 1-1]에서 &lt;html lang="ko"&gt;나 &lt;meta charset="UTF-8"&gt;처럼 태그 내부에 부가적인 설정값을 선언하는 것을 속성(attribute)이라고 합니다.
-            </p>
-            <p>
-                lang 속성은 HTML 문서에서 사용하는 언어를 말하며 lang="ko"는 한국어, lang="en" 영어를 의미
-            </p>
-            <p>
-                lang 속성 중요이유 언어 설정에 따라 시각장애인들을 위해 읽어주는 프로그램이 설정 언어에 맞게 읽어주기 때문
-            </p>
-            <p>
-                lang 속성은 HTML 문서에서 꼭 정의해야 하는 속성
-            </p>
-            <p class="box">
-                &lt;i lang="de"&gt;Ich liebe dich&lt;/i&gt;
-            </p>
-            <p>
-                HTML5의 문자 인코딩 방식으로 주로 사용
-            </p>
+
+            <!-- 2번 -->
+            <h3>2.%</h3>
+            <p>부모 요소의 글자 크기를 100% 기준으로 계산한 % 단위
+            <p class="box">font-size: 150%;</p>
+            <p>특별한 설정이 없다면 16px이 100% 기본, 150%는 24px가 됨. 부모 요소가 10px 일시 150%는 15px가 됨.</p>
+            
+            <!-- 3번 -->
+            <h3>3.em</h3>
+            <p>부모 요소의 글자 크기를 100% 기준으로 계산한 100분의 1단위</p>
+            <p class="box">font-size: 1.5em;</p>
+            <p>특별한 설정이 없을시 16px이 1em이 됨, 1.5em은 24px(16px*1.5=24px)이 되며 만약 부모요소가 10px라면 1.5em은 15px가 됨</p>
+
+            <!-- 4번 -->
+            <h3>4.rem</h3>
+            <p>rem은 em과 비슷 부모가 아닌 최상위 요소의 크기를 100% 기준으로 계산. rem의 r은 root 즉, html요소를 뜻하며, html 요소에서 지정한 글자 크기가 1rem이 됨</p>
+            <p class="box">font-size: 1.5rem;</p>
+
+            <!-- 5번 -->
+            <h3>5.vw, vh</h3>
+            <p>vw는 뷰포트 너비값의 100분의 1단위, vh는 뷰포트 높이값의 100분의 1단위임
+            <p class="box">font-size: 10vw;</p>
+            <p>해설 : 뷰포트 너비의 10% 크기</p>
+
         </article>
     </section>
 </body>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 데이터 저장하기</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/dracula.css"> <!-- 0. 드라큘라 적용 (맨 밑으로)-->
+</head>
+<body>
+    <header id="header">
+        <h1>Javascript</h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">문자열 객체</a></li>
+                <li><a href="#">배열 객체</a></li>
+                <li><a href="#">수학 객체</a></li>
+                <li><a href="#">숫자 객체</a></li>
+                <li><a href="#">브라우저 객체</a></li>
+                <li><a href="#">요소 객체</a></li>
+                <li><a href="#">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="#">기본 규칙</a></li>
+                <li><a href="#">기본 명령어</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul><!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#sample01">01. 변수 : 데이터 저장</a></li>
+                <li><a href="#sample02">02. 변수 : 데이터 저장 + 데이터 변경</a></li>
+                <li><a href="#sample03">03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</a></li>
+                <li><a href="#sample04">04. 변수 : 지역변수 + 전역 변수 + 매개 변수</a></li>
+                <li><a href="#sample05">05. 상수 : 데이터 저장 + 데이터 변경(X)</a></li>
+                <li><a href="#sample06">06. 배열 : 데이터 저장(여러개) : 표현방법 1</a></li>
+                <li><a href="#sample07">07. 배열 : 데이터 저장(여러개) : 표현방법 2</a></li>
+                <li><a href="#sample08">08. 배열 : 데이터 저장(여러개) : 표현방법 3</a></li>
+                <li><a href="#sample09">09. 배열 : 데이터 저장(여러개) : 표현방법 4</a></li>
+                <li><a href="#sample10">10. 객체 : 데이터 저장(키와 값) : 표현방법 1</a></li>
+                <li><a href="#sample11">11. 객체 : 데이터 저장(키와 값) : 표현방법 2</a></li>
+                <li><a href="#sample12">12. 객체 : 데이터 저장(키와 값) : 표현방법 3</a></li>
+                <li><a href="#sample13">13. 객체 : 데이터 저장(키와 값) : 표현방법 4</a></li>
+                <li><a href="#sample14">14. 객체 : 데이터 저장(키와 값) : 표현방법 5</a></li>
+                <li><a href="#sample15">15. 객체 : 데이터 저장(키와 값) : 표현방법 6</a></li>
+                <li><a href="#sample16">16. 객체 : 데이터 저장(키와 값) : 표현방법 7</a></li>
+                <li><a href="#sample17">17. 객체 : 데이터 저장(키와 값) : 표현방법 8</a></li>
+                <li><a href="#sample18">18. 객체 : 데이터 저장(키와 값) : 표현방법 9</a></li>
+            </ul>
+        </div>
+        
+        <!-- PX -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <!-- 제목 -->
+                <h3>PX</h3>
+                <!-- 설명 -->
+                <p>
+                    해상도에 따라 상대적으로 달라지는 기본 단위로서, 다음과 같이 표현합니다.
+                    <!-- 테이블 -->
+                    <article class="article">
+                        <table class="table">
+                            <thead>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>font-size: 12px;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <!-- 테이블 끝-->
+                </p>
+                <!-- 설명 끝-->
+            </div>
+        </div>
+        <!-- PX 끝 -->
+
+        <!-- % -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <!-- 제목 -->
+                <h3>%</h3>
+                <!-- 설명 -->
+                <p>
+                    부모 요소의 글자 크기를 100% 기준으로 계산한 % 단위로서, 다음과 같이 표현합니다.
+                    <!-- 테이블 -->
+                    <article class="article">
+                        <table class="table">
+                            <thead>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>font-size: 150%;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <!-- 테이블 끝-->
+                    특별한 설정이 없다면 16pxdl 100%가 되므로, 150%는 24px이 됩니다. 만약 부모 요소가 10px이었다면<br> 150%는 15px이 됨.
+                </p>
+                <!-- 설명 끝-->
+            </div>
+        </div>
+        <!-- % 끝 -->
+
+        <!-- em -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <!-- 제목 -->
+                <h3>em</h3>
+                <!-- 설명 -->
+                <p>
+                    부모 요소의 글자 크기를 100% 기준으로 계산한 % 단위로서, 다음과 같이 표현합니다.
+                    <!-- 테이블 -->
+                    <article class="article">
+                        <table class="table">
+                            <thead>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>font-size: 150%;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <!-- 테이블 끝-->
+                    특별한 설정이 없다면 16pxdl 100%가 되므로, 150%는 24px이 됩니다. 만약 부모 요소가 10px이었다면<br> 150%는 15px이 됨.
+                </p>
+                <!-- 설명 끝-->
+            </div>
+        </div>
+        <!-- % 끝 -->
+
+        <!-- 01번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>PX</h3>
+                <p>
+                    <table>
+                        <tr>
+                            <td>font-size</td>
+                        </tr>
+                    </table>
+                    해상도에 따라 상대적으로 달라지는 기본 단위로서, 다음과 가이 표현합니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    var x = 100;        //변수 x에 숫자 100을 저장함
+    var y = 200;        //변수 y에 숫자 200을 저장함
+    var z = "javascript";       //변수 z에 문자열 "javascript" 생성함
+
+    document.write(x);      //x 출력
+    document.write(y);      //y 출력
+    document.write(z);      //z 출력
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 01번 메인 샘플 끝 -->
+
+        <!-- 표 테스트 -->
+        <article class="article">
+            <h2>HTML 기본 문서</h2>
+            <p> <!-- &lt; / &gt;-->
+                html 요소는 &lt;head&gt; 요소와 &lt;body 요소&gt; 로 구성되어 있으며,<br>
+                &lt;head&gt; 요소 안에는 &lt;meta&gt;, &lt;title&gt;, &lt;link&gt;, &lt;style&gt;, &lt;script&gt; 등의 요소들이 올 수 있습니다
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>요소명</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center">&lt;meta&gt;</td>
+                        <td>HTML 문서의 설명, 키워드, 문서의 작성자 등을 지정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="center">&lt;title&gt;</td>
+                        <td>HTML 문서의 제목을 지정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="center">&lt;link&gt;</td>
+                        <td>외부의 CSS 파일을 HTML 문서에 연결할 때 사용합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="center">&lt;style&gt;</td>
+                        <td>HTML 문서 내에서 스타일(CSS)을 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="center">&lt;script&gt;</td>
+                        <td>자바스크립트를 HTML 문서 내부에서 정의하거나 외부에서 자바스크립트 파일을 불러올 때 사용합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                [예시 1-1]에서 &lt;html lang="ko"&gt;나 &lt;meta charset="UTF-8"&gt;처럼 태그 내부에 부가적인 설정값을 선언하는 것을 속성(attribute)이라고 합니다.
+            </p>
+            <p>
+                lang 속성은 HTML 문서에서 사용하는 언어를 말하며 lang="ko"는 한국어, lang="en" 영어를 의미
+            </p>
+            <p>
+                lang 속성 중요이유 언어 설정에 따라 시각장애인들을 위해 읽어주는 프로그램이 설정 언어에 맞게 읽어주기 때문
+            </p>
+            <p>
+                lang 속성은 HTML 문서에서 꼭 정의해야 하는 속성
+            </p>
+            <p class="box">
+                &lt;i lang="de"&gt;Ich liebe dich&lt;/i&gt;
+            </p>
+            <p>
+                HTML5의 문자 인코딩 방식으로 주로 사용
+            </p>
+        </article>
+        <!-- 표 테스트 끝 -->
+
+    </main>
+    <!-- //main -->
+    
+    <footer id="footer">
+        <a href="mailto:to_before@naver.com">to_before@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="asset/js/highlight.min.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>hljs.highlightAll();</script><!-- 2. 스크립트 실행 (살짝 위로) -->
+    <script>
+        //01
+        {
+            var x = 100;
+            var y = 200;
+            var z = "javascript";
+
+            //document.write(x);
+            //document.write(y);
+            //document.write(z);
+            // innerText / innerHTML 두가지가 있다.
+            document.querySelector(".sample01_result").innerHTML=x+"<br>"+y+"<br>"+z
+        }
+        //01 끝
+
+        //02
+        {
+            let x = 100;
+            let y = 200;
+            let z = "javascript";
+
+            x=300; //변수 x의 값이 100에서 300으로 변경됨
+            y=400; //변수 y의 값이 100에서 300으로 변경됨
+            z="jquery" //변수 z의 값이 javascript에서 jquery로 변경됨
+
+            //document.write(x);
+            //document.write(y);
+            //ocument.write(z);
+
+            document.querySelector(".sample02_result").innerHTML=x+"<br>"+y+"<br>"+z
+        }
+        //02 끝
+
+        //03
+        {
+            let x = 100;
+            let y = 200;
+            let z = "javascript";
+
+            x+=300; //변수 x의 값이 100에서 300으로 변경됨
+            y+=400; //변수 y의 값이 100에서 300으로 변경됨
+            z+="jquery" //변수 z의 값이 javascript에 jquery를 추가함
+
+            //document.write(x); 출력 : 400
+            //document.write(y); 출력 : 600
+            //ocument.write(z); 출력 : javascriptjquery
+
+            document.querySelector(".sample03_result").innerHTML=x+"<br>"+y+"<br>"+z
+        }
+        //03 끝
+
+        //04
+        {
+            let x1 = 100;       //전역변수
+            let y1 = 200;       //전역변수
+
+            function func(){
+                let x1 = 100;           //지역변수
+                let z1 = "javascript";  //지역변수
+                x1=200;                 //지역변수 100 -> 200
+                y1=300;                 //전역변수 200 -> 300
+
+                document.write("함수 안", "<br>");
+                document.write(x1, "<br>");
+                document.write(y1, "<br>");
+                document.write(z1, "<br>"); //undefined
+            }
+            //func();
+            //document.write("<br>함수 밖<br>");
+            //document.write(x1, "<br>");
+            //document.write(y1, "<br>");
+            //document.write(z1);
+        }
+        //04 끝
+
+        //05
+        {
+            const x = 100;        //상수
+            const y = 200;        //상수
+            const z = "javascript";        //상수
+
+            //x=300;        //변경할 수 없음.
+            //y=400;        //변경할 수 없음.
+            //z="jquery"        //변경할 수 없음.
+
+            //document.write(x);
+            //document.write(y);
+            //document.write(z);
+            document.querySelector(".sample05_result").innerHTML=x+"<br>"+y+"<br>"+z
+        }
+        //05 끝
+
+        //06
+        {
+            const arr = new Array();        //배열 생성
+            arr[0] = 100;       //배열 첫번째 값 100 대입
+            arr[1] = 200;       //배열 두번째 값 200 대입
+            arr[2] = "javascript";       //배열 세번째 값 "javascript" 대입
+
+            //document.write(arr[0]);       //배열의 첫번째 값 100 출력
+            //document.write(arr[1]);       //배열의 두번째 값 200 출력
+            //document.write(arr[2]);       //배열의 세번째 값 "javascript" 출력
+
+            document.querySelector(".sample06_result").innerHTML=arr[0]+"<br>"+arr[1]+"<br>"+arr[2]
+        }
+
+        //07
+        {
+            const arr = new Array(100, 200, "javascript")       //배열 생성과 동시에 100,200,"javascript" 대입
+
+            //document.write(arr[0]);       //배열의 첫번째 값 100 출력
+            //document.write(arr[1]);       //배열의 두번째 값 200 출력
+            //document.write(arr[2]);       //배열의 세번째 값 "javascript" 출력
+
+            document.querySelector(".sample07_result").innerHTML=arr[0]+"<br>"+arr[1]+"<br>"+arr[2]
+
+        }
+
+        //08
+        {
+            const arr = [];     //배열생성
+            arr[0] = 100;       //배열 첫번째 값에 100 대입
+            arr[1] = 200;       //배열 두번째 값에 200 대입
+            arr[2] = "javascript";       //배열 첫번째 값에 javascript 대입
+
+            //document.write(arr[0]);       //배열의 첫번째 값 100 출력
+            //document.write(arr[1]);       //배열의 두번째 값 200 출력
+            //document.write(arr[2]);       //배열의 세번째 값 "javascript" 출력
+
+            document.querySelector(".sample08_result").innerHTML=arr[0]+"<br>"+arr[1]+"<br>"+arr[2]
+
+        }
+        //09
+        {
+            const arr = [100, 200, "javascript"];       //배열 생성과 동시에 100,200,"javascript" 대입
+
+            //document.write(arr[0]);       //배열의 첫번째 값 100 출력
+            //document.write(arr[1]);       //배열의 두번째 값 200 출력
+            //document.write(arr[2]);       //배열의 세번째 값 "javascript" 출력
+
+            document.querySelector(".sample09_result").innerHTML=arr[0]+"<br>"+arr[1]+"<br>"+arr[2]
+
+        }
+        //10 
+        {
+            const obj = new Object();       //객체생성
+            obj[0] = 100;       //키 와 값
+            obj[1] = 200;       //키 와 값
+            obj[2] = "javascript";       //키 와 값
+
+            //document.write(obj[0], "<br>");       //배열의 첫번째 값 100 출력
+            //document.write(obj[1], "<br>");       //배열의 두번째 값 200 출력
+            //document.write(obj[2], "<br>");       //배열의 세번째 값 "javascript" 출력
+
+            document.querySelector(".sample10_result").innerHTML=obj[0]+"<br>"+obj[1]+"<br>"+obj[2]
+        }
+        //11
+        {
+            const obj = new Object();       //객체생성
+            obj.b = 200;       //키 와 값
+            obj.c = 300;       //키 와 값
+            obj.a = 100;       //키 와 값
+            
+            //document.write(obj.a, "<br>");       //객체 a키의 값 100을 출력
+            //document.write(obj.b, "<br>");       //객체 b키의 값 200을 출력
+            //document.write(obj.c, "<br>");       //객체 c키의 값 300을 출력
+            document.querySelector(".sample11_result").innerHTML=obj.a+"<br>"+obj.b+"<br>"+obj.c
+
+        }
+        //12
+        {
+            const obj = {};       //객체생성
+            obj.a = 100;       //키 와 값
+            obj.b = 200;       //키 와 값
+            obj.c = 300;       //키 와 값
+            
+            //document.write(obj.a, "<br>");       //객체 a키의 값 100을 출력
+            //document.write(obj.b, "<br>");       //객체 b키의 값 200을 출력
+            //document.write(obj.c, "<br>");       //객체 c키의 값 300을 출력
+
+            document.querySelector(".sample12_result").innerHTML=obj.a+"<br>"+obj.b+"<br>"+obj.c
+        }
+        //13
+        {
+            const obj = {a:100, b:200, c:"javascript"}
+
+            //document.write(obj.a, "<br>");       //객체 첫번째 자리의 a키의 값 100을 출력
+            //document.write(obj.b, "<br>");       //객체 두번째 자리의 b키의 값 200을 출력
+            //document.write(obj.c, "<br>");       //객체 세번째 자리의 c키의 값 javascript 출력
+
+            document.querySelector(".sample13_result").innerHTML=obj.a+"<br>"+obj.b+"<br>"+obj.c
+
+        }
+        //14 객체 : 배열 속에 객체
+        {
+            const obj = [
+                {a:100, b:200},       //배열 안의 개체 키 a,b
+                {c:"javascript"}]       //배열 안의 개체 키 c
+            //document.write(obj[0].a, "<br>");       //배열 첫번째 자리의 객체 안 a키의 값 100출력
+            //document.write(obj[0].b, "<br>");       //배열 첫번째 자리의 객체 안 b키의 값 200출력
+            //document.write(obj[1].c, "<br>");       //배열 두번째 자리의 객체 안 c키의 값 javascript출력
+
+            document.querySelector(".sample14_result").innerHTML=obj[0].a+"<br>"+obj[0].b+"<br>"+obj[1].c
+
+        }
+        //15 객체 : 객체 속에 뱌열
+        {
+            const obj = {
+                a: 100,
+                b: [200, 300],
+                c: {x: 400, y: 500},
+                d: "javascript"
+            }
+            //document.write(obj.a, "<br>");       //객체 안의 a키의 값 100 출력
+            //document.write(obj.b[0], "<br>");       //객체안의 b키의 배열에서 첫번째 값 200 출력
+            //document.write(obj.b[1], "<br>");       //객체안의 b키의 배열에서 두번째 값 300 출력
+            //document.write(obj.c.x, "<br>");       //객체안의 c키의 객체 안의 x 값 400을 출력
+            //document.write(obj.c.y, "<br>");       //객체안의 c키의 객체 안의 y 값 500을 출력
+            //document.write(obj.d, "<br>");       //객체안의 d키의 값 javascript 출력
+
+            document.querySelector(".sample15_result").innerHTML=obj.a+"<br>"+obj.b[0]+"<br>"+obj.b[1]+"<br>"+obj.c.x+"<br>"+obj.c.y+"<br>"+obj.d
+
+        }
+    </script>
+</body>
+</html>

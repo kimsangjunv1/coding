@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML 기초</title>
+    <link rel="stylesheet" href="../javascript/asset/css/dracula.css"> <!-- 0. 드라큘라 적용 (맨 밑으로)-->
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <style>
         *{
             margin: 0;
@@ -85,6 +87,10 @@
             font-weight: normal;
             margin-bottom: 10px;
         }
+        .article h3 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
         .article p{
             margin-bottom: 10px;
         }
@@ -157,60 +163,44 @@
             </ul>
         </nav>
         <article class="article">
-            <h2>HTML 기본 문서</h2>
-            <p> <!-- &lt; / &gt;-->
-                html 요소는 &lt;head&gt; 요소와 &lt;body 요소&gt; 로 구성되어 있으며,<br>
-                &lt;head&gt; 요소 안에는 &lt;meta&gt;, &lt;title&gt;, &lt;link&gt;, &lt;style&gt;, &lt;script&gt; 등의 요소들이 올 수 있습니다
-            </p>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>요소명</th>
-                        <th>설명</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="center">&lt;meta&gt;</td>
-                        <td>HTML 문서의 설명, 키워드, 문서의 작성자 등을 지정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;title&gt;</td>
-                        <td>HTML 문서의 제목을 지정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;link&gt;</td>
-                        <td>외부의 CSS 파일을 HTML 문서에 연결할 때 사용합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;style&gt;</td>
-                        <td>HTML 문서 내에서 스타일(CSS)을 정의합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;script&gt;</td>
-                        <td>자바스크립트를 HTML 문서 내부에서 정의하거나 외부에서 자바스크립트 파일을 불러올 때 사용합니다.</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- 시멘틱 마크업 -->
+            <h2>01. 시멘틱 마크업</h2>
             <p>
-                [예시 1-1]에서 &lt;html lang="ko"&gt;나 &lt;meta charset="UTF-8"&gt;처럼 태그 내부에 부가적인 설정값을 선언하는 것을 속성(attribute)이라고 합니다.
+                시멘틱 사전적 의미는 '의미론적인'이라는 해석, 의미에 부합하는 태그를 사용하라는 뜻 <br><br>
+                마크업을 해야하는 이유는 모든 사람들이 정보를 동일하게 받아들일 수 있는 환경이 아닐수도 있기<br>
+                예를들어 시각장애인의 경우 html 문서의 콘텐츠 정보를 음성으로 전달해야하는데 이럴경우 전달을 위한 태그의 의미가 적절해야한다.
             </p>
-            <p>
-                lang 속성은 HTML 문서에서 사용하는 언어를 말하며 lang="ko"는 한국어, lang="en" 영어를 의미
-            </p>
-            <p>
-                lang 속성 중요이유 언어 설정에 따라 시각장애인들을 위해 읽어주는 프로그램이 설정 언어에 맞게 읽어주기 때문
-            </p>
-            <p>
-                lang 속성은 HTML 문서에서 꼭 정의해야 하는 속성
-            </p>
-            <p class="box">
-                &lt;i lang="de"&gt;Ich liebe dich&lt;/i&gt;
-            </p>
-            <p>
-                HTML5의 문자 인코딩 방식으로 주로 사용
-            </p>
+            <pre ><code class="language-js">{
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang="ko"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;title>시멘틱 마크업&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        반응형웹
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            }
+            </code></pre>
+            <p>위와 같이 할시 그저 '반응형웹'이라고만 읽어주기 떄문에 제목인지 알 수가 없다.</p>
+            <pre ><code class="language-js">{
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang="ko"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;title>시멘틱 마크업&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        반응형웹
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            }
+            </code></pre>
+            <p>위와 같이 해야만 이 부분을 '반응형웹' 헤딩 일이라고 읽어준다면 이 부분이 제목인지 알 수 있게 됩니다.</p>
+            <!-- 시멘틱 마크업 종료 -->
         </article>
     </section>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>
