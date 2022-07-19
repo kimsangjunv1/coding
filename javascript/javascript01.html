@@ -181,25 +181,26 @@
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
 <pre><code class="language-js">{
-            let x1 = 100;       //전역변수
-            let y1 = 200;       //전역변수
+    let x1 = 100;       //전역변수
+    let y1 = 200;       //전역변수
 
-            function func(){
-                let x1 = 100;       //지역변수
-                let z1 = "javascript";      //지역변수
-                x1=200;     //지역변수 100 -> 200
-                y1=300;     //전역변수 200 -> 300
+    function func(){
+        let x1 = 100;       //지역변수
+        let z1 = "javascript";      //지역변수
+        
+        x1=200;     //지역변수 100 -> 200
+        y1=300;     //전역변수 200 -> 300
 
-                document.write("함수 안");      //"함수 안"을 출력
-                document.write(x1);     //지역변수 200을 출력
-                document.write(y1);     //전역변수 300을 출력
-                document.write(z1);     //지역변수 "javascript" 출력
-            }
-            func();             //출력 : "함수 안", 200, 300, javascript
-            document.write("함수 밖");      //출력 : 함수 밖
-            document.write(x1);     //출력 : 200
-            document.write(y1);     //출력 : 300
-            document.write(z1);     //undefined
+        document.write("함수 안");      //"함수 안"을 출력
+        document.write(x1);     //지역변수 200을 출력
+        document.write(y1);     //전역변수 300을 출력
+        document.write(z1);     //지역변수 "javascript" 출력
+    }
+    func();             //출력 : "함수 안", 200, 300, javascript
+    document.write("함수 밖");      //출력 : 함수 밖
+    document.write(x1);     //출력 : 200
+    document.write(y1);     //출력 : 300
+    document.write(z1);     //undefined
 }
 </code></pre>
                 </div>
@@ -240,9 +241,9 @@
     const y = 200;      //상수
     const z = "javascript";     //상수
 
-    //x=300;        //변경할 수 없음.
-    //y=400;        //변경할 수 없음.
-    //z="jquery";        //변경할 수 없음.
+    x=300;        //변경할 수 없음.
+    y=400;        //변경할 수 없음.
+    z="jquery";        //변경할 수 없음.
 
     document.write(x);      //100을 출력한다.
     document.write(y);      //200을 출력한다.
@@ -274,12 +275,14 @@
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
 <pre><code class="language-js">{
     const arr = new array()
+
     arr[0] = 100;
     arr[1] = 200;
     arr[2] = "javascript"
-    //document.write(arr[0]);       //100 출력
-    //document.write(arr[1]);       //200 출력
-    //document.write(arr[2]);       //javascript 출력
+
+    document.write(arr[0]);       //100 출력
+    document.write(arr[1]);       //200 출력
+    document.write(arr[2]);       //javascript 출력
 }
 </code></pre>
                 </div>
@@ -308,9 +311,9 @@
 <pre><code class="language-js">{
     const arr = new Array(100, 200, "javascript")
 
-    //document.write(arr[0]);       //100 출력
-    //document.write(arr[1]);       //200 출력
-    //document.write(arr[2]);       //javascript 출력
+    document.write(arr[0]);       //100 출력
+    document.write(arr[1]);       //200 출력
+    document.write(arr[2]);       //javascript 출력
 }
 </code></pre>
                 </div>
@@ -342,9 +345,9 @@
     arr[1] = 200;
     arr[2] = "javascript";
 
-    //document.write(arr[0]);       //배열 첫번째를 100 출력
-    //document.write(arr[1]);       //배열 두번째를 200 출력
-    //document.write(arr[2]);       //배열 세번째를 javascript 출력
+    document.write(arr[0]);       //배열 첫번째를 100 출력
+    document.write(arr[1]);       //배열 두번째를 200 출력
+    document.write(arr[2]);       //배열 세번째를 javascript 출력
 }
 </code></pre>
                 </div>
@@ -373,9 +376,9 @@
 <pre><code class="language-js">{
     const arr = [100, 200, "javascript"];       //배열 속에 100, 200, javascript 배치
 
-    //document.write(arr[0]);       //배열 첫번째를 100 출력
-    //document.write(arr[1]);       //배열 두번째를 200 출력
-    //document.write(arr[2]);       //배열 세번째를 javascript 출력
+    document.write(arr[0]);       //배열 첫번째를 100 출력
+    document.write(arr[1]);       //배열 두번째를 200 출력
+    document.write(arr[2]);       //배열 세번째를 javascript 출력
 }
 </code></pre>
                 </div>
@@ -406,6 +409,7 @@
     obj[0] = 100;       //객체 첫번째 100 대입
     obj[1] = 200;       //객체 두번째 200 대입
     obj[2] = "javascript"       //객체 세번째 "javascript" 대입
+
     document.write(obj[0]);       //객체 첫번째 출력 : 100
     document.write(obj[1]);       //객체 두번째 출력 : 200
     document.write(obj[2]);       //객체 세번째 출력 : javascript
@@ -439,6 +443,7 @@
     obj[0] = 100;       //객체 첫번째 100 대입
     obj[1] = 200;       //객체 두번째 200 대입
     obj[2] = "javascript"       //객체 세번째 "javascript" 대입
+
     document.write(obj[0]);       //객체 첫번째 출력 : 100
     document.write(obj[1]);       //객체 두번째 출력 : 200
     document.write(obj[2]);       //객체 세번째 출력 : javascript
@@ -472,6 +477,7 @@
     obj[0] = 100;       //객체 첫번째 100 대입
     obj[1] = 200;       //객체 두번째 200 대입
     obj[2] = "javascript"       //객체 세번째 "javascript" 대입
+
     document.write(obj[0]);       //객체 첫번째 출력 : 100
     document.write(obj[1]);       //객체 두번째 출력 : 200
     document.write(obj[2]);       //객체 세번째 출력 : javascript
@@ -505,6 +511,7 @@
     obj[0] = 100;       //객체 첫번째(0) 자리에 100 대입
     obj[1] = 200;       //객체 세번째(1) 자리에 200 대입
     obj[2] = "javascript"       //객체 세번째(2) 자리에 javascript 대입
+
     document.write(obj[0]);     //객체 첫번째(0) 자리 출력 : 100
     document.write(obj[1]);     //객체 두번째(1) 자리 출력 : 200
     document.write(obj[2]);     //객체 세번째(2) 자리 출력 : javascript
@@ -537,9 +544,10 @@
     const obj = [
         {a:100, b:200},       //배열 안의 개체 키 a,b
         {c:"javascript"}]       //배열 안의 개체 키 c
-    document.write(obj[0].a, "<br>");       //배열 첫번째 자리의 객체 안 a키의 값 100출력
-    document.write(obj[0].b, "<br>");       //배열 첫번째 자리의 객체 안 b키의 값 200출력
-    document.write(obj[1].c, "<br>");       //배열 두번째 자리의 객체 안 c키의 값 javascript출력
+
+    document.write(obj[0].a);       //배열 첫번째 자리의 객체 안 a키의 값 100출력
+    document.write(obj[0].b);       //배열 첫번째 자리의 객체 안 b키의 값 200출력
+    document.write(obj[1].c);       //배열 두번째 자리의 객체 안 c키의 값 javascript출력
 }
 </code></pre>
                 </div>
@@ -569,9 +577,10 @@
     const obj = [
         {a:100, b:200},       //배열 안의 개체 키 a,b
         {c:"javascript"}]       //배열 안의 개체 키 c
-    document.write(obj[0].a, "<br>");       //배열 첫번째 자리의 객체 안 a키의 값 100출력
-    document.write(obj[0].b, "<br>");       //배열 첫번째 자리의 객체 안 b키의 값 200출력
-    document.write(obj[1].c, "<br>");       //배열 두번째 자리의 객체 안 c키의 값 javascript출력
+
+    document.write(obj[0].a);       //배열 첫번째 자리의 객체 안 a키의 값 100출력
+    document.write(obj[0].b);       //배열 첫번째 자리의 객체 안 b키의 값 200출력
+    document.write(obj[1].c);       //배열 두번째 자리의 객체 안 c키의 값 javascript출력
 }
 </code></pre>
                 </div>
