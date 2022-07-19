@@ -83,10 +83,8 @@
                     <!-- 결과보기 -->
                     <details>
                         <summary>결과보기</summary>
-                        <div>
-                            100<br>
-                            200<br>
-                            "javascript"
+                        <div class="sample01_result">
+                            
                         </div>
                     </details>
                     <!-- 결과보기 끝 -->
@@ -104,5 +102,18 @@
     <!-- //footer -->
     <script src="asset/js/highlight.min.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
     <script>hljs.highlightAll();</script><!-- 2. 스크립트 실행 (살짝 위로) -->
+    <script>
+        {
+            var x = 100;
+            var y = 200;
+            var z = "javascript";
+
+            document.write(x);
+            document.write(y);
+            document.write(z);
+            // innerText / innerHTML 두가지가 있다.
+            document.querySelector(".sample01_result").innerHTML=x+"<br>"+y+"<br>"+z
+        }
+    </script>
 </body>
 </html>
