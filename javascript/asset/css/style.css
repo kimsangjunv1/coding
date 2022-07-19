@@ -1,0 +1,82 @@
+/* 웹폰트 */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+/* 리셋 */
+/* 여백 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'NexonLv1Gothic';
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 링크 초기화 */
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/*목록 초기화 */
+li {
+    list-style: none;
+}
+
+/* 모든 페이지 레이아웃 */
+body{
+    padding: 40px;
+}
+#header {
+    border-bottom: 1px dashed #dcdcdc;
+}
+#main {
+    border-bottom: 1px dashed #dcdcdc;
+}
+#footer {
+    padding: 40px 0;
+    text-align: center;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+/* 헤더 영역 */
+#header h1 {
+    font-size: 60px;
+}
+
+.header_nav {}
+.header_nav ul {
+}
+.header_nav ul li {
+    display: inline;
+}
+.header_nav ul li a {
+    /* a태그는 박스나 인라인같은것이 안먹는다 */
+    border: 1px solid #222;
+    padding: 8px 25px;
+    display: inline-block; /*가로값은 먹이면서 블록으로 묶는다*/
+    margin-bottom: 8px;
+}
+.header_nav ul li a:hover {
+    /* a태그는 박스나 인라인같은것이 안먹는다 */
+    background-color: #000;
+    color: #fff;
+    transition: 0.3s;
+}
+.header_nav .study {
+    margin-top: 10px;
+}
+.header_nav .study li {}
+.header_nav .study li a {
+    border-radius: 50px;
+    padding: 6px 30px;
+    background-color: #000;
+    color: #fff;
+}
+@media (max-width: 800px){
+    body {
+        padding: 20px;
+    }
+}

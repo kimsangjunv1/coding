@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기본 규칙</title>
     
-    <link rel="stylesheet" href="css/dracula.css">
+    <link rel="stylesheet" href="asset/css/dracula.css">
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <style>
         *{
             margin: 0;
@@ -143,7 +144,16 @@
             text-align: center;
         }
         .sample{
-            height: 400px;
+            margin-bottom: 20px;
+        }
+        .sample h2{
+            font-weight: normal;
+            background-color: #f5f5f5;
+            font-size: 20px;
+            padding: 15px 20px;
+            border-radius: 10px 10px 0 0;
+        }
+        .sample .code{
             width: 100%;
             background-color: #000;
             border-radius: 0 0 10px 10px;
@@ -215,29 +225,35 @@
                     </tr>
                 </thead>
             </table>
-            <div class="sample">
-            <pre ><code class="language-js">{
-    &lt;!doctype html&gt;
-    &lt;html lang="ko"&gt;
-    &lt;head&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;title&gt;기본명령어&lt;/title&gt;
-        &lt;script&gt;
-            prompt('출력 페이지 수를입력하세요!','');// ''는 작은따옴표 두 개 입니다.
-            alert('자바스크립트');
-            document.write('자바스크립트');
-            console.log('자바스크립트');
-            confirm('정말 삭제 하시겠습니까?');
-        &lt;script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
-}
-            </code></pre>
+            <div class="script">
+                <div id="sample01" class="sample">
+                    <h2>09. 배열 : 여러개인 데이터를 저장 : 표현 방법 4번째</h2>
+                    <div class="code">
+                        <pre ><code class="language-js">{
+        &lt;!doctype html&gt;
+        &lt;html lang="ko"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;title&gt;기본명령어&lt;/title&gt;
+            &lt;script&gt;
+                prompt('출력 페이지 수를입력하세요!','');// ''는 작은따옴표 두 개 입니다.
+                alert('자바스크립트');
+                document.write('자바스크립트');
+                console.log('자바스크립트');
+                confirm('정말 삭제 하시겠습니까?');
+            &lt;script&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    }
+                        </code></pre>
+                    </div>
+                </div>
             </div>
             
         </article>
     </section>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>
