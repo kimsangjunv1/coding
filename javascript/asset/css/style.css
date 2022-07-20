@@ -35,6 +35,11 @@ body{
     border-bottom: 1px dashed #dcdcdc;
     padding-bottom: 40px;
 }
+
+#header h1 a{
+    font-size: 60px;
+    font-weight: 700;
+}
 /* javascript 01~04 사용중 */
 #main {
     padding: 43px 0;
@@ -67,6 +72,12 @@ body{
 }
 .header_nav ul li {
     display: inline;
+}
+
+/* 내가 눌려있는 페이지 */
+.header_nav ul li.active a{ 
+    background-color: #000;
+    color: #fff;
 }
 
 /* 메뉴 설명 --------------*/
@@ -166,6 +177,98 @@ body{
     background-color: #ffffff;
     padding: 10px;
 }
+
+/* 티스토리용 문서 */
+.document{
+    word-break: keep-all; /*글자로 끊어지지 않고 단어로 끊어짐*/
+}
+.document hr{
+    border: 0;
+    border-top: 1px dashed #dcdcdc;
+    margin-top: 45px;
+}
+.document i{ /* '프로그래밍 언어' 강조 관련 */
+    font-style: normal;
+    position: relative;
+}
+.document i::before{ /* 밑줄관련 */
+    content: '';
+    background-color: #0242f149;
+    width:100%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 20px;
+}
+.document .t_tit{
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+.document .t_tit2{
+    font-size: 22px;
+    line-height: 1.6;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+.document .t_tit3{
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    /*font-weight: 700; 폰트 진하게*/
+}
+.document .t_desc{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px !important;
+}
+
+.document .t_desc2{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid #0234f1;
+    background-color: #f9f9f9;
+}
+.document .t_box{
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    color: #666;
+    border-radius: 5px;
+}
+
+/* 표 */
+.document .t_table{
+    border: 1px solid #dcdcdc;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.document .t_table tr th{
+    background-color: #f9f9f9;
+}
+
+.document .t_table tr th,
+.document .t_table tr td{
+    border: 1px solid #dcdcdc;
+    font-weight: normal;
+    padding: 8px 10px;
+    color: #666;
+}
+.document .t_table .ce {
+    text-align: center;
+}
+/* 표 끝 */
+
 
 @media (max-width: 800px){
     body {
