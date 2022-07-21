@@ -50,8 +50,8 @@
             <h3 class="t_tit2">0부터 99까지 출력하기</h3>
             <div class="t_code">
 <pre><code class="language-js">//0부터 99까지 출력하기
-for( let i = 0; i&lt;100; i++){
-    document.write(i)
+for( let i = 0; i&lt;100; i++){       //i의 값을 1씩 증가
+    document.write(i)       //i 출력
 }    
 </code></pre>
             </div>
@@ -61,8 +61,8 @@ for( let i = 0; i&lt;100; i++){
             <h3 class="t_tit2">1부터 100까지 출력하기</h3>
             <div class="t_code">
 <pre><code class="language-js">//1부터 100까지 출력하기
-for( let i = 1; i&lt;100; i++){
-document.write(i)
+    for( let i = 0; i&lt;=100; i++){       //i의 값을 1씩 증가
+document.write(i)       //i 출력
 }    
 </code></pre>
             </div>
@@ -73,8 +73,8 @@ document.write(i)
             <div class="t_code">
             <p class="t_desc">짝수로 출력할때는 증가값을 2로 해주면 됩니다.</p>
 <pre><code class="language-js">//1부터 100까지 출력하기
-for( let i = 1; i&lt;100; i+=2){
-document.write(i)
+for( let i = 2; i&lt;=100; i+=2){        //i의 값을 100까지 2씩 더하기
+document.write(i)       //i 출력
 }    
 </code></pre>
             </div>
@@ -85,20 +85,20 @@ document.write(i)
             <p class="t_desc">중첩 for문을 이용해서 테이블을 만들 수 있습니다.</p>
             <div class="t_code">
     <pre><code class="language-js">//1부터 100까지 출력하기
-let table = "&lt;table&gt;";
+let table = "&lt;table&gt;";        //변수 테이블 값 &lt;table&gt; 생성
     
-    for (let i=0; i&lt;10; i++){
+    for (let i=0; i&lt;10; i++){        //i의 값이 10이되기 전까지 1씩 더하며 반복
         
-        table += "&lt;tr&gt;";
+        table += "&lt;tr&gt;";      //테이블에 tr 더하기
 
-        for(let j=0; j&lt;10; j++){
-            table += "&lt;td&gt;1&lt;/td&gt;";
+        for(let j=0; j&lt;10; j++){        //j의 값이 10이되기 전까지 1씩 더하며 반복
+            table += "&lt;td&gt;1&lt;/td&gt;";      //테이블에 td 더하기
         }
-        table += "&lt;/tr&gt;"
+        table += "&lt;/tr&gt;"      //tr 닫기태그 더하기
     
-    table += "&lt;/table&gt;
+    table += "&lt;/table&gt;"      //table 닫기태그 더하기
 
-document.write(table);
+document.write(table);      //테이블 출력
     </code></pre>
         </div>
         <div class="t_result">
