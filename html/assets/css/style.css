@@ -201,6 +201,11 @@ body {
     .main_refer .table table {
         min-width: 900px;
     }
+
+    .main_refer .table table tr th,
+    .main_refer .table table tr td {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 460px){
