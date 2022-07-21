@@ -239,11 +239,11 @@
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
 <pre><code class="language-js">{
-        const arr = [100, 200, 300, 400, 500];
-
-        for(let i=0; i&lt;arr.length; i++){ // i의 값을 최대 배열의 길이 만큼 1씩 증가시킵니다.
-            document.write(arr[i]); //i의 값으로 배열의 각 값을 출력합니다.
-        }
+    const arr = [100, 200, 300, 400, 500];
+    
+    for(let i=0; i&lt;arr.length; i++){ // i의 값을 최대 배열의 길이 만큼 1씩 증가시킵니다.
+        document.write(arr[i]); //i의 값으로 배열의 각 값을 출력합니다.
+    }
 }
 </code></pre>
                 </div>
@@ -284,7 +284,7 @@
 
     //for each문
     num.forEach(function(el, index, array){ //콜백함수 사용 (요소, 위치, 배열)
-
+    
     document.write(el); // num에서 요소만 출력
     document.write(index); // num에서 위치만 출력
     document.write(array); // num에서 배열만 출력
@@ -402,30 +402,31 @@
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
 <pre><code class="language-js">{
     const arr = [100, 200, 300, 400, 500];
+    
+    //forEach문
+    arr.forEach(function(el){ //불러오는 대상, (콜백함수(요소)){}
+        document.write(el);
+    });
+    
+    //forEach문
+    arr.forEach(function(el, index, array){ //불러오는 대상, (콜백함수(요소, 인덱스(위치), 배열))
+        document.write(el); // 요소를 출력
+        document.write(index); // 인덱스(위치)를 출력
+        document.write(array); // 요소를 출력
+    })
 
-            //forEach문
-            arr.forEach(function(el){ //불러오는 대상, (콜백함수(요소)){}
-                document.write(el);
-            });
+    //map문
+    arr.map(function(el){
+        document.write(el)
+    })
 
-            //forEach문
-            arr.forEach(function(el, index, array){ //불러오는 대상, (콜백함수(요소, 인덱스(위치), 배열))
-                document.write(el); // 요소를 출력
-                document.write(index); // 인덱스(위치)를 출력
-                document.write(array); // 요소를 출력
-            });
-
-            //map문
-            arr.map(function(el){
-                document.write(el)
-            });
-
-            //map문
-            arr.map(function(el, index, array){ //불러오는 대상, (콜백함수(요소, 인덱스(위치), 배열))
-                document.write(el); // 요소를 출력
-                document.write(index); // 인덱스(위치)를 출력
-                document.write(array); // 요소를 출력
-            });
+    //map문
+    arr.map(function(el, index, array){ //불러오는 대상, (콜백함수(요소, 인덱스(위치), 배열))
+        document.write(el); // 요소를 출력
+        document.write(index); // 인덱스(위치)를 출력
+        document.write(array); // 요소를 출력
+    });
+}
 </code></pre>
                 </div>
                 <div class="result">
