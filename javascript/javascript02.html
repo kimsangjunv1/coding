@@ -30,7 +30,7 @@
             <ul class="study">
                 <li><a href="study/basic.html">기본 규칙</a></li>
                 <li><a href="study/operator.html">연산자</a></li>
-                <li><a href="study/for.html">for</a></li>
+                <li><a href="study/for.html">for문</a></li>
 
             </ul>
         </nav>
@@ -239,17 +239,11 @@
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
 <pre><code class="language-js">{
-    // const arr = [100, 200, 300, 400, 500];
+        const arr = [100, 200, 300, 400, 500];
 
-            // document.write(arr[0]);
-            // document.write(arr[1]);
-            // document.write(arr[2]);
-            // document.write(arr[3]);
-            // document.write(arr[4]);
-
-            // for(let i=0; i&lt;arr.length; i++){
-            //     document.write(arr[i], "&lt;br>");
-            // }
+        for(let i=0; i&lt;arr.length; i++){ // i의 값을 최대 배열의 길이 만큼 1씩 증가시킵니다.
+            document.write(arr[i]); //i의 값으로 배열의 각 값을 출력합니다.
+        }
 }
 </code></pre>
                 </div>
@@ -284,18 +278,16 @@
     const num = [100, 200, 300, 400, 500]; //요소:eliment
 
     //for each문
-    num.forEach(function(el){
-    document.write(el);
-})
-
-    document.write("&lt;br>","&lt;br>")
+    num.forEach(function(el){  // 콜백함수 사용 (요소)
+    document.write(el);  // num에서 요소만 출력
+    })
 
     //for each문
-    num.forEach(function(el, index, array){ //뭘 쓰든 요소값을 불러옴, 뭘 쓰든 자리값을 불러옴, 뭘 쓰던 배열값을 출력
+    num.forEach(function(el, index, array){ //콜백함수 사용 (요소, 위치, 배열)
 
-    document.write(el);
-    document.write(index);
-    document.write(array);
+    document.write(el); // num에서 요소만 출력
+    document.write(index); // num에서 위치만 출력
+    document.write(array); // num에서 배열만 출력
     });
 }
 </code></pre>
@@ -305,6 +297,8 @@
                     <details>
                         <summary>결과보기</summary>
                         <div>
+                            100200300400500<br><br>
+
                             100<br>
                             0<br>
                             100, 200, 300, 400, 500<br>
@@ -339,11 +333,11 @@
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
 <pre><code class="language-js">{
-    const arr = [100, 200, 300, 400, 500];
+    const arr = [100, 200, 300, 400, 500]; // 배열 arr에 100,200,300,400,500 대입
 
     //for of문
-    for(let i of arr){ // arr에서 i(배열)를 출력
-    document.write(i, "<br>");
+    for(let i of arr){ // i를 배열로 설정
+    document.write(i); // i(배열)를 출력
 
     }
 }
@@ -354,11 +348,7 @@
                     <details>
                         <summary>결과보기</summary>
                         <div>
-                            100<br>
-                            200<br>
-                            300<br>
-                            400<br>
-                            500<br>
+                            100200300400500
                         </div>
                     </details>
                     <!-- 결과보기 끝 -->
@@ -377,13 +367,13 @@
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
 <pre><code class="language-js">{
-    const arr = [100, 200, 300, 400, 500];
+    const arr = [100, 200, 300, 400, 500]; // 배열 arr에 100,200,300,400,500 대입
 
     //for in문
     for(let i in arr){ // arr에서 i(배열)를 자리 출력
         
-    document.write(i, "<br>");
-    document.write(arr[i], "<br>");
+    document.write(i); // i(배열)을 출력 #1
+    document.write(arr[i]); // i(배열)을 출력 #2
 }
 </code></pre>
                 </div>
@@ -392,11 +382,7 @@
                     <details>
                         <summary>결과보기</summary>
                         <div>
-                            100<br>
-                            200<br>
-                            300<br>
-                            400<br>
-                            500<br>
+                            100200300400500<br>100200300400500
                         </div>
                     </details>
                     <!-- 결과보기 끝 -->
@@ -418,18 +404,16 @@
     const arr = [100, 200, 300, 400, 500];
 
             //forEach문
-            arr.forEach(function(el){ //불러오는 대상, (함수(요소)){}
+            arr.forEach(function(el){ //불러오는 대상, (콜백함수(요소)){}
                 document.write(el);
             });
 
             //forEach문
-            arr.forEach(function(el, index, array){ //불러오는 대상, (함수(요소)){}
-                document.write(el);
-                document.write(index);
-                document.write(array);
+            arr.forEach(function(el, index, array){ //불러오는 대상, (콜백함수(요소, 인덱스(위치), 배열))
+                document.write(el); // 요소를 출력
+                document.write(index); // 인덱스(위치)를 출력
+                document.write(array); // 요소를 출력
             });
-
-            document.write("<br>","<br>")
 
             //map문
             arr.map(function(el){
@@ -437,10 +421,10 @@
             });
 
             //map문
-            arr.map(function(el, index, array){
-                document.write(el);
-                document.write(index);
-                document.write(array);
+            arr.map(function(el, index, array){ //불러오는 대상, (콜백함수(요소, 인덱스(위치), 배열))
+                document.write(el); // 요소를 출력
+                document.write(index); // 인덱스(위치)를 출력
+                document.write(array); // 요소를 출력
             });
 </code></pre>
                 </div>
@@ -532,8 +516,6 @@
 
             // }
         }
-
-        document.write("<br>","<br>")
         
         //09. 배열에 데이터 불러오기 : for in
         {
@@ -567,11 +549,11 @@
             //     document.write(el)
             // });
 
-            arr.map(function(el, index, array){
-                // document.write(el);
-                // document.write(index);
-                document.write(array);
-            });
+            // arr.map(function(el, index, array){
+            //     // document.write(el);
+            //     // document.write(index);
+            //     document.write(array);
+            // });
         }
     </script>
 </body>
