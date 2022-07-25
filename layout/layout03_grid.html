@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            background-color: #E1F5FE;
+        }
+        #wrap{
+            width: 1200px;
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-areas:
+            "header header"
+            "nav nav"
+            "aside section"
+            "aside section2"
+            "aside section3"
+            "footer footer"
+            ;
+            grid-template-columns: 25% 75%;
+            grid-template-rows: 100px 100px 260px 260px 260px 100px;
+        }
+        #header{
+            grid-area: header;
+            background-color: #B3E5FC;
+        }
+        #nav{
+            grid-area: nav;
+            background-color: #81D4FA;
+        }
+        #aside{
+            grid-area: aside;
+            background-color: #4FC3F7;
+        }
+        #section{
+            grid-area: section;
+            background-color: #29B6F6;
+
+        }
+        #section2{
+            grid-area: section2;
+            background-color: #03A9F4;
+
+        }
+        #section3{
+            grid-area: section3;
+            background-color: #039BE5;
+
+        }
+        #footer{
+            grid-area: footer;
+            background-color: #0288D1;
+
+        }
+        @media(max-width:1280px){
+            #wrap{
+                width: 96%;
+                /* margin: 0 auto; 필요없음*/
+
+                /* display: grid; 필요없음*/
+                grid-template-areas:
+                "header header header"
+                "nav nav nav"
+                "aside section section"
+                "aside section2 section3"
+                "footer footer footer"
+                ;
+                grid-template-columns: 25% 37.5% 37.5%;
+                grid-template-rows: 100px 100px 260px 520px 100px;
+            }
+        }
+        @media(max-width:768px){
+            #wrap{
+                width: 100%;
+                /* margin: 0 auto; 필요없음*/
+
+                /* display: grid; 필요없음*/
+                grid-template-areas:
+                "header header"
+                "nav nav"
+                "aside section"
+                "aside section2"
+                "footer footer"
+                ;
+                grid-template-columns: 25% 75%;
+                grid-template-rows: 100px 100px 390px 390px 100px;
+            }
+        }
+        @media(max-width:480px){
+            #wrap{
+                /* width: 100%; 이미 768px 였을때 100%여서 필요없음*/
+                /* margin: 0 auto; 필요없음*/
+
+                /* display: grid; 필요없음*/
+                grid-template-areas:
+                "header"
+                "nav"
+                "aside"
+                "section"
+                "section2"
+                "footer"
+                ;
+                grid-template-columns: 100%;
+                grid-template-rows: 100px 100px 200px 430px 150px 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="aside"></div>
+        <div id="section"></div>
+        <div id="section2"></div>
+        <div id="section3"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

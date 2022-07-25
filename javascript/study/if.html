@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본규칙</title>
+    <link rel="stylesheet" href="../asset/css/style.css">
+    <link rel="stylesheet" href="../asset/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li class="active"><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">조건문</h2><!--블록-->
+            <p class="t_desc"><!--블록-->
+                조건문이란 조건을 가지고 참과 거짓의 경우를 지정 할 수 있는 함수입니다.
+            </p>
+            <div class="t_box">
+<pre>if(조건){
+    참이면 출력할 값
+} else if{ // 이전에 제시한 조건이 맞지 않았을시 또 제시할 조건
+    참이면 출력할 값
+} else{ // 모든 조건들에 부합하지 못했을때
+    출력할 값
+}
+
+    
+switch(변수){
+    case 변수가 특정한 값을가진경우1:
+        document.write("출력"); &lt;-사용자가 지정한 값 실행
+        break; &lt;-빠져나오기
+    case 변수가 특정한 값을가진경우2:
+    document.write("출력");
+        break; &lt;-빠져나오기
+    default : 모든 경우가 아니였을때 출력할 값
+        document.write("출력")
+}
+</pre>
+        </div>
+
+        <!-- 01번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>요금 구하기</h3>
+                <p>
+                    각 나이에 맞춰 요금을 구합니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    var age = prompt("당신의 나이는?");
+    var addmissionFee = '';
+    if(age < 13 || age >= 65){
+        addmissionFee = '2,000원';
+    }
+    else if(age >= 13 && age < 20){
+        addmissionFee = '4000원';
+    }
+    else{
+        addmissionFee = '6000원';
+    }
+    document.write(addmissionFee);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample06_result">
+                            43 입력시 6000원 출력
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 01번 메인 샘플 끝 -->
+
+        <!-- 02번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>성적 계산기</h3>
+                <p>
+                    html,css,javascript의 평균을 베이스로 과락을 결정합니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    var html = Number(prompt('html 점수 입력', ''));
+    var css = Number(prompt('css 점수 입력', ''));
+    var javascript = Number(prompt('javascript 점수 입력', ''));
+    var avg = (html + css + javascript) / 3; // 평균
+    var comment;
+    if(avg >= 60){
+        if(html > 40){
+            comment = 'HTML' + ' 40점 미만 불합격';
+        }
+        else if(css > 40){
+            comment = 'CSS' + ' 40점 미만 불합격';
+        }
+        else if(javascript > 40){
+            comment = 'JAVASCRIPT' + ' 40점 미만 불합격';
+        }
+        else{
+            comment = '평균 ' + avg + '점 합격';
+        }
+    }
+    else{
+        comment = '평균' + avg + '점 불합격';
+    }
+    document.write(comment);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample06_result">
+                            html : 50 <br>
+                            css : 40 <br>
+                            javascript : 30 <br>
+                            총 평균 40점으로 불합격 출력
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 02번 메인 샘플 끝 -->
+
+        <!-- 02번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>성적 계산기</h3>
+                <p>
+                    html,css,javascript의 평균을 베이스로 과락을 결정합니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    var classification = prompt('아동, 청소년, 성인 중 선택 입력', '');
+    switch(classification){
+        case '아동':
+            classification += ' : 입장료 무료';
+            break;
+        case '청소년':
+            classification += ' : 입장료 2,000원';
+            break;
+        case '성인':
+            classification += ' : 입장료 5,000원';
+            break;
+        default:
+            classification += '입력 값을 다시 확인하세요';
+    }
+    document.write(classification);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample06_result">
+                            청소년 입력 후 <br>
+                            청소년 입장료 2,000원 출력
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 02번 메인 샘플 끝 -->
+
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../asset/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

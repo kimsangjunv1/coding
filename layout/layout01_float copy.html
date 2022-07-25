@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 유형 01_float</title>
+    <style>
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #B3E5FC;
+        }
+        #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #81D4FA;
+        }
+        #main {
+            overflow: hidden;
+        }
+        #aside {
+            width: 300px;
+            height: 780px;
+            background-color: #4FC3F7;
+            float: left;
+        }
+        #artice1 {
+            width: 900px;
+            height: 260px;
+            background-color: #29B6F6;
+            float: left;
+        }
+        #artice2 {
+            width: 900px;
+            height: 260px;
+            background-color: #03A9F4;
+            float: left;
+        }
+        #artice3 {
+            width: 900px;
+            height: 260px;
+            background-color: #039BE5;
+            float: left;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #0288D1;
+        }
+        .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: block;
+            line-height: 0;
+        }
+        .clearfix::after {
+            clear:both;
+        }
+        @media(max-width:1300px){
+            #wrap {
+                width: 96%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="main" class="clearfix">
+            <div id="aside"></div>
+            <div id="artice1"></div>
+            <div id="artice2"></div>
+            <div id="artice3"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

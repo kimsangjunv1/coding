@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : 데이터 제어하기</title>
+    <title>자바스크립트 : 데이터 불러오기</title>
     <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/dracula.css">
 </head>
 <body>
     <header id="header">
@@ -29,12 +30,13 @@
             <ul class="study">
                 <li><a href="study/basic.html">기본 규칙</a></li>
                 <li><a href="study/operator.html">연산자</a></li>
-                <li><a href="study/for.html">for문</a></li>
+                <li><a href="study/for.html">반복문</a></li>
+                <li><a href="study/if.html">조건문</a></li>
+                <li><a href="study/type.html">데이터 타입</a></li>
             </ul>
         </nav>
     </header>
     <!-- //header -->
-
     <main id="main">
         <div class="main_menu">
             <ul>
@@ -52,15 +54,528 @@
                 <li><a href="#sample12">12. continue문</a></li>
             </ul>
         </div>
-        <div class="main_script"></div>
-        <div class="main_desc"></div>
+        
+        <!-- 01번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>01. if문</h3>
+                <p>
+                    객체 속의 변수 생성 가능
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">if(1>10){ // 조건에는 숫자 텍스트 배열 객체까지 모두 가능하다
+    document.write("실행되었습니다(true).", "<br>"); // 맞으면 true 출력
+    } else { //아닐시 실행시킬것
+            document.write("실행되었습니다(false).", "<br>"); // 틀리면 false 출력
+        }
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            실행되었습니다(true)
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 01번 메인 샘플 끝 -->
+
+        <!-- 02번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>02. if문 생략</h3>
+                <p>
+                    객체 속의 변수 생성 가능
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    const num=100;
+
+    if(num) document.write("실행되었습니다(true).", "<br>");
+    else document.write("실행되었습니다(false).", "<br>");
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample02_result">
+                            실행되었습니다(true)
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 02번 메인 샘플 끝 -->
+
+        <!-- 03번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>03. 다중 if문</h3>
+                <p>
+                    객체 속의 변수 생성 가능
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    const num=100;
+    
+    if(num==90){
+        document.write("실행되었습니다(num==90)");
+    } else if(num==100) {
+        document.write("실행되었습니다(num==100)");
+    } else if(num==110) {
+        document.write("실행되었습니다(num==110)");
+    } else if(num==120) {
+        document.write("실행되었습니다(num==120)");
+    } else {
+        document.write("실행되었습니다(num==값이없음)");
+    }
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample03_result">
+                            실행되었습니다(num==90)
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 03번 메인 샘플 끝 -->
+
+        <!-- 04번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>04. 중첩 if문</h3>
+                <p>
+                    객체 속의 변수 생성 가능
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    const num = 100; // 상수 num에 100 지정
+    
+    if(num == 100){ // num이 100과 같으면
+        document.write("실행되었습니다.(1)"); // 실행되었습니다.(1) 출력
+        if(num==100){ // num이 100과 같으면
+            document.write("실행되었습니다.(2)") // 실행되었습니다.(2) 출력
+            if(num==100){ // num이 100과 같으면
+                document.write("실행되었습니다.(3)") // 실행되었습니다.(3) 출력
+            }
+        }
+    }else{ // 틀릴시
+        document.write("실행되었습니다.(4)"); // 실행되었습니다.(5) 출력
+    }
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample04_result">
+                            실행되었습니다(num==100)<br>
+                            실행되었습니다(num==100)<br>
+                            실행되었습니다(num==100)
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 04번 메인 샘플 끝 -->
+
+        <!-- 05번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>05. 삼항 연산자</h3>
+                <p>
+                    객체 속의 변수 생성 가능
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    const num = 100;
+    //num의 값이 100이면 true를 출력하고 아니면 false를 출력하세요
+    
+    (num==100) ? document.write("true") : document.write("false"); //조건부 연산자 두번째 방법 (효율성 가장 좋음)
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample05_result">
+                            true
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 05번 메인 샘플 끝 -->
+
+        <!-- 06번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>06. 삼항 연산자</h3>
+                <p>
+                    객체 속의 변수 생성 가능
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+const num = 100;
+    
+switch(num){
+    case 100: //100일 경우에
+        document.write("실행되었습니다.(num==100)"); //실행되었습니다. (num==100) 출력
+        break; //빠져나오기
+    case 110:
+        document.write("실행되었습니다.(num==110)"); //실행되었습니다. (num==110) 출력
+        break; //빠져나오기
+    case 120:
+        document.write("실행되었습니다.(num==120)"); //실행되었습니다. (num==120) 출력
+        break; //빠져나오기
+    case 130:
+        document.write("실행되었습니다.(num==130)"); //실행되었습니다. (num==130) 출력
+        break; //빠져나오기
+    default :
+        document.write("실행되었습니다.(num==값이 없음)"); //실행되었습니다. (num==값이 없음) 출력
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample06_result">
+                            실행되었습니다.(num==100)
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 06번 메인 샘플 끝 -->
+
+        <!-- 07번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>07. while문</h3>
+                <p>
+                    객체 속의 변수 생성 가능
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    let num = 1;
+    
+    while(num &lt;= 5){ //조건을 먼저 실행
+        document.write("실행되었습니다.");
+        num++;
+    }
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample06_result">
+                            실행되었습니다.<br>
+                            실행되었습니다.<br>
+                            실행되었습니다.<br>
+                            실행되었습니다.<br>
+                            실행되었습니다.
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 07번 메인 샘플 끝 -->
+
+        <!-- 08번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>08. do while문</h3>
+                <p>
+                    객체 속의 변수 생성 가능
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    let num = 1;
+    
+    do{ //얘를 먼저 실행
+        document.write("실행되었습니다.");
+        num++;
+    } while (num &lt;=5);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample06_result">
+                            실행되었습니다.<br>
+                            실행되었습니다.<br>
+                            실행되었습니다.<br>
+                            실행되었습니다.<br>
+                            실행되었습니다.
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 08번 메인 샘플 끝 -->
+
+        <!-- 09번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>09. for문</h3>
+                <p>
+                    객체 속의 변수 생성 가능
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    let num = [1,2,3,4,5,6,7,8,9];
+
+    for(let i=0; i&lt;num.length; i++){
+        document.write(num[i] + ".실행되었습니다.")
+    }
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample09_result">
+                            1.실행되었습니다.<br>
+                            2.실행되었습니다.<br>
+                            3.실행되었습니다.<br>
+                            4.실행되었습니다.<br>
+                            5.실행되었습니다.<br>
+                            6.실행되었습니다.<br>
+                            7.실행되었습니다.<br>
+                            8.실행되었습니다.<br>
+                            9.실행되었습니다.<br>
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 09번 메인 샘플 끝 -->
+
+        <!-- 10번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>10. 중첩 for문</h3>
+                <p>
+                    객체 속의 변수 생성 가능
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    for(let i = 1; i &lt;= 2; i++) {
+        document.write(i + "실행");
+        for(let j = 1; j &lt;= 5; j++) {
+            document.write(j + "실행");
+        }
+    }
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample10_result">
+                            1실행<br>
+                            1실행<br>
+                            2실행<br>
+                            3실행<br>
+                            4실행<br>
+                            5실행<br>
+                            2실행<br>
+                            1실행<br>
+                            2실행<br>
+                            3실행<br>
+                            4실행<br>
+                            5실행
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 10번 메인 샘플 끝 -->
+
     </main>
     <!-- //main -->
-    
     <footer id="footer">
-        <a href="mailto:to_before@naver.com">to_before@naver.com</a>
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
     </footer>
     <!-- //footer -->
+    <script src="asset/js/highlight.min.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>hljs.highlightAll();</script><!-- 2. 스크립트 실행 (살짝 위로) -->
 
+    <!-- 데이터 -->
+    <script>
+        //(제어문 조건문, 반복문, 중지, 건너뛰기)
+        //01. if문
+        {
+            //틀림의 경우 : false, 0, undefined, null
+            //맞음의 경우 : true, 1, "0", "1", 0<10 ,[], {}
+            // if(1>10){ // 조건에는 숫자 텍스트 배열 객체까지 모두 가능하다
+            //     document.write("실행되었습니다(true).", "<br>"); // 맞으면 true 출력
+            // } else { //아닐시 실행시킬것
+            //     document.write("실행되었습니다(false).", "<br>"); // 틀리면 false 출력
+            // }
+        }
+        
+        //02. if문 생략
+        {
+    
+            // const num=100;
+    
+            // if(num) document.write("실행되었습니다(true).", "<br>");
+            // else document.write("실행되었습니다(false).", "<br>");
+        }
+        
+        //03. 다중 if문
+        {
+    
+            // const num=100;
+    
+            // if(num==90){
+            //     document.write("실행되었습니다(num==90)");
+            // } else if(num==100) {
+            //     document.write("실행되었습니다(num==100)");
+            // } else if(num==110) {
+            //     document.write("실행되었습니다(num==110)");
+            // } else if(num==120) {
+            //     document.write("실행되었습니다(num==120)");
+            // } else {
+            //     document.write("실행되었습니다(num==값이없음)");
+            // }
+        }
+    
+        //04. 중첩 if문
+        {
+            // const num = 100; // 상수 num에 100 지정
+    
+            // if(num == 100){ // num이 100과 같으면
+            //     document.write("실행되었습니다.(1)"); // 실행되었습니다.(1) 출력
+            //     if(num==100){ // num이 100과 같으면
+            //         document.write("실행되었습니다.(2)") // 실행되었습니다.(2) 출력
+            //         if(num==100){ // num이 100과 같으면
+            //             document.write("실행되었습니다.(3)") // 실행되었습니다.(3) 출력
+            //         }
+            //     }
+            // }else{ // 틀릴시
+            //     document.write("실행되었습니다.(4)"); // 실행되었습니다.(5) 출력
+            // }
+        }
+    
+        //05. 조건부 연산자(삼항 연산자)
+        {
+            // const num = 100;
+            // //num의 값이 100이면 true를 출력하고 아니면 false를 출력하세요
+    
+            // if(num==100){  //조건부 연산자 첫번째 방법 (효율성 떨어짐)
+            //     document.write("true");
+            // }else{
+            //     document.write("false");
+            // }
+    
+            // (num==100) ? document.write("true") : document.write("false"); //조건부 연산자 두번째 방법 (효율성 가장 좋음)
+        }
+    
+        //06. switch문
+        {
+            // const num = 100;
+    
+            // switch(num){
+            //     case 100: //100일 경우에
+            //         document.write("실행되었습니다.(num==100)"); //실행되었습니다. (num==100) 출력
+            //         break; //빠져나오기
+            //     case 110:
+            //         document.write("실행되었습니다.(num==110)"); //실행되었습니다. (num==110) 출력
+            //         break; //빠져나오기
+            //     case 120:
+            //         document.write("실행되었습니다.(num==120)"); //실행되었습니다. (num==120) 출력
+            //         break; //빠져나오기
+            //     case 130:
+            //         document.write("실행되었습니다.(num==130)"); //실행되었습니다. (num==130) 출력
+            //         break; //빠져나오기
+            //     default :
+            //         document.write("실행되었습니다.(num==값이 없음)"); //실행되었습니다. (num==값이 없음) 출력
+            // }
+        }
+    
+        //07.while문 (반복문)
+        {
+            // let num = 1;
+    
+            // while(num <= 5){ //조건을 먼저 실행
+            //     document.write("실행되었습니다.");
+            //     num++;
+            // }
+        }
+    
+        //08.do while문 (반복문)
+        {
+            // let num = 1;
+    
+            // do{ //얘를 먼저 실행
+            //     document.write("실행되었습니다2.");
+            //     num++;
+            // } while (num <=5);
+        }
+    
+        //09. for문
+        {
+            // for(let i=1; i<100; i++){
+            //     document.write(i+". 실행되었습니다. <br>")
+            // }
+    
+            // let num = [1,2,3,4,5,6,7,8,9];
+    
+            // for(let i=0; i<num.length; i++){
+            //     document.write(num[i] + ".실행되었습니다.")
+            // }
+        }
+    
+        //10. 중첩 for문
+        {
+            // for(let i=1; i<=2; i++){
+            //     document.write(i+"실행");
+            //     for(let j=1; j<=5; j++){
+            //         document.write(j+"반복");
+            //     }
+            // }
+        }
+    </script>
 </body>
 </html>
