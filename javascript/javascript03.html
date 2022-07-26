@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 : 데이터 실행하기</title>
-    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracula.css"> <!-- 0. 드라큘라 적용 (맨 밑으로)-->
 </head>
 <body>
     <header id="header">
@@ -32,14 +33,15 @@
                 <li><a href="study/for.html">반복문</a></li>
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">데이터 타입</a></li>
+                <li><a href="study/function.html">함수</a></li>
             </ul>
         </nav>
     </header>
     <!-- //header -->
-<!-- .main_menu -->
-    <main id="main"> 
-        <div class="main_menu"></div>
-            <ul>
+
+    <main id="main">
+        <div class="main_menu">
+            <ul><!--ul>li*17>a[href="#"]{$$} 사용함-->
                 <li><a href="#sample01">01. 선언적 함수</a></li>
                 <li><a href="#sample02">02. 익명 함수</a></li>
                 <li><a href="#sample03">03. 매개변수 함수</a></li>
@@ -70,15 +72,456 @@
                 <li><a href="#sample28">28. 클래스</a></li>
                 <li><a href="#sample29">29. 클래스 상속</a></li>
             </ul>
-        <div class="main_script"></div>
-        <div class="main_desc"></div>
+        </div>
+        
+        <!-- 01번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>01. 선언적 함수</h3>
+                <p>
+                    함수를 만드는 방법입니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    function func(){
+        document.write("1번. 함수가 실행되었습니다.")
+    }
+    func();
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            1번. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 01번 메인 샘플 끝 -->
+
+        <!-- 02번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>02. 익명 함수</h3>
+                <p>
+                    변수명에 함수코드를 저장해 사용합니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    데이터 타입 (자료형) --> 타입 스크립트
+    const x = 100;
+    const x1 = "100";
+    const x2 = [];
+    const x3 = {};
+    const x4 = null, undefined;
+    const x5 = function(){}
+    const x6 = true, boolean;
+
+    const func = function(){
+        document.write("2번. 함수가 실행되었습니다.")
+    }
+    func();
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            2번. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 02번 메인 샘플 끝 -->
+
+        <!-- 03번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>03. 매개변수 함수</h3>
+                <p>
+                    함수를 호출할 때 인수로 전달된 값을 함수 내부에서 사용할 수 있게 해주는 변수입니다.<br>
+                    또한, 함수의 인수(argument)란 함수가 호출될 때 함수로 값을 전달해주는 변수를 가리킵니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    function func(str){ //함수 안에 넣었다고해서 파라미터,인자라고 불린다
+        document.write(str);
+    }
+    func("3번. 함수가 실행되었습니다.<br>")
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            3번. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 03번 메인 샘플 끝 -->
+
+        <!-- 04번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>04. 리턴값 함수</h3>
+                <p>
+                    리턴값이란 함수가 어떠한 기능을 수행하고 그 결과를 호출한 곳으로 돌려주는 값을 말합니다.<br>
+함수가 어떠한 기능을 수행하고 돌려줄 값이 있으면 return 명령을 사용합니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    function func(){
+        const str = "4번. 함수가 실행되었습니다.4<br>";
+        return str;
+    }
+    document.write(func());
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            4번. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 04번 메인 샘플 끝 -->
+
+        <!-- 05번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>05. 화살표 함수 : 선언적 함수</h3>
+                <p>
+                    기본 함수 표현을 좀 더 간단하게 표현 해줄 수 있는 함수이다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    func = () => document.write("5번. 함수가 실행되었습니다.");
+
+    func();
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            5번. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 05번 메인 샘플 끝 -->
+
+        <!-- 06번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>06. 화살표 함수 : 익명 함수</h3>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    //1번째 방법
+    const func = function(){
+        document.write("6-1번. 안녕")
+    }
+
+    //2번째 방법
+    const func = () => {
+        document.write("6-1번. 안녕")
+    }
+
+    //3번째 방법
+    const func = () => document.write("6-1번. 안녕");
+    func();
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            6-1번. 안녕
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 06번 메인 샘플 끝 -->
+
+        <!-- 07번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>07. 화살표 함수 : 매개변수 함수</h3>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+            <div class="t_code"></div>
+<pre><code class="language-js">{
+    //1번째 방법
+    function func(str){
+        document.write(str);
+    }
+
+    //2번째 방법
+    func = (str) => document.write(str);
+
+    //3번째 방법
+    func = str => document.write(str);
+
+    func("7번. 안녕");
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            7번. 안녕
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 07번 메인 샘플 끝 -->
+
+        <!-- 08번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>08. 화살표 함수 : 리턴값 함수</h3>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    // function func(){
+    //     const str = "8번. 안녕";
+    //     return str;
+    // }
+
+    func = () => {
+        const str = "8번. 안녕";
+        return str;
+    }
+
+    document.write(func())
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            8번. 안녕
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 08번 메인 샘플 끝 -->
+    </div>
     </main>
     <!-- //main -->
-    
+
+    <!-- footer 시작 -->
     <footer id="footer">
         <a href="mailto:to_before@naver.com">to_before@naver.com</a>
     </footer>
-    <!-- //footer -->
+    <!-- footer 끝 -->
 
+    <!-- 코드 적용 스크립트 -->
+    <script src="assets/js/highlight.min.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>hljs.highlightAll();</script><!-- 2. 스크립트 실행 (살짝 위로) -->
+    <!-- 코드 적용 스크립트 끝 -->
+
+    <script>
+        //01
+        // {
+        //     var x = 100;
+        //     var y = 200;
+        //     var z = "javascript";
+
+        //     //document.write(x);
+        //     //document.write(y);
+        //     //document.write(z);
+        //     // innerText / innerHTML 두가지가 있다.
+        //     document.querySelector(".sample01_result").innerHTML=x+"<br>"+y+"<br>"+z
+        // }
+        //01 끝
+
+        // ------------------------------------------------------------------------------------------------------------
+
+        //변수(데이터 저장), 배열(데이터 저장, 객체(데이터 저장), ---> 함수(실행문)(제어문)
+        //함수는 총 4가지로 구성됨
+        //01. 선언적 함수
+        //01. 익명 함수
+        //01. 매개변수 함수
+        //01. 리턴값 함수
+        
+        // {
+        // //     for(let i=0; i<=10; i++){
+        //             // document.write(<br>);
+        // //      }
+        // }
+
+
+
+
+
+
+
+
+        //01. 선언적 함수
+        // {
+        //     function func(){
+        //         document.write("1번. 함수가 실행되었습니다.<br>")
+        //     }
+        //     func();
+        // }
+
+        //02. 익명 함수
+        // {
+        //     데이터 타입 (자료형) --> 타입 스크립트
+        //     const x = 100;
+        //     const x1 = "100";
+        //     const x2 = [];
+        //     const x3 = {};
+        //     const x4 = null, undefined;
+        //     const x5 = function(){}
+        //     const x6 = true, boolean;
+
+        //     const func = function(){
+        //         document.write("2번. 함수가 실행되었습니다.<br>")
+        //     }
+        //     func();
+        // }
+
+        //03. 매개변수 함수
+        //변수 : 지역변수 + 전역변수 + 매개변수
+        //함수 : 지역함수 + 전역함수
+        // {
+        //     function func(str){ //함수 안에 넣었다고해서 파라미터,인자라고 불린다
+        //         document.write(str);
+        //     }
+        //     func("3번. 함수가 실행되었습니다.<br>")
+        // }
+
+        //04. 리턴값 함수
+        // {
+        //     function func(){
+        //         const str = "4번. 함수가 실행되었습니다.4<br>";
+        //         return str;
+        //     }
+        //     document.write(func());
+        // }
+
+        //ECMAscript1
+        //ECMAscript2
+        //ECMAscript3
+        //ECMAscript4
+        //ECMAscript5
+        //ECMAscript6(약식으로는 es6) 화살표 함수, let, const
+
+        //05. 화살표 함수 (선언적 함수)
+        // {
+        //     function func(){
+        //         document.write("함수가 실행되었습니다.1<br>")
+        //     }
+        //     func();
+
+        //     func = () => {
+        //         document.write("안녕");
+        //     }
+
+        //     func = () => document.write("5번. 안녕<br>");
+
+        //     func();
+        // }
+
+        //06. 화살표 함수 (익명 함수)
+        // {
+        //     1번째 방법
+        //     const func = function(){
+        //         document.write("6번. 안녕<br>")
+        //     }
+
+        //     2번째 방법 (화살표)
+        //     const func = () => {
+        //         document.write("6-1번. 안녕")
+        //     }
+
+        //     3번째 방법 (익명))
+        //     const func = () => document.write("6-1번. 안녕<br>");
+        //     func();
+
+        // }
+        //07. 화살표 함수 (매개변수 함수)
+        // {
+        //     1번째 방법
+        //     function func(str){
+        //         document.write(str);
+        //     }
+
+        //     2번째 방법
+        //     func = (str) => document.write(str);
+
+        //     3번째 방법
+        //     func = str => document.write(str);
+
+        //     func("7번. 안녕안녕<br>");
+        // }
+        //08. 화살표 함수 (리턴값 함수)
+        // {
+        //     // function func(){
+        //     //     const str = "8번. 안녕";
+        //     //     return str;
+        //     // }
+
+        //     func = () => {
+        //         const str = "8번. 안녕";
+        //         return str;
+        //     }
+
+        //     document.write(func())
+        // }
+
+        //01. 선언적 함수
+        //02. 익명 함수
+        //03. 매개변수 함수
+        //04. 리턴 함수
+        //05. 화살표함수(익명 함수)
+        //06. 화살표함수(매개변수 함수)
+        //07. 화살표함수(리턴 함수)
+        //08. 화살표함수(화살표 함수)
+    </script>
 </body>
 </html>

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 : 연산자</title>
-    <link rel="stylesheet" href="../asset/css/style.css">
-    <link rel="stylesheet" href="../asset/css/dracula.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
 </head>
 <body>
     <header id="header">
@@ -33,6 +33,7 @@
                 <li class="active"><a href="for.html">반복문</a></li>
                 <li><a href="if.html">조건문</a></li>
                 <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
             </ul>
         </nav>
     </header>
@@ -47,30 +48,32 @@
             // let table3 = {}; //객체
             // let table4; //특수값(null 또는 undefined) -->
             <h2 class="t_tit">데이터 타입</h2>
-            <h2 class="t_desc">데이터 타입은 변수에 저장되는 데이터의 유형으로 PRIMITIVE 데이터 타입과 object 데이터 타입으로 나눌 수 있습니다.</h2>
+            <p class="t_desc">데이터 타입은 변수에 저장되는 데이터의 유형으로 PRIMITIVE 데이터 타입과 object 데이터 타입으로 나눌 수 있습니다.</p>
             <hr>
             <h2 class="t_tit2">문자</h2>
-            <h2 class="t_desc">큰 따옴표와 작은 따옴표로 표현 가능합니다..</h2>
+            <p class="t_desc">큰 따옴표와 작은 따옴표로 표현 가능합니다..</p>
             <p class="t_desc2">
-                "1" , '1'
+                맞는 예시 : "1" , '1'<br>
+                틀린 예시 : 1
             </p>
 
             <h2 class="t_tit2">숫자</h2>
-            <h2 class="t_desc">정수, 소수점, 지수를 표현 가능합니다.</h2>
+            <p class="t_desc">정수, 소수점, 지수를 표현 가능합니다.</p>
             <p class="t_desc2">
-                1 , 0.2
+                맞는 예시 : 1<br>
+                틀린 예시 : "1" , '1'
             </p>
 
             <h2 class="t_tit2">boolean(논리)</h2>
-            <h2 class="t_desc">true와 false의 값을 표현합니다.</h2>
+            <p class="t_desc">true와 false의 값을 표현합니다.</p>
             <p class="t_desc2">
-                let temp1 = (5>4);<br>
-                console.log(temp1);<br>
+                let temp1 = (5>4) //해설 : 5는 4보다 크다를 temp1에 삽입;<br>
+                console.log(temp1) // 해설 : temp1(true)을 출력;<br>
                 출력 값 : true
             </p>
 
             <h2 class="t_tit2">특수값</h2>
-            <h2 class="t_desc">데이터값을 지정하지 않았을때, 객체 속성값을 지정하지 않았을때 표현되는 값</h2>
+            <p class="t_desc">데이터값을 지정하지 않았을때, 객체 속성값을 지정하지 않았을때 표현되는 값</p>
             <p class="t_desc2">
                 let temp1 = 10;<br>
                 let temp2;<br>
@@ -79,7 +82,7 @@
             </p>
 
             <h2 class="t_tit2">null</h2>
-            <h2 class="t_desc">변수를 빈 상태로 만들거나 데이터를 저장했으나 값이 없을때 null로 반환합니다.</h2>
+            <p class="t_desc">변수를 빈 상태로 만들거나 데이터를 저장했으나 값이 없을때 null로 반환합니다.</p>
             <p class="t_desc2">
                 var obj=10;<br>
                 obj=null;<br>
@@ -87,7 +90,7 @@
             </p>
 
             <h2 class="t_tit2">typeof</h2>
-            <h2 class="t_desc">데이터 타입 조회시 typeof 명령어를 사용합니다.</h2>
+            <p class="t_desc">데이터 타입 조회시 typeof 명령어를 사용합니다.</p>
             <p class="t_desc2">
                 let num = 10 <br>
                 let str = '문자';
@@ -101,7 +104,7 @@
         <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
     </footer>
     <!-- //footer -->
-    <script src="../asset/js/highlight.min.js"></script>
+    <script src="../assets/js/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
     </script>

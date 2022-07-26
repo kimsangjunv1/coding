@@ -111,7 +111,7 @@ body{
 /* 메인 샘플 --------------*/
 .main_sample{
     margin-top: 40px;
-    /*border-top: 1px dashed #dcdcdc;*/
+    border-top: 1px dashed #dcdcdc;
     padding-top: 40px;
 }
 
@@ -186,6 +186,7 @@ body{
     border: 0;
     border-top: 1px dashed #dcdcdc;
     margin-top: 45px;
+    margin-bottom: 45px;
 }
 .document i{ /* '프로그래밍 언어' 강조 관련 */
     font-style: normal;
@@ -193,7 +194,7 @@ body{
 }
 .document i::before{ /* 밑줄관련 */
     content: '';
-    background-color: #0242f149;
+    background-color: #4a02f12c;
     width:100%;
     height: 10px;
     position: absolute;
@@ -235,7 +236,7 @@ body{
     color: #666;
     margin-bottom: 10px !important;
     padding: 15px 20px !important;
-    border-left: 4px solid #0234f1;
+    border-left: 4px solid #4a02f1;
     background-color: #f9f9f9;
 }
 .document .t_box{
