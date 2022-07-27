@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en44">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+    }
+
+    #wrap{
+        margin: 0 auto;
+        color: white;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    #header {
+        height: 100px;
+        width: 100%;
+        background-color: #F48080;
+        line-height: 100px;
+        overflow: hidden;
+    }
+    .header_1{
+        height: 100px;
+        width: 30%;
+        background-color: #F86464;
+        float: left;
+    }
+    .header_2{
+        height: 100px;
+        width: 70%;
+        background-color: #FEA5A5;
+        float: left;
+    }
+    #slide {
+        height: 400px;
+        width: 100%;
+        background-color: #EC5C5C;
+    }
+    .slide_1 {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        line-height: 400px;
+        color: #fff;
+        }
+    #ad {
+        height: 500px;
+        width: 100%;
+        background-color: #FEA5A5;
+    }
+    .ad_top{
+        height: 50%;
+        width: 100%;
+        background-color: #333;
+        line-height: 250px;
+    }
+    .ad_bot{
+        height: 50%;
+        width: 100%;
+        background-color: #EA7F7F;
+        text-align: center;
+        line-height: 250px;
+        color: #fff;
+    }
+    .ad_contain1{
+        height: 100%;
+        width: 200px;
+        background-color: #F39C9C;
+        float: left;
+    }
+    .ad_contain2{
+        height: 100%;
+        width: 200px;
+        background-color: #EA8686;
+        float: left;
+    }
+    .ad_contain3{
+        height: 100%;
+        width: 200px;
+        background-color: #EE7C7C;
+        float: left;
+    }
+    .ad_contain4{
+        height: 100%;
+        width: 200px;
+        background-color: #C87575;
+        float: left;
+    }
+    .ad_contain5{
+        height: 100%;
+        width: 200px;
+        background-color: #EB7B7B;
+        float: left;
+    }
+    .ad_contain6{
+        height: 100%;
+        width: 200px;
+        background-color: #D66B6B;
+        float: left;
+    }
+    #notice {
+        height: 500px;
+        width: 100%;
+        background-color: #FFBFBF;
+        overflow: hidden;
+    }
+    .notice_left{
+        height: 100%;
+        width: 60%;
+        background-color: #EB6666;
+        float: left;
+        line-height: 500px;
+        color: #fff;
+    }
+    .notice_right{
+        height: 100%;
+        width: 40%;
+        background-color: #777;
+        float: left;
+    }
+    .notice_top{
+        height: 50%;
+        width: 100%;
+        background-color: #CE5F5F;
+        line-height: 250px;
+        color: #fff;
+    }
+    .notice_bot{
+        height: 50%;
+        width: 100%;
+        background-color: #FE7F7F;
+        line-height: 250px;
+        color: #fff;
+    }
+    #footer {
+        height: 100px;
+        width: 100%;
+        background-color: #FE7F7F;
+        line-height: 100px;
+        color: #fff;
+    }
+
+    .container{
+        height: inherit;
+        width: 1200px;
+        background-color: rgba(255,255,255,0.3);
+        margin: 0 auto;
+    }
+</style>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">
+                <div class="header_1"></div>
+                <div class="header_2"></div>
+            </div>
+        </div>
+        <div id="slide">
+            <div class="container">
+                <div class="slide_1"></div>
+            </div>
+        </div>
+        <div id="ad">
+            <div class="container">
+                <div class="ad_top">
+                    <div class="ad_contain1"></div>
+                    <div class="ad_contain2"></div>
+                    <div class="ad_contain3"></div>
+                    <div class="ad_contain4"></div>
+                    <div class="ad_contain5"></div>
+                    <div class="ad_contain6"></div>
+                </div>
+                <div class="ad_bot"></div>
+            </div>
+
+        </div>
+        <div id="notice">
+            <div class="container">
+                <div class="notice_left"></div>
+                <div class="notice_right">
+                    <div class="notice_top"></div>
+                    <div class="notice_bot"></div>
+                </div>
+            </div>
+
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="footer_container"></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    {
+        const arr=["헤더 1","헤더 2","광고","컨1","컨2","컨3","컨4","컨5","컨6","컨테이너 하단","공지사항","공지 상단","공지 하단","푸터"]
+        document.querySelector(".header_1").innerHTML=arr[0]
+        document.querySelector(".header_2").innerHTML=arr[1]
+        document.querySelector(".slide_1").innerHTML=arr[2]
+        document.querySelector(".ad_contain1").innerHTML=arr[3]
+        document.querySelector(".ad_contain2").innerHTML=arr[4]
+        document.querySelector(".ad_contain3").innerHTML=arr[5]
+        document.querySelector(".ad_contain4").innerHTML=arr[6]
+        document.querySelector(".ad_contain5").innerHTML=arr[7]
+        document.querySelector(".ad_contain6").innerHTML=arr[8]
+        document.querySelector(".ad_bot").innerHTML=arr[9]
+        document.querySelector(".notice_left").innerHTML=arr[10]
+        document.querySelector(".notice_top").innerHTML=arr[11]
+        document.querySelector(".notice_bot").innerHTML=arr[12]
+        document.querySelector(".footer_container").innerHTML=arr[13]
+        
+    }
+    {   
+        for(let i=2; i<=16; i+=2){
+            if(i % 4==0){
+                document.write("<span style='color:red'>"+i+"</span>");
+            } else{
+                document.write("<span style='color:blue'>"+i+"</span>");
+            }
+        }
+    }
+</script>
+</html>

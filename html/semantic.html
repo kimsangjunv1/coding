@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML 기초</title>
-    <link rel="stylesheet" href="../javascript/asset/css/dracula.css"> <!-- 0. 드라큘라 적용 (맨 밑으로)-->
+    <link rel="stylesheet" href="../javascript/assets/css/dracula.css"> <!-- 0. 드라큘라 적용 (맨 밑으로)-->
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <style>
@@ -150,44 +150,53 @@
             </ul>
         </nav>
         <article class="article">
-            <!-- 시멘틱 마크업 -->
-            <h2>01. 시멘틱 마크업</h2>
-            <p>
-                시멘틱 사전적 의미는 '의미론적인'이라는 해석, 의미에 부합하는 태그를 사용하라는 뜻 <br><br>
-                마크업을 해야하는 이유는 모든 사람들이 정보를 동일하게 받아들일 수 있는 환경이 아닐수도 있기<br>
-                예를들어 시각장애인의 경우 html 문서의 콘텐츠 정보를 음성으로 전달해야하는데 이럴경우 전달을 위한 태그의 의미가 적절해야한다.
-            </p>
-            <pre ><code class="language-js">{
-    &lt;!DOCTYPE html&gt;
-    &lt;html lang="ko"&gt;
-        &lt;head&gt;
-            &lt;meta charset="UTF-8"&gt;
-            &lt;title>시멘틱 마크업&lt;/title&gt;
-        &lt;/head&gt;
-
-        &lt;body&gt;
-            반응형웹
-        &lt;/body&gt;
-    &lt;/html&gt;
-}
-            </code></pre>
-            <p>위와 같이 할시 그저 '반응형웹'이라고만 읽어주기 떄문에 제목인지 알 수가 없다.</p>
-            <pre ><code class="language-js">{
-    &lt;!DOCTYPE html&gt;
-    &lt;html lang="ko"&gt;
-        &lt;head&gt;
-            &lt;meta charset="UTF-8"&gt;
-            &lt;title>시멘틱 마크업&lt;/title&gt;
-        &lt;/head&gt;
-        
-        &lt;body&gt;
-            반응형웹
-        &lt;/body&gt;
-    &lt;/html&gt;
-}
-            </code></pre>
-            <p>위와 같이 해야만 이 부분을 '반응형웹' 헤딩 일이라고 읽어준다면 이 부분이 제목인지 알 수 있게 됩니다.</p>
-            <!-- 시멘틱 마크업 종료 -->
+            <div class="document">
+                <!-- 시멘틱 마크업 -->
+                <h2 class="t_tit">01. 시멘틱 마크업</h2>
+                <p class="t_desc2_html">
+                    시멘틱 사전적 의미는 '의미론적인'이라는 해석, 의미에 부합하는 태그를 사용하라는 뜻 <br><br>
+                    마크업을 해야하는 이유는 모든 사람들이 정보를 동일하게 받아들일 수 있는 환경이 아닐수도 있기<br>
+                    예를들어 시각장애인의 경우 html 문서의 콘텐츠 정보를 음성으로 전달해야하는데 이럴경우 전달을 위한 태그의 의미가 적절해야한다.
+                </p>
+                <div class="t_code">
+    <pre ><code class="language-js">{
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="ko"&gt;
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;title>시멘틱 마크업&lt;/title&gt;
+            &lt;/head&gt;   
+            &lt;body&gt;
+                반응형웹
+            &lt;/body&gt;
+        &lt;/html&gt;
+    }
+    </code></pre>
+                </div>
+           
+            <p class="t_box">위와 같이 할시 그저 '반응형웹'이라고만 읽어주기 떄문에 제목인지 알 수가 없다.</p>
+            
+            <hr>
+            
+            <div class="t_code">
+    <pre ><code class="language-js">{
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="ko"&gt;
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;title>시멘틱 마크업&lt;/title&gt;
+            &lt;/head&gt;
+    
+            &lt;body&gt;
+                &lt;h1&gt;반응형웹&lt;/h1&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+    }
+    </code></pre>
+                </div>
+                <p class="t_box">위와 같이 해야만 이 부분을 '반응형웹' 헤딩 일이라고 읽어준다면 이 부분이 제목인지 알 수 있게 됩니다.</p>
+                <!-- 시멘틱 마크업 종료 -->
+            </div>
         </article>
     </section>
     <script>hljs.highlightAll();</script>

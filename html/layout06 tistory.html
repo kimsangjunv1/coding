@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 김상준</span>
+    </header>
+    <!-- header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록구조/인라인구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li> <!--수정 필-->
+                <li><a href="seo.html">검색엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li class="active"><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+        <div class="document">
+            <!-- 1번 -->
+            <div>
+                <div>
+                    <h2 class="t_tit">레이아웃</h2>
+                    <p class="t_desc">
+                        이번 레이아웃은 <i>전체 영역이 들어간 구조</i>이며, 실제 사이트에서 이런 구조를 많이 사용하며,<br>
+                        컨테이너를 만들어서 가운데 영역을 설정합니다.
+                    </p>
+                    
+                    <hr>
+    
+                    <h3 class="t_tit2">float을 이용한 레이아웃</h3>
+                    <p class="t_desc2_css">
+                        float 속성을 사용해 박스를 왼쪽(left) 또는 오른쪽(right)으로 "부유"시키는 레이아웃 기법 입니다
+                    </p>
+                </div>
+
+                <h4 class="t_tit2">결과 (HTML + CSS) : 첫번째</h4>
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout01_float" src="https://codepen.io/kimsangjunv1/embed/KKovjZP?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/KKovjZP">
+                        layout01_float</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+
+                <h4 class="t_tit2">결과 (HTML + CSS) : 두번째</h4>
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout02_float" src="https://codepen.io/kimsangjunv1/embed/qBoXzPm?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/qBoXzPm">
+                        layout02_float</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+
+                <h4 class="t_tit2">결과 (HTML + CSS) : 세번째</h4>
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout03_float" src="https://codepen.io/kimsangjunv1/embed/yLKodoL?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/yLKodoL">
+                        layout03_float</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+            </div>
+            <!-- 1번 끝 -->
+            
+            <hr>
+
+            <!-- 2번 -->
+            <div>
+                <div>
+                    <h3 class="t_tit2">grid을 이용한 레이아웃</h3>
+                    <p class="t_desc2_css">
+                        그리드(Grid)란 사전적으론 격자, 바둑판의 눈금을 의미하며 디자인에서는 디자인 영역을 일정하게 구획하는 것을 의미.
+                    </p>
+                </div>
+                <h4 class="t_tit2">결과 (HTML + CSS) : 첫번째</h4>
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout01_grid" src="https://codepen.io/kimsangjunv1/embed/gOexNXd?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/gOexNXd">
+                        layout01_grid</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+                <h4 class="t_tit2">결과 (HTML + CSS) : 두번째</h4>
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout02_grid" src="https://codepen.io/kimsangjunv1/embed/NWYvZaJ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/NWYvZaJ">
+                        layout02_grid</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+                <h4 class="t_tit2">결과 (HTML + CSS) : 세번째</h4>
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout03_grid" src="https://codepen.io/kimsangjunv1/embed/BardgdG?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/BardgdG">
+                        layout03_grid</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+            </div>
+            <!-- 2번 끝 -->
+
+            <hr>
+
+            <!-- 3번 -->
+            <div>
+                <div>
+                    <h3 class="t_tit2">flex을 이용한 레이아웃</h3>
+                    <p class="t_desc2_css">
+                        flex(플렉스)는 레이아웃 배치 전용 기능으로 고안되었는데 레이아웃을 만들 때 딱히 사용할게 없어서 쓰던 float나 inline-block 등을 이용한 기존 방식보다 훨씬 강력하고 편리한 기능들이 많다.
+                    </p>
+                </div>
+                <h4 class="t_tit2">결과 (HTML + CSS) : 첫번째</h4>
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout01_flex" src="https://codepen.io/kimsangjunv1/embed/qBoXzpj?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/qBoXzpj">
+                        layout01_flex</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+
+                <h4 class="t_tit2">결과 (HTML + CSS) : 두번째</h4>
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout02_flex" src="https://codepen.io/kimsangjunv1/embed/eYMEweJ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/eYMEweJ">
+                        layout02_flex</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+
+                <h4 class="t_tit2">결과 (HTML + CSS) : 세번째</h4>
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout03_flex" src="https://codepen.io/kimsangjunv1/embed/MWVvMEY?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/MWVvMEY">
+                        layout03_flex</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+            </div>
+            <!-- 3번 끝 -->
+            <!-- <hr> -->
+        </div>
+    </main>
+    <!-- header -->
+
+    <footer id="footer">
+        <a href="mailto:to_before@naver.com">to_before@naver.com</a>
+    </footer>
+    <!-- footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

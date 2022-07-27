@@ -239,6 +239,37 @@ body{
     border-left: 4px solid #4a02f1;
     background-color: #f9f9f9;
 }
+
+.document .t_desc2_css{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid #037D00;
+    background-color: #f9f9f9;
+}
+
+.document .t_desc2_html{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid #7d005e;
+    background-color: #f9f9f9;
+}
+
+.document .t_desc2_presentation{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid #206973;
+    background-color: #f9f9f9;
+}
+
 .document .t_box{
     padding: 20px !important;
     background-color: #f9f9f9;

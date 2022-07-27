@@ -103,6 +103,136 @@
             background-color: #ffffff;
             padding: 10px;
         }
+        .document hr{
+            border: 0;
+            border-top: 1px dashed #dcdcdc;
+            margin-top: 45px;
+            margin-bottom: 45px;
+        }
+
+        /* 티스토리용 문서 */
+        .document{
+            word-break: keep-all; /*글자로 끊어지지 않고 단어로 끊어짐*/
+        }
+        .document hr{
+            border: 0;
+            border-top: 1px dashed #dcdcdc;
+            margin-top: 45px;
+            margin-bottom: 45px;
+        }
+        .document i{ /* '프로그래밍 언어' 강조 관련 */
+            font-style: normal;
+            position: relative;
+        }
+        .document i::before{ /* 밑줄관련 */
+            content: '';
+            background-color: #4a02f12c;
+            width:100%;
+            height: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border-radius: 20px;
+        }
+        .document .t_tit{
+            font-size: 30px;
+            line-height: 1.6;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+        .document .t_tit2{
+            font-size: 22px;
+            line-height: 1.6;
+            margin-top: 50px;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+        .document .t_tit3{
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-weight: 400;
+            /*font-weight: 700; 폰트 진하게*/
+        }
+        .document .t_desc{
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 10px !important;
+        }
+
+        .document .t_desc2{
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 10px !important;
+            padding: 15px 20px !important;
+            border-left: 4px solid #4a02f1;
+            background-color: #f9f9f9;
+        }
+
+        .document .t_desc2_css{
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 10px !important;
+            padding: 15px 20px !important;
+            border-left: 4px solid #037D00;
+            background-color: #f9f9f9;
+        }
+
+        .document .t_desc2_html{
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 10px !important;
+            padding: 15px 20px !important;
+            border-left: 4px solid #7d005e;
+            background-color: #f9f9f9;
+        }
+
+        .document .t_desc2_presentation{
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 10px !important;
+            padding: 15px 20px !important;
+            border-left: 4px solid #206973;
+            background-color: #f9f9f9;
+        }
+
+        .document .t_box{
+            padding: 20px !important;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            color: #666;
+            border-radius: 5px;
+        }
+
+        /* 표 */
+        .document .t_table{
+            border: 1px solid #dcdcdc;
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        .document .t_table tr th{
+            background-color: #f9f9f9;
+        }
+
+        .document .t_table tr th,
+        .document .t_table tr td{
+            border: 1px solid #dcdcdc;
+            font-weight: normal;
+            padding: 8px 10px;
+            color: #666;
+        }
+        .document .t_table .ce {
+            text-align: center;
+        }
+        표 끝
+        
         /* 미디어 쿼리 */
         @media (max-width: 800px){
             #header{
@@ -144,59 +274,62 @@
             </ul>
         </nav>
         <article class="article">
-            <h2>HTML 기본 문서</h2>
-            <p> <!-- &lt; / &gt;-->
-                html 요소는 &lt;head&gt; 요소와 &lt;body 요소&gt; 로 구성되어 있으며,<br>
-                &lt;head&gt; 요소 안에는 &lt;meta&gt;, &lt;title&gt;, &lt;link&gt;, &lt;style&gt;, &lt;script&gt; 등의 요소들이 올 수 있습니다
-            </p>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>요소명</th>
-                        <th>설명</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="center">&lt;meta&gt;</td>
-                        <td>HTML 문서의 설명, 키워드, 문서의 작성자 등을 지정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;title&gt;</td>
-                        <td>HTML 문서의 제목을 지정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;link&gt;</td>
-                        <td>외부의 CSS 파일을 HTML 문서에 연결할 때 사용합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;style&gt;</td>
-                        <td>HTML 문서 내에서 스타일(CSS)을 정의합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;script&gt;</td>
-                        <td>자바스크립트를 HTML 문서 내부에서 정의하거나 외부에서 자바스크립트 파일을 불러올 때 사용합니다.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>
-                [예시 1-1]에서 &lt;html lang="ko"&gt;나 &lt;meta charset="UTF-8"&gt;처럼 태그 내부에 부가적인 설정값을 선언하는 것을 속성(attribute)이라고 합니다.
-            </p>
-            <p>
-                lang 속성은 HTML 문서에서 사용하는 언어를 말하며 lang="ko"는 한국어, lang="en" 영어를 의미
-            </p>
-            <p>
-                lang 속성 중요이유 언어 설정에 따라 시각장애인들을 위해 읽어주는 프로그램이 설정 언어에 맞게 읽어주기 때문
-            </p>
-            <p>
-                lang 속성은 HTML 문서에서 꼭 정의해야 하는 속성
-            </p>
-            <p class="box">
-                &lt;i lang="de"&gt;Ich liebe dich&lt;/i&gt;
-            </p>
-            <p>
-                HTML5의 문자 인코딩 방식으로 주로 사용
-            </p>
+            <div class="document">
+                <h2 class="t_tit">HTML 기본 문서</h2>
+                <p class="t_desc"> <!-- &lt; / &gt;-->
+                    html 요소는 &lt;head&gt; 요소와 &lt;body 요소&gt; 로 구성되어 있으며,<br>
+                    &lt;head&gt; 요소 안에는 &lt;meta&gt;, &lt;title&gt;, &lt;link&gt;, &lt;style&gt;, &lt;script&gt; 등의 요소들이 올 수 있습니다
+                </p>
+                <hr>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>요소명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="center">&lt;meta&gt;</td>
+                            <td>HTML 문서의 설명, 키워드, 문서의 작성자 등을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="center">&lt;title&gt;</td>
+                            <td>HTML 문서의 제목을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="center">&lt;link&gt;</td>
+                            <td>외부의 CSS 파일을 HTML 문서에 연결할 때 사용합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="center">&lt;style&gt;</td>
+                            <td>HTML 문서 내에서 스타일(CSS)을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="center">&lt;script&gt;</td>
+                            <td>자바스크립트를 HTML 문서 내부에서 정의하거나 외부에서 자바스크립트 파일을 불러올 때 사용합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="t_box">
+                    [예시 1-1]에서 &lt;html lang="ko"&gt;나 &lt;meta charset="UTF-8"&gt;처럼 태그 내부에 부가적인 설정값을 선언하는 것을 속성(attribute)이라고 합니다.
+                </p>
+                <p class="t_box">
+                    lang 속성은 HTML 문서에서 사용하는 언어를 말하며 lang="ko"는 한국어, lang="en" 영어를 의미
+                </p>
+                <p class="t_box">
+                    lang 속성 중요이유 언어 설정에 따라 시각장애인들을 위해 읽어주는 프로그램이 설정 언어에 맞게 읽어주기 때문
+                </p>
+                <p class="t_box">
+                    lang 속성은 HTML 문서에서 꼭 정의해야 하는 속성
+                </p>
+                <p class="t_box">
+                    &lt;i lang="de"&gt;Ich liebe dich&lt;/i&gt;
+                </p>
+                <p class="t_box">
+                    HTML5의 문자 인코딩 방식으로 주로 사용
+                </p>
+            </div>
         </article>
     </section>
 </body>
