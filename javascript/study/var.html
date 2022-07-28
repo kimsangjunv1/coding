@@ -51,6 +51,8 @@
             </p>
             <p class="t_desc2">'전역 변수'는 <i>함수 블록{} 밖이나 안에서 자유롭게 사용 가능</i>하지만 <br>
                 <i>'지역 변수'는 함수 블록{} 내에서만 사용 가능</i>합니다.</p>
+            <p class="t_desc2">'전역 변수'는 <i>{}블록 밖까지 영향을 미치며,</i><br>
+                '지역 변수'는 <i>{}블록 안에서만 영향을 미칩니다.</i></p>
 
             <hr>
 
@@ -109,6 +111,9 @@
                     </div>
                 </div>
                 <div class="result">
+                    <p class="t_desc2">
+                        {}함수블록안에 지역변수는 반드시 var로 선언해 주어야 합니다
+                    </p>
                     <!-- 결과보기 -->
                     <details>
                         <summary>결과보기</summary>
@@ -170,11 +175,11 @@
                     <div class="t_code">
 <pre><code class="language-js">{
     //함수의 전역변수
-    var sum1 = 10;
-    function add1(){
-        sum1=20;
+    var sum1 = 10;  //전역 변수 sum1 생성 값 10 
+    function add1(){  //add1 함수 생성
+        sum1=20;  //전역변수 sum1은 20으로 설정
     }
-    add1();
+    add1();  //add1 출력 
     document.write("전역"+sum1);
 
     //함수의 지역변수
