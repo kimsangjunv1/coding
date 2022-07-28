@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //함수의 전역변수
+        var sum1 = 10;
+        function add1(){
+            sum1=20;
+        }
+        add1();
+        document.write("전역"+sum1);
+
+        //함수의 지역변수
+        var sum2 = 30;
+        function add2() {
+            var sum2 = 40
+            document.write("지역"+sum2);
+        }
+        add2();
+        document.write('전역'+sum2);
+
+        //불록의 지역변수
+        var num1 = 50;
+        if (num1 === 50){
+            var num1 = 60;
+        }
+        document.write("전역"+num1);
+        let num2 = 70;
+        if(num2===70){
+            let num2 = 80;
+            document.write("지역"+num2);
+        }
+        document.write("전역"+num2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

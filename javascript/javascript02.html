@@ -34,6 +34,7 @@
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">데이터 타입</a></li>
                 <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
             </ul>
         </nav>
     </header>
@@ -71,7 +72,7 @@
             <div id="sample01" class="sample">
                 <h3>01. 변수 : 데이터 불러오기</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    변수의 값을 각 개체에 저장시킬 수 있습니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -107,7 +108,7 @@
             <div id="sample02" class="sample">
                 <h3>02. 상수 : 데이터 불러오기</h3>
                 <p>
-                
+                    상수에 저장되어있는 데이터를 가져올 수 있습니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -141,7 +142,7 @@
             <div id="sample03" class="sample">
                 <h3>03. 배열 : 데이터 불러오기</h3>
                 <p>
-                    
+                    배열 데이터를 불러올 수 있습니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -173,7 +174,7 @@
             <div id="sample04" class="sample">
                 <h3>04. 배열 : 데이터 불러오기 : 2차 배열</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    배열안에 배열을 생성 할 수 있습니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -236,7 +237,7 @@
             <div id="sample05" class="sample">
                 <h3>06. for문</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    반복문을 통해 정해진 조건 값에 도달할때까지 맞추어 반복합니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -272,7 +273,7 @@
             <div id="sample05" class="sample">
                 <h3>07. 배열 데이터 불러오기 : forEach();</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    배열의 각 요소, 위치, 배열 등을 불러올 수 있습니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -328,9 +329,9 @@
         <!-- 08번 (복사) 메인 샘플 시작 -->
         <div class="main_sample">
             <div id="sample05" class="sample">
-                <h3>//08. 배열에 데이터 불러오기 : for of</h3>
+                <h3>08. 배열에 데이터 불러오기 : for of</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    변수 안에 배열을 넣어 배열 속 값을 가져올 수 있습니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -364,7 +365,7 @@
             <div id="sample05" class="sample">
                 <h3>09. 배열에 데이터 불러오기 : for in</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    변수 안에 배열을 넣어 배열 속 값을 가져올 수 있습니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -398,7 +399,7 @@
             <div id="sample10" class="sample">
                 <h3>10. 배열 데이터 불러오기 : map()</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    map은 forEach와 비슷한 역할을 하며, 각 요소,인덱스(위치),배열 등을 가져올 수 있습니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -510,9 +511,9 @@
         {
             const arr = [100, 200, "javascript"];       //배열 arr에 100, 200, javascript 대입
 
-            document.write(arr[0]);     //배열 arr 첫번째 값 100 출력
-            document.write(arr[1]);     //배열 arr 두번째 값 200 출력
-            document.write(arr[2]);     //배열 arr 세번째 값 javascript 출력
+            // document.write(arr[0]);     //배열 arr 첫번째 값 100 출력
+            // document.write(arr[1]);     //배열 arr 두번째 값 200 출력
+            // document.write(arr[2]);     //배열 arr 세번째 값 javascript 출력
 
             document.querySelector(".sample03_result").innerHTML=arr[0]+"<br>"+arr[1]+"<br>"+arr[2]
 
@@ -616,6 +617,40 @@
             //     document.write(array);
             // });
         }
+        //
+
+        const arr = [1,2,3,4,5,6,7,8,9];
+
+        //for문을 이용해서 하나씩 출력
+        // for(let i=0; i<arr.length; i++){
+        //     document.write(arr[i]);
+        // }
+        
+        //forEach() 이용해서 하나씩 출력
+        arr.forEach(function(el){
+                // document.write(el);
+            }
+        )
+        // arr.forEach((){})
+
+
+        //map() 이용해서 하나씩 출력
+        arr.map(function(el){
+            // document.write(el);
+        })
+
+
+        //for in 이용해서 하나씩 출력
+        for(let i in arr){
+            // document.write(arr[i]);
+        }
+
+
+        //for of 이용해서 하나씩 출력
+        for(let i in arr){
+            // document.write(arr[i]);
+        }
+
     </script>
 </body>
 </html>

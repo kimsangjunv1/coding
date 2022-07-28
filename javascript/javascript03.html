@@ -34,6 +34,7 @@
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">데이터 타입</a></li>
                 <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
             </ul>
         </nav>
     </header>
@@ -348,6 +349,145 @@
             </div>
         </div>
         <!-- 08번 메인 샘플 끝 -->
+
+        <!-- 09번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 </h3>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    const func = (str) =&gt; { //변수에 매개변수 삽입 후
+        return str; //매개변수를 리턴해준다.
+    }
+    document.write(func("함수가 실행되었습니다.9&lt;br&gt;")); //변수 출력
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            8번. 안녕
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 09번 메인 샘플 끝 -->
+
+        <!-- 09번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 </h3>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    const func = (str) =&gt; { //변수에 매개변수 삽입 후
+        return str; //매개변수를 리턴해준다.
+    }
+    document.write(func("함수가 실행되었습니다.9&lt;br&gt;")); //변수 출력
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            함수가 실행되었습니다.9
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 09번 메인 샘플 끝 -->
+
+        <!-- 10번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 </h3>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    const func = str =&gt; { //변수에 매개변수 삽입 후
+        return str; //매개변수를 리턴해준다.
+    }
+    document.write(func("함수가 실행되었습니다.10&lt;br&gt;")); //변수 출력
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            함수가 실행되었습니다.10
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 10번 메인 샘플 끝 -->
+
+        <!-- 11번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>11. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략 </h3>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    const func = (str) => { //const가 있냐 없냐에 따라 익명 선언적 함수 둘 중 하나로 결정됨
+        return str;
+    }
+    document.write(func("함수가 실행되었습니다.11<br>")); //변수 출력
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            함수가 실행되었습니다.11
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 11번 메인 샘플 끝 -->
+
+        <!-- 12번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>12. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    const func = str => str; //const가 있냐 없냐에 따라 익명 선언적 함수 둘 중 하나로 결정됨
+
+    document.write(func("함수가 실행되었습니다.12<br>")); //변수 출력
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample12_result">
+                            함수가 실행되었습니다.12
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 12번 메인 샘플 끝 -->
     </div>
     </main>
     <!-- //main -->
@@ -515,13 +655,95 @@
         // }
 
         //01. 선언적 함수
+        {
+            function func(){
+                document.write("함수가 실행되었습니다.1<br>");
+            }
+            // func();
+        }
         //02. 익명 함수
+        //변수 안에 함수를 넣은 형태
+        {
+            const func = function(){
+                document.write("함수가 실행되었습니다.2<br>")
+            }
+            // func();
+        }
         //03. 매개변수 함수
+        {
+            function func(str){ //, 과 함께 이와 같이 하나 이상을 저장 가능하다
+                document.write(str)
+            }
+            // func("함수가 실행되었습니다.3<br>")
+        }
         //04. 리턴 함수
-        //05. 화살표함수(익명 함수)
-        //06. 화살표함수(매개변수 함수)
-        //07. 화살표함수(리턴 함수)
-        //08. 화살표함수(화살표 함수)
+        {
+            function func(){
+                const str = "함수가 실행되었습니다.4<br>";
+                return str; //결과 값, 종료 값
+            }
+            // document.write(func());
+        }
+        //05. 화살표함수(선언적 함수)
+        {
+            func = () => {
+                document.write("함수가 실행되었습니다.5<br>")
+            }
+            // func();
+        }
+        //06. 화살표함수(익명 함수)
+        {
+            const func = () => {
+                document.write("함수가 실행되었습니다.6<br>")
+            }
+            // func();
+        }
+        //07. 화살표함수(매개변수 함수)
+        {
+            func = (str) => { //, 과 함께 이와 같이 하나 이상을 저장 가능하다
+                document.write(str);
+            }
+            // func("함수가 실행되었습니다.7<br>");
+        }
+        //08. 화살표함수(리턴 함수)
+        {
+            func = () => {
+                const str = "함수가 실행되었습니다.8<br>";
+                return str;
+            }
+            // document.write(func());
+        }
+
+        //09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 
+        {
+            const func = (str) => { //변수에 매개변수 삽입 후
+                return str; //매개변수를 리턴해준다.
+            }
+            // document.write(func("함수가 실행되었습니다.9<br>")); //변수 출력
+        }
+
+        //10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 
+        {
+            const func = str => { //변수에 매개변수 삽입 후
+                return str; //매개변수를 리턴해준다.
+            }
+            // document.write(func("함수가 실행되었습니다.10<br>")); //변수 출력
+        }
+
+        //11. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
+        {
+            const func = (str) => { //const가 있냐 없냐에 따라 익명 선언적 함수 둘 중 하나로 결정됨
+                return str;
+            }
+            // document.write(func("함수가 실행되었습니다.11<br>")); //변수 출력
+        }
+
+        //12. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
+        {
+            const func = str => str; //const가 있냐 없냐에 따라 익명 선언적 함수 둘 중 하나로 결정됨
+
+            // document.write(func("함수가 실행되었습니다.12<br>")); //변수 출력
+        }
     </script>
 </body>
 </html>

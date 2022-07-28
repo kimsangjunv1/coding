@@ -34,6 +34,7 @@
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">데이터 타입</a></li>
                 <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
             </ul>
         </nav>
     </header>
@@ -61,7 +62,7 @@
             <div id="sample01" class="sample">
                 <h3>01. if문</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    조건을 통해 '참'일 경우 값과 '거짓'일 경우의 값을 구분 가능합니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -91,7 +92,7 @@
             <div id="sample01" class="sample">
                 <h3>02. if문 생략</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    if문의 {}블록을 생략해 간단하게 나타낼 수 있습니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -122,7 +123,7 @@
             <div id="sample01" class="sample">
                 <h3>03. 다중 if문</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    다중으로 if 를 적용해 여러가지의 조건 작성이 가능합니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -162,7 +163,8 @@
             <div id="sample01" class="sample">
                 <h3>04. 중첩 if문</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    조건속의 조건을 만들수가 있는데, 예로 1조건 안에 2조건을 만들어<br>
+                    1조건 충족시 2조건을 실행시키고 충족시 1과 2조건을 모두 실행시킵니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -204,7 +206,7 @@
             <div id="sample01" class="sample">
                 <h3>05. 삼항 연산자</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    조건식을 간단하게 만들 수 있습니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -235,7 +237,7 @@
             <div id="sample01" class="sample">
                 <h3>06. 삼항 연산자</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    스위치를 통해 각 경우의 조건을 정해서 만족시 해당 조건을 실행 시킬 수 있습니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -279,7 +281,7 @@ switch(num){
             <div id="sample01" class="sample">
                 <h3>07. while문</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    조건이 만족할 동안 계속해서 실행시킵니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -316,7 +318,7 @@ switch(num){
             <div id="sample01" class="sample">
                 <h3>08. do while문</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    실행문을 먼저 실행시키고 조건을 검사합니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -353,7 +355,7 @@ switch(num){
             <div id="sample01" class="sample">
                 <h3>09. for문</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    조건을 만족할때까지 증가값을 걸어두어 반복시킵니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -393,7 +395,7 @@ switch(num){
             <div id="sample01" class="sample">
                 <h3>10. 중첩 for문</h3>
                 <p>
-                    객체 속의 변수 생성 가능
+                    반복문 안에 반복문을 생성 가능합니다.
                 </p>
                 <div class="script">
             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
@@ -432,6 +434,74 @@ switch(num){
         </div>
         <!-- 10번 메인 샘플 끝 -->
 
+        <!-- 11번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>11. break문</h3>
+                <p>
+                    예로 조건에 충족해 break를 만나게 되면 조건 계산식에서 빠져나옵니다.
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    for(let i=1; i&lt;=20; i++){ //i의 값을 20까지 1씩 증가시키며
+        document.write(i+"&lt;br&gt;") //i의 값을 출력하는데
+        if(i===10){ //만약 i의 값이 10과 완전히  같으면
+            break; //멈춘다
+            //continue; //10을 생략하고 넘어간다
+        }
+    }
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample10_result">
+                            12345678910 (break로 인해 이후 계산중지)
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 11번 메인 샘플 끝 -->
+
+        <!-- 12번 메인 샘플 시작 -->
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>12. continue문</h3>
+                <p>
+                    예로 조건에 충족해 continue를 만나게 되면 해당 조건을 충족한 값은 건너뛰고 다음 조건 검사를 실행합니다. 
+                </p>
+                <div class="script">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    for(let i=1; i&lt;=20; i++){ //i의 값을 20까지 1씩 증가시키며
+        if(i==10){ //만약 i의 값이 10과 완전히  같으면
+            continue; //10에 해당하면 다시 돌아가 11부터 다시 셈한다.
+        }
+        document.write(i+"&lt;br&gt;") //i의 값을 출력하는데
+    }
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <!-- 결과보기 -->
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample10_result">
+                            123456789 (10생략)<br>
+                            11121314151617181920
+                        </div>
+                    </details>
+                    <!-- 결과보기 끝 -->
+                </div>
+            </div>
+        </div>
+        <!-- 12번 메인 샘플 끝 -->
+
     </main>
     <!-- //main -->
     <footer id="footer">
@@ -446,7 +516,7 @@ switch(num){
         //(제어문 조건문, 반복문, 중지, 건너뛰기)
         //01. if문
         {
-            //틀림의 경우 : false, 0, undefined, null
+            //틀림의 경우 : false, 0, undefined, null, ""
             //맞음의 경우 : true, 1, "0", "1", 0<10 ,[], {}
             // if(1>10){ // 조건에는 숫자 텍스트 배열 객체까지 모두 가능하다
             //     document.write("실행되었습니다(true).", "<br>"); // 맞으면 true 출력
@@ -509,7 +579,8 @@ switch(num){
             // }else{
             //     document.write("false");
             // }
-    
+            
+            // 조건문 생략 방법
             // (num==100) ? document.write("true") : document.write("false"); //조건부 연산자 두번째 방법 (효율성 가장 좋음)
         }
     
@@ -570,13 +641,37 @@ switch(num){
     
         //10. 중첩 for문
         {
-            // for(let i=1; i<=2; i++){
-            //     document.write(i+"실행");
-            //     for(let j=1; j<=5; j++){
-            //         document.write(j+"반복");
+            // for(let i=1; i<=2; i++){ //i의 값이 2이하가 될때까지 1씩 더하고
+            //     document.write(i+"실행"); // i값과 함께 실행을 붙여 출력한 뒤
+            //     for(let j=1; j<=5; j++){ //j의 값이 5이하가 될때까지 j를 1씩 더하고
+            //         document.write(j+"반복"); //j값과 함께 반복을 붙여 출력해준다.
             //     }
             // }
         }
+
+        //11. break문
+        //for문을 이용해서 1~20까지 출력
+        {
+            for(let i=1; i<=20; i++){ //i의 값을 20까지 1씩 증가시키며
+                // document.write(i+"<br>") //i의 값을 출력하는데
+                if(i===10){ //만약 i의 값이 10과 완전히  같으면
+                    break; //멈춘다
+                    //continue; //10을 생략하고 넘어간다
+                }
+            }
+        }
+
+        //12. continue문
+        //for문을 이용해서 1~20까지 출력
+        {
+            for(let i=1; i<=20; i++){ //i의 값을 20까지 1씩 증가시키며
+                if(i==10){ //만약 i의 값이 10과 완전히  같으면
+                    continue; //10에 해당하면 다시 돌아가 11부터 다시 셈한다.
+                }
+                // document.write(i+"<br>") //i의 값을 출력하는데
+            }
+        }
+        
     </script>
 </body>
 </html>
