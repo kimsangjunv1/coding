@@ -49,11 +49,36 @@
                 <!--블록-->
                 변수는 함수 블록을 기준으로 선언 위치에 따라 '전역 변수','지역 변수'로 나뉩니다.
             </p>
-            <p class="t_desc2">'전역 변수'는 <i>함수 블록{} 밖이나 안에서 자유롭게 사용 가능</i>하지만 <br>
+            <p class="t_box">'전역 변수'는 <i>함수 블록{} 밖이나 안에서 자유롭게 사용 가능</i>하지만 <br>
                 <i>'지역 변수'는 함수 블록{} 내에서만 사용 가능</i>합니다.</p>
-            <p class="t_desc2">'전역 변수'는 <i>{}블록 밖까지 영향을 미치며,</i><br>
+            <p class="t_box">'전역 변수'는 <i>{}블록 밖까지 영향을 미치며,</i><br>
                 '지역 변수'는 <i>{}블록 안에서만 영향을 미칩니다.</i></p>
 
+            <hr>
+            <h2 class="t_tit2">전역 변수와 지역 변수 선언 위치</h2>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="ce">전역 변수</th>
+                        <th class="ce">지역 변수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            var변수:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;function 함수(){<br>
+
+                            }
+                        </td>
+                        <td>
+                            function 함수() {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;var 변수:<br>
+                            }
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <hr>
 
             <!-- 01번 메인 샘플 시작 -->
