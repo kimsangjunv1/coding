@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/heungkuk/LeeSeoyun.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em>주관식 유형</em></h1>
+        <nav>
+            <ul>
+                <li class="active"><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <span class="quiz__type"></span>
+                <h2 class="quiz__question">
+                    <span class="number"></span>
+                    <div class="ask"> </div>
+                </h2>
+                <div class="quiz__view">
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <button class="confirm">정답 확인하기</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:to_before@naver.com">to_before@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        //선택자
+        const quizType = document.querySelector(".quiz__type");                 //퀴즈 종류 : .quiz__type 클래스 선택
+        const quizNumber = document.querySelector(".quiz__question .number")    //퀴즈 번호 ; .quiz__question 에서 .number 클래스 선택
+        const quizAsk = document.querySelector(".quiz__question .ask")          //퀴즈 질문 : .quiz__question 에서 .confirm 클래스 선택
+        const quizConfirm = document.querySelector(".quiz__answer .confirm")    //정답 확인 버튼 : .quiz__answer 에서 .result 클래스 선택
+        const quizResult = document.querySelector(".quiz__answer .result")      //정답 결과 : .quiz__answer 에서 .result 클래스 선택
+        const quizDog = document.querySelector(".quiz__view .dog")              //강아지 : .quiz__view에서 .dog클래스 선택
+        
+        //문제 정보
+        const answerType = "웹디자인기능사";
+        const answerNumber = 1+".";
+        const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?"
+        const answerResult = "연변대비";
+
+        //문제 출력 :: innerHTML은 태그도 인식하고, innerText는 텍스트만 출력합니다..
+        quizType.innerText = answerType         //answerType의 텍스트만 인식해 출력
+        quizNumber.innerText = answerNumber     //answerNumber의 텍스트만 인식해 출력
+        quizAsk.innerText = answerAsk           //answerAsk의 텍스트만 인식해 출력
+        quizResult.innerText = answerResult     //answerResult의 텍스트만 인식해 출력
+
+        //정답 숨기기
+        quizResult.style.display="none"; // quizResult의 스타일에 display "none"을 선언해서 정답을 먼저 숨겨놓음
+
+        //정답 확인
+        //정답 버튼을 클릭하면 -> 확인버튼 안보이게... 숨겨진 정답은 보이게...
+        //정답을 확인하면 강아지가 웃고 있어야 함 // 클래스 like를 추가함
+        quizConfirm.addEventListener("click", function(){   //quizConfirm에 상황이 발생(대상은 클릭, 실행시킬 함수의 내용은
+            quizConfirm.style.display = "none";             //quizConfirm(정답확인하기)를 숨기고
+            quizResult.style.display = "block";             //위에서 숨겨놨던 quizResult(연변대비)를 표시
+            quizDog.classList.add("like");                  //클릭이 발생하면 like 클래스를 추가해 강아지를 웃게 만듬 //클래스를 추가하는 방식
+        })                                                  //무언가 상황이 발생했을때를 의미하는 "클릭"이 발생하면 function을 실행하라
+
+    </script>
+</body>
+
+</html>

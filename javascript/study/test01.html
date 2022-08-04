@@ -9,33 +9,37 @@
 <body>
     <script>
         //01 선언적 함수
-        function func(){
-            document.write("x")
-        }
-        func();
+        function func(){}
 
         //02 익명함수
-        const func = function(){
-            document.write("x2")
-        }
-        func()
+        const func(){}
+
         
         //03 매개변수 함수
         function func(str){
-            document.write(str);
+            document.write(str)
         }
-        func("x3")
+        func("안녕")
         
 
         //04 리턴값 함수
+        function func(){
+            const str = "안녕"
+            return str;
+        }
+        document.write(func())
 
         //05 선안적 함수 : 화살표
+        func = () => {}
 
         //06 익명함수 : 화살표
+        const func = () => {}
 
         //07 매개변수 ; 화살표
+        func = str => 
 
         //08 리턴값 함수 : 화살표
+
     </script>
 </body>
 </html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃05</title>
+</head>
+<style>
+    * {
+        margin: 0;
+    }
+
+    #wrap {
+        width: 100%;
+    }
+
+    #header {
+        height: 100px;
+        width: 100%;
+        background-color: #EEEBE9;
+    }
+
+    #nav {
+        height: 100px;
+        width: 100%;
+        background-color: #B9AAA5;
+    }
+
+    #main {
+        height: 780px;
+        width: 100%;
+        background-color: #886F65;
+    }
+
+    .left {}
+
+    .cont1 {
+        height: 100px;
+        width: 100%;
+        background-color: #74574A;
+    }
+
+    .contents .right {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cont2 {
+        height: 200px;
+        width: 100%;
+        background-color: #684D43;
+    }
+
+    .cont3 {
+        height: 480px;
+        width: 50%;
+        background-color: #594139;
+    }
+
+    .cont4 {
+        height: 480px;
+        width: 50%;
+        background-color: #4A352F;
+    }
+
+    #footer {
+        height: 100px;
+        width: 100%;
+        background-color: #4E342E;
+    }
+
+    .container {
+        height: inherit;
+        width: 1200px;
+        margin: 0 auto;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    @media(max-width:1220px) {
+        .container {
+            width: 96%;
+        }
+        .contents {
+            display: flex;
+        }
+
+        .left {
+            width: 30%;
+        }
+
+        .cont1 {
+            height: 780px;
+            width: 100%;
+            background-color: #74574A;
+        }
+
+        .right {
+            width: 70%;
+        }
+
+        .cont2 {
+            height: 50%;
+            width: 100%;
+            background-color: #684D43;
+        }
+
+        .cont3 {
+            height: 50%;
+            width: 50%;
+            background-color: #594139;
+        }
+
+        .cont4 {
+            height: 50%;
+            width: 50%;
+            background-color: #4A352F;
+        }
+    }
+
+    @media(max-width:768px) {
+        .container {
+            width: 100%;
+        }
+        .contents {
+            display: flex;
+        }
+
+        .left {
+            width: 30%;
+        }
+
+        .cont1 {
+            height: 780px;
+            width: 100%;
+            background-color: #74574A;
+        }
+
+        .right {
+            width: 70%;
+        }
+
+        .cont2 {
+            height: 50%;
+            width: 100%;
+            background-color: #684D43;
+        }
+
+        .cont3 {
+            height: 50%;
+            width: 50%;
+            background-color: #594139;
+        }
+
+        .cont4 {
+            height: 50%;
+            width: 50%;
+            background-color: #4A352F;
+        }
+    }
+    @media(max-width: 480px) {
+        .contents {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .left {
+            width: 100%;
+            height: 150px;
+        }
+
+        .cont1 {
+            height: 150px;
+            width: 100%;
+        }
+
+        .right {
+            width: 100%;
+            height: 630px;
+        }
+
+        .cont2 {
+            height: 210px;
+            width: 100%;
+        }
+
+        .cont3 {
+            height: 210px;
+            width: 100%;
+        }
+
+        .cont4 {
+            height: 210px;
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container"></div>
+        </div>
+        <div id="nav">
+            <div class="container"></div>
+        </div>
+        <div id="main">
+            <div class="contents container">
+                <div class="left">
+                    <div class="cont1"></div>
+                </div>
+                <div class="right">
+                    <div class="cont2"></div>
+                    <div class="cont3"></div>
+                    <div class="cont4"></div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dracula.css">
 </head>
+
 <body>
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
@@ -27,6 +29,15 @@
                 <li class="active"><a href="javascript10.html">요소 객체</a></li>
                 <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
             <ul class="study">
                 <li><a href="study/basic.html">기본 규칙</a></li>
                 <li><a href="study/operator.html">연산자</a></li>
@@ -39,17 +50,174 @@
         </nav>
     </header>
     <!-- //header -->
+
     <main id="main">
-        
-    </main>
-    <!-- //main -->
-    <footer id="footer">
-        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
-    </footer>
-    <!-- //footer -->
-    <script src="assets/js/highlight.min.js"></script>
-    <script>
-        hljs.highlightAll();
-    </script>
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 모든 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 모든 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <h2 class="t_tit">조건문</h2>
+                <!--블록-->
+                <p class="t_desc">
+                    <!--블록-->
+                    조건문이란 조건을 가지고 참과 거짓의 경우를 지정 할 수 있는 함수입니다.
+                </p>
+
+                <hr>
+
+                <!-- 01번 메인 샘플 시작 -->
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2">1번 정답 확인하는 페이지 만들기</h2>
+                    <p class="t_desc">
+                        생기를 불어넣어 줍니다.
+                    </p>
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+                        <div class="t_code">
+<pre><code class="language-js">//선택자
+const quizType = document.querySelector(".quiz__type");                 //퀴즈 종류 : .quiz__type 클래스 선택
+const quizNumber = document.querySelector(".quiz__question .number")    //퀴즈 번호 ; .quiz__question 에서 .number 클래스 선택
+const quizAsk = document.querySelector(".quiz__question .ask")          //퀴즈 질문 : .quiz__question 에서 .confirm 클래스 선택
+const quizConfirm = document.querySelector(".quiz__answer .confirm")    //정답 확인 버튼 : .quiz__answer 에서 .result 클래스 선택
+const quizResult = document.querySelector(".quiz__answer .result")      //정답 결과 : .quiz__answer 에서 .result 클래스 선택
+const quizDog = document.querySelector(".quiz__view .dog")              //강아지 : .quiz__view에서 .dog클래스 선택
+
+//문제 정보
+const answerType = "웹디자인기능사";
+const answerNumber = 1+".";
+const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?"
+const answerResult = "연변대비"
+
+//문제 출력 :: innerHTML은 태그도 인식하고, innerText는 텍스트만 인식합니다.
+quizType.innerText = answerType         //answerType의 텍스트만 인식해 대입
+quizNumber.innerText = answerNumber     //answerNumber의 텍스트만 인식해 대입
+quizAsk.innerText = answerAsk           //answerAsk의 텍스트만 인식해 대입
+quizResult.innerText = answerResult     //answerResult의 텍스트만 인식해 대
+
+//정답 숨기기
+quizResult.style.display="none"; // quizResult의 스타일에 display "none"을 선언해서 정답을 먼저 숨겨놓
+
+//정답 확인
+//정답 버튼을 클릭하면 -> 확인버튼 안보이게... 숨겨진 정답은 보이게...
+//정답을 확인하면 강아지가 웃고 있어야 함 // 클래스 like를 추가함
+quizConfirm.addEventListener("click", function(){   //quizConfirm에 상황이 발생(대상은 클릭, 실행시킬 함수의 내용은
+    quizConfirm.style.display = "none";             //quizConfirm(정답확인하기)를 숨기고
+    quizResult.style.display = "block";             //위에서 숨겨놨던 quizResult(연변대비)를 표시
+    quizDog.classList.add("like");                  //클릭이 발생하면 like 클래스를 추가해 강아지를 웃게 만듬 //클래스를 추가하는 방식
+})                                                  //무언가 상황이 발생했을때를 의미하는 "클릭"이 발생하면 function을 실행하라
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="dogEffect01"
+                    src="https://codepen.io/kimsangjunv1/embed/YzaaxbY?default-tab=html%2Cresult" frameborder="no"
+                    loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimsangjunv1/pen/YzaaxbY">
+                        dogEffect01</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+                <h1 class="t_box">description</h1>
+                <!-- 01번 메인 샘플 시작 -->
+
+                <!-- 02번 메인 샘플 시작 -->
+                <div id="sample02" class="sample">
+                    <h2 class="t_tit2">2번 입력한 문자로 맞음/틀림 정하는 페이지 만들기</h2>
+                    <p class="t_desc">
+                        2번 문제의 정답을 input 박스에 입력하고 정답확인하기를 누르면 버튼과 input 박스가 사라지고 정답이 나타납니다.
+                    </p>
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+                        <div class="t_code">
+<pre><code class="language-js">//선택자
+const quizType = document.querySelector(".quiz__type");                 //퀴즈 종류 : 클래스 quiz__type에 대입함
+const quizNumber = document.querySelector(".quiz__question .number")    //퀴즈 번호 : 클래스 quiz__quetion의 .number에 대입함
+const quizAsk = document.querySelector(".quiz__question .ask")          //퀴즈 질문 : 클래스 quiz__quetion의 .ask에 대입함
+const quizConfirm = document.querySelector(".quiz__answer .confirm")    //정답 확인 버튼 : 클래스 quiz__answer의 .confirm에 대입함
+const quizResult = document.querySelector(".quiz__answer .result")      //정답 결과 : 클래스 quiz__answer의 .result에 대입함
+const quizInput = document.querySelector(".quiz__answer .input")        //사용자 정답 : 클래스 quiz__answer의 .input에 대입함
+const quizView= document.querySelector(".quiz__view")                   //강아지 보기
+
+//문제 정보
+const answerType = "웹디자인기능사";
+const answerNumber = 2 + ".";
+const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업 이미지 통합 전략은 무엇인가요?"
+let answerResult = "CIP"; // const 사용시 데이터 변경 불가
+
+//문제 출력
+quizType.textContent=answerType;                            //answerType의 텍스트만 인식해 출력
+quizNumber.textContent=answerNumber + ". ";                 //answerNumber의 텍스트만 인식해 출력
+quizAsk.textContent=answerAsk;                              //answerAsk의 텍스트만 인식해 출력
+quizResult.textContent="정답은 : "+answerResult+" 입니다.";    //answerResult의 텍스트만 인식해 출력
+
+//정답 숨기기
+quizResult.style.display="none";                            //정단을 숨깁니다.
+
+//정답 확인
+quizConfirm.addEventListener("click", ()=>{                 //function 생략 하고 정답버튼을 클릭했을때
+    quizInput.style.display="none";                         //quizConfirm 버튼 클릭시 버튼을 사라지게 함
+    quizResult.style.display="block";
+    quizConfirm.style.display="none"; 
+    //사용자 정답
+    const userWord = quizInput.value.toLowerCase().trim();  //소문자로 변환해 userWord에 대입합니다.
+    answerResult = answerResult.toLowerCase().trim(); //소문자로 변환해 answerResult에 대입합니다.
+
+    // userWord = userWord.toLowerCase().trim(); 사용자 대답도 소문자로 처리
+    // console.log(userWord);
+    //사용자 정답 == 문제 정답
+    if(answerResult == userWord){                           //answerResul(정해진 답변)이 userWord(사용자답변)과 같다면
+        //정답
+        quizView.classList.add("like");                     //강아지의 모습에 클래스 like를 추가시켜 변화 시킴
+        // alert("정답입니다.")                 
+    } else {                                                //만약 아니라면
+        //오답
+        quizView.classList.add("dislike");                  //강아지의 모습을 클래스 dislike를 추가해 변화 시킴.
+        //alert("오답입니다.")
+    }
+});
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="dogEffect02" src="https://codepen.io/kimsangjunv1/embed/XWEEzWZ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimsangjunv1/pen/XWEEzWZ">
+                    dogEffect02</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+                <h1 class="t_box">description</h1>
+                <!-- 02번 메인 샘플 시작 -->
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
 </body>
+
 </html>

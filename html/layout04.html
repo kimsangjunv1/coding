@@ -48,10 +48,10 @@
                 <!-- 1번 -->
                 <div>
                     <div>
-                        <h2 class="t_tit">레이아웃01</h2>
+                        <h2 class="t_tit">레이아웃04</h2>
                         <p class="t_desc">
                             이번 레이아웃은 <i>전체 영역이 들어간 구조</i>이며, 실제 사이트에서 이런 구조를 많이 사용하며,<br>
-                            컨테이너를 만들어서 가운데 영역을 설정합니다.
+                            컨테이너를 만들어서 가운데에 요소들이 들어갈 영역을 설정합니다.
                         </p>
                         <div class="t_iframe">
                             <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
@@ -63,82 +63,59 @@
 
                         <h3 class="t_tit2">float을 이용한 레이아웃</h3>
                         <p class="t_desc2">
-                            float 속성을 사용해 박스를 왼쪽(left) 또는 오른쪽(right)으로 "부유"시키는 레이아웃 기법 입니다
+                            float 속성을 사용해 박스를 왼쪽(left) 또는 오른쪽(right)으로 "부유"시키는 레이아웃 기법 입니다,
+                        </p>
+                        <p class="t_box">
+                            다만 float를 사용할때는 레이아웃이 깨지는 경우가 생기는데 이럴때는 깨지는 영역에 clear:both를 사용하면 되며,
+                            좀 더 올바른 방법으로는 clearfix를 사용해 해결하는 방법이 주로 사용되곤 합니다.
                         </p>
                     </div>
                     <div class="t_code">
 <pre><code class="language-css">*{
-        margin: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    height: 100px;
+    background-color: #E0F2F1;
+}
+#nav {
+    height: 300px;
+    background-color: #80CBC4;
+}
+#section {
+    height: 580px;
+    background-color: #26A69A;
+}
+#footer {
+    height: 100px;
+    background-color: #00897b;
+}
+/* 
+    아이디/클래스
+    #/.
+    한번/두개 이상
+    전체적인 틀, 스크립트 --> id
+    세부적인 영역, 반복 --> class
+*/
+
+.container {
+    width: 1200px;
+    height: inherit; /* inherit은 상속*/
+    margin: 0 auto;
+    background-color: rgb(0,0,0,0.3);
+}
+@media (max-width: 1220px){
+    .container {
+        width: 96%;
     }
-    body{
-        background-color: #fff3e0;
-    }
-    #wrap {
-        width: 1200px;
-        margin: 0 auto;
-    }
-    #header {
+}
+@media (max-width: 768px){
+    .container {
         width: 100%;
-        height: 100px;
-        background-color: #ffe0b2
     }
-    #nav {
-        width: 100%;
-        height: 100px;
-        background-color: #ffcc80;
-    }
-    #aside {
-        width: 30%;
-        height: 780px;
-        background-color: #ffb74d;
-        float: left;
-    }
-    #section {
-        width: 70%;
-        height: 780px;
-        background-color: #ffa726;
-        float: left;
-    }
-    #footer {
-        width: 100%;
-        height: 100px;
-        background-color: #ff9800;
-        clear: both;
-    }
-    @media(max-width:1280px){
-        #wrap {
-            width: 96%;
-            margin: 0 auto;
-        }
-    }
-    @media(max-width:768px){
-        #wrap {
-            width: 100%;
-        }
-        #aside {
-            width: 30%;
-            height: 780px;
-            float: left;
-        }
-        #section {
-            width: 70%;
-            height: 780px;
-            float: left;
-        }
-    }
-    @media(max-width:480px){
-        #wrap {
-            width: 100%;
-        }
-        #aside {
-            width: 100%;
-            height: 300px;
-        }
-        #section {
-            width: 100%;
-            height: 480px;
-        }
-    }
+}
 </code></pre>
                     </div>
                     <h4 class="t_tit2">결과</h4>
