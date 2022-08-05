@@ -208,6 +208,79 @@ quizConfirm.addEventListener("click", ()=>{                 //function 생략 �
                 </div>
                 <!-- 02번 메인 샘플 시작 -->
             </div>
+
+            <div class="document">
+                <!-- 02번 메인 샘플 시작 -->
+                <h2 class="t_tit2">2번 입력한 문자로 맞음/틀림 정하는 페이지 만들기</h2>
+                <p class="t_desc2">
+                    2번 문제의 정답을 input 박스에 입력하고 정답확인하기를 누르면 버튼과 input 박스가 사라지고 정답이 나타납니다.
+                </p>
+                <hr>
+                <div class="t_iframe" style="min-height : 1000px; padding-top:0;">
+                    <iframe src="https://kimsangjunv1.github.io/coding/javascript/effect/quizEffect02.html" frameborder="0"></iframe>
+                </div>
+                <hr>
+                <h2 class="t_tit2">자바스크립트</h2>
+                <div id="sample02" class="sample">
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+                        <div class="t_code">
+<pre><code class="language-js">//선택자
+const quizType = document.querySelector(".quiz__type");                 //퀴즈 종류 : 클래스 quiz__type에 대입함
+const quizNumber = document.querySelector(".quiz__question .number")    //퀴즈 번호 : 클래스 quiz__quetion의 .number에 대입함
+const quizAsk = document.querySelector(".quiz__question .ask")          //퀴즈 질문 : 클래스 quiz__quetion의 .ask에 대입함
+const quizConfirm = document.querySelector(".quiz__answer .confirm")    //정답 확인 버튼 : 클래스 quiz__answer의 .confirm에 대입함
+const quizResult = document.querySelector(".quiz__answer .result")      //정답 결과 : 클래스 quiz__answer의 .result에 대입함
+const quizInput = document.querySelector(".quiz__answer .input")        //사용자 정답 : 클래스 quiz__answer의 .input에 대입함
+const quizView= document.querySelector(".quiz__view")                   //강아지 보기
+
+//문제 정보
+const answerType = "웹디자인기능사";
+const answerNumber = 2 + ".";
+const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업 이미지 통합 전략은 무엇인가요?"
+let answerResult = "CIP"; // const 사용시 데이터 변경 불가
+
+//문제 출력
+quizType.textContent=answerType;                            //answerType의 텍스트만 인식해 출력
+quizNumber.textContent=answerNumber + ". ";                 //answerNumber의 텍스트만 인식해 출력
+quizAsk.textContent=answerAsk;                              //answerAsk의 텍스트만 인식해 출력
+quizResult.textContent="정답은 : "+answerResult+" 입니다.";    //answerResult의 텍스트만 인식해 출력
+
+//정답 숨기기
+quizResult.style.display="none";                            //정단을 숨깁니다.
+
+//정답 확인
+quizConfirm.addEventListener("click", ()=>{                 //function 생략 하고 정답버튼을 클릭했을때
+    quizInput.style.display="none";                         //quizConfirm 버튼 클릭시 버튼을 사라지게 함
+    quizResult.style.display="block";
+    quizConfirm.style.display="none"; 
+    //사용자 정답
+    const userWord = quizInput.value.toLowerCase().trim();  //소문자로 변환해 userWord에 대입합니다.
+    answerResult = answerResult.toLowerCase().trim(); //소문자로 변환해 answerResult에 대입합니다.
+
+    // userWord = userWord.toLowerCase().trim(); 사용자 대답도 소문자로 처리
+    // console.log(userWord);
+    //사용자 정답 == 문제 정답
+    if(answerResult == userWord){                           //answerResul(정해진 답변)이 userWord(사용자답변)과 같다면
+        //정답
+        quizView.classList.add("like");                     //강아지의 모습에 클래스 like를 추가시켜 변화 시킴
+        // alert("정답입니다.")                 
+    } else {                                                //만약 아니라면
+        //오답
+        quizView.classList.add("dislike");                  //강아지의 모습을 클래스 dislike를 추가해 변화 시킴.
+        //alert("오답입니다.")
+    }
+});
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="t_link">
+                    <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/quizEffect02.html" target="blank">원본 소스 보기</a>
+                </div>
+                <!-- 02번 메인 샘플 시작 -->
+            </div>
         </main>
         <!-- //main -->
 

@@ -8,47 +8,24 @@
 </head>
 <body>
     <script>
-    {
-        // 1,
-        // function func(){
-        //     document.write("x");
-        // }
+        const arr  = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const ojb = [{
+            type:"웹디자인",
+            num: "1"
+        },{q:"1"},{}]
 
-        // func();
+        //for문을 이용해서 하나씩 출력
+        for(let i=0; i<10; i++){
+            // document.write(arr[i]);
+        }
 
-        // 1. 화살표 함수
-        // func = () => document.write("x");
+        arr.forEach(function(el){ //함수가 두개 있는것을 콜백함수라고 하는데 지금 상태는 .forEach라는 함수 두번째로 function이라는 함수가 이중으로 들어가있다.
+            // document.write(el);
+        })
 
-        // func();
+        document.write(ojb[0].type);
         
-        // 2.
-        // const func = function() {
-        //     document.write("x");
-        // }
-        
-        // func();
-
-        //2. 화살표 함수
-        // const func=()=>document.write("x");
-
-        // func();
-        
-        // 3. X
-        // function func(str){
-        //     document.write("x")
-        // }
-
-        // func();
-
-        // 3. 화살표 함수
-        // func = (str)=>document.write("x")
-
-        // func();
-
        
-
-    }
-
     </script>
 </body>
 </html>
