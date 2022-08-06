@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소를 직접 선택하는 메서드</title>
+    <script>
+        window.onload = function() {
+            var list1 = document.querySelector('#box1 > ul > li');
+            var list2 = document.querySelectorAll('#box2 > ul > li');
+            console.log(list1);
+            console.log(list2);
+            // list1.style.background = "#ff6600";
+            // list2[0].style.background = "#ccc";
+            // list2.item(1).style.background = "#ddd";
+        };
+    </script>
+</head>
+<body>
+    <div id="box1">
+        <ul>
+            <li>내용1</li>
+            <li>내용2</li>
+            <li>내용3</li>
+        </ul>
+    </div>
+    <div id="box2">
+    <ul>
+            <li>내용4</li>
+            <li>내용5</li>
+            <li>내용6</li>
+        </ul>
+    </div>
+</body>
+</html>

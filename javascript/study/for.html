@@ -212,15 +212,40 @@
                 <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
                 <div class="script">
                     <div class="t_code">
-<pre><code class="language-js">{
-    for(let i=2; i&lt;=9; i++){ 
-    document.write("&lt;br&gt;");
-    for(let j=1; j&lt;=9; j++){
-        let sum = i*j;
-        document.write(i+"*"+j+"="+sum);
-        document.write("&lt;br&gt;");
-    }
-}
+<pre><code class="language-js">&lt;!DOCTYPE html&gt;
+    &lt;html lang="ko"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;요소를 직접 선택하는 메서드&lt;/title&gt;
+        &lt;script&gt;
+            window.onload = function() {
+                var list1 = document.querySelector('#box1 &gt; ul &gt; li');
+                var list2 = document.querySelectorAll('#box2 &gt; ul &gt; li');
+                console.log(list1);
+                console.log(list2);
+                // list1.style.background = "#ff6600";
+                // list2[0].style.background = "#ccc";
+                // list2.item(1).style.background = "#ddd";
+            };
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="box1"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;내용1&lt;/li&gt;
+                &lt;li&gt;내용2&lt;/li&gt;
+                &lt;li&gt;내용3&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div id="box2"&gt;
+        &lt;ul&gt;
+                &lt;li&gt;내용4&lt;/li&gt;
+                &lt;li&gt;내용5&lt;/li&gt;
+                &lt;li&gt;내용6&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
 </code></pre>
                     </div>
                 </div>
@@ -229,18 +254,7 @@
                     <details>
                         <summary>결과보기</summary>
                         <div class="sample05_result">
-                            i는 2로 설정후 1증가 할때마다<br>
-                            j의 값을 9까지 증가<br>
-                            이후 이 과정을 i의 값이 9에 도달할때까지 반복<br>
-                            2*1=2<br>
-                            2*2=4<br>
-                            2*3=6<br>
-                            2*4=8<br>
-                            2*5=10<br>
-                            2*6=12<br>
-                            2*7=14<br>
-                            2*8=16<br>
-                            2*9=18<br>
+                            
                         </div>
                     </details>
                 </div>
