@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+    <style>
+        body {
+            background: var(--background);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--heading-text);
+        }
+
+        p,
+        dl {
+            color: var(--text);
+        }
+
+        a {
+            color: var(--anchor-text);
+            text-decoration: none;
+        }
+
+        code {
+            color: var(--code-text);
+            background: var(--code-background);
+            border-radius: 6px;
+            padding: 2.5px 5px;
+        }
+
+        :root {
+            --background: #fff;
+            --text: #363636;
+            --heading-text: #000;
+            --anchor-text: #0076d1;
+            --code-background: #efefef;
+            --code-text: #000;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #202b38;
+                --text: #dbdbdb;
+                --heading-text: #fff;
+                --anchor-text: #0076d1;
+                --code-background: #161f27;
+                --code-text: #ffbe85;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li class="active"><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h1>prefers-color-scheme</h1>
+
+            <p><strong><code>prefers-color-scheme</code></strong> <a href="/ko/docs/Web/CSS">CSS</a> <a
+                    href="/ko/docs/Web/CSS/@media#media_features">미디어 특성</a>은 사용자의 시스템이 라이트 테마나 다크 테마를 사용하는지 탐지하는 데에
+                사용됩니다.</p>
+
+            <h2>구문</h2>
+
+            <dl>
+                <dt><code>no-preference</code></dt>
+                <dd>사용자가 시스템에 선호하는 테마를 알리지 않았음을 나타냅니다. 이 키워드 <a
+                        href="https://drafts.csswg.org/mediaqueries-5/#boolean-context">boolean context</a>에서
+                    <code>false</code>로 판정됩니다.</dd>
+                <dt><code>light</code></dt>
+                <dd>사용자가 시스템에 라이트 테마를 사용하는 것을 선호한다고 알렸음을 나타냅니다.</dd>
+                <dt><code>dark</code></dt>
+                <dd>사용자가 시스템에 다크 테마를 사용하는 것을 선호한다고 알렸음을 나타냅니다.</dd>
+            </dl>
+
+            <h2>예제</h2>
+
+            <p>이 예제는 검은 배경에 흰 텍스트를 가진 요소를 라이트 테마를 사용하는 사용자가 볼 경우 색을 반대로 해서 나타냅니다.</p>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+        //전역변수
+        {
+            var kor = 90;
+
+            function getScore() {
+                kor = 100; //전역변수
+                // console.log(kor);//100
+                document.write(kor);
+            }
+            getScore();
+
+            document.querySelector(".result01").innerHTML = getScore()
+        }
+        // 지역변수
+        {
+            var kor = 90;
+
+            function getScore() {
+                var kor = 100; //지역변수
+                // console.log(kor);//100
+                document.write(kor);
+            }
+            getScore();
+        }
+        //함수 레벨 스코프, 블록 레벨 스코프
+        {
+            var x = 10;
+            let y = 10;
+            const z = 10; {
+                var x = 20; //전역 변수
+                let y = 30; //지역 변수
+                const z = 40; //지역 변수
+            }
+            document.write(x); //전역 변수로써 먼저 선언된 값 20 출력
+            document.write(y); //지역 변수로써 먼저 선언된 값 10 출력
+            document.write(z); //지역 변수로써 먼저 선언된 값 10 출력
+
+            document.querySelector(".sample03_result").innerHTML = x + "<br>" + y + "<br>" + z
+
+        }
+    </script>
+</body>
+
+</html>
