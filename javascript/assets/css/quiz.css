@@ -192,6 +192,7 @@ body {
     border: 6px ridge #cacaca;
     width: 100%;
     font-size: 22px;
+    line-height: 1.3;
     padding: 13px 20px;
     box-sizing: border-box;
     text-align: center;
@@ -217,7 +218,7 @@ body {
     width: 120px;
     height: 120px;
     line-height: 120px;
-    background-color: #4f65f5;
+    background-color:rgb(107, 63, 237);
     color: #fff;
     border-radius: 50%;
     text-align: center;
@@ -231,6 +232,7 @@ body {
     height: 120px;
     line-height: 120px;
     background-color: #f54f78;
+    color: #fff;
     border-radius: 50%;
     text-align: center;
     position: absolute;
@@ -247,6 +249,53 @@ body {
     animation: wobble 0.6s;
 }
 
+.quiz__selects{
+    margin-bottom: 15px;
+}
+
+.quiz__selects label{
+    display: flex;
+}
+.quiz__selects label input{
+    position: absolute;
+    left: -9999px;
+}
+.quiz__selects label span{
+    font-size: 20px;
+    line-height: 1.3;
+    font-family: 'LeeSeoyun';
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    /* display: block; */
+}
+
+.quiz__selects label span::before{ /* 가상요소 before */
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 15px;
+    display: flex;
+    flex-shrink: 0; /*0(원래크기)으로 수축시킴*/
+    box-shadow: inset 0px 0px 0px 3px rgb(190, 182, 215);
+    transition: all 0.2s;
+}
+
+.quiz__selects label input:checked + span{ /*checked했을때 속성값을 줄 수 있고 + 를 사용해 친구에게도 속성을 줄 수 있음*/
+    background-color: rgb(227, 223, 247);
+    color: rgb(107, 63, 237);
+    transition: all 0.3s;
+}
+
+.quiz__selects label input:checked + span::before{ /*checked했을때 속성값을 줄 수 있고 + 를 사용해 친구에게도 속성을 줄 수 있음 */
+    box-shadow: inset 0px 0px 0px 10px rgb(107, 63, 237);
+}
+
 @keyframes wobble {
     0%   {transform: translateX(0) rotate(0deg);} /*transform 변형시키다 */
     15%  {transform: translateX(-25%) rotate(-5deg);}
@@ -256,7 +305,6 @@ body {
     75%  {transform: translateX(-5%) rotate(-1deg);}
     100% {transform: translateX(0) rotate(0deg);}
 }
-
 
 
 /* Dog */

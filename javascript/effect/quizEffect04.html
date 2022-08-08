@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/heungkuk/LeeSeoyun.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(한문제) 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li class="active"><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+
+            <!-- 퀴즈1 -->
+            <div class="quiz">
+                <span class="quiz__type"></span>
+                <h2 class="quiz__question">
+                    <span class="number"></span>
+                    <div class="ask"> </div>
+                </h2>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">틀렸습니다!</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <label for="select1">
+                            <!--라벨은 인라인 구조 / for을 사용해 input이랑 연결-->
+                            <input type="radio" id="select1" class="select" name="select" value="1">
+                            <!--타입 라디오, 아이디 셀렉트1, 이름은 select 값은 1번으로 설정-->
+                            <span class="choice"></span>
+                            <!--선택해주기 위해 choice라는 클래스 생성-->
+                        </label>
+                        <label for="select2">
+                            <!--가로로 정렬 안되게 인라인 구조니까-->
+                            <input type="radio" id="select2" class="select" name="select" value="2">
+                            <!--타입 라디오, 아이디 셀렉트1, 이름은 select 값은 1번으로 설정-->
+                            <span class="choice"></span>
+                            <!--선택해주기 위해 choice라는 클래스 생성-->
+                        </label>
+                        <label for="select3">
+                            <!--가로로 정렬 안되게 인라인 구조니까-->
+                            <input type="radio" id="select3" class="select" name="select" value="3">
+                            <!--타입 라디오, 아이디 셀렉트1, 이름은 select 값은 1번으로 설정-->
+                            <span class="choice"></span>
+                            <!--선택해주기 위해 choice라는 클래스 생성-->
+                        </label>
+                        <label for="select4">
+                            <!--가로로 정렬 안되게 인라인 구조니까-->
+                            <input type="radio" id="select4" class="select" name="select" value="4">
+                            <!--타입 라디오, 아이디 셀렉트1, 이름은 select 값은 1번으로 설정-->
+                            <span class="choice"></span>
+                            <!--선택해주기 위해 choice라는 클래스 생성-->
+                        </label>
+                    </div>
+                    <button class="confirm">정답 확인하기</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+            <!-- 퀴즈1 -->
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:to_before@naver.com">to_before@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        //선택자
+        const quizType = document.querySelector(".quiz__type");             //다중의 값이 있을때는 을 붙여 선택이 가능하게끔 한다.               //퀴즈 종류 : 클래스 quiz__type에 대입함
+        const quizNumber = document.querySelector(".quiz__question .number");//퀴즈 번호 : 클래스 quiz__quetion의 .number에 대입함
+        const quizAsk = document.querySelector(".quiz__question .ask");      //퀴즈 질문 : 클래스 quiz__quetion의 .ask에 대입함
+        const quizConfirm = document.querySelector(".quiz__answer .confirm");//정답 확인 버튼 : 클래스 quiz__answer의 .confirm에 대입함
+        const quizResult = document.querySelector(".quiz__answer .result");  //정답 결과 : 클래스 quiz__answer의 .result에 대입함
+        const quizInput = document.querySelector(".quiz__answer .input");    //사용자 정답 : 클래스 quiz__answer의 .input에 대입함
+        const quizView = document.querySelector(".quiz__view");              //강아지 보기
+        const quizSelects = document.querySelector(".quiz__selects");        //객관식 보기
+        const quizChoice = quizSelects.querySelectorAll(".choice");                //객관식 보기
+        const quizSelect = quizSelects.querySelectorAll(".select");                //객관식 보기
+
+        //문제정보
+        const quizInfo = [
+            {
+                answerType: "웹디자인 기능사 2015년 07월",
+                answerNum: "1",
+                answerAsk: "색의 3속성 중 사람의 눈이 가장 예민하고 강하게 반응하는 대비는?",
+                answerChoice : ["명도대비", "색상대비", "보색대비", "채도대비"],
+                answerResult : "1",
+                answerEx : "명도가 다른 두 색의 영향에 의해 명도차가 다르게 지각되는 현상."
+            }
+        ]
+
+        //문제 출력 함수(upadateQuiz) 생성 : 함수끼리 충돌을 방지하기 위해 함수(한 덩어리)로 묶어 작성
+        function updateQuiz(){
+            
+            //문제 출력
+            quizType.textContent=quizInfo[0].answerType;
+            quizNumber.textContent=quizInfo[0].answerNum+". ";
+            quizAsk.textContent=quizInfo[0].answerAsk;
+            quizResult.textContent=quizInfo[0].answerEx;
+    
+            //보기 출력
+            for(let i=0; i<4; i++){
+                quizChoice[i].textContent=quizInfo[0].answerChoice[i]
+            }
+
+            //해설 숨기기
+            quizResult.style.display="none";
+        }
+
+        updateQuiz();                                                   //만들어진 함수 updateQuiz 실행으로 문제,보기,숨기기 처리
+        
+        //정답 확인
+        function answerQuiz(){
+            //사용자가 선택한 정답 == 문제 정답
+            //사용자가 클릭한 input박스를 가져와야함 --> chechked를 가져오면 됨
+
+            for(let i=0; i<quizSelect.length; i++){
+                if(quizSelect[i].checked == true){                      //만약 quizSelect[i]배열에 checked가 생기면 true로 처리해준뒤
+                    //체크된 번호 == 문제 번호
+                    if(quizSelect[i].value == quizInfo[0].answerResult){//그럼 지금 선택한 quizSelect[i]값이 quizInfo[0] 배열에 있는 answerResult랑 값이 같은지 비교
+                        // alert("정답")
+                        quizView.classList.add("like")                  //like 클래스 추가
+                        quizResult.style.display="block"                //quizResult "block"으로 숨김 해제
+                        quizConfirm.style.display="none"                //quizConfirm "none"으로 숨겨서 다시 한번 정답을 입력하는 문제를 막음
+                    } else {                                            //오답일시
+                        // alert("오답")
+                        quizView.classList.add("dislike")               //dislike 클래스 추가
+                        quizResult.style.display="block"                //quizResult "block"으로 숨김 해제
+                        quizConfirm.style.display="none"                //quizConfirm "none"으로 숨겨서 다시 한번 정답을 입력하는 문제를 막음
+                    }
+                }
+            }
+        }
+
+        //정답 클릭
+        quizConfirm.addEventListener("click", answerQuiz)               //quizConfirm(정답 확인하기)를 클릭했을때 answerQuiz 함수 실행
+
+
+
+    </script>
+</body>
+
+</html>

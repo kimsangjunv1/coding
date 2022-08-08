@@ -305,6 +305,104 @@ quizConfirm.forEach((btn,num)=>{                //quizConfirm안에 있는 버�
                 </div>
                 <!-- 03번 메인 샘플 시작 -->
             </div>
+
+            <div class="document">
+                <!-- 04번 메인 샘플 시작 -->
+                <h2 class="t_tit2">4번 Radio 버튼을 통한 선택형 문제 만들기</h2>
+                <p class="t_desc2">
+                    문제 출력 및 정답 출력시 함수로 하나씩 묶어 충동을 방지하고, 라디오 버튼을 통해 checked가 생성되면 선택한 값과 저장되어있는 값이 맞는지 비교후 정답을 출력한다.
+                </p>
+                <hr>
+                <div class="t_iframe" style="min-height : 1000px; padding-top:0;">
+                    <iframe src="https://kimsangjunv1.github.io/coding/javascript/effect/quizEffect03.html" frameborder="0"></iframe>
+                </div>
+                <hr>
+                <h2 class="t_tit2">자바스크립트</h2>
+                <div id="sample02" class="sample">
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+                        <div class="t_code">
+<pre><code class="language-js">//선택자
+    const quizType = document.querySelector(".quiz__type");             //다중의 값이 있을때는 을 붙여 선택이 가능하게끔 한다.               //퀴즈 종류 : 클래스 quiz__type에 대입함
+    const quizNumber = document.querySelector(".quiz__question .number");//퀴즈 번호 : 클래스 quiz__quetion의 .number에 대입함
+    const quizAsk = document.querySelector(".quiz__question .ask");      //퀴즈 질문 : 클래스 quiz__quetion의 .ask에 대입함
+    const quizConfirm = document.querySelector(".quiz__answer .confirm");//정답 확인 버튼 : 클래스 quiz__answer의 .confirm에 대입함
+    const quizResult = document.querySelector(".quiz__answer .result");  //정답 결과 : 클래스 quiz__answer의 .result에 대입함
+    const quizInput = document.querySelector(".quiz__answer .input");    //사용자 정답 : 클래스 quiz__answer의 .input에 대입함
+    const quizView = document.querySelector(".quiz__view");              //강아지 보기
+    const quizSelects = document.querySelector(".quiz__selects");        //객관식 보기
+    const quizChoice = quizSelects.querySelectorAll(".choice");                //객관식 보기
+    const quizSelect = quizSelects.querySelectorAll(".select");                //객관식 보기
+    
+    //문제정보
+    const quizInfo = [
+        {
+            answerType: "웹디자인 기능사 2015년 07월",
+            answerNum: "1",
+            answerAsk: "색의 3속성 중 사람의 눈이 가장 예민하고 강하게 반응하는 대비는?",
+            answerChoice : ["명도대비", "색상대비", "보색대비", "채도대비"],
+            answerResult : "1",
+            answerEx : "명도가 다른 두 색의 영향에 의해 명도차가 다르게 지각되는 현상."
+        }
+    ]
+    
+    //문제 출력 함수(upadateQuiz) 생성 : 함수끼리 충돌을 방지하기 위해 함수(한 덩어리)로 묶어 작성
+    function updateQuiz(){
+        
+        //문제 출력
+        quizType.textContent=quizInfo[0].answerType;
+        quizNumber.textContent=quizInfo[0].answerNum+". ";
+        quizAsk.textContent=quizInfo[0].answerAsk;
+        quizResult.textContent=quizInfo[0].answerEx;
+    
+        //보기 출력
+        for(let i=0; i&lt;4; i++){
+            quizChoice[i].textContent=quizInfo[0].answerChoice[i]
+        }
+    
+        //해설 숨기기
+        quizResult.style.display="none";
+    }
+    
+    updateQuiz();                                                   //만들어진 함수 updateQuiz 실행으로 문제,보기,숨기기 처리
+    
+    //정답 확인
+    function answerQuiz(){
+        //사용자가 선택한 정답 == 문제 정답
+        //사용자가 클릭한 input박스를 가져와야함 --&gt; chechked를 가져오면 됨
+    
+        for(let i=0; i&lt;quizSelect.length; i++){
+            if(quizSelect[i].checked == true){                      //만약 quizSelect[i]배열에 checked가 생기면 true로 처리해준뒤
+                //체크된 번호 == 문제 번호
+                if(quizSelect[i].value == quizInfo[0].answerResult){//그럼 지금 선택한 quizSelect[i]값이 quizInfo[0] 배열에 있는 answerResult랑 값이 같은지 비교
+                    // alert("정답")
+                    quizView.classList.add("like")                  //like 클래스 추가
+                    quizResult.style.display="block"                //quizResult "block"으로 숨김 해제
+                    quizConfirm.style.display="none"                //quizConfirm "none"으로 숨겨서 다시 한번 정답을 입력하는 문제를 막음
+                } else {                                            //오답일시
+                    // alert("오답")
+                    quizView.classList.add("dislike")               //dislike 클래스 추가
+                    quizResult.style.display="block"                //quizResult "block"으로 숨김 해제
+                    quizConfirm.style.display="none"                //quizConfirm "none"으로 숨겨서 다시 한번 정답을 입력하는 문제를 막음
+                }
+            }
+        }
+    }
+    
+    //정답 클릭
+    quizConfirm.addEventListener("click", answerQuiz)               //quizConfirm(정답 확인하기)를 클릭했을때 answerQuiz 함수 실행
+    
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="t_link">
+                    <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/quizEffect02.html" target="blank">원본 소스 보기</a>
+                </div>
+                <!-- 04번 메인 샘플 시작 -->
+            </div>
+            
         </main>
         <!-- //main -->
 

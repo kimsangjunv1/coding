@@ -276,7 +276,7 @@
             btn.addEventListener("click", ()=>{     //그 버튼이 클릭 되었을때
 
                 //사용자 정답
-                const userWord = quizInput[num].value.toLowerCase().trim();     //입력받은 답변을 소문자 변경과 여백을 제거해 userword에 대입하고
+                const userWord = quizInput[num].value;     //입력받은 답변을 소문자 변경과 여백을 제거해 userword에 대입하고
 
                 //사용자 정답 === 문제 정답
                 if(userWord==quizInfo[num].answerResult){                       //사용자 대답이 담긴 userword가 quizInfo 배열의 answerResult키의 값과 같다면

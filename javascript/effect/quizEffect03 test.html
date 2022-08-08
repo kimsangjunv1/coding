@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이펙트</title>
-    
+
     <link rel="stylesheet" href="../assets/css/quiz.css">
-    
+
     <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/heungkuk/LeeSeoyun.css" rel="stylesheet">
 </head>
@@ -191,17 +191,19 @@
 
     <script>
         //선택자
-        const quizType = document.querySelectorAll(".quiz__type"); //다중의 값이 있을때는 All을 붙여 선택이 가능하게끔 한다.               //퀴즈 종류 : 클래스 quiz__type에 대입함
-        const quizNumber = document.querySelectorAll(".quiz__question .number")    //퀴즈 번호 : 클래스 quiz__quetion의 .number에 대입함
-        const quizAsk = document.querySelectorAll(".quiz__question .ask")          //퀴즈 질문 : 클래스 quiz__quetion의 .ask에 대입함
-        const quizConfirm = document.querySelectorAll(".quiz__answer .confirm")    //정답 확인 버튼 : 클래스 quiz__answer의 .confirm에 대입함
-        const quizResult = document.querySelectorAll(".quiz__answer .result")      //정답 결과 : 클래스 quiz__answer의 .result에 대입함
-        const quizInput = document.querySelectorAll(".quiz__answer .input")        //사용자 정답 : 클래스 quiz__answer의 .input에 대입함
-        const quizView= document.querySelectorAll(".quiz__view")                   //강아지 보기
+        const quizType = document.querySelectorAll(
+            ".quiz__type"); //다중의 값이 있을때는 All을 붙여 선택이 가능하게끔 한다.               //퀴즈 종류 : 클래스 quiz__type에 대입함
+        const quizNumber = document.querySelectorAll(
+            ".quiz__question .number") //퀴즈 번호 : 클래스 quiz__quetion의 .number에 대입함
+        const quizAsk = document.querySelectorAll(".quiz__question .ask") //퀴즈 질문 : 클래스 quiz__quetion의 .ask에 대입함
+        const quizConfirm = document.querySelectorAll(
+            ".quiz__answer .confirm") //정답 확인 버튼 : 클래스 quiz__answer의 .confirm에 대입함
+        const quizResult = document.querySelectorAll(".quiz__answer .result") //정답 결과 : 클래스 quiz__answer의 .result에 대입함
+        const quizInput = document.querySelectorAll(".quiz__answer .input") //사용자 정답 : 클래스 quiz__answer의 .input에 대입함
+        const quizView = document.querySelectorAll(".quiz__view") //강아지 보기
 
         //문제정보
-        const quizInfo = [
-            {
+        const quizInfo = [{
                 answerType: "웹디자인 기능사 2012년 04월",
                 answerNum: "1",
                 answerAsk: "각 부분 사이에 시각적인 강한 힘과 약한 힘이 규칙적으로 연속될 때에 생기는 디자인의 원리는?",
@@ -229,46 +231,34 @@
 
 
         //정보 가져오기
-        quizInfo.forEach(function(rob,good,array){                              //순서대로 적어야 각 인식할 요소 적용 가능 function(index) 라고 적을 시 element로 인식
-            quizType[good].textContent = quizInfo[good].answerType;           //quiztype 자리에 textContent만 가져올건데 = quizInfo배열의 i번째 answertype 가죠옴
-            quizNumber[good].textContent = quizInfo[good].answerNum+". ";
-            quizAsk[good].textContent = quizInfo[good].answerAsk;
-            quizResult[good].textContent = quizInfo[good].answerResult;
+        quizInfo.forEach((e,i,a)=>{
+            quizType[i].textContent=quizInfo[i].answerType;
+            quizNumber[i].textContent=quizInfo[i].answerNum;
+            quizAsk[i].textContent=quizInfo[i].answerAsk;
+            quizResult[i].textContent=quizInfo[i].answerResult;
         })
 
         //정답 숨기기
-        quizResult.forEach(function(tom,goooooood,ing){        //각 자리의 배치 순서에 따라 반영됨 tom자리는 요소 goooooood자리는 위치 ing자리는 
-            quizResult[goooooood].style.display="none";
+        
+        quizResult.forEach((e,i,a)=>{
+            quizResult[i].style.display="none";
         })
 
 
+        //정답 확인 forEach 사용
+        quizConfirm.forEach((e,i,a)=>{
+            e.addEventListener("click", ()=>{
+                const userWord = quizInput[i].value.toLowerCase().trim();
 
-
-        //정답 확인
-        quizConfirm.forEach((btn,num)=>{                //quizConfirm안에 있는 버튼 요소를 4개 가져와서
-            btn.addEventListener("click", ()=>{     //그 버튼이 클릭 되었을때
-
-                //사용자 정답
-                const userWord = quizInput[num].value.toLowerCase().trim();     //입력받은 답변을 소문자 변경과 여백을 제거해 userword에 대입하고
-
-                //사용자 정답 === 문제 정답
-                if(userWord==quizInfo[num].answerResult){                       //사용자 대답이 담긴 userword가 quizInfo 배열의 answerResult키의 값과 같다면
-                    //정답 : 
-                    alert("정답");                                               //정답 알림
-                    quizView[num].classList.add("like");                        //강아지 표정 like로 변화시킴
-                    quizConfirm[num].style.display="none";                      //확인하기 버튼 숨김
-                    quizResult[num].style.display="block";                      //답 나타나게 표현함
+                if(userWord==quizInfo[i].answerResult){
+                    alert("맞음");
                 } else {
-                    //오답 :
-                    alert("오답");
-                    quizView[num].classList.add("dislike");
-                    quizConfirm[num].style.display="none";
-                    quizResult[num].style.display="block"
-                    quizInput[num].style.display="none"
+                    alert("틀림");
                 }
             })
-        });
-
+        })
+        
+        
     </script>
 </body>
 
