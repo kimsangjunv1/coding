@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형01</title>
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* > 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .card__inner {
+            display: flex;
+            justify-content: space-between;
+            /*콘텐츠를 양쪽으로 정렬*/
+        }
+
+        .card {
+            width: 32%;
+            background-color: #f5f5f5;
+        }
+        .card__body {
+            padding: 24px;
+        }
+        .card__body .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .card__body .btn {}
+    </style>
+</head>
+
+<body>
+    <section id="cardType" class="card__wrap nexon section">
+        <!--다중 클래스 선택-->
+        <h2>PS5 Controller User Guide 🎮</h2>
+        <p>새롭고 혁신적인 PS5™ 컨트롤러로 완전히 몰입할 수 있는 게임 경험1을 만끽하세요</p>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="card__header">
+                    <!--img를 쓰기 위한 웹 표준 방법-->
+                    <img src="img/card_bg01.jpg" alt="다양한 인터렉티브 반응">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">다양한 인터렉티브 반응</h3>
+                    <p class="desc">인게임 기어 및 환경과 상호작용하면서 활시위를 당길 때 점점 팽팽해지는 느낌과 질주하는 자동차의 급브레이크를 밟는 느낌 등 액션과 함께 어우러집니다.</p>
+                    <a class="btn"  href="/">더 자세히 보기</a>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <!--img를 쓰기 위한 웹 표준 방법-->
+                    <img src="img/card_bg02.jpg" alt="게임패드 지원">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">게임패드 지원</h3>
+                    <p class="desc">내장 마이크를 사용하거나 3.5mm 잭에 미니멀하고 아이코닉한 헤드셋을 연결 전용 음소거 버튼을 사용하여 음성 캡처를 즉시 끌 수 있습니다.</p>
+                    <a class="btn"  href="/">더 자세히 보기</a>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <!--img를 쓰기 위한 웹 표준 방법-->
+                    <img src="img/card_bg03.jpg" alt="진동을 통한 생생한 현장감">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">진동을 통한 생생한 현장감</h3>
+                    <p class="desc">기존의 진동 모터 대신 듀얼 액추에이터가 선사하는 물리적 반응형 피드백을 경험해보세요, 게임 내 환경에서부터 실감 나는 역동적인 진동이 손을 타고 전해집니다.</p>
+                    <a class="btn" href="/">더 자세히 보기</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+</body>
+
+</html>
