@@ -45,16 +45,46 @@
         }
         .cardType__profile__container{
             display: flex;
+            justify-content: flex-end;
         }
         .cardType__profile__img{
-            width: 20%;
+            /* width: 20%; */
             /* float: right; */
         }
+
+        .cardType__profile__img img{
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+            box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.085);
+        }
+        
+        .cardType__01 > figure img{
+            box-shadow: 0px 5px 20px 15px rgba(0, 0, 0, 0.125);
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
         .cardType__profile__desc__container{
-            /* float: right; */
-            margin-right: 20px;
-            width: 80%;
+            margin-right: 10px;
         }
+
+        .cardType__profile__desc__container ul{
+            margin-left: auto;
+        }
+
+        .cardType__profile__desc__container ul li:first-child{
+            /* float: right; */
+            color: #188422;
+        }
+
+        .cardType__profile__desc__container ul li{
+            /* float: right; */
+            font-size: 18px;
+            line-height: 1.4;
+            text-align: right;
+        }
+
         .cardType__section__01{
             padding: 20px;
             border: 1px solid rgb(228, 227, 238);
@@ -62,17 +92,9 @@
         .cardType__01{
             background-color: rgb(255, 255, 255);
             width: 347px;
-            height: 515px;
+            /* height: 515px; */
             border-radius: 10px;
         }
-
-        .cardType__01 img{
-            box-shadow: 0px 5px 20px 15px rgba(0, 0, 0, 0.125);
-            border-radius: 20px;
-            margin-bottom: 20px;
-        }
-        
-
 
 
         .h_desc > h2{
@@ -103,8 +125,10 @@
                     <p>손을 씻는것은 상당히 중요한 행동입니다, 손을 씻음으로써 병을 예방할 수 있고 각종 미세먼지와 세균에서 벗어날 수 있기 때문에...</p>
                     <div class="cardType__profile__container">
                         <div class="cardType__profile__desc__container">
-                            <h2 style="text-align:right">d333k</h2>
-                            <p style="text-align:right">22222</p>
+                            <ul style="list-style: none;">
+                                <li>Dr junjun</li>
+                                <li>9 resources</li>
+                            </ul>
                         </div>
                         <figure class="cardType__Top cardType__profile__img">
                             <img src="img/card_bg04_profile.jpg" alt="프로필 사진">
