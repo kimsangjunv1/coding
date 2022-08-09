@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="study/basic.html">기본 규칙</a></li>
+                <li><a href="study/operator.html">연산자</a></li>
+                <li><a href="study/for.html">반복문</a></li>
+                <li><a href="study/if.html">조건문</a></li>
+                <li><a href="study/type.html">데이터 타입</a></li>
+                <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
+                <li><a href="study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 01번 메인 샘플 시작 -->
+                <h2 class="t_tit">비트맵</h2>
+                <h2 class="t_tit2">비트맵이란?</h2>
+                <p class="t_desc2_html">
+                    비트맵 그래픽이란 픽셀 하나하나의 조합으로 이미지를 표현하는 방식이며 정교하고 화려하게 표현 가능케하고 사진 이미지에 주로 사용되며 웹에서 이미지를 표시할 때는 비트맵 이미지를 사용합니다
+                </p>
+                <h2 class="t_tit2">비트맵의 단점?</h2>
+                <p class="t_box">
+                    비트맵은 크기를 늘리거나 줄이게 되면 이미지가 깨지게 되며 쉽게 말하자면 사진이 흐릿해지는 현상이 생깁니다.
+                </p>
+                <h2 class="t_tit2">비트맵의 확장자는?</h2>
+                <p class="t_box">
+                    비트맵의 확장자로는 [jpg, jpeg, png, gif] 가 있습니다.
+                </p>
+                <hr>
+                <h2 class="t_tit">벡터 그래픽</h2>
+                <h2 class="t_tit2">벡터 그래픽이란?</h2>
+                <p class="t_desc2_html">
+                   벡터 그래픽은 수학적원리를 이용해 그림을 표현하는 방식이며, 특성상 이미지의 크기를 늘리고 줄여도 손상되지 않습니다.
+                </p>
+                <h2 class="t_tit2">벡터 그래픽의 단점?</h2>
+                <p class="t_box">
+                    복잡한 그림을 표현할때는 컴퓨터에 엄청난 부담을 준다는 단점이 있기에 빠른 정보를 출력해야하는 웹에서는 정교한 그림엔 사용하질 않았습니다.
+                </p>
+                <h2 class="t_tit2">벡터 그래픽의 확장자는?</h2>
+                <p class="t_box">
+                    벡터 그래픽은 [ai, eps, svg] 등이 사용되며 웹사이트의 로고 및 아이콘 표시에 백터 그래픽이 사용됩니다.
+                </p>
+                <!-- 예시보기 -->
+                <details>
+                    <summary class="t_box">예시보기</summary>
+                    <div style="display:flex; justify-content:space-between; margin-left:10%; margin-right:10%">
+                        <div>
+                            <p style="text-align:center;">안깨짐</p>
+                            <figure>
+                                <img border-radius="5px" width="90%" src="../assets/img/yosh.jpg" alt="요시">
+                            </figure>
+                        </div>
+                        <div>
+                            <p style="text-align:center;">깨짐</p>
+                            <figure>
+                                <img width="90%" src="../assets/img/yosh_crash.jpg" alt="요시">
+                            </figure>
+                        </div>
+                    </div>
+                </details>
+                <!-- 예시보기 끝 -->
+            </div>
+            
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
