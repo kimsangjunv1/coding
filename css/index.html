@@ -6531,7 +6531,7 @@
                                     </tr>
                                     <tr>
                                         <td rowspan="7">속성 선택자</td>
-                                        <td>[class]112쪽</td>
+                                        <td>[class]</td>
                                         <td class="left">h3[class] {color: blue;}</td>
                                         <td class="left">class를 갖는 h3 요소, 즉 "서울특별시"가 파란색으로 나타남</td>
                                         <td>
@@ -6545,7 +6545,7 @@
                                     </tr>
                                     <tr>
                                         <td>[class~=""]</td>
-                                        <td class="left">p[class] {color: red;}</td>
+                                        <td class="left">p[class="icox"] {color: red;}</td>
                                         <td class="left">class명이 하나이면서 "icox"인 p 요소, 즉 "주소록 작성"이 빨간색으로 나타남</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
@@ -6558,7 +6558,7 @@
                                     </tr>
                                     <tr>
                                         <td>[class|=""]</td>
-                                        <td class="left">p[class] {color: red;}</td>
+                                        <td class="left">p[clas~s="icox"] {color: red;}</td>
                                         <td class="left">class명이 "icox"인 p 요소, 즉 "주소록 작성"과 "금전출납부"가 빨간색으로 나타남</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
@@ -6571,7 +6571,7 @@
                                     </tr>
                                     <tr>
                                         <td>[class^=""]</td>
-                                        <td class="left">p[class] {color: red;}</td>
+                                        <td class="left">p[class|="icox"] {color: red;}</td>
                                         <td class="left">class명이 "icox"이거나 "icox-"로 시작하는 p 요소, 즉 "주소록 작성"과 "손익계산서"가 빨간색으로 나타남</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
@@ -6584,7 +6584,7 @@
                                     </tr>
                                     <tr>
                                         <td>[class$=""]</td>
-                                        <td class="left">p[class] {color: red;}</td>
+                                        <td class="left">p[class^="icox"] {color: red;}</td>
                                         <td class="left">class명이 "icox"로 시작하는 p 요소, 즉 "주소록 작성"과 "전화번호부"와 "손익계산서"가 빨간색으로 나타남</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
@@ -6597,7 +6597,7 @@
                                     </tr>
                                     <tr>
                                         <td>[class*=""]</td>
-                                        <td class="left">p[class] {color: red;}</td>
+                                        <td class="left">p[class$="icox"] {color: red;}</td>
                                         <td class="left">class명이 "icox"로 끝나는 p 요소, 즉 "주소록 작성"과 "건강기록부"가 빨간색으로 나타남</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
@@ -6610,8 +6610,8 @@
                                     </tr>
                                     <tr>
                                         <td>a[href^=""]</td>
-                                        <td class="left">p[class] {color: red;}</td>
-                                        <td class="left">class명에 철자 "icox"가 포함되어 있는 p 요소, 즉 "주소록 작성","전화번호부","건강기록부","금전출납부","손익계산서"가 빨간색으로 나타남</td>
+                                        <td class="left">p[class*="icox"] {color: red;}</td>
+                                        <td class="left">class명에 철자 "icox"가 포함되어 있는 p 요소가 빨간색으로 나타남</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>

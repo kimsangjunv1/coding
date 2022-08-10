@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        /* fonts */
+
+        .scoredream {
+            font-family: 'SCoreDream';
+            font-weight: 500;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .gray {
+            background-color: #f5f5f5;
+        }
+
+        /* card */
+        .card {
+            width: 333.5px;
+            /* height: 528px; */
+            font-family: S-CoreDream-4;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.7;
+            letter-spacing: normal;
+            text-align: left;
+            color: #666;
+            padding: 20px;
+            border: 1px solid #eee;
+        }
+
+        .card_container {
+            display: flex;
+            /* justify-content: space-between; */
+            flex-wrap: nowrap;
+        }
+
+        .title {
+            width: 333.5px;
+            height: 56px;
+            margin: 19px 0.5px 10px 0;
+            font-family: S-CoreDream-3;
+            font-size: 20px;
+            font-weight: 300;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.4;
+            letter-spacing: normal;
+            text-align: left;
+            color: var(--black);
+        }
+
+        .title__desc {
+            width: 333.5px;
+            height: 81px;
+            margin: 0px 0px 30px 0;
+            font-family: S-CoreDream-4;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.7;
+            letter-spacing: normal;
+            text-align: left;
+            color: #666;
+        }
+
+        .-Hesperioidea {
+            width: 72.2px;
+            height: 40px;
+            font-family: S-CoreDream-4;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.17;
+            letter-spacing: normal;
+            text-align: right;
+            color: #666;
+        }
+
+        .-Hesperioidea .text-style-1 {
+            color: #188422;
+        }
+
+        .Ellipse-1 {
+            width: 37.6px;
+            height: 40px;
+            margin: 0 0 0 12.3px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+            background-image: url(img/card_bg04_profile.jpg);
+            border-radius: 50px;
+        }
+        .profile__flex{
+            display: flex;
+            justify-content: flex-end;
+        }
+        .divider{
+            /* width: 50px; */
+            background-color: #fff;
+            float: right;
+            margin-top: 10px;
+            margin-right: 9.7px;
+            padding: 6px 14.5px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 15px;
+        }
+        .img__source,
+        .img__source2,
+        .img__source3{
+            border-radius: 10px;
+            box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.24) ;
+            height: 230px;
+            width: 333.5px;
+            margin-bottom: 19px;
+        }
+        .img__source{
+            background-image: url(img/card_bg04.jpg);
+        }
+        .img__source2{
+            background-image: url(img/card_bg03_02.jpg);
+            
+        }
+        .img__source3{
+            background-image: url(img/card_bg03_03.jpg);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container section">
+        <div class="card_container">
+            <div class="card">
+                <div class="img__source">
+                    <h1 class="divider">
+                        WASH</h1>
+                </div>
+                <h3 class="title">
+                    손씻기 시간 준수!
+                </h3>
+                <p class="title__desc">
+                    손을 씻는것은 상당히 중요한 행동입니다, 손을 씻음으로써 병을 예방할 수 있고 각종 미세먼지와 세균에서 벗어날 수 있기 때문에...
+                </p>
+                <div class="profile__flex">
+                    <div class="-Hesperioidea">
+                        <span>
+                            <span class="text-style-1">Dr. JunJun</span>
+                            +9 자료
+                        </span>
+                    </div>
+                    <div class="Ellipse-1"></div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="img__source2">
+                    <h1 class="divider">
+                        SEARCHING</h1>
+                </div>
+                <h3 class="title">
+                    건축은 건물이나 다른 구조물을 계획하고 설계하고 건설하는 과정과 그 결과..
+                </h3>
+                <p class="title__desc">
+                    건축적인, 미학적인 고려가 전체적으로 기능성에 종속되어야 한다는 개념이 대중성, 회의론과 만났을 때, 그것은 비트루비우스의 '유용성을...
+                </p>
+                <div class="profile__flex">
+                    <div class="-Hesperioidea">
+                        <span>
+                            <span class="text-style-1">Dr. JunJun</span>
+                            +9 자료
+                        </span>
+                    </div>
+                    <div class="Ellipse-1"></div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="img__source3">
+                    <h1 class="divider">
+                        PHIL</h1>
+                </div>
+                <h3 class="title">
+                    건축은 건물이나 다른 구조물을 계획하고 설계하고 건설하는 과정과 그 결과..
+                </h3>
+                <p class="title__desc">
+                    건축적인, 미학적인 고려가 전체적으로 기능성에 종속되어야 한다는 개념이 대중성, 회의론과 만났을 때, 그것은 비트루비우스의 '유용성을...
+                </p>
+                <div class="profile__flex">
+                    <div class="-Hesperioidea">
+                        <span>
+                            <span class="text-style-1">Dr. JunJun</span>
+                            +9 자료
+                        </span>
+                    </div>
+                    <div class="Ellipse-1"></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

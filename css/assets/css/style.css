@@ -1,64 +1,55 @@
-/* 여백 초기화 --------------*/
+@import url('https://webfontworld.github.io/ok/OKDdung.css');
+@import url('https://webfontworld.github.io/utoImagetree/UtoImageTree.css');
+/* 여백 초기화 */
 * {
     margin: 0;
     padding: 0;
 }
-
-
-/* 링크 초기화 --------------*/
+/* 링크 초기화 */
 a {
     text-decoration: none;
     color: #222;
 }
-
-
-/*목록 초기화 --------------*/
+/* 목록 초기화 */
 li {
     list-style: none;
 }
-
-
-/* 제목 초기화 --------------*/
-h1, h2, h3, h4, h5, h6{
-    font-weight: normal;
-}
-
 /* 볼드체 초기화 */
 strong {
     font-weight: normal;
 }
-
-/* em , i 테그 이텔릭 초기화 */
+/* 제목 초기화 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+/* 이텔릭체 초기화 */
 em, i {
     font-style: normal;
 }
-
 /* 테이블 초기화 */
-table{
+table {
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
 }
-
-/* 기본세팅 */
-:root { /*함수를 생성하는 방법 */
-    font-size: 22px; /* 제일 기본이 되는 글씨 크기 기준으로 1rem */
+/* 기본 셋팅 */
+:root {
+    font-size: 22px; /*원래 16px이 기본*/
     --fontTitle: "OKDdung";
     --fontSub: "UtoImageTree";
-    --fontDocs: "SCoreDream";
+    --fontDocs: "sCoreDream";
     --white: #fff;
     --black: #000;
-    --red: #c54435;
-    --orange: #e5774f;
-    --orange2: #eb943a;
-    --bgMain: #f4b861; /*css에서 함수 사용하는 법 */
-    --bgSub: #fef2e0;
+    --orange: #E5774F;
+    --orange2: #EB943A;
+    --red: #C54435;
+    --bgMain: #F4B861;
+    --bgSub: #FEF2E0;
     --brown: #762917;
 }
-
 /* 레이아웃 */
 body {
-    background-color: var(--bgMain); /* 작성한 함수 사용 */
+    background-color: var(--bgMain);
 }
 #header {}
 #main {}
@@ -66,18 +57,15 @@ body {
     padding: 40px 0;
     text-align: center;
 }
-
 #footer a:hover {
     text-decoration: underline;
 }
-
 /* container */
-.container{ /* 미디어 쿼리랑 같은 역할을 수행함 */
+.container {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
 }
-
 /* main__title */
 .main__title {
     margin: 200px 20px;
@@ -85,38 +73,30 @@ body {
     background-color: var(--bgSub);
     padding: 80px;
     text-align: center;
-    
 }
-
-.main__title h1{
+.main__title h1 {
     font-family: var(--fontTitle);
     font-size: 8vw;
     color: var(--orange);
-    white-space: nowrap;
+    -webkit-text-stroke: 2px var(--brown);
 }
-
-.main__title h1 strong{
-    color: var(--orange2)
+.main__title h1 strong {
+    color: var(--orange2);
 }
-
-.main__title em{
+.main__title em {
     font-family: var(--fontSub);
     font-size: 100px;
     color: var(--brown);
 }
-
-.main__title p{
-    margin-top: 50px;
+.main__title p {
     font-family: var(--fontSub);
     font-size: 30px;
     color: var(--brown);
+    margin-top: 50px;
 }
-
 /* main__desc */
-
 .main__desc {
     margin: 200px 20px;
-    margin-top: 200px;
     border: 4px solid var(--brown);
     background-color: var(--bgSub);
     padding: 120px 80px 80px 80px;
@@ -124,18 +104,16 @@ body {
     border-radius: 30px;
     overflow: hidden;
 }
-
-.main__desc .deco{
+.main__desc .deco {
     position: absolute;
     left: 50%;
     top: 0;
     transform: translateX(-50%);
     padding-top: 10px;
     white-space: nowrap;
-    width: 86%;
-    overflow: hidden;
+    width: 90%;
 }
-.main__desc .deco span{
+.main__desc .deco span {
     width: 30px;
     height: 30px;
     border: 10px solid var(--brown);
@@ -146,8 +124,7 @@ body {
     margin: 0 1%;
     position: relative;
 }
-
-.main__desc .deco span::after{
+.main__desc .deco span::after {
     content: '';
     width: 10px;
     height: 13px;
@@ -156,12 +133,9 @@ body {
     left: 0;
     top: -20px;
 }
-
-.main__desc .title{
+.main__desc .title {
     margin-bottom: 2rem;
 }
-
-
 .main__desc .title h2 {
     display: inline-block;
     border: 4px solid var(--brown);
@@ -173,33 +147,28 @@ body {
     position: relative;
     box-sizing: border-box;
 }
-.main__desc .title h2::before{
+.main__desc .title h2::before {
     content: '';
     width: 50px;
     height: 100%;
-    background-color: var(--red);
-    position: absolute;
+    background: var(--red);
+    position:absolute;
     left: 0;
     top: 0;
     border-right: 4px solid var(--brown);
 }
 .main__desc .title p {
-    width: 60%;
     font-family: var(--fontSub);
     font-size: 1.3rem;
     line-height: 1.3;
     color: var(--brown);
 }
-
-.main__desc .subTitle{
-
+.main__desc .subTitle {
 }
-
 .main__desc .subTitle ul {
     overflow: hidden;
 }
 .main__desc .subTitle li {
-    /* display: inline; inline은 자체적인 padding 값이 있다 */
     float: left;
     margin-right: -4px;
     margin-bottom: -4px;
@@ -211,41 +180,37 @@ body {
     padding: 0.5em 1em;
     display: inline-block;
 }
-
 .main__desc .subTitle li.active a {
     background-color: var(--brown);
-    color: var(--white)
+    color: var(--white);
 }
-
 .main__desc .table {
     border: 3px solid var(--brown);
     font-family: var(--fontDocs);
     font-size: 0.7rem;
 }
-.main__desc .table tr th{
-    background-color: rgba(0,0,0,0.08);
+.main__desc .table tr th {
+    background-color: rgba(0, 0, 0, 0.08);
+    font-weight: normal;
 }
 .main__desc .table tr th,
-.main__desc .table tr td{
+.main__desc .table tr td {
     border: 1px solid var(--brown);
     padding: 10px;
     text-align: center;
 }
-
+.main__desc .table tr td:nth-child(2),
 .main__desc .table tr td:nth-child(3){
     text-align: left;
-
 }
-
-.main__desc .table tr td span{
+.main__desc .table table tr td span {
     font-size: 16px;
     padding-top: 4px;
 }
-
-.main__desc .table .rowTable tr td:nth-child(2),
-.main__desc .table .rowTable tr td:nth-child(3){
+.main__desc .table.rowTable tr td:nth-child(2),
+.main__desc .table.rowTable tr td:nth-child(3) {
     text-align: center;
 }
-.main__desc .table .rowTable .left{
+.main__desc .table.rowTable .left {
     text-align: left !important;
 }

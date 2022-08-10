@@ -47,7 +47,6 @@
             width: 1160px;
             padding: 0 20px;
             margin: 0 auto;
-            height: 757px;
         }
 
         .section {
@@ -88,18 +87,19 @@
         
         .card h2{
             margin-bottom: 10px;
-            font-weight: 400;
-            font-size: 20px;
+            font-weight: 300;
+            font-size: 28px;
+            line-height: 28px;
         }
 
         .card p{
             margin-bottom: 30px;
             font-weight: 300;
-            line-height: 1.4;
+            line-height: 27.2px;
         }
 
         .card .main__img{
-            border-radius: 30px;
+            border-radius: 10px;
             margin-bottom: 19px;
             box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.24) ;
         }
@@ -113,13 +113,23 @@
             box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.24) ;
         }
 
-        .card__comtainer .img__source{
+        .card__comtainer .img__source,
+        .img__source2,
+        .img__source3{
             background-image: url(img/card_bg04.jpg);
-            border-radius: 30px;
+            border-radius: 10px;
             box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.24) ;
             height: 293px;
             width: 347px;
             margin-bottom: 19px;
+        }
+        .img__source2{
+            background-image: url(img/card_bg03_02.jpg);
+
+        }
+        .img__source3{
+            background-image: url(img/card_bg03_03.jpg);
+
         }
         .card__comtainer ul{
             margin-right: 12.3px;
@@ -134,29 +144,35 @@
             display: flex;
             justify-content: flex-end;
             flex-wrap: wrap;
+            height: 50px;
         }
         .card__comtainer .profile img{
-            width:  37.6px;
-            height: 40px;
+            width:  50px;
+            height: 50px;
         }
 
         .card__comtainer .profile ul li{
-            font-size: 16px;
+            font-size: 19px;
+            height: 50%;
         }
         .card__comtainer .profile ul li:first-child{
             color: #188422;
         }
-        .card__comtainer .img__source .divider{
-            width: 50px;
-            height: 28px;
+        .card__comtainer .divider{
+            /* width: 50px; */
             background-color: #fff;
             float: right;
-            margin-top: 20px;
-            margin-right: 20px;
-            padding: 0 14px;
+            margin-top: 10px;
+            margin-right: 9.7px;
+            padding: 6px 14.5px;
             border-radius: 50px;
             text-align: center;
             font-size: 15px;
+        }
+        .title_space{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         
     </style>
@@ -166,13 +182,13 @@
         <div class="container">
             <div class="card__comtainer">
                 <div class="card">
-                    <img class="main__img" src="img/card_bg04.jpg" alt="">
-                    <!-- <div class="img__source">
+                    <!-- <img class="main__img" src="img/card_bg04.jpg" alt=""> -->
+                    <div class="img__source">
                         <h1 class="divider">
-                            구분</h1>
-                    </div> -->
+                            WASH</h1>
+                    </div>
                     <h2>손씻기 시간 준수!</h2>
-                    <p>손을 씻는것은 상당히 중요한 행동입니다, 손을 씻음으로써 병을 예방할 수 있고 각종 미세먼지와 세균에서 벗어날 수 있기 때문에...</p>
+                    <p>손을 씻는것은 상당히 중요한 행동입니다, 손을 씻음으로써 병을 예방할 수 있고 각종 미세먼지와 세균에서 벗어날 수 있기 때문에 상당히 중요한 일입니다.</p>
                     <div class="profile">
                         <ul>
                             <li>dr. jun</li>
@@ -182,9 +198,13 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="main__img" src="img/card_bg03_02.jpg" alt="">
-                    <h2>손씻기 시간 준수!</h2>
-                    <p>손을 씻는것은 상당히 중요한 행동입니다, 손을 씻음으로써 병을 예방할 수 있고 각종 미세먼지와 세균에서 벗어날 수 있기 때문에...</p>
+                    <!-- <img class="main__img" src="img/card_bg03_02.jpg" alt=""> -->
+                    <div class="img__source2">
+                        <h1 class="divider">
+                            Clean</h1>
+                    </div>
+                    <h2>손은 꼭 꼼꼼히!</h2>
+                    <p>미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손 닦기는 전 세계에서 추구하고자 하는 방식입니다.</p>
                     <div class="profile">
                         <ul>
                             <li>dr. heck</li>
@@ -194,9 +214,13 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="main__img" src="img/card_bg03_03.jpg" alt="">
-                    <h2>손씻기 시간 준수!</h2>
-                    <p>손을 씻는것은 상당히 중요한 행동입니다, 손을 씻음으로써 병을 예방할 수 있고 각종 미세먼지와 세균에서 벗어날 수 있기 때문에...</p>
+                    <!-- <img class="main__img" src="img/card_bg03_03.jpg" alt=""> -->
+                    <div class="img__source3">
+                        <h1 class="divider">
+                            Happy</h1>
+                    </div>
+                    <h2 class="title_space">약은 시기 적절하게 먹어야 한다.</h2>
+                    <p>약은 꼭 제때제때 드셔야 합니다 안그러면 몸에 항채가 생겨 약의 효과가 나타나지 않을수가 있기 때문에 꼭 드셔야 탈이 안생깁니다 꼭 챙겨드세요</p>
                     <div class="profile">
                         <ul>
                             <li>dr. jo</li>
