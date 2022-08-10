@@ -88,6 +88,12 @@
         .card__body .tit {
             font-size: 24px;
             margin-bottom: 10px;
+
+            /* 한줄 효과 */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 20px;
         }
 
         .card__body .desc {
@@ -96,6 +102,12 @@
             color: #666;
             margin-bottom: 20px;
             font-weight: 300;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /*줄 효과*/
+            -webkit-box-orient: vertical;
         }
 
         .card__body .btn {}
@@ -111,7 +123,7 @@
             <article class="card">
                 <figure class="card__header">
                     <!--img를 쓰기 위한 웹 표준 방법-->
-                    <img src="img/card_bg01.jpg" alt="다양한 인터렉티브 반응">
+                    <img src="img/card_bg01_01.jpg" alt="다양한 인터렉티브 반응">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">다양한 인터렉티브 반응</h3>
@@ -130,7 +142,7 @@
             <article class="card">
                 <figure>
                     <!--img를 쓰기 위한 웹 표준 방법-->
-                    <img src="img/card_bg02.jpg" alt="게임패드 지원">
+                    <img src="img/card_bg01_02.jpg" alt="게임패드 지원">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">게임패드 지원</h3>
@@ -150,7 +162,7 @@
             <article class="card">
                 <figure>
                     <!--img를 쓰기 위한 웹 표준 방법-->
-                    <img src="img/card_bg03.jpg" alt="진동을 통한 생생한 현장감">
+                    <img src="img/card_bg01_03.jpg" alt="진동을 통한 생생한 현장감">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">진동을 통한 생생한 현장감</h3>

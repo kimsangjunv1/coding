@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형02</title>
+    <style>
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .nexon {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #3E45FF;
+            border-radius: 5px;
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .card__inner {
+            display: flex;
+            /* 생성한 요소들을 flex로 정렬합니다. */
+            justify-content: space-between;
+            /*창 크기에 맞게 좌우로 정렬합니다 */
+            /*콘텐츠를 양쪽으로 정렬*/
+            margin-bottom: 50px;
+        }
+
+        .card__inner2 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card {
+            width: 24%;
+            background-color: #ffffff;
+        }
+
+        .card__body {
+            /* padding: 24px; */
+        }
+
+        .card_body_title_container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card__body .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .card__body .btn {}
+
+        .btn_box {
+            padding: 2px;
+            background-color: #3E45FF;
+            color: #fff;
+            border-radius: 5px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="cardType" class="card__wrap nexon section">
+        <!--다중 클래스 선택-->
+        <h2>각종 병 예방수칙</h2>
+        <p>다양한 병을 예방하기 위해서는 무엇보다 다음과 같은 수칙들이 꼭 필요합니다<br>
+            꼭 병에 걸리지 않도록 준수해주세요 🦠</p>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="card__header">
+                    <!--img를 쓰기 위한 웹 표준 방법-->
+                    <img src="img/card02_bg01.jpg" alt="다양한 인터렉티브 반응">
+                </figure>
+                <div class="card__body">
+                    <div class="card_body_title_container">
+                        <h3 class="tit">권장된 모든 백신 맞기</h3>
+                        <a class="btn" href="/">
+                            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M1 7C0.447715 7 3.71402e-08 7.44772 0 8C-3.71402e-08 8.55228 0.447715 9 1 9L1 7ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928933C6.95262 0.538408 6.31946 0.538408 5.92893 0.928933C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM1 9L13 9L13 7L1 7L1 9Z" fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="desc">사회에서 권장되는 모든 백신을 맞으세요, 권장되지 않은 백신 접종시 어떠한 부작용이 일어날지 모릅니다.
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header" >
+                    <!--img를 쓰기 위한 웹 표준 방법-->
+                    <img src="img/card02_bg02.jpg" alt="다양한 인터렉티브 반응">
+                </figure>
+                <div class="card__body">
+                    <div class="card_body_title_container">
+                        <h3 class="tit">마스크 착용</h3>
+                        <a class="btn" href="/">
+                            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M1 7C0.447715 7 3.71402e-08 7.44772 0 8C-3.71402e-08 8.55228 0.447715 9 1 9L1 7ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928933C6.95262 0.538408 6.31946 0.538408 5.92893 0.928933C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM1 9L13 9L13 7L1 7L1 9Z" fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="desc">마스크는 꼭 상시로 착용해야하며 공공장소 실내에서 잘 맞는 마스크를 올바르게 착용해야 합니다.
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <!--img를 쓰기 위한 웹 표준 방법-->
+                    <img src="img/card02_bg03.jpg" alt="다양한 인터렉티브 반응">
+                </figure>
+                <div class="card__body">
+                    <div class="card_body_title_container">
+                        <h3 class="tit">다른 사람과 거리두기</h3>
+                        <a class="btn" href="/">
+                            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M1 7C0.447715 7 3.71402e-08 7.44772 0 8C-3.71402e-08 8.55228 0.447715 9 1 9L1 7ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928933C6.95262 0.538408 6.31946 0.538408 5.92893 0.928933C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM1 9L13 9L13 7L1 7L1 9Z" fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손...
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <!--img를 쓰기 위한 웹 표준 방법-->
+                    <img src="img/card02_bg04.jpg" alt="다양한 인터렉티브 반응">
+                </figure>
+                <div class="card__body">
+                    <div class="card_body_title_container">
+                        <h3 class="tit">환기가 원활한 곳 찾기</h3>
+                        <a class="btn" href="/">
+                            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M1 7C0.447715 7 3.71402e-08 7.44772 0 8C-3.71402e-08 8.55228 0.447715 9 1 9L1 7ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928933C6.95262 0.538408 6.31946 0.538408 5.92893 0.928933C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM1 9L13 9L13 7L1 7L1 9Z" fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="desc">사람이 많이 붐비는 장소와 실외로부터 신선한 공기가 유입되지 않는 실내 장소를 피하세요.
+                    </p>
+                </div>
+            </article>
+        </div>
+        <div class="card__inner2 container">
+            <article class="card">
+                <figure class="card__header">
+                    <!--img를 쓰기 위한 웹 표준 방법-->
+                    <img src="img/card02_bg05.jpg" alt="다양한 인터렉티브 반응">
+                </figure>
+                <div class="card__body">
+                    <div class="card_body_title_container">
+                        <h3 class="tit">전파 방지를 위한 검사</h3>
+                        <a class="btn" href="/">
+                            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M1 7C0.447715 7 3.71402e-08 7.44772 0 8C-3.71402e-08 8.55228 0.447715 9 1 9L1 7ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928933C6.95262 0.538408 6.31946 0.538408 5.92893 0.928933C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM1 9L13 9L13 7L1 7L1 9Z" fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손...
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <!--img를 쓰기 위한 웹 표준 방법-->
+                    <img src="img/card02_bg06.jpg" alt="다양한 인터렉티브 반응">
+                </figure>
+                <div class="card__body">
+                    <div class="card_body_title_container">
+                        <h3 class="tit">손씻을땐 3분씩!</h3>
+                        <a class="btn" href="/">
+                            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M1 7C0.447715 7 3.71402e-08 7.44772 0 8C-3.71402e-08 8.55228 0.447715 9 1 9L1 7ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928933C6.95262 0.538408 6.31946 0.538408 5.92893 0.928933C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM1 9L13 9L13 7L1 7L1 9Z" fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손...
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <!--img를 쓰기 위한 웹 표준 방법-->
+                    <img src="img/card02_bg07.jpg" alt="다양한 인터렉티브 반응">
+                </figure>
+                <div class="card__body">
+                    <div class="card_body_title_container">
+                        <h3 class="tit">손씻을땐 3분씩!</h3>
+                        <a class="btn" href="/">
+                            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M1 7C0.447715 7 3.71402e-08 7.44772 0 8C-3.71402e-08 8.55228 0.447715 9 1 9L1 7ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928933C6.95262 0.538408 6.31946 0.538408 5.92893 0.928933C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM1 9L13 9L13 7L1 7L1 9Z" fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손...
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <!--img를 쓰기 위한 웹 표준 방법-->
+                    <img src="img/card02_bg08.jpg" alt="다양한 인터렉티브 반응">
+                </figure>
+                <div class="card__body">
+                    <div class="card_body_title_container">
+                        <h3 class="tit">손씻을땐 3분씩!</h3>
+                        <a class="btn" href="/">
+                            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M1 7C0.447715 7 3.71402e-08 7.44772 0 8C-3.71402e-08 8.55228 0.447715 9 1 9L1 7ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928933C6.95262 0.538408 6.31946 0.538408 5.92893 0.928933C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM1 9L13 9L13 7L1 7L1 9Z" fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손...
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+</body>
+
+</html>

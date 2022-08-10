@@ -183,6 +183,35 @@ body{
     padding: 10px;
 }
 
+
+/* sample */
+.sample{
+    margin-bottom: 80px;
+}
+
+.sample .table{
+    margin-bottom: 20px;
+}
+.sample .table table{
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+}
+.sample .table tr th{
+    font-weight: normal;
+    background-color: #f5f5f5;
+    padding: 3px;
+}
+.sample .table tr td{
+    border: 1px solid #e6e6e6;
+    padding: 3px;
+}
+
+.sample .table tr td[class*="_P"]{ /* zs*을 사용해 모든 클래스 선택 =을 사용해 "_P"만 포함되는걸 선택*/
+    background: #000;
+}
+
+
 /* 티스토리용 문서 */
 .document{
     word-break: keep-all; /*글자로 끊어지지 않고 단어로 끊어짐*/
