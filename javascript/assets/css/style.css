@@ -197,18 +197,38 @@ body{
     border: 1px solid #e6e6e6;
     text-align: center;
 }
-.sample .table tr th{
+.sample .table table tr th{
     font-weight: normal;
     background-color: #f5f5f5;
     padding: 3px;
 }
-.sample .table tr td{
+.sample .table table tr td{
     border: 1px solid #e6e6e6;
-    padding: 3px;
+    padding: 6px;
 }
 
-.sample .table tr td[class*="_P"]{ /* zs*을 사용해 모든 클래스 선택 =을 사용해 "_P"만 포함되는걸 선택*/
-    background: #000;
+.sample .table table tr td[class*="_P"]{ /* zs*을 사용해 모든 클래스 선택 =을 사용해 "_P"만 포함되는걸 선택*/
+    /* background: #000; */
+    color: #fff;
+}
+
+.sample .table table tr td[class*="_P"]:hover{ /* zs*을 사용해 모든 클래스 선택 =을 사용해 "_P"만 포함되는걸 선택*/
+    /* background: #000; */
+    color: #000;
+    transition: 0.3s;
+    cursor: help;
+}
+
+@media (max-width: 800px){
+    .sample .table {
+        overflow-x: scroll;
+    }
+    .sample .table table {
+        width: 780px;
+    }
+    .sample .table table tr td[class*="_P"]{
+        color: #000;
+    }
 }
 
 

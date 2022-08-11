@@ -296,6 +296,27 @@ body {
     box-shadow: inset 0px 0px 0px 10px rgb(107, 63, 237);
 }
 
+.quiz__confirm{
+    width: 100%;
+    text-align: center;
+}
+
+.quiz__confirm .check {
+    font-size: 22px;
+    line-height: 1.3;
+    padding: 13px 20px;
+    border: 6px ridge #cacaca;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'LeeSeoyun';
+    cursor: pointer;
+    margin: 40px 0;
+    transition: background 0.3s;
+}
+
+.quiz__confirm .check:hover{
+    background: rgba(106, 63, 237, 0.497);
+}
 @keyframes wobble {
     0%   {transform: translateX(0) rotate(0deg);} /*transform 변형시키다 */
     15%  {transform: translateX(-25%) rotate(-5deg);}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .scoredream {
+            font-family: 'SCoreDream';
+            font-weight: 500;
+        }
+        body{
+            background-color: #2254c3;
+        }
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .gray {
+            background-color: #f5f5f5;
+        }
+
+        /* card */
+        .card{
+            width: 32%;
+            /* background-color: rgb(230, 230, 230); */
+            border: 1px solid #eeeeee;
+            background-color: #fff;
+            padding: 20px;
+        }
+        
+        .card h2{
+            margin-bottom: 10px;
+            font-weight: 300;
+            font-size: 28px;
+            line-height: 28px;
+        }
+
+        .card p{
+            margin-bottom: 30px;
+            font-weight: 300;
+            line-height: 27.2px;
+        }
+
+        .card .main__img{
+            border-radius: 10px;
+            margin-bottom: 19px;
+            box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.24) ;
+        }
+        .card__comtainer{
+            display: flex;
+            justify-content: space-between;
+            /* flex-wrap: wrap; */
+        }
+        .card__comtainer img{
+            border-radius: 30px;
+            box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.24) ;
+        }
+
+        .card__comtainer .img__source,
+        .img__source2,
+        .img__source3{
+            background-image: url(img/card_bg04.jpg);
+            border-radius: 10px;
+            box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.24) ;
+            height: 293px;
+            width: 347px;
+            margin-bottom: 19px;
+        }
+        .img__source2{
+            background-image: url(img/card_bg03_02.jpg);
+
+        }
+        .img__source3{
+            background-image: url(img/card_bg03_03.jpg);
+
+        }
+        .card__comtainer ul{
+            margin-right: 12.3px;
+            height: 100%;
+            line-height: 1.4;
+        }
+        .card__comtainer ul li{
+            list-style: none;
+            text-align: right;
+        }
+        .card__comtainer .profile{
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            height: 50px;
+        }
+        .card__comtainer .profile img{
+            width:  50px;
+            height: 50px;
+        }
+
+        .card__comtainer .profile ul li{
+            font-size: 19px;
+            height: 50%;
+        }
+        .card__comtainer .profile ul li:first-child{
+            color: #188422;
+        }
+        .card__comtainer .divider{
+            /* width: 50px; */
+            background-color: #fff;
+            float: right;
+            margin-top: 10px;
+            margin-right: 9.7px;
+            padding: 6px 14.5px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 15px;
+        }
+        .title_space{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="card__comtainer">
+                <div class="card">
+                    <!-- <img class="main__img" src="img/card_bg04.jpg" alt=""> -->
+                    <div class="img__source">
+                        <h1 class="divider">
+                            WASH</h1>
+                    </div>
+                    <h2>손씻기 시간 준수!</h2>
+                    <p>손을 씻는것은 상당히 중요한 행동입니다, 손을 씻음으로써 병을 예방할 수 있고 각종 미세먼지와 세균에서 벗어날 수 있기 때문에 상당히 중요한 일입니다.</p>
+                    <div class="profile">
+                        <ul>
+                            <li>dr. jun</li>
+                            <li>9 resources</li>
+                        </ul>
+                        <img src="img/card_bg04_profile.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <!-- <img class="main__img" src="img/card_bg03_02.jpg" alt=""> -->
+                    <div class="img__source2">
+                        <h1 class="divider">
+                            Clean</h1>
+                    </div>
+                    <h2>손은 꼭 꼼꼼히!</h2>
+                    <p>미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손 닦기는 전 세계에서 추구하고자 하는 방식입니다.</p>
+                    <div class="profile">
+                        <ul>
+                            <li>dr. heck</li>
+                            <li>5 resources</li>
+                        </ul>
+                        <img src="img/card_bg03_02_profile.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <!-- <img class="main__img" src="img/card_bg03_03.jpg" alt=""> -->
+                    <div class="img__source3">
+                        <h1 class="divider">
+                            Happy</h1>
+                    </div>
+                    <h2 class="title_space">약은 시기 적절하게 먹어야 한다.</h2>
+                    <p>약은 꼭 제때제때 드셔야 합니다 안그러면 몸에 항채가 생겨 약의 효과가 나타나지 않을수가 있기 때문에 꼭 드셔야 탈이 안생깁니다 꼭 챙겨드세요</p>
+                    <div class="profile">
+                        <ul>
+                            <li>dr. jo</li>
+                            <li>3 resources</li>
+                        </ul>
+                        <img src="img/card_bg03_03_profile.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </section>
+</body>
+</html>

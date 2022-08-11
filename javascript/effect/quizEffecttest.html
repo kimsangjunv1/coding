@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/heungkuk/LeeSeoyun.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(여러문제) 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li class="active"><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+
+            <!-- 퀴즈1 -->
+            <!-- <div class="quiz">
+                <span class="quiz__type"></span>
+                <h2 class="quiz__question">
+                    <span class="number"></span>
+                    <div class="ask"> </div>
+                </h2>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">틀렸습니다!</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <label for="select1">
+                            <input type="radio" id="select1" class="select" name="select" value="1">
+                            
+                            <span class="choice"></span>
+                            
+                        </label>
+                        <label for="select2">
+                            
+                            <input type="radio" id="select2" class="select" name="select" value="2">
+                            
+                            <span class="choice"></span>
+                            
+                        </label>
+                        <label for="select3">
+                            
+                            <input type="radio" id="select3" class="select" name="select" value="3">
+                            
+                            <span class="choice"></span>
+                            
+                        </label>
+                        <label for="select4">
+                            
+                            <input type="radio" id="select4" class="select" name="select" value="4">
+                            
+                            <span class="choice"></span>
+                            
+                        </label>
+                    </div>
+                    <button class="confirm">정답 확인하기</button>
+                    <div class="result"></div>
+                </div>
+            </div> -->
+            <!-- 퀴즈1 -->
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:to_before@naver.com">to_before@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        //문제정보
+        const quizInfo = [
+            { //01번
+                answerType: "웹디자인 기능사 2015년 07월",
+                answerNum: "1",
+                answerAsk: "주전자, 냉장고, 자동차를 디자인하는 디자인 영역은?",
+                answerChoice: {
+                    1: "패션디자인",
+                    2: "제품디자인",
+                    3: "환경디자인",
+                    4: "시각디자인"
+                },
+                answerResult: "2",
+                answerEx: "제품디자인 입니다."
+            },
+            { //02번
+                answerType: "웹디자인 기능사 2014년 04회",
+                answerNum: "2",
+                answerAsk: "따뜻한 색체는 차가운 색체와 함께 있을 때 더욱 따뜻하게 느 껴지고, 차가운 색체도 따뜻한 색채와 함께 있을 때 더욱 호 소력이 강해지는 색의 대비로 옳은 것은?",
+                answerChoice: {
+                    1: "채도대비",
+                    2: "계시대비",
+                    3: "명도대비",
+                    4: "한란대비"
+                },
+                answerResult: "4",
+                answerEx: "계시대비 입니다."
+            },
+            { //03번
+                answerType: "웹디자인 기능사 2014년 04회",
+                answerNum: "3",
+                answerAsk: "선(Line)에 대한 설명으로 바른 것은?",
+                answerChoice: {
+                    1: "면의 한계나 교차에 의해 생기는 선은 적극적인 선이다.",
+                    2: "수평선은 고결, 희망, 상승감을 나타낸다.",
+                    3: "점과 점이 이어져 생기는 선은 소극적인 선이다.",
+                    4: "고딕 건축의 고결함은 수직선을 대표한다."
+                },
+                answerResult: "4",
+                answerEx: "점과 점이 이어져 생기는 선은 소극적인 선 입니다."
+            },
+            { //04번
+                answerType: "웹디자인 기능사 2014년 04회",
+                answerNum: "4",
+                answerAsk: "[그림 설명 : 높이/넓이 동일한 정사각형 가운데 원이 있고 그 원 주위에 붙은 작은 원들이 그려져 있고 또 한가지는 동일한 조건에 큰 원들이 그려져 있는 그림] 다음 두 개의 꽃 모양 중심에 있는 원의 실제 크기는 동일하 다. 그런데 위쪽의 원이 아래쪽보다 커 보이는 현상은?",
+                answerChoice: {
+                    1: "주변과의 대비에 의한 착시현상",
+                    2: "원근에 의한 착시현상",
+                    3: "폐쇄원리에 의한 착시현상",
+                    4: "연속원리에 의한 착시현상"
+                },
+                answerResult: "1",
+                answerEx: "연손원리에 의한 착시현상 입니다"
+            },
+            { //05번
+                answerType: "웹디자인 기능사 2014년 04회",
+                answerNum: "5",
+                answerAsk: "디자인 원리 중 구성 형식에서 중요한 역할을 하며, 부피, 중량 등 물리적인 구조와 색채에서 시각적인 안정감을 이룬 것을 말하며, 크게 대칭과 비대칭, 방사대칭으로 구분하는 것은?",
+                answerChoice: {
+                    1: "반복",
+                    2: "균형",
+                    3: "조화",
+                    4: "대비"
+                },
+                answerResult: "2",
+                answerEx: "균형 입니다."
+            },
+            { //06번
+                answerType: "웹디자인 기능사 2014년 04회",
+                answerNum: "6",
+                answerAsk: "V(디자인가치)=P(성능)/C(비용) 와 관계있는 디자인 조건은?",
+                answerChoice: {
+                    1: "합목적성",
+                    2: "경제성",
+                    3: "심미성",
+                    4: "독창성"
+                },
+                answerResult: "2",
+                answerEx: "경제성입니다."
+            }
+        ];
+
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        //문제 출력
+        function updateQuiz() {
+            const exam = []; //여기에 기출문제 시험을 저장한다.
+
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                <div class="quiz">
+                <span class="quiz__type">${question.answerType}</span>
+                <h2 class="quiz__question">
+                    <span class="number">${question.answerNum}</span>
+                    <div class="ask">${question.answerAsk}</div>
+                </h2>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">틀렸습니다!</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <label for="select1">
+                            <!--라벨은 인라인 구조 / for을 사용해 input이랑 연결-->
+                            <input type="radio" id="select1" class="select" name="select" value="1">
+                            <!--타입 라디오, 아이디 셀렉트1, 이름은 select 값은 1번으로 설정-->
+                            <span class="choice">${question.answerChoice}</span>
+                            <!--선택해주기 위해 choice라는 클래스 생성-->
+                        </label>
+                        <label for="select2">
+                            <!--가로로 정렬 안되게 인라인 구조니까-->
+                            <input type="radio" id="select2" class="select" name="select" value="2">
+                            <!--타입 라디오, 아이디 셀렉트1, 이름은 select 값은 1번으로 설정-->
+                            <span class="choice"></span>
+                            <!--선택해주기 위해 choice라는 클래스 생성-->
+                        </label>
+                        <label for="select3">
+                            <!--가로로 정렬 안되게 인라인 구조니까-->
+                            <input type="radio" id="select3" class="select" name="select" value="3">
+                            <!--타입 라디오, 아이디 셀렉트1, 이름은 select 값은 1번으로 설정-->
+                            <span class="choice"></span>
+                            <!--선택해주기 위해 choice라는 클래스 생성-->
+                        </label>
+                        <label for="select4">
+                            <!--가로로 정렬 안되게 인라인 구조니까-->
+                            <input type="radio" id="select4" class="select" name="select" value="4">
+                            <!--타입 라디오, 아이디 셀렉트1, 이름은 select 값은 1번으로 설정-->
+                            <span class="choice"></span>
+                            <!--선택해주기 위해 choice라는 클래스 생성-->
+                        </label>
+                    </div>
+                    <button class="confirm">정답 확인하기</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+                `)
+            })
+
+            // console.log(exam);
+            quizWrap.innerHTML=exam.join('')
+
+            // quizWrap이라는 상수를 만들어 quiz__wrap 클래스를 선택하고
+            // 문제를 출력하기 위해 updateQuiz() 함수(실행문) 을 만들어
+            // 그 안에 기출문제를 저장할 exam이라는 상수를 만들고
+            // quizInfo forEach를 통해 exam.push를 해서 div틀 자체를 exam에 넣는다
+        }
+        updateQuiz()
+    </script>
+</body>
+
+</html>
