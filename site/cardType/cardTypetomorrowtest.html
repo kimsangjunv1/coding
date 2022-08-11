@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .score {
+            font-family: 'SCoreDream';
+            font-weight: 300;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* blind : 제목은 적어야 하나 시각이 불편한 사람들을 위해 숨김처리 */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            /* 포토샵의 클리핑 마스크와 같은 효과 */
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden
+        }
+
+        .card__container{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card{
+            background-color: #eee;
+            width: 33.5%;
+            height: 491px;
+            padding: 20px;
+        }
+
+        .card img .img2{
+            margin-bottom: 20px;
+        }
+
+        .card h2{
+            margin-bottom: 10px;
+        }
+        .card p{
+            margin-bottom: 20px;
+        }
+
+        .card:nth-child(1),
+        .card:nth-child(2){
+            border-right: 1px solid #000;
+        }
+
+        .card .card__footer{
+            display: flex;
+            justify-content: flex-end;
+        }
+        .card .card__footer em{
+            display: block;
+        }
+    
+        .card .card__footer img{
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="section card__container">
+            <div class="card">
+                <img class="img2" src="img/card_bg03_01.jpg" alt="">
+                <h2>aaa</h2>
+                <p>안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</p>
+                <div class="card__footer">
+                    <h4>aaaa <em>eee</em></h4>
+                    <span>
+                        <img src="img/card_bg03_icon01.png" alt="">
+                    </span>
+                </div>
+            </div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+</body>
+</html>
