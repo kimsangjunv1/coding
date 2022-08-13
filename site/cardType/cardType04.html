@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 04</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/sebang/SebangGothic.css');
+        @import url('https://webfontworld.github.io/NanumSquare/NanumSquare.css');
+
+        .sebang {
+            font-family: 'SebangGothic';
+            font-weight: 300;
+        }
+
+        .square {
+            font-family: 'NanumSquare';
+            font-weight: 400;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section > h2.tit{
+            text-align: left;
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+            margin-bottom: 30px;
+        }
+
+        .section > h2.tit span{
+            background: #000;
+            color: #fff;
+            display: inline-block;
+            padding: 5px 15px;
+            font-size: 12px;
+            font-family: 'SebangGothic';
+        }
+
+        /* blind : 제목은 적어야 하나 시각이 불편한 사람들을 위해 숨김처리 */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            /* 포토샵의 클리핑 마스크와 같은 효과 */
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden
+        }
+
+        .card__inner{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card.first{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 30px;
+        }
+        .card.first::before{
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: #000;
+            top: -55px;
+            left: 0;
+            position: absolute;
+        }
+
+        .card.first::after{
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: #000;
+            bottom: -140px;
+            left: 0;
+            position: absolute;
+        }
+        .card.first .card__header {
+            width: 68%;
+        }
+        .card.first .card__contents {
+            width: 30%;
+            position: relative;
+
+        }
+
+        .card.first.card__contents .sub{
+            font-size: 14px;
+            line-height: 1;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card.first .card__contents .title{
+            font-size: 36px;
+            line-height: 1.3;
+            word-break: keep-all;
+            margin-bottom: 50px;
+        }
+
+        .card.first .card__contents .desc {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #666;
+            position: absolute;
+
+        }
+
+        .card.first .card__contents .more{
+            display: none;
+        }
+
+        .card {
+            width: 24%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card__header {
+            width: 28%;
+        }
+        .card__contents {
+            width: 68%;
+
+        }
+        .card__contents .sub {
+            display: none;
+        }
+        .card__contents .title {
+            font-family: 'SebangGothic';
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .card__contents .desc {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #666;
+
+            /* 두줄 효과 넣기 */
+            overflow : hidden
+
+        }
+        .card__contents .more {
+            display: none;
+        }
+        /* cardType04 */
+    </style>
+</head>
+
+<body>
+    <section id="cardType" class="card__wrap section square">
+        <h2 class="tit"><span>Art Museum</span></h2>
+        <div class="card__inner container">
+            <article class="card first">
+                <figure class="card__header">
+                    <img src="img/card_bg04_01_big.jpg" alt="Art Museum">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">World Best Artist</span>
+                    <h3 class="title">세상에서 놀라운 작품. No.5</h3>
+                    <p class="desc">내가 소개하는 세상에서 놀라운 작품 기타등등 내가 찾고있는것 기타등등 내가 찾고있는것 기타등등내가 찾고있는것</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="img/card_bg04_01_small.jpg" alt="">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">World Best Artist</span>
+                    <h3 class="title">세상에서 놀라운 작품. No.5</h3>
+                    <p class="desc">내가 소개하는 세상에서 놀라운 작품 기타등등 내가 찾고있는것 기타등등 내가 찾고있는것 기타등등내가 찾고있는것</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="img/card_bg04_02_small.jpg" alt="">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">World Best Artist</span>
+                    <h3 class="title">세상에서 놀라운 작품. No.5</h3>
+                    <p class="desc">내가 소개하는 세상에서 놀라운 작품 기타등등 내가 찾고있는것 기타등등 내가 찾고있는것 기타등등내가 찾고있는것</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="img/card_bg04_03_small.jpg" alt="">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">World Best Artist</span>
+                    <h3 class="title">세상에서 놀라운 작품. No.5</h3>
+                    <p class="desc">내가 소개하는 세상에서 놀라운 작품 기타등등 내가 찾고있는것 기타등등 내가 찾고있는것 기타등등내가 찾고있는것</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="img/card_bg04_04_small.jpg" alt="">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">World Best Artist</span>
+                    <h3 class="title">세상에서 놀라운 작품. No.5</h3>
+                    <p class="desc">내가 소개하는 세상에서 놀라운 작품 기타등등 내가 찾고있는것 기타등등 내가 찾고있는것 기타등등내가 찾고있는것</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>

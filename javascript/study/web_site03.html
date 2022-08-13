@@ -82,9 +82,80 @@
                 <!-- 01번 메인 샘플 시작 -->
                 <h2 class="t_tit2">Figma</h2>
                 <p class="t_desc2_css">
-                    피그마를 이용해 그리드를 생성 후 각 규격에 맞게 요소들을 구성합니다.
+                    시멘틱 태그인, header/section/footer/nav/article/aside에 관한 설명입니다.
                 </p>
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fa9buUse4J646SWPSoOw7ng%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D339%253A52" allowfullscreen></iframe>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>요소 유형</th>
+                            <th>태그명</th>
+                            <th>의미와 특징</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="12" class="ce"> 블록 레벨 요소</td>
+                            <td rowspan="2" class="ce">
+                                &lt;header&gt; <br>
+                                &lt;/header&gt;
+                            </td>
+                            <td>HTML 문서의 헤더 영역을 의미하는 태그로 제목, 내비게이션(메뉴), 검색 등의 내용을 포함할 수 있다.</td>
+                        </tr>
+                        <tr>
+                            <td>텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있지만,<i>&lt;heder&gt;, &lt;footer&gt; 태그는 포함할 수 없다.</i></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;section&gt; <br>
+                                &lt;/section&gt;
+                            </td>
+                            <td>HTML 문서에서 맥락이 <i>같은 요소들을 주제별로 그룹화</i>해주는 태그이며, 섹션 주세에 대한 제목 요소 &lt;h2&gt; ~ &lt;h6&gt; 를 포함하는 게 좋다.</td>
+                        </tr>
+                        <tr>
+                            <td>텍스트, 인라인 요소, 블록레벨 요소를 포함할 수 있다.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;footer&gt; <br>
+                                &lt;/footer&gt;
+                            </td>
+                            <td>HTML 문서의 가장 하단 부분(푸터)을 의미하는 태그로 <i>섹션 작성자, 저작권에 대한 정보, 관련된 문서의 링크를 포함</i>할 수 있다.</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;header&gt;와 같이 텍스트, 인라인 요소, 블록 레벨 요소는 포함할 수 있지만, &lt;header&gt;, &lt;footer&gt; 태그는 포함할 수 없다.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;nav&gt; <br>
+                                &lt;/nav&gt;
+                            </td>
+                            <td>메인 메뉴 혹은 목차 등을 정의해 주는 태그 (내비게이션)</td>
+                        </tr>
+                        <tr>
+                            <td>텍스트, 인라인 요소, 블록레벨 요소를 포함할 수 있다.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;article&gt; <br>
+                                &lt;/article&gt;
+                            </td>
+                            <td>독립적으로 배포 또는 재사용일 가능한 게시물, 뉴스 기사, 블로그 포스팅 등을 의미하는 태그이며, 제목 요소 &lt;h2&gt; ~ &lt;h6&gt; 를 포함하는 게 좋다.</td>
+                        </tr>
+                        <tr>
+                            <td>텍스트, 인라인 요소, 블록레벨 요소를 포함할 수 있다.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;aside&gt; <br>
+                                &lt;/aside&gt;
+                            </td>
+                            <td><i>메인 콘텐츠와 직접적으로 관련이 없는 영역을 의미</i>하는 태그이며, HTML 문서의 오른쪽이나 왼쪽의 사이드 메뉴 혹은 광고 등의 영역으로 사용이 가능하다.</td>
+                        </tr>
+                        <tr>
+                            <td>텍스트, 인라인 요소, 블록레벨 요소를 포함할 수 있다.</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <hr>
 
                 <!-- HTML 코드 -->
@@ -100,54 +171,63 @@
                             <div class="sample03_result">
                                 <div class="script">
                                     <div class="t_code">
-<pre><code class="language-html">&lt;section id="cardType03" class="card__wrap score section"&gt;
-    &lt;h2 class="blind"&gt;건축의 세계&lt;/h2&gt;
-    &lt;!--class를 통해 blind 효과 사용--&gt;
-    &lt;div class="card__inner container"&gt;
-        &lt;article class="card"&gt;
-            &lt;figure class="card__header"&gt;
-                &lt;img src="img/card_bg03_01.jpg" alt=""&gt;
-                &lt;figcaption&gt;Washing&lt;/figcaption&gt;
-            &lt;/figure&gt;
-            &lt;div class="card__contents"&gt;
-                &lt;h3&gt;다들 손을 씻고 계신가요? 손을 씻는다는것은 참 중요한 문제이며 인류가 해결해야할&lt;/h3&gt;
-                &lt;p&gt;손을 씻는것은 상당히 중요한 행동입니다, 손을 씻음으로써 병을 예방할 수 있고 각종 미세먼지와 세균에서 벗어날 수 있기 때문에 되도록이면 모두들&lt;/p&gt;
+<pre><code class="language-html">&ㅣㅅ;body&gt;
+    &lt;section class="container section score"&gt;
+        &lt;header class="header_container"&gt;
+            &lt;div class="active_container"&gt;
+                &lt;p&gt;h1&lt;/p&gt;
+                &lt;h1&gt;반응형 웹&lt;/h1&gt;
             &lt;/div&gt;
-            &lt;div class="card__footer"&gt;
-                &lt;h4&gt;dr. junjun &lt;em&gt;9 resources&lt;/em&gt;&lt;/h4&gt;
-                &lt;span&gt;&lt;img src="img/card_bg03_icon01.png" alt="Hesperioidea"&gt;&lt;/span&gt;
+            &lt;div class="nav_container"&gt;
+                &lt;p&gt;header&lt;/p&gt;
+                &lt;div class="nav_mainBox"&gt;
+                    &lt;p&gt;nav&lt;/p&gt;
+                    &lt;nav&gt;
+                        &lt;ul style="list-style:none"&gt;
+                            &lt;li&gt;MENU 01&lt;/li&gt;
+                            &lt;li&gt;MENU 02&lt;/li&gt;
+                            &lt;li&gt;MENU 03&lt;/li&gt;
+                            &lt;li&gt;MENU 04&lt;/li&gt;
+                            &lt;li&gt;MENU 05&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/nav&gt;
+                &lt;/div&gt;
             &lt;/div&gt;
-        &lt;/article&gt;
-        &lt;article class="card"&gt;
-            &lt;figure class="card__header"&gt;
-                &lt;img src="img/card_bg03_02.jpg" alt=""&gt;
-                &lt;figcaption&gt;Carefully&lt;/figcaption&gt;
-            &lt;/figure&gt;
-            &lt;div class="card__contents"&gt;
-                &lt;h3&gt;손을 꼼꼼히 씻고 계신가요? 손을 씻었다 하여도 손에 물이 닿았다는 것만으로도 씻었다고 하시는&lt;/h3&gt;
-                &lt;p&gt;미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 손에 물이 닿았다는 것만으로도 닦았다는 사람들을 위해 올바른 손닦기를 권장하고 있습니다&lt;/p&gt;
+        &lt;/header&gt;
+        &lt;main class="main_container"&gt;
+            &lt;p&gt;div&lt;/p&gt;
+            &lt;section class="container_1"&gt;
+                &lt;p&gt;section&lt;/p&gt;
+                &lt;h1&gt;콘텐츠 그룹 01&lt;/h1&gt;
+            &lt;/section&gt;
+            &lt;section class="container_2"&gt;
+                &lt;p&gt;section&lt;/p&gt;
+                &lt;h1&gt;콘텐츠 그룹 02&lt;/h1&gt;
+            &lt;/section&gt;
+            &lt;div class="container_3"&gt;
+                &lt;section class="news_cont"&gt;
+                    &lt;p&gt;aritcle&lt;/p&gt;
+                    &lt;h1&gt;주요 기사&lt;/h1&gt;
+                &lt;/section&gt;
+                &lt;section class="commercial_cont"&gt;
+                    &lt;p&gt;aside&lt;/p&gt;
+                    &lt;h1&gt;광고&lt;/h1&gt;
+                &lt;/section&gt;
             &lt;/div&gt;
-            &lt;div class="card__footer"&gt;
-                &lt;h4&gt;dr. heck &lt;em&gt;9 resources&lt;/em&gt;&lt;/h4&gt;
-                &lt;span&gt;&lt;img src="img/card_bg03_icon02.png" alt="Hesperioidea"&gt;&lt;/span&gt;
+        &lt;/main&gt;
+        &lt;footer class="footer_container"&gt;
+            &lt;p&gt;footer&lt;/p&gt;
+            &lt;div class="address_box"&gt;
+                &lt;p&gt;address&lt;/p&gt;
+                &lt;h1&gt;경기도 부천시 졸립다 참..&lt;/h1&gt;
             &lt;/div&gt;
-        &lt;/article&gt;
-        &lt;article class="card"&gt;
-            &lt;figure class="card__header"&gt;
-                &lt;img src="img/card_bg03_03.jpg" alt=""&gt;
-                &lt;figcaption&gt;Just In Time&lt;/figcaption&gt;
-            &lt;/figure&gt;
-            &lt;div class="card__contents"&gt;
-                &lt;h3&gt;약은 절대 거르지 않고 정해진 시간 정해진 날에 꼭 드셔야하며 약사가 정해준 약만 드셔야 합니다&lt;/h3&gt;
-                &lt;p&gt;약은 꼭 제때제때 드셔야 합니다 안그러면 몸에 항채가 생겨 약의 효과가 나타나지 않을수가 있기 때문에 항상 모든 주의 사항을 준수하면서도 제 시간에 맞게 드시는 습관을 길러야 합니다.&lt;/p&gt;
+            &lt;div class="p_box"&gt;
+                &lt;p&gt;p&lt;/p&gt;
+                &lt;h1&gt;COPYRIGHT going to sleep&lt;/h1&gt;
             &lt;/div&gt;
-            &lt;div class="card__footer"&gt;
-                &lt;h4&gt;dr. jo &lt;em&gt;9 resources&lt;/em&gt;&lt;/h4&gt;
-                &lt;span&gt;&lt;img src="img/card_bg03_icon03.png" alt="Hesperioidea"&gt;&lt;/span&gt;
-            &lt;/div&gt;
-        &lt;/article&gt;
-    &lt;/div&gt;
-&lt;/section&gt;
+        &lt;/footer&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
 </code></pre>
                                     </div>
                                 </div>
@@ -167,47 +247,6 @@
                         폰트는 'SCoreDream'를 이용하고 .card 클래스를 생성해 카드 유형을 구성하고,<br>
                         각각 .blind, figcaption, :nth-child()를 통해 완성합니다.
                     </p>
-                    <div style="display: flex; justify-content: space-between; flex-wrap: nowrap; " class="script">
-                        <div style="width: 33%; height: 420px;"class="t_code">
-<pre style="height: 100%" ><code style="height: 87%" class="language-css">/* blind : 제목은 적어야 하나 시각이 불편한 사람들을 위해 숨김처리 */
-.blind {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    /* 포토샵의 클리핑 마스크와 같은 효과 */
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden
-}ht: 20px;
-</code></pre>
-                        </div>
-                        <div style="width: 33%;" class="t_code">
-<pre style="height: 100%"><code style="height: 87%" class="language-css">/*figcaption : figure을 사용한 이미지의 설명에 해당함*/
-.card .card__header figcaption {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 6px 16px;
-    border-radius: 50px;
-    background-color: #fff;
-    text-align: center;
-    font-size: 14px;
-    color: #7b7b7b;
-}
-</code></pre>
-                        </div>
-                        <div style="width: 33%;" class="t_code">
-<pre style="height: 100%"><code style="height: 87%" class="language-css">/* :nth-child(번호선택)을 통해 해당 요소에만 스타일을 적용*/
-.card__inner .card:nth-child(1) {
-    border-right: 1px solid #eee;
-}
-
-.card__inner .card:nth-child(2) {
-    border-right: 1px solid #eee;
-}
-</code></pre>
-                        </div>
-                    </div>
                     <div class="result">
                         <!-- 결과보기 -->
                         <details>
@@ -216,177 +255,263 @@
                                 <div class="script">
                                     <div class="t_code">
 <pre><code class="language-css">/* fonts */
-@import url('https://webfontworld.github.io/score/SCoreDream.css');
-.score {
-    font-family: 'SCoreDream';
-    font-weight: 300;
-}
+    @import url('https://webfontworld.github.io/score/SCoreDream.css');
 
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-}
+    :root {
+        --pink1: #fbe4ec;
+        --pink_cont: #ea1e63;
 
-a {
-    text-decoration: none;
-    color: #000;
-}
+    }
 
-img {
-    width: 100%;
-    border-radius: 10px;
-}
+    .score {
+        font-family: 'SCoreDream';
+        font-weight: 300;
+        font-size: 14px !important;
+        color: #fff;
+    }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: normal;
-}
+    /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-/* common(공통) */
-.container {
-    width: 1160px;
-    padding: 0 20px;
-    margin: 0 auto;
-}
+    a {
+        text-decoration: none;
+        color: #000;
+    }
 
-.section {
-    padding: 120px 0;
-    /*위 아래 */
-}
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
 
-.section&gt;h2 {
-    /* "&gt;" 이걸로 section 안에 있는 h2선택 */
-    font-size: 50px;
-    line-height: 1;
-    /* 1이라고 적으면 auto랑 똑같음 */
-    text-align: center;
-    margin-bottom: 20px;
-}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: normal;
+    }
 
-.section&gt;p {
-    font-size: 22px;
-    font-weight: 300;
-    color: #666;
-    text-align: center;
-    margin-bottom: 70px;
-}
+    /* common(공통) */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
 
-/* blind : 제목은 적어야 하나 시각이 불편한 사람들을 위해 숨김처리 */
-.blind {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    /* 포토샵의 클리핑 마스크와 같은 효과 */
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden
-}
+    .section {
+        padding: 70px 0;
+        /*위 아래 */
+    }
 
-/* cardType03 */
-body {
-    background-color: #2254c3;
-}
+    .section>h2 {
+        /* ">" 이걸로 section 안에 있는 h2선택 */
+        font-size: 50px;
+        line-height: 1;
+        /* 1이라고 적으면 auto랑 똑같음 */
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-.card__inner {
-    display: flex;
-}
+    .section>p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 70px;
+    }
 
-.card__inner .card {
-    padding: 26px;
-    width: 33.3333%;
-    background-color: #fff;
-}
+    /* blind : 제목은 적어야 하나 시각이 불편한 사람들을 위해 숨김처리 */
+    .blind {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        /* 포토샵의 클리핑 마스크와 같은 효과 */
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden
+    }
 
-.card__inner .card:nth-child(1) {
-    border-right: 1px solid #eee;
-}
+    /* header */
+    .header_container {
+        background-color: var(--pink1);
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
 
-.card__inner .card:nth-child(2) {
-    border-right: 1px solid #eee;
-}
+    .header_container ul li {
+        float: left;
+        width: 20%;
+    }
 
-.card {}
+    .active_container {
+        width: 10%;
+        margin: 20px;
+        text-align: center;
+        background-color: var(--pink_cont);
+    }
+    .active_container h1{
+        font-size: 14px;
+        margin-top: 10px;
+    }
 
-.card .card__header {
-    position: relative;
-}
+    .active_container p{
+        margin: 10px auto 0px auto;
+    }
 
-.card .card__header img {
-    border-radius: 10px;
-    box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
-}
+    .nav_container {
+        width: 90%;
+        text-align: center;
+        margin: 20px 70px 20px 0px;
+        background-color: var(--pink1);
+    }
 
-.card .card__header figcaption {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 6px 16px;
-    border-radius: 50px;
-    background-color: #fff;
-    text-align: center;
-    font-size: 14px;
-    color: #7b7b7b;
-}
+    .nav_container>p {
+        margin: 0px 20px 13px 425px;
+        background-color: #000;
+        color: #fff;
+        width: 100px;
+    }
 
-.card .card__contents {}
+    .nav_mainBox {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--pink_cont);
+        margin: 0px;
+    }
 
-.card .card__contents h3 {
-    font-size: 20px;
-    line-height: 1.4;
-    margin-bottom: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    margin-bottom: 30px;
-}
+    .nav_mainBox nav {
+        width: 90%;
+        margin: 20px 60px 10px 60px;
+        /* background-color: red; */
 
-.card .card__contents p {
-    color: #666;
-    font-size: 16px;
-    line-height: 1.7;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    margin-bottom: 30px;
-}
+    }
 
-.card .card__footer {
-    display: flex;
-    justify-content: flex-end;
-}
+    .nav_mainBox ul li {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-.card .card__footer h4 {
-    text-align: right;
-    color: #188422;
-}
+    /* main */
+    .main_container {
+        background-color: var(--pink1);
+        width: 100%;
+        height: 550px;
+        margin-bottom: 20px;
+        /* padding: 10px; */
+    }
 
-.card .card__footer em {
-    display: block;
-    color: #666;
-    font-style: normal;
-}
+    .main_container .container_1 {
+        background-color: var(--pink_cont);
+        margin: 1px 10px 20px 20px;
+        float: left;
+        height: 93%;
+        /* margin-right: 10px; */
+        width: 35%;
+    }
 
-.card .card__footer span{
-    width: 40px;
-    height: 40px;
-    background: #000;
-    border-radius: 50px;
-    overflow: hidden;
-    display: block;
-    margin-left: 10px;
-    margin-top: -3px;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
-}
+    .main_container .container_2 {
+        background-color: var(--pink_cont);
+        margin: 1px 10px 20px 10px;
+        float: left;
+        height: 93%;
+        margin-right: 10px;
+        width: 33%;
+    }
+
+    .main_container .container_3 {
+        margin: 1px 10px 20px 10px;
+        float: left;
+        height: 93%;
+        width: 25%;
+    }
+
+    .container_1 p,
+    .container_2 p {
+        margin: 10px 0px 0px 10px;
+    }
+
+    .container_1 h1,
+    .container_2 h1 {
+        text-align: center;
+        padding: 200px 0px 200px 0px;
+    }
+
+    .news_cont {
+        background-color: var(--pink_cont);
+        height: 48%;
+        margin-bottom: 20px;
+    }
+
+    .news_cont h1 {
+        text-align: center;
+        padding: 95px 0px 95px 0px;
+    }
+
+    .commercial_cont {
+        background-color: var(--pink_cont);
+        height: 48%;
+    }
+
+    .commercial_cont h1 {
+        text-align: center;
+        padding: 95px 0px 95px 0px;
+    }
+
+    .main_container>p,
+    .active_container p,
+    .nav_mainBox p,
+    .news_cont p,
+    .commercial_cont p,
+    .container_1 p,
+    .container_2 p,
+    .footer_container>p,
+    .address_box p,
+    .p_box p {
+        height: 20px;
+        background-color: #888;
+        background: #000;
+        width: 80px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .footer_container {
+        background-color: var(--pink1);
+        width: 100%;
+        height: 128px;
+    }
+
+    .footer_container>p {
+        /* display: inline; */
+    }
+
+    .address_box p,
+    .p_box p {
+        float: left;
+    }
+
+    .address_box h1,
+    .p_box h1 {
+        padding-top: 10px;
+        font-size: 14px;
+        margin-left: 110px;
+    }
+
+    .address_box,
+    .p_box {
+        margin: 0px 20px 0px 200px;
+        height: 40px;
+        width: 40%;
+        background-color: var(--pink_cont);
+        margin-bottom: 10px;
+    }
 </code></pre>
                                     </div>
                                 </div>
