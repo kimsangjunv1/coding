@@ -22,7 +22,7 @@ https://kimsangjunv1.github.io/coding/site/cardType/cardType02.html
 https://kimsangjunv1.github.io/coding/site/cardType/cardType03.html   
 
 ### 구조관련요소
-https://kimsangjunv1.github.io/coding/javascript/study/homework.html   
+https://kimsangjunv1.github.io/coding/javascript/study/web_homework.html   
 
 ### HTML 메인 페이지
 https://kimsangjunv1.github.io/coding/html/index.html   
