@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="study/basic.html">기본 규칙</a></li>
+                <li><a href="study/operator.html">연산자</a></li>
+                <li><a href="study/for.html">반복문</a></li>
+                <li><a href="study/if.html">조건문</a></li>
+                <li><a href="study/type.html">데이터 타입</a></li>
+                <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
+                <li><a href="study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <h2 class="t_tit">CSS 기본 문법</h2>
+                <p class="t_desc2_css">CSS(Cascading Style Sheets)를 정의방법은 내부, 외부, 인라인 스타일시트 등이 있으며, 실제로는 외부 스타일 시트를 주로 사용하지만 간단한것은 내부만으로도 사용 가능하고 <i>인라인은 대체로 사용하지 않지만 우선순위가 높음의 특성</i>으로 인해 꼭 필요한 경우 편리하게 사용 가능합니다.</p>
+                
+                <hr>
+
+                <!-- 1번 -->
+                <div>
+                    <div id="sample01" class="sample">
+                        <h2 class="t_tit2">내부 스타일시트</h2>
+                        <p class="t_box">CSS를 HTML 문서 안에 &lt;style&gt; 태그로 기재하고 <i>HTML 문서 안 CSS가 함께 저장하는 형태</i>입니다.</p>
+                        <div class="script">
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+        &lt;html lang="ko"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Document&lt;/title&gt;
+            &lt;style type = "text/css"&gt;
+                p { color : red ; } /* p태그 안의 글자 색상을 빨간색으로 설정 */
+            &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;p&gt;잠은 충분히 자야하며 밥을 먹은 직후 누워서 주무세요&lt;/p&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </code></pre>
+                            </div>
+                        </div>
+                        <details>
+                            <summary class="t_box">결과보기</summary>
+                            <div class="t_box" style="color: red">
+                                잠은 충분히 자야하며 밥을 먹은 직후 누워서 주무세요
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- 1번 끝 -->
+
+                <hr>
+
+                <!-- 2번 -->
+                <div>
+                    <div id="sample01" class="sample">
+                        <h2 class="t_tit2">외부 스타일시트</h2>
+                        <p class="t_box">스타일 속성들을 따로 저장 후 HTML 문서에 파일명으로 연결이 가능하며, *.css 환장자를 가진 별도의 파일로 저장 후 HTML에는 &lt;link&gt;태그를 이용해 선언합니다.</p>
+                        <p class="t_box"><i>내부는 그 스타일이 기술된 페이지만 적용 가능</i>한 반면, <i>외부는 그 스타일을 선언한 모든 HTML 페이지에 적용</i>됩니다.</p>
+                        <div class="script">
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;외부 스타일시트&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;잠은 충분히 자야하며 밥을 먹은 직후 누워서 주무세요&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+                            </div>
+                        </div>
+                        
+                        <p class="t_desc2_css">참고 : CSS 파일의 상단에 @charset "utf-8"; @charset "euc-kr"; emd html 문서에서 지정한 것과 동일한 문자셋을 지정합니다.</p>
+                        <div class="script">
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">@charset "UTF-8";
+p { color: red; }
+</code></pre>
+                            </div>
+                        </div>
+
+                        <details>
+                            <summary class="t_box">결과보기</summary>
+                            <div class="t_box" style="color: red">
+                                잠은 충분히 자야하며 밥을 먹은 직후 누워서 주무세요
+                            </div>
+                        </details>
+                    </div>  
+                </div>
+                <!-- 2번 끝 -->
+
+                <hr>
+
+                <!-- 3번 -->
+                <div>
+                    <div id="sample01" class="sample">
+                        <h2 class="t_tit2">@import</h2>
+                        <p class="t_box">@import는 CSS 안 또다른 CSS 파일을 불러올 수 있으며 CSS의 맨 윗줄에 사용합니다.</p>
+                        <div class="script">
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;스타일시트 포함&lt;/title&gt;
+    &lt;style type = "text/css"&gt;
+        @import url("style.css");
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;잠은 충분히 자야하며 밥을 먹은 직후 누워서 주무세요&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+                            </div>
+                        </div>
+                        
+                        <p class="t_desc2_css">참고 : CSS 파일의 상단에 @charset "utf-8"; @charset "euc-kr"; emd html 문서에서 지정한 것과 동일한 문자셋을 지정합니다.</p>
+                        <div class="script">
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">@charset "UTF-8";
+p { color: red; }
+</code></pre>
+                            </div>
+                        </div>
+
+                        <details>
+                            <summary class="t_box">결과보기</summary>
+                            <div class="t_box" style="color: red">
+                                잠은 충분히 자야하며 밥을 먹은 직후 누워서 주무세요
+                            </div>
+                        </details>
+                    </div>  
+                </div>
+                <!-- 3번 끝 -->
+                
+                <hr>
+
+                <!-- 4번 -->
+                <div>
+                    <div id="sample01" class="sample">
+                        <h2 class="t_tit2">인라인 스타일</h2>
+                        <p class="t_box">인라인 스타일은 태그에 직접 CSS를 정의해주는 기법, 해당 요소에 style=" "을 적어 사용하고, 인라인 스타일은 내부스타일이나 외부스타일에서 기술된 속성보다 우선으로 적용되므로 우선순위가 절대적으로 높아야 할 경우에 샤용 할 수 있으나, 스타일을 공통 CSS로 수정이 불가, 일일이 html을 열어서 편집해야하고 일반적으로 많이 사용하지는 않습니다.</p>
+                        <div class="script">
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;인라인 스타일&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p style="color: red;"&gt;잠은 충분히 자야하며 밥을 먹은 직후 누워서 주무세요&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+                            </div>
+                        </div>
+                        <details>
+                            <summary class="t_box">결과보기</summary>
+                            <div class="t_box" style="color: red">
+                                잠은 충분히 자야하며 밥을 먹은 직후 누워서 주무세요
+                            </div>
+                        </details>
+                    </div>  
+                </div>
+                <!-- 4번 끝 -->
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="study/basic.html">기본 규칙</a></li>
+                <li><a href="study/operator.html">연산자</a></li>
+                <li><a href="study/for.html">반복문</a></li>
+                <li><a href="study/if.html">조건문</a></li>
+                <li><a href="study/type.html">데이터 타입</a></li>
+                <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
+                <li><a href="study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit">내장 함수란?</h2>
+                    <p class="t_desc2_css">내장 함수는 자바스크립트에 기본적으로 내장되어 있는 함수들을 말합니다</p>
+
+                    <hr>
+
+                    <h2 class="t_tit2">인코딩? 디코딩?</h2>
+                    <p class="t_box">'http://icoxpublish.com/search?query=자바스크립트'와 같은 URL주소에 쿼리 정보를 전송하여 데이터를 처리해야 되는
+                        프로그램의 경우 유니코드 문자 포함시 오류가 발생하며,<br>인코딩 함수를 통해 문자를 부호화 및 디코딩 함수를 통해 부호화된 문자를 원래 문자로 복원이 가능합니다.</p>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 30%">
+                                <col style="width: 70%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>함수명</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>encodeURlComponent()</td>
+                                    <td>영문, 숫자와 ()-_.~*!'을 제외한 문자를 인코딩 합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>decodeURlComponent()</td>
+                                    <td>decodeURlComponent()의 디코딩 함수</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">var encodeStr = '자바스크립트';
+console.log(encodeURIComponent(encodeStr));
+
+var decodeStr = encodeURIComponent(encodeStr);
+console.log(decodeURIComponent(decodeStr));
+</code></pre>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h2 class="t_tit2">숫자, 유/무한 값 판별 함수</h2>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 30%">
+                                <col style="width: 70%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>함수명</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>isNaN()</td>
+                                    <td>숫자인지 아닌지 판별하는 함수입니다. 숫자이면 false,<br>아닐시 true를 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>isFinite()</td>
+                                    <td>유한값인지 무한값인지 판별하는 함수,<br>유한값은 true 무한값은 false로 반환합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">var num1 = '숫자';
+
+if (!isNaN(num1)) {
+    console.log('숫자')
+} else {
+    console.log('숫자아님');
+}
+
+var num2 = 1 / 0;
+
+if (isFinite(num2)) {
+    console.log('유한값');
+} else {
+    console.log('무한값');
+}
+</code></pre>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h2 class="t_tit2">숫자, 문자 변환 함수</h2>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 30%">
+                                <col style="width: 70%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>함수명</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Number()</td>
+                                    <td>숫자료 변환해줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>parselnt()</td>
+                                    <td>숫자와 문자 포함시 정수 부분만 숫자로 변환해줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>parseFloat()</td>
+                                    <td>숫자와 문자 포함시 소수 부분까지 숫자로 변환해줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>String()</td>
+                                    <td>문자로 바꿔줍니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">var num3 = '10';
+console.log(Number(num3));
+
+var num4 = '100px';
+console.log(parseInt(num4));
+
+var num5 = '33.3%';
+console.log(parseFloat(num5));
+
+var num6 = 10;
+console.log(typeof num6);
+console.log(typeof String(num6));
+</code></pre>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h2 class="t_tit2">자바스크립트 코드 변경 함수</h2>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 30%">
+                                <col style="width: 70%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>함수명</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>eval()</td>
+                                    <td>문자를 자바스크립트 코드로 변경해 주는 함수입니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">var str1 = 'var num7 = 10';
+var str2 = 'var num8 = 20';
+
+eval(str1);
+eval(str2);
+
+console.log(num7 + num8);
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>

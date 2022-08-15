@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="study/basic.html">기본 규칙</a></li>
+                <li><a href="study/operator.html">연산자</a></li>
+                <li><a href="study/for.html">반복문</a></li>
+                <li><a href="study/if.html">조건문</a></li>
+                <li><a href="study/type.html">데이터 타입</a></li>
+                <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
+                <li><a href="study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <h2 class="t_tit">미디어 쿼리(media query)</h2>
+                <p class="t_desc2_css">미디어 쿼리는 화면 해상도, 기기 방향 등의 조건으로 <i>HTML에 적용하는 스타일을 전환할 수 있는 CSS3의 속성 중 하나이며, 반응형 웹 디자인에서는 미디어 쿼리를 사용해 적용하는 스타일을 기기마다(화면 크기마다) 전환</i>할 수 있습니다.</p>
+                <hr>
+                <h3 class="t_tit2">&lt;link ~ media=""&gt;</h3>
+                <p class="t_box">&lt;link rel="stylesheet" type="text/css" media="all and (min-width: 1000px)" href="style_pc.css"&gt;</p>
+                <br>
+                <p class="t_desc2_css">상단의 예시는 최소 가로폭이 1000px, 즉 1000px 보다 넓은 해상도일 때에 style_pc.css를 연결한다는 뜻입니다.<br><br>
+                    태블릿이나 모바일 기기마다 가로폭이 다른데, 크롬 브라우저에서 개발자 도구를 열고 Toggle device Toolbar를 누르면 기기마다의 해상도도 확인할 수 있고 기기 모델도 추가할 수
+                    있습니다.<br><br>
+                    또한 다음 트로이 (http://troy.labs.daum.net/)에서는 기기별 해상도를 제공하고 실제 작동 화면을 확인할 수 있는 VIEW를 제공합니다.</p>
+                <table class="t_table" data-ke-align="alignLeft">
+                    <thead>
+                        <tr>
+                            <th>모바일 기기</th>
+                            <th>가로</th>
+                            <th>세로</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">iPhone X</td>
+                            <td class="ce">375</td>
+                            <td class="ce">812</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">iPhone 6,7,8</td>
+                            <td class="ce">375</td>
+                            <td class="ce">667</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">iPhone 6,7,8 plus</td>
+                            <td class="ce">414</td>
+                            <td class="ce">736</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">iPhone 5</td>
+                            <td class="ce">320</td>
+                            <td class="ce">568</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">Galaxy S5, S8</td>
+                            <td class="ce">360</td>
+                            <td class="ce">640</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">Galaxy Note8</td>
+                            <td class="ce">360</td>
+                            <td class="ce">640</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">iPad Pro</td>
+                            <td class="ce">1024</td>
+                            <td class="ce">1366</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">.<br />.<br />.</td>
+                            <td class="ce">.<br />.<br />.</td>
+                            <td class="ce">.<br />.<br />.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+
+                <h3 class="t_tit2">@media</h3>
+                <p class="t_desc2_css">처음 로딩할 때 성능이 저하되지 않도록 CSS 파일을 하나로 만들어서 CSS 내부에서 조건에 따라 분기시키는 것이 일반적인 형태의
+                    반응형웹 CSS입니다.</p>
+                    
+                <hr>
+                <br>
+
+                <div class="script">
+                    <div class="t_code">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+    <pre><code class="language-css">@media all and (min-width: 1000px) {
+    모든 기기에서 해상도가 최소 1000px 인 경우 적용할 속성들 ...
+}
+</pre></code>
+
+                    </div>
+                </div>
+            <p class="t_desc">all은 Media Type을 나타냅니다. and 전, 후에 띄어 씁니다.</p>
+
+            <hr>
+
+            <div class="script">
+                <div class="t_code">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">body { color : blue; }
+@media only screen and (max-width: 768px)
+    {
+        body { color : red; }
+    }
+</pre></code>
+
+                </div>
+            </div>
+            <p class="t_desc">위 구문은 원래 글자색이 빨간색인데, 화면이 768px보다 작아졌을 때는 파란색으로 지정한다는 뜻이므로 PC에서는 글자 색상이 빨간색으로, 모바일에서는 파란색으로
+                나타나게 됩니다.</p>
+
+                <hr>
+
+            <div class="script">
+                <div class="t_code">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">body { color : blue; }
+    @media only screen and (min-width: 768px){
+        body {
+            color : red;
+        }
+    }
+</pre></code>
+
+                </div>
+            </div>
+            <p class="t_desc">위 구문은 원래 글자색이 파란색인데, 화면이 768px보다 커지면 글자색을 빨간색으로 지정한다는 뜻이므로 모바일 우선으로 하면서도 같은 결과를 가져옵니다.</p>
+
+            <hr>
+
+            <div class="script">
+                <div class="t_code">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">@media only screen and (orientation: portrait){
+    body {
+        background : skyblue;
+    }
+}
+</pre></code>
+
+                </div>
+            </div>
+            <p class="t_desc">위 구문은 모바일 기기를 세워 세로가 가로보다 긴 세로방향이 되면 배경색을 하늘색으로 지정한다는 뜻 입니다.</p>
+
+
+            <div class="script">
+                <div class="t_code">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">@media only screen and (orientation: landscape){
+    body {
+        background : lightgreen;
+    }
+}
+</pre></code>
+
+                </div>
+            </div>
+            <p class="t_desc">위 구문은 모바일 기기를 눕혀 가로가 세로보다 긴 가로방향이 되면 배경색을 연두색으로 지정한다는 뜻 입니다.</p>
+
+            <hr>
+
+            <div class="script">
+                <div class="t_code">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">@media screen and (max-width: 900px) and (min-width: 600px), (min-width:1100px) {
+    body {
+        color : red;
+    }
+}
+</pre></code>
+
+                </div>
+            </div>
+            <p class="t_desc">위 구문은 가로가 600px에서 900px 사이일 때, 그리고 1100px 이상일 때에만 글자색을 빨간색으로 한다는 뜻입니다.</p>
+                
+            <hr>
+
+            <p class="t_tit2">예제 FIGMA</p>
+            <p class="t_desc2_css">미디어 쿼리를 통해 화면 크기에 능동적으로 대처 가능하게 설정했으며,<br>각 768px, 1024px, 1280px에 맞춰 디바이스에 맞게 경계를 구분했습니다.</p>
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450"
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F71XdqgOsy5iOTPhKaX3Ebb%2F%25EC%258D%25B8%25EB%2584%25A4%25EC%259D%25BC-%2526-%25EA%25B0%259C%25EC%259D%25B8%25EC%259E%2591%25EC%2597%2585%3Fnode-id%3D119%253A2"
+                allowfullscreen>
+            </iframe>
+            
+            <hr>
+            
+            <p class="t_tit2">CODEPEN</p>
+            <p class="t_desc2_css">코드펜을 통해 예제를 구현 해보았습니다.</p>
+
+            <iframe height="300" style="width: 100%;" scrolling="no" title="Orsay Museum" src="https://codepen.io/kimsangjunv1/embed/JjLmaxm?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/kimsangjunv1/pen/JjLmaxm">
+                Orsay Museum</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+            <details>
+                <summary class="t_box">전체 HTML&CSS 코드</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;오르셰미술관&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        /* CSS와 HTML의 혼용한 상태 입니다. */
+        h1,
+        h2,
+        ul,
+        li,
+        p,
+        div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li {
+            list-style-type: none;
+        }
+        .clear:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        a {
+            line-height: 1.5;
+            color: #333;
+        }
+        body {
+            background: #f1f1f1;
+            font-size: 13px;
+        }
+        header {
+            background: coral;
+        }
+        h1 {
+            font-size: 25px;
+            color: #cc0;
+            padding: 10px;
+            color: #fff;
+        }
+        .lnb li {
+            margin: 10px;
+            padding: 10px;
+            background: lightgreen;
+        }
+        .content {
+            padding: 20px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        .ext {
+            margin: 10px;
+            padding: 20px;
+            background: lightgreen;
+        }
+        footer {
+            padding: 10px;
+            background: #aaa;
+        }
+        @media all and (min-width:768px) and (max-width:1024px) {
+            .lnb {
+                float: left;
+                width: 25%;
+            }
+            .content {
+                float: left;
+                width: 75%;
+            }
+            .aside {
+                clear: both;
+            }
+        }
+        @media all and (min-width:1025px) {
+            .wrap {
+                max-width: 1280px;
+                margin: 0 auto;
+            }
+            .lnb {
+                float: left;
+                width: 20%;
+            }
+            .content {
+                float: left;
+                width: 50%;
+            }
+            .aside {
+                float: right;
+                width: 30%;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="wrap"&gt;
+        &lt;header&gt;
+            &lt;h1&gt;Musee d'Orsay&lt;/h1&gt;
+        &lt;/header&gt;
+        &lt;div id="container" class="clear"&gt;
+            &lt;div class="lnb"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;작가의 작품&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;작가의 시대&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;작가의 일생&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="content"&gt;
+                &lt;h2&gt;PICTURES&lt;/h2&gt;
+                &lt;p&gt;&lt;a href="#"&gt;피리부는 소년&lt;/a&gt; &lt;br&gt;&lt;a href="#"&gt;고흐의 방&lt;/a&gt;&lt;br&gt;&lt;a href="#"&gt;황색 그리스도가 있는 화가의 자화상&lt;/a&gt;&lt;br&gt;&lt;a
+                        href="#"&gt;오페라좌의 관현악단&lt;/a&gt;&lt;br&gt;&lt;a href="#"&gt;만종&lt;/a&gt;&lt;br&gt;&lt;a href="#"&gt;제비꽃 장식을 단 베르트모리조&lt;/a&gt;&lt;br&gt;&lt;a
+                        href="#"&gt;피리부는 소년&lt;/a&gt; &lt;br&gt;&lt;a href="#"&gt;고흐의 방&lt;/a&gt;&lt;br&gt;&lt;a href="#"&gt;황색 그리스도가 있는 화가의 자화상&lt;/a&gt;&lt;br&gt;&lt;a
+                        href="#"&gt;오페라좌의 관현악단&lt;/a&gt;&lt;br&gt;&lt;a href="#"&gt;만종&lt;/a&gt;&lt;br&gt;&lt;a href="#"&gt;제비꽃 장식을 단 베르트모리조&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="aside"&gt;
+                &lt;ul class="ext"&gt;
+                    &lt;li&gt;
+                        &lt;h2&gt;Workshop Go&lt;/h2&gt;&lt;a href="#"&gt;Life drawing workshop&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;h2&gt;Summer Exhibition&lt;/h2&gt;&lt;a href="#"&gt;A-level Summer Exibition Online 2010&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;h2&gt;RA Collection&lt;/h2&gt;&lt;a href="#"&gt;RA Collections&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;footer&gt;
+            &lt;p&gt;&copy;2018 Les Amis du Musee d'Orsay. All rights reserved.&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;html&gt;
+</code></pre>
+                </div>
+                <p class="t_tit2">결과</p>
+                <div class="t_iframe" style="height: 450px; padding-top: 0;"><iframe
+                        src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Ffile%2F1LcqGE8qnxjyVMJmThP3GU%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D1054%253A151"
+                        width="800" height="450" allowfullscreen=""></iframe></div>
+            </details>
+
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
