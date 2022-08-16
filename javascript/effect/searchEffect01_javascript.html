@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 검색하기</title>
+
+    <link rel="stylesheet" href="../assets/css/search.css">
+
+    <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
+<link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <h1>Search</h1>
+        <nav>
+            <ul>
+                <li class="active"><a href="searchEffect01.html">1</a>
+                    <ul class="sub">
+                        <li><a href="searchEffect01.html">HTML</a></li>
+                        <li><a href="searchEffect01_css.html">CSS</a></li>
+                        <li class="active"><a href="searchEffect01_javascript.html">JAVASCRIPT</a></li>
+                    </ul>
+                </li>
+                <li><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="search__wrap">
+            <span>indexOf()를 이용하여 JAVASCRIPT 메서드 검색하기</span>
+            <h1>JAVASCRIPT 메서드 검색하기</h1>
+            <div class="search__box">
+                <label for="search">검색하기</label>
+                <input type="text" id="search" placeholder="Javascript 메서드를 입력해주세요.">
+            </div>
+            <div class="search__list">
+                <div class="javascript">
+                    <ul>
+                        <li data-name="indexOf()"><strong>indexOf()</strong> : indexOf() 메서드는 문자열에서 특정 문자의 위치를 찾습니다. 문자열 내에 문자들은 왼쪽부터 순번이 매겨지고, 결과 값으로 순번이 반환됩니다. 만약 찾는 문자가 없다면, -1 값을 반환합니다.</li>
+                        <li data-name="slice()"><strong>slice()</strong> : slice() 메서드는 문자열에서 원하는 값을 추출하여 새로운 문자열을 반환합니다.</li>
+                        <li data-name="substring()"><strong>substring()</strong> : substring() 메서드는 문자열에서 원하는 값을 추출하여 새로운 문자열을 반환합니다. 원래 문자열을 변경되지 않으며, slice() 메서드는 시작값이 끝나는 값보다 크면 값을 추출할 수 없지만, substring() 메서드는 시작 값이 끝나는 값보다 크면 인수가 교환되어 값을 추출합니다.</li>
+                        <li data-name="substr()"><strong>substr()</strong> : substr() 메서드는 문자열에서 원하는 값을 추출하여 새로운 문자열을 반환합니다.</li>
+                        <li data-name="split()"><strong>split()</strong> : split() 메서드는 문자열을 부분 문자열로 구분하고 배열로 반환합니다.</li>
+                        <li data-name="trim()"><strong>trim()</strong> : trim() 메서드는 문자열의 앞뒤 공백을 제거합니다. 원래 문자열을 수정하지 않고, 새 문자열을 반환합니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:to_before@naver.com">to_before@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        //선택자
+        const searchBox = document.querySelector(".search__box input");               //검색 영역
+        const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
+
+        searchBox.addEventListener("keyup", ()=>{ //keyup이라 설정했기 때문에 한글자만 써도 실행이 됨
+            const searchWord = searchBox.value; //사용자가 입력한 키워드
+            
+            searchList.forEach((el)=>{
+                const cssName = el.dataset.name //data-name을 통해 확인이 가능하기 때문에 적었었고 js에서 선언시 dataset 붙여야 함.
+
+                if(cssName.indexOf(searchWord)){ //만약에 searchWord(Input값)을 조회했는데
+                    el.classList.add("hide") //있 el(searchList=.search__list ul li)에 hide 클래스 추가
+                } else {
+                    el.classList.remove("hide") //없으면 hide 클래스 삭제
+                }
+            })
+        })
+
+    </script>
+    
+</body>
+</html>
