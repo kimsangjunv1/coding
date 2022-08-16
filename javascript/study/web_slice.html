@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="study/basic.html">기본 규칙</a></li>
+                <li><a href="study/operator.html">연산자</a></li>
+                <li><a href="study/for.html">반복문</a></li>
+                <li><a href="study/if.html">조건문</a></li>
+                <li><a href="study/type.html">데이터 타입</a></li>
+                <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
+                <li><a href="study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2">slice</h2>
+                    <p class="t_desc2">slice는 배열로 부터 특정 범위를 복사한 값들을 담고 있는 새로운 배열을 만드는데 사용합니다</p>
+                    <div class="t_box">
+                        1. "문자열".slice(시작위치)<br>
+                        2. "문자열".slice(시작위치, 끝나는 위치)<br>
+                        3. <i>시작 위치는 문자열을 뽑아내야 하기 떄문에 시작위치는 끝나는 위치보다 숫자가 작아야 한다</i><br>
+                    </div>
+                <div class="script">
+                    <div class="t_code">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">const str1 = "javascript refrence"
+const currentStr1 = str1.slice(0);  //javascript reference
+const currentStr2 = str1.slice(1);  //avascript reference
+const currentStr3 = str1.slice(2);  //vascript reference
+const currentStr4 = str1.slice(0, 1);  //j
+const currentStr5 = str1.slice(0, 2);  //ja
+const currentStr6 = str1.slice(0, 3);  //jav
+const currentStr7 = str1.slice(1, 2);  //a
+const currentStr8 = str1.slice(1, 3);  //av
+const currentStr9 = str1.slice(1, 4);  //avs
+    
+//마이너스는 뒷자리부터 시작
+const currentStr10 = str1.slice(-1);  //e
+const currentStr11 = str1.slice(-2);  //ce
+const currentStr12 = str1.slice(-3);  //nce
+const currentStr13 = str1.slice(-3, -1);  //nc
+const currentStr14 = str1.slice(-3, -2);  //n
+const currentStr15 = str1.slice(-3, -3);  //
+    
+const currentStr16 = str1.slice(1, 4);  //ava
+const currentStr17 = str1.slice(4, 1);  //ava
+</code></pre>
+                    </div>
+                </div>
+                </div>
+                <!-- 1번 끝 -->
+                <hr>
+                <!-- 2번 -->
+                <div id="sample02" class="sample">
+                <h2 class="t_tit2">substring()</h2>
+                <p class="t_desc2">Substring은 slice의 경우 시작 위치는 문자열을 뽑아내야 하기 떄문에 시작위치는 끝나는 위치보다 숫자가 작아야 했지만 <br>
+                    Substring()은 시작값이 끝나는 값보다 클 경우 에러를 방지하기 위해 두 값을 바꿔서 처리합니다.</p>
+                <div class="t_box">
+                    1. "문자열".substring(시작위치(큰값), 끝나는 위치(작은값)) = 가능<br>
+                    2. "문자열".substring(시작위치(작은값), 끝나는 위치(큰값)) = 가능<br>
+                </div>
+                <div class="script">
+                    <div class="t_code">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">//서브 스트링은 자동으로 인식해서 출력시켜준다
+const currentStr18 = str1.substring(1, 4);  //ava
+const currentStr19 = str1.substring(4, 1);  //ava
+</code></pre>
+                    </div>
+                </div>
+                </div>
+                <!-- 2번 끝 -->
+                <hr>
+                <!-- 3번 -->
+                <div id="sample03" class="sample">
+                <h2 class="t_tit2">substr()</h2>
+                <p class="t_desc2_css">substr은 문자열에서 시작지점과 시작지점부터 추출할 길이를 정해 추출 가능합니다.</p>
+                    <div class="t_box">
+                        1. "문자열".substr(시작위치)<br>
+                        2. "문자열".substr(시작위치, 길이)
+                    </div>
+                <div class="script">
+                    <div class="t_code">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">const currentStr20 = str1.substr(0);  // javascript reference
+const currentStr21 = str1.substr(1);  // avascript reference
+const currentStr22 = str1.substr(2);  // vascript reference
+const currentStr23 = str1.substr(0, 1);  // j
+const currentStr24 = str1.substr(0, 2);  // ja
+const currentStr25 = str1.substr(0, 3);  // jav
+const currentStr26 = str1.substr(1, 2);  // av
+const currentStr27 = str1.substr(1, 3);  // ava
+const currentStr28 = str1.substr(1, 4);  // avas
+const currentStr29 = str1.substr(-1);  // e
+const currentStr30 = str1.substr(-2);  // ce
+const currentStr31 = str1.substr(-3);  // nce
+const currentStr32 = str1.substr(-1, 1);  // e
+const currentStr33 = str1.substr(-2, 2);  // ce
+const currentStr34 = str1.substr(-3, 3);  // nce
+</code></pre>
+                    </div>
+                </div>
+                </div>
+                <!-- 3번 끝 -->
+            </div>
+            
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
