@@ -93,44 +93,38 @@
             <div class="document">
                 <!-- 1번 -->
                 <div id="sample01" class="sample">
-                    <h2 class="t_tit2">이미지 유형_02</h2>
-                    <p class="t_desc2_css">마우스를 가져가다 대면 반응을 하는 이미지 유형 사이트를 만들어보겠습니다.</p>
+                    <h2 class="t_tit2">이미지 유형_01</h2>
+                    <p class="t_desc2_css">간단한 예제를 통해 자세히 보기 버튼을 만들고 설명과 함께 양옆으로 정렬해 메뉴를 구성해봅니다.</p>
 
                     <hr>
                     
                     <h3 class="t_tit2">HTML 코드</h3>
-                    <p class="t_desc2_css">간단하게 이미지 유형을 만들어보기 위해 하단과 같이 구조를 만들어 줍니다.<br>
-                    이때 <i>이미지에 마우스를 가져다 대면 이미지가 틀에 맞춰 확대되는 효과</i>를 주기위해 <i>img태그를 사용해 이미지를 불러옵니다!</i></p>
+                    <p class="t_box">간단한 이미지 유형 예제를 만들기 위해 기본적인 틀을 만들어 줍니다!
                     <div class="script">
                         <div class="t_code">
                         <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-html">&lt;body class="gmark"&gt;
-    &lt;div class="section container"&gt;
+<pre><code class="language-html">&lt;body class="nexon"&gt;
+    &lt;div class="container section"&gt;
         &lt;h2&gt;강아지의 모든 모습!&lt;/h2&gt;
         &lt;p&gt;세상에서 가장 귀여운 강아지의 모든 모습을 상상하고 세세하게 지켜만 보세요!!&lt;/p&gt;
-        &lt;article class="card_cont"&gt;
-            &lt;div class="card img1"&gt;
-                &lt;img src="img/bg02_01.jpg" alt=""&gt;
-                &lt;div class="text_cont left"&gt;
-                    &lt;h3&gt;NAME : BULDOG&lt;/h3&gt;
-                    &lt;p style="text-decoration:underline"&gt;자세히 보기&lt;/p&gt;
+        &lt;div class="card_container"&gt;
+            &lt;div class="card"&gt;
+                &lt;div class="container"&gt;&lt;/div&gt;
+                &lt;div class="text_cont"&gt;
+                    &lt;h2&gt;강아지의 모든 모습&lt;/h2&gt;
+                    &lt;p&gt;강아지는 왜이렇게 귀여울까요 대체왜 그런건지 궁금하지만 제 생각에는 나야 모르곘지만 아무튼 그런것들이 막 있습니다 그렇게 생각하세요 ^_^&lt;/p&gt;
+                    &lt;div class="more"&gt;자세히 보기&lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class="card img2"&gt;
-                &lt;img src="img/bg02_02.jpg" alt=""&gt;
-                &lt;div class="text_cont center"&gt;
-                    &lt;h3&gt;NAME : MALTIZ&lt;/h3&gt;
-                    &lt;p&gt;자세히 보기&lt;/p&gt;
+            &lt;div class="card"&gt;
+                &lt;div class="container"&gt;&lt;/div&gt;
+                &lt;div class="text_cont"&gt;
+                    &lt;h2&gt;강아지의 눈썹!&lt;/h2&gt;
+                    &lt;p&gt;강아지는 눈썹이 있을까요? 없을까요? 어찌보면 있는거 같기도 하고 본적이 없었던거 같기도하고 생각 해본적이 없던거 같기도 하고 흠...&lt;/p&gt;
+                    &lt;div style="background-color:#BD4517" class="more"&gt;자세히 보기&lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class="card img3"&gt;
-                &lt;img src="img/bg02_03.jpg" alt=""&gt;
-                &lt;div class="text_cont right"&gt;
-                    &lt;h3&gt;NAME : WELSH CORGI&lt;/h3&gt;
-                    &lt;p&gt;자세히 보기&lt;/p&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/article&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
 &lt;/body&gt;
 </code></pre>
@@ -140,186 +134,131 @@
                     <hr>
 
                     <h3 class="t_tit2">CSS 코드</h3>
-                    <p class="t_desc2_css">css에서 마우스를 가져다 댈때 이미지가 확대되고 마우스를 떼면 다시 이미지가 원래대로 돌아올 수 있도록 만들건데, 이와 같은 효과를 구현하기 위해서 not(:hover) 과 :hover를 적절히 섞어 css를 완성합니다.</p>
+                    <p class="t_box">설명과 함께 자세히 보기라는 버튼이 아래로 가도록 css를 설정해줍니다.</p>
                     
-                    <p class="t_box">기본적으로 이미지 하단의 설명은 숨기기 위해 bottom을 -100px로 설정합니다.</p>
+                    <p class="t_box">이미지를 양옆으로 정렬하기 위해 justify-content에 space-between을 주어 양옆으로 .card_container를 정렬합니다. </p>
                     <div class="script">
                         <div class="t_code">
                         <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-css">.text_cont {
-    position: absolute;
-    bottom: -100px; /* 밑으로 보내기 */
-    left: 0;
-    text-align: center;
-    width: 100%;
-    height: 100px;
-    background-color: rgba(153, 153, 153, 0.465);
-    box-sizing: border-box;
-    padding: 20px;
-    backdrop-filter: blur(15px);
-    color: #fff;
-}
-</code></pre>
-                        </div>
-                    </div>
+<pre><code class="language-css">@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
 
-                   <p class="t_box">bottom을 -100px 주게되면 밖으로 빠져나오는데 빠져나온 부분은 숨길 수 있도록 overflow:hidden을 설정해 해당 부분은 숨겨줍니다.</p>
-                    <div class="script">
-                        <div class="t_code">
-                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-css">.card {
-    width: 373px;
-    height: 520px;
-    background-color: #ededed;
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden; /* 여기 꼭 필수 !! */
-}
-</code></pre>
-                    
-                    <h3 class="t_tit2">이미지 확대되는 효과</h3>
-                   <p class="t_box">위의 기본 세팅을 마치고 나서 눌렀을때(hover) 마우스가 해당 요소에서 벗어날때(not(:hover) 효과를 각각 하단과 같이 줍니다.</p>
-                   <div class="script">
-                        <div class="t_code">
-                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-css">.card:hover .text_cont {
-    bottom: 0px; /* text_cont 위치를 원래대로 */
-    transition: all 0.25s ease-out;  /* 해당 변화 시간은 0.25초 */
-}
+    .nexon {
+        font-family: 'NexonLv1Gothic';
+        font-weight: 400;
+    }
 
-.card:hover.card img{
-    transform: scale(1.05); /* 확대효과 1은 원본 */
-    transition: all 0.25s ease-out;
-}
+    /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-.card:not(:hover).card img,
-.card:not(:hover) .text_cont {
-    transition: all 0.25s ease-out; /* 마우스를 떼어낼때 0.25초의 변화 */
-}
-</code></pre>
-                        </div>
-                    </div>
+    a {
+        text-decoration: none;
+        color: #000;
+    }
 
-                    <h3 class="t_tit2">전체 CSS 코드</h3>
-                    <div class="script">
-                        <div class="t_code">
-<pre><code class="language-css">@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+    img {
+        width: 100%;
+    }
 
-.gmark {
-    font-family: 'GmarketSans';
-    font-weight: normal;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: normal;
+    }
 
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
+    /* common(공통) */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
 
-a {
-    text-decoration: none;
-    color: #000;
+    .section {
+        padding: 120px 0;
+        /*위 아래 */
+    }
 
-img {
-    width: 100%;
+    .section>h2 {
+        /* ">" 이걸로 section 안에 있는 h2선택 */
+        font-size: 50px;
+        line-height: 1;
+        /* 1이라고 적으면 auto랑 똑같음 */
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: normal;
-
-/* common(공통) */
-.container {
-    width: 1160px;
-    padding: 0 20px;
-    margin: 0 auto;
-
-.section {
-    padding: 120px 0;
-    /*위 아래 */
-
-.section>h2 {
-    /* ">" 이걸로 section 안에 있는 h2선택 */
-    font-size: 50px;
-    line-height: 1;
-    /* 1이라고 적으면 auto랑 똑같음 */
-    text-align: center;
-    margin-bottom: 20px;
-
-.section>p {
-    font-size: 22px;
-    font-weight: 300;
-    color: #666;
-    text-align: center;
-    margin-bottom: 70px;
-
-/* card */
-.card_cont {
-    display: flex;
-    justify-content: space-between;
-
-.card {
-    width: 373px;
-    height: 520px;
-    background-color: #ededed;
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-
-.text_cont {
-    position: absolute;
-    bottom: -100px;
-    left: 0;
-    text-align: center;
-    width: 100%;
-    height: 100px;
-    background-color: rgba(153, 153, 153, 0.465);
-    box-sizing: border-box;
-    padding: 20px;
-    backdrop-filter: blur(15px);
-    color: #fff;
-
-.card:hover .text_cont {
-    bottom: 0px;
-    transition: all 0.25s ease-out;
-
-.card:hover.card img{
-    transform: scale(1.05);
-    transition: all 0.25s ease-out;
-
-.card:not(:hover).card img,
-.card:not(:hover) .text_cont {
-    transition: all 0.25s ease-out;
-
-.text_cont.left {
-    background-color: #2b1b6472;
-
-.text_cont.center {
-    background-color: #d19e286f;
-
-.text_cont.right {
-    background-color: #db581b6c;
-
-.text_cont h3 {
-    font-size: 24px;
-
-.text_cont p {
-    margin-top: 10px;
-    font-size: 16px;
+    .section>p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    body{
+        font-family: 'NexonLv1Gothic';
+    }
     
-.card img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+    /* card */
+
+    .card{
+        background-color: #ededed;
+        width: 570px;
+        height: 370px;
+        /* padding: 20px; */
+        position: relative;
+        color: #fff;
+    }
+
+    .card h2{
+        font-size: 32px;
+    }
+
+    .card:nth-child(1){
+        background-image: url(img/bg01_01.jpg);
+    }
+    .card:nth-child(2){
+        background-image: url(img/bg01_02.jpg);
+    }
+    
+    .card_container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .text_cont{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0px 20px 20px 20px;
+    }
+    
+    .text_cont p{
+        margin-top: 10px;
+        line-height: 1.5;
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .text_cont .more{
+        width: 120px;
+        height: 38px;
+        background-color: #CA9A03;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
 </code></pre>
                         </div>
                     </div>
+
+                    <hr>
+                    
                     <h3 class="t_tit2">결과</h3>
                     <div class="t_iframe" style="min-height : 1000px; padding-top:0;">
                         <iframe src="https://kimsangjunv1.github.io/coding/site/ImageType/imageType02.html" frameborder="0"></iframe>
