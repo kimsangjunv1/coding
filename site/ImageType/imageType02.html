@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: 'GmarketSans';
+            font-weight: normal;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* card */
+
+        .card_cont {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card {
+            width: 373px;
+            height: 520px;
+            background-color: #ededed;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .text_cont {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            text-align: center;
+            width: 100%;
+            height: 100px;
+            background-color: rgba(153, 153, 153, 0.465);
+            box-sizing: border-box;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            color: #fff;
+        }
+
+        .card:hover .text_cont {
+            bottom: 0px;
+            transition: all 0.25s ease-out;
+        }
+
+        .card:hover.card img{
+            transform: scale(1.05);
+            transition: all 0.25s ease-out;
+        }
+
+        .card:not(:hover).card img,
+        .card:not(:hover) .text_cont {
+            transition: all 0.25s ease-out;
+        }
+
+        .text_cont.left {
+            background-color: #2b1b6472;
+        }
+
+        .text_cont.center {
+            background-color: #d19e286f;
+        }
+
+        .text_cont.right {
+            background-color: #db581b6c;
+        }
+
+        .text_cont h3 {
+            font-size: 24px;
+        }
+
+        .text_cont p {
+            margin-top: 10px;
+            font-size: 16px;
+            
+        }
+
+        .card img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="gmark">
+    <div class="section container">
+        <h2>강아지의 모든 모습!</h2>
+        <p>세상에서 가장 귀여운 강아지의 모든 모습을 상상하고 세세하게 지켜만 보세요!!</p>
+        <article class="card_cont">
+            <div class="card img1">
+                <img src="img/bg02_01.jpg" alt="">
+                <div class="text_cont left">
+                    <h3>NAME : BULDOG</h3>
+                    <p style="text-decoration:underline">자세히 보기</p>
+                </div>
+            </div>
+            <div class="card img2">
+                <img src="img/bg02_02.jpg" alt="">
+                <div class="text_cont center">
+                    <h3>NAME : MALTIZ</h3>
+                    <p>자세히 보기</p>
+                </div>
+            </div>
+            <div class="card img3">
+                <img src="img/bg02_03.jpg" alt="">
+                <div class="text_cont right">
+                    <h3>NAME : WELSH CORGI</h3>
+                    <p>자세히 보기</p>
+                </div>
+            </div>
+        </article>
+    </div>
+</body>
+
+</html>

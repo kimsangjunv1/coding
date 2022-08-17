@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/search.css">
+
+    <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <h1>Search</h1>
+        <nav>
+            <ul>
+                <li><a href="searchEffect01.html">1</a></li>
+                <li class="active"><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="search__wrap">
+            <span>includes()를 이용하여 CSS 속성 검색하기</span>
+            <h1>CSS 속성 검색하기</h1>
+            <div class="search__box">
+                <label for="search">검색하기</label>
+                <input type="text" id="search" placeholder="CSS 속성 및 유형을 입력하세요.">
+            </div>
+            <div class="search__info">
+                <div class="type">플렉스, 애니메이션, 백그라운드, 기타 등등 유형 별로 검색해보세요!</div>
+                <div>전체 속성 갯수 : <span class="num">0</span></div>
+            </div>
+            <div class="search__list">
+                <div class="html">
+                    <ul>
+                        <li data-name="accent-color"><strong>accent-color</strong> : 다른 페이지 이동을 설정합니다.</li>
+                        <li data-name="align-content" data-type="플렉스"><strong>align-content</strong> : 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="animation" data-type="애니메이션"><strong>animation</strong> : 애니메이션과 관련된 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="animation-delay" data-type="애니메이션"><strong>animation-delay</strong> : 애니메이션 지연 시간을 설정합니다.</li>
+                        <li data-name="animation-duration" data-type="애니메이션"><strong>animation-duration</strong> : 애니메이션 움직임을 설정합니다.</li>
+                        <li data-name="animation-fill-mode" data-type="애니메이션"><strong>animation-fill-mode</strong> : 애니메이션이 끝난 후의 상태를설정합니다.</li>
+                        <li data-name="animation-iteration-count" data-type="애니메이션"><strong>animation-iteration-count</strong> : 애니메이션의 반복횟수를 설정합니다</li>
+                        <li data-name="animation-name" data-type="애니메이션"><strong>animation-name</strong> : 애니메이션 keyframe 이동을 설정합니다.</li>
+                        <li data-name="animation-play-state" data-type="애니메이션"><strong>animation-name</strong> : 애니메이션 keyframe 이동을 설정합니다.</li>
+                        <li data-name="animation-timing-function" data-type="애니메이션"><strong>animation-timing-function</strong> : 애니메이션움직임의 속도를 설정합니다.</li>
+
+                        <li data-name="backdrop-filter" data-type="효과"><strong>backdrop-filter</strong> : 배경에 다양한 효과를 줍니다.</li>
+                        <li data-name="background" data-type="백그라운드"><strong>background</strong> : 백그라운드 속성을 일괄적으로 설정합니다</li>
+                        <li data-name="background-attachment" data-type="백그라운드"><strong>background-attachment</strong> : 배경 이미지의 고정 여부를설정합니다</li>
+                        <li data-name="background-blend-mode" data-type="백그라운드"><strong>background-blend-mode</strong> : 배경을 혼합했을 때 그래픽효과를 설정합니다.</li>
+                        <li data-name="background-clip" data-type="백그라운드"><strong>background-clip</strong> : 백그라운드 이미지의 위치 기준점을 설정합니다.</li>
+                        <li data-name="background-color" data-type="백그라운드"><strong>background-color</strong> : 백그라운드 색을 설정합니다.</li>
+                        <li data-name="background-image" data-type="백그라운드"><strong>background-image</strong> : 백그라운드 이미지 속성을 설정합니다.</li>
+                        <li data-name="background-origin" data-type="백그라운드"><strong>background-origin</strong> : 백그라운드 이미지의 위치 기준점을 설정하기위한 속성입니다.</li>
+                        <li data-name="background-position" data-type="백그라운드"><strong>background-position</strong> : 백그라운드 이미지의 위치 영역을설정합니다.</li>
+                        <li data-name="background-position-x" data-type="백그라운드"><strong>background-position-x</strong> : 백그라운드 이미지의 x축 위치영역을 설정합니다.</li>
+
+                        <li data-name="background-position-y" data-type="백그라운드"><strong>background-position-y</strong> : 백그라운드 이미지의 x축 위치영역을 설정합니다.</li>
+                        <li data-name="background-repeat" data-type="백그라운드"><strong>background-repeat</strong> : 백그라운드 이미지 반복 여부를 설정합니다.</li>
+                        <li data-name="background-size" data-type="백그라운드"><strong>background-size</strong> : 백그라운드 이미지 사이즈를 설정합니다.</li>
+                        <li data-name="border" data-type="보더"><strong>border</strong> : 테두리 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="border-bottom" data-type="보더"><strong>border-bottom</strong> : 아래쪽 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="border-bottom-color" data-type="보더"><strong>border-bottom-color</strong> : 테두리 아래쪽 색 속성을 설정합니다.</li>
+                        <li data-name="border-bottom-left-radius" data-type="보더"><strong>border-left-radius</strong> : 아래 왼쪽 모서리 굴곡을설정합니다.</li>
+                        <li data-name="border-bottom-right-radius" data-type="보더"><strong>border-right-radius</strong> : 아래 오른쪽 모서리 굴곡을설정합니다.</li>
+                        <li data-name="border-bottom-style" data-type="보더"><strong>border-bottom-style</strong> : border-bottom-style은아래쪽 테두리의 스타일 속성을 설정합니다.</li>
+                        <li data-name="border-bottom-width" data-type="보더"><strong>border-bottom-width</strong> : border-bottom-width은아래쪽 테두리의 두께 속성을 설정합니다.</li>
+
+                        <li data-name="border-collapse" data-type="보더"><strong>border-collapse</strong> : border-collapse는 테이블의 테두리를겹칠지, 떨어트릴지를 설정합니다</li>
+                        <li data-name="border-left" data-type="보더"><strong>border-left</strong> : border-left는 요소의 왼쪽 테두리의 속성을 일괄적으로설정합니다.</li>
+                        <li data-name="border-left-color" data-type="보더"><strong>border-left-color</strong> : border-left-color는 요소의 왼쪽테두리의 색상을 설정합니다.</li>
+                        <li data-name="border-left-style" data-type="보더"><strong>border-left-style</strong> : border-left-style은 요소의 왼쪽테두리의 스타일 속성을 설정합니다.</li>
+                        <li data-name="border-left-width" data-type="보더"><strong>border-left-width</strong> : border-left-width는 요소의 왼쪽테두리의 두께를 설정합니다.</li>
+                        <li data-name="border-radius" data-type="보더"><strong>border-radius</strong> : border-radius는 요소의 테두리 굴곡을 설정합니다.</li>
+                        <li data-name="border-right" data-type="보더"><strong>border-right</strong> :border-right은 요소의 오른쪽 테두리 속성을 일괄적으로설정합니다.</li>
+                        <li data-name="border-right-color" data-type="보더"><strong>border-right-color</strong> : border-right-color는 요소의오른쪽 테두리의 색상을 설정합니다.</li>
+                        <li data-name="border-right-style" data-type="보더"><strong>border-right-style</strong> : border-right-style은 요소의오른쪽 테두리의 스타일 속성을 설정합니다.</li>
+                        <li data-name="border-right-width" data-type="보더"><strong>border-right-width</strong> : border-right-width는 요소의오른쪽 테두리의 두께를 설정합니다.</li>
+                        
+                        <li data-name="border-spacing" data-type="보더"><strong>border-spacing</strong>border-spacing은 테이블의 테두리 사이의 간격을 설정합니다.</li>
+                        <li data-name="border-style" data-type="보더"><strong>border-style</strong>border-style은 요소의 테두리 스타일 속성을 설정합니다.</li>
+                        <li data-name="border-top" data-type="보더"><strong>border-top</strong>border-top은 요소의 위쪽 테두리 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="border-top-color" data-type="보더"><strong>border-top-color</strong>border-top-color는 요소의 위쪽 테두리의 색상을 설정합니다.</li>
+                        <li data-name="border-top-left-radius" data-type="보더"><strong>border-top-left-radius</strong>border-top-left-radius는 요소의 위쪽 왼쪽 모서리의 굴곡을 설정합니다.</li>
+                        <li data-name="border-top-right-radius" data-type="보더"><strong>border-top-right-radius</strong>border-top-right-radius는 요소의 위쪽 오른쪽 모서리의 굴곡을 설정합니다.</li>
+                        <li data-name="border-top-style" data-type="보더"><strong>border-top-style</strong>border-top-style은 요소의 위쪽 테두리의 스타일 속성을 설정합니다.</li>
+                        <li data-name="border-top-width" data-type="보더"><strong>border-top-width</strong>border-top-width는 요소의 위쪽 테두리의 두께를 설정합니다.</li>
+                        <li data-name="border-width" data-type="보더"><strong>border-width</strong>border-width는 요소의 테두리의 두께를 설정합니다.</li>
+                        <li data-name="bottom" data-type="방향"><strong>bottom</strong>bottom은 요소의 아래쪽에서의 위치를 설정합니다.</li>
+
+                        <li data-name="box-sizing" data-type="박스"><strong>box-sizing</strong>box-sizing은 브라우저가 요소의 크기를 어떻게 계산할지를 설정합니다.</li>
+                        <li data-name="color" data-type="색상"><strong>color</strong>color는 텍스트의 색상을 설정합니다.</li>
+                        <li data-name="content" data-type="내용"><strong>content</strong>content는 가상 요소의 내용물을 표시합니다.</li>
+                        <li data-name="display" data-type="박스"><strong>display</strong>display는 요소의 표시 유형을 설정합니다.</li>
+                        <li data-name="flex-wrap" data-type="플렉스"><strong>flex-wrap</strong>flex-wrap은 flex의 겹칩 방법을 설정합니다. wrap/nowrap/wrap-reverse</li>
+                        <li data-name="float" data-type="플로트"><strong>float</strong>float는 float의 겹침을 설정합니다.</li>
+                        <li data-name="font-family" data-type="폰트"><strong>font-family</strong>font-family는 텍스트의 폰트를 설정합니다.</li>
+                        <li data-name="font-size" data-type="폰트"><strong>font-size</strong>font-size는 텍스트의 크기를 설정합니다.</li>
+                        <li data-name="font-style" data-type="폰트"><strong>font-style</strong>font-style은 텍스트의 이탤릭체 스타일을 설정합니다.</li>
+                        <li data-name="font-weight" data-type="폰트"><strong>font-weight</strong>font-weight는 텍스트의 두께를 설정합니다. 숫자가 높을 수록 두꺼워집니다.</li>
+
+                        <li data-name="grid-area" data-type="그리드"><strong>grid-area</strong>grid-area는 요소에 grid구역을 지정합니다.</li>
+                        <li data-name="grid-template-areas" data-type="그리드"><strong>grid-template-areas</strong>grid-template-areas는 grid의 열과 행을 나타낼 구역을 설정합니다.</li>
+                        <li data-name="grid-template-columns" data-type="그리드"><strong>grid-template-columns</strong>grid-template-columns는 grid의 각 열의 너비를 설정합니다.</li>
+                        <li data-name="grid-template-rows" data-type="그리드"><strong>grid-template-rows</strong>grid-template-rows는 grid의 각 행의 높이를 설정합니다.</li>
+                        <li data-name="height" data-type="방향"><strong>height</strong>height는 요소의 높이를 설정합니다.</li>
+                        <li data-name="justify-content" data-type="플렉스"><strong>justify-content</strong>justify-content는 flex나 grid의 항목이 배치되는 방식을 설정합니다.</li>
+                        <li data-name="left" data-type="방향"><strong>left</strong>left는 가상요소의 왼쪽에서의 위치를 설정합니다.</li>
+                        <li data-name="list-style" data-type="리스트"><strong>list-style</strong>list-style은 리스트의 글머리 기호/숫자 스타일을 설정합니다.</li>
+                        <li data-name="margin" data-type="여백"><strong>margin</strong>margin은 요소의 바깥쪽 여백을 설정합니다</li>
+                        <li data-name="margin-bottom" data-type="여백"><strong>margin-bottom</strong>margin-bottom은 요소의 바깥 아래쪽 여백을 설정합니다.</li>
+
+                        <li data-name="margin-left" data-type="보더"><strong>margin-left</strong>margin-left는 요소의 바깥 왼쪽 여백을 설정합니다.</li>
+                        <li data-name="margin-right" data-type="보더"><strong>margin-right</strong>margin-right는 요소의 바깥 오른쪽 여백을 설정합니다.</li>
+                        <li data-name="margin-top" data-type="보더"><strong>margin-top</strong>margin-top은 요소의 바깥 위쪽 여백을 설정합니다.</li>
+                        <li data-name="max-height" data-type="보더"><strong>max-height</strong>max-height은 요소의 최대 높이를 설정합니다.</li>
+                        <li data-name="max-width" data-type="보더"><strong>max-width</strong>max-width는 요소의 최대 너비를 설정합니다.</li>
+                        <li data-name="min-height" data-type="보더"><strong>min-height</strong>min-height은 요소의 최소 높이를 설정합니다.</li>
+                        <li data-name="min-width" data-type="보더"><strong>min-width</strong>min-width는 요소의 최소 너비를 설정합니다.</li>
+                        <li data-name="opacity" data-type="보더"><strong>opacity</strong>opacity는 요소의 투명도를 설정합니다.</li>
+                        <li data-name="overflow" data-type="보더"><strong>overflow</strong>overflow는 컨테이너에 비해 너무 큰 콘텐츠를 요소가 처리하는 방법을 설정합니다.</li>
+                        <li data-name="padding	" data-type="보더"><strong>padding</strong>padding은 요소의 안쪽 여백을 설정합니다.</li>
+                        
+                        <li data-name="padding-bottom" data-type="보더"><strong>padding-bottom</strong>padding-bottom은 요소의 안쪽 아래 여백을 설정합니다</li>
+                        <li data-name="padding-left" data-type="보더"><strong>padding-left</strong>padding-left는 요소의 안쪽 왼쪽 여백을 설정합니다.</li>
+                        <li data-name="padding-right" data-type="보더"><strong>padding-right</strong>padding-right는 요소의 안쪽 오른쪽 여백을 설정합니다.</li>
+                        <li data-name="padding-top" data-type="보더"><strong>padding-top</strong>padding-top은 요소의 안쪽 위 여백을 설정합니다</li>
+                        <li data-name="right" data-type="보더"><strong>right</strong>right는 가상요소의 오른쪽에서의 위치를 설정합니다.</li>
+                        <li data-name="text-align" data-type="보더"><strong>text-align</strong>text-align은 텍스트의 정렬 방식을 설정합니다.</li>
+                        <li data-name="text-decoration" data-type="보더"><strong>text-decoration</strong>text-decoration은 텍스트의 장식을 설정합니다.</li>
+                        <li data-name="top" data-type="보더"><strong>top</strong>top은 가상요소의 위쪽에서의 위치를 설정합니다.</li>
+                        <li data-name="transition" data-type="보더"><strong>transition</strong>transition은 css의 변환 시간을 설정합니다.</li>
+                        <li data-name="width" data-type="보더"><strong>width</strong>width는 요소의 너비를 설정합니다.</li>
+
+                        <li data-name="word-break" data-type="보더"><strong>word-break</strong>word-break는 텍스트의 단어 구분을 설정합니다. 단어 단위로 끊거나 글자 단위로 끊도록 제어할 수 있습니다.</li>
+                        <li data-name="z-index" data-type="보더"><strong>z-index</strong>z-index는 가상요소의 z축에서의 위치를 설정합니다.</li>
+                        
+                        <!-- 복사용 -->
+                        <li data-name="border" data-type="보더"><strong>border</strong>설명</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:to_before@naver.com">to_before@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        //선택자
+        const searchBox = document.querySelector(".search__box input"); //검색 영역
+        const searchList = document.querySelectorAll(".search__list ul li"); //목록 리스트
+        const searchInfo = document.querySelectorAll(".search__info .num");    //전체 갯수
+
+
+        //문제 총 갯수 구하기
+        // for(let i=1; i<=searchList.length; i++){
+        //     document.querySelector(".num").innerHTML=i
+        // }
+
+        document.querySelector(".num").innerHTML=searchList.length
+
+        //
+        searchBox.addEventListener("keyup", ()=>{
+            const searchWord = searchBox.value          //t사용자가 입력한 키워드
+
+            searchList.forEach(el => {
+                const cssName  = el.dataset.name;       //css 속성(searchList(.search__list ul li)) 모든 값
+                const cssType  = el.dataset.type;       //css 속성(searchList(.search__list ul li)) 모든 값
+                // console.log(cssName)
+
+                if(cssName.includes(searchWord)){       //cssName에 searchWord 가 있으면
+                    el.classList.remove("hide")            //true일시 hide 클래스 추가
+                } else {
+                    el.classList.add("hide")         //false일시 hide 클래스 제거
+                }
+
+                
+            })
+        })
+    </script>
+
+</body>
+
+</html>

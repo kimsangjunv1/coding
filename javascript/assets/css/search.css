@@ -89,6 +89,11 @@ li{
     text-align: center;
 }
 
+.search__info .type{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 .search__wrap>span{
     font-size: 20px;
     margin-bottom: 20px;
@@ -123,7 +128,15 @@ li{
     font-size: 20px;
 }
 
+.search__info{
+    text-align: right;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--htmlColor);
+}
+
 .search__list {}
+
 .search__list li {
     text-align: left;
     line-height: 1.7;
@@ -131,6 +144,10 @@ li{
 
 .search__list li.hide {
     display: none;
+}
+
+.search__list li.show {
+    display: block;
 }
 
 @media (max-width: 600px){
