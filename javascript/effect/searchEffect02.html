@@ -43,7 +43,7 @@
             <div class="search__list">
                 <div class="html">
                     <ul>
-                        <li data-name="accent-color"><strong>accent-color</strong> : 다른 페이지 이동을 설정합니다.</li>
+                        <li data-name="accent-color" data-type="플렉스"><strong>accent-color</strong> : 다른 페이지 이동을 설정합니다.</li>
                         <li data-name="align-content" data-type="플렉스"><strong>align-content</strong> : 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.</li>
                         <li data-name="animation" data-type="애니메이션"><strong>animation</strong> : 애니메이션과 관련된 속성을 일괄적으로 설정합니다.</li>
                         <li data-name="animation-delay" data-type="애니메이션"><strong>animation-delay</strong> : 애니메이션 지연 시간을 설정합니다.</li>
@@ -180,10 +180,11 @@
 
             searchList.forEach(el => {
                 const cssName  = el.dataset.name;       //css 속성(searchList(.search__list ul li)) 모든 값
+                const cssType  = el.dataset.type;       //css 속성(searchList(.search__list ul li)) 모든 값
                 // const cssType  = el.dataset.type;       //css 속성(searchList(.search__list ul li)) 모든 값
                 // console.log(cssName)
 
-                if(cssName.includes(searchWord)){       //cssName에 searchWord 가 포함되어있으면
+                if(cssName.includes(searchWord)||cssType.includes(searchWord)){       //cssName에 searchWord 가 포함되어있으면
                     el.classList.remove("hide")            //true일시 hide 클래스 제거
                 } else {
                     el.classList.add("hide")         //false일시 hide 클래스 추가

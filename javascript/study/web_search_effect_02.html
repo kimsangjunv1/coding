@@ -487,20 +487,22 @@ const searchInfo = document.querySelectorAll(".search__info .num");    //전체 
 // for(let i=1; i<=searchList.length; i++){
 //     document.querySelector(".num").innerHTML=i
 // }
+
 document.querySelector(".num").innerHTML=searchList.length
-//
 
 searchBox.addEventListener("keyup", ()=>{
     const searchWord = searchBox.value          //사용자가 입력한 키워드
     searchList.forEach(el => {
         const cssName  = el.dataset.name;       //css 속성(searchList(.search__list ul li)) 모든 값
+        const cssType  = el.dataset.type;       //css 속성(searchList(.search__list ul li)) 모든 값
         // const cssType  = el.dataset.type;       //css 속성(searchList(.search__list ul li)) 모든 값
         // console.log(cssName)
-        if(cssName.includes(searchWord)){       //cssName에 searchWord 가 포함되어 있으면
+        if(cssName.includes(searchWord)||cssType.includes(searchWord)){       //cssName에 searchWord가 포함되어 있거나 cssType에 searchWord가 포함되어 있으면
             el.classList.remove("hide")            //true일시 hide 클래스 제거
         } else {
             el.classList.add("hide")         //false일시 hide 클래스 추가
         }
+        
     })
 })
 </code></pre>

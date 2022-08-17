@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+                <li><a href="web_replace_replaceAll.html">replace/replaceAll</a></li>
+                <li><a href="concat">concat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h3 class="t_tit2">toUpperCase() / toLowerCase</h3>
+                    <p class="t_desc2">toUpperCase는 문자열을 대문자로 변경하고, toLowerCase는 문자열을 소문자로 변경</p>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 5%">
+                                <col style="width: 32%">
+                                <col style="width: 22%">
+                                <col style="width: 42%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>메서드</th>
+                                    <th>리턴값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample02_N1">1</td>
+                                    <td class="sample02_Q1">javascript</td>
+                                    <td class="sample02_M1">toUpperCase()</td>
+                                    <td class="sample02_P1">JAVASCRIPT</td>
+                                </tr>
+                                <tr>
+                                    <td class="sample02_N2">2</td>
+                                    <td class="sample02_Q2">javascript</td>
+                                    <td class="sample02_M2">toLowerCase()</td>
+                                    <td class="sample02_P2">JAVASCRIPT</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="script">
+                        <div class="t_code">
+                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">const str1 = "javascript";
+const currentStr1 = str1.toUpperCase();
+    
+document.querySelector(".sample02_N1").innerHTML="1";
+document.querySelector(".sample02_Q1").innerHTML="javascript";
+document.querySelector(".sample02_M1").innerHTML="toUpperCase()";
+document.querySelector(".sample02_P1").innerHTML=currentStr1;
+                
+const str2 = "JAVASCRIPT";
+const currentStr2 = str1.toUpperCase();
+    
+document.querySelector(".sample02_N2").innerHTML="2";
+document.querySelector(".sample02_Q2").innerHTML="JAVASCRIPT";
+document.querySelector(".sample02_M2").innerHTML="toLowerCase()";
+document.querySelector(".sample02_P2").innerHTML=currentStr2;
+</code></pre>
+                        </div>
+                    </div>
+                    
+                    <hr>
+
+                    <h3 class="t_tit2">trim() : 문자 / trimStart() / trimEnd() :</h3>
+                    <p class="t_desc2">문자열의 공백을 제거해주는 메서드 입니다.</p>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 5%">
+                                <col style="width: 32%">
+                                <col style="width: 22%">
+                                <col style="width: 42%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>메서드</th>
+                                    <th>리턴값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample03_N1">1</td>
+                                    <td class="sample03_Q1">javascript</td>
+                                    <td class="sample03_M1">trim()</td>
+                                    <td class="sample03_P1">javascript</td>
+                                </tr>
+                                <tr>
+                                    <td class="sample03_N2">2</td>
+                                    <td class="sample03_Q2">javascript</td>
+                                    <td class="sample03_M2">trimStart()</td>
+                                    <td class="sample03_P2">javascript</td>
+                                </tr>
+                                <tr>
+                                    <td class="sample03_N3">3</td>
+                                    <td class="sample03_Q3">javascript</td>
+                                    <td class="sample03_M3">trimEnd()</td>
+                                    <td class="sample03_P3">javascript</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                <div class="script">
+                    <div class="t_code">
+            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">const str1 = "         javascript         ";
+const currentStr1 = str1.trim();
+
+document.querySelector(".sample03_N1").innerHTML="1";
+document.querySelector(".sample03_Q1").innerHTML=str1;
+document.querySelector(".sample03_M1").innerHTML="trim()";
+document.querySelector(".sample03_P1").innerHTML=currentStr1;
+
+const str2 = "         javascript         ";
+const currentStr2 = str2.trimStart();
+
+document.querySelector(".sample03_N2").innerHTML="2";
+document.querySelector(".sample03_Q2").innerHTML=str2;
+document.querySelector(".sample03_M2").innerHTML="trimStart()";
+document.querySelector(".sample03_P2").innerHTML=currentStr2;
+
+const str3 = "         javascript         ";
+const currentStr3 = str3.trimEnd();
+
+document.querySelector(".sample03_N3").innerHTML="3";
+document.querySelector(".sample03_Q3").innerHTML=str3;
+document.querySelector(".sample03_M3").innerHTML="trimEnd()"
+document.querySelector(".sample03_P3").innerHTML=currentStr3;
+</code></pre>
+                </div>
+            </div>
+                </div>
+            </div>
+
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
