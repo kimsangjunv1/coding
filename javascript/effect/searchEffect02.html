@@ -176,17 +176,17 @@
 
         //
         searchBox.addEventListener("keyup", ()=>{
-            const searchWord = searchBox.value          //t사용자가 입력한 키워드
+            const searchWord = searchBox.value          //사용자가 입력한 키워드
 
             searchList.forEach(el => {
                 const cssName  = el.dataset.name;       //css 속성(searchList(.search__list ul li)) 모든 값
-                const cssType  = el.dataset.type;       //css 속성(searchList(.search__list ul li)) 모든 값
+                // const cssType  = el.dataset.type;       //css 속성(searchList(.search__list ul li)) 모든 값
                 // console.log(cssName)
 
-                if(cssName.includes(searchWord)){       //cssName에 searchWord 가 있으면
-                    el.classList.remove("hide")            //true일시 hide 클래스 추가
+                if(cssName.includes(searchWord)){       //cssName에 searchWord 가 포함되어있으면
+                    el.classList.remove("hide")            //true일시 hide 클래스 제거
                 } else {
-                    el.classList.add("hide")         //false일시 hide 클래스 제거
+                    el.classList.add("hide")         //false일시 hide 클래스 추가
                 }
 
                 
