@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="j../avascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2">꼬리 흔드는 강아지 만들기</h2>
+                    <p class="t_desc2_css">강아지를 만들어 보겠습니다!</p>
+                    <hr>
+                    <h2 class="t_tit2">PUG 코드</h2>
+                    <p class="t_desc2_css">pug코드를 통해 html로 힘들게 작성했던 부분을 편하게 작성해봅니다</p>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">.dog
+    .dog-body
+      .dog-tail
+        .dog-tail
+          .dog-tail
+            .dog-tail
+              .dog-tail
+                .dog-tail
+                  .dog-tail
+                    .dog-tail
+    .dog-torso
+    .dog-head
+      .dog-ears
+        .dog-ear
+        .dog-ear
+      .dog-eyes
+        .dog-eye
+        .dog-eye
+      .dog-muzzle
+        .dog-tongue
+</code></pre>
+                        </div>
+                    </div>
+                    <details>
+                        <summary class="t_box">HTML 코드로 보기</summary>
+                        <div class="script">
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-html">&lt;div class="dog"&gt;
+  &lt;div class="dog-body"&gt;
+    &lt;div class="dog-tail"&gt;
+      &lt;div class="dog-tail"&gt;
+        &lt;div class="dog-tail"&gt;
+          &lt;div class="dog-tail"&gt;
+            &lt;div class="dog-tail"&gt;
+              &lt;div class="dog-tail"&gt;
+                &lt;div class="dog-tail"&gt;
+                  &lt;div class="dog-tail"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="dog-torso"&gt;&lt;/div&gt;
+  &lt;div class="dog-head"&gt;
+    &lt;div class="dog-ears"&gt;
+      &lt;div class="dog-ear"&gt;&lt;/div&gt;
+      &lt;div class="dog-ear"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="dog-eyes"&gt;
+      &lt;div class="dog-eye"&gt;&lt;/div&gt;
+      &lt;div class="dog-eye"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="dog-muzzle"&gt;
+      &lt;div class="dog-tongue"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                        </div>
+                    </details>
+                    <hr>
+                    <h2 class="t_tit2">SCSS 코드</h2>
+                    <p class="t_desc2_css">SCSS를 통해 불편하게 적었던 CSS를 편하게 적고 강아지에게 동적효과를 주기위해 animation 효과를 줍니다!</p>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">$dog-width: 100px;
+$interval: 200ms;
+$color-gray: #eaebec;
+$easing: ease-in-out;
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+html, body {
+  background: #4E4BDD;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+//dog
+.dog {
+  width: $dog-width;
+  height: $dog-width;
+  z-index: 1;
+  
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(black, 0.03);
+    transform: translatey(-30%) scale(1.5);
+  }
+  
+  * {
+    position: absolute;
+  }
+}
+
+.dog-body, .dog-head, .dog-torso {
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  width:100%;
+  height:100%;
+}
+
+//dog-body
+.dog-body {
+  top: -50%;
+  box-shadow: inset 0 -15px 0 0 $color-gray;
+  animation: dog-body $interval $easing infinite alternate;
+  
+  &:before {
+    content:'';
+    position: absolute;
+    bottom: 90%;
+    right: 50%;
+    
+    width: 90%;
+    height: 90%;
+    background: rgba(white, 0.4);
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 10%;
+    border-top-right-radius: 10%;
+    transform-origin: right bottom;
+    animation: dog-tail-blur $interval $interval / 6 $easing infinite alternate both;
+    
+    @keyframes dog-tail-blur {
+      0% {transform: rotate(0); opacity: 0;}
+      50% {opacity: 1;}
+      100% {transform: rotate(90deg); opacity: 0;}
+    }
+  }
+  
+  @keyframes dog-body{
+    from {transform: translatex(-10%)}
+    to {transform: translatex(10%)}
+  }
+}
+
+
+//dog-head
+.dog-head {
+  border-radius: 50px;
+  animation: dog-head $interval * 9 cubic-bezier(0.11, 0.79, 0, 0.99) infinite;
+  
+  @keyframes dog-head {
+    0% {transform: rotate(45deg)}
+    33% {transform: rotate(-45deg)}
+    66% {transform: rotate(0deg)}
+    100% {transform: rotate(45deg)}
+  }
+}
+
+//dog-torso
+.dog-torso {
+  top: -20%;
+  box-shadow: inset 0 -15px 0 0 $color-gray;
+  animation: dog-torso $interval $easing infinite alternate-reverse;
+  
+  @keyframes dog-torso {
+    0% {transform: translatex(-5%);}
+    100% {transform: translatex(5%);}
+  }
+}
+
+// dog-eyes
+.dog-eyes {
+  width: 60%;
+  top: 55%;
+  left: 20%;
+  z-index: 1;
+  
+  &:before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background: gray;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: 0;
+    border: 4px solid white;
+    border-left-width: 0;
+    border-bottom-width: 0;
+    border-top-width: 0;
+    transform: rotate(-45deg)
+    }
+}
+
+  
+  .dog-eye {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 4px solid #000;
+    background: #fff;
+    z-index: 1;
+    
+    &:first-child {
+      left: 0;
+    }
+    &:last-child {
+      right: 0;
+    }
+    }
+
+.dog-muzzle {
+  width: 60%;
+  left: 20%;
+  height: 50%;
+  border-bottom-left-radius:100%;
+  border-bottom-right-radius:100%;
+  bottom: -15%;
+  background: white;
+  
+  &:before, &:after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+  
+  &:before {
+    width: 6px;
+    height: 20px;
+    bottom: 0;
+    background: $color-gray;
+    left: calc(50% - 3px);
+  }
+  
+  &:after {
+    background: black;
+    width: 20px;
+    height: 15px;
+    bottom: 12px;
+    left: calc(50% - 10px);
+    border-bottom-left-radius: 60% 60%; 
+    border-bottom-right-radius: 60% 60%; 
+    border-top-left-radius: 50% 40%; 
+    border-top-right-radius: 50% 40%; 
+  }
+}
+
+//dog-ears
+.dog-ears {
+  width: 40%;
+  top: 25%;
+  left: 30%;
+}
+
+.dog-ear {
+  bottom: -10px;
+  height: 50px;
+  width: 50px;
+  background: $color-gray;
+  
+  &:first-child {
+    right: 100%;
+    border-bottom-left-radius: 80%;
+    border-top-right-radius: 80%;
+    box-shadow: inset -15px 15px 0 1px white;
+    transform: rotate(10deg);
+  }
+  &:last-child {
+    left: 100%;
+    border-bottom-right-radius: 80%;
+    border-top-left-radius: 80%;
+    box-shadow: inset 15px 15px 0 0 white;
+    transform: rotate(-10deg);
+  }
+}
+
+.dog-tongue {
+  width: 40%;
+  height: 100%;
+  left: calc(50% - 20px);
+  z-index: -1;
+  transform-origin: center top;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    background: #fd3163;
+    animation: dog-tongue-inner $interval / 2 $easing infinite alternate;
+    
+    @keyframes dog-tongue-inner {
+      from {transform: translatey(5%)}
+      to {transform: translatey(22%)}
+    }
+  }
+}
+
+// dog-tail
+.dog-tail{
+  $tail-width: 22px;
+  width: $tail-width;
+  height: $tail-width * 1.1;
+  background: white;
+  bottom: 40%;
+  border-radius: $tail-width / 2;
+  left: calc(50% - #{$tail-width / 2});
+  transform-origin: center bottom;
+  
+  .dog-tail {
+    animation: dog-tail-segment $interval $easing infinite alternate;
+    
+    @keyframes dog-tail-segment {
+      0% {transform: rotate(-15deg)}
+      100% {transform: rotate(15deg)}
+    }
+  }
+}
+
+.dog-body > .dog-tail {
+  bottom: 90%;
+}
+</code></pre>
+                        </div>
+                    </div>
+                    <h2 class="t_tit2">결과</h2>
+
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="CSS Dog" src="https://codepen.io/kimsangjunv1/embed/vYRveWo?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/vYRveWo">
+                        CSS Dog</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+                <!-- 1번 끝 -->
+            </div>
+            
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
