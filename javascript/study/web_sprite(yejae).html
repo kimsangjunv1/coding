@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ir 효과 */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        .image__sns{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image__sns a {
+            /* 버튼 크기 설정 */
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border: 1px solid #ededed;
+            border-radius: 50%;
+            display: block;
+
+            margin-top: 20px;
+
+            /* 백그라운드 설정 */
+            background: url(https://raw.githubusercontent.com/kimsangjunv1/coding/19262cf6de4241e5d4e3fe5a16ee9b53455156f1/site/ImageType/img/icon_-1.svg) center no-repeat;
+            background-position: 0px;
+            background-size: 775px;
+        }
+
+        .image__sns p {
+            /* 버튼 크기 설정 */
+            width: 100%;
+            height: 100px;
+            background: #fff;
+            border: 1px solid #ededed;
+            border-radius: 50px;
+            /* display: block; */
+
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .image__sns:hover em{
+            display: inline;
+        }
+
+        /* a에 마우스를 올려두었을떄 */
+        .image__sns:hover a,
+        .image__sns:hover p {
+            background-position: -164px;
+            background-size: 890px;
+            background-color: rgb(83, 32, 248);
+            color: #fff;
+            border: 0.1px solid rgb(83, 32, 248);
+            box-shadow: 0px 10px 40px 5px #22284d1c;
+            transition: all 0.25s ease-in-out;
+        }
+        
+        /* a에 마우스를 떼어낼때 */
+        .image__sns:not(:hover) a {
+            transition: 0.25s;
+        }
+    </style>
+</head>
+<body>
+    <div class="image__sns">
+        <a href="#" class="link"><span class="ir">페이스북</span></a>
+        <p>마우스를 올려보세요 <em style="display: none">움직이기 완료</em></p>
+    </div>
+</body>
+</html>
