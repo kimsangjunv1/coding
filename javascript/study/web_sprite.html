@@ -8,6 +8,76 @@
     <title>자바스크립트 : 요소 객체</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
+
+    <style>
+        /* ir 효과 */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        .image__sns{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image__sns a {
+            /* 버튼 크기 설정 */
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border: 1px solid #ededed;
+            border-radius: 50%;
+            display: block;
+
+            margin-top: 20px;
+
+            /* 백그라운드 설정 */
+            background: url(https://raw.githubusercontent.com/kimsangjunv1/coding/19262cf6de4241e5d4e3fe5a16ee9b53455156f1/site/ImageType/img/icon_-1.svg) center no-repeat;
+            background-position: 0px;
+            background-size: 775px;
+        }
+
+        .image__sns p {
+            /* 버튼 크기 설정 */
+            width: 100%;
+            height: 100px;
+            background: #fff;
+            border: 1px solid #ededed;
+            border-radius: 50px;
+            /* display: block; */
+
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .image__sns:hover em{
+            display: inline;
+        }
+
+        /* a에 마우스를 올려두었을떄 */
+        .image__sns:hover a,
+        .image__sns:hover p {
+            background-position: -164px;
+            background-size: 890px;
+            background-color: rgb(83, 32, 248);
+            color: #fff;
+            border: 0.1px solid rgb(83, 32, 248);
+            box-shadow: 0px 10px 40px 5px #22284d1c;
+            transition: all 0.25s ease-in-out;
+        }
+        
+        /* a에 마우스를 떼어낼때 */
+        .image__sns:not(:hover) a {
+            transition: 0.25s;
+        }
+    </style>
 </head>
 
 <body>
@@ -96,26 +166,62 @@
 
                     <hr>
 
-                    <h2 class="t_tit">스프라이트를 활용한 예시</h2>
-                    <h2 class="t_tit2">스프라이트</h2>
-                    <p class="t_box">각 그림간의 간격은 14픽셀 하단의 스프라이트 이미지를 만들어 줍니다.</p>
-                        <div style="height: 70px; display:flex; justify-content: center;">
-                            <img src="../../site/ImageType/img/icon_-1.svg" alt="">
-                        </div>
+                    <h2 class="t_tit2">스프라이트 제작 예시</h2>
+                    <p class="t_box">스프라이트에 들어갈 각 그림간의 간격은 <i>추후 background-position을 쉽게 파악하기 위해 좌표가 딱 50으로 떨어지게끔 작업</i>해주고 스프라이트 이미지를 만들어 줍니다.</p>
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="400"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FIPypywur8hxaKAY7b34BIv%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-02%3Fnode-id%3D2%253A70"
+                        allowfullscreen></iframe>
+                    <hr>
+                    <h2 class="t_tit2">CSS 코드</h2>
+                    <p class="t_box">버튼의 글자는 가리고 이미지만 보여주기 위해 ir효과를 주어 글자는 숨기고 그림만 띄우게 css를 작성하겠습니다.<br>또한 간단한 hover효과를 주어 눈으로 좀 더 확인이 편하게 해보겠습니다.</p>
                     <div class="script">
                         <div class="t_code">
                             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-js">var encodeStr = '자바스크립트';
-console.log(encodeURIComponent(encodeStr));
+<pre><code class="language-css">/* ir 효과 */
+.ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
 
-var decodeStr = encodeURIComponent(encodeStr);
-console.log(decodeURIComponent(decodeStr));
+.image__sns a {
+    /* 버튼 크기 설정 */
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 50%;
+    display: block;
+    /* 백그라운드 설정 */
+    background: url(https://raw.githubusercontent.com/kimsangjunv1/coding/19262cf6de4241e5d4e3fe5a16ee9b53455156f1/site/ImageType/img/icon_-1.svg) center no-repeat;
+    background-position: 0px;
+    background-size: 820px;
+}
+
+/* a에 마우스를 올려두었을떄 */
+.image__sns:hover a {
+    background-position: -145px;
+    background-color: #6568791c;
+    border: 0.1px solid rgb(83, 32, 248);
+    box-shadow: 0px 10px 40px 5px #22284d1c;
+    transition: all 0.25s ease-in-out;
+}
+
+/* a에 마우스를 떼어낼때 */
+.image__sns:not(:hover) a {
+    transition: 0.25s;
+}
 </code></pre>
                         </div>
                     </div>
-
-                    <div style="border: 1px solid #ededed; border-radius: 100px; width: 50px; height: 50px;">
-                        <img src="" alt="">
+                    <hr>
+                    <h2 class="t_tit2">완성</h2>
+                    <p>마우스를 버튼에 올리면 한장의 스프라이트안에 저장되어있는 다른 아이콘으로 이동합니다.</p>
+                    <div class="image__sns">
+                        <a href="#" class="link"><span class="ir">페이스북</span></a>
+                        <p>마우스를 올려보세요 <em style="display: none">움직이기 완료</em></p>
                     </div>
                 </div>
             </div>
