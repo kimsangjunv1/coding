@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1720px;
+            padding: 0 100px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* card */
+
+        .card_cont_1 {
+            width: 850px;
+            float: left;
+            background-color: #ededed;
+            height: 498px;
+            margin-right: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card_cont {
+            width: 850px;
+            float: left;
+            /* background-color: #ededed; */
+            height: 498px;
+        }
+
+        .card_cont:nth-child(2) {
+            overflow: hidden;
+        }
+
+        .card_01 {
+            height: 48%;
+            margin-bottom: 20px;
+            /* background-color: #999; */
+        }
+
+        .card_01_01,
+        .card_01_02 {
+            float: left;
+            height: 100%;
+            width: 415px;
+            /* background-color: #888; */
+        }
+
+        .card_01_01 {
+            margin-right: 20px;
+        }
+
+        .card_02 {
+            height: 48%;
+            /* background-color: #999; */
+        }
+
+        /* header */
+        .text_cont {
+            position: absolute;
+            bottom: -100px;
+            padding: 20px;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .text_cont_02 {
+            position: absolute;
+            bottom: 0;
+            padding: 20px;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .text_cont h3 {
+            font-size: 22px;
+        }
+
+        .text_cont p {
+            font-size: 14px;
+            font-weight: lighter;
+            margin-top: 10px;
+        }
+
+        .layout_relative {
+            position: relative;
+        }
+
+
+
+        .menu_cont{
+            position: absolute;
+            top: -200px;
+            right: 0;
+            margin: 20px 20px 0px 0px;
+            z-index: 1;
+
+            /* display: none; */
+        }
+
+        .menu_cont img{
+            border-radius: 100px;
+            width: 41px;
+            display: block;
+        }
+
+        .menu_cont img:nth-child(1),
+        .menu_cont img:nth-child(2){
+            margin-bottom: 10px;
+        }
+
+        .card_cont_1:hover img{
+            scale: 1.1;
+            transition: 0.25s;
+        }
+
+        .card_cont_1:hover .menu_cont{
+            /* display: block; */
+            transition: 0.25s;
+            top: 0;
+        }
+
+        .card_cont_1:hover .text_cont{
+            bottom: 0px;
+            transition: 0.25s;
+        }
+
+        .card_cont_1:not(:hover) .menu_cont,
+        .card_cont_1:not(:hover) img,
+        .card_cont_1:not(:hover) .text_cont{
+            transition: all 0.25s;
+        }
+    </style>
+</head>
+
+<body class="gmark">
+    <article class="container">
+        <div class="section">
+            <h2>떠나자 동물의 세계로</h2>
+            <p>귀여운 동물들이 뛰어다니고 서로 다 같이 모여있는 그 곳으로 이번에 한번 다 같이 떠나볼까요?</p>
+            <div class="card_cont_1">
+                <div class="menu_cont">
+                    <img src="img/menu_01.jpg" alt="">
+                    <img src="img/menu_02.jpg" alt="">
+                    <img src="img/menu_03.jpg" alt="">
+                </div>
+                <figure class="text_cont">
+                    <h3>Dog</h3>
+                    <p>강아지는 지능이 매우 뛰어나서<br>
+                        주인을 바로 알아봅니다!</p>
+                </figure>
+                <img style="width: 100%" src="img/bgTest_01 1.jpg" alt="">
+            </div>
+            <div class="card_cont">
+                <div class="card_01">
+                    <div class="card_01_01 layout_relative">
+                        <figure class="text_cont_02">
+                            <h3>Cat_01</h3>
+                            <p>고양이는 독립적인 성향이 강해서<br>
+                                자기 마음대로 합니다</p>
+                        </figure>
+                        <img style="width: 100%" src="img/bgTest_02.jpg" alt="">
+                    </div>
+                    <div class="card_01_02 layout_relative">
+                        <figure class="text_cont_02">
+                            <h3>Cat_02</h3>
+                            <p>고양이는 자기 멋대로이지만<br>
+                                매우 귀엽기 때문에 용서가 됩니다!</p>
+                        </figure>
+                        <img style="width: 100%" src="img/bgTest_03.jpg" alt="">
+
+                    </div>
+                </div>
+                <div class="card_01">
+                    <div class="card_01_01 layout_relative">
+                        <figure class="text_cont_02">
+                            <h3>Kangaroo</h3>
+                            <p>귀여운 캥거루만 생각하다가 큰 코 다치지 마시구<br>
+                                길가에서 캥거루를 만났을때는 당장 도망부터 치세요!</p>
+                        </figure>
+                        <img style="width: 100%" src="img/bgTest_04.jpg" alt="">
+
+                    </div>
+                    <div class="card_01_02 layout_relative">
+                        <figure class="text_cont_02">
+                            <h3>Dog_02</h3>
+                            <p>강강아지는 집에 혼자 있으면<br>
+                                불안함을 느끼고 스트레스를 받기 때문에 케어가 필수!</p>
+                        </figure>
+                        <img style="width: 100%" src="img/bgTest_05.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>

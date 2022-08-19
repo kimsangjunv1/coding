@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형03</title>
+    <link href="https://webfontworld.github.io/yangheeryu/GowunBatang.css" rel="stylesheet">
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        .gowun {
+            font-family: GowunBatang;
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .container-fluid {
+            width: 100%;
+            padding: 0 100px;
+            box-sizing: border-box;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .image {
+            position: relative;
+            overflow: hidden;
+        }
+        /* imageType */
+        .image__inner {
+            display: grid;
+            grid-template-areas:
+                "box1 box1 box2 box3"
+                "box1 box1 box4 box5";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 20px;
+        }
+        .image__inner .image:nth-child(1) {
+            grid-area: box1;
+            background: url(img/bg03_01.jpg);
+            background-size: cover;
+        }
+        .image__inner .image:nth-child(2) {
+            grid-area: box2;
+        }
+        .image__inner .image:nth-child(3) {
+            grid-area: box3;
+        }
+        .image__inner .image:nth-child(4) {
+            grid-area: box4;
+        }
+        .image__inner .image:nth-child(5) {
+            grid-area: box5;
+        }
+        .image__box {}
+        .image__desc {
+            /* display: none; */
+            position: absolute;
+            left: 0;
+            bottom: -100%;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.135);
+            backdrop-filter: blur(15px);
+            padding: 16px;
+            box-sizing: border-box;
+        }
+
+        .image:hover .image__desc {
+            bottom: 0;
+            transition: all 0.25s;
+        }
+
+        .image:not(:hover) .image__desc {
+            transition: all 0.25s;
+        }
+
+        .image__desc h3 {
+            font-size: 20px;
+        }
+        .image__desc p {
+            font-size: 16px;
+            color: #666;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .image__sns {
+            /* display: none; */
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            opacity: 0;
+        }
+
+        .image__sns a{
+            width: 36px;
+            height: 36px;
+            background: #fff;
+            border-radius: 50%;
+            display: block;
+
+            margin-bottom: 5px;
+            background: url(img/icon_-1.svg) no-repeat;
+        }
+
+        .image__sns a:nth-child(1){}
+        .image__sns a:nth-child(2){
+            background-position: -50px 0;
+        }
+        .image__sns a:nth-child(3){
+            background-position: -100px 0;
+        }
+        .image__sns a:nth-child(4){
+            background-position: -150px 0;
+        }
+        .image__sns a:nth-child(5){
+            background-position: -200px 0;
+        }
+
+        .image:hover .image__sns {
+            /* right: 10px; */
+            opacity: 1;
+            transition: all 0.25s;
+        }
+
+        .image:not(:hover) .image__sns {
+            transition: all 0.25s;
+        }
+
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+    </style>
+</head>
+<body>
+    <section id="imageType03" class="image__wrap gowun section">
+        <h2>세상에서 가장 아름다운 건물</h2>
+        <p>
+            웹쓰가 선정한 죽기전에 가봐야 할 건축물 베스트5입니다.<br>
+            전세계에서 가장 유명한 건축가가 제작한 건축물로써 한번은 꼭 가봐야 하는 곳입니다.
+        </p>
+        <div class="image__inner container-fluid">
+            <article class="image">
+                <!-- <figure class="image__box">
+                    <img src="img/image_bg03_01.jpg" alt="셰이크 로트폴라 모스크">
+                </figure> -->
+                <div class="image__desc">
+                    <h3>셰이크 로트폴라 모스크</h3>
+                    <p>세계에서 가장 유명한 건물입니다. 최고의 건출물이나 현재는 전쟁으로 인해서 많이 파괴되었지만. 아직도 살 수 있다고 말한...</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/bg03_01.jpg" alt="셰이크 로트폴라 모스크">
+                </figure>
+                <div class="image__desc">
+                    <h3>셰이크 로트폴라 모스크</h3>
+                    <p>세계에서 가장 유명한 건물입니다. 최고의 건출물이나 현재는 전쟁으로 인해서 많이 파괴되었지만. 아직도 살 수 있다고 말한...</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/bg03_01.jpg" alt="셰이크 로트폴라 모스크">
+                </figure>
+                <div class="image__desc">
+                    <h3>셰이크 로트폴라 모스크</h3>
+                    <p>세계에서 가장 유명한 건물입니다. 최고의 건출물이나 현재는 전쟁으로 인해서 많이 파괴되었지만. 아직도 살 수 있다고 말한...</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/bg03_01.jpg" alt="셰이크 로트폴라 모스크">
+                </figure>
+                <div class="image__desc">
+                    <h3>셰이크 로트폴라 모스크</h3>
+                    <p>세계에서 가장 유명한 건물입니다. 최고의 건출물이나 현재는 전쟁으로 인해서 많이 파괴되었지만. 아직도 살 수 있다고 말한...</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/bg03_01.jpg" alt="셰이크 로트폴라 모스크">
+                </figure>
+                <div class="image__desc">
+                    <h3>셰이크 로트폴라 모스크</h3>
+                    <p>세계에서 가장 유명한 건물입니다. 최고의 건출물이나 현재는 전쟁으로 인해서 많이 파괴되었지만. 아직도 살 수 있다고 말한...</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

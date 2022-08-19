@@ -26,17 +26,17 @@
                 <li><a href="../javascript07.html">수학 객체</a></li>
                 <li><a href="../javascript08.html">숫자 객체</a></li>
                 <li><a href="../javascript09.html">브라우저 객체</a></li>
-                <li><a href="../javascript10.html">요소 객체</a></li>
-                <li><a href="../javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="j../avascript11.html">이벤트 객체</a></li>
             </ul>
             <ul class="effect">
-                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
-                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
-                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
-                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
-                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
-                <li><a href="../effect/parallaxEffect01.html">패럴랙스 효과</a></li>
-                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
             </ul>
             <ul class="study">
                 <li><a href="basic.html">기본 규칙</a></li>
@@ -57,8 +57,6 @@
                 <li><a href="web_jeongyu.html">정규 표현식</a></li>
                 <li><a href="web_indexOf.html">indexOf()</a></li>
                 <li><a href="web_homework.html">사이트 예제 만들기</a></li>
-                <li><a href="web_replace_replaceAll.html">replace/replaceAll</a></li>
-                <li><a href="concat">concat</a></li>
             </ul>
         </nav>
     </header>
@@ -93,126 +91,39 @@
             <div class="document">
                 <!-- 1번 -->
                 <div id="sample01" class="sample">
-                <h3 class="t_tit2">SCSS란?</h3>
-                <p class="t_desc2">sass란 Syntactically Awesome Style Sheets의 약자로 CSS에서 복잡하게 넣었던 요소들을 scss를 통해 간단하게 표현 가능케해서 가독성을 높여주고 유지보수를 쉽게 해줍니다.</p>
-                <hr>
-                <h3 class="t_tit2">SCSS 표기 예시</h3>
-                <div class="script">
-                    <div class="t_code">
-            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-js">$font-stack: Helvetica, sans-serif;
-    $primary-color: #333;
-    
-    body {
-      font: 100% $font-stack;
-      color: $primary-color;
-    }
+                    <h2 class="t_tit">스프라이트란?</h2>
+                    <p class="t_desc2_css">여러가지의 이미지가 한 이미지 안에 모여 있는것을 말합니다</p>
+
+                    <hr>
+
+                    <h2 class="t_tit">스프라이트를 활용한 예시</h2>
+                    <h2 class="t_tit2">스프라이트</h2>
+                    <p class="t_box">각 그림간의 간격은 14픽셀 하단의 스프라이트 이미지를 만들어 줍니다.</p>
+                        <div style="height: 70px; display:flex; justify-content: center;">
+                            <img src="../../site/ImageType/img/icon_-1.svg" alt="">
+                        </div>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">var encodeStr = '자바스크립트';
+console.log(encodeURIComponent(encodeStr));
+
+var decodeStr = encodeURIComponent(encodeStr);
+console.log(decodeURIComponent(decodeStr));
 </code></pre>
+                        </div>
                     </div>
-                    <!-- 1번 끝 -->
-                </div>
-                <h3 class="t_tit2">SASS 표기 예시</h3>
-                <div class="script">
-                    <div class="t_code">
-        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-js">$font-stack: Helvetica, sans-serif
-$primary-color: #333
-    
-body
-  font: 100% $font-stack
-  color: $primary-color
-</code></pre>
+
+                    <div style="border: 1px solid #ededed; border-radius: 100px; width: 50px; height: 50px;">
+                        <img src="" alt="">
                     </div>
-                    <!-- 1번 끝 -->
-                </div>
-
-                <h3 class="t_tit2">CSS 기존 사용 예시</h3>
-                <div class="script">
-                    <div class="t_code">
-        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-js">body {
-  font: 100% Helvetica, sans-serif;
-  color: #333;
-}
-</code></pre>
-                    </div>
-                    <!-- 1번 끝 -->
-                </div>
-
-            <hr>
-
-            <h3 class="t_tit2">SCSS : NESTING 이란?</h3>
-            <p class="t_box">간단히 말해부모 요소 안에서 자식 요소를 넣어 짜는것입니다.</p>
-            <div class="script">
-                <div class="t_code">
-    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-js">nav {
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-  
-    li { display: inline-block; }
-  
-    a {
-      display: block;
-      padding: 6px 12px;
-      text-decoration: none;
-    }
-  }
-</code></pre>
-                </div>
-                <!-- 1번 끝 -->
-            </div>
-
-            <hr>
-
-            <h3 class="t_tit2">operators 란?</h3>
-            <table class="t_table" data-ke-align="alignLeft">
-                <thead>
-                    <tr>
-                        <th>연산자</th>
-                        <th colspan="2">설명</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="ce">+</td>
-                        <td class="ce">더하기</td>
-                        <td class="ce"></td>
-                    </tr>
-                    <tr>
-                        <td class="ce">-</td>
-                        <td class="ce">빼기</td>
-                        <td class="ce"></td>
-                    </tr>
-                    <tr>
-                        <td class="ce">*</td>
-                        <td class="ce">곱하기</td>
-                        <td class="ce">하나 이상의 값이 반드시 숫자여야함</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">/</td>
-                        <td class="ce">나누기</td>
-                        <td class="ce">오른쪽 값이 반드시 숫자여야함</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">%</td>
-                        <td class="ce">나머지</td>
-                        <td class="ce"></td>
-                    </tr>
-                </tbody>
-            </table>
                 </div>
             </div>
-
         </main>
         <!-- //main -->
 
         <footer id="footer">
             <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
-        </footer>
         </footer>
         <!-- //footer -->
         <script src="../assets/js/highlight.min.js"></script>
