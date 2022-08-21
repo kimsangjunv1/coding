@@ -104,6 +104,24 @@
                     <hr>
                     <h2 class="t_tit2">CSS 코드</h2>
                     <p class="t_box">버튼의 글자는 가리고 이미지만 보여주기 위해 ir효과를 주어 글자는 숨기고 그림만 띄우게 css를 작성하겠습니다.<br>또한 간단한 hover효과를 주어 눈으로 좀 더 확인이 편하게 해보겠습니다.</p>
+                    <p class="t_box">ir효과 : 리더기는 텍스트만 읽기 가능하기 때문에 이미지 설명을 위해 사용하며 시각적으로 불편함이 없도록 텍스트만 안보이게 숨겨주고 실제로 설명은 붙어있지만 이미지만을 보여줄때 사용하는 방법입니다.</p>
+                    <details>
+                        <summary  class="t_box">ir 효과 CSS코드보기</summary>
+                        <div class="script">
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+    <pre><code class="language-css">/* ir 효과 */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+    </code></pre>
+                            </div>
+                        </div>
+                    </details>
                     <div class="script">
                         <div class="t_code">
                             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->

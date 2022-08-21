@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+                <li><a href="web_replace_replaceAll.html">replace/replaceAll</a></li>
+                <li><a href="concat">concat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h3 class="t_tit2">블록/인라인 구조...?</h3>
+                    <p class="t_desc2">블록구조와 인라인구조는 각각의 특성이 있는데 이번 시간에 알아봅시다!</p>
+                    <div class="t_box">::블록구조<br>태그 한개가 화면상에 보이는 한 줄을 모두 차지하게 되며 <i>여러 블록구조 태그를 사용할시 블록을 쌓듯이 계속 아래로 쌓여갑니다.</i><br><br>
+                                       ::인라인구조<br>태그 한개가 한줄에 모두 표현되며 <i>여러 인라인구조 태그를 사용할시 오른쪽 방향으로 계속해서 쌓여갑니다.</i>
+                    </div>
+                    <table class="t_table">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;&nbsp;인라인 구조</th>
+                                <th>블록 구조</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ce">a</td>
+                                <td class="ce">address</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">abbr</td>
+                                <td class="ce">article</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">acronym</td>
+                                <td class="ce">aside</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">b</td>
+                                <td class="ce">noscript</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">bdo</td>
+                                <td class="ce">form</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">big</td>
+                                <td class="ce">div</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">br</td>
+                                <td class="ce">h1~6</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">button</td>
+                                <td class="ce">header</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">em</td>
+                                <td class="ce">section</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">img</td>
+                                <td class="ce">table</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">input</td>
+                                <td class="ce">ul</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">label</td>
+                                <td class="ce">ol</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">script</td>
+                                <td class="ce">hr</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">select</td>
+                                <td class="ce">figure</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">span</td>
+                                <td class="ce">figcaption</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">textarea</td>
+                                <td class="ce">fieldset</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">strong</td>
+                                <td class="ce">blockquote</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">code</td>
+                                <td class="ce">canvas</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">object</td>
+                                <td class="ce">footer</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">small</td>
+                                <td class="ce">audio</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <h3 class="t_tit2">블록구조/인라인구조 예시</h3>
+                    <p class="t_desc2_css">간단한 예제를 통해 인라인 구조와 블록 구조에 대해 알아봅시다~~~~!!</p>
+                    <div style="color: #fff;">
+                        <div style="background-color: rgb(68, 59, 96);
+                                    padding: 15px;
+                                    border-radius: 15px;">
+                            <div>block 사용 예시</div>
+                            <div style="background-color: rgb(33, 27, 50);
+                                        border-radius: 15px;
+                                        padding: 10px;">
+                                <div>&lt;div 태그 : 나는 블록!&gt;</div>
+                                <div>&lt;div 태그 : 나는 블록!&gt;</div>
+                            </div>
+                        </div>
+                        <div style="margin: 10px 0px 10px; background-color: #6645ea;
+                                    padding: 15px;
+                                    height: 50%;
+                                    border-radius: 15px;">
+                            <div>inline 사용 예시</div>
+                            <div style="background-color: #472abb;
+                                        border-radius: 15px;
+                                        padding: 10px;">
+                                <span>&lt;span : 나는 인라인!&gt;</span>
+                                <span>&lt;span : 나는 인라인!&gt;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <details>
+                        <summary class="t_box">예시용 HTML 코드보기</summary>
+                        <div class="script">
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-html">&lt;div style="color: #fff;"&gt;
+    &lt;div style="background-color: rgb(68, 59, 96);
+                padding: 12px;
+                border-radius: 15px;"&gt;
+        &lt;div&gt;block 사용 예시&lt;/div&gt;
+        &lt;div style="background-color: rgb(33, 27, 50);
+                    border-radius: 15px;
+                    padding: 10px;"&gt;
+            &lt;div&gt;&lt;div 태그 : 나는 블록!&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;div 태그 : 나는 블록!&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style="margin: 10px 0px 10px; background-color: #6645ea;
+                padding: 12px;
+                height: 50%;
+                border-radius: 15px;"&gt;
+        &lt;div&gt;inline 사용 예시&lt;/div&gt;
+        &lt;div style="background-color: #472abb;
+                    border-radius: 15px;
+                    padding: 10px;"&gt;
+            &lt;span&gt;&lt;span : 나는 인라인!&gt;&lt;/span&gt;
+            &lt;span&gt;&lt;span : 나는 인라인!&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="study/basic.html">기본 규칙</a></li>
+                <li><a href="study/operator.html">연산자</a></li>
+                <li><a href="study/for.html">반복문</a></li>
+                <li><a href="study/if.html">조건문</a></li>
+                <li><a href="study/type.html">데이터 타입</a></li>
+                <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
+                <li><a href="study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 01번 메인 샘플 시작 -->
+                <h2 class="t_tit2">구조와 관련된 요소?</h2>
+                <p class="t_desc2_css">
+                    구조와 관련된 요소로 주로 사용되는 시멘틱 태그인, header/section/footer/nav/article/aside에 관한 설명입니다.
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>요소 유형</th>
+                            <th>태그명</th>
+                            <th>태그의 의미 및 특징</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="12" class="ce"> 블록 레벨<br>요소</td>
+                            <td rowspan="2" class="ce">
+                                &lt;header&gt; <br>
+                                &lt;/header&gt;
+                            </td>
+                            <td>HTML 문서의 헤더 영역을 의미하는 태그로 제목, 내비게이션(메뉴), 검색 등의 내용을 포함할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td>텍스트, 인라인 요소, 블록 레벨 요소를 포함 가능하며 &lt;heder&gt;, &lt;footer&gt; 태그는 포함할 수 없습니다.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;section&gt; <br>
+                                &lt;/section&gt;
+                            </td>
+                            <td>HTML 문서에서 맥락이 같은 요소들을 주제별로 그룹화해주는 태그이며, 섹션 주세에 대한 제목 요소 (&lt;h2&gt; ~ &lt;h6&gt;) 를 포함하는것이 좋습니다.</td>
+                        </tr>
+                        <tr>
+                            <td>텍스트, 인라인 요소, 블록레벨 요소를 포함할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;footer&gt; <br>
+                                &lt;/footer&gt;
+                            </td>
+                            <td>HTML 문서의 가장 하단 부분(푸터)을 의미하는 태그로 섹션 작성자, 저작권에 대한 정보, 관련된 문서의 링크를 포함할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;header&gt;와 같이 텍스트, 인라인 요소, 블록 레벨 요소는 포함할 수 있지만, &lt;header&gt;, &lt;footer&gt; 태그는 포함할 수 없습니다.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;nav&gt; <br>
+                                &lt;/nav&gt;
+                            </td>
+                            <td>HTML 문서의 메인 메뉴나 목차 등을 정의해 주는 태그입니다.</td>
+                        </tr>
+                        <tr>
+                            <td>텍스트, 인라인 요소, 블록레벨 요소를 포함할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;article&gt; <br>
+                                &lt;/article&gt;
+                            </td>
+                            <td>독립적으로 배포 또는 재사용일 가능한 게시물, 뉴스 기사, 블로그 포스팅 등을 의미하는 태그이며, 제목 요소 (&lt;h2&gt; ~ &lt;h6&gt;) 를 포함하는 게 좋다.</td>
+                        </tr>
+                        <tr>
+                            <td>텍스트, 인라인 요소, 블록레벨 요소를 포함할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;aside&gt; <br>
+                                &lt;/aside&gt;
+                            </td>
+                            <td>메인 콘텐츠와 직접적으로 관련이 없는 영역을 의미하는 태그이며, HTML 문서의 오른쪽이나 왼쪽의 사이드 메뉴 혹은 광고 등의 영역으로 사용이 가능합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>텍스트, 인라인 요소, 블록레벨 요소를 포함할 수 있습니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+
+                <!-- HTML 코드 -->
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2">HTML 코드</h2>
+                    <p class="t_desc2_css">
+                        웹 표준을 준수하기 위해 태그는 시멘틱 태그를 사용해 작성하며 효율적인 코드 작성을 위해 div태그를 여러개 만드는것이 아닌 한 태그안에 클래스를 다중으로 삽입해 코드를 정리합니다.
+                    </p>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary class="t_box">코드보기</summary>
+                            <div class="sample03_result">
+                                <div class="script">
+                                    <div class="t_code">
+<pre><code class="language-html">&lt;body&gt;
+    &lt;section class="container section score"&gt;
+        &lt;header class="header_container"&gt;
+            &lt;div class="active_container"&gt;
+                &lt;p&gt;h1&lt;/p&gt;
+                &lt;h1&gt;반응형 웹&lt;/h1&gt;
+            &lt;/div&gt;
+            &lt;div class="nav_container"&gt;
+                &lt;p&gt;header&lt;/p&gt;
+                &lt;div class="nav_mainBox"&gt;
+                    &lt;p&gt;nav&lt;/p&gt;
+                    &lt;nav&gt;
+                        &lt;ul style="list-style:none"&gt;
+                            &lt;li&gt;MENU 01&lt;/li&gt;
+                            &lt;li&gt;MENU 02&lt;/li&gt;
+                            &lt;li&gt;MENU 03&lt;/li&gt;
+                            &lt;li&gt;MENU 04&lt;/li&gt;
+                            &lt;li&gt;MENU 05&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/nav&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/header&gt;
+        &lt;main class="main_container"&gt;
+            &lt;p&gt;div&lt;/p&gt;
+            &lt;section class="container_1"&gt;
+                &lt;p&gt;section&lt;/p&gt;
+                &lt;h1&gt;콘텐츠 그룹 01&lt;/h1&gt;
+            &lt;/section&gt;
+            &lt;section class="container_2"&gt;
+                &lt;p&gt;section&lt;/p&gt;
+                &lt;h1&gt;콘텐츠 그룹 02&lt;/h1&gt;
+            &lt;/section&gt;
+            &lt;div class="container_3"&gt;
+                &lt;section class="news_cont"&gt;
+                    &lt;p&gt;aritcle&lt;/p&gt;
+                    &lt;h1&gt;주요 기사&lt;/h1&gt;
+                &lt;/section&gt;
+                &lt;section class="commercial_cont"&gt;
+                    &lt;p&gt;aside&lt;/p&gt;
+                    &lt;h1&gt;광고&lt;/h1&gt;
+                &lt;/section&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+        &lt;footer class="footer_container"&gt;
+            &lt;p&gt;footer&lt;/p&gt;
+            &lt;div class="address_box"&gt;
+                &lt;p&gt;address&lt;/p&gt;
+                &lt;h1&gt;경기도 부천시 졸립다 참..&lt;/h1&gt;
+            &lt;/div&gt;
+            &lt;div class="p_box"&gt;
+                &lt;p&gt;p&lt;/p&gt;
+                &lt;h1&gt;COPYRIGHT going to sleep&lt;/h1&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                </div>
+                <!-- HTML 코드 끝 -->
+
+                <hr>
+
+                <!-- CSS 코드 -->
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2">CSS 코드</h2>
+                    <p class="t_desc2_css">
+                        폰트는 'SCoreDream'를 이용하고, 클래스를 중첩시켜 스타일을 적용해 효율적인 코드 작성을 합니다.
+                    </p>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary class="t_box">코드보기</summary>
+                            <div class="sample03_result">
+                                <div class="script">
+                                    <div class="t_code">
+<pre><code class="language-css">/* fonts */
+    @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+    :root {
+        --pink1: #fbe4ec;
+        --pink_cont: #ea1e63;
+
+    }
+
+    .score {
+        font-family: 'SCoreDream';
+        font-weight: 300;
+        font-size: 14px !important;
+        color: #fff;
+    }
+
+    /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: normal;
+    }
+
+    /* common(공통) */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+
+    .section {
+        padding: 70px 0;
+        /*위 아래 */
+    }
+
+    .section>h2 {
+        /* ">" 이걸로 section 안에 있는 h2선택 */
+        font-size: 50px;
+        line-height: 1;
+        /* 1이라고 적으면 auto랑 똑같음 */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .section>p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    /* blind : 제목은 적어야 하나 시각이 불편한 사람들을 위해 숨김처리 */
+    .blind {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        /* 포토샵의 클리핑 마스크와 같은 효과 */
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden
+    }
+
+    /* header */
+    .header_container {
+        background-color: var(--pink1);
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .header_container ul li {
+        float: left;
+        width: 20%;
+    }
+
+    .active_container {
+        width: 10%;
+        margin: 20px;
+        text-align: center;
+        background-color: var(--pink_cont);
+    }
+    .active_container h1{
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .active_container p{
+        margin: 10px auto 0px auto;
+    }
+
+    .nav_container {
+        width: 90%;
+        text-align: center;
+        margin: 20px 70px 20px 0px;
+        background-color: var(--pink1);
+    }
+
+    .nav_container>p {
+        margin: 0px 20px 13px 425px;
+        background-color: #000;
+        color: #fff;
+        width: 100px;
+    }
+
+    .nav_mainBox {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--pink_cont);
+        margin: 0px;
+    }
+
+    .nav_mainBox nav {
+        width: 90%;
+        margin: 20px 60px 10px 60px;
+        /* background-color: red; */
+
+    }
+
+    .nav_mainBox ul li {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* main */
+    .main_container {
+        background-color: var(--pink1);
+        width: 100%;
+        height: 550px;
+        margin-bottom: 20px;
+        /* padding: 10px; */
+    }
+
+    .main_container .container_1 {
+        background-color: var(--pink_cont);
+        margin: 1px 10px 20px 20px;
+        float: left;
+        height: 93%;
+        /* margin-right: 10px; */
+        width: 35%;
+    }
+
+    .main_container .container_2 {
+        background-color: var(--pink_cont);
+        margin: 1px 10px 20px 10px;
+        float: left;
+        height: 93%;
+        margin-right: 10px;
+        width: 33%;
+    }
+
+    .main_container .container_3 {
+        margin: 1px 10px 20px 10px;
+        float: left;
+        height: 93%;
+        width: 25%;
+    }
+
+    .container_1 p,
+    .container_2 p {
+        margin: 10px 0px 0px 10px;
+    }
+
+    .container_1 h1,
+    .container_2 h1 {
+        text-align: center;
+        padding: 200px 0px 200px 0px;
+    }
+
+    .news_cont {
+        background-color: var(--pink_cont);
+        height: 48%;
+        margin-bottom: 20px;
+    }
+
+    .news_cont h1 {
+        text-align: center;
+        padding: 95px 0px 95px 0px;
+    }
+
+    .commercial_cont {
+        background-color: var(--pink_cont);
+        height: 48%;
+    }
+
+    .commercial_cont h1 {
+        text-align: center;
+        padding: 95px 0px 95px 0px;
+    }
+
+    .main_container>p,
+    .active_container p,
+    .nav_mainBox p,
+    .news_cont p,
+    .commercial_cont p,
+    .container_1 p,
+    .container_2 p,
+    .footer_container>p,
+    .address_box p,
+    .p_box p {
+        height: 20px;
+        background-color: #888;
+        background: #000;
+        width: 80px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .footer_container {
+        background-color: var(--pink1);
+        width: 100%;
+        height: 128px;
+    }
+
+    .footer_container>p {
+        /* display: inline; */
+    }
+
+    .address_box p,
+    .p_box p {
+        float: left;
+    }
+
+    .address_box h1,
+    .p_box h1 {
+        padding-top: 10px;
+        font-size: 14px;
+        margin-left: 110px;
+    }
+
+    .address_box,
+    .p_box {
+        margin: 0px 20px 0px 200px;
+        height: 40px;
+        width: 40%;
+        background-color: var(--pink_cont);
+        margin-bottom: 10px;
+    }
+</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                </div>
+                <!-- CSS 코드 끝 -->
+
+                <hr>
+
+                <h2 class="t_tit2">결과</h2>
+                <div class="t_iframe" style="min-height : 1000px; padding-top:0;">
+                    <iframe src="https://kimsangjunv1.github.io/coding/javascript/study/web_homework.html" frameborder="0"></iframe>
+                </div>
+                <hr>
+                <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
+                    <div class="t_link">
+                        <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/study/web_homework.html" target="blank">원본 소스 보기</a>
+                    </div>
+                    <div class="t_link">
+                        <a href="https://kimsangjunv1.github.io/coding/javascript/study/web_homework.html" target="blank">원본 페이지 보기</a>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
