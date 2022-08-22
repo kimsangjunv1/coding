@@ -89,11 +89,6 @@ li{
     text-align: center;
 }
 
-.search__info .type{
-    text-align: center;
-    margin-bottom: 10px;
-}
-
 .search__wrap>span{
     font-size: 20px;
     margin-bottom: 20px;
@@ -133,6 +128,28 @@ li{
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 2px solid var(--htmlColor);
+}
+
+.search__info .type{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.search__info .keyword{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword span{
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.search__info .keyword span:hover{
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
 }
 
 .search__list {}

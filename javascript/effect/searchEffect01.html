@@ -29,7 +29,7 @@
 
     <main id="main">
         <div class="search__wrap">
-            <span>indexOf()를 이용하여 CSS 속성 검색하기</span>
+            <span>indexOf()/search()를 이용하여 CSS 속성 검색하기</span>
             <h1>CSS 속성 검색하기</h1>
             <div class="search__box">
                 <label for="search">검색하기</label>
@@ -98,7 +98,7 @@
     <!-- //footer -->
 
     <script>
-        //선택자
+        //서치는 정규식까지 표현할수있다는거
         const searchBox = document.querySelector(".search__box input");               //검색 영역
         const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
         const searchInfo = document.querySelectorAll(".search__info .num");    //전체 갯수
@@ -114,6 +114,10 @@
             searchList.forEach((el)=>{
                 const cssName = el.dataset.name //data-name을 통해 확인이 가능하기 때문에 적었었고 js에서 선언시 dataset 붙여야 함.
 
+                //
+                //
+                
+                // if(cssName.search(searchWord)){ //만약에 searchWord(Input값)을 조회했는데
                 if(cssName.indexOf(searchWord)){ //만약에 searchWord(Input값)을 조회했는데
                     el.classList.add("hide") //있 el(searchList=.search__list ul li)에 hide 클래스 추가
                 } else {
