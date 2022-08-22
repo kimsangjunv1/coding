@@ -93,23 +93,40 @@
             <div class="document">
                 <!-- 1번 -->
                 <div id="sample01" class="sample">
-                    <h2 class="t_tit">펜툴</h2>
-                    <p class="t_desc2_css">어도비 일러스트레이터는 벡터 이미지를 손쉽게 만들 수 있는데 이번 시간에는 펜툴을 이용한 벡터 이미지를 만들어보도록 하겠습니다</p>
-                    <p class="t_box">
-                        오른쪽 하단에 위치한 예시 그림을 통해 펜툴을 이용해서 그림을 그립니다.
-                    </p>
-                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_1.png" alt="">
-                    <hr>
-                    <p class="t_tit2" style="margin-top:20px;">완성</p>
-                    <p class="t_desc2_css">
-                        그림에 색을 입힐때에는 반드시 구조를 깨서 색을 입혀줘야합니다, 이유는 추후 이미지에 변형이 일어나면 구상하고 기획했던 치수에서 벗어날 가능성이 생기기에 꼭 유의하며 제작합니다
-                    </p>
-                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_2.png" alt="">
+                    <h3 class="t_tit2">match()</h3>
+                    <p class="t_desc2">match는 결과 값이 특정 텍스트 안에 검색할 단어와 찾고싶은 단어가 있는 경우 문구에 포함되어 있는지 확인할 수 있으며 배열로 표현합니다.</p>
+                    
+                    <div class="script">
+                        <div class="t_code">
+                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">const str1 = "javascript reference"
 
+const currentStr1 = str1.match("javascript");                // ['javascript', index: 0, input: 'javascript reference', groups: undefined]
+const currentStr2 = str1.match("reference");                //['reference', index: 11, input: 'javascript reference', groups: undefined]
+const currentStr3 = str1.match("r");                // ['r', index: 6, input: 'javascript reference', groups: undefined]
+const currentStr4 = str1.match(/reference/);                // ['reference', index: 11, input: 'javascript reference', groups: undefined]
+const currentStr5 = str1.match(/Reference/);                // ['reference', index: 11, input: 'javascript reference', groups: undefined]
+const currentStr6 = str1.match(/Reference/i);                // ['reference', index: 11, input: 'javascript reference', groups: undefined]
+const currentStr7 = str1.match(/r/g);                // ['r', 'r', 'r']
+const currentStr8 = str1.match(/e/g);                // ['e', 'e', 'e', 'e']
+</code></pre>
+                        </div>
+                    </div>
+                    <details>
+                        <summary class="t_box">결과 보기</summary>
+                        <div class="t_box">
+                            'javascript', index: 0, input: 'javascript reference', groups: undefined]<br>
+                            ['reference', index: 11, input: 'javascript reference', groups: undefined]<br>
+                            ['r', index: 6, input: 'javascript reference', groups: undefined]<br>
+                            ['reference', index: 11, input: 'javascript reference', groups: undefined]<br>
+                            ['reference', index: 11, input: 'javascript reference', groups: undefined]<br>
+                            ['reference', index: 11, input: 'javascript reference', groups: undefined]<br>
+                            ['r', 'r', 'r']<br>
+                            ['e', 'e', 'e', 'e']
+                        </div>
+                    </details>
                 </div>
-                <!-- 1번 끝 -->
             </div>
-
         </main>
         <!-- //main -->
 

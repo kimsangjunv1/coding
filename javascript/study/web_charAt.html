@@ -93,23 +93,38 @@
             <div class="document">
                 <!-- 1번 -->
                 <div id="sample01" class="sample">
-                    <h2 class="t_tit">펜툴</h2>
-                    <p class="t_desc2_css">어도비 일러스트레이터는 벡터 이미지를 손쉽게 만들 수 있는데 이번 시간에는 펜툴을 이용한 벡터 이미지를 만들어보도록 하겠습니다</p>
+                    <h3 class="t_tit2">charAt()</h3>
+                    <p class="t_desc2">charAt은 첫 글자를 출력해주는 함수입니다.</p>
                     <p class="t_box">
-                        오른쪽 하단에 위치한 예시 그림을 통해 펜툴을 이용해서 그림을 그립니다.
+                        ::사용방법<br>
+                        "문자열".charAt(숫자);
                     </p>
-                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_1.png" alt="">
-                    <hr>
-                    <p class="t_tit2" style="margin-top:20px;">완성</p>
-                    <p class="t_desc2_css">
-                        그림에 색을 입힐때에는 반드시 구조를 깨서 색을 입혀줘야합니다, 이유는 추후 이미지에 변형이 일어나면 구상하고 기획했던 치수에서 벗어날 가능성이 생기기에 꼭 유의하며 제작합니다
-                    </p>
-                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_2.png" alt="">
+                    
+                    <div class="script">
+                        <div class="t_code">
+                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">
+        const str1 = "javascript reference"
+        const currentStr1 = str1.charAt();      //j (4) ['e', 'e', 'e', 'e']
+        const currentStr2 = str1.charAt("0");   //j (4) ['e', 'e', 'e', 'e']
+        const currentStr3 = str1.charAt("1");   //a (4) ['e', 'e', 'e', 'e']
+        const currentStr4 = str1.charAt("2");   //v (4) ['e', 'e', 'e', 'e']
 
+        console.log(currentStr2);
+</code></pre>
+                        </div>
+                    </div>
+                    <details>
+                        <summary class="t_box">결과 보기</summary>
+                        <div class="t_box">
+                            j<br>
+                            j<br>
+                            a<br>
+                            v
+                        </div>
+                    </details>
                 </div>
-                <!-- 1번 끝 -->
             </div>
-
         </main>
         <!-- //main -->
 

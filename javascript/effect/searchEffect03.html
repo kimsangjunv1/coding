@@ -61,8 +61,8 @@
                     <span>y</span>
                     <span>z</span>
                 </div>
-                <div>전체 속성 갯수 : <span class="num">0</span></div>
-                <div>전체 속성 갯수 : <span class="num2">0</span></div>
+                <div>총 속성 갯수 : <span class="num">0</span></div>
+                <div>찾은 속성 갯수 : <span class="num2">0</span></div>
             </div>
             <div class="search__list">
                 
@@ -378,8 +378,6 @@
                         <li data-name="orphans"><strong>orphans</strong>페이지 , 영역 또는 열의 맨 아래 에 표시되어야 하는 블록 컨테이너의 최소 줄 수를 설정합니다.</li>
                         <li data-name="order"><strong>order</strong>flex 콘텐츠의 순서를 정의합니다.</li>
                         <li data-name="opacity"><strong>opacity</strong>요소의 불투명도를 설정합니다. 불투명도는 요소 뒤쪽 콘텐츠가 숨겨지는 정도로, 투명도의 반대입니다.</li>
-
-                        251까지 해오기
                         
                         <!-- 복사용 -->
                         <li data-name="border"><strong>border</strong>설명</li>
@@ -401,6 +399,7 @@
         const searchKeyword = document.querySelectorAll(".search__info .keyword span"); //알파벳
         const searchList = document.querySelectorAll(".search__list ul li"); //목록 리스트
         const searchInfo = document.querySelector(".search__info .num"); //전체 갯수
+        const searchInfo2 = document.querySelector(".search__info .num2"); //찾은 갯수
 
         //전체 갯수 구하기
         searchInfo.textContent = searchList.length;
@@ -409,7 +408,7 @@
             el.addEventListener("click", () => {
                 const searchWord = el.innerText;           //사용자가 클릭한 알파벳
 
-                console.log(searchWord);
+                // console.log(searchWord);
 
                 searchList.forEach(el => {
                     const cssName = el.querySelector("strong").innerText;       //CSS속성 텍스트
@@ -422,6 +421,8 @@
                         el.classList.add("hide"); //안같으면 숨김 추가
                     }
                 });
+                const hidingNum = document.querySelectorAll(".search__list ul li.hide");
+                searchInfo2.textContent = searchList.length - hidingNum.length;
             });
         });
     </script>

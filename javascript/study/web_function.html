@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+                <li><a href="web_replace_replaceAll.html">replace/replaceAll</a></li>
+                <li><a href="concat">concat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h3 class="t_tit2">프로토 타입 함수</h3>
+                    <p class="t_desc2">모든 객체들이 메소드와 속성들을 상속 받기 위한 템플릿으로써 프로토타입 객체도 또 다시 상위 프로토타입 객체로부터 메소드와 속성을 상속 받을 수도 있고 그 상위 프로토타입 객체도 마찬가지이고 다른 객체에 정의된 메소드와 속성을 한 객체에서 사용할 수 있도록 하는 근간입니다</p>
+                    
+                    <div class="script">
+                        <div class="t_code">
+                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">function func(num, name, word){
+    // const num = num; // 원래는 이렇게 const num에는 무엇 무엇 하나하나 지정해주었는데
+    
+    this.num = num; //this 라는걸 쓰면서 재활용을 한다.
+    this.name = name; //name이라는 변수에 name 매배변수의 값 1 저장
+    this.word = word; //word이라는 변수에 word 매배변수의 값 1 저장
+    
+}
+
+func.prototype.result = function(){ //객체안에 함수를 적고 불러오는것이 가능합니다.
+    document.write(this.num+this.name+"가 "+this.word+"되었습니다.<br>")
+}
+
+//인스턴스 생성 : this 는 인스턴스(new)를 적어주어야만 사용이 가능하빈다.
+const info1 = new func("1", "함수", "실행");
+const info2 = new func("2", "자바스크립트", "실행");
+const info3 = new func("2", "자바스크립트", "실행");
+
+//실행
+info1.result();
+info2.result();
+info3.result();
+</code></pre>
+                        </div>
+                    </div>
+                    <details>
+                        <summary class="t_box">결과 보기</summary>
+                        <div class="t_box">
+                            1. 함수가 실행되었습니다.<br>
+                            2. 자바스크립트가 실행되었습니다.<br>
+                            3. 제이쿼리가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+                <!-- 1번 끝 -->
+                <hr>
+                 <!-- 2번 -->
+                 <div id="sample01" class="sample">
+                    <h3 class="t_tit2">객체 리터럴 함수</h3>
+                    <p class="t_desc2">대부분의 경우 this의 값은 함수를 호출한 방법에 의해 결정됩니다. 실행중에는 할당으로 설정할 수 없고 함수를 호출할 때 마다 다를 수 있습니다. </p>
+                    
+                    <div class="script">
+                        <div class="t_code">
+                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">function func(num, name, word){
+    // const num = num; // 원래는 이렇게 const num에는 무엇 무엇 하나하나 지정해주었는데
+    
+    this.num = num; //this 라는걸 쓰면서 재활용을 한다.
+    this.name = name; //name이라는 변수에 name 매배변수의 값 1 저장
+    this.word = word; //word이라는 변수에 word 매배변수의 값 1 저장
+    
+}
+
+func.prototype = { //객체안에 함수를 적고 불러오는것이 가능합니다.
+    result1 : function(){
+        document.write(this.num+this.name+"가 "+this.word+"되었습니다.<br>");
+    },
+    result2 : function(){
+        document.write(this.num+this.name+"가 "+this.word+"되었습니다.<br>");
+    },
+    result3 : function(){
+        document.write(this.num+this.name+"가 "+this.word+"되었습니다.<br>");
+    }
+}
+
+//인스턴스 생성 : this 는 인스턴스(new)를 적어주어야만 사용이 가능하빈다.
+const info1 = new func("1", "함수", "실행");
+const info2 = new func("2", "자바스크립트", "실행");
+const info3 = new func("2", "자바스크립트", "실행");
+
+//실행
+info1.result1();
+info2.result2();
+info3.result3();
+</code></pre>
+                        </div>
+                    </div>
+                    <details>
+                        <summary class="t_box">결과 보기</summary>
+                        <div class="t_box">
+                            1. 함수가 실행되었습니다.<br>
+                            2. 자바스크립트가 실행되었습니다.<br>
+                            3. 제이쿼리가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+                <!-- 2번 끝 -->
+                <hr>
+                <!-- 3번 -->
+                <div id="sample01" class="sample">
+                    <h3 class="t_tit2">객체 생성자 함수</h3>
+                    <p class="t_desc2">new 키워드를 이용하여 Object 생성자 함수를 호출하면 비어있는 객체를 얻을 수 있습니다.</p>
+                    
+                    <div class="script">
+                        <div class="t_code">
+                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">function func(num, name, word){
+    const num = num; // 원래는 이렇게 const num에는 무엇 무엇 하나하나 지정해주었는데
+        
+    this.num = num; //this 라는걸 쓰면서 재활용을 한다.
+    this.name = name; //name이라는 변수에 name 매배변수의 값 1 저장
+    this.word = word; //word이라는 변수에 word 매배변수의 값 1 저장
+        
+    this.result1 = function(){ //객체안에 함수를 적고 불러오는것이 가능합니다.
+        document.write(this.num+this.name+"가 "+this.word+"되었습니다.<br>")
+    }
+}
+
+//인스턴스 생성 : this 는 인스턴스(new)를 적어주어야만 사용이 가능하빈다.
+const info1 = new func("1", "함수", "실행"); // 객체 생성자인 new 사용
+const info2 = new func("2", "자바스크립트", "실행");
+const info3 = new func("2", "자바스크립트", "실행");
+
+//실행
+info1.result1();
+info2.result1();
+info3.result1();
+</code></pre>
+                        </div>
+                    </div>
+                    <details>
+                        <summary class="t_box">결과 보기</summary>
+                        <div class="t_box">
+                            1. 함수가 실행되었습니다.<br>
+                            2. 자바스크립트가 실행되었습니다.<br>
+                            3. 제이쿼리가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+                <!-- 3번 끝 -->
+
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
