@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+                <li><a href="web_replace_replaceAll.html">replace/replaceAll</a></li>
+                <li><a href="concat">concat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <h3 class="t_tit">단위</h3>
+                <p class="t_desc2">단위에는 총 7가지(rem,vh,vw,vmin,vmax,ex,ch)가 있는데 각각의 단위에 대하여 알아봅시다!</p>
+                <hr>
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h3 class="t_tit2">rem</h3>
+                    <p class="t_desc2">rem 단위는 부모태그 폰트사이즈의 배로 처리하는 단위입니다.</p>
+                    <p style="font-size: 1rem" class="t_box">1rem 입니다</p>
+
+                </div>
+                <!-- 1번 끝 -->
+                <hr>
+                <!-- 1번 -->
+                <div id="sample02" class="sample">
+                    <h3 class="t_tit2">vh&vw</h3>
+                    <p class="t_desc2">vh는 높이에 비례해서 vw는 넓이에 비례해서 높이가 책정됩니다<br>
+                    브라우저 높이 값이 900px 라면 1vh/vw는 9px로 정해집니다.</p>
+                    <p style="font-size: 2vw" class="t_box">1vw 입니다</p>
+                </div>
+                <!-- 1번 끝 -->
+
+                <!-- 1번 -->
+                <div id="sample03" class="sample">
+                    <h3 class="t_tit2">vmin&vmax</h3>
+                    <p class="t_desc2">vmin/vmax는 너비와 높이값에 따라 최대와 최소 텍스트 크기를 정할 수 있습니다.<br>
+                    예를 들어 브라우저의 너비가 1100px이고, 높이가 700px 일때 1vmin은 7px가 되고 1vmax는 11px가 됩니다.</p>
+                    <p style="font-size: 1vmin" class="t_box">p태그를 사용한 1vw 입니다<br>
+                    <em style="font-size: 1vmax; font-style: normal;">p태그 안에 들어간 1vmax 입니다.</em></p>
+                </div>
+                <!-- 1번 끝 -->
+
+                <!-- 1번 -->
+                <div id="sample04" class="sample">
+                    <h3 class="t_tit2">ex&ch</h3>
+                    <p class="t_desc2">ex/ch는 현재 폰트와 폰트사이즈에 의존하는데 이는 em/rem과 유사합니다<br>
+                    ex/ch의 사용 예시는 현재 폰트의 소문자 "x" 높이 값 / em의 절반값 입니다<br>
+                    폰트의 중간 지점을 알아내기 위해 사용되곤 합니다.
+                    ch는 요소 글꼴의 글리프 0의 사전 너비입니다.</p>
+                    <p style="font-size: 2ex" class="t_box">p태그를 사용한 2ex 입니다.<br>
+                    <em style="font-size: 2ch; font-style: normal;">p태그 안에 들어간 2ch 입니다.</em></p>
+                </div>
+                <!-- 1번 끝 -->
+    
+
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
