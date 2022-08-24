@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/heungkuk/LeeSeoyun.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 
+        01. 퀴즈 이펙트 - 정답 확인하기
+        02. 퀴즈 이펙트 - 주관식 확인하기
+        03. 퀴즈 이펙트 - 주관식(여러문제) 확인하기
+        04. 퀴즈 이펙트 - 객관식 확인하기
+        05. 퀴즈 이펙트 - 객관식(여러문제) 확인하기 : 점수
+        06. 퀴즈 이펙트 - 객관식(여러문제) : 슬라이드형식
+     -->
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(여러문제) 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li class="active"><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <span class="quiz__type">${question.answerType}</span>
+                <h2 class="quiz__question">
+                    <!-- <span class="number">${question.answerNum+". "}</span>
+                    <div class="ask">${question.answerAsk}</div> -->
+                </h2>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">틀렸습니다!</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <!-- <label for="select1${number}">
+                            
+                            <input type="radio" id="select1${number}" class="select" name="select${number}" value="1">
+                            
+                            <span class="choice">${question.answerChoice[1]}</span>
+                            
+                        </label>
+                        <label for="select2${number}">
+                            
+                            <input type="radio" id="select2${number}" class="select" name="select${number}" value="2">
+                            
+                            <span class="choice">${question.answerChoice[2]}</span>
+                            
+                        </label>
+                        <label for="select3${number}">
+                            
+                            <input type="radio" id="select3${number}" class="select" name="select${number}" value="3">
+                            
+                            <span class="choice">${question.answerChoice[3]}</span>
+                            
+                        </label>
+                        <label for="select4${number}">
+                            
+                            <input type="radio" id="select4${number}" class="select" name="select${number}" value="4">
+                            
+                            <span class="choice">${question.answerChoice[4]}</span>
+                            
+                        </label> -->
+                    </div>
+                    <div class="result"></div>
+                    <button class="confirm">다음 문제 보기 🫠</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:to_before@naver.com">to_before@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        //문제정보
+        const quizInfo = [
+            { //01번
+                answerType: "웹디자인 기능사 2014년 04회",
+                answerNum: "1",
+                answerAsk: "주전자, 냉장고, 자동차를 디자인하는 디자인 영역은?",
+                answerChoice: [
+                    "패션디자인",
+                    "제품디자인",
+                    "환경디자인",
+                    "시각디자인"
+                ],
+                answerResult: "제품디자인",
+                answerEx: "각 제품에 대한 디자인은 제품 디자인 영역이라고 합니다."
+            },
+            { //02번
+                answerType: "웹디자인 기능사 2014년 04회",
+                answerNum: "2",
+                answerAsk: "따뜻한 색체는 차가운 색체와 함께 있을 때 더욱 따뜻하게 느 껴지고, 차가운 색체도 따뜻한 색채와 함께 있을 때 더욱 호 소력이 강해지는 색의 대비로 옳은 것은?",
+                answerChoice: [
+                    "채도대비",
+                    "계시대비",
+                    "명도대비",
+                    "제품디자인"
+                ],
+                answerResult: "제품디자인",
+                answerEx: "색상을 순서를 정하여 연속적으로 시간차를 두고 보면서 각각 색이 보이는 변화로 음성잔상과 유사한 현상이며, 먼저 본 색의 잔상에 영향을 받습니다."
+            },
+            { //03번
+                answerType: "웹디자인 기능사 2014년 04회",
+                answerNum: "3",
+                answerAsk: "선(Line)에 대한 설명으로 바른 것은?",
+                answerChoice: [
+                    "면의 한계나 교차에 의해 생기는 선은 적극적인 선이다.",
+                    "수평선은 고결, 희망, 상승감을 나타낸다.",
+                    "점과 점이 이어져 생기는 선은 소극적인 선이다.",
+                    "고딕 건축의 고결함은 수직선을 대표한다."
+                ],
+                answerResult: "고딕 건축의 고결함은 수직선을 대표한다.",
+                answerEx: "1~3번은 추상적인 개념의 선이고 4번은 현실의 선을 이야기 합니다.."
+            },
+            // { //04번
+            //     answerType: "웹디자인 기능사 2014년 04회",
+            //     answerNum: "4",
+            //     answerAsk: "[그림 설명 : 높이/넓이 동일한 정사각형 가운데 원이 있고 그 원 주위에 붙은 작은 원들이 그려져 있고 또 한가지는 동일한 조건에 큰 원들이 그려져 있는 그림] 다음 두 개의 꽃 모양 중심에 있는 원의 실제 크기는 동일하 다. 그런데 위쪽의 원이 아래쪽보다 커 보이는 현상은?",
+            //     answerChoice: [
+            //         "주변과의 대비에 의한 착시현상",
+            //         "원근에 의한 착시현상",
+            //         "폐쇄원리에 의한 착시현상",
+            //         "연속원리에 의한 착시현상"
+            //     ],
+            //     answerResult: "주변과의 대비에 의한 착시현상",
+            //     answerEx: "주변의 사물로 인해 인간의 뇌가 착각을 일으켜 비교하는 대상의 상대적인 크기가 작아보이는 효과 입니다."
+            // },
+            // { //05번
+            //     answerType: "웹디자인 기능사 2014년 04회",
+            //     answerNum: "5",
+            //     answerAsk: "디자인 원리 중 구성 형식에서 중요한 역할을 하며, 부피, 중량 등 물리적인 구조와 색채에서 시각적인 안정감을 이룬 것을 말하며, 크게 대칭과 비대칭, 방사대칭으로 구분하는 것은?",
+            //     answerChoice: [
+            //         "반복",
+            //         "균형",
+            //         "조화",
+            //         "대비"
+            //     ],
+            //     answerResult: "균형",
+            //     answerEx: "시각적인 안정감을 위해서는 균형이 항상 중요합니다."
+            // },
+            // { //06번
+            //     answerType: "웹디자인 기능사 2014년 04회",
+            //     answerNum: "6",
+            //     answerAsk: "V(디자인가치)=P(성능)/C(비용) 와 관계있는 디자인 조건은?",
+            //     answerChoice: [
+            //         "합목적성",
+            //         "경제성",
+            //         "심미성",
+            //         "독창성"
+            //     ],
+            //     answerResult: "경제성",
+            //     answerEx: "전체적인 가치를 따지기 위해서는 조건 중 경제성입니다.."
+            // }
+        ];
+
+        const quizQuestion = document.querySelector(".quiz__question");                 //문제 번호, 질문
+        const quizSelects = document.querySelector(".quiz__selects")                    //객관식 보기
+        const quizType = document.querySelector(".quiz__type")                  //객관식보기
+        const quizResult = document.querySelector(".quiz__answer .result")      //해설
+        const quizConfirm = document.querySelector(".quiz__answer .confirm")     //정답확인버튼
+        const quizView = document.querySelector(".quiz__view")                  //강아지
+
+        let quizCount = 0;
+        let quizScore = "";
+
+        //문제 출력
+        const updateQuiz = (index) => {
+            const questionTag = `
+                <span class="number">${quizInfo[index].answerNum}</span>
+                <div class="ask">${quizInfo[index].answerAsk}</div>`;
+            const choiceTag = `
+            <label for="select1">
+                <input type="radio" id="select1" class="select" name="select" value="1">
+                <span class="choice">${quizInfo[index].answerChoice[0]}</span>
+            </label>
+            <label for="select2">
+                <input type="radio" id="select2" class="select" name="select" value="2">
+                <span class="choice">${quizInfo[index].answerChoice[1]}</span>
+            </label>
+            <label for="select3">
+                <input type="radio" id="select3" class="select" name="select" value="3">
+                <span class="choice">${quizInfo[index].answerChoice[2]}</span>
+            </label>
+            <label for="select4">
+                <input type="radio" id="select4" class="select" name="select" value="4">
+                <span class="choice">${quizInfo[index].answerChoice[3]}</span>
+            </label>`;
+
+            //문제출력
+
+            quizType.innerHTML = quizInfo[index].answerType;    //퀴즈 유형
+            quizQuestion.innerHTML = questionTag;           //번호 질문
+            quizSelects.innerHTML = choiceTag;              //객관식
+            quizResult.innerHTML = quizInfo[index].answerEx;    //해설
+
+            const quizChoice = quizSelects.querySelectorAll(".choice")
+
+            for(let i=0; i<quizChoice.length; i++){
+                quizChoice[i].setAttribute("onclick", "choiceSelected(this)")
+            }
+
+            // 문제, 해설 숨기기
+            quizResult.style.display="none";
+            quizConfirm.style.display="none";
+
+            // document.querySelector(".quiz__type").innerHTML=quizInfo[0].answerType
+        }
+        updateQuiz(quizCount);
+
+        const choiceSelected = (answer) => {
+            let userAnswer = answer.textContent;
+            let currentAnswer = quizInfo[quizCount].answerResult;
+            
+            if(userAnswer == currentAnswer){
+                console.log("정답");
+                quizView.classList.add("like")
+                quizScore++
+            } else {
+                console.log("오답");
+                quizView.classList.add("dislike")
+                quizResult.style.display="block";
+            }
+            quizConfirm.style.display = "block"
+        }
+
+        // 정답 확인 버튼
+        const answerQuiz = () => {
+            quizCount++
+            updateQuiz(quizCount);
+            quizView.classList.remove("like", "dislike");
+
+            quizConfirm.textContent = "총"+quizInfo.length+"문제 중에"+quizScore+"문제를 맞추었습니다."
+            //마지막 문제
+            if(quizCount === quizInfo.length-1){
+                // quizConfirm.textContent = "총"+quizInfo.length+"문제 중에"+quizScore+"문제를 맞추었습니다."
+            }
+        }
+
+        quizConfirm.addEventListener("click", answerQuiz)
+    </script>
+</body>
+
+</html>

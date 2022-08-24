@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+                <li><a href="web_replace_replaceAll.html">replace/replaceAll</a></li>
+                <li><a href="concat">concat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h3 class="t_tit1">CSS 색상표현</h3>
+                    <p class="t_desc2">CSS에서는 총 3가지 [색상 이름으로 표현/RGB 섹상값으로 표현/16진수 색상값으로 표현] 로 나뉘는데 각 표현에 대하여 배워보곘습니다.</p>
+                    <hr>
+                    <h3 class="t_tit2">색상의 이름으로 표현하는 방법</h3>
+                    <p class="t_desc2_css">색상의 고유 이름으로 표현이 가능하며 <i>대소문자를 구별하지 않으며</i>, w3c에서 정의한 총 16개의 HTML4 표준 색상 이름은 아래와 같습니다.</p>
+                    <div class="t_box">
+                        <p style="color: gray"> color: gray </p>
+                        <p style="color: aqua"> color: aqua </p>
+                        <p style="color: black"> color: black </p>
+                        <p style="color: blue"> color: blue </p>
+                        <p style="color: fuchsia"> color: fuchsia </p>
+                        <p style="color: green"> color: green </p>
+                        <p style="color: lime"> color: lime </p>
+                        <p style="color: maroon"> color: maroon </p>
+                        <p style="color: navy"> color: navy </p>
+                        <p style="color: olive"> color: olive </p>
+                        <p style="color: purple"> color: purple </p>
+                        <p style="color: red"> color: red </p>
+                        <p style="color: silver"> color: silver </p>
+                        <p style="color: teal"> color: teal </p>
+                        <p style="border-radius: 5px; background: rgb(185, 186, 176); color: yellow"> color: yellow </p>
+                        <p style="border-radius: 5px; background: rgb(61, 61, 61); color: white"> color: white </p>
+                    </div>
+                    <hr>
+                    <h3 class="t_tit2">RGB 색상값으로 표현하는 방법</h3>
+                    <p class="t_desc2_css">출력기기 중 하나인 모니터는 빨간색, 녹색, 파란색을 혼합하여 색을 표현하는데 HTML에서도 이 3가지 색을 이용해 표현하는 방식이 있으며 RGB 색상의 기본색은 0부터 255까지의 범위를 지닙니다.</p>
+                    <div class="t_box">
+                        <p style="color: blue"> color: rgb(0,0,255) </p>
+                        <p style="color: green"> color: rgb(0,128,0) </p>
+                        <p style="color: silver"> color: rgb(192,192,192) </p>
+                    </div>
+                    <hr>
+                    <h3 class="t_tit2">16진수 색상값으로 표현하는 방법</h3>
+                    <p class="t_desc2_css">16진수 색상값은 RGB 색상값을 각각 16진수로 변환한 것이다. 따라서 RGB 색상의 기본색(Red, Green, Blue)은 각각 00부터 FF까지의 범위를 가진다.</p>
+                    <div class="t_box">
+                        <p style="color: blue"> color: #0000FF </p>
+                        <p style="color: green"> color: #008000 </p>
+                        <p style="color: silver"> color: #C0C0C0 </p>
+                    </div>
+                    <hr>
+                    <h3 class="t_tit1">CSS3의 새롭게 추가된 방식</h3>
+                    <p class="t_desc2">CSS3에서는 총 4가지 방법이 추가되었으며, 그 방법은 [RGBA 색상값으로 표현/HSL 색상값으로 표현/HSLA 색상값으로 표현/opacity 속성] 이렇게 나뉘는데 각 표현에 대하여 배워보곘습니다.</p>
+                    <hr>
+                    <h3 class="t_tit2">RGBA 색상값으로 표현</h3>
+                    <p class="t_desc2_css">RGBA 방식은 기존 RGBA 색상값에 알파 채널 값을 더한 색상입니다.</p>
+                    <div class="t_box">
+                        <p style="color: rgba(0, 110, 255, 0.6)"> color: rgba(0, 110, 255, 0.6) </p>
+                        <p style="color: rgba(0, 110, 255, 0.4)"> color: rgba(0, 110, 255, 0.4) </p>
+                        <p style="color: rgba(0, 110, 255, 0.2)"> color: rgba(0, 110, 255, 0.2) </p>
+                    </div>
+                    <hr>
+                    <h3 class="t_tit2">HSL 색상값으로 표현</h3>
+                    <p class="t_desc2_css">HSL 색상값에서 HSL은 각각 색상(Hue), 채도(Saturation), 명도(Lightness)를 의미하며,<br>색상은 0부터 360 사이의 값을 가지며, 색상환(color wheel)의 각도를 나타낸다.
+                        색상 값이 0 또는 360이면 빨간색(red)이 되며, 120이면 녹색(green), 240이면 파란색(blue)이 된다.</p>
+                    <div class="t_box">
+                        <p style="color: hsl(0, 100%, 50%);"> color: hsl(0, 100%, 50%); </p>
+                        <p style="color: hsl(90, 100%, 50%)"> color: hsl(90, 100%, 50%) </p>
+                        <p style="color: hsl(180, 100%, 50%)"> color: hsl(180, 100%, 50%) </p>
+                    </div>
+                    <hr>
+                    <h3 class="t_tit2">HSLA 색상값으로 표현</h3>
+                    <p class="t_desc2_css">HSLA 색상값은 HSL 색상값에 알파 채널 값을 더한 색상값이다.</p>
+                    <div class="t_box">
+                        <p style="color: hsla(0, 100%, 50%, 1);"> color: hsla(0, 100%, 50%, 1); </p>
+                        <p style="color: hsla(0, 100%, 50%, 0.6)"> color: hsla(0, 100%, 50%, 0.6) </p>
+                        <p style="color: hsla(0, 100%, 50%, 0.2)"> color: hsla(0, 100%, 50%, 0.2) </p>
+                    </div>
+                    <hr>
+                    <h3 class="t_tit2">opacity 속성?</h3>
+                    <p class="t_desc2_css">opacity 속성은 색상에 대한 투명도를 설정해주는데, opacity 속성값은 완전한 투명 상태인 0.0부터 투명도가 전혀 없는 1.0 사이의 값을 가지게 됩니다.</p>
+                    <div class="t_box">
+                        <p style="color: rgb(0,255,0); opacity:1;"> color: rgb(0,255,0); opacity:1; </p>
+                        <p style="color: rgb(0,255,0); opacity:0.6"> color: rgb(0,255,0); opacity:0.6 </p>
+                        <p style="color: rgb(0,255,0); opacity:0.2"> color: rgb(0,255,0); opacity:0.2 </p>
+                    </div>
+                    <hr>
+                </div>
+                
+            </div>
+
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
