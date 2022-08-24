@@ -69,34 +69,7 @@
                 </div>
                 <div class="quiz__answer">
                     <div class="quiz__selects">
-                        <!-- <label for="select1${number}">
-                            
-                            <input type="radio" id="select1${number}" class="select" name="select${number}" value="1">
-                            
-                            <span class="choice">${question.answerChoice[1]}</span>
-                            
-                        </label>
-                        <label for="select2${number}">
-                            
-                            <input type="radio" id="select2${number}" class="select" name="select${number}" value="2">
-                            
-                            <span class="choice">${question.answerChoice[2]}</span>
-                            
-                        </label>
-                        <label for="select3${number}">
-                            
-                            <input type="radio" id="select3${number}" class="select" name="select${number}" value="3">
-                            
-                            <span class="choice">${question.answerChoice[3]}</span>
-                            
-                        </label>
-                        <label for="select4${number}">
-                            
-                            <input type="radio" id="select4${number}" class="select" name="select${number}" value="4">
-                            
-                            <span class="choice">${question.answerChoice[4]}</span>
-                            
-                        </label> -->
+                        
                     </div>
                     <div class="result"></div>
                     <button class="confirm">다음 문제 보기 🫠</button>
@@ -204,6 +177,7 @@
 
         let quizCount = 0;
         let quizScore = "";
+        let ququ = Math.floor(100/quizInfo.length*quizScore)
 
         //문제 출력
         const updateQuiz = (index) => {
@@ -267,15 +241,19 @@
 
         // 정답 확인 버튼
         const answerQuiz = () => {
+            if(quizCount === quizInfo.length-1){
+                if(Math.floor(100/quizInfo.length*quizScore)>=60){
+                    quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞추었으며 총점 ${Math.floor(100/quizInfo.length*quizScore)} 점 합격 입니다.`
+                } else {
+                    quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞추었으며 총점 ${Math.floor(100/quizInfo.length*quizScore)} 점 불합격 입니다.`
+                }
+            }
             quizCount++
             updateQuiz(quizCount);
             quizView.classList.remove("like", "dislike");
 
-            quizConfirm.textContent = "총"+quizInfo.length+"문제 중에"+quizScore+"문제를 맞추었습니다."
+            // quizConfirm.textContent = "총"+quizInfo.length+"문제 중에"+quizScore+"문제를 맞추었습니다."
             //마지막 문제
-            if(quizCount === quizInfo.length-1){
-                // quizConfirm.textContent = "총"+quizInfo.length+"문제 중에"+quizScore+"문제를 맞추었습니다."
-            }
         }
 
         quizConfirm.addEventListener("click", answerQuiz)
