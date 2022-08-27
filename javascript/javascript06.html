@@ -11,7 +11,9 @@
 </head>
 
 <body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
     <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
         <h1><a href="index.html">Javascript</a></h1>
         <div style="margin:0 auto;
                     background-color: #f2f2f7;
@@ -301,6 +303,9 @@
         const mainContainer = document.querySelector("a")
         const mainHeader = document.querySelector("#header")
         const mainHeader__li = document.querySelectorAll('*')
+        const compactMenu = document.querySelector(".compact_menu")
+        const allContainer = document.querySelector(".container")
+        const showContainer = document.querySelector(".extend_menu")
 
         lightMode.addEventListener("click", ()=>{
             lightMode.classList.add("hide")
@@ -320,6 +325,20 @@
             mainHeader.style.background="rgba(255, 255, 255, 0.586)"
             mainHeader.style.borderRight="0.1px solid #fff"
             mainHeader__li.style.color="#0000009e !important"
+        })
+
+        compactMenu.addEventListener("click", ()=>{
+            mainHeader.style.left="-300px"
+            allContainer.style.margin="50px 15px 20px 40px"
+            showContainer.classList.remove("extend_menu_opacity_hide")
+            showContainer.classList.add("extend_menu_opacity_show")
+        })
+
+        showContainer.addEventListener("click", ()=>{
+            mainHeader.style.left="0"
+            allContainer.style.margin="50px 15px 20px 300px"
+            showContainer.classList.add("extend_menu_opacity_hide")
+            showContainer.classList.remove("extend_menu_opacity_show")
         })
 
     </script>

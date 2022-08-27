@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="assets/css/dracula.css"> <!-- 0. 드라큘라 적용 (맨 밑으로)-->
 </head>
 <body>
+    <div style="cursor: pointer;" class="extend_menu extend_menu_opacity_hide">&gt;</div>
     <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
         <h1><a href="index.html">Javascript</a></h1>
         <div style="margin:0 auto;
                     background-color: #f2f2f7;
@@ -60,7 +62,7 @@
 
     <main id="main">
         <div class="container">
-            <div class="main_menu">
+            <div class="main_menu" data-type="데이터 저장 리스트">
                 <ul><!--ul>li*17>a[href="#"]{$$} 사용함-->
                     <li><a href="#sample01">01. 변수 : 데이터 저장</a></li>
                     <li><a href="#sample02">02. 변수 : 데이터 저장 + 데이터 변경</a></li>
@@ -83,7 +85,7 @@
                 </ul>
             </div>
             <!-- 01번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 1">
                 <div id="sample01" class="sample">
                     <h3>01. 변수 : 데이터 저장</h3>
                     <p>
@@ -118,7 +120,7 @@
             <!-- 01번 메인 샘플 끝 -->
     
             <!-- 02번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 2">
                 <div id="sample02" class="sample">
                     <h3>02. 변수 : 데이터 저장 + 데이터 변경</h3>
                     <p>
@@ -157,7 +159,7 @@
             <!-- 02번 메인 샘플 끝 -->
     
             <!-- 03번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 3">
                 <div id="sample03" class="sample">
                     <h3>03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</h3>
                     <p>
@@ -195,7 +197,7 @@
             <!-- 03번 메인 샘플 끝 -->
     
             <!-- 04번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 4">
                 <div id="sample04" class="sample">
                     <h3>04. 변수 : 지역변수 + 전역 변수 + 매개 변수</h3>
                     <p>
@@ -249,7 +251,7 @@
             <!-- 04번 메인 샘플 끝 -->
     
             <!-- 05번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 5">
                 <div id="sample05" class="sample">
                     <h3>05. 상수 : 데이터 저장 + 데이터 변경(X)</h3>
                     <p>
@@ -288,7 +290,7 @@
             <!-- 05번 메인 샘플 끝 -->
     
             <!-- 06번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 6">
                 <div id="sample06" class="sample">
                     <h3>06. 배열 : 데이터 저장(여러개) : 표현방법 1</h3>
                     <p>
@@ -323,7 +325,7 @@
             <!-- 06번 메인 샘플 끝 -->
     
             <!-- 07번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 7">
                 <div id="sample07" class="sample">
                     <h3>07. 배열 : 데이터 저장(여러개) : 표현방법 2</h3>
                     <p>
@@ -354,7 +356,7 @@
             <!-- 07번 메인 샘플 끝 -->
     
             <!-- 08번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 8">
                 <div id="sample08" class="sample">
                     <h3>08. 배열 : 데이터 저장(여러개) : 표현방법 3</h3>
                     <p>
@@ -388,7 +390,7 @@
             <!-- 08번 메인 샘플 끝 -->
     
             <!-- 09번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 9">
                 <div id="sample09" class="sample">
                     <h3>09. 배열 : 데이터 저장(여러개) : 표현방법 4</h3>
                     <p>
@@ -419,7 +421,7 @@
             <!-- 09번 메인 샘플 끝 -->
     
             <!-- 10번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 10">
                 <div id="sample10" class="sample">
                     <h3>10. 객체 : 데이터 저장(키와 값) : 표현방법 1</h3>
                     <p>
@@ -453,7 +455,7 @@
             <!-- 10번 메인 샘플 끝 -->
     
             <!-- 11번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 11">
                 <div id="sample10" class="sample">
                     <h3>11. 객체 : 데이터 저장(키와 값) : 표현방법 2</h3>
                     <p>
@@ -487,7 +489,7 @@
             <!-- 11번 메인 샘플 끝 -->
     
             <!-- 12번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 12">
                 <div id="sample10" class="sample">
                     <h3>12. 객체 : 데이터 저장(키와 값) : 표현방법 3</h3>
                     <p>
@@ -521,7 +523,7 @@
             <!-- 12번 메인 샘플 끝 -->
     
             <!-- 13번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 13">
                 <div id="sample10" class="sample">
                     <h3>13. 객체 : 데이터 저장(키와 값) : 표현방법 4</h3>
                     <p>
@@ -555,7 +557,7 @@
             <!-- 13번 메인 샘플 끝 -->
     
             <!-- 14번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 14">
                 <div id="sample14" class="sample">
                     <h3>14. 객체 : 데이터 저장(키와 값) : 표현방법 5</h3>
                     <p>
@@ -588,7 +590,7 @@
             <!-- 14번 메인 샘플 끝 -->
     
             <!-- 15번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 15">
                 <div id="sample15" class="sample">
                     <h3>15. 객체 : 데이터 저장(키와 값) : 표현방법 6</h3>
                     <p>
@@ -621,7 +623,7 @@
             <!-- 15번 메인 샘플 끝 -->
     
             <!-- 16번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 16">
                 <div id="sample16" class="sample">
                     <h3>16. 객체 : 데이터 저장(키와 값) : 표현방법 6</h3>
                     <p>
@@ -655,7 +657,7 @@
             <!-- 16번 메인 샘플 끝 -->
     
             <!-- 17번 메인 샘플 시작 -->
-            <div class="main_sample">
+            <div class="main_sample" data-type="데이터 저장 17">
                 <div id="sample17" class="sample">
                     <h3>17. 객체 : 데이터 저장(키와 값) : 표현방법 6</h3>
                     <p>
@@ -725,6 +727,7 @@
     </footer>
     <!-- //footer -->
     <script src="assets/js/highlight.min.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script src="assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
     <script>hljs.highlightAll();</script><!-- 2. 스크립트 실행 (살짝 위로) -->
     
     <!-- 다크모드 테스트 -->
@@ -735,6 +738,9 @@
         const mainContainer = document.querySelector("a")
         const mainHeader = document.querySelector("#header")
         const mainHeader__li = document.querySelectorAll('*')
+        const compactMenu = document.querySelector(".compact_menu")
+        const allContainer = document.querySelector(".container")
+        const showContainer = document.querySelector(".extend_menu")
 
         lightMode.addEventListener("click", ()=>{
             lightMode.classList.add("hide")
@@ -755,6 +761,25 @@
             mainHeader.style.borderRight="0.1px solid #fff"
             mainHeader__li.style.color="#0000009e !important"
         })
+
+        compactMenu.addEventListener("click", ()=>{
+            mainHeader.style.left="-300px"
+            allContainer.style.margin="50px 15px 20px 40px"
+            showContainer.classList.remove("extend_menu_opacity_hide")
+            showContainer.classList.add("extend_menu_opacity_show")
+        })
+
+        showContainer.addEventListener("click", ()=>{
+            mainHeader.style.left="0"
+            allContainer.style.margin="50px 15px 20px 300px"
+            showContainer.classList.add("extend_menu_opacity_hide")
+            showContainer.classList.remove("extend_menu_opacity_show")
+        })
+
+    </script>
+
+    <!-- 찾기 테스트 -->
+    <script>
 
     </script>
     
