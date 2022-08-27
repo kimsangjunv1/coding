@@ -17,34 +17,80 @@
     <link rel="icon" href="../assets/ico/favicon2_114.png" sizes="64x64">
     <link rel="icon" href="../assets/ico/favicon2_114.png" sizes="128x128">
 
-    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
     <style>
-        /* 강아지 텍스트 */
-        .dog .text_cont {
-            padding-top: 40px;
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "GmarketSans";
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            font-family: "GmarketSans";
             text-align: center;
+            padding: 2vw;
+            border: 8px solid #0243f1;
+            box-sizing: border-box;
+            border-radius: 20px;
+            position: relative;
+
         }
 
-        .dog .text_cont h4 {
-            font-size: 40px;
-            background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -webkit-animation: hue 10s infinite linear;
+        main::before {
+            content: "";
+            border: 8px solid #50b5f9;
+            position: absolute;
+            /*모든 제한을 풀어줌 */
+            left: 0;
+            top: 0;
+            width: calc(100% - 16px);
+            /* box-sizing을 안쓰면 이렇게 */
+            /* box-sizing: border-box; width를 따라가게 */
+            height: calc(100vh - 32px);
+            /*calc사용시 서로 다른 단위까지 게산해쥼*/
+            border-radius: 12px;
+            z-index: -1;
+            /*뒤로 보내주는 명령*/
         }
 
-        .dog .text_cont p {
-            color: rgba(0, 0, 0, 0.475);
+        h1 {
+            font-size: 8vw;
+            color: #0243f1;
+            margin-bottom: 2vw;
+            text-transform: capitalize;
+            /* 앞에만 대문자로 변환 시켜줌 */
+        }
+
+        nav ul li {
+            display: inline;
+            list-style: none;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            border: 1px dashed #0243f1;
+            color: #0243f1;
+            padding: 10px 24px;
+            display: inline-block;
+            margin: 6px 3px;
+            border-radius: 50px;
+            /* 원래는 18px */
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #0243f1;
+            color: #ffffff;
         }
 
         /* 강아지 */
-        .dog {
-            position: absolute;
-            top: 210px;
-            left: 450px;
-        }
-
         .dog .wrap {
             width: 300px;
             height: 300px;
@@ -416,43 +462,19 @@
             left: 15%;
             border-radius: 50%;
         }
-
-        .gradient_color_test {
-            /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
-            text-align: center;
-            /* color: #f35626; */
-            background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -webkit-animation: hue 10s infinite linear;
-        }
-
-        @-webkit-keyframes hue {
-            from {
-                -webkit-filter: hue-rotate(0deg);
-            }
-
-            to {
-                -webkit-filter: hue-rotate(-360deg);
-            }
-        }
-
-        @media (max-height: 700px) {
-            main::before {
+        @media (max-height: 700px){
+            main::before{
                 display: none;
             }
         }
-
-        @media (max-width:800px) {
-            main {
+        @media (max-width:800px){
+            main{
                 min-height: 700px;
             }
-
-            h1 {
+            h1{
                 font-size: 40px;
             }
-
-            nav ul:nth-child(2) {
+            nav ul:nth-child(2){
                 display: none;
             }
         }
@@ -460,26 +482,66 @@
 </head>
 
 <body>
-    <header id="header">
-        <h1><a href="index.html">Javascript</a></h1>
-        <div style="margin:0 auto;
-                    background-color: #f2f2f7;
-                    width: 115px;
-                    text-align: center;
-                    padding: 10px;
-                    margin-bottom: 42px;
-                    cursor: pointer;
-                    border-radius: 5px;" class="light">불 끄기</div>
+    <main>
+        <!-- 강아지 시작 -->
+        <div class="dog">
+            <div class="wrap">
+                <div class="body">
+                    <div class="leg l">
+                        <div class="paw"></div>
+                    </div>
+                    <div class="leg r">
+                        <div class="paw"></div>
+                    </div>
+                    <div class="spots"></div>
+                    <div class="head">
+                        <div class="snout">
+                            <div class="nose"></div>
+                        </div>
+                        <div class="eyes"></div>
+                        <div class="ear"></div>
+                        <div class="ear right"></div>
+                        <div class="inner">
+                            <div class="spot"></div>
+                        </div>
+                        <div class="eyes"></div>
+                        <div class="ear"></div>
+                        <div class="ear right"></div>
+                        <div class="inner">
+                            <div class="spot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+                <defs>
+                    <filter id="squiggly-0">
+                        <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0" />
+                        <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="2" />
+                    </filter>
+                    <filter id="squiggly-1">
+                        <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1" />
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+                    </filter>
+                    <filter id="squiggly-2">
+                        <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2" />
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+                    </filter>
+                    <filter id="squiggly-3">
+                        <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3" />
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+                    </filter>
+                    <filter id="squiggly-4">
+                        <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4" />
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
+                    </filter>
+                </defs>
+            </svg>
 
-        <div style="margin:0 auto;
-                    background-color: #000;
-                    width: 115px; 
-                    text-align: center;
-                    padding: 10px;
-                    margin-bottom: 42px;
-                    cursor: pointer;
-                    border-radius: 5px;" class="dark hide">불 켜기</div>
-        <nav class="header_nav">
+        </div>
+        <!-- 강아지 끝 -->
+        <h1>Javascript</h1>
+        <nav>
             <ul>
                 <li><a href="javascript01.html">데이터 저장하기</a></li>
                 <li><a href="javascript02.html">데이터 불러오기</a></li>
@@ -495,122 +557,12 @@
                 <li><a href="javascript10.html">요소 객체</a></li>
                 <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
-            <ul class="effect">
-                <li><a href="effect/searchEffect.html">검색 효과</a></li>
-                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
-                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
-                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
-                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
-                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
-                <li><a href="effect/gameEffect.html">게임 효과</a></li>
-            </ul>
         </nav>
-    </header>
-
-    <!-- <div class="hover_button">=</div> -->
-    <!-- //header -->
-
-    <main id="main">
-        <div class="container">
-            <!-- 강아지 시작 -->
-            <div class="dog">
-                <div class="wrap">
-                    <div class="body">
-                        <div class="leg l">
-                            <div class="paw"></div>
-                        </div>
-                        <div class="leg r">
-                            <div class="paw"></div>
-                        </div>
-                        <div class="spots"></div>
-                        <div class="head">
-                            <div class="snout">
-                                <div class="nose"></div>
-                            </div>
-                            <div class="eyes"></div>
-                            <div class="ear"></div>
-                            <div class="ear right"></div>
-                            <div class="inner">
-                                <div class="spot"></div>
-                            </div>
-                            <div class="eyes"></div>
-                            <div class="ear"></div>
-                            <div class="ear right"></div>
-                            <div class="inner">
-                                <div class="spot"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
-                    <defs>
-                        <filter id="squiggly-0">
-                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0" />
-                            <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="2" />
-                        </filter>
-                        <filter id="squiggly-1">
-                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1" />
-                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
-                        </filter>
-                        <filter id="squiggly-2">
-                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2" />
-                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-                        </filter>
-                        <filter id="squiggly-3">
-                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3" />
-                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
-                        </filter>
-                        <filter id="squiggly-4">
-                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4" />
-                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
-                        </filter>
-                    </defs>
-                </svg>
-                <div class="text_cont">
-                    <h4>JavaScript</h4>
-                    <p>왼쪽의 버튼을 통해 메뉴를 탐색해보세요</p>
-                    <p>불 끄기/켜기 기능을 "일부만" 지원합니다.</p>
-                </div>
-            </div>
-            <!-- 강아지 끝 -->
-        </div>
     </main>
-    <!-- //main -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 
-    <!-- 다크모드 테스트 -->
-    <script>
-        const lightMode = document.querySelector(".light")
-        const darkMode = document.querySelector(".dark")
-        const Main = document.querySelector("body")
-        const mainContainer = document.querySelector("a")
-        const mainHeader = document.querySelector("#header")
-        const mainHeader__li = document.querySelectorAll('*')
-
-        lightMode.addEventListener("click", () => {
-            lightMode.classList.add("hide")
-            darkMode.classList.remove("hide")
-            Main.classList.add("dark")
-            mainContainer.style.color = "#fff"
-            mainHeader.style.background = "#313131b0"
-            mainHeader.style.borderRight = "0.1px solid #484747"
-            mainHeader__li.style.color = "#ffffff9e !important"
-        })
-        darkMode.addEventListener("click", () => {
-            darkMode.classList.add("hide")
-            lightMode.classList.remove("hide")
-            Main.classList.remove("dark")
-            mainContainer.classList.remove("dark")
-            mainContainer.style.color = "#000"
-            mainHeader.style.background = "rgba(255, 255, 255, 0.586)"
-            mainHeader.style.borderRight = "0.1px solid #fff"
-            mainHeader__li.style.color = "#0000009e !important"
-        })
-    </script>
-
-    <!-- 강아지 스크립트 -->
     <script>
         var $eyes = $('.eyes'),
             $snout = $('.snout'),
@@ -750,7 +702,6 @@
 
         });
     </script>
-    <!-- 강아지 스크립트 끝 -->
 </body>
 
 </html>

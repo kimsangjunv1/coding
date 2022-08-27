@@ -69,6 +69,9 @@ a{
 
 /* header */
 #header {
+    position: absolute;
+    left: 0;
+    top: 0;
     color: #fff;
     padding: 20px 0px 0px 25px;
 }
@@ -77,7 +80,7 @@ a{
     font-weight: 300;
     margin-bottom: 18px;
     border-bottom: 1px dashed #fff;
-    text-shadow: 0px 0px 20px #fff;
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.659);
     padding-bottom: 10px;
 }
 #header p {
@@ -96,6 +99,10 @@ a{
     text-align: center;
     line-height: 30px;
     font-size: 14px;
+}
+#header li.active a{
+    color: black;
+    background-color: #fff;
 }
 
 #header li a:hover{
@@ -123,9 +130,26 @@ a{
 
 /* modal__wrap */
 .modal__wrap {}
-.modal__btn {}
-.modal__btn .btn {}
+.modal__btn {
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.modal__btn:hover{
+    background-color: #fff;
+    color: #33377d
+}
+
 .modal__cont {
+    /* display: none; */
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.155);
@@ -136,17 +160,33 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+
+    visibility: hidden;
+    transform: scale(0);
 }
 
+/* 요소를 안보이게 하는 방법
+    1. display: none;       (애니메이션 x, 영역x)
+    2. opacity: 0;          (애니메이션 o, 영역o)
+    3. visibility: hidden;  (애니메이션 x, 영역x)
+    4. width: 0; height: 0; (애니메이션 x, 영역x) : blind 효과
+    5. transform: scale(0)  (애니메이션 o, 영역x)
+*/
+
 .modal__box {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    height: 600px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 0.5rem;
+    width: 80%;
+    height: 50vh;
+    border-radius: 0.6rem;
     box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
-    position: relative;
+    /* max-width: 800px;
+    margin: 0 auto;
+    height: 600px; */
+
+    /* background-color: rgb(255, 255, 255); 블러 */
+
+    /* position: relative;
+    transform: scale(0); */
+    /* overflow: hidden; */
 }
 
 .modal__box .title{
@@ -234,15 +274,19 @@ a{
 
 
 .modal__box .cont {
-    background-color: hsl(236deg 15% 18%);
+    background-color: hsl(236deg 15% 18% / 33%);
+    backdrop-filter: blur(15px);
     height: 550px;
     box-sizing: border-box;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     overflow-y: auto;
     scrollbar-width: none;
+
+    height: 100%; /*수정 */
 }
 
+/* 세로 스크롤 */
 .modal__box .cont::-webkit-scrollbar {
     width: 4px;
     border-radius: 20px;
@@ -261,6 +305,25 @@ a{
     background-color: transparent; /*스크롤바 트랙 색상*/
 }
 
+/* 가로 스크롤 */
+.modal__box .cont .scroll::-webkit-scrollbar {
+    height: 4px;
+    border-radius: 20px;
+}
+
+.modal__box .cont .scroll:hover::-webkit-scrollbar {
+    opacity: 1;
+}
+
+.modal__box .cont .scroll::-webkit-scrollbar-thumb {
+    background-color: hsl(337deg 87% 54%); /*스크롤바의 색상*/
+    background-clip: padding-box;
+}
+
+.modal__box .cont .scroll::-webkit-scrollbar-track {
+    background-color: transparent; /*스크롤바 트랙 색상*/
+}
+
 
 .modal__box .cont > div {
     display: none;
@@ -268,4 +331,113 @@ a{
 
 .modal__box .cont > div.active {
     display: block;
+    height: 100%;
+}
+
+.modal__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #1f224a;
+    padding: 1rem 1rem 0.8rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 7px -5px rgba(25, 26, 26, 0.602);
+    cursor: pointer;
+    transition: all 0.25s;
+    /* opacity: 0; */
+    transform: scale(0);
+}
+
+.modal__close:hover{
+    background-color: #33377d;
+}
+
+.modal__close svg{
+    color: #fff;
+}
+
+/* 모달 애니메이션 */
+.modal__cont.show{ /* 전체 배경 */
+    visibility: visible;
+    animation:  foldOut 1s ease forwards;
+}
+
+.modal__cont.show .modal__box {
+    transform: scale(0);
+    animation: zoomOut 0.5s 1s ease forwards; /*뒤에껀 딜레이*/
+}
+
+.modal__cont.show .modal__close { /* 닫기 배경 */
+    animation:  foldOut 0.3s 1.5s ease backwards;
+    transform: scale(1);
+    /* opacity: 1; */
+}
+
+
+.modal__cont.show.hide{ /* 스크립트 배경 */
+    animation:  foldIn 0.3s 0.9s ease backwards;
+}
+
+.modal__cont.show.hide .modal__box {
+    transform: scale(1);
+    animation: zoomIn 0.5s 0.3s ease forwards; /*뒤에껀 딜레이*/
+    
+}
+
+.modal__cont.show.hide .modal__close { /* 닫기 배경 */
+    transform: scale(0);
+    animation: foldIn 0.5s ease backwards; /*뒤에s껀 딜레이*/
+}
+
+
+@keyframes foldOut {
+    0% {transform: scaleX(0) scaleY(0.001);}
+    50% {transform: scaleX(1) scaleY(0.001);}
+    100% {transform: scaleX(1) scaleY(1);}
+}
+
+@keyframes foldIn {
+    0% {transform: scaleX(1) scaleY(1);}
+    50% {transform: scaleX(1) scaleY(0.001);}
+    100% {transform: scaleX(0) scaleY(0.001);}
+}
+
+@keyframes zoomOut {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+
+@keyframes zoomIn {
+    0% {transform: scale(1);}
+    100% {transform: scale(0);}
+}
+
+@media (max-width: 1100px){
+    .modal__box .title{
+        overflow: hidden;
+    }
+    .modal__box .title .dot{
+        display: none;
+    }
+
+    .modal__box .title .tab{
+        margin-left: 0;
+    }
+    .modal__box .title .tabs > div .close{
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    #header {
+        text-align: center;
+        width: 100%;
+    }
+    #header h1 {
+        line-height: 1.4;
+    }
+    .modal__box {
+        width: 96%;
+    }
+
 }

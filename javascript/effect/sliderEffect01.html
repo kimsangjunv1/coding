@@ -8,9 +8,54 @@
     <title>슬라이드 이펙트_01</title>
 
     <link rel="stylesheet" href="../assets/css/slider.css">
-    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <link rel="stylesheet" href="../assets/css/dracula_two.css">
 
-    http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css
+    <style>
+        /* slider */
+        .slider__wrap {
+            /* background: #000; */
+            width: 100%;
+            height: 100vh;
+            /* background-color: #ccc; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider__img {
+            position: relative;
+            width: 800px;
+            height: 450px;
+        }
+        /* .slider__img>div{
+            text-align: center;
+        } */
+        .slider {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .slider::before{
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 5px 10px;
+        }
+
+        .slider:nth-child(1)::before {content: "이미지 1";}
+        .slider:nth-child(2)::before {content: "이미지 2";}
+        .slider:nth-child(3)::before {content: "이미지 3";}
+        .slider:nth-child(4)::before {content: "이미지 4";}
+        .slider:nth-child(5)::before {content: "이미지 5";}
+
+        .slider:nth-child(1) {z-index: 5;}
+        .slider:nth-child(2) {z-index: 4;}
+        .slider:nth-child(3) {z-index: 3;}
+        .slider:nth-child(4) {z-index: 2;}
+        .slider:nth-child(5) {z-index: 1;}
+    </style>
 </head>
 
 <body class="img05">
@@ -30,15 +75,24 @@
     </header>
 
     <!-- main -->
-    <main id="main"></main>
+    <main id="main">
+        <section id="sliderType01">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider"><img src="../../assets/slider/effect_bg_01@2x.jpg" alt="이미지1"></div>
+                    <div class="slider"><img src="../../assets/slider/effect_bg_02@2x.jpg" alt="이미지2"></div>
+                    <div class="slider"><img src="../../assets/slider/effect_bg_03@2x.jpg" alt="이미지3"></div>
+                    <div class="slider"><img src="../../assets/slider/effect_bg_04@2x.jpg" alt="이미지4"></div>
+                    <div class="slider"><img src="../../assets/slider/effect_bg_05@2x.jpg" alt="이미지5"></div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- footer -->
     <footer id="footer">
         <div class="modal__wrap">
-            <div class="modal__btn">
-                <label for="btn">소스 보기</label>
-                <input class="btn" type="checkbox" id="btn" name="btn" />
-            </div>
+            <div class="modal__btn">소스 보기</div>
             <div class="modal__cont">
                 <div class="modal__box">
                     <div class="title">
@@ -102,7 +156,7 @@
                     </div>
                     <div class="cont">
                         <div>
-<pre><code style="font-family: 'NeoDunggeunmo" class="lauguage-js">function func(num, name, word){
+<pre><code style="font-family: 'NeoDunggeunmo" class="lauguage-js scroll">function func(num, name, word){
     // const num = num; // 원래는 이렇게 const num에는 무엇 무엇 하나하나 지정해주었는데
     
     this.num = num; //this 라는걸 쓰면서 재활용을 한다.
@@ -112,7 +166,7 @@
 }
 
 func.prototype.result = function(){ //객체안에 함수를 적고 불러오는것이 가능합니다.
-    document.write(this.num+this.name+"가 "+this.word+"되었습니다.<br>")
+    document.write(this.num+this.name+"가 "+this.word+"되었습니다.&lt;br&gt;")
 }
 
 //인스턴스 생성 : this 는 인스턴스(new)를 적어주어야만 사용이 가능하빈다.
@@ -128,7 +182,7 @@ info3.result();
 </code></pre>
                         </div>
                         <div>
-<pre><code style="font-family: 'NeoDunggeunmo'" class="lauguage-html">&lt;body&gt;
+<pre><code style="font-family: 'NeoDunggeunmo" class="lauguage-html scroll">&lt;body&gt;
     &lt;section class="container section score"&gt;
         &lt;header class="header_container"&gt;
             &lt;div class="active_container"&gt;
@@ -188,7 +242,7 @@ info3.result();
 </code></pre>
                         </div>
                         <div>
-<pre><code style="font-family: 'NeoDunggeunmo'" class="lauguage-css">@import url('https://webfontworld.github.io/NEXONGothic/NEXONFootballGothic.css');
+<pre><code style="font-family: 'NeoDunggeunmo'" class="lauguage-css scroll">@import url('https://webfontworld.github.io/NEXONGothic/NEXONFootballGothic.css');
     @import url('https://webfontworld.github.io/neodgm/NeoDunggeunmo.css');
     
     *{
@@ -439,8 +493,8 @@ info3.result();
     
 </code></pre>
                         </div>
-                        <div>
-<pre><code>function func(num, name, word){
+                        <!-- <div>
+<pre><code style="font-family: 'NeoDunggeunmo'" class="lauguage-js scroll">function func(num, name, word){
     // const num = num; // 원래는 이렇게 const num에는 무엇 무엇 하나하나 지정해주었는데
     
     this.num = num; //this 라는걸 쓰면서 재활용을 한다.
@@ -464,45 +518,55 @@ info2.result();
 info3.result();
     
 </code></pre>
-                        </div>
+                        </div> -->
                     </div>
+                </div>
+                <div class="modal__close">
+                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                      </svg>
                 </div>
             </div>
         </div>
     </footer>
     <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.js"></script>
     <script>
-        hljs.highlightAll();
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = sliderWrap.querySelector(".slider__img");
+        const slider = sliderWrap.querySelectorAll(".slider");
 
-        // 탭 메뉴
+        let currentIndex = 0;               //현재 보이는 이미지는 "0"
+        let sliderCount = slider.length;     //이미지 갯수
 
-        const tabBtn = document.querySelectorAll(".modal__box .tabs > div")
-        const tabCont = document.querySelectorAll(".modal__box .cont > div")
+        //setInterval(()=>{
+            //let nextIndex = (currentIndex + 1) % 5;//다음 이미지
+            
+            //slider[currentIndex].style.opacity = "0"   //첫번째 이미지를 안보이게
+            //slider[nextIndex].style.opacity = "1"   //두번째 이미지를 안보이게
+
+            //currentIndex=nextIndex;
 
 
-        tabBtn.forEach((e, i) => {
-            e.addEventListener("click", (event) => {
-                event
-                    .preventDefault(); //상단의 event 라는 장소에 클릭 값이 저장되는데 그 장소에 지정한 이름 뒤에 .preventDefault()를 적어 막는다
+            //두번째 이미지를 보이게
+        //},1000) // 1=(1000)초에 한번씩 실행
 
-                //li의 클래스로 붙어있던 active를 모두 제거했습니다.
-                //e라고 지정해 li를 불러와도 괜찮고 li를 적어 태그를 바로 지정해도 괜찮다.
-                tabBtn.forEach(e => {
-                    e.classList.remove("active")
-                })
+        setInterval(()=>{
+            // 1를 5로 나누면 몫은 0이고 나머지는 1
+            // 2나누기5
+            // 2를 5로 나누어도 몫은 0 나머지는 2
+            //나눌수가 없어서 그대로 나머지가 되는 것입니다. 5이상의 수일때만 나눌 수가 있기 때문에 1부터 4까지는 5보다 작아서 나눌 수가 없으므로 그대로 나머지가 됩니다.
+            //근데 5는 1~4를 나눌수가 없으니까 그대로 1~4가 나머지가 되는것이고
 
-                //내가 클릭한 버튼(e=li)에 active를 추가해봄
-                e.classList.add("active")
+            let nextIndex = (currentIndex + 1) % 5;
 
-                //버튼을 클릭하면 모든 자식 박스를 숨김
-                tabCont.forEach(div => {
-                    div.style.display = "none"
-                })
-
-                //[i]클릭한 버튼과 [i]박스를 보이게 함
-                tabCont[i].style.display = "block";
-            })
-        })
+            currentIndex++;
+            
+            console.log(nextIndex)
+            
+        },1000) // 1=(1000)초에 한번씩 실행
     </script>
 </body>
 

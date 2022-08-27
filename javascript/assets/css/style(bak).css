@@ -29,36 +29,27 @@ h1, h2, h3, h4, h5, h6{
 
 /* 모든 페이지 레이아웃 --------------*/
 body{
-    /* padding: 40px; */
-    transition: all 0.25s;
-
+    padding: 40px;
 }
 #header {
+    border-bottom: 1px dashed #dcdcdc;
+    padding-bottom: 40px;
     position: fixed;
-    background: rgba(255, 255, 255, 0.586);
+    background: rgba(255, 255, 255, 0.42);
     backdrop-filter: blur(15px);
     top: 0;
-    left: 0px;
-    width: 200px;
-    padding: 20px;
-    border-right: 0.1px solid #fff;
-    box-shadow: 0px 0px 50px 30px #0000000a;
+    width: 100%;
     z-index: 1;
-    text-align: center;
-}
-#header:hover{
-    left: 0;
 }
 
 #header h1 a{
-    font-size: 38px;
+    font-size: 60px;
     font-weight: 700;
 }
 /* javascript 01~04 사용중 */
 #main {
-    position: relative;
-    /* padding: 43px 0;
-    border-bottom: 1px dashed #dcdcdc; */
+    padding: 43px 0;
+    border-bottom: 1px dashed #dcdcdc;
 }
 /* basic,command,counting 사용중 */
 #contents{
@@ -80,53 +71,35 @@ body{
 /* 헤더 영역 --------------*/
 #header h1 {
     font-size: 60px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #00000017;
-    margin-bottom: 40px;
 }
 
-.header_nav {
-    height: 659px;
-    overflow-y: scroll;
-}
+.header_nav {}
 .header_nav ul {
-    border-top: 1px solid rgba(0, 0, 0, 0.063);
-    padding-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
 }
 .header_nav ul li {
-    display: inline-block;
+    display: inline;
 }
 
 /* 내가 눌려있는 페이지 */
 .header_nav ul li.active a{ 
-    background-color: #f2f2f7;
-    color: rgb(43, 19, 180);
-    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
 }
 
 /* 메뉴 설명 --------------*/
 .header_nav ul li a {
-    /* border: 1px solid #22222226; */
-    padding: 12px;
-    display: inline-block;
+    /* a태그는 박스나 인라인같은것이 안먹는다 */
+    border: 1px solid #222;
+    padding: 8px 25px;
+    display: inline-block; /*가로값은 먹이면서 블록으로 묶는다 --------------*/
     margin-bottom: 8px;
-    width: 115px;
-    text-align: center;
-    color: #0000009e;
 }
 
 .header_nav ul li a:hover {
     /* a태그는 박스나 인라인같은것이 안먹는다 */
-    background-color: rgb(43, 19, 180);
+    background-color: #000;
     color: #fff;
-    transition: 0.25s;
-    border-radius: 5px;
-}
-
-.header_nav ul li a:not(:hover){
-    transition: 0.25s;
+    transition: 0.3s;
 }
 
 .header_nav .study {
@@ -172,7 +145,7 @@ body{
 .main_sample .result{
     margin-bottom: 80px;
     margin-top: 10px;
-    background-color: #f2f2f7;
+    background-color: #e0e0e9;
     padding: 10px;
     border-radius: 5px;
     color: #000;
@@ -461,30 +434,19 @@ body{
 }
 
 .container {
-    position: absolute;
+    width: 100%;
     max-width: 1400px;
-    margin: 20px 15px 20px 257px;
-    /* width: 100%; */
-    /* margin: 0 auto; */
-    /* margin-top: 258px; */
-    /* margin-left: 200px; */
-    /* left: 20px; */
-}
-
-.hover_button{
-    position: fixed;
-    top: 0;
-    left: 200px;
-    width: 50px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.557);
-    backdrop-filter: blur(15px);
-    padding: 30px 19px;
-    border-radius: 500px;
-    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.143);
+    margin: 0 auto;
+    margin-top: 258px;
 }
 /* 표 끝 */
 
+.hover_button{
+    width: 200px;
+    height: 200px;
+    background-color: #ededed;
+    color: #000;
+}
 
 /* 다크모드 구현 */
 
@@ -495,67 +457,6 @@ body{
 }
 .hide{
     display: none;
-}
-
-/* 세로 스크롤 */
-.header_nav::-webkit-scrollbar {
-    width: 4px;
-    border-radius: 20px;
-}
-
-.header_nav:hover::-webkit-scrollbar {
-    opacity: 1;
-}
-
-.header_nav::-webkit-scrollbar-thumb {
-    /* background-color: hsl(337deg 87% 54%); */
-    background-clip: padding-box;
-}
-
-.header_nav::-webkit-scrollbar-track {
-    background-color: transparent; /*스크롤바 트랙 색상*/
-}
-
-.gradient_color_test {
-    /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
-    text-align: center;
-    /* color: #f35626; */
-    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: hue 10s infinite linear;
-}
-
-@-webkit-keyframes hue {
-    from {
-        -webkit-filter: hue-rotate(0deg);
-    }
-
-    to {
-        -webkit-filter: hue-rotate(-360deg);
-    }
-}
-
-/* 가로 스크롤 */
-body::-webkit-scrollbar {
-    height: 4px;
-    border-radius: 20px;
-    width: 4px;
-    background-color: transparent;
-}
-
-body:hover::-webkit-scrollbar {
-    opacity: 1;
-    background-color: transparent;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: hsl(337deg 87% 54%); /*스크롤바의 색상*/
-    background-clip: padding-box;
-}
-
-body::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0); /*스크롤바 트랙 색상*/
 }
 
 

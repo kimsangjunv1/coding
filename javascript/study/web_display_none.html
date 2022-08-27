@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+                <li><a href="web_replace_replaceAll.html">replace/replaceAll</a></li>
+                <li><a href="concat">concat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <style>
+                    .example{
+                        background-color: #5f29d3;
+                        color: #fff !important;
+                        padding: 20px !important;
+                        border-radius: 10px !important;
+                        opacity: 1;
+                    }
+
+                    .example p{
+                        padding: 15px !important;
+                    }
+
+                    .example:hover p.one{
+                        display:none !important;
+                    }
+
+                    .example:hover p.two{
+                        visibility: hidden !important;
+                    }
+
+                    .example:hover p.three{
+                        opacity: 0 !important;
+                        transition: all 0.25s !important;
+                    }
+
+                    .example:hover p.four{
+                        width: 0 !important;
+                        height: 0 !important;
+                        overflow: hidden !important;
+                        padding: 0 !important;
+                        transition: 0.25s !important;
+                    }
+
+                    .example:hover p.five{
+                        scale: 0 !important;
+                        transition: 0.25s !important;
+                    }
+
+                    .add_bg{
+                        background:#42199c !important;
+                        border-radius: 50px !important;
+                        padding: 15px !important;
+                    }
+
+                    .example:not(:hover) p.four,
+                    .example:not(:hover) p.five,
+                    .example:not(:hover) p.three{
+                        transition: 0.25s !important;
+                    }
+                </style>
+                <!--
+                    요소를 안보이게 하는 방법
+                    1. display: none;       (애니메이션 x, 영역x)
+                    2. opacity: 0;          (애니메이션 o, 영역o)
+                    3. visibility: hidden;  (애니메이션 x, 영역x)
+                    4. width: 0; height: 0; (애니메이션 x, 영역x) : blind 효과
+                    5. transform: scale(0)  (애니메이션 o, 영역x)
+                -->
+                <h3 class="t_tit">요소를 숨기는 방법</h3>
+                <p class="t_desc2">요소를 숨기기 위해서는 총 5가지 방법이 있으며 해당 부분에 대해 알아보겠습니다.</p>
+                <hr>
+                <h3 class="t_tit2">CSS : 예제용</h3>
+                <p class="t_box">간단한 예제를 만들어보기 위해 하단의 CSS를 작성하였습니다.</p>
+                <div class="script">
+                    <div class="t_code">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">.example{
+    background-color: #5f29d3;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.example p{
+    padding: 15px;
+}
+
+.example:hover p.one{
+    display:none;
+}
+
+.example:hover p.two{
+    visibility: hidden;
+}
+
+.example:hover p.three{
+    opacity: 0;
+    transition: all 0.25s;
+}
+
+.example:hover p.four{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: 0.25s;
+}
+
+.example:hover p.five{
+    scale: 0;
+    transition: 0.25s;
+}
+
+.add_bg{
+    background:#42199c;
+    border-radius: 50px;
+    padding: 15px;
+}
+
+.example:not(:hover) p.four,
+.example:not(:hover) p.five,
+.example:not(:hover) p.three{
+    transition: 0.25s;
+}
+</code></pre>
+                    </div>
+                </div>
+                <hr>
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h3 class="t_tit2">display: none</h3>
+                    <p class="t_box">display:none 트리 자체에서 없앱니다.</p>
+                    <div class="example">
+                        <p style="color:#fff" class="one add_bg">나에게 마우스를 올려보세요!</p>
+                        <p style="color:#fff">나는 남아요!</p>
+                    </div>
+                </div>
+                <!-- 1번 끝 -->
+                <hr>
+                <!-- 1번 -->
+                <div id="sample03" class="sample">
+                    <h3 class="t_tit2">visibility: hidden;</h3>
+                    <p class="t_box">visibility:hidden은 사용자 눈에만 안보이게 합니다.</p>
+                    <div class="example">
+                        <p style="color:#fff" class="two add_bg">나에게 마우스를 올려보세요!</p>
+                        <p style="color:#fff">나는 남아요!</p>
+                    </div>
+                </div>
+                <!-- 1번 끝 -->
+                <hr>
+                <!-- 1번 -->
+                <div id="sample02" class="sample">
+                    <h3 class="t_tit2">opacity: 0</h3>
+                    <p class="t_box">투명도를 0으로 설정해 눈에만 안보이게 합니다.</p>
+                    <div class="example">
+                        <p style="color:#fff" class="three add_bg">나에게 마우스를 올려보세요!</p>
+                        <p style="color:#fff">나는 남아요!</p>
+                    </div>
+                </div>
+                <!-- 1번 끝 -->
+
+                <hr>
+
+                <!-- 1번 -->
+                <div id="sample04" class="sample">
+                    <h3 class="t_tit2">width: 0; height: 0;</h3>
+                    <p class="t_box">높이 또는 넓이를 0으로 설정해 눈에만 안보이게 가능합니다.</p>
+                    <div class="example">
+                        <p style="color:#fff" class="four add_bg">나에게 마우스를 올려보세요! (대신 텍스트는 overflow:hidden을 선언해야 안보입니다.)</p>
+                        <p style="color:#fff">나는 남아요!</p>
+                    </div>
+
+                </div>
+                <!-- 1번 끝 -->
+                <hr>
+
+                <!-- 1번 -->
+                <div id="sample04" class="sample">
+                    <h3 class="t_tit2">transform: scale(0)</h3>
+                    <p class="t_box">transform(변형) 기능으로 요소의 scale 값을 0으로 설정해 안보이게 합니다.</p>
+                    <div class="example">
+                        <p style="color:#fff" class="five add_bg">나에게 마우스를 올려보세요!</p>
+                        <p style="color:#fff">나는 남아요!</p>
+                    </div>
+                </div>
+                <!-- 1번 끝 -->
+    
+
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>

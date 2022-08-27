@@ -11,6 +11,23 @@
 <body>
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
         <nav class="header_nav">
             <ul>
                 <li><a href="javascript01.html">데이터 저장하기</a></li>
@@ -28,37 +45,40 @@
                 <li class="active"><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul class="effect">
-                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
-                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
-                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
-                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
-                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
-                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
-                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
             </ul>
         </nav>
     </header>
     <!-- //header -->
     <main id="main">
-        <div class="main_menu">
-            <ul>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("click") : 클릭했을 때</a></li>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("scroll") : 스크롤했을 때</a></li>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("resize") : 브라우저 사이즈 변경 됐을 때</a></li>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("selectstart") : 텍스트 선택을 시작 했을 때</a></li>
-                <br>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("mousedown") : 마우스 버튼을 눌렀을 때</a></li>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("mouseup") : 마우스 버튼을 떼어내는 경우</a></li>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("mousemove") : 마우스 움직이는 경우</a></li>
-                <br>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("drag") : 드래그 중인 경우</a></li>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("dragstart") : 드래그 시작했을 경우</a></li>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("dragend") : 드래그 끝났을 경우</a></li>
-                <br>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("keydown") : 키 눌렀을 때(한번만 실행)</a></li>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("keypress") : 키 눌렀을 때(누르고 있으면 계속 실행)</a></li>
-                <li><a href="#">01. 이벤트 메서드 : addEventListener("keyup") : 키 누르고 뗐을 때</a></li>
-            </ul>
+        <div class="container">
+
+            <div class="main_menu">
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("click") : 클릭했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("scroll") : 스크롤했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("resize") : 브라우저 사이즈 변경 됐을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("selectstart") : 텍스트 선택을 시작 했을 때</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mousedown") : 마우스 버튼을 눌렀을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mouseup") : 마우스 버튼을 떼어내는 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mousemove") : 마우스 움직이는 경우</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("drag") : 드래그 중인 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("dragstart") : 드래그 시작했을 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("dragend") : 드래그 끝났을 경우</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keydown") : 키 눌렀을 때(한번만 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keypress") : 키 눌렀을 때(누르고 있으면 계속 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keyup") : 키 누르고 뗐을 때</a></li>
+                </ul>
+            </div>
         </div>
     </main>
     <!-- //main -->
@@ -69,6 +89,37 @@
     <script src="assets/js/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
+    </script>
+
+    <!-- 다크모드 테스트 -->
+    <script>
+        const lightMode = document.querySelector(".light")
+        const darkMode = document.querySelector(".dark")
+        const Main = document.querySelector("body")
+        const mainContainer = document.querySelector("a")
+        const mainHeader = document.querySelector("#header")
+        const mainHeader__li = document.querySelectorAll('*')
+
+        lightMode.addEventListener("click", ()=>{
+            lightMode.classList.add("hide")
+            darkMode.classList.remove("hide")
+            Main.classList.add("dark")
+            mainContainer.style.color="#fff"
+            mainHeader.style.background="#313131b0"
+            mainHeader.style.borderRight="0.1px solid #484747"
+            mainHeader__li.style.color="#ffffff9e !important"
+        })
+        darkMode.addEventListener("click", ()=>{
+            darkMode.classList.add("hide")
+            lightMode.classList.remove("hide")
+            Main.classList.remove("dark")
+            mainContainer.classList.remove("dark")
+            mainContainer.style.color="#000"
+            mainHeader.style.background="rgba(255, 255, 255, 0.586)"
+            mainHeader.style.borderRight="0.1px solid #fff"
+            mainHeader__li.style.color="#0000009e !important"
+        })
+
     </script>
 </body>
 </html>

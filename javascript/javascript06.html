@@ -13,6 +13,23 @@
 <body>
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
         <nav class="header_nav">
             <ul>
                 <li><a href="javascript01.html">데이터 저장하기</a></li>
@@ -30,242 +47,244 @@
                 <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul class="effect">
-                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
-                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
-                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
-                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
-                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
-                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
-                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
             </ul>
         </nav>
     </header>
     <!-- //header -->
     <main id="main">
-        <div class="main_menu">
-            <ul>
-                <li><a href="#sample01">01. 배열 속성 : length : 배열 길이 구하기 : 반환(숫자)</a></li>
-                <li><a href="#sample02">02. 배열 메서드 : join() : 배열 요소 문자열을 결합 : 반환(문자열) : ★★★</a></li>
-                <li><a href="#sample03">03. 배열 메서드 : push() : 배열 마지막 요소에 추가 : 반환(숫자) : ★★</a></li>
-                <li><a href="#sample04">04. 배열 메서드 : pop() : 배열 마지막 요소를 삭제 : 반환(삭제된 요소)</a></li>
-                <li><a href="#sample05">05. 배열 : </a></li>
-                <li><a href="#sample06">06. 배열 : </a></li>
-                <li><a href="#sample07">07. 배열 : </a></li>
-                <li><a href="#sample08">08. 배열 : </a></li>
-                <li><a href="#sample09">09. 배열 : </a></li>
-                <li><a href="#sample10">10. 배열 : </a></li>
-            </ul>
+        <div class="container">
+            <div class="main_menu">
+                <ul>
+                    <li><a href="#sample01">01. 배열 속성 : length : 배열 길이 구하기 : 반환(숫자)</a></li>
+                    <li><a href="#sample02">02. 배열 메서드 : join() : 배열 요소 문자열을 결합 : 반환(문자열) : ★★★</a></li>
+                    <li><a href="#sample03">03. 배열 메서드 : push() : 배열 마지막 요소에 추가 : 반환(숫자) : ★★</a></li>
+                    <li><a href="#sample04">04. 배열 메서드 : pop() : 배열 마지막 요소를 삭제 : 반환(삭제된 요소)</a></li>
+                    <li><a href="#sample05">05. 배열 : </a></li>
+                    <li><a href="#sample06">06. 배열 : </a></li>
+                    <li><a href="#sample07">07. 배열 : </a></li>
+                    <li><a href="#sample08">08. 배열 : </a></li>
+                    <li><a href="#sample09">09. 배열 : </a></li>
+                    <li><a href="#sample10">10. 배열 : </a></li>
+                </ul>
+            </div>
+            <!-- main_menu -->
+    
+            <!-- 메인 샘플 시작 -->
+            <div class="main_sample">
+    
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h3>01. 배열 속성 : length : 배열 길이 구하기 : 반환(숫자)</h3>
+                    <p>length 속성은 배열의 길이를 구할 수 있습니다.</p>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 5%">
+                                <col style="width: 32%">
+                                <col style="width: 22%">
+                                <col style="width: 42%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>메서드</th>
+                                    <th>리턴값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample01_N1">1</td>
+                                    <td class="sample01_Q1"[100, 200, 300, 400, 500]></td>
+                                    <td class="sample01_M1">length</td>
+                                    <td class="sample01_P1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample01_N2">2</td>
+                                    <td class="sample01_Q2">['a','b','c','d','f']</td>
+                                    <td class="sample01_M2">length</td>
+                                    <td class="sample01_P2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample01_N3">3</td>
+                                    <td class="sample01_Q3">[1, 2, ['a', 'b']]</td>
+                                    <td class="sample01_M3">length</td>
+                                    <td class="sample01_P3"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+                        <pre><code class="language-js">//01번
+    const arrNum = [100, 200, 300, 400, 500];
+    
+    document.querySelector(".sample01_N1").innerHTML = "1";
+    document.querySelector(".sample01_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+    document.querySelector(".sample01_M1").innerHTML = "length";
+    document.querySelector(".sample01_P1").innerHTML = arrNum.length;
+    
+    //02번
+    const arrTxt = ['a','b','c','d','f'];
+    
+    document.querySelector(".sample01_N2").innerHTML = "2";
+    document.querySelector(".sample01_Q2").innerHTML = "['a','b','c','d','f']";
+    document.querySelector(".sample01_M2").innerHTML = "length";
+    document.querySelector(".sample01_P2").innerHTML = arrTxt.length;
+    
+    //03번
+    const arr = [1, 2, ['a', 'b']];
+    
+    document.querySelector(".sample01_N3").innerHTML = "3";
+    document.querySelector(".sample01_Q3").innerHTML = "[1, 2, ['a', 'b']]";
+    document.querySelector(".sample01_M3").innerHTML = "length";
+    document.querySelector(".sample01_P3").innerHTML = arr.length;
+    </code></pre>
+                    </div>
+                </div>
+                <!-- 1번 끝 -->
+    
+                <!-- 2번 -->
+                <div id="sample02" class="sample">
+                    <h3>02. 배열 메서드 : join() : 배열 요소 문자열을 결합 : 반환(문자열)</h3>
+                    <p>length 속성은 배열의 길이를 구할 수 있습니다.</p>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 5%">
+                                <col style="width: 32%">
+                                <col style="width: 22%">
+                                <col style="width: 42%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>메서드</th>
+                                    <th>리턴값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample02_N1">1</td>
+                                    <td class="sample02_Q1">[100,200,300,400,500]</td>
+                                    <td class="sample02_M1">join('')</td>
+                                    <td class="sample02_P1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample02_N2">2</td>
+                                    <td class="sample02_Q2">[100,200,300,400,500]</td>
+                                    <td class="sample02_M2">join(' ')</td>
+                                    <td class="sample02_P2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample02_N3">3</td>
+                                    <td class="sample02_Q3">[100,200,300,400,500]</td>
+                                    <td class="sample02_M3">join('★')</td>
+                                    <td class="sample02_P3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample02_N4">4</td>
+                                    <td class="sample02_Q4">[100,200,300,400,500]</td>
+                                    <td class="sample02_M4">join('-')</td>
+                                    <td class="sample02_P4"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+                        <pre><code class="language-js">//join() 문 사용
+    const arrNum=[100,200,300,400,500];
+    const text1 = arrNum.join('')
+    const text2 = arrNum.join(' ')
+    const text3 = arrNum.join('★')
+    const text4 = arrNum.join('-')
+    </code></pre>
+                    </div>
+                </div>
+                <!-- 2번 끝 -->
+    
+                <!-- 3번 -->
+                <div id="sample03" class="sample">
+                    <h3>03. 배열 메서드 : push() / pop(</h3>
+                    <p>push() 메서드는 배열 마지막 요소에 추가하고, pop()메서드는 배열 마지막 요소를 삭제합니다.</p>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 5%">
+                                <col style="width: 32%">
+                                <col style="width: 13%">
+                                <col style="width: 13%">
+                                <col style="width: 37%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>메서드</th>
+                                    <th>리턴값</th>
+                                    <th>결과값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample03_N1">1</td>
+                                    <td class="sample03_Q1">[100,200,300,400,500]</td>
+                                    <td class="sample03_M1">push(600)</td>
+                                    <td class="sample03_P1"></td>
+                                    <td class="sample03_A1">100,200,300,400,500,600</td>
+                                </tr>
+                                <tr>
+                                    <td class="sample03_N2">2</td>
+                                    <td class="sample03_Q2">[100,200,300,400,500]</td>
+                                    <td class="sample03_M2">push(600)</td>
+                                    <td class="sample03_P2"></td>
+                                    <td class="sample03_A2">100,200,300,400</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+                        <pre><code class="language-js">//01번
+    const arrNum = [100, 200, 300, 400, 500];
+    const arrPush = arrNum.push(600
+    
+    document.querySelector(".sample03_N1").innerHTML = "1";
+    document.querySelector(".sample03_Q1").innerHTML = "[100,200,300,400,500]";
+    document.querySelector(".sample03_M1").innerHTML = "push(600)";
+    document.querySelector(".sample03_P1").innerHTML = arrPush; //600을 추가하고 숫자레르 셈
+    document.querySelector(".sample03_A1").innerHTML = arrNum;  //100,200,300,400,500,6
+    
+    
+    //02번
+    const arrNum2 = [100, 200, 300, 400, 500];
+    const arrPush2 = arrNum2.pop();
+    
+    document.querySelector(".sample03_N2").innerHTML = "2";
+    document.querySelector(".sample03_Q2").innerHTML = "[100,200,300,400,500]";
+    document.querySelector(".sample03_M2").innerHTML = "pop(600)";
+    document.querySelector(".sample03_P2").innerHTML = arrPush2; //500 
+    document.querySelector(".sample03_A2").innerHTML = arrNum2;  //100,200,300,400
+    </code></pre>
+                    </div>
+                </div>
+                <!-- 3번 끝 -->
+    
+            </div>
+            <!-- 메인 샘플 끝 -->
         </div>
-        <!-- main_menu -->
-
-        <!-- 메인 샘플 시작 -->
-        <div class="main_sample">
-
-            <!-- 1번 -->
-            <div id="sample01" class="sample">
-                <h3>01. 배열 속성 : length : 배열 길이 구하기 : 반환(숫자)</h3>
-                <p>length 속성은 배열의 길이를 구할 수 있습니다.</p>
-                <div class="table">
-                    <table>
-                        <colgroup>
-                            <col style="width: 5%">
-                            <col style="width: 32%">
-                            <col style="width: 22%">
-                            <col style="width: 42%">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>번호</th>
-                                <th>기본값</th>
-                                <th>메서드</th>
-                                <th>리턴값</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="sample01_N1">1</td>
-                                <td class="sample01_Q1"[100, 200, 300, 400, 500]></td>
-                                <td class="sample01_M1">length</td>
-                                <td class="sample01_P1"></td>
-                            </tr>
-                            <tr>
-                                <td class="sample01_N2">2</td>
-                                <td class="sample01_Q2">['a','b','c','d','f']</td>
-                                <td class="sample01_M2">length</td>
-                                <td class="sample01_P2"></td>
-                            </tr>
-                            <tr>
-                                <td class="sample01_N3">3</td>
-                                <td class="sample01_Q3">[1, 2, ['a', 'b']]</td>
-                                <td class="sample01_M3">length</td>
-                                <td class="sample01_P3"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="script">
-                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-                    <pre><code class="language-js">//01번
-const arrNum = [100, 200, 300, 400, 500];
-
-document.querySelector(".sample01_N1").innerHTML = "1";
-document.querySelector(".sample01_Q1").innerHTML = "[100, 200, 300, 400, 500]";
-document.querySelector(".sample01_M1").innerHTML = "length";
-document.querySelector(".sample01_P1").innerHTML = arrNum.length;
-
-//02번
-const arrTxt = ['a','b','c','d','f'];
-
-document.querySelector(".sample01_N2").innerHTML = "2";
-document.querySelector(".sample01_Q2").innerHTML = "['a','b','c','d','f']";
-document.querySelector(".sample01_M2").innerHTML = "length";
-document.querySelector(".sample01_P2").innerHTML = arrTxt.length;
-
-//03번
-const arr = [1, 2, ['a', 'b']];
-
-document.querySelector(".sample01_N3").innerHTML = "3";
-document.querySelector(".sample01_Q3").innerHTML = "[1, 2, ['a', 'b']]";
-document.querySelector(".sample01_M3").innerHTML = "length";
-document.querySelector(".sample01_P3").innerHTML = arr.length;
-</code></pre>
-                </div>
-            </div>
-            <!-- 1번 끝 -->
-
-            <!-- 2번 -->
-            <div id="sample02" class="sample">
-                <h3>02. 배열 메서드 : join() : 배열 요소 문자열을 결합 : 반환(문자열)</h3>
-                <p>length 속성은 배열의 길이를 구할 수 있습니다.</p>
-                <div class="table">
-                    <table>
-                        <colgroup>
-                            <col style="width: 5%">
-                            <col style="width: 32%">
-                            <col style="width: 22%">
-                            <col style="width: 42%">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>번호</th>
-                                <th>기본값</th>
-                                <th>메서드</th>
-                                <th>리턴값</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="sample02_N1">1</td>
-                                <td class="sample02_Q1">[100,200,300,400,500]</td>
-                                <td class="sample02_M1">join('')</td>
-                                <td class="sample02_P1"></td>
-                            </tr>
-                            <tr>
-                                <td class="sample02_N2">2</td>
-                                <td class="sample02_Q2">[100,200,300,400,500]</td>
-                                <td class="sample02_M2">join(' ')</td>
-                                <td class="sample02_P2"></td>
-                            </tr>
-                            <tr>
-                                <td class="sample02_N3">3</td>
-                                <td class="sample02_Q3">[100,200,300,400,500]</td>
-                                <td class="sample02_M3">join('★')</td>
-                                <td class="sample02_P3"></td>
-                            </tr>
-                            <tr>
-                                <td class="sample02_N4">4</td>
-                                <td class="sample02_Q4">[100,200,300,400,500]</td>
-                                <td class="sample02_M4">join('-')</td>
-                                <td class="sample02_P4"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="script">
-                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-                    <pre><code class="language-js">//join() 문 사용
-const arrNum=[100,200,300,400,500];
-const text1 = arrNum.join('')
-const text2 = arrNum.join(' ')
-const text3 = arrNum.join('★')
-const text4 = arrNum.join('-')
-</code></pre>
-                </div>
-            </div>
-            <!-- 2번 끝 -->
-
-            <!-- 3번 -->
-            <div id="sample03" class="sample">
-                <h3>03. 배열 메서드 : push() / pop(</h3>
-                <p>push() 메서드는 배열 마지막 요소에 추가하고, pop()메서드는 배열 마지막 요소를 삭제합니다.</p>
-                <div class="table">
-                    <table>
-                        <colgroup>
-                            <col style="width: 5%">
-                            <col style="width: 32%">
-                            <col style="width: 13%">
-                            <col style="width: 13%">
-                            <col style="width: 37%">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>번호</th>
-                                <th>기본값</th>
-                                <th>메서드</th>
-                                <th>리턴값</th>
-                                <th>결과값</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="sample03_N1">1</td>
-                                <td class="sample03_Q1">[100,200,300,400,500]</td>
-                                <td class="sample03_M1">push(600)</td>
-                                <td class="sample03_P1"></td>
-                                <td class="sample03_A1">100,200,300,400,500,600</td>
-                            </tr>
-                            <tr>
-                                <td class="sample03_N2">2</td>
-                                <td class="sample03_Q2">[100,200,300,400,500]</td>
-                                <td class="sample03_M2">push(600)</td>
-                                <td class="sample03_P2"></td>
-                                <td class="sample03_A2">100,200,300,400</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="script">
-                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-                    <pre><code class="language-js">//01번
-const arrNum = [100, 200, 300, 400, 500];
-const arrPush = arrNum.push(600
-
-document.querySelector(".sample03_N1").innerHTML = "1";
-document.querySelector(".sample03_Q1").innerHTML = "[100,200,300,400,500]";
-document.querySelector(".sample03_M1").innerHTML = "push(600)";
-document.querySelector(".sample03_P1").innerHTML = arrPush; //600을 추가하고 숫자레르 셈
-document.querySelector(".sample03_A1").innerHTML = arrNum;  //100,200,300,400,500,6
-
-
-//02번
-const arrNum2 = [100, 200, 300, 400, 500];
-const arrPush2 = arrNum2.pop();
-
-document.querySelector(".sample03_N2").innerHTML = "2";
-document.querySelector(".sample03_Q2").innerHTML = "[100,200,300,400,500]";
-document.querySelector(".sample03_M2").innerHTML = "pop(600)";
-document.querySelector(".sample03_P2").innerHTML = arrPush2; //500 
-document.querySelector(".sample03_A2").innerHTML = arrNum2;  //100,200,300,400
-</code></pre>
-                </div>
-            </div>
-            <!-- 3번 끝 -->
-
-        </div>
-        <!-- 메인 샘플 끝 -->
 
     </main>
     <footer id="footer">
@@ -273,6 +292,38 @@ document.querySelector(".sample03_A2").innerHTML = arrNum2;  //100,200,300,400
     </footer>
     <!-- //footer -->
     <script src="assets/js/highlight.min.js"></script>
+
+    <!-- 다크모드 테스트 -->
+    <script>
+        const lightMode = document.querySelector(".light")
+        const darkMode = document.querySelector(".dark")
+        const Main = document.querySelector("body")
+        const mainContainer = document.querySelector("a")
+        const mainHeader = document.querySelector("#header")
+        const mainHeader__li = document.querySelectorAll('*')
+
+        lightMode.addEventListener("click", ()=>{
+            lightMode.classList.add("hide")
+            darkMode.classList.remove("hide")
+            Main.classList.add("dark")
+            mainContainer.style.color="#fff"
+            mainHeader.style.background="#313131b0"
+            mainHeader.style.borderRight="0.1px solid #484747"
+            mainHeader__li.style.color="#ffffff9e !important"
+        })
+        darkMode.addEventListener("click", ()=>{
+            darkMode.classList.add("hide")
+            lightMode.classList.remove("hide")
+            Main.classList.remove("dark")
+            mainContainer.classList.remove("dark")
+            mainContainer.style.color="#000"
+            mainHeader.style.background="rgba(255, 255, 255, 0.586)"
+            mainHeader.style.borderRight="0.1px solid #fff"
+            mainHeader__li.style.color="#0000009e !important"
+        })
+
+    </script>
+    
     <script>
         hljs.highlightAll();
     </script>
