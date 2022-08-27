@@ -516,6 +516,14 @@ body{
     background-color: transparent; /*스크롤바 트랙 색상*/
 }
 
+#header h1 a{
+    font-weight: normal;
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 10s infinite linear;
+}
+
 .gradient_color_test {
     /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
     text-align: center;
