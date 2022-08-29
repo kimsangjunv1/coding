@@ -1,3 +1,5 @@
+@import url('https://webfontworld.github.io/neodgm/NeoDunggeunmo.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -736,4 +738,182 @@ body {
     100% {
         visibility: visible;
     }
+}
+
+
+
+/* 소스보기 */
+.hljs{
+    background-color: #0f0f13 !important;
+    font-family: 'NeoDunggeunmo' !important;
+    border-radius: 0px !important;
+}
+#main{
+    font-family: NeoDunggeunmo;
+}
+.status__bar{
+    content: '';
+    height: 35px;
+    width: 100%;
+    background-color: #030385;
+    padding-top: 9px;
+    padding-left: 10px;
+    color: #fff;
+}
+.source__button{
+    position: fixed;
+    right: 40px;
+    bottom: 100px;
+    padding: 5px;
+    z-index: 10001;
+    border:8px ridge #cacaca;
+    background-color: #ededed;
+    text-align: center;
+    cursor: pointer;
+}
+
+.source__tab__01:hover,
+.source__tab__02:hover,
+.source__tab__03:hover{
+    background-color: #b6b6b6;
+    cursor: pointer;
+}
+
+.source__close:hover,
+.source__button:hover{
+    border:8px ridge #181818;
+    background-color: #a3a3a3;
+}
+
+.source__desc{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.381);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+}
+
+.source__box{
+    background-color: rgb(255, 255, 255);
+    width: 700px;
+
+    /* margin: auto; */
+    /* margin-top: 120px; */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.155);
+    overflow: hidden;
+    border: 8px ridge #cacaca;
+    animation: zoomOut 0.5s ease backwards; /*뒤에s껀 딜레이*/
+}
+.source__box.hide{
+    /* animation: zoomIn 0.5s ease; */
+    animation:  foldIn 0.3s 0.9s ease ;
+}
+
+
+.source__tab{
+    display: flex;
+    align-items: center;
+    background-color: #ededed;
+    height: 35px;
+    position: relative;
+}
+
+.source__close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2px 0px 0px 2px;
+    /* padding: 15px; */
+    border:8px ridge #cacaca;
+    background-color: #ededed;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+.source__tab>div{
+    padding: 8px;
+}
+
+
+.source__container{
+    background-color: #c2bcbc;
+    height: 500px;
+    overflow: scroll;
+}
+
+.hide{
+    display: none;
+}
+
+.active{
+    background-color: #c7bcbc;
+    /* margin: 5px; */
+    color: #3a3232;
+}
+
+.source__contaienr__html{
+    display: none;
+}
+
+.source__contaienr__javascript{
+    display: none;
+}
+
+.source__contaienr__css{
+    display: none;
+}
+
+/* 세로 스크롤 */
+.source__container::-webkit-scrollbar {
+    width: 20px;
+    height: 0px;
+    border-radius: 20px;
+}
+
+.source__container:hover::-webkit-scrollbar {
+    opacity: 1;
+}
+
+.source__container::-webkit-scrollbar-thumb {
+    background-color: rgb(95, 95, 95); /*스크롤바의 색상*/
+        border: 20px ridge #cacaca;
+
+    background-clip: padding-box;
+}
+
+.source__container::-webkit-scrollbar-track {
+    background-color: transparent; /*스크롤바 트랙 색상*/
+}
+
+@keyframes foldOut {
+    0% {transform: scaleX(0) scaleY(0.001);}
+    50% {transform: scaleX(1) scaleY(0.001);}
+    100% {transform: scaleX(1) scaleY(1);}
+}
+
+@keyframes foldIn {
+    0% {transform: scaleX(1) scaleY(1);}
+    50% {transform: scaleX(1) scaleY(0.001);}
+    100% {transform: scaleX(0) scaleY(0.001);}
+}
+
+@keyframes zoomOut {
+    0% {transform: scale(100%, 0%);}
+    100% {transform: scale(-50%, );}
+}
+
+@keyframes zoomIn {
+    0% {transform: scale(-50%, );}
+    100% {transform: scale(100%, 0%);}
 }

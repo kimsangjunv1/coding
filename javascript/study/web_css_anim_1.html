@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 : 요소 객체</title>
-    <link rel="stylesheet" href="../assets/css/style(bak).css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
 </head>
 
@@ -91,92 +91,114 @@
             <div class="document">
                 <!-- 1번 -->
                 <div id="sample01" class="sample">
-                    <h2 class="t_tit">슬라이더 이펙트 02</h2>
-                    <p class="t_desc2_css">슬라이더 이펙트를 Javascript/GSAP/Jquery를 통해 구현해보도록 하겠습니다~</p>
-                    
+                    <h2 class="t_tit">통통 굴러가는 네모 박스</h2>
+                    <p class="t_box">통통 굴러가는 네모 박스를 한번 만들어보겠습니다!</p>
                     <hr>
-
-                    <h2 class="t_tit2">Javascript 개념 소개</h2>
-                    <p class="t_desc2_css">객체 기반의 스크립트 언어로 웹 브라우저에서 해석되는 인터프리터 언어입니다.</p>
-
-                    <p class="t_box">하단의 코드를 통해 gsap로 이미지 슬라이드를 구현합니다.</p>
-
-                    <div class="t_code">
-                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-js">const sliderInner = document.querySelector(".slider__inner");   //움직이는 영역
-const slider = document.querySelectorAll(".slider");            //이미지
-
-let currentIndex = 0;
-
-sliderInner.style.transition = "all 0.8s"
-    
-setInterval(()=>{
-    currentIndex = (currentIndex+1)%slider.length;
-
-    sliderInner.style.transform = "translateX("+ -800 * currentIndex+"px)"
-}, 2000)
+                    <h2 class="t_tit2">HTML 코드</h2>
+                    <p class="t_box">하단의 예제용 html을 통해 클래스 .box를 만들어줍니다.</p>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-html">&lt;div class="box"&gt;&lt;/div&gt;
 </code></pre>
-                    <hr>
-
-                    <h2 class="t_tit2">GSAP 개념 소개</h2>
-                    <p class="t_desc2_css">GSAP란? 프론트엔드 개발자와 디자이너들이 쉽게 사용할 수 있는 아주 강력한 타임라인기반의 애니메이션 자바스크립트 라이브러리 입니다. 이 GSAP는 애니메이션 시퀀스에 관련해서 CSS의 keyframe과 animation 보다 더 정밀한 컨트롤을 할 수 있어요.</p>
-
-
-                    <p class="t_box">하단의 코드를 통해 gsap로 이미지 슬라이드를 구현합니다.</p>
-
-                    <div class="t_code">
-                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-js">&lt;script&gt; src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" &lt;/script&gt;
-    
-const slider = document.querySelectorAll(".slider")
-
-let currentIndex = 0;
-    
-setInterval(()=>{
-    currentIndex = (currentIndex + 1 ) % slider.length;
-    //to: 누구누구에게 애니메이션을 준다
-    //예: slider__inner 클래스에게 애니메이션을 주겠다.
-    gsap.to(".slider__inner", {
-        x : -800 * currentIndex //여기서 x는 translateX
-    });
-}, 2000);
-</code></pre>
-                    <hr>
-
-                    <h2 class="t_tit2">Jquery 개념 소개</h2>
-                    <p class="t_desc2_css">제이쿼리(jQuery)는 오픈 소스 기반의 자바스크립트 라이브러리이며, 제이쿼리를 사용하면 짧고 단순한 코드로도 웹 페이지에 다양한 효과나 연출을 적용할 수 있습니다. </p>
-
-                    <p class="t_box">하단의 코드를 통해 jQuery로 이미지 슬라이드를 구현합니다.</p>
-
-                    <div class="t_code">
-                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
-
-let currentIndex = 0;
-    
-setInterval(()=> {
-    currentIndex = (currentIndex + 1 ) % $(".slider").length;
-
-    // $(".slider__inner").animate({
-    //     transform: "translateX(" + -800 * currentIndex + ")"
-    // },2000) //document.querySelector의 역할
-
-    $(".slider__inner").css("position", "relative")
-    
-    $(".slider__inner").animate({
-        left : -800 * currentIndex
-    }, 600)
-    
-},2000);
-</code></pre>
+                        </div>
                     </div>
                     <hr>
-                    <h2 class="t_tit2">구현예제</h2>
-                    <iframe style="width: 100%; height: 900px"src="https://kimsangjunv1.github.io/coding/javascript/effect/sliderEffect02.html" frameborder="0"></iframe>
+                    <h2 class="t_tit2">CSS 코드</h2>
+                    <p class="t_box">하단의 예제용 CSS을 통해 통통 굴러가는 애니메이션을 만듭니다.</p>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">body {
+    height: 100vh;
+    background-image:linear-gradient(to top, #fff, pink)
+  }
+  
+  .box {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    margin: auto;
+  
+  }
+  
+  .box::before {
+    content: '';
+    width: 50px;
+    height: 5px;
+    background: #000;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    border-radius: 50%;
+    opacity: 0.2;
+    
+    animation: shadow 0.6s linear infinite;
+  }
+  
+  @keyframes shadow{
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.2, 1);
+    }
+    100% {
+      transform: scale(1, 1)
+    }
+  }
+  
+  .box::after {
+    content: '';
+    background: white;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 3px;
+    animation: load 0.6s linear infinite;
+  }
+  
+  @keyframes load {
+    17% {
+      border-bottom-right-radius: 3px;
+    }
+    25% {
+      transform: translatey(9px) rotate(22.5deg);
+    }
+    50% {
+      transform: translatey(18px) scale(1, 0.9) rotate(45deg);
+      border-bottom-right-radius: 40px;
+    }
+    75% {
+      transform: translatey(9px) rotate(67.5deg);
+    }
+    100% {
+      transform: translatey(0px) rotate(90deg);
+    }
+  }
+</code></pre>
+                        </div>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">결과</h2>
+                    <p class="t_box">상단의 HTML과 CSS를 조합해 구현합니다!</p>
+                    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="MWVMzxm" data-user="kimsangjunv1" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                        <span>See the Pen <a href="https://codepen.io/kimsangjunv1/pen/MWVMzxm">
+                        moving_box</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
                 </div>
-                </div>
-                </div>
+                <!-- 1번 끝 -->
             </div>
+            
         </main>
         <!-- //main -->
 
