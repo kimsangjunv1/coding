@@ -21,18 +21,24 @@
             align-items: center;
             justify-content: center;
         }
-        .slider__img {
+        .slider__img { /*이미지 보이는 영역 */
             position: relative;
             width: 800px;
             height: 450px;
+            overflow: hidden;
         }
-        /* .slider__img>div{
-            text-align: center;
-        } */
-        .slider {
-            position: absolute;
-            left: 0;
-            top: 0;
+
+        .slider__inner{ /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+            display: flex;
+            flex-wrap: wrap;
+            width: 4000px;
+            /* transform: translateX(-800px); */
+        }
+
+        .slider { /* 개별적인 이미지 */
+            width: 800px;
+            height: 450px;
+            position: relative;
         }
 
         .slider::before{
@@ -42,6 +48,7 @@
             background: rgba(0,0,0,0.4);
             color: #fff;
             padding: 5px 10px;
+            border-radius: 10px;
         }
 
         .slider:nth-child(1)::before {content: "이미지 1";}
@@ -68,12 +75,12 @@
 <body class="img05">
     <!-- header -->
     <header id="header">
-        <h1>Javascript Slider Effect01</h1>
-        <p>슬라이드 이펙트 - 트랜지션 효과</p>
+        <h1>Javascript Slider Effect02</h1>
+        <p>슬라이드 이펙트 - 좌로 움직이기 (연속적으로)</p>
         <ul>
-            <li class="active"><a href="sliderEffect01.html">1</a></li>
+            <li><a href="sliderEffect01.html">1</a></li>
             <li><a href="sliderEffect02.html">2</a></li>
-            <li><a href="sliderEffect03.html">3</a></li>
+            <li class="active"><a href="sliderEffect03.html">3</a></li>
             <li><a href="sliderEffect04.html">4</a></li>
             <li><a href="sliderEffect05.html">5</a></li>
             <li><a href="sliderEffect06.html">6</a></li>
@@ -86,11 +93,13 @@
         <section id="sliderType01">
             <div class="slider__wrap">
                 <div class="slider__img">
-                    <div class="slider"><img src="../../assets/slider/effect_bg_01@2x.jpg" alt="이미지1"></div>
-                    <div class="slider"><img src="../../assets/slider/effect_bg_02@2x.jpg" alt="이미지2"></div>
-                    <div class="slider"><img src="../../assets/slider/effect_bg_03@2x.jpg" alt="이미지3"></div>
-                    <div class="slider"><img src="../../assets/slider/effect_bg_04@2x.jpg" alt="이미지4"></div>
-                    <div class="slider"><img src="../../assets/slider/effect_bg_05@2x.jpg" alt="이미지5"></div>
+                    <div class="slider__inner">
+                        <div class="slider"><img src="../../assets/slider/effect_img_01@2x.jpg" alt="이미지1"></div>
+                        <div class="slider"><img src="../../assets/slider/effect_img_02@2x.jpg" alt="이미지2"></div>
+                        <div class="slider"><img src="../../assets/slider/effect_img_03@2x.jpg" alt="이미지3"></div>
+                        <div class="slider"><img src="../../assets/slider/effect_img_04@2x.jpg" alt="이미지4"></div>
+                        <div class="slider"><img src="../../assets/slider/effect_img_05@2x.jpg" alt="이미지5"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -163,104 +172,15 @@
                     </div>
                     <div class="cont">
                         <div style="height: 100%">
-<pre><code style="font-family: 'NeoDunggeunmo" class="lauguage-js scroll">const sliderWrap = document.querySelector(".slider__wrap");
-    const sliderImg = sliderWrap.querySelector(".slider__img");
-    const slider = sliderWrap.querySelectorAll(".slider");
-
-    let currentIndex = 0;               //현재 보이는 이미지는 "0"
-    let sliderCount = slider.length;     //이미지 갯수
-
-    //setInterval(()=>{
-        //let nextIndex = (currentIndex + 1) % 5;//다음 이미지
-        
-        //slider[currentIndex].style.opacity = "0"   //첫번째 이미지를 안보이게
-        //slider[nextIndex].style.opacity = "1"   //두번째 이미지를 안보이게
-
-        //currentIndex=nextIndex;
-
-
-        //두번째 이미지를 보이게
-    //},1000) // 1=(1000)초에 한번씩 실행
-
-    setInterval(()=>{
-        // 1를 5로 나누면 몫은 0이고 나머지는 1
-        // 2나누기5
-        // 2를 5로 나누어도 몫은 0 나머지는 2
-        //나눌수가 없어서 그대로 나머지가 되는 것입니다. 5이상의 수일때만 나눌 수가 있기 때문에 1부터 4까지는 5보다 작아서 나눌 수가 없으므로 그대로 나머지가 됩니다.
-        //근데 5는 1~4를 나눌수가 없으니까 그대로 1~4가 나머지가 되는것이고
-
-        let nextIndex = (currentIndex + 1) % sliderCount;
-        slider[currentIndex].style.opacity = "0";
-        slider[nextIndex].style.opacity = "1";
-
-
-        currentIndex=nextIndex;
-        
-    },1000) // 1=(1000)초에 한번씩 실행
+<pre><code style="font-family: 'NeoDunggeunmo" class="lauguage-js scroll">
 </code></pre>
                         </div>
                         <div style="height: 100%">
-<pre><code style="font-family: 'NeoDunggeunmo" class="lauguage-html scroll">&lt;div class="slider__wrap"&gt;
-    &lt;div class="slider__img"&gt;
-        &lt;div class="slider"&gt;&lt;img src="../../assets/slider/effect_bg_01@2x.jpg" alt="이미지1"&gt;&lt;/div&gt;
-        &lt;div class="slider"&gt;&lt;img src="../../assets/slider/effect_bg_02@2x.jpg" alt="이미지2"&gt;&lt;/div&gt;
-        &lt;div class="slider"&gt;&lt;img src="../../assets/slider/effect_bg_03@2x.jpg" alt="이미지3"&gt;&lt;/div&gt;
-        &lt;div class="slider"&gt;&lt;img src="../../assets/slider/effect_bg_04@2x.jpg" alt="이미지4"&gt;&lt;/div&gt;
-        &lt;div class="slider"&gt;&lt;img src="../../assets/slider/effect_bg_05@2x.jpg" alt="이미지5"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+<pre><code style="font-family: 'NeoDunggeunmo" class="lauguage-html scroll">
 </code></pre>
                         </div>
                         <div style="height: 100%">
-<pre><code style="font-family: 'NeoDunggeunmo'" class="lauguage-css scroll">/* slider */
-.slider__wrap {
-    /* background: #000; */
-    width: 100%;
-    height: 100vh;
-    /* background-color: #ccc; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider__img {
-    position: relative;
-    width: 800px;
-    height: 450px;
-}
-
-.slider {
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.slider::before{
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    background: rgba(0,0,0,0.4);
-    color: #fff;
-    padding: 5px 10px;
-}
-
-.slider:nth-child(1)::before {content: "이미지 1";}
-.slider:nth-child(2)::before {content: "이미지 2";}
-.slider:nth-child(3)::before {content: "이미지 3";}
-.slider:nth-child(4)::before {content: "이미지 4";}
-.slider:nth-child(5)::before {content: "이미지 5";}
-.slider:nth-child(1) {z-index: 5;}
-.slider:nth-child(2) {z-index: 4;}
-.slider:nth-child(3) {z-index: 3;}
-.slider:nth-child(4) {z-index: 2;}
-.slider:nth-child(5) {z-index: 1;}
-
-@media(max-width: 800px){
-    .slider__img{
-        width: 400px;
-        height: 225px;
-    }
-}
+<pre><code style="font-family: 'NeoDunggeunmo'" class="lauguage-css scroll">
 </code></pre>
                         </div>
                     </div>
@@ -278,40 +198,7 @@
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
-        const sliderWrap = document.querySelector(".slider__wrap");
-        const sliderImg = sliderWrap.querySelector(".slider__img");
-        const slider = sliderWrap.querySelectorAll(".slider");
-
-        let currentIndex = 0;               //현재 보이는 이미지는 "0"
-        let sliderCount = slider.length;     //이미지 갯수
-
-        //setInterval(()=>{
-            //let nextIndex = (currentIndex + 1) % 5;//다음 이미지
-            
-            //slider[currentIndex].style.opacity = "0"   //첫번째 이미지를 안보이게
-            //slider[nextIndex].style.opacity = "1"   //두번째 이미지를 안보이게
-
-            //currentIndex=nextIndex;
-
-
-            //두번째 이미지를 보이게
-        //},1000) // 1=(1000)초에 한번씩 실행
-
-        setInterval(()=>{
-            // 1를 5로 나누면 몫은 0이고 나머지는 1
-            // 2나누기5
-            // 2를 5로 나누어도 몫은 0 나머지는 2
-            //나눌수가 없어서 그대로 나머지가 되는 것입니다. 5이상의 수일때만 나눌 수가 있기 때문에 1부터 4까지는 5보다 작아서 나눌 수가 없으므로 그대로 나머지가 됩니다.
-            //근데 5는 1~4를 나눌수가 없으니까 그대로 1~4가 나머지가 되는것이고
-
-            let nextIndex = (currentIndex + 1) % sliderCount;
-            slider[currentIndex].style.opacity = "0";
-            slider[nextIndex].style.opacity = "1";
-
-
-            currentIndex=nextIndex;
-            
-        },1000) // 1=(1000)초에 한번씩 실행
+        
     </script>
 </body>
 

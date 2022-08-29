@@ -37,9 +37,11 @@ body{
     position: fixed;
     background: rgba(255, 255, 255, 0.586);
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     top: 0;
     left: 0px;
     width: 200px;
+    height: 100%;
     padding: 20px;
     border-right: 0.1px solid #fff;
     box-shadow: 0px 0px 50px 30px #0000000a;
@@ -180,7 +182,7 @@ body{
 }
 
 .main_menu{
-    background-color: #ededed;
+    background-color: #f2f2f7;
     border:1px solid #e1e1e6;
     border-radius: 10px;
     padding: 15px;
@@ -194,6 +196,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(15px);
     background: rgba(255, 255, 255, 0.4);
     padding: 3vw;
     border-radius: 1vw;
@@ -488,6 +491,7 @@ body{
     text-align: center;
     background-color: rgba(255, 255, 255, 0.557);
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     padding: 30px 19px;
     border-radius: 500px;
     box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.143);
@@ -511,6 +515,7 @@ body{
     height: 50px;
     border-radius: 50px;
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     box-shadow: 0px 10px 20px 2px rgb(0 0 0 / 27%);
     z-index: 1;
 }

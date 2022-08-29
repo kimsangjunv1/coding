@@ -67,6 +67,19 @@ a{
     text-decoration: none;
 }
 
+/* layout */
+#header{
+    z-index: 2000;
+}
+#main{
+    position: relative;
+    z-index: 1000;
+}
+#footer{
+    position: relative;
+    z-index: 3000;
+}
+
 /* header */
 #header {
     position: absolute;
@@ -276,6 +289,7 @@ a{
 .modal__box .cont {
     background-color: hsl(236deg 15% 18% / 33%);
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     height: 550px;
     box-sizing: border-box;
     border-bottom-left-radius: 0.5rem;
@@ -428,7 +442,7 @@ a{
     }
 }
 
-@media (max-width: 600px){
+@media (max-width: 800px){
     #header {
         text-align: center;
         width: 100%;
