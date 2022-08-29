@@ -16,6 +16,10 @@ https://kimsangjunv1.github.io/coding/javascript/effect/quizEffect01.html
 https://kimsangjunv1.github.io/coding/javascript/effect/quizEffect02.html   
 https://kimsangjunv1.github.io/coding/javascript/effect/quizEffect03.html   
 
+### 슬라이드 이펙트
+https://kimsangjunv1.github.io/coding/javascript/effect/sliderEffect01.html   
+https://kimsangjunv1.github.io/coding/javascript/effect/sliderEffect02.html   
+
 ### 카드 UI 01
 https://kimsangjunv1.github.io/coding/site/cardType/cardType01.html   
 https://kimsangjunv1.github.io/coding/site/cardType/cardType02.html   
