@@ -26,9 +26,9 @@ https://kimsangjunv1.github.io/coding/site/cardType/cardType02.html
 https://kimsangjunv1.github.io/coding/site/cardType/cardType03.html   
 
 ### 텍스트 유형
-https://kimsangjunv1.github.io/coding/site/ImageType/cardTypeToday.html   
-https://kimsangjunv1.github.io/coding/site/ImageType/cardTypeTodayTwo.html   
-https://kimsangjunv1.github.io/coding/site/ImageType/cardTypeTodayThree.html   
+https://kimsangjunv1.github.io/coding/site/cardType/cardTypeToday.html   
+https://kimsangjunv1.github.io/coding/site/cardType/cardTypeTodayTwo.html   
+https://kimsangjunv1.github.io/coding/site/cardType/cardTypeTodayThree.html   
 
 ### 이미지 유형
 https://kimsangjunv1.github.io/coding/site/ImageType/imageType01.html   
