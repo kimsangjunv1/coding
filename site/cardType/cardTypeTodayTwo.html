@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: 'GmarketSans';
+            font-weight: 500;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 90px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* card */
+        .card_container{
+            display: flex;
+            justify-content: space-between;
+            /* background-color: #ededed; */
+        }
+        .card{
+            width: 373px;
+            height: 426px;
+            /* background-color: #ededed; */
+        }
+
+        .cont_1{
+            padding-right: 98px;
+            box-sizing: border-box;
+        }
+
+        .type_text{
+            background-color: #3B1CF9;
+            border-radius: 50px;
+            text-align: center;
+            width: 140px;
+            height: 18px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        /* d */
+        .card_box{
+            width: 373px;
+            height: 188px;
+            background-color: #ffffff;
+            /* border: 1px solid #ededed; */
+            box-sizing: border-box;
+        }
+
+        .card_box.one{
+            margin-bottom: 50px;
+        }
+
+        .card_box:hover{
+            background-color: #ededed;
+        }
+
+        
+        .card_box h3{
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .card_box p{
+            line-height: 1.4;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: lighter;
+        }
+        .card_box span{
+            font-size: 16px;
+            font-weight: lighter;
+        }
+
+        .card_box img{
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .top_title{
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .top_desc{
+            font-size: 16px;
+            line-height: 1.4;
+            color: #666666;
+        }
+
+        .icon_box{
+            width: 60px;
+            height: 60px;
+            background-color: #ededed;
+            background: url(img/test_icon_sprite.png) center no-repeat;
+
+            background-size: 660px;
+            border-radius: 100px;
+            margin-bottom: 10px;
+            border: 1px solid #ededed;
+        }
+
+        .icon_1{
+            background-position: 0px; 
+        }
+
+        .icon_2{
+            background-position: -112px;
+        }
+
+        .icon_3{
+            background-position: -224px;
+        }
+
+        .icon_4{
+            background-position: -336px;
+        }
+
+        .icon_5{
+            background-position: -448px;
+        }
+        
+        .icon_6{
+            background-position: -549px;
+        }
+
+    </style>
+</head>
+<body class="gmark">
+    <section class="container section">
+        <div class="card_container">
+            <div class="card cont_1">
+                <p class="type_text">GAME TYPE</p>
+                <h3 class="top_title">대표적인<br>
+                    게임들.</h3>
+                <span class="top_desc">대표적인 온라인 게임들에는 각각의 타입들이 정해져 있으며, 대표적으로는 ‘횡 스크롤', ‘디펜스', ‘레이싱' 등등 다양한 분야의 게임들이 시장속에 존재합니다.</span>
+            </div>
+            <div class="card cont_2">
+                <div class="card_box one">
+                    <div class="icon_box icon_2"></div>
+                    <h3>횡스크롤 RPG</h3>
+                    <P>횡스크롤 RPG 게임을 대표하는 한국의 게임인 ‘메이플스토리'는 남녀노소가 다 좋아하는 모든 요소들을 고루 갖춰놓고 서비스..</P>
+                </div>
+                <div class="card_box two">
+                    <div class="icon_box icon_3"></div>
+                    <h3>레이싱 게임</h3>
+                    <P>횡스크롤 RPG 게임을 대표하는 한국의 게임인 ‘메이플스토리'는 남녀노소가 다 좋아하는 모든 요소들을 고루 갖춰놓고 서비스..</P>
+                </div>
+            </div>
+            <div class="card cont_3">
+                <div class="card_box one">
+                    <div class="icon_box icon_5"></div>
+                    <h3>디펜스 게임</h3>
+                    <P>디펜스 게임이란 적들이 계속해서 들어오는것을 유저가 수시로 막고 지키는것을 의미하는 게임이며, ‘팔라독'과 같은 대표적인 ...</P>
+                </div>
+                <div class="card_box two">
+                    <div class="icon_box icon_6"></div>
+                    <h3>오펜스 게임</h3>
+                    <P>오펜스 게임이란 디펜스 게임의 반대 개념으로 내가 상대방 진영에 쳐들어 가는 게임이며 요즈음 우리니라에서는 이런 종류의..</P>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
