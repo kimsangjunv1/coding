@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,12 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/dracula.css"> <!-- 0. 드라큘라 적용 (맨 밑으로)-->
 </head>
+
 <body>
     <div style="cursor: pointer;" class="extend_menu extend_menu_opacity_hide">&gt;</div>
     <header id="header">
-        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"
+            class="compact_menu">x</div>
         <h1><a href="index.html">Javascript</a></h1>
         <div style="margin:0 auto;
                     background-color: #f2f2f7;
@@ -67,20 +70,25 @@
                 <div class="main_sample" data-type="데이터 저장 1">
                     <div id="sample01" class="sample">
                         <h3 class="t_tit">jQuery</h3>
-                        <p class="t_desc">제이쿼리란 HTML의 클라이언트 조작을 단순화 하도록 설계된 자바스크립트 라이브러리로써 <i>오픈 소프트웨어</i>이며 jQuery 문법은 코드 보기, 문서 객체 모델 찾기, 애니메이션 만들기, 이벤트 제어, Ajax 개발을 쉽게 할 수 있도록 디자인 되었고, jQuery는 개발자가 플러그인을 개발할 수 있는 기능을 제공합니다.</p>
+                        <p class="t_desc">제이쿼리란 HTML의 클라이언트 조작을 단순화 하도록 설계된 자바스크립트 라이브러리로써 <i>오픈 소프트웨어</i>이며 jQuery 문법은
+                            코드 보기, 문서 객체 모델 찾기, 애니메이션 만들기, 이벤트 제어, Ajax 개발을 쉽게 할 수 있도록 디자인 되었고, jQuery는 개발자가 플러그인을 개발할 수
+                            있는 기능을 제공합니다.</p>
                         <hr>
                         <h3 class="t_tit2">다운로드 방식은?</h3>
-                        <p class="t_box">크롬 브라우저에서는 jQuery 라이브러리를 복사해야 하는 번거로움이 있기 때문에 <i>크롬브라우저에서 다운을 받을 경우 웹페이지에 있는 라이브러리 코드 전체를 복사하여 웹 에디터에서 붙여 넣고 jquery-3.3.1.min.js로 저장해주면 됩니다.</i></p>
-                        <p class="t_desc2"><a href="https://jquery.com/download">[다운로드 바로가기]</a> : 이곳에서 'Download the compressed, production jQuery 3.3.1"을 다운로드 해주세요!</p>
+                        <p class="t_box">크롬 브라우저에서는 jQuery 라이브러리를 복사해야 하는 번거로움이 있기 때문에 <i>크롬브라우저에서 다운을 받을 경우 웹페이지에 있는
+                                라이브러리 코드 전체를 복사하여 웹 에디터에서 붙여 넣고 jquery-3.3.1.min.js로 저장해주면 됩니다.</i></p>
+                        <p class="t_desc2"><a href="https://jquery.com/download">[다운로드 바로가기]</a> : 이곳에서 'Download the
+                            compressed, production jQuery 3.3.1"을 다운로드 해주세요!</p>
                         <hr>
                         <h3 class="t_tit2">CDN방식</h3>
-                        <p class="t_desc2"><a href="https://code.jquery.com">[바로가기]</a> 사이트에 접속하여 jQuery Core 3.3.1 - minified 버전을 선택하고 CDN을 카피해봅시다!</p>
+                        <p class="t_desc2"><a href="https://code.jquery.com">[바로가기]</a> 사이트에 접속하여 jQuery Core 3.3.1 -
+                            minified 버전을 선택하고 CDN을 카피해봅시다!</p>
                         <hr>
                         <h3 class="t_tit2">기본 형식</h3>
                         <p class="t_box">jQuery를 사용하기 위해서는 하단과 같이 세팅해 사용하면 됩니다.</p>
                         <div class="script">
-                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-js">&lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+                            <pre><code class="language-js">&lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
     $(document).ready(function(){
         //실행문을 이곳에!
@@ -154,6 +162,7 @@
                         <hr>
                         <h3 class="t_tit2">기본 선택자 활용 예제</h3>
                         <div class="script">
+                            <div class="t_code">
                             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
 <pre><code class="language-js">$(document).ready(function(){
     $("p").css("border", "4px solid red");
@@ -167,30 +176,124 @@
     $(".left,.right,#banner").css("border", "4px solid gray");
 })
 </code></pre>
-                                </div>
-                                <iframe height="300" style=" margin-top: 20px; width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kimdaewonn/embed/XWEvawy?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                                    See the Pen <a href="https://codepen.io/kimdaewonn/pen/XWEvawy">
-                                    Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
-                                    on <a href="https://codepen.io">CodePen</a>.
-                                  </iframe>
+                            </div>
+                        </div>
+                        <iframe height="300" style=" margin-top: 20px; width: 100%;" scrolling="no" title="Untitled"
+                            src="https://codepen.io/kimdaewonn/embed/XWEvawy?default-tab=html%2Cresult" frameborder="no"
+                            loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/kimdaewonn/pen/XWEvawy">
+                                Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                        <hr>
+                        <h3 class="t_tit2">기타 탐색 선택자의 종류</h3>
+                        <p class="t_box">탐색을 위한 선택자의 종류로는 아래와 같은 것들이 있습니다.</p>
+                        <table class="t_table">
+                            <thead>
+                                <tr>
+                                    <th>선택자 종류</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ce">add()</td>
+                                    <td class="ce">
+                                        $("div").add("p")<br>
+                                        div요소와 p요소를 선택합니다.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">addBack()</td>
+                                    <td class="ce">
+                                        $("div").children("p").addBack()<br>
+                                        p요소와 이전 선택요소 div요소를 선택합니다.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">end()</td>
+                                    <td class="ce">
+                                        $("div").find("span").css(...).end().find("em").css(...)<br>
+                                        $("div").find("span").css(...)의 실행이 끝나면 처음 선택자 $("div")로 다시 돌아와<br>
+                                        $("div").find("em").css(...)가 실행됩니다.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">is()</td>
+                                    <td class="ce">
+                                        선택한 요소를 판별해 주는 선택자로 보통 if문의 조건식에 사용됩니다.<br>
+                                        if("div").children().is("p")){<br>
+                                        console.log("p요소가 맞습니다.")}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3 class="t_tit2">예제용 HTML</h3>
+                        <div class="script">
+                            <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-html">&lt;html lang="ko"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;기타 탐색 선택자&lt;/title&gt;
+        &lt;style&gt;
+            * {
+                margin: 5px;
+            }
+        &lt;/style&gt;
+        &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+            $(document).ready(function() {
+                $("#m1 &gt; div").add("#m1 &gt; p").css("border","2px solid red");
+                $("#m2").children("p").addBack().css("border","2px solid orange");
+                $("#m3").find("span").css("border","2px solid yellow").end().find("em").
+                css("border","2px solid green");
+                if($("m4").children().is("p")) {
+                    console.log("p 요소가 존재합니다.")
+                }
+            });
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="m1"&gt;
+            &lt;div&gt;내용1_1&lt;/div&gt;&lt;p&gt;내용1_2&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div id="m2"&gt;
+            &lt;p&gt;내용2&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div id="m3"&gt;
+            &lt;span&gt;내용3_1&lt;/span&gt;&lt;em&gt;내용3_2&lt;/em&gt;
+        &lt;/div&gt;
+        &lt;div id="m4"&gt;
+            &lt;p&gt;내용4&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- 01번 메인 샘플 끝 -->
             </div>
         </div>
-        
+
 
     </main>
     <!-- //main -->
-    
+
     <footer id="footer">
         <!-- <a href="mailto:to_before@naver.com">to_before@naver.com</a> -->
     </footer>
     <!-- //footer -->
     <script src="../../assets/js/highlight.min.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
     <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
-    <script>hljs.highlightAll();</script><!-- 2. 스크립트 실행 (살짝 위로) -->
-    
+    <script>
+        hljs.highlightAll();
+    </script><!-- 2. 스크립트 실행 (살짝 위로) -->
+
     <!-- 다크모드 테스트 -->
     <script>
         const lightMode = document.querySelector(".light")
@@ -203,40 +306,39 @@
         const allContainer = document.querySelector(".container")
         const showContainer = document.querySelector(".extend_menu")
 
-        lightMode.addEventListener("click", ()=>{
+        lightMode.addEventListener("click", () => {
             lightMode.classList.add("hide")
             darkMode.classList.remove("hide")
             Main.classList.add("dark")
-            mainContainer.style.color="#fff"
-            mainHeader.style.background="#313131b0"
-            mainHeader.style.borderRight="0.1px solid #484747"
-            mainHeader__li.style.color="#ffffff9e !important"
+            mainContainer.style.color = "#fff"
+            mainHeader.style.background = "#313131b0"
+            mainHeader.style.borderRight = "0.1px solid #484747"
+            mainHeader__li.style.color = "#ffffff9e !important"
         })
-        darkMode.addEventListener("click", ()=>{
+        darkMode.addEventListener("click", () => {
             darkMode.classList.add("hide")
             lightMode.classList.remove("hide")
             Main.classList.remove("dark")
             mainContainer.classList.remove("dark")
-            mainContainer.style.color="#000"
-            mainHeader.style.background="rgba(255, 255, 255, 0.586)"
-            mainHeader.style.borderRight="0.1px solid #fff"
-            mainHeader__li.style.color="#0000009e !important"
+            mainContainer.style.color = "#000"
+            mainHeader.style.background = "rgba(255, 255, 255, 0.586)"
+            mainHeader.style.borderRight = "0.1px solid #fff"
+            mainHeader__li.style.color = "#0000009e !important"
         })
 
-        compactMenu.addEventListener("click", ()=>{
-            mainHeader.style.left="-300px"
-            allContainer.style.margin="50px 15px 20px 40px"
+        compactMenu.addEventListener("click", () => {
+            mainHeader.style.left = "-300px"
+            allContainer.style.margin = "50px 15px 20px 40px"
             showContainer.classList.remove("extend_menu_opacity_hide")
             showContainer.classList.add("extend_menu_opacity_show")
         })
 
-        showContainer.addEventListener("click", ()=>{
-            mainHeader.style.left="0"
-            allContainer.style.margin="50px 15px 20px 300px"
+        showContainer.addEventListener("click", () => {
+            mainHeader.style.left = "0"
+            allContainer.style.margin = "50px 15px 20px 300px"
             showContainer.classList.add("extend_menu_opacity_hide")
             showContainer.classList.remove("extend_menu_opacity_show")
         })
-
     </script>
 
     <!-- 찾기 테스트 -->
@@ -244,4 +346,5 @@
 
     </script>
 </body>
+
 </html>
