@@ -31,7 +31,9 @@
         .slider__inner{ /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
             display: flex;
             flex-wrap: wrap;
-            width: 4000px;
+            width: 4800px; /* 총 이미지 6개 */
+            height: 450px;
+            position: relative;
             /* transform: translateX(-800px); */
         }
 
@@ -56,12 +58,13 @@
         .slider:nth-child(3)::before {content: "이미지 3";}
         .slider:nth-child(4)::before {content: "이미지 4";}
         .slider:nth-child(5)::before {content: "이미지 5";}
+        .slider:nth-child(6)::before {content: "이미지 1";}
 
-        .slider:nth-child(1) {z-index: 5;}
+        /* .slider:nth-child(1) {z-index: 5;}
         .slider:nth-child(2) {z-index: 4;}
         .slider:nth-child(3) {z-index: 3;}
         .slider:nth-child(4) {z-index: 2;}
-        .slider:nth-child(5) {z-index: 1;}
+        .slider:nth-child(5) {z-index: 1;} */
 
         @media(max-width: 800px){
             .slider__img{
@@ -75,7 +78,7 @@
 <body class="img05">
     <!-- header -->
     <header id="header">
-        <h1>Javascript Slider Effect02</h1>
+        <h1>Javascript Slider Effect03</h1>
         <p>슬라이드 이펙트 - 좌로 움직이기 (연속적으로)</p>
         <ul>
             <li><a href="sliderEffect01.html">1</a></li>
@@ -99,6 +102,7 @@
                         <div class="slider"><img src="../../assets/slider/effect_img_03@2x.jpg" alt="이미지3"></div>
                         <div class="slider"><img src="../../assets/slider/effect_img_04@2x.jpg" alt="이미지4"></div>
                         <div class="slider"><img src="../../assets/slider/effect_img_05@2x.jpg" alt="이미지5"></div>
+                        <!-- <div class="slider"><img src="../../assets/slider/effect_img_06@2x.jpg" alt="이미지5"></div> -->
                     </div>
                 </div>
             </div>
@@ -198,7 +202,43 @@
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
+        const sliderWrap = document.querySelector(".slider__wrap")
+        const sliderImg = document.querySelector(".slider__img")        //보여지는 영역
+        const sliderInner = document.querySelector(".slider__inner")    //움직이는 영역
+        const slider = document.querySelectorAll(".slider")             //각각 이미지 
+
+        let currentIndex = 0;                                                   //현재 보이는 이미지
+        let sliderCount = slider.length;                                        //이미지 갯수
+        let sliderWidth = sliderImg.offsetWidth;                                //이미지 가로값
+        let sliderClone = sliderInner.firstElementChild.cloneNode(true);        //첫번째 이미지 복사
+        sliderInner.appendChild(sliderClone);                                   //첫번째 이미지를 마지막에 넣어줌
         
+        function sliderEffect(){
+            currentIndex++;
+            sliderInner.style.transition = "all 0.6s"
+
+            sliderInner.style.transform="translateX(-"+ sliderWidth * currentIndex +"px)";//sliderInner 
+
+            // sliderInner.style.transform="translateX(-800px)"; 800*1
+            // sliderInner.style.transform="translateX(-1600px)"; 800*2
+            // sliderInner.style.transform="translateX(-2400px)"; 800*3
+            // sliderInner.style.transform="translateX(-3200px)"; 800*4
+            // sliderInner.style.transform="translateX(-4000px)"; 800*5
+            // sliderInner.style.transform="translateX(-4800px)"; 800*6
+
+
+            //자미가 사진에 위치 했을 때
+            if(currentIndex==sliderCount){                          //현재 값이 이미지 갯수와 같아졌을때
+                setTimeout(()=>{                                    //시간을 0.7초로 설정하고
+                    sliderInner.style.transition = "0s";            //sliderInner의 trasition을 0초로 초기화 한 후
+                    sliderInner.style.transform = "translateX(0px)";//sliderInner를 0px 위치로 이동시킨다
+                }, 700)
+                currentIndex = 0;                                   //현재 값 0으로 초기화
+
+            }
+        }
+
+        setInterval(sliderEffect, 2000)
     </script>
 </body>
 

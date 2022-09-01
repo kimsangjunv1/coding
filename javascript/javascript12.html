@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+
+            <div class="main_menu">
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("click") : 클릭했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("scroll") : 스크롤했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("resize") : 브라우저 사이즈 변경 됐을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("selectstart") : 텍스트 선택을 시작 했을 때</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mousedown") : 마우스 버튼을 눌렀을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mouseup") : 마우스 버튼을 떼어내는 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mousemove") : 마우스 움직이는 경우</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("drag") : 드래그 중인 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("dragstart") : 드래그 시작했을 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("dragend") : 드래그 끝났을 경우</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keydown") : 키 눌렀을 때(한번만 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keypress") : 키 눌렀을 때(누르고 있으면 계속 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keyup") : 키 누르고 뗐을 때</a></li>
+                </ul>
+            </div>
+            <!-- 메인 샘플 시작 -->
+            <div class="main_sample">
+    
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h3>01. 배열 속성 : length : 배열 길이 구하기 : 반환(숫자)</h3>
+                    <p>length 속성은 배열의 길이를 구할 수 있습니다.</p>
+                    <div class="table left">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>종류</th>
+                                    <th>제이쿼리</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!-- <td rowspan="18">SELECTORS</td> -->
+                                    <td rowspan="5" class="ce">기본선택자</td>
+                                    <td>$("*")</td>
+                                    <td>document.querySelector("*")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$(".class")</td>
+                                    <td>document.querySelector(".class")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div")</td>
+                                    <td>document.querySelector("div")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("#id")</td>
+                                    <td>document.querySelector("#id")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("#id, .class")</td>
+                                    <td>document.querySelector("#idm, .class")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4" class="ce">계증 선택자</td>
+                                    <td>$("div p")</td>
+                                    <td>document.querySelector("div p")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div > p")</td>
+                                    <td>document.querySelector("div > p")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div + p")</td>
+                                    <td>document.querySelector("div + p")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div ~ p")</td>
+                                    <td>document.querySelector("div ~ p")</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="9" class="ce">속성 선택자</td>
+                                    <td>$("div[class]")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class='name'][id='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class!='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class~='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class*='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class|='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class^='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class$='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table left">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td class="ce" rowspan="10">Dimensions</td>
+                                    <td >width()</td>
+                                    <td>-</td>
+                                    <td>요소의 가로(패딩/보더/마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>height()</td>
+                                    <td>-</td>
+                                    <td>요소의 세로(패딩/보더/마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>innerWidth()</td>
+                                    <td>clientWidth</td>
+                                    <td>요소의 가로(패딩포함, 보더/마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>innerHeight()</td>
+                                    <td>clientHeight</td>
+                                    <td>요소의 세로(패딩포함, 보더/마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>outerWidth()</td>
+                                    <td>offsetWidth</td>
+                                    <td>요소의 가로(패딩/보더포함, 마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>outerHeight()</td>
+                                    <td>offsetHeight</td>
+                                    <td>요소의 세로(패딩/보더포함, 마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>outerWidth(true)</td>
+                                    <td>-</td>
+                                    <td>요소의 가로(패딩/보더/마진 포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>outerHeight(true)</td>
+                                    <td>-</td>
+                                    <td>요소의 세로(패딩/보더/마진 포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>$(window).width()</td>
+                                    <td>innerWidth / outerWidth</td>
+                                    <td>브라우저의 가로 값(스크롤바 미포함 / 포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>$(window).Height()</td>
+                                    <td>innerHeight / outerHeight</td>
+                                    <td>브라우저의 세로 값(스크롤바 미포함 / 포함)</td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="5" class="ce">offset</td>
+                                    <td>offset().top / offset().left</td>
+                                    <td>offsetTop / offsetLeft</td>
+                                    <td>요소의 좌표값(문서 기준)</td>
+                                </tr>
+                                <tr>
+                                    <td>offsetParent()</td>
+                                    <td></td>
+                                    <td>요소의 좌표값(부모 기준)</td>
+                                </tr>
+                                <tr>
+                                    <td>position()</td>
+                                    <td></td>
+                                    <td>요소의 좌표값(기준점 기준)</td>
+                                </tr>
+                                <tr>
+                                    <td>scrollLeft()</td>
+                                    <td>pageXoffset / winodw.scrollX</td>
+                                    <td>요소의 가로 스크롤 값</td>
+                                </tr>
+                                <tr>
+                                    <td>scrollTop()</td>
+                                    <td>pageYoffset / winodw.scrollY</td>
+                                    <td>요소의 세로 스크롤 값</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<!-- <pre><code class="language-js">
+</code></pre> -->
+                    </div>
+                </div>
+                <!-- 1번 끝 -->
+    
+            </div>
+            <!-- 메인 샘플 끝 -->
+        </div>
+        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <!-- 다크모드 테스트 -->
+    <script>
+        const lightMode = document.querySelector(".light")
+        const darkMode = document.querySelector(".dark")
+        const Main = document.querySelector("body")
+        const mainContainer = document.querySelector("a")
+        const mainHeader = document.querySelector("#header")
+        const mainHeader__li = document.querySelectorAll('*')
+        const compactMenu = document.querySelector(".compact_menu")
+        const allContainer = document.querySelector(".container")
+        const showContainer = document.querySelector(".extend_menu")
+
+        lightMode.addEventListener("click", ()=>{
+            lightMode.classList.add("hide")
+            darkMode.classList.remove("hide")
+            Main.classList.add("dark")
+            mainContainer.style.color="#fff"
+            mainHeader.style.background="#313131b0"
+            mainHeader.style.borderRight="0.1px solid #484747"
+            mainHeader__li.style.color="#ffffff9e !important"
+        })
+        darkMode.addEventListener("click", ()=>{
+            darkMode.classList.add("hide")
+            lightMode.classList.remove("hide")
+            Main.classList.remove("dark")
+            mainContainer.classList.remove("dark")
+            mainContainer.style.color="#000"
+            mainHeader.style.background="rgba(255, 255, 255, 0.586)"
+            mainHeader.style.borderRight="0.1px solid #fff"
+            mainHeader__li.style.color="#0000009e !important"
+        })
+
+        compactMenu.addEventListener("click", ()=>{
+            mainHeader.style.left="-300px"
+            allContainer.style.margin="50px 15px 20px 40px"
+            showContainer.classList.remove("extend_menu_opacity_hide")
+            showContainer.classList.add("extend_menu_opacity_show")
+        })
+
+        showContainer.addEventListener("click", ()=>{
+            mainHeader.style.left="0"
+            allContainer.style.margin="50px 15px 20px 300px"
+            showContainer.classList.add("extend_menu_opacity_hide")
+            showContainer.classList.remove("extend_menu_opacity_show")
+        })
+
+    </script>
+</body>
+</html>

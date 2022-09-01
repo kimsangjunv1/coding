@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 데이터 저장하기</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css"> <!-- 0. 드라큘라 적용 (맨 밑으로)-->
+</head>
+
+<body>
+    <div style="cursor: pointer;" class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"
+            class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li class="active"><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <div class="hover_button">=</div> -->
+    <!-- //header -->
+
+    <main id="main">
+        <!-- 티스토리 -->
+        <div class="document">
+            <div class="main_sample">
+                
+                <!-- 메인 샘플 01 -->
+                <div id="sample01" class="sample">
+                    <h3 class="blue">요소 크기를 정하는 속성 및 메서드</h3>
+                    <p class="t_desc2">1</p>
+                    <div class="view">
+                        <div class="sbox">
+                            <span>
+                                width: 400px<br>
+                                margin: 20px<br>
+                                border: 1px<br>
+                                padding: 20px
+                            </span>
+                        </div>
+                        <p class="sResult">여기에 결과값이 표시됩니다.</p>
+                    </div>
+                    <div class="button">
+                        <a href=#" class="btn1">박스의 가로값(clientWidth)을 구합니다.</a>
+                        <a href=#" class="btn2">박스의 세로값(clientHeight)을 구합니다.</a>
+                        <a href=#" class="btn3">박스의 X축값(clientTop)을 구합니다.</a>
+                        <a href=#" class="btn4">박스의 Y축값(clientLeft)을 구합니다.</a>
+                        <a href=#" class="btn5">박스의 가로값(offsetWidth)을 구합니다.</a>
+                        <a href=#" class="btn6">박스의 세로값(offsetHeight)을 구합니다.</a>
+                        <a href=#" class="btn7">박스의 X축값(offsettop)을 구합니다.</a>
+                        <a href=#" class="btn8">박스의 Y축값(offsetLeft)을 구합니다.</a>
+                        <a href=#" class="btn9">박스의 getBoundingClientRect()을 구합니다.</a>
+                    </div>
+                </div>
+                <!-- 메인 샘플 01 끝 -->
+
+            </div>
+            <script>
+                const box1 = document.querySelector("#sample01 .sbox");
+        
+                document.querySelector("#sample01 .btn1").addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.clientWidth + "px (마진/보더 불포함) 입니다."
+                })
+                document.querySelector("#sample01 .btn2").addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.clientHeight + "px (마진/보더 불포함) 입니다."
+                })
+                document.querySelector("#sample01 .btn3").addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.clientTop + "px (부모 기준) 입니다."
+                })
+                document.querySelector("#sample01 .btn4").addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.clientLeft + "px (부모 기준) 입니다."
+                })
+                document.querySelector("#sample01 .btn5").addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.offsetWidth + "px (마진/보더 포함) 입니다."
+                })
+                document.querySelector("#sample01 .btn6").addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.offsetHeight + "px (마진/보더 포함) 입니다."
+                })
+                document.querySelector("#sample01 .btn7").addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.offsetTop + "px (문서 기준) 입니다."
+                })
+                document.querySelector("#sample01 .btn8").addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.offsetLeft + "px (문서 기준) 입니다."
+                })
+                document.querySelector("#sample01 .btn9").addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const box =  document.querySelector("#sample01 .sbox");
+                    const result = document.querySelector("#sample01 .sResult");
+                    const rect = box.getBoundingClientRect();
+        
+                    result.innerHTML = "";
+        
+                    for(let key in rect){ //rect안에 있는 key를 불러들인다
+                        if(typeof rect[key] !== "function"){ //함수가 아닌것을 찾음
+                            let span = document.createElement("span");
+                            span.textContent = `${key}: ${rect[key]}`;
+                            result.appendChild(span);
+                        }
+                    }
+        
+        
+                    // document.querySelector("#sample01 .sbox").innerHTML = "이 박스의 가로값은 " + box1.getBoundingClientRect() + "px (문서 기준) 입니다."
+                    // console.log(box1.getBoundingClientRect())
+                })
+            </script>
+        </div>
+
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <!-- <a href="mailto:to_before@naver.com">to_before@naver.com</a> -->
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script><!-- 2. 스크립트 실행 (살짝 위로) -->
+
+    <!-- 다크모드 테스트 -->
+    <script>
+        const lightMode = document.querySelector(".light")
+        const darkMode = document.querySelector(".dark")
+        const Main = document.querySelector("body")
+        const mainContainer = document.querySelector("a")
+        const mainHeader = document.querySelector("#header")
+        const mainHeader__li = document.querySelectorAll('*')
+        const compactMenu = document.querySelector(".compact_menu")
+        const allContainer = document.querySelector(".container")
+        const showContainer = document.querySelector(".extend_menu")
+
+        lightMode.addEventListener("click", () => {
+            lightMode.classList.add("hide")
+            darkMode.classList.remove("hide")
+            Main.classList.add("dark")
+            mainContainer.style.color = "#fff"
+            mainHeader.style.background = "#313131b0"
+            mainHeader.style.borderRight = "0.1px solid #484747"
+            mainHeader__li.style.color = "#ffffff9e !important"
+        })
+        darkMode.addEventListener("click", () => {
+            darkMode.classList.add("hide")
+            lightMode.classList.remove("hide")
+            Main.classList.remove("dark")
+            mainContainer.classList.remove("dark")
+            mainContainer.style.color = "#000"
+            mainHeader.style.background = "rgba(255, 255, 255, 0.586)"
+            mainHeader.style.borderRight = "0.1px solid #fff"
+            mainHeader__li.style.color = "#0000009e !important"
+        })
+
+        compactMenu.addEventListener("click", () => {
+            mainHeader.style.left = "-300px"
+            allContainer.style.margin = "50px 15px 20px 40px"
+            showContainer.classList.remove("extend_menu_opacity_hide")
+            showContainer.classList.add("extend_menu_opacity_show")
+        })
+
+        showContainer.addEventListener("click", () => {
+            mainHeader.style.left = "0"
+            allContainer.style.margin = "50px 15px 20px 300px"
+            showContainer.classList.add("extend_menu_opacity_hide")
+            showContainer.classList.remove("extend_menu_opacity_show")
+        })
+    </script>
+
+    <!-- 찾기 테스트 -->
+    <script>
+
+    </script>
+</body>
+
+</html>
