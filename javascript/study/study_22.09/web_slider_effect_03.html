@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 데이터 저장하기</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css"> <!-- 0. 드라큘라 적용 (맨 밑으로)-->
+</head>
+
+<body>
+    <div style="cursor: pointer;" class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"
+            class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li class="active"><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <div class="hover_button">=</div> -->
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <div class="container">
+                <!-- 01번 메인 샘플 시작 -->
+                <div class="main_sample" data-type="데이터 저장 1">
+                    <div id="sample01" class="sample">
+                    <h2 class="t_tit">슬라이더 이펙트 03</h2>
+                    <p>이번 슬라이드 이펙트_03 예제에서는 <i>현재 값이 이미지 총 갯수와 같아졌을때 시간을 0.7초로 설정 해놓은 상태에서 움직이는 영역(.slider__inner)가 0px 위치로 이동해 슬라이드 효과를 보여주는 예제를 만들어 보도록 하겠습니다!</i></p>
+                    <hr>
+                    <h2 class="t_tit2">HTML : 예제용 코드보기</h2>
+                    <p class="t_desc2_css">예제 구현을 위한 이미지가 총 5개로 구성된 구조를 만들어 주도록 하겠습니다~~</p>
+                    <div class="script">
+                        <div class="t_code">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-html">&lt;body class="img05"&gt;
+    &lt;!-- header --&gt;
+    &lt;header id="header"&gt;
+        &lt;h1&gt;Javascript Slider Effect03&lt;/h1&gt;
+        &lt;p&gt;슬라이드 이펙트 - 좌로 움직이기 (연속적으로)&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="sliderEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="sliderEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="sliderEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="sliderEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="sliderEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="sliderEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="sliderEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/header&gt;
+
+    &lt;!-- main --&gt;
+    &lt;main id="main"&gt;
+        &lt;section id="sliderType01"&gt;
+            &lt;div class="slider__wrap"&gt;
+                &lt;div class="slider__img"&gt;
+                    &lt;div class="slider__inner"&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../../assets/slider/effect_img_01@2x.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../../assets/slider/effect_img_02@2x.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../../assets/slider/effect_img_03@2x.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../../assets/slider/effect_img_04@2x.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../../assets/slider/effect_img_05@2x.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                        &lt;!-- &lt;div class="slider"&gt;&lt;img src="../../assets/slider/effect_img_06@2x.jpg" alt="이미지5"&gt;&lt;/div&gt; --&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;!-- footer --&gt;
+    &lt;footer id="footer"&gt;
+        &lt;div class="modal__wrap"&gt;
+            &lt;div class="modal__btn"&gt;소스 보기&lt;/div&gt;
+            &lt;div class="modal__cont"&gt;
+                &lt;div class="modal__box"&gt;
+                    &lt;div class="title"&gt;
+                        &lt;span class="dot" aria-lable="true"&gt;&lt;/span&gt;
+                        &lt;div class="tabs"&gt;
+                            &lt;div class="active"&gt;
+                                &lt;span class="favicon" aria-label="true"&gt;
+                                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false"&gt;
+                                        &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
+                                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"&gt;&lt;/path&gt;
+                                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"&gt;&lt;/path&gt;
+                                      &lt;/svg&gt;
+                                &lt;/span&gt;
+                                &lt;em&gt;Javascript&lt;/em&gt;
+                                &lt;span class="close"&gt;
+                                    &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                      &lt;/svg&gt;
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div &gt;
+                                &lt;span class="favicon" aria-label="true"&gt;
+                                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false"&gt;
+                                        &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
+                                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"&gt;&lt;/path&gt;
+                                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"&gt;&lt;/path&gt;
+                                      &lt;/svg&gt;
+                                &lt;/span&gt;
+                                &lt;em&gt;HTML&lt;/em&gt;
+                                &lt;span class="close"&gt;
+                                    &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                      &lt;/svg&gt;
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;span class="favicon" aria-label="true"&gt;
+                                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false"&gt;
+                                        &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
+                                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"&gt;&lt;/path&gt;
+                                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"&gt;&lt;/path&gt;
+                                      &lt;/svg&gt;
+                                &lt;/span&gt;
+                                &lt;em&gt;CSS&lt;/em&gt;
+                                &lt;span class="close"&gt;
+                                    &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                      &lt;/svg&gt;
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;span class="plus" aria-label="true"&gt;
+                            &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                                &lt;path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                &lt;path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                              &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="cont"&gt;
+                        &lt;div style="height: 100%"&gt;
+&lt;pre&gt;&lt;code style="font-family: 'NeoDunggeunmo" class="lauguage-js scroll"&gt;
+&lt;/code&gt;&lt;/pre&gt;
+                        &lt;/div&gt;
+                        &lt;div style="height: 100%"&gt;
+&lt;pre&gt;&lt;code style="font-family: 'NeoDunggeunmo" class="lauguage-html scroll"&gt;
+&lt;/code&gt;&lt;/pre&gt;
+                        &lt;/div&gt;
+                        &lt;div style="height: 100%"&gt;
+&lt;pre&gt;&lt;code style="font-family: 'NeoDunggeunmo'" class="lauguage-css scroll"&gt;
+&lt;/code&gt;&lt;/pre&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="modal__close"&gt;
+                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false"&gt;
+                        &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
+                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"&gt;&lt;/path&gt;
+                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"&gt;&lt;/path&gt;
+                      &lt;/svg&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+</code></pre>
+                        </div>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">CSS : 예제용 코드보기</h2>
+                    <p class="t_desc2">크게 특이점은 없지만 각 이미지가 몇번째 이미지인지 알 수 있도록 [nth:child]를 사용하여 각 이미지에 content로 이름을 적어줍니다.</p>
+                    <div class="script">
+                        <div class="t_code">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">/* slider */
+    .slider__wrap {
+        /* background: #000; */
+        width: 100%;
+        height: 100vh;
+        /* background-color: #ccc; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .slider__img { /*이미지 보이는 영역 */
+        position: relative;
+        width: 800px;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .slider__inner{ /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+        display: flex;
+        flex-wrap: wrap;
+        width: 4800px; /* 총 이미지 6개 */
+        height: 450px;
+        position: relative;
+        /* transform: translateX(-800px); */
+    }
+
+    .slider { /* 개별적인 이미지 */
+        width: 800px;
+        height: 450px;
+        position: relative;
+    }
+
+    .slider::before{
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+
+    .slider:nth-child(1)::before {content: "이미지 1";}
+    .slider:nth-child(2)::before {content: "이미지 2";}
+    .slider:nth-child(3)::before {content: "이미지 3";}
+    .slider:nth-child(4)::before {content: "이미지 4";}
+    .slider:nth-child(5)::before {content: "이미지 5";}
+    .slider:nth-child(6)::before {content: "이미지 1";}
+
+    /* .slider:nth-child(1) {z-index: 5;}
+    .slider:nth-child(2) {z-index: 4;}
+    .slider:nth-child(3) {z-index: 3;}
+    .slider:nth-child(4) {z-index: 2;}
+    .slider:nth-child(5) {z-index: 1;} */
+
+    @media(max-width: 800px){
+        .slider__img{
+            width: 400px;
+            height: 225px;
+        }
+    }
+</code></pre>
+                        </div>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">자바스크립트 : 예제용 코드보기</h2>
+                    <p class="t_desc2">이번 자바스크립트에서는 각 이미지가 슬라이드가 가능하게 함과 동시에 <i>현재 값이 이미지 총 갯수와 같아졌을때 다시 처음이미지로 돌리는 방식</i>으로 슬라이드 이펙트를 구현합니다.</p>
+                    <div class="script">
+                        <div class="t_code">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap")
+const sliderImg = document.querySelector(".slider__img")        //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner")    //움직이는 영역
+const slider = document.querySelectorAll(".slider")             //각각 이미지 
+
+let currentIndex = 0;                                                   //현재 보이는 이미지
+let sliderCount = slider.length;                                        //이미지 갯수
+let sliderWidth = sliderImg.offsetWidth;                                //이미지 가로값
+let sliderClone = sliderInner.firstElementChild.cloneNode(true);        //첫번째 이미지 복사
+sliderInner.appendChild(sliderClone);                                   //첫번째 이미지를 마지막에 넣어줌
+
+function sliderEffect(){
+    currentIndex++;                                                     //슬라이더 이펙트가 실행될때마다 currentIndex(현재 보여주는 이미지 값)을 1씩 즐가
+    sliderInner.style.transition = "all 0.6s"                           //움직이는 영역의 트랜지션은 0.6초로 설정
+
+    sliderInner.style.transform="translateX(-"+ sliderWidth * currentIndex +"px)";//이미지 가로값에 현재 이미지 번호를 곱해서 왼쪽으로 이동시킬 값을 구합니다.
+
+    //자미가 사진에 위치 했을 때
+    if(currentIndex==sliderCount){                          //현재 값이 이미지 갯수와 같아졌을때
+        setTimeout(()=>{                                    //시간을 0.7초로 설정하고
+            sliderInner.style.transition = "0s";            //sliderInner의 trasition을 0초로 초기화 한 후
+            sliderInner.style.transform = "translateX(0px)";//sliderInner를 0px 위치로 이동시킨다
+        }, 700)
+        currentIndex = 0;                                   //현재 값 0으로 초기화
+
+    }
+}
+
+    setInterval(sliderEffect, 2000)                             //슬라이더 이펙트 함수 실행은 2초마다
+</code></pre>
+                        </div>
+                    </div>
+                    <h3 class="t_tit2">번외 : 소스보기 버튼 구현</h3>
+                    <p class="t_desc2">효율적인 코드 작성을 위해 소스보기 버튼은 따로 'common.js'라는 파일로 저장해 불러와 사용하였습니다.</p>
+                    <div class="script">
+                        <div class="t_code">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">// 모달
+const modalBtn = document.querySelector(".modal__btn");
+const modalClose = document.querySelector(".modal__close");
+const modalCont = document.querySelector(".modal__cont");
+
+
+//보이기
+modalBtn.addEventListener("click", ()=>{
+    modalCont.classList.add("show");
+    modalCont.classList.remove("hide");
+})
+
+
+//숨기기
+modalClose.addEventListener("click", ()=>{
+    modalCont.classList.add("hide");
+})
+
+
+// 탭 메뉴
+const tabBtn = document.querySelectorAll(".modal__box .tabs > div")
+const tabCont = document.querySelectorAll(".modal__box .cont > div")
+
+tabBtn.forEach((e, i) => {
+    e.addEventListener("click", (event) => {
+        event
+            .preventDefault(); //상단의 event 라는 장소에 클릭 값이 저장되는데 그 장소에 지정한 이름 뒤에 .preventDefault()를 적어 막는다
+
+        //li의 클래스로 붙어있던 active를 모두 제거했습니다.
+        //e라고 지정해 li를 불러와도 괜찮고 li를 적어 태그를 바로 지정해도 괜찮다.
+        tabBtn.forEach(e => {
+            e.classList.remove("active")
+        })
+
+        //내가 클릭한 버튼(e=li)에 active를 추가해봄
+        e.classList.add("active")
+
+        //버튼을 클릭하면 모든 자식 박스를 숨김
+        tabCont.forEach(div => {
+            div.style.display = "none"
+        })
+
+        //[i]클릭한 버튼과 [i]박스를 보이게 함
+        tabCont[i].style.display = "block";
+    })
+})
+</code></pre>
+                        </div>
+                    </div>
+                    <h2 class="t_tit2">구현예제</h2>
+                    <p class="t_box">너무나도 멋있는 슬라이더 이펙트~~~ 완성~~~! 멋지죠?</p>
+                    <iframe style="width: 100%; height: 900px"src="https://kimsangjunv1.github.io/coding/javascript/effect/sliderEffect03.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+                <!-- 01번 메인 샘플 끝 -->
+            </div>
+        </div>
+
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <!-- <a href="mailto:to_before@naver.com">to_before@naver.com</a> -->
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script><!-- 2. 스크립트 실행 (살짝 위로) -->
+
+    <!-- 다크모드 테스트 -->
+    <script>
+        const lightMode = document.querySelector(".light")
+        const darkMode = document.querySelector(".dark")
+        const Main = document.querySelector("body")
+        const mainContainer = document.querySelector("a")
+        const mainHeader = document.querySelector("#header")
+        const mainHeader__li = document.querySelectorAll('*')
+        const compactMenu = document.querySelector(".compact_menu")
+        const allContainer = document.querySelector(".container")
+        const showContainer = document.querySelector(".extend_menu")
+
+        lightMode.addEventListener("click", () => {
+            lightMode.classList.add("hide")
+            darkMode.classList.remove("hide")
+            Main.classList.add("dark")
+            mainContainer.style.color = "#fff"
+            mainHeader.style.background = "#313131b0"
+            mainHeader.style.borderRight = "0.1px solid #484747"
+            mainHeader__li.style.color = "#ffffff9e !important"
+        })
+        darkMode.addEventListener("click", () => {
+            darkMode.classList.add("hide")
+            lightMode.classList.remove("hide")
+            Main.classList.remove("dark")
+            mainContainer.classList.remove("dark")
+            mainContainer.style.color = "#000"
+            mainHeader.style.background = "rgba(255, 255, 255, 0.586)"
+            mainHeader.style.borderRight = "0.1px solid #fff"
+            mainHeader__li.style.color = "#0000009e !important"
+        })
+
+        compactMenu.addEventListener("click", () => {
+            mainHeader.style.left = "-300px"
+            allContainer.style.margin = "50px 15px 20px 40px"
+            showContainer.classList.remove("extend_menu_opacity_hide")
+            showContainer.classList.add("extend_menu_opacity_show")
+        })
+
+        showContainer.addEventListener("click", () => {
+            mainHeader.style.left = "0"
+            allContainer.style.margin = "50px 15px 20px 300px"
+            showContainer.classList.add("extend_menu_opacity_hide")
+            showContainer.classList.remove("extend_menu_opacity_show")
+        })
+    </script>
+
+    <!-- 찾기 테스트 -->
+    <script>
+
+    </script>
+</body>
+
+</html>
