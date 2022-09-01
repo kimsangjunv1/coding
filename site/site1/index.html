@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- seo 포폴때 참고 -->
+    <meta name="author" content="codi">
+    <meta name="description" content="사이트 만들기 연습해보기!">
+    <meta name="keyword" content="사이트, 만들기, 튜토리얼, 웹스토리보이">
+    <meta name="robots" content="all">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/fonts.css">     <!-- 폰트 -->
+    <link rel="stylesheet" href="assets/css/reset.css">     <!-- 리셋 -->
+    <link rel="stylesheet" href="assets/css/common.css">    <!-- 공통 -->
+
+    <!-- CSS(섹션별) -->
+    <link rel="stylesheet" href="assets/css/card.css">    <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/image.css">    <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/text.css">    <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/header.css">    <!-- 공통 -->
+
+
+</head>
+<body>
+    <!-- 웹표준 준수시 필요 -->
+    <div id="skip">
+        <a href="#">헤더 영역 바로가기</a>
+        <a href="#">슬라이드 영역 바로가기</a>
+        <a href="#">이미지 영역 바로가기</a>
+        <a href="#">이미지/텍스트 영역 바로가기</a>
+        <a href="#">카드 영역 바로가기</a>
+        <a href="#">배너 영역 바로가기</a>
+        <a href="#">텍스트 영역 바로가기</a>
+        <a href="#">푸터 영역 바로가기</a>
+    </div>
+    
+    <header id="headerType" class="header__wrap nexon">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#">web <em>site</em></a>
+            </div>
+            <div class="header__menu">
+                <ul>
+                    <li><a href="#">헤더 영역</a></li>
+                    <li><a href="#">슬라이드 영역</a></li>
+                    <li><a href="#">배너 영역</a></li>
+                    <li><a href="#">컨텐츠 영역</a></li>
+                    <li><a href="#">푸터 영역</a></li>
+                </ul>
+            </div>
+            <div class="header__member">
+                <a href="#">로그인</a>
+            </div>
+        </div>
+    </header>
+    <!-- //headerType -->
+
+
+    <main id="mainType">
+
+        <section id="sliderType" class="slider__wrap">
+            <h2>슬라이드 영역</h2>
+        </section>
+        <!-- //sliderType -->
+
+        <div class="container section">
+            <h2>강아지의 모든 모습!</h2>
+            <p>세상에서 가장 귀여운 강아지의 모든 모습을 상상하고 세세하게 지켜만 보세요!!</p>
+            <div class="card_container">
+                <div class="card">
+                    <div class="container"></div>
+                    <div class="text_cont">
+                        <h2>강아지의 모든 모습</h2>
+                        <p>강아지는 왜이렇게 귀여울까요 대체왜 그런건지 궁금하지만 제 생각에는 나야 모르곘지만 아무튼 그런것들이 막 있습니다 그렇게 생각하세요 ^_^</p>
+                        <div class="more">자세히 보기</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="container"></div>
+                    <div class="text_cont">
+                        <h2>강아지의 눈썹!</h2>
+                        <p>강아지는 눈썹이 있을까요? 없을까요? 어찌보면 있는거 같기도 하고 본적이 없었던거 같기도하고 생각 해본적이 없던거 같기도 하고 흠...</p>
+                        <div style="background-color:#BD4517" class="more">자세히 보기</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //imageType -->
+
+        <section id="imgTextType" class="imgText__wrap">
+            <h2>이미지/텍스트 영역</h2>
+        </section> 
+        <!-- //imgTextType -->
+
+        <section id="cardType" class="card__wrap nexon section">
+            <!--다중 클래스 선택-->
+            <h2>PS5 Controller User Guide 🎮</h2>
+            <p>새롭고 혁신적인 PS5™ 컨트롤러로 완전히 몰입할 수 있는 게임 경험1을 만끽하세요</p>
+            <div class="card__inner container">
+                <article class="card">
+                    <figure class="card__header">
+                        <!--img를 쓰기 위한 웹 표준 방법-->
+                        <img src="assets/img/card_bg01_01.jpg" alt="다양한 인터렉티브 반응">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">다양한 인터렉티브 반응</h3>
+                        <p class="desc">인게임 기어 및 환경과 상호작용하면서 활시위를 당길 때 점점 팽팽해지는 느낌과 질주하는 자동차의 급브레이크를 밟는 느낌 등 액션과 함께 어우러집니다.
+                        </p>
+                        <a class="btn" href="/">
+                            더 자세히 보기
+                            <span aria-hidden="true"> <!--aria-hidden="true" 로 처리시 이 부분을 읽는것을 스킵한다.-->
+                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure>
+                        <!--img를 쓰기 위한 웹 표준 방법-->
+                        <img src="assets/img/card_bg01_02.jpg" alt="게임패드 지원">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">게임패드 지원</h3>
+                        <p class="desc">내장 마이크를 사용하거나 3.5mm 잭에 미니멀하고 아이코닉한 헤드셋을 연결 전용 음소거 버튼을 사용하여 음성 캡처를 즉시 끌 수 있습니다.</p>
+                        <a class="btn" href="/">
+                            더 자세히 보기
+                            <span aria-hidden="true">
+                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black" />
+                                </svg>
+                            </span>
+    
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure>
+                        <!--img를 쓰기 위한 웹 표준 방법-->
+                        <img src="assets/img/card_bg01_03.jpg" alt="진동을 통한 생생한 현장감">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">진동을 통한 생생한 현장감</h3>
+                        <p class="desc">기존의 진동 모터 대신 듀얼 액추에이터가 선사하는 물리적 반응형 피드백을 경험해보세요, 게임 내 환경에서부터 실감 나는 역동적인 진동이 손을 타고
+                            전해집니다.</p>
+                            <a class="btn" href="/">
+                                더 자세히 보기
+                                <span aria-hidden="true">
+                                    <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black" />
+                                    </svg>
+                                </span>
+        
+                            </a>
+                    </div>
+                </article>
+            </div>
+        </section> 
+        <!-- //cardType -->
+
+        <section id="bannerType" class="banner__wrap">
+            <h2>배너 영역</h2>
+        </section>
+        <!-- //bannerType -->
+
+        <section class="nexon text__wrap section ">
+            <span>텍스트 유형01</span>
+            <h2 class="mb70">스크립트를 익히는 방법</h2>
+            <div class="text__inner container">
+                <div class="text t1">
+                    <h3 class="text__title">검색이펙트</h3>
+                    <p class="text__desc">자바스크립트의 기본 메세더르르 통해 검색 스크립트를 완성하는 튜토리얼입니다 가끔은 이렇게 길게 적어볼때도 있습니다어어.</p>
+                    <a class="text_btn" href="#">더보기</a>
+                </div>
+                <div class="text t2">
+                    <h3 class="text__title">검색이펙트</h3>
+                    <p class="text__desc">자바스크립트의 기본 메세더르르 통해 검색 스크립트를 완성하는 튜토리얼입니다 가끔은 이렇게 길게 적어볼때도 있습니다어어.</p>
+                    <a class="text_btn" href="#">더보기</a>
+                </div>
+                <div class="text t3">
+                    <h3 class="text__title">검색이펙트</h3>
+                    <p class="text__desc">자바스크립트의 기본 메세더르르 통해 검색 스크립트를 완성하는 튜토리얼입니다 가끔은 이렇게 길게 적어볼때도 있습니다어어.</p>
+                    <a class="text_btn" href="#">더보기</a>
+                </div>
+                <div class="text t4">
+                    <h3 class="text__title">검색이펙트</h3>
+                    <p class="text__desc">자바스크립트의 기본 메세더르르 통해 검색 스크립트를 완성하는 튜토리얼입니다 가끔은 이렇게 길게 적어볼때도 있습니다어어.</p>
+                    <a class="text_btn" href="#">더보기</a>
+                </div>
+                <div class="text t5">
+                    <h3 class="text__title">검색이펙트</h3>
+                    <p class="text__desc">자바스크립트의 기본 메세더르르 통해 검색 스크립트를 완성하는 튜토리얼입니다 가끔은 이렇게 길게 적어볼때도 있습니다어어.</p>
+                    <a class="text_btn" href="#">더보기</a>
+                </div>
+                <div class="text t6">
+                    <h3 class="text__title">검색이펙트</h3>
+                    <p class="text__desc">자바스크립트의 기본 메세더르르 통해 검색 스크립트를 완성하는 튜토리얼입니다 가끔은 이렇게 길게 적어볼때도 있습니다어어.</p>
+                    <a class="text_btn" href="#">더보기</a>
+                </div>
+            </div>
+        </section>
+        <!-- //textType -->
+
+    </main>
+    <!-- //mainType -->
+
+    
+    <footer id="footerType">
+        <h2>푸터 영역</h2>
+    </footer>
+    <!-- //footerType -->
+</body>
+</html>

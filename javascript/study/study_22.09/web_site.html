@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="j../avascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 01번 메인 샘플 시작 -->
+                <h2 class="t_tit2">헤더 영역 만들기!</h2>
+                <p class="t_desc2_css">
+                    피그마를 이용해 그리드를 생성 후 각 규격에 맞게 요소들을 구성합니다.
+                </p>
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fa9buUse4J646SWPSoOw7ng%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D2%253A225" allowfullscreen></iframe>
+                <hr>
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2">HTML 코드</h2>
+                    <p class="t_desc2_css">
+                        웹 표준을 준수하기 위해 태그는 시멘틱 태그를 사용해 작성하며 효율적인 코드 작성을 위해 div태그를 여러개 만드는것이 아닌 한 태그안에 클래스를 다중으로 삽입합니다.
+                    </p>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary class="t_box">코드보기</summary>
+                            <div class="sample03_result">
+                                <div class="script">
+                                    <div class="t_code">
+<pre><code class="language-html">&lt;section id="headerType" class="header__wrap nexon"&gt;
+    &lt;div class="header__inner"&gt;
+        &lt;div class="header__logo"&gt;
+            &lt;a href="#"&gt;web &lt;em&gt;site&lt;/em&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="header__menu"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;헤더 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;슬라이드 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;배너 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;컨텐츠 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;푸터 영역&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="header__member"&gt;
+            &lt;a href="#"&gt;로그인&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                </div>
+                <hr>
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2">CSS코드</h2>
+                    <p class="t_desc2_css">
+                        폰트는 'NexonLv1Gothic'를 이용하고 .card 클래스를 생성해 카드 Ui를 구현합니다.
+                    </p>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary class="t_box">코드보기</summary>
+                            <div class="sample03_result">
+                                <div class="script">
+                                    <div class="t_code">
+<pre><code class="language-css">@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+.nexon {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+em, i, address{
+    font-style: normal;
+}
+
+/* common(공통) */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 120px 0;
+    /*위 아래 */
+}
+
+.section>h2 {
+    /* ">" 이걸로 section 안에 있는 h2선택 */
+    font-size: 50px;
+    line-height: 1;
+    /* 1이라고 적으면 auto랑 똑같음 */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section>p {
+    font-size: 22px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section>span {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: underline;
+    margin-bottom: 16px;
+}
+
+.mb70 {
+    margin-bottom: 70px !important;
+}
+
+/* headerType */
+.header__inner{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+.header__logo{
+    width: 20%;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.header__logo em{
+    font-size: 18px;
+    font-weight: 400;
+}
+.header__menu{
+    width: 60%;
+    text-align: center;
+}
+.header__menu li{
+    display: inline;
+}
+.header__menu li a{
+    padding: 13px 30px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+.header__menu li a:hover{
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+.header__member{
+    width: 20%;
+    text-align: right;
+}
+.header__member a{
+    font-size: 16px;
+    border: 1px solid #000;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: all 0.25s;
+}
+
+.header__member a:hover{
+    background-color: #000;
+    color: #fff;
+}
+</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                </div>
+                <hr>
+                <h2 class="t_tit2">결과</h2>
+                <div class="t_iframe" style="min-height : 1000px; padding-top:0;">
+                    <iframe src="https://kimsangjunv1.github.io/coding/site/cardType/cardType01.html" frameborder="0"></iframe>
+                </div>
+                <hr>
+                <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
+                    <div class="t_link">
+                        <a href="https://github.com/kimsangjunv1/coding/blob/main/site/cardType/cardType01.html" target="blank">원본 소스 보기</a>
+                    </div>
+                    <div class="t_link">
+                        <a href="https://kimsangjunv1.github.io/coding/site/cardType/cardType01.html" target="blank">원본 페이지 보기</a>
+                    </div>
+                </div>
+                <!-- 01번 메인 샘플 끝 -->
+            </div>
+            
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>

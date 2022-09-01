@@ -70,8 +70,100 @@
                 
                 <!-- 메인 샘플 01 -->
                 <div id="sample01" class="sample">
-                    <h3 class="blue">요소 크기를 정하는 속성 및 메서드</h3>
-                    <p class="t_desc2">1</p>
+                    <h3 class="t_tit">요소의 크기를 정할 수 있는 메서드?</h3>
+                    <p class="t_desc2">메서드를 통해 변경하고자 하는 요소의 크기를 정할 수 있으며,<br>총 갯수는 약 15가지가 되더라구요,, 오늘은 이것에 대하여 알아보겠습니다!</p>
+                    <div class="table left" style="margin-top: 20px;">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td class="ce" rowspan="10">Dimensions</td>
+                                    <td >width()</td>
+                                    <td>-</td>
+                                    <td>요소의 가로(패딩/보더/마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>height()</td>
+                                    <td>-</td>
+                                    <td>요소의 세로(패딩/보더/마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>innerWidth()</td>
+                                    <td>clientWidth</td>
+                                    <td>요소의 가로(패딩포함, 보더/마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>innerHeight()</td>
+                                    <td>clientHeight</td>
+                                    <td>요소의 세로(패딩포함, 보더/마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>outerWidth()</td>
+                                    <td>offsetWidth</td>
+                                    <td>요소의 가로(패딩/보더포함, 마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>outerHeight()</td>
+                                    <td>offsetHeight</td>
+                                    <td>요소의 세로(패딩/보더포함, 마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>outerWidth(true)</td>
+                                    <td>-</td>
+                                    <td>요소의 가로(패딩/보더/마진 포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>outerHeight(true)</td>
+                                    <td>-</td>
+                                    <td>요소의 세로(패딩/보더/마진 포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>$(window).width()</td>
+                                    <td>innerWidth / outerWidth</td>
+                                    <td>브라우저의 가로 값(스크롤바 미포함 / 포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>$(window).Height()</td>
+                                    <td>innerHeight / outerHeight</td>
+                                    <td>브라우저의 세로 값(스크롤바 미포함 / 포함)</td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="5" class="ce">offset</td>
+                                    <td>offset().top / offset().left</td>
+                                    <td>offsetTop / offsetLeft</td>
+                                    <td>요소의 좌표값(문서 기준)</td>
+                                </tr>
+                                <tr>
+                                    <td>offsetParent()</td>
+                                    <td></td>
+                                    <td>요소의 좌표값(부모 기준)</td>
+                                </tr>
+                                <tr>
+                                    <td>position()</td>
+                                    <td></td>
+                                    <td>요소의 좌표값(기준점 기준)</td>
+                                </tr>
+                                <tr>
+                                    <td>scrollLeft()</td>
+                                    <td>pageXoffset / winodw.scrollX</td>
+                                    <td>요소의 가로 스크롤 값</td>
+                                </tr>
+                                <tr>
+                                    <td>scrollTop()</td>
+                                    <td>pageYoffset / winodw.scrollY</td>
+                                    <td>요소의 세로 스크롤 값</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr>
+                    <h3 class="blue">보기 예제</h3>
                     <div class="view">
                         <div class="sbox">
                             <span>

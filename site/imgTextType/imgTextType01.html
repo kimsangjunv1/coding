@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형01</title>
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* Reset */
+        .blind{
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+            width: 1px;
+            height: 1px;
+            left: -1px;
+            top: -1px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .card__inner {
+            display: flex;
+            /* 생성한 요소들을 flex로 정렬합니다. */
+            justify-content: space-between;
+            /*창 크기에 맞게 좌우로 정렬합니다 */
+            /*콘텐츠를 양쪽으로 정렬*/
+        }
+        li{
+            list-style: none;
+        }
+
+        .card {
+            width: 32%;
+            background-color: #f5f5f5;
+        }
+
+        .card__body {
+            padding: 24px;
+        }
+
+        .card__body .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+
+            /* 한줄 효과 */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 20px;
+        }
+
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; /*줄 효과*/
+            -webkit-box-orient: vertical;
+        }
+
+        .card__body .btn {}
+
+        /* imgTextType */
+        .imgText__inner{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .imgText__inner>div{
+            width: 32%;
+            height: 500px;
+            background-color: #ccc;
+        }
+        .imgText__txt{}
+        .imgText__img{}
+    </style>
+</head>
+
+<body>
+    <section id=imgTextType" class="imgText__wrap nexon section">
+        <h2 class="blind">유용한 사이트 살퍄ㅕ보기 🎮</h2>
+        <div class="imgText__inner container">
+            <div class="imgText__txt">
+                <span>이미지 텍스트 유형01</span>
+                <h3>유용한 사이트 살펴보기</h3>
+                <p>웹 디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 유용한 사이트입니다.</p>       
+                <ul>
+                    <li><a href="/">튜토리얼 사이트</a></li>
+                    <li><a href="/">레퍼런스 사이트</a></li>
+                    <li><a href="/">웹폰트 사이트</a></li>
+                    <li><a href="/">CSS 사이트</a></li>
+                    <li><a href="/">WebGL 사이트</a></li>
+                    <li><a href="/">Youtube 사이트</a></li>
+                </ul>        
+            </div>
+            <div class="imgText__img img1">
+                <a href="/">레퍼런스 사이트</a>
+            </div>
+            <div class="imgText__img img2">
+                <a href="/">튜토리얼 사이트</a>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
