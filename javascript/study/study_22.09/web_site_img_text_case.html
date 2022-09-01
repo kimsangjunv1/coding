@@ -90,11 +90,11 @@
         <main id="main">
             <div class="document">
                 <!-- 01번 메인 샘플 시작 -->
-                <h2 class="t_tit2">헤더 영역 만들기!</h2>
+                <h2 class="t_tit2">이미지 텍스트 유형 만들기!</h2>
                 <p class="t_desc2_css">
                     피그마를 이용해 그리드를 생성 후 각 규격에 맞게 요소들을 구성합니다.
                 </p>
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FewZhegdXfKs97FmXGSpvyx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-02%3Fnode-id%3D242%253A705" allowfullscreen></iframe>
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FewZhegdXfKs97FmXGSpvyx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-02%3Fnode-id%3D242%253A742" allowfullscreen></iframe>
                 <hr>
                 <div id="sample01" class="sample">
                     <h2 class="t_tit2">HTML 코드</h2>
@@ -108,22 +108,28 @@
                             <div class="sample03_result">
                                 <div class="script">
                                     <div class="t_code">
-<pre><code class="language-html">&lt;section id="headerType" class="header__wrap nexon"&gt;
-    &lt;div class="header__inner"&gt;
-        &lt;div class="header__logo"&gt;
-            &lt;a href="#"&gt;web &lt;em&gt;site&lt;/em&gt;&lt;/a&gt;
-        &lt;/div&gt;
-        &lt;div class="header__menu"&gt;
+<pre><code class="language-html">&lt;section id=imgTextType" class="imgText__wrap nexon section gray"&gt;
+    &lt;h2 class="blind"&gt;유용한 사이트 살퍄ㅕ보기 🎮&lt;/h2&gt;
+    &lt;div class="imgText__inner container"&gt;
+        &lt;div class="imgText__txt"&gt;
+            &lt;span&gt;이미지 텍스트 유형01&lt;/span&gt;
+            &lt;h3&gt;유용한 사이트 살펴보기&lt;/h3&gt;
+            &lt;p&gt;웹 디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 유용한 사이트입니다.&lt;/p&gt;       
             &lt;ul&gt;
-                &lt;li&gt;&lt;a href="#"&gt;헤더 영역&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#"&gt;슬라이드 영역&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#"&gt;배너 영역&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#"&gt;컨텐츠 영역&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#"&gt;푸터 영역&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li&gt;&lt;a href="/"&gt;튜토리얼 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;레퍼런스 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;웹폰트 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;CSS 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;WebGL 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;Youtube 사이트&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;        
         &lt;/div&gt;
-        &lt;div class="header__member"&gt;
-            &lt;a href="#"&gt;로그인&lt;/a&gt;
+        &lt;div class="imgText__img img1"&gt;
+            &lt;a href="/"&gt;레퍼런스 사이트&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="imgText__img img2"&gt;
+            &lt;a href="/" class="blue"&gt;튜토리얼 사이트&lt;/a&gt;
+
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/section&gt;
@@ -139,7 +145,7 @@
                 <div id="sample01" class="sample">
                     <h2 class="t_tit2">CSS코드</h2>
                     <p class="t_desc2_css">
-                        폰트는 'NexonLv1Gothic'를 이용하고 .card 클래스를 생성해 카드 Ui를 구현합니다.
+                        폰트는 'NexonLv1Gothic'를 이용하고 이미지 텍스트 유형을 제작합니다!
                     </p>
                     <div class="result">
                         <!-- 결과보기 -->
@@ -290,15 +296,15 @@ em, i, address{
                 <hr>
                 <h2 class="t_tit2">결과</h2>
                 <div class="t_iframe" style="min-height : 300px; padding-top:0;">
-                    <iframe src="https://kimsangjunv1.github.io/coding/site/headerType/headerType01.html" frameborder="0"></iframe>
+                    <iframe src="https://kimsangjunv1.github.io/coding/site/imgTextType/imgTextType01.html" frameborder="0"></iframe>
                 </div>
                 <hr>
                 <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
                     <div class="t_link">
-                        <a href="https://github.com/kimsangjunv1/coding/blob/main/site/headerType/headerType01.html" target="blank">원본 소스 보기</a>
+                        <a href="https://github.com/kimsangjunv1/coding/blob/main/site/imgTextType/imgTextType01.html" target="blank">원본 소스 보기</a>
                     </div>
                     <div class="t_link">
-                        <a href="https://kimsangjunv1.github.io/coding/site/headerType/headerType01.html" target="blank">원본 페이지 보기</a>
+                        <a href="https://kimsangjunv1.github.io/coding/site/imgTextType/imgTextType01.html" target="blank">원본 페이지 보기</a>
                     </div>
                 </div>
                 <!-- 01번 메인 샘플 끝 -->
