@@ -77,7 +77,7 @@
                         <h3 class="t_tit2">다운로드 방식은?</h3>
                         <p class="t_box">크롬 브라우저에서는 jQuery 라이브러리를 복사해야 하는 번거로움이 있기 때문에 <i>크롬브라우저에서 다운을 받을 경우 웹페이지에 있는
                                 라이브러리 코드 전체를 복사하여 웹 에디터에서 붙여 넣고 jquery-3.3.1.min.js로 저장해주면 됩니다.</i></p>
-                        <p class="t_desc2"><a href="https://jquery.com/download">[다운로드 바로가기]</a> : 이곳에서 'Download the
+                        <p style="margin-top:20px;" class="t_desc2"><a href="https://jquery.com/download">[다운로드 바로가기]</a> : 이곳에서 'Download the
                             compressed, production jQuery 3.3.1"을 다운로드 해주세요!</p>
                         <hr>
                         <h3 class="t_tit2">CDN방식</h3>
@@ -87,6 +87,7 @@
                         <h3 class="t_tit2">기본 형식</h3>
                         <p class="t_box">jQuery를 사용하기 위해서는 하단과 같이 세팅해 사용하면 됩니다.</p>
                         <div class="script">
+                            <div class="t_code">
                             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
                             <pre><code class="language-js">&lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
@@ -95,6 +96,7 @@
     });
 &lt;/script&gt;
 </code></pre>
+                            </div>
                         </div>
                         <hr>
                         <h3 class="t_tit2">선택자</h3>
@@ -182,13 +184,127 @@
                             src="https://codepen.io/kimdaewonn/embed/XWEvawy?default-tab=html%2Cresult" frameborder="no"
                             loading="lazy" allowtransparency="true" allowfullscreen="true">
                             See the Pen <a href="https://codepen.io/kimdaewonn/pen/XWEvawy">
-                                Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                                Untitled</a> by kimsangjunv1 (<a href="https://codepen.io/kimdaewonn">@kimsangjunv1</a>)
                             on <a href="https://codepen.io">CodePen</a>.
                         </iframe>
                         <hr>
-                        <h3 class="t_tit2">기타 탐색 선택자의 종류</h3>
+                        <h3 class="t_tit2">탐색 선택자의 종류</h3>
                         <p class="t_box">탐색을 위한 선택자의 종류로는 아래와 같은 것들이 있습니다.</p>
-                        <table class="t_table">
+                        <table style="margin-top:20px;" class="t_table">
+                            <thead>
+                                <tr>
+                                    <th>선택자 종류</th>
+                                    <th colspan="2">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ce">children()</td>
+                                    <td class="ce">$("div").children()</td>
+                                    <td class="ce">div 요소의 자식 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">parent()</td>
+                                    <td class="ce">$("p").parent()</td>
+                                    <td class="ce">p 요소의 부모 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">parents()</td>
+                                    <td class="ce">$("p").parents()</td>
+                                    <td class="ce">p 요소의 부모가 되는 모든 div 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">closest()</td>
+                                    <td class="ce">$("p").closest(div)</td>
+                                    <td class="ce">p 요소의 부모가 되는 첫 번째 div 요소를</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">next()</td>
+                                    <td class="ce">$("div.m").next()</td>
+                                    <td class="ce">div.m 요소의 다음 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">nextAll()</td>
+                                    <td class="ce">$("div.m").nextAll()</td>
+                                    <td class="ce">div.m 요소의 다음 요소들을 모두 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">nextUntil()</td>
+                                    <td class="ce">$("div.m").nextUntil("p")</td>
+                                    <td class="ce">div.m 요소부터 p요소 전까지의 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">prev()</td>
+                                    <td class="ce">$("div.m").prev()</td>
+                                    <td class="ce">div.m 요소의 이전 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">prevAll()</td>
+                                    <td class="ce">$("div.m").prevAll()</td>
+                                    <td class="ce">div.m 요소의 이전 요소들을 모두 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">prevUntil()</td>
+                                    <td class="ce">$("div.m").prevUntil("p")</td>
+                                    <td class="ce">div.m 이전 요소부터 p 요소 다음 요소까지를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">siblings()</td>
+                                    <td class="ce">$("div.m").siblings("p")</td>
+                                    <td class="ce">div 요소의 형제 요소 중 p 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">find()</td>
+                                    <td class="ce">$("div.m").find("span")</td>
+                                    <td class="ce">div 요소의 하위 요소 중 span 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">filter()</td>
+                                    <td class="ce">$("div.m").filter(".m")</td>
+                                    <td class="ce">div 요소 중 class가 "m인 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">not()</td>
+                                    <td class="ce">$("div.m").not(".m")</td>
+                                    <td class="ce">div 요소 중 class가 "m이 아닌 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">has()</td>
+                                    <td class="ce">$("div.m").has("span")</td>
+                                    <td class="ce">div 요소 중 span 요소를 포함하고 있는 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">eq()</td>
+                                    <td class="ce">$("div").eq(0)</td>
+                                    <td class="ce">
+                                        div 요소 중 index가 0인 요소들을 선택합니다. 
+                                        <br>
+                                        index 0번은 첫 번째 요소입니다.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">gt()</td>
+                                    <td class="ce">$("div").gt(0)</td>
+                                    <td class="ce">index가 0보다 큰 div 요소들을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">lt()</td>
+                                    <td class="ce">$("div").lt(3)</td>
+                                    <td class="ce">index가 3보다 작은 div 요소들을 선택합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+                        <h3 class="t_tit2">예시용 코드펜</h3>
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="basic__selector" src="https://codepen.io/kimsangjunv1/embed/mdLbedq?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/kimsangjunv1/pen/mdLbedq">
+                            basic__selector</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                          </iframe>
+                        <hr>
+                        <h3 class="t_tit2">기타 탐색 선택자의 종류</h3>
+                        <p class="t_box">기타 탐색을 위한 선택자의 종류로는 아래와 같은 것들이 있습니다.</p>
+                        <table style="margin-top:20px;" class="t_table">
                             <thead>
                                 <tr>
                                     <th>선택자 종류</th>
@@ -228,52 +344,13 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <h3 class="t_tit2">예제용 HTML</h3>
-                        <div class="script">
-                            <div class="t_code">
-                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-html">&lt;html lang="ko"&gt;
-    &lt;head&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-        &lt;title&gt;기타 탐색 선택자&lt;/title&gt;
-        &lt;style&gt;
-            * {
-                margin: 5px;
-            }
-        &lt;/style&gt;
-        &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
-        &lt;script&gt;
-            $(document).ready(function() {
-                $("#m1 &gt; div").add("#m1 &gt; p").css("border","2px solid red");
-                $("#m2").children("p").addBack().css("border","2px solid orange");
-                $("#m3").find("span").css("border","2px solid yellow").end().find("em").
-                css("border","2px solid green");
-                if($("m4").children().is("p")) {
-                    console.log("p 요소가 존재합니다.")
-                }
-            });
-        &lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;div id="m1"&gt;
-            &lt;div&gt;내용1_1&lt;/div&gt;&lt;p&gt;내용1_2&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div id="m2"&gt;
-            &lt;p&gt;내용2&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div id="m3"&gt;
-            &lt;span&gt;내용3_1&lt;/span&gt;&lt;em&gt;내용3_2&lt;/em&gt;
-        &lt;/div&gt;
-        &lt;div id="m4"&gt;
-            &lt;p&gt;내용4&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-                            </div>
-                        </div>
+                        <hr>
+                        <h3 class="t_tit2">예시용 코드펜</h3>
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="something__selector" src="https://codepen.io/kimsangjunv1/embed/eYrOmEG?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/kimsangjunv1/pen/eYrOmEG">
+                            something__selector</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                          </iframe>
                     </div>
                 </div>
                 <!-- 01번 메인 샘플 끝 -->

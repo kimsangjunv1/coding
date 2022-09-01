@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 데이터 저장하기</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css"> <!-- 0. 드라큘라 적용 (맨 밑으로)-->
+</head>
+
+<body>
+    <div style="cursor: pointer;" class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"
+            class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li class="active"><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <div class="hover_button">=</div> -->
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <div class="container">
+                <!-- 01번 메인 샘플 시작 -->
+                <div class="main_sample" data-type="데이터 저장 1">
+                    <div id="sample01" class="sample">
+                        <h3 class="t_tit">jQuery : 속성 선택자?</h3>
+                        <p class="t_desc2">속성 선택자란 선택한 요소를 기준으로 일치하는 속성의 포함 여부를 따진 후 해당 요소를 선택해주는 함수에요!</p>
+                        <hr>
+                        <h3 class="t_tit2">속성 선택자 종류</h3>
+                        <table class="t_table">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>설명</th>
+                                    <th colspan="2"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ce">요소[속성]</td>
+                                    <td class="ce">$("span[class]")</td>
+                                    <td>span 요소 중 class 속성을 가지고 있는 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">요소[속성='값']</td>
+                                    <td class="ce">$("span[class='abc']")</td>
+                                    <td>span 요소 중 class가 'abc'인 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">요소[속성!='값']</td>
+                                    <td class="ce">$("span[class!='abc']")</td>
+                                    <td>span 요소 중 class가 abc'가 아닌 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">요소[속성~='값']</td>
+                                    <td class="ce">$("span[class~='abc']")</td>
+                                    <td>span 요소 중 class가 'abc'를 포함하는 요소를 선택하며, 'abc' 앞뒤로 연결된 문자가 없어야 합니다. 'bg abc'는 선택되나 'bg_abc'는 선택되지 않습니다. </td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">요소[속성*='값']</td>
+                                    <td class="ce">$("span[class*='abc']")</td>
+                                    <td>span 요소 중 class가 'abc'를 포함하는 요소를 모두 선택합니다. 'bg abc', 'bg_abc' 모두 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">요소[속성|='값']</td>
+                                    <td class="ce">$("span[class|='abc']")</td>
+                                    <td>span 요소 중 class가 'abc'나 'abc-'로 시작하는 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">요소[속성^='값']</td>
+                                    <td class="ce">$("span[class^='abc']")</td>
+                                    <td>span 요소 중 class가 'abc'로 시작하는 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">요소[속성$='값']</td>
+                                    <td class="ce">$("span[class$='abc']")</td>
+                                    <td>span 요소 중 class가 'abc'로 끝나는 요소를 선택합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+                        <h3 class="t_tit2">예시용 HTML 코드</h3>
+                        <div class="script">
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-html">&lt;head&gt; 
+    &lt;meta charset="UTF-8"&gt; 
+    &lt;title&gt;속성 선택자&lt;title&gt; 
+    &lt;style&gt; 
+        li {
+            margin: 5px;
+        }
+    &lt;/style&gt; 
+    &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt; 
+    &lt;script&gt; 
+        $(document).ready(function() {
+            $(".list1 &gt; li[class='list_1']").css("border", "2px solid red");
+            $(".list1 &gt; li[class!='list_1']").css("border", "2px solid orange");
+            $(".list2 &gt; li[class~='list']").css("background", "yellow");
+            $(".list2 &gt; li[class*='list']").css("border", "2px solid green");
+            $(".list3 &gt; li[class|='list']").css("border", "2px solid blue");
+            $(".list4 &gt; li[class^='list']").css("border", "2px solid navy");
+            $(".list4 &gt; li[class$='bg']").css("background", "purple");
+        });
+    &lt;/script&gt; 
+&lt;/head&gt; 
+&lt;body&gt; 
+    &lt;ul class="list1"&gt;
+        &lt;li class="list_1"&gt;내용1_1&lt;/li&gt;
+        &lt;li class="list_2"&gt;내용1_2&lt;/li&gt;
+        &lt;li class="list_3"&gt;내용1_3&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul class="list2"&gt;
+        &lt;li class="list bg"&gt;내용2_1&lt;/li&gt;
+        &lt;li class="list_1"&gt;내용2_2&lt;/li&gt;
+        &lt;li class="list_2"&gt;내용2_3&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul class="list3"&gt;
+        &lt;li class="list"&gt;내용3_1&lt;/li&gt;
+        &lt;li class="list-1"&gt;내용3_2&lt;/li&gt;
+        &lt;li class="list-bg"&gt;내용3_3&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul class="list4"&gt;
+        &lt;li class="list"&gt;내용4_1&lt;/li&gt;
+        &lt;li class="list-1"&gt;내용4_2&lt;/li&gt;
+        &lt;li class="list-bg"&gt;내용4_3&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt; 
+</code></pre>
+                            </div>
+                        </div>
+                        <hr>
+                        <h3 class="t_tit2">예시용 코드펜</h3>
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kimsangjunv1/embed/zYjOGeO?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/kimsangjunv1/pen/zYjOGeO">
+                            Untitled</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                          </iframe>
+                    </div>
+                </div>
+                <!-- 01번 메인 샘플 끝 -->
+            </div>
+        </div>
+
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <!-- <a href="mailto:to_before@naver.com">to_before@naver.com</a> -->
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script><!-- 2. 스크립트 실행 (살짝 위로) -->
+
+    <!-- 다크모드 테스트 -->
+    <script>
+        const lightMode = document.querySelector(".light")
+        const darkMode = document.querySelector(".dark")
+        const Main = document.querySelector("body")
+        const mainContainer = document.querySelector("a")
+        const mainHeader = document.querySelector("#header")
+        const mainHeader__li = document.querySelectorAll('*')
+        const compactMenu = document.querySelector(".compact_menu")
+        const allContainer = document.querySelector(".container")
+        const showContainer = document.querySelector(".extend_menu")
+
+        lightMode.addEventListener("click", () => {
+            lightMode.classList.add("hide")
+            darkMode.classList.remove("hide")
+            Main.classList.add("dark")
+            mainContainer.style.color = "#fff"
+            mainHeader.style.background = "#313131b0"
+            mainHeader.style.borderRight = "0.1px solid #484747"
+            mainHeader__li.style.color = "#ffffff9e !important"
+        })
+        darkMode.addEventListener("click", () => {
+            darkMode.classList.add("hide")
+            lightMode.classList.remove("hide")
+            Main.classList.remove("dark")
+            mainContainer.classList.remove("dark")
+            mainContainer.style.color = "#000"
+            mainHeader.style.background = "rgba(255, 255, 255, 0.586)"
+            mainHeader.style.borderRight = "0.1px solid #fff"
+            mainHeader__li.style.color = "#0000009e !important"
+        })
+
+        compactMenu.addEventListener("click", () => {
+            mainHeader.style.left = "-300px"
+            allContainer.style.margin = "50px 15px 20px 40px"
+            showContainer.classList.remove("extend_menu_opacity_hide")
+            showContainer.classList.add("extend_menu_opacity_show")
+        })
+
+        showContainer.addEventListener("click", () => {
+            mainHeader.style.left = "0"
+            allContainer.style.margin = "50px 15px 20px 300px"
+            showContainer.classList.add("extend_menu_opacity_hide")
+            showContainer.classList.remove("extend_menu_opacity_show")
+        })
+    </script>
+
+    <!-- 찾기 테스트 -->
+    <script>
+
+    </script>
+</body>
+
+</html>
