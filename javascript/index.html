@@ -461,10 +461,47 @@
                 display: none;
             }
         }
+        .link {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+        }
+
+        .link li{
+            list-style: none;
+            display: inline;
+        }
+
+        .link li a{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            text-align: center;
+            line-height: 30px;
+            list-style: none;
+            border: 1px solid #ededed;
+            background: #000;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: all 0.25s;
+        }
+        .link li a:hover{
+            background: #fff;
+            color: black !important;
+        }
     </style>
 </head>
 
 <body>
+    <div class="link">
+        <ul>
+            <li><a href="https://kimsangjun.tistory.com/" target="blank">t</a></li>
+            <li><a href="https://github.com/kimsangjunv1" target="blank">g</a></li>
+            <li><a href="https://github1s.com/kimsangjunv1" target="blank">v</a></li>
+        </ul>
+    </div>
     <header id="header">
         <h1><a href="index.html" >Javascript</a></h1>
         <div style="margin:0 auto;

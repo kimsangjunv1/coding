@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        hr{
+            border: 0.1px solid #ededed;
+            margin-bottom: 20px;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 960px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* header */
+        #header {
+            /* background-color: #ededed5b; */
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .menu_cont {
+            display: flex;
+        }
+
+        /* main */
+        #main{
+            margin-bottom: 20px;
+        }
+        .slider_banner_view{
+            overflow: hidden;
+            width: 960px;
+            height: 400px;
+        }
+
+        .slider_banner_moving{
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .event_banner {
+            background-color: #ededed;
+            /* width: 100%;
+            height: 400px; */
+            margin-bottom: 20px;
+        }
+
+        /* 공지 */
+        .notice_cont {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .notice {
+            /* background-color: #ededed; */
+            width: 50%;
+            height: 200px;
+            box-sizing: border-box;
+            margin-right: 20px;
+            padding: 30px;
+        }
+
+        .notice_banner{
+            width: 450px;
+        }
+
+        .notice_desc{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+
+        .title_all_container{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .title_container{
+            display: flex;
+        }
+
+        .notice_title:nth-child(1){
+            border-right: 2px solid #000;
+            margin-right: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+        }
+
+        /* 공지 타이틀 더 보기 */
+        .title_more{
+            display: flex;
+        }
+
+        .more_plus{
+            background-color: #5931df;
+            border-radius: 50px;
+            width: 20px;
+            height: 20px;
+            color: #fff;
+            text-align: center;
+            padding-top: 2px;
+            box-sizing: border-box;
+        }
+
+        /* 메인 메뉴 */
+        .logo {
+            background: url(assets/img/logo.jpg) center;
+            background-size: cover;
+            height: 100px;
+            width: 200px;
+        }
+        .more_text{
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.491);
+            margin-right: 10px;
+            padding-top: 2px;
+        }
+        .menu_img{
+            height: 40px;
+        }
+        .menu_img:nth-child(1),
+        .menu_img:nth-child(2),
+        .menu_img:nth-child(3),
+        .menu_img:nth-child(4){
+            margin-right: 5px;
+        }
+/* 
+        .menu_img:nth-child(1) {
+            background-size: cover;
+            background: url(assets/img/menu_01.jpg);
+        }
+
+        .menu_img:nth-child(2) {
+            background: url(assets/img/menu_02.jpg);
+            background-size: cover;
+        }
+
+        .menu_img:nth-child(3) {
+            background: url(assets/img/menu_03.jpg);
+            background-size: cover;
+        }
+
+        .menu_img:nth-child(4) {
+            background: url(assets/img/menu_04.jpg);
+            background-size: cover;
+        }
+
+        .menu_img:nth-child(5) {
+            background: url(assets/img/menu_05.jpg);
+            background-size: cover;
+        } */
+
+        /* 특별한 경험 */
+        .experience_title{
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .experience_cont {
+            display: flex;
+            justify-content: space-between;
+            background-size: cover;
+        }
+
+        .experience_img {
+            width: 230px;
+            /* height: 200px; */
+            box-sizing: border-box;
+            background-color: #ededed;
+            margin-bottom: 10px;
+        }
+
+        /* 푸터 */
+        footer > p {
+            color: rgba(0, 0, 0, 0.424);
+        }
+
+        .popup{
+            width: 25%;
+            height: 25%;
+            z-index: 1;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate( -50%, -50%);
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.283);
+            display: none;
+        }
+
+        /* 블라인드 효과 */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        /* 이미지 대체(ir) */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+    </style>
+</head>
+
+<body class="container nexon">
+    <header id="header">
+        <!-- <div class="logo"></div> -->
+        <img class="logo" src="assets/img/logo.jpg" alt="로고">
+        <div class="menu_cont">
+            <img class="menu_img" src="assets/img/menu_01.jpg" alt="즐길거리">
+            <img class="menu_img" src="assets/img/menu_02.jpg" alt="요금/우대혜택">
+            <img class="menu_img" src="assets/img/menu_03.jpg" alt="참여프로그램">
+            <img class="menu_img" src="assets/img/menu_04.jpg" alt="이용가이드">
+            <img class="menu_img" src="assets/img/menu_05.jpg" alt="소통서비스">
+        </div>
+    </header>
+    <main id="main">
+        <div class="popup">안녕!</div>
+        <div class="slider_banner_view">
+            <div class="slider_banner_moving">
+                <img class="event_banner" src="assets/img/main.jpg" alt="메인 배너 01">
+                <img class="event_banner" src="assets/img/main_02.jpg" alt="메인 배너 02">
+    
+            </div>
+        </div>
+        <div class="notice_cont">
+            <div class="notice">
+                <div class="title_all_container">
+                    <div class="title_container">
+                        <div class="notice_title">롯데월드 소식</div>
+                        <div class="notice_title">뉴스.공지</div>
+                    </div>
+                    <div class="title_more">
+                        <div class="more_text">더보기</div>
+                        <div class="more_plus">+</div>
+                    </div>
+                </div>
+                <div class="notice_container">
+                    <div class="notice_desc">
+                        <p>그럴싸진관 미라클</p>
+                        <p>2018.11.19</p>
+                    </div>
+                    <div class="notice_desc">
+                        <p>드림스테이지 '힘내 소중한 너'</p>
+                        <p>2018.11.20</p>
+                    </div>
+                    <div class="notice_desc">
+                        <p>'힘내 소중한 너' 음원 발매</p>
+                        <p>2018.11.13</p>
+                    </div>
+                    <div class="notice_desc">
+                        <p>이용 요금 조정 안내</p>
+                        <p>2018.11.12</p>
+                    </div>
+                </div>
+            </div>
+            <img class="notice_banner" src="assets/img/event_01.jpg" alt="이벤트 배너">
+
+        </div>
+        <div class="experience_title">특별한 경험</div>
+        <div class="experience_cont">
+            <div class="experience_box ">
+                <img class="experience_img" src="assets/img/desc_01.jpg" alt="즐길거리">
+                <div class="experience_desc">연간회원안내</div>
+            </div>
+            <div class="experience_box ">
+                <img class="experience_img" src="assets/img/desc_02.jpg" alt="즐길거리">
+                <div class="experience_desc">연간회원안내</div>
+            </div>
+            <div class="experience_box ">
+                <img class="experience_img" src="assets/img/desc_03.jpg" alt="즐길거리">
+                <div class="experience_desc">연간회원안내</div>
+            </div>
+            <div class="experience_box ">
+                <img class="experience_img" src="assets/img/desc_04.jpg" alt="즐길거리">
+                <div class="experience_desc">연간회원안내</div>
+            </div>
+        </div>
+    </main>
+    <hr>
+    <footer id="footer">
+        <p>서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드 | 대표자: 박동기</p>
+        <p>사업자등록번호 : 219-85-00014 | 통신판매업신고번호 : 송파 제5513호 | 전화 : 1661-2000<br><br></p>
+        <p>COPYRIGHT 2018LOTTEWORLD ALL RIGHTS RESERVED.</p>
+    </footer>
+</body>
+<script>
+        const popupMenu = document.querySelector(".popup")
+        const noticeBanner = document.querySelector(".notice_banner")
+        noticeBanner.addEventListener("click",()=>{
+            popupMenu.style.display="block"
+        })
+        const sliderImg = document.querySelector(".slider_banner_view")        //보여지는 영역
+        const sliderInner = document.querySelector(".slider_banner_moving")    //움직이는 영역
+        const slider = document.querySelectorAll(".event_banner")             //각각 이미지 
+
+        let currentIndex = 0;                                                   //현재 보이는 이미지
+        let sliderCount = slider.length;                                        //이미지 갯수
+        let sliderWidth = sliderImg.offsetWidth;                                //이미지 가로값
+        let sliderClone = sliderInner.firstElementChild.cloneNode(true);        //첫번째 이미지 복사
+        sliderInner.appendChild(sliderClone);                                   //첫번째 이미지를 마지막에 넣어줌
+        
+        function sliderEffect(){
+            currentIndex++;                                                     //슬라이더 이펙트가 실행될때마다 currentIndex(현재 보여주는 이미지 값)을 1씩 즐가
+            sliderInner.style.transition = "all 0.6s"                           //움직이는 영역의 트랜지션은 0.6초로 설정
+
+            sliderInner.style.transform="translateX(-"+ sliderWidth * currentIndex +"px)";//이미지 가로값에 현재 이미지 번호를 곱해서 왼쪽으로 이동시킬 값을 구합니다.
+
+            //자미가 사진에 위치 했을 때
+            if(currentIndex==sliderCount){                          //현재 값이 이미지 갯수와 같아졌을때
+                setTimeout(()=>{                                    //시간을 0.7초로 설정하고
+                    sliderInner.style.transition = "0s";            //sliderInner의 trasition을 0초로 초기화 한 후
+                    sliderInner.style.transform = "translateX(0px)";//sliderInner를 0px 위치로 이동시킨다
+                }, 700)
+                currentIndex = 0;                                   //현재 값 0으로 초기화
+
+            }
+        }
+
+        setInterval(sliderEffect, 2000)                             //슬라이더 이펙트 함수 실행은 2초마다
+</script>
+
+</html>
