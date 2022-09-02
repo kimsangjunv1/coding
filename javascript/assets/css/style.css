@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6{
 /* 모든 페이지 레이아웃 --------------*/
 body{
     /* padding: 40px; */
-    transition: all 0.25s;
+    /* transition: 0.25s; */
 
 }
 #header {
@@ -47,7 +47,7 @@ body{
     box-shadow: 0px 0px 50px 30px #0000000a;
     z-index: 1;
     text-align: center;
-    transition: all 0.25s;
+    /* transition: all 0.25s; */
 }
 #header:hover{
     left: 0;
@@ -130,7 +130,7 @@ body{
 }
 
 .header_nav ul li a:not(:hover){
-    transition: 0.25s;
+    /* transition: 0.25s; */
 }
 
 .header_nav .study {
@@ -544,7 +544,7 @@ body{
     border-radius: 5px;
     text-align: center;
     padding: 10px;
-    transition: all 0.3s;
+    /* transition: all 0.3s; */
 }
 .document .t_link a:hover{
     color: #fff;
@@ -553,15 +553,10 @@ body{
 }
 
 .container {
-    position: absolute;
-    max-width: 1400px;
-    margin: 50px 15px 20px 300px;
-    /* width: 100%; */
-    /* margin: 0 auto; */
-    /* margin-top: 258px; */
-    /* margin-left: 200px; */
-    /* left: 20px; */
-    transition: all 0.25s;
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 40px 0px 0px 245px;
+        /* transition: 0.25s; */
 }
 
 .hover_button{

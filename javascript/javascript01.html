@@ -765,14 +765,16 @@
 
         compactMenu.addEventListener("click", ()=>{
             mainHeader.style.left="-300px"
-            allContainer.style.margin="50px 15px 20px 40px"
+            // allContainer.style.margin="50px 15px 20px 40px"
+            allContainer.style.padding="40px 0px 0px 0px"
             showContainer.classList.remove("extend_menu_opacity_hide")
             showContainer.classList.add("extend_menu_opacity_show")
         })
 
         showContainer.addEventListener("click", ()=>{
             mainHeader.style.left="0"
-            allContainer.style.margin="50px 15px 20px 300px"
+            // allContainer.style.margin="50px 15px 20px 300px"
+            allContainer.style.padding="40px 0px 0px 245px"
             showContainer.classList.add("extend_menu_opacity_hide")
             showContainer.classList.remove("extend_menu_opacity_show")
         })
