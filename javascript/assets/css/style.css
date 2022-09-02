@@ -74,6 +74,7 @@ body{
 #footer {
     padding: 40px 0;
     text-align: center;
+    display: none;
 }
 
 #footer a:hover {
