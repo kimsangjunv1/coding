@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="j../avascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <h2 class="t_tit2">스타일 관련 메서드</h2>
+                <p class="t_desc2_css">
+                    이번 시간에는 살을 붙여주는 스타일과 관련된 메서드에 대해 알아보겠습니다~~
+                </p>
+
+                <hr>
+
+                <h2 class="t_tit2">css() 메서드</h2>
+                <p class="t_desc2_css">
+                    요소에 class 속성을 추가시켜주는 메서드 입니다~~!
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>실행 분류</th>
+                            <th>형식</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">취득</td>
+                            <td class="ce">&("div").attr("width");</td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">생성, 변경</td>
+                            <td class="ce">&("div").css("background-color", "red").css("padding", "10px");</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">&("div").css({"background-color", "red", padding: "10px" });</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">콜백 함수</td>
+                            <td class="ce">&("div").css("width", function(index, w) {
+                                // index는 각 div 요소의 index 0, 1, 2 
+                                // w는 각 div요소의 width 값
+                                return css 속성 // 각 div 요소의 css 속성을 변경합니다. });
+                                ...
+                                &lt;div&gt;내용&lt;/div&gt;
+                                &lt;div&gt;내용&lt;/div&gt;
+                                &lt;div&gt;내용&lt;/div&gt;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+
+                <h2 class="t_tit2">width&height 관련 메서드</h2>
+                <p class="t_desc2_css">
+                    크기를 조절해주는 메서드 입니다~~!
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>메서드 분류</th>
+                            <th>상세설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">width()</td>
+                            <td class="ce">&("div").attr("width");</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">innerWidth()</td>
+                            <td class="ce">padding이 적용된 요소의 가로 길이를 취득, 변경할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">onterWidth()</td>
+                            <td class="ce">border와 margin이 적용된 요소의 가로 길이를 취득, 변경할 수 있습니다.<br>
+                                outerWidth()는 요소의 width값 + 좌/우 border값 <br>
+                                outerWidth(true)는 요소의 width값 + 좌/우 border값 + 좌/우 margin값
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">height()</td>
+                            <td class="ce">요소의 높이를 취득, 변경할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">innerHeight()</td>
+                            <td class="ce">padding이 적용된 요소의 높이를 취득, 변경할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">outerHeight()</td>
+                            <td class="ce">border 와 margin이 적용된 요소의 높이를 취득, 변경할 수 있습니다.<br>
+                                outerHeight()는 요소의 height값 + 상/하 border값<br>
+                                outerHeight(true)는 요소의 height값 = 상/하 boder값 + 상/하 margin값</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="example_07" src="https://codepen.io/kimsangjunv1/embed/NWMWJgz?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimsangjunv1/pen/NWMWJgz">
+                    example_07</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+                <hr>
+                <h2 class="t_tit2">위치 관련 메서드</h2>
+                <p class="t_desc2_css">
+                    위치의 값을 조정해주는 메서드 입니다~~!
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>메서드 분류</th>
+                            <th>상세설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">offset()</td>
+                            <td class="ce">$("div").offset().left<br>
+                                $("div").offset().top<br>
+                                $("div").offset({left:10, top:10})<br>
+                                html 기준으로 left, top 값을 취득, 변경할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">position()</td>
+                            <td class="ce">$("div").position().left<br>
+                                $("div").position().top<br>
+                                부모 요소 기준으로 left, top 값을 취득할 수 있습니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="example_08" src="https://codepen.io/kimsangjunv1/embed/ZEoEPJN?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimsangjunv1/pen/ZEoEPJN">
+                    example_08</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>

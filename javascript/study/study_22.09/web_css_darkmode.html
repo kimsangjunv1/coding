@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="j../avascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 01번 메인 샘플 시작 -->
+                <h2 class="t_tit2">무한으로 튀어다니는 공을 만들어보자.</h2>
+                <p class="t_desc2_css">
+                    무한정으로 튀어오르는 공을 css를 통해 만들어보도록 하겠습니다.
+                </p>
+                <hr>
+                <h2 class="t_tit2">HTML</h2>
+                <p class="t_desc2_css">
+                    무한으로 튀어오르는 공의 형태륾 만들어주기 위해 'wrapper'클래스를 가진 div 박스를 만들어줍니다.
+                </p>
+                <div class="script">
+                    <div class="t_code">
+<pre><code class="language-html">&lt;div class="wrapper"&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="wrapper"&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="wrapper"&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="wrapper"&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="wrapper"&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                </div>
+                <hr>
+                <h2 class="t_tit2">CSS</h2>
+                <p class="t_desc2_css">
+                    x축과 y축의 이동을 통해 무한으로 돌아가는 공을 만들어 주기 위해 translatex 와 translatey를 이용한 키프레임을 만들어줍니다!!
+                </p>
+                <div class="script">
+                    <div class="t_code">
+<pre><code class="language-css">*{
+    box-sizing:border-box;
+  }
+  body{
+    background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin : 0;
+    padding: 0;
+  
+  }
+  
+  .wrapper{
+    position: absolute;
+    animation: x 1s ease-in-out alternate infinite 0s both; //애니메이션 'x'를 무한정 반복
+  }
+  
+  .wrapper>div{
+    width: 50px;
+    height: 50px;
+    
+    background-color: #fff;
+    border-radius: 100%;
+    margin: 40px;
+    animation: y 1s linear infinite 0s both; //애니에미션 'y' 를 무한정 반복
+  }
+  
+  @keyframes x {                   //키프레임 'x'는
+    0%{
+      transform:translatex(-100px) //처음 x축 -100px에서 시작
+    }
+    100%{
+      transform:translatex(100px) //마지막 x축 100px에서 끝
+    }
+  }
+  
+  @keyframes y {                  //키프레임 'y'는
+    25%{transform: translatey(-50px);}  //25%에는 y축 -50px에 위치
+    0%, 50%, 100%{transform: translatey(0);}    //0%, 50%, 100%에는 y축 0px에 위치
+    75%{transform: translatey(50px);}   //75%에는 y축 50px에 위치
+  }
+  
+  
+  .wrapper:nth-of-type(2){animation-delay: 0.1s;} //.wrapper 클래스의 두번째 애니메이션은 0.1초 늦게
+  .wrapper:nth-of-type(3){animation-delay: 0.2s;} //.wrapper 클래스의 두번째 애니메이션은 0.2초 늦게
+  .wrapper:nth-of-type(4){animation-delay: 0.3s;} //.wrapper 클래스의 두번째 애니메이션은 0.3초 늦게
+  .wrapper:nth-of-type(5){animation-delay: 0.4s;} //.wrapper 클래스의 두번째 애니메이션은 0.4초 늦게
+  
+  .wrapper:nth-of-type(2)>div{animation-delay: 0.1s;
+  height: 40px; width: 40px; opacity:0.8;}
+  .wrapper:nth-of-type(3)>div{animation-delay: 0.2s;
+  height: 30px; width: 30px; opacity:0.6;}
+  .wrapper:nth-of-type(4)>div{animation-delay: 0.3s;
+  height: 20px; width: 20px; opacity:0.4;}
+  .wrapper:nth-of-type(5)>div{animation-delay: 0.4s;
+  height: 10px; width: 10px; opacity:0.2;}
+  
+  
+</code></pre>
+                    </div>
+                </div>
+                <hr>
+                <h2 class="t_tit2">완성 예제</h2>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="jump_ball" src="https://codepen.io/kimsangjunv1/embed/oNdNxOj?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimsangjunv1/pen/oNdNxOj">
+                    jump_ball</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>

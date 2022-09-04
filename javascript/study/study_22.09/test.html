@@ -1,0 +1,44 @@
+<h2 class="t_tit2">스타일 관련 메서드</h2>
+                <p class="t_desc2_css">
+                    이번 시간에는 살을 붙여주는 스타일과 관련된 메세드에 대해 알아보겠스빈다!
+                </p>
+
+                <hr>
+
+                <h2 class="t_tit2">css() 메서드</h2>
+                <p class="t_desc2_css">
+                    요소에 class 속성을 추가시켜주는 메서드 입니다~~!
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>실행 분류</th>
+                            <th>형식</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">취득</td>
+                            <td class="ce">&("div").attr("width");</td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">생성, 변경</td>
+                            <td class="ce">&("div").css("background-color", "red").css("padding", "10px");</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">&("div").css({"background-color", "red", padding: "10px" });</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">콜백 함수</td>
+                            <td class="ce">&("div").css("width", function(index, w) {
+                                // index는 각 div 요소의 index 0, 1, 2 
+                                // w는 각 div요소의 width 값
+                                return css 속성 // 각 div 요소의 css 속성을 변경합니다. });
+                                ...
+                                &lt;div&gt;내용&lt;/div&gt;
+                                &lt;div&gt;내용&lt;/div&gt;
+                                &lt;div&gt;내용&lt;/div&gt;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
