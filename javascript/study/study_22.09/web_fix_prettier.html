@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+
+            <div class="main_menu">
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("click") : 클릭했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("scroll") : 스크롤했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("resize") : 브라우저 사이즈 변경 됐을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("selectstart") : 텍스트 선택을 시작 했을 때</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mousedown") : 마우스 버튼을 눌렀을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mouseup") : 마우스 버튼을 떼어내는 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mousemove") : 마우스 움직이는 경우</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("drag") : 드래그 중인 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("dragstart") : 드래그 시작했을 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("dragend") : 드래그 끝났을 경우</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keydown") : 키 눌렀을 때(한번만 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keypress") : 키 눌렀을 때(누르고 있으면 계속 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keyup") : 키 누르고 뗐을 때</a></li>
+                </ul>
+            </div>
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <!-- 01번 메인 샘플 시작 -->
+                    <h2 class="t_tit2">프리티어가 오류났을때</h2>
+                    <p class="t_box">
+                        프리티어를 설치 후 오류가 났을때 아래와 같은 방법을 이용하시면 간단하게 문제를 해결 할 수 있습니다.<br>
+                        한번 같이 알아볼까요~~~?
+                    </p>
+                    <hr>
+                    <h2 class="t_tit2">prettier 설치 확인</h2>
+                    <p class="t_desc2_css">
+                        visual studio code의 extensions에 들어가 prettier를 검색 후 install이 완료되었는지 확인해봅니다.
+                    </p>
+                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_6.png" alt="">
+                    <hr>
+                    <h2 class="t_tit2">prettier 세팅 확인_01</h2>
+                    <p class="t_desc2_css">
+                        MAC : 최 상단 메뉴바에서 code - preferences - Settings 클릭 후 'format on save' 검색 후 체크표시 확인
+                        Window : 왼쪽 하단 설정 아이콘 - Settings 클릭 후 'format on save' 검색 후 체크표시 확인
+
+                        <i>단, 위와같은 방법을 했을때에도 안됐을시 파란색 박스의 'Edit in settings.json'을 클릭해줍니다.</i>
+                    </p>
+                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_6.png" alt="">
+                    <h2 class="t_tit2">나타난 "settings.json"에서 "editor.formatOnSave": true, 부분이 'true'로 맞게 설정 되어있는지 확인 후 <br>
+                    만약 'false' 로 설정되어있을시 'true'로 설정해줍니다.
+                    </h2>
+                    <p class="t_box">
+                        "editor.formatOnSave": true,
+                    </p>
+                    <h2 class="t_tit2">그럼에도 안되었다면 하단의 문구를 "settings.json" 파일 안에 사진과 같이 넣어서 확인해줍니다.</h2>
+                    <p class="t_box">
+                        "editor.defaultFormatter": "esbenp.prettier-vscode",
+                        "[typescriptreact]": {
+                          "editor.defaultFormatter": "esbenp.prettier-vscode"
+                        },
+                        "[typescript]": {
+                          "editor.defaultFormatter": "esbenp.prettier-vscode"
+                        },
+                    </p>
+                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_6.png" alt="">
+                    <h2 class="t_tit2">마치며</h2>
+                    <p class="t_box">
+                        이번 본문에 적혀있는 방법대로만 잘 따라오셨다면 문제없이 적용 되어있을거라 예상합니다 ^___^b<br>
+                        혹시 설정 후 안되시는 분들은 껏다가 다시 켜보시는걸 추천드립니다!
+                    </p>
+                </div>
+                
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>
