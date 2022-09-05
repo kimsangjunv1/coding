@@ -69,6 +69,12 @@
             backdrop-filter: blur(15px);
             user-select: none;
             pointer-events: none;
+            transition:
+                background-color 0.25s,
+                border-color 0.25s,
+                transform 0.6s,
+                border-radius 0.6s
+            ;
         }
         .mouse__cursor.style1{
             background-color: rgba(255, 128, 0, 0.541);
@@ -78,16 +84,20 @@
         .mouse__cursor.style2{
             background-color: rgba(138, 0, 180, 0.541);
             border-color: purple;
+            transform: scale(2) rotateY(720deg);
         }
 
         .mouse__cursor.style3{
             background-color: rgba(135, 180, 0, 0.541);
             border-color: rgb(100, 128, 0);
+            transform: scale(1.5) rotateX(45deg);
         }
 
         .mouse__cursor.style4{
             background-color: rgba(12, 0, 180, 0.541);
             border-color: rgb(23, 0, 128);
+            transform: scale(2) rotate(720deg);
+            border-radius: 0%;
         }
 
         .mouse__cursor.style5{
@@ -143,7 +153,7 @@
             </div>
             <div class="mouse__wrap">
                 <p><span class="style1">Strive</span> for <span class=style2>progress</span>, not <span class="style3">perfection.</span></p>
-                <p><span class="style4">완벽</span>을 추구할 것이 아니라 <span class="style5">앞으로</span> 나아가기 위해 <span class="stlye6">갈망하라.</span></p>
+                <p><span class="style4">완벽</span>을 추구할 것이 아니라 <span class="style5">앞으로</span> 나아가기 위해 <span class="style6">갈망하라.</span></p>
             </div>
         </section>
         <div class="mouse__info">
@@ -310,12 +320,23 @@
         // }
 
         //forEach 문
-        document.querySelectorAll(".mouse__wrap > p span").forEach((e,i)=>{
+        // document.querySelectorAll(".mouse__wrap > p span").forEach((e,i)=>{
+        //     e.addEventListener("mouseover", ()=>{
+        //         cursor.classList.add("style"+(i+1)); 
+        //     })
+        //     e.addEventListener("mouseout", ()=>{
+        //         cursor.classList.remove("style"+(i+1)); 
+        //     })
+        // })
+
+        //getAttribute()
+        document.querySelectorAll(".mouse__wrap > p span").forEach((e)=>{ //forEach를 통해 span만 가져옴
+            let attr = e.getAttribute("class");                           //span에 할당되어있는 clas를 가져옴
             e.addEventListener("mouseover", ()=>{
-                cursor.classList.add("style"+(i+1)); 
+                cursor.classList.add(attr);                               //attr에 저장되어있는 cursor 클래스에 attr 클래스
             })
             e.addEventListener("mouseout", ()=>{
-                cursor.classList.remove("style"+(i+1)); 
+                cursor.classList.remove(attr); 
             })
         })
 

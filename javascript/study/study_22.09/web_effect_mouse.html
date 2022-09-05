@@ -97,8 +97,8 @@
                         
                         <div class="t_code">
                             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-html">&lt;div class="mouse__cursor"&gt;
-    &lt;div class="mouse__cursor__sub"&gt;&lt;/div&gt;
+<pre><code class="language-html">&lt;div class="mouse__cursor"&gt; &lt;!--전체적인 마우스 틀--&gt;
+    &lt;div class="mouse__cursor__sub"&gt;&lt;/div&gt;  &lt;!--물방울 효과를 위한 서브 박스--&gt;
 &lt;/div&gt;
 </code></pre>
                         </div>
@@ -284,8 +284,8 @@
     background-color: rgba(255,255,255,0.1);
     box-shadow: -2px -3px 8px 3px rgba(255, 255, 255, 0.243) inset, 2px 3px 8px 3px rgba(47, 47, 47, 0.11);
     backdrop-filter: blur(15px);
-    user-select: none;
-    pointer-events: none;
+    user-select: none;      /* 포인터가 선택이 안되게끔 */
+    pointer-events: none;   /* 포인터 이벤트가 발생 안되게끔 */
 }
 
 /* 물방울 빛 반사 느낌의 스타일 */
@@ -332,6 +332,56 @@
 }
 </code></pre>
                         </div>
+
+                        <p class="t_desc2_css">트랜지션과 트랜스폼 조합으로 다양한 효과를 줄수도 있습니다.</p>
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">.mouse__cursor{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 0.1px solid rgba(255, 255, 255, 0.539);
+    background-color: rgba(255,255,255,0.1);
+    box-shadow: -2px -3px 8px 3px rgba(255, 255, 255, 0.243) inset, 2px 3px 8px 3px rgba(47, 47, 47, 0.11);
+    backdrop-filter: blur(15px);
+    user-select: none;
+    pointer-events: none;
+    transition:
+        background-color 0.25s,
+        border-color 0.25s,
+        transform 0.6s,
+        border-radius 0.6s
+    ;
+}
+.mouse__cursor.style1{
+    background-color: rgba(255, 128, 0, 0.541);
+    border-color: orange;
+}
+
+.mouse__cursor.style2{
+    background-color: rgba(138, 0, 180, 0.541);
+    border-color: purple;
+    transform: scale(2) rotateY(720deg);
+}
+
+.mouse__cursor.style3{
+    background-color: rgba(135, 180, 0, 0.541);
+    border-color: rgb(100, 128, 0);
+    transform: scale(1.5) rotateX(45deg);
+}
+
+.mouse__cursor.style4{
+    background-color: rgba(12, 0, 180, 0.541);
+    border-color: rgb(23, 0, 128);
+    transform: scale(2) rotate(720deg);
+    border-radius: 0%;
+}
+</code></pre>
+                        </div>
+
 
                         <details>
                             <summary class="t_box">전체 코드보기</summary>
@@ -461,12 +511,51 @@
     // cursor.style.top = e.clientWidth + "px"; //y축의 clientX로 top 값 전달
 })
 </code></pre>
+                        </div>
+
+                        <p class="t_desc2_css">span에 hover 했을때 마우스 포인터에 색상을 변화시키기 위해 하단의 스크립트를 작성합니다.</p>
+                        <p class="t_box"><i>셋 중 한가지를 선택해 사용합니다.</i></p>
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">//for문
+    for(let i=1; i&lt;=6; i++){
+        document.querySelector(".style"+i).addEventListener("mouseover", ()=>{
+            cursor.classList.add("style"+i); 
+        })
+        document.querySelector(".style"+i).addEventListener("mouseout", ()=>{
+            cursor.classList.remove("style"+i); 
+        })
+    }
+
+    //forEach 문
+    document.querySelectorAll(".mouse__wrap > p span").forEach((e,i)=>{
+        e.addEventListener("mouseover", ()=>{
+            cursor.classList.add("style"+(i+1)); 
+        })
+        e.addEventListener("mouseout", ()=>{
+            cursor.classList.remove("style"+(i+1)); 
+        })
+    })
+
+    //getAttribute()
+        document.querySelectorAll(".mouse__wrap > p span").forEach((e)=>{ //forEach를 통해 span만 가져옴
+            let attr = e.getAttribute("class");                           //span에 할당되어있는 clas를 가져옴
+            e.addEventListener("mouseover", ()=>{
+                cursor.classList.add(attr);                               //attr에 저장되어있는 cursor 클래스에 attr 클래스
+            })
+            e.addEventListener("mouseout", ()=>{
+                cursor.classList.remove(attr); 
+            })
+        })
+</code></pre>
+                        </div>
 
                         <hr>
 
                         <h2 class="t_tit2">완성예시</h2>
-                        <iframe style="width: 100%; height: 900px"src="https://kimsangjunv1.github.io/coding/javascript/effect/sliderEffect01.html" frameborder="0"></iframe>
+                        <iframe style="width: 100%; height: 900px"src="https://kimsangjunv1.github.io/coding/javascript/effect/mouseEffect01.html" frameborder="0"></iframe>
                     </div>
+                </div>
                 </div>
                 
             </main>
