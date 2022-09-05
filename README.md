@@ -1,6 +1,9 @@
 # coding
 
-### 메인 페이지
+### 메인 페이지 1   
+https://codingcodi.netlify.app
+
+### 메인 페이지 2
 https://kimsangjunv1.github.io/coding/index.html   
 
 ### 자기소개 페이지
