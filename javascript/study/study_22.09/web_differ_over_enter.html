@@ -91,7 +91,7 @@
                         비슷한듯 다른 두 이벤트는 각각 미세한 차이가 있는데요 한번 이번 시간에는 그 차이에 대하여 알아보겠습니다 ^^v
                     </p>
                     <hr>
-                    <h2 class="t_tit2">mousever</h2>
+                    <h2 class="t_tit2">mouseover</h2>
                     <p class="t_desc2_css">
                         "mouseeover" 이벤트는 직접 이벤트를 걸지 않은 자식 요소에 마우스 포인터가 와도 발생하는 이벤트 입니다.
                     </p>
@@ -103,6 +103,34 @@
                     <hr>
                     <h2 class="t_tit2">예제</h2>
                     <p class="t_box"></p>
+                    <div style="background: #ddd" class="test">
+                        <div style="background: #ededed"class="test_enter"></div>
+                    </div>
+                    <div class="mouse__info">
+                        <ul>
+                            <li>clientX : <span class="clientX">0</span>px</li>
+                            <li>clientY : <span class="clientY">0</span>px</li>
+                            <li>offsetX : <span class="offsetX">0</span>px</li>
+                            <li>offsetY : <span class="offsetY">0</span>px</li>
+                            <li>pageX : <span class="pageX">0</span>px</li>
+                            <li>pageY : <span class="pageY">0</span>px</li>
+                            <li>screenX : <span class="screenX">0</span>px</li>
+                            <li>screenY : <span class="screenY">0</span>px</li>
+                        </ul>
+                    </div>
+                    <script>
+                        const cursor = document.querySelector(".mouse__cursor")
+                        window.addEventListener("mouseover", (event) => {
+                            document.querySelector(".clientX").innerHTML=event.clientX;
+                            document.querySelector(".clientY").innerHTML=event.clientY;
+                            document.querySelector(".offsetX").innerHTML=event.offsetX;
+                            document.querySelector(".offsetY").innerHTML=event.offsetY;
+                            document.querySelector(".pageX").innerHTML=event.pageX;
+                            document.querySelector(".pageY").innerHTML=event.pageY;
+                            document.querySelector(".screenX").innerHTML=event.screenX;
+                            document.querySelector(".screenY").innerHTML=event.screenY;
+                        })
+                    </script>
                 </div>
                 
             </main>
