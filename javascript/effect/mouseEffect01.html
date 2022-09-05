@@ -1,17 +1,367 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마우스 이펙트</title>
-
+    <title>마우스 이펙트01</title>
     <link rel="stylesheet" href="../assets/css/mouse.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        /* mouseType */
+
+        .mouse__wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        .mouse__wrap p {
+            font-size: 2vw;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        .mouse__wrap p:last-child {
+            font-size: 3vw;
+            font-weight: 500;
+        }
+
+        .mouse__wrap p span {
+            border-bottom: 0.15vw dashed orange;
+            color: orange;
+        }
+
+        @media (max-width:800px) {
+            .mouse__wrap p {
+                padding: 0 20px;
+                font-size: 20px;
+                text-align: center;
+                line-height: 1.5;
+            }
+
+            .mouse__wrap p:last-child {
+                font-size: 40px;
+                text-align: center;
+                line-height: 1.5;
+                word-break: keep-all;
+            }
+        }
+
+        .mouse__cursor{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 0.1px solid rgba(255, 255, 255, 0.539);
+            background-color: rgba(255,255,255,0.1);
+            box-shadow: -2px -3px 8px 3px rgba(255, 255, 255, 0.243) inset, 2px 3px 8px 3px rgba(47, 47, 47, 0.11);
+            backdrop-filter: blur(15px);
+            user-select: none;
+            pointer-events: none;
+        }
+        .mouse__cursor.style1{
+            background-color: rgba(255, 128, 0, 0.541);
+            border-color: orange;
+        }
+
+        .mouse__cursor.style2{
+            background-color: rgba(138, 0, 180, 0.541);
+            border-color: purple;
+        }
+
+        .mouse__cursor.style3{
+            background-color: rgba(135, 180, 0, 0.541);
+            border-color: rgb(100, 128, 0);
+        }
+
+        .mouse__cursor.style4{
+            background-color: rgba(12, 0, 180, 0.541);
+            border-color: rgb(23, 0, 128);
+        }
+
+        .mouse__cursor.style5{
+            background-color: rgba(0, 180, 105, 0.541);
+            border-color: rgb(0, 128, 45);
+        }
+
+        .mouse__cursor.style6{
+            background-color: rgba(180, 0, 9, 0.541);
+            border-color: rgb(128, 0, 0);
+        }
+
+        .mouse__cursor__sub{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 7px;
+            height: 7px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+
+        .mouse__info {
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #fff;
+        }
+    </style>
 </head>
 
-<body>
-    <header id="header"></header>
+<body class="img07">
+    <header id="header">
+        <h1>Javascript Mouse Effect01</h1>
+        <p>마우스 이펙트 - 마우스 따라다니기</p>
+        <ul>
+            <li class="active"><a href="mouseEffect01.html">1</a></li>
+            <li><a href="mouseEffect02.html">2</a></li>
+            <li><a href="mouseEffect03.html">3</a></li>
+            <li><a href="mouseEffect04.html">4</a></li>
+            <li><a href="mouseEffect05.html">5</a></li>
+            <li><a href="mouseEffect06.html">6</a></li>
+            <li><a href="mouseEffect07.html">7</a></li>
+        </ul>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <section id="mouseType">
+            <div class="mouse__cursor">
+                <div class="mouse__cursor__sub"></div>
+            </div>
+            <div class="mouse__wrap">
+                <p><span class="style1">Strive</span> for <span class=style2>progress</span>, not <span class="style3">perfection.</span></p>
+                <p><span class="style4">완벽</span>을 추구할 것이 아니라 <span class="style5">앞으로</span> 나아가기 위해 <span class="stlye6">갈망하라.</span></p>
+            </div>
+        </section>
+        <div class="mouse__info">
+            <ul>
+                <li>clientX : <span class="clientX">0</span>px</li>
+                <li>clientY : <span class="clientY">0</span>px</li>
+                <li>offsetX : <span class="offsetX">0</span>px</li>
+                <li>offsetY : <span class="offsetY">0</span>px</li>
+                <li>pageX : <span class="pageX">0</span>px</li>
+                <li>pageY : <span class="pageY">0</span>px</li>
+                <li>screenX : <span class="screenX">0</span>px</li>
+                <li>screenY : <span class="screenY">0</span>px</li>
+            </ul>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <div class="modal__wrap">
+            <div class="modal__btn">소스 보기</div>
+            <div class="modal__cont">
+                <div class="modal__box">
+                    <div class="title">
+                        <span class="dot" aria-label="true"></span>
+                        <div class="tabs">
+                            <div class="active">
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+                                        focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path
+                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="orange"></path>
+                                        <path
+                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>Javascript</em>
+                                <span class="close">
+                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                        focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+                                        focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path
+                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="orange"></path>
+                                        <path
+                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>HTML</em>
+                                <span class="close">
+                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                        focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+                                        focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path
+                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="orange"></path>
+                                        <path
+                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>CSS</em>
+                                <span class="close">
+                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                        focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="plus" aria-label="true">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                focusable="false">
+                                <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="cont">
+                        <div class="active">
+                            <pre><code class="language-js">
+</code></pre>
+                        </div>
+                        <div>
+                            <pre><code class="language-html">
+</code></pre>
+                        </div>
+                        <div>
+                            <pre><code class="language-css">
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__close">
+                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script>
+        const cursor = document.querySelector(".mouse__cursor")
+        window.addEventListener("mousemove", (event) => {
+            document.querySelector(".clientX").innerHTML=event.clientX;
+            document.querySelector(".clientY").innerHTML=event.clientY;
+            document.querySelector(".offsetX").innerHTML=event.offsetX;
+            document.querySelector(".offsetY").innerHTML=event.offsetY;
+            document.querySelector(".pageX").innerHTML=event.pageX;
+            document.querySelector(".pageY").innerHTML=event.pageY;
+            document.querySelector(".screenX").innerHTML=event.screenX;
+            document.querySelector(".screenY").innerHTML=event.screenY;
+        })
+
+        window.addEventListener("mousemove", (e) => {
+            cursor.style.left = e.clientX - 25 + "px"; //x축의 clientX로 left 값 전달
+            cursor.style.top = e.clientY - 25 + "px"; //y축의 clientX로 top 값 전달
+            // cursor.style.top = e.clientWidth + "px"; //y축의 clientX로 top 값 전달
+        })
+
+        //for문
+        // for(let i=1; i<=6; i++){
+        //     document.querySelector(".style"+i).addEventListener("mouseover", ()=>{
+        //         cursor.classList.add("style"+i); 
+        //     })
+        //     document.querySelector(".style"+i).addEventListener("mouseout", ()=>{
+        //         cursor.classList.remove("style"+i); 
+        //     })
+        // }
+
+        //forEach 문
+        document.querySelectorAll(".mouse__wrap > p span").forEach((e,i)=>{
+            e.addEventListener("mouseover", ()=>{
+                cursor.classList.add("style"+(i+1)); 
+            })
+            e.addEventListener("mouseout", ()=>{
+                cursor.classList.remove("style"+(i+1)); 
+            })
+        })
+
+
+        // document.querySelector(".style1").addEventListener("mouseover", ()=>{ //style1 에 마우스를 오버했을때
+        //     cursor.classList.add("style1")                                   //커서에 style1 클래스 추가
+        // })
+        // document.querySelector(".style1").addEventListener("mouseout", ()=>{ //style1 에 마우스를 오버했을때
+        //     cursor.classList.remove("style1")                                   //커서에 style1 클래스 추가
+        // })
+
+        // document.querySelector(".style2").addEventListener("mouseover", ()=>{ //style1 에 마우스를 오버했을때
+        //     cursor.classList.add("style2")                                   //커서에 style1 클래스 추가
+        // })
+        // document.querySelector(".style2").addEventListener("mouseout", ()=>{ //style1 에 마우스를 오버했을때
+        //     cursor.classList.remove("style2")                                   //커서에 style1 클래스 추가
+        // })
+
+        // document.querySelector(".style3").addEventListener("mouseover", ()=>{ //style1 에 마우스를 오버했을때
+        //     cursor.classList.add("style3")                                   //커서에 style1 클래스 추가
+        // })
+        // document.querySelector(".style3").addEventListener("mouseout", ()=>{ //style1 에 마우스를 오버했을때
+        //     cursor.classList.remove("style3")                                   //커서에 style1 클래스 추가
+        // })
+
+        // document.querySelector(".style4").addEventListener("mouseover", ()=>{ //style1 에 마우스를 오버했을때
+        //     cursor.classList.add("style4")                                   //커서에 style1 클래스 추가
+        // })
+        // document.querySelector(".style4").addEventListener("mouseout", ()=>{ //style1 에 마우스를 오버했을때
+        //     cursor.classList.remove("style4")                                   //커서에 style1 클래스 추가
+        // })
+
+        // document.querySelector(".style5").addEventListener("mouseover", ()=>{ //style1 에 마우스를 오버했을때
+        //     cursor.classList.add("style5")                                   //커서에 style1 클래스 추가
+        // })
+        // document.querySelector(".style5").addEventListener("mouseout", ()=>{ //style1 에 마우스를 오버했을때
+        //     cursor.classList.remove("style5")                                   //커서에 style1 클래스 추가
+        // })
+
+        // document.querySelector(".style6").addEventListener("mouseover", ()=>{ //style1 에 마우스를 오버했을때
+        //     cursor.classList.add("style6")                                   //커서에 style1 클래스 추가
+        // })
+        // document.querySelector(".style6").addEventListener("mouseout", ()=>{ //style1 에 마우스를 오버했을때
+        //     cursor.classList.remove("style6")                                   //커서에 style1 클래스 추가
+        // })
+    </script>
 </body>
 
 </html>

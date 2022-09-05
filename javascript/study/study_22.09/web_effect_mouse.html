@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+
+            <div class="main_menu">
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("click") : 클릭했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("scroll") : 스크롤했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("resize") : 브라우저 사이즈 변경 됐을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("selectstart") : 텍스트 선택을 시작 했을 때</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mousedown") : 마우스 버튼을 눌렀을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mouseup") : 마우스 버튼을 떼어내는 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mousemove") : 마우스 움직이는 경우</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("drag") : 드래그 중인 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("dragstart") : 드래그 시작했을 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("dragend") : 드래그 끝났을 경우</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keydown") : 키 눌렀을 때(한번만 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keypress") : 키 눌렀을 때(누르고 있으면 계속 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keyup") : 키 누르고 뗐을 때</a></li>
+                </ul>
+            </div>
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <!-- 1번 -->
+                    <div id="sample01" class="sample">
+                        <h2 class="t_tit">마우스 이펙트 01</h2>
+                        <p class="t_desc2_css">마우스 포인터의 좌표값에 따라 div 박스르 움직여 포인터를 구현해보도록 하겠습니다!</p>
+                        
+                        <hr>
+
+                        <h2 class="t_tit2">HTML 코드</h2>
+                        <p class="t_desc2_css">저는 물방울 모양의 마우스 포인터를 구현해보기 위해 div 박스 안에 빛을 받은 느낌을 주기위해 div 박스를 또 만들었습니다.</p>
+                        
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-html">&lt;div class="mouse__cursor"&gt;
+    &lt;div class="mouse__cursor__sub"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+
+                        <details>
+                            <summary class="t_box">전체 코드보기</summary>
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-html">&lt;header id="header"&gt;
+    &lt;h1&gt;Javascript Mouse Effect01&lt;/h1&gt;
+    &lt;p&gt;마우스 이펙트 - 마우스 따라다니기&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li class="active"&gt;&lt;a href="mouseEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/header&gt;
+&lt;!-- //header --&gt;
+&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;
+            &lt;div class="mouse__cursor__sub"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;p&gt;&lt;span class="style1"&gt;Strive&lt;/span&gt; for &lt;span class=style2&gt;progress&lt;/span&gt;, not &lt;span class="style3"&gt;perfection.&lt;/span&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;span class="style4"&gt;완벽&lt;/span&gt;을 추구할 것이 아니라 &lt;span class="style5"&gt;앞으로&lt;/span&gt; 나아가기 위해 &lt;span class="stlye6"&gt;갈망하라.&lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;div class="mouse__info"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;clientX : &lt;span class="clientX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;clientY : &lt;span class="clientY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;offsetX : &lt;span class="offsetX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;offsetY : &lt;span class="offsetY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;pageX : &lt;span class="pageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;pageY : &lt;span class="pageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;screenX : &lt;span class="screenX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;screenY : &lt;span class="screenY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;!-- //main --&gt;
+&lt;footer id="footer"&gt;
+    &lt;div class="modal__wrap"&gt;
+        &lt;div class="modal__btn"&gt;소스 보기&lt;/div&gt;
+        &lt;div class="modal__cont"&gt;
+            &lt;div class="modal__box"&gt;
+                &lt;div class="title"&gt;
+                    &lt;span class="dot" aria-label="true"&gt;&lt;/span&gt;
+                    &lt;div class="tabs"&gt;
+                        &lt;div class="active"&gt;
+                            &lt;span class="favicon" aria-label="true"&gt;
+                                &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+                                    focusable="false"&gt;
+                                    &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
+                                    &lt;path
+                                        d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                        fill="orange"&gt;&lt;/path&gt;
+                                    &lt;path
+                                        d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                        fill="yellow"&gt;&lt;/path&gt;
+                                &lt;/svg&gt;
+                            &lt;/span&gt;
+                            &lt;em&gt;Javascript&lt;/em&gt;
+                            &lt;span class="close"&gt;
+                                &lt;svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                    focusable="false"&gt;
+                                    &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                    &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                &lt;/svg&gt;
+                            &lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;span class="favicon" aria-label="true"&gt;
+                                &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+                                    focusable="false"&gt;
+                                    &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
+                                    &lt;path
+                                        d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                        fill="orange"&gt;&lt;/path&gt;
+                                    &lt;path
+                                        d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                        fill="yellow"&gt;&lt;/path&gt;
+                                &lt;/svg&gt;
+                            &lt;/span&gt;
+                            &lt;em&gt;HTML&lt;/em&gt;
+                            &lt;span class="close"&gt;
+                                &lt;svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                    focusable="false"&gt;
+                                    &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                    &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                &lt;/svg&gt;
+                            &lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;span class="favicon" aria-label="true"&gt;
+                                &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+                                    focusable="false"&gt;
+                                    &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
+                                    &lt;path
+                                        d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                        fill="orange"&gt;&lt;/path&gt;
+                                    &lt;path
+                                        d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                        fill="yellow"&gt;&lt;/path&gt;
+                                &lt;/svg&gt;
+                            &lt;/span&gt;
+                            &lt;em&gt;CSS&lt;/em&gt;
+                            &lt;span class="close"&gt;
+                                &lt;svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                    focusable="false"&gt;
+                                    &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                    &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                &lt;/svg&gt;
+                            &lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;span class="plus" aria-label="true"&gt;
+                        &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                            focusable="false"&gt;
+                            &lt;path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"&gt;&lt;/path&gt;
+                            &lt;path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class="cont"&gt;
+                    &lt;div class="active"&gt;
+                        &lt;pre&gt;&lt;code class="language-js"&gt;
+&lt;/code&gt;&lt;/pre&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;pre&gt;&lt;code class="language-html"&gt;
+&lt;/code&gt;&lt;/pre&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;pre&gt;&lt;code class="language-css"&gt;
+&lt;/code&gt;&lt;/pre&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="modal__close"&gt;
+                &lt;svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                    &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round"&gt;&lt;/path&gt;
+                    &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round"&gt;&lt;/path&gt;
+                &lt;/svg&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;
+</code></pre>
+                            </div>
+                        </details>
+
+                        <hr>
+
+                        <h2 class="t_tit2">CSS 코드</h2>
+                        <p class="t_desc2_css">물방울 포인터를 구현하기 위해 box-shadow의 inset 기능을 적절히 섞어 느낌만 내주었습니다~</p>
+                        
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">.mouse__cursor{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 0.1px solid rgba(255, 255, 255, 0.539);
+    background-color: rgba(255,255,255,0.1);
+    box-shadow: -2px -3px 8px 3px rgba(255, 255, 255, 0.243) inset, 2px 3px 8px 3px rgba(47, 47, 47, 0.11);
+    backdrop-filter: blur(15px);
+    user-select: none;
+    pointer-events: none;
+}
+
+/* 물방울 빛 반사 느낌의 스타일 */
+.mouse__cursor__sub{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 7px;
+    height: 7px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+}
+
+
+/* 마우스가 Over 되었을때 각 style i번째 클래스가 추가되었을때 변해줄 색상 값 */
+.mouse__cursor.style1{
+    background-color: rgba(255, 128, 0, 0.541);
+    border-color: orange;
+}
+
+.mouse__cursor.style2{
+    background-color: rgba(138, 0, 180, 0.541);
+    border-color: purple;
+}
+
+.mouse__cursor.style3{
+    background-color: rgba(135, 180, 0, 0.541);
+    border-color: rgb(100, 128, 0);
+}
+
+.mouse__cursor.style4{
+    background-color: rgba(12, 0, 180, 0.541);
+    border-color: rgb(23, 0, 128);
+}
+
+.mouse__cursor.style5{
+    background-color: rgba(0, 180, 105, 0.541);
+    border-color: rgb(0, 128, 45);
+}
+
+.mouse__cursor.style6{
+    background-color: rgba(180, 0, 9, 0.541);
+    border-color: rgb(128, 0, 0);
+}
+</code></pre>
+                        </div>
+
+                        <details>
+                            <summary class="t_box">전체 코드보기</summary>
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">/* mouseType */
+
+    .mouse__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #fff;
+        overflow: hidden;
+        cursor: none;
+    }
+
+    .mouse__wrap p {
+        font-size: 2vw;
+        line-height: 1.4;
+        font-weight: 300;
+    }
+
+    .mouse__wrap p:last-child {
+        font-size: 3vw;
+        font-weight: 500;
+    }
+
+    .mouse__wrap p span {
+        border-bottom: 0.15vw dashed orange;
+        color: orange;
+    }
+
+    @media (max-width:800px) {
+        .mouse__wrap p {
+            padding: 0 20px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .mouse__wrap p:last-child {
+            font-size: 40px;
+            text-align: center;
+            line-height: 1.5;
+            word-break: keep-all;
+        }
+    }
+
+    .mouse__cursor{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 0.1px solid rgba(255, 255, 255, 0.539);
+        background-color: rgba(255,255,255,0.1);
+        box-shadow: -2px -3px 8px 3px rgba(255, 255, 255, 0.243) inset, 2px 3px 8px 3px rgba(47, 47, 47, 0.11);
+        backdrop-filter: blur(15px);
+        user-select: none;
+        pointer-events: none;
+    }
+    .mouse__cursor.style1{
+        background-color: rgba(255, 128, 0, 0.541);
+        border-color: orange;
+    }
+
+    .mouse__cursor.style2{
+        background-color: rgba(138, 0, 180, 0.541);
+        border-color: purple;
+    }
+
+    .mouse__cursor.style3{
+        background-color: rgba(135, 180, 0, 0.541);
+        border-color: rgb(100, 128, 0);
+    }
+
+    .mouse__cursor.style4{
+        background-color: rgba(12, 0, 180, 0.541);
+        border-color: rgb(23, 0, 128);
+    }
+
+    .mouse__cursor.style5{
+        background-color: rgba(0, 180, 105, 0.541);
+        border-color: rgb(0, 128, 45);
+    }
+
+    .mouse__cursor.style6{
+        background-color: rgba(180, 0, 9, 0.541);
+        border-color: rgb(128, 0, 0);
+    }
+
+    .mouse__cursor__sub{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 7px;
+        height: 7px;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+    }
+
+    .mouse__info {
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #fff;
+    }
+</code></pre>
+                            </div>
+                        </details>
+
+                        <hr>
+    
+                        <h2 class="t_tit2">JS코드</h2>
+                        <p class="t_desc2_css">window(현재 창)의 이벤트가 발생한 값 즉 mousemove(마우스 이동) 이 발생했을때<br>cursor 클래스의 스타일 위치값을 clientX와 Y를 통해 바로바로 대입해주면서 포인터 구현을 위한 스크립트를 작성합니다.</p>
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">window.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX - 25 + "px"; //x축의 clientX로 left 값 전달
+    cursor.style.top = e.clientY - 25 + "px"; //y축의 clientX로 top 값 전달
+    // cursor.style.top = e.clientWidth + "px"; //y축의 clientX로 top 값 전달
+})
+</code></pre>
+
+                        <hr>
+
+                        <h2 class="t_tit2">완성예시</h2>
+                        <iframe style="width: 100%; height: 900px"src="https://kimsangjunv1.github.io/coding/javascript/effect/sliderEffect01.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+                
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>
