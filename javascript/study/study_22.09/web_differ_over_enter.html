@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+
+            <div class="main_menu">
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("click") : 클릭했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("scroll") : 스크롤했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("resize") : 브라우저 사이즈 변경 됐을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("selectstart") : 텍스트 선택을 시작 했을 때</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mousedown") : 마우스 버튼을 눌렀을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mouseup") : 마우스 버튼을 떼어내는 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mousemove") : 마우스 움직이는 경우</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("drag") : 드래그 중인 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("dragstart") : 드래그 시작했을 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("dragend") : 드래그 끝났을 경우</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keydown") : 키 눌렀을 때(한번만 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keypress") : 키 눌렀을 때(누르고 있으면 계속 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keyup") : 키 누르고 뗐을 때</a></li>
+                </ul>
+            </div>
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <!-- 01번 메인 샘플 시작 -->
+                    <h2 class="t_tit2">mouseenter/mouseover의 차이점에는 무엇이 있을까?</h2>
+                    <p class="t_box">
+                        비슷한듯 다른 두 이벤트는 각각 미세한 차이가 있는데요 한번 이번 시간에는 그 차이에 대하여 알아보겠습니다 ^^v
+                    </p>
+                    <hr>
+                    <h2 class="t_tit2">mousever</h2>
+                    <p class="t_desc2_css">
+                        "mouseeover" 이벤트는 직접 이벤트를 걸지 않은 자식 요소에 마우스 포인터가 와도 발생하는 이벤트 입니다.
+                    </p>
+                    <hr>
+                    <h2 class="t_tit2">mouseenter</h2>
+                    <p class="t_desc2_css">
+                        "mouseenter" 이벤트는 요소에 마우스 포인터가 진입하기만 해도 바로 발생하게 되며 어떤 html 요소가 있던간에 이 이벤트를 실행시킬 수 있습니다!
+                    </p>
+                    <hr>
+                    <h2 class="t_tit2">예제</h2>
+                    <p class="t_box"></p>
+                </div>
+                
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>
