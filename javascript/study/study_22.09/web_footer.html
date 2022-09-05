@@ -87,13 +87,13 @@
                 <div class="document">
                     <!-- 1번 -->
                     <div id="sample01" class="sample">
-                        <h2 class="t_tit">슬라이드 배너_01</h2>
-                        <p class="t_desc2_css">슬라이드가 될 배너를 구현해보겠습니다!</p>
+                        <h2 class="t_tit">푸터 유형_01</h2>
+                        <p class="t_desc2_css">홈페이지를 받쳐줄 하단인 푸터 메뉴를 구현해보겠습니다!</p>
 
                         <hr>
                         <h2 class="t_tit2">Figma</h2>
                         <p class="t_box">우선 피그마를 통해 기초적인 틀을 잡습니다!</p>
-                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FewZhegdXfKs97FmXGSpvyx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-02%3Fnode-id%3D816%253A879" allowfullscreen></iframe>
+                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FewZhegdXfKs97FmXGSpvyx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-02%3Fnode-id%3D816%253A947" allowfullscreen></iframe>
                         
                         <hr>
 
@@ -101,137 +101,116 @@
                         <p class="t_desc2_css">html을 통해 기본적인 예제를 만들 뼈대를 구성합니다!</p>
                         <div class="t_code">
                             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-html">&lt;section id="sliderType" class="slider__wrap"&gt;
-    &lt;h2 class="blind"&gt;슬라이드 영역&lt;/h2&gt;
-    &lt;div class="slider__inner"&gt;
-        &lt;div class="slider"&gt;
-            &lt;div class="slider__img"&gt;
-                &lt;div class="desc"&gt;
-                    &lt;span&gt;CITY&lt;/span&gt;
-                    &lt;h3&gt;SIGHTSEEING&lt;/h3&gt;
-                    &lt;p&gt;각각의 도시는 고유의 모습이 있습니다 &lt;br&gt;한국은 과연 어떤 모습일까요?&lt;/p&gt;
-                    &lt;div class="btn"&gt;
-                        &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
-                        &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
+<pre><code class="language-html">&lt;footer id="footerType" class="footer__wrap nexon section gray"&gt;
+    &lt;h2 class="blind"&gt;푸터 영역&lt;/h2&gt;
+    &lt;div class="footer__inner container"&gt;
+        &lt;div class="footer__menu"&gt;
+            &lt;div&gt;
+                &lt;h3&gt;사이트&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
             &lt;/div&gt;
-            &lt;div class="slider__arrow"&gt;
-                &lt;a href="#" class="left"&gt;&lt;span class="ir"&gt;이전 이미지&lt;/span&gt;&lt;/a&gt;
-                &lt;a href="#" class="right"&gt;&lt;span class="ir"&gt;다음 이미지&lt;/span&gt;&lt;/a&gt;
+            &lt;div&gt;
+                &lt;h3&gt;사이트&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
             &lt;/div&gt;
-            &lt;div class="slider__dot"&gt;
-                &lt;a href="#" class="dot active"&gt;&lt;span class="ir"&gt;1&lt;/span&gt;&lt;/a&gt;
-                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;2&lt;/span&gt;&lt;/a&gt;
-                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;3&lt;/span&gt;&lt;/a&gt;
-                &lt;a href="#" class="play"&gt;&lt;span class="ir"&gt;플레이&lt;/span&gt;&lt;/a&gt;
-                &lt;a href="#" class="stop"&gt;&lt;span class="ir"&gt;정지&lt;/span&gt;&lt;/a&gt;
+            &lt;div&gt;
+                &lt;h3&gt;사이트&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;사이트&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;사이트&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;사이트&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
             &lt;/div&gt;
         &lt;/div&gt;
+        &lt;div class="footer__right"&gt;
+            2022 CODi. Portfolio is power&lt;br&gt;
+            All rights reserved.
+        &lt;/div&gt;
     &lt;/div&gt;
-&lt;/section&gt;
+&lt;/footer&gt;
 </code></pre>
                         </div>
 
                         <p class="t_tit2">CSS</p>
-                        <p class="t_box">이제 완성된 뼈대에 살을 붙여주어 슬라이드를 완성하기 위해 CSS를 작성해줍시다!</p>
+                        <p class="t_box">이제 완성된 뼈대에 살을 붙여주어 푸터를 완성하기 위해 CSS를 작성해줍시다!</p>
                         <div class="t_code">
                             <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
-<pre><code class="language-css">.slider__inner {
-    margin-top: 70px;
+<pre><code class="language-css">.footer__menu{
+    display: flex;
+}
+.footer__menu > div {
+    width: 16%;
+    margin-bottom: 70px;
 }
 
-.slider {
-    position: relative;
+.footer__menu > div h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-.slider__img {
-    background: url(../img/slider_bg01.jpg) no-repeat center / cover;
-}
-.slider__img .desc {
-    width: 1160px;
-    margin: 0 auto;
-    padding: 100px 20px
-}
-.slider__img .desc span {
-    font-size: 16px;
-    background-color: #fff;
-    padding: 1px 14px 0px 14px;
-    border-radius: 30px;
-    text-transform: uppercase;
+.footer__menu li a{
+    font-size: 14px;
+    color: #666;
     margin-bottom: 10px;
-    display: inline-block;
-}
-.slider__img .desc h3 {
-    font-size: 110px;
-    font-weight: 300;
-    line-height: 1;
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    margin-left: -8px;
-}
-.slider__img .desc p {
-    font-size: 20px;
-    font-weight: 300;
-    color: #fff;
-    line-height: 1.35;
-    margin-bottom: 130px;
+    display: block;
 }
 
-.slider__img .desc .btn {}
-.slider__img .desc .btn a {
-    font-size: 16px;
-    background-color: #fff;
-    padding: 11px 50px;
-    display: inline-block;
-}
-.slider__img .desc .btn a.black {
-    background: #000;
-    color: #fff;
-}
-
-.slider__arrow a{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 56px;
-    background-image: url(../img/slider_icon.svg);
-    
-}
-.slider__arrow a.left{
-    left: 20px;
-}
-.slider__arrow a.right{
-    right: 20px;
-    background-position: -50px 0;
-}
-.slider__dot {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 25px;
-}
-
-.slider__dot a {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-image: url(../img/slider_icon.svg);
-    background-position: -20px -70px;
-}
-
-.slider__dot a.active{
-    background-position: 0px -70px;
-}
-
-.slider__dot a.play{
-    background-position: -40px -70px;
-}
-
-.slider__dot a.stop{
-    background-position: -60px -70px;
+.footer__right{
+    border-top: 1px solid #d9d9d9;
+    text-align: center;
+    padding-top: 40px;
+    color: #666;
+    line-height: 1.5;
 }
 </code></pre>
                         </div>
@@ -240,15 +219,15 @@
 
                         <h2 class="t_tit2">완성예시</h2>
                         <div class="t_iframe" style="min-height : 750px; padding-top:0;">
-                            <iframe src="https://kimsangjunv1.github.io/coding/site/sliderType/sliderType01.html" frameborder="0"></iframe>
+                            <iframe src="https://kimsangjunv1.github.io/coding/site/footerType/footerType01.html" frameborder="0"></iframe>
                         </div>
                         <hr>
                         <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
                             <div class="t_link">
-                                <a href="https://github.com/kimsangjunv1/coding/blob/main/site/sliderType/sliderType01.html" target="blank">원본 소스 보기</a>
+                                <a href="https://github.com/kimsangjunv1/coding/blob/main/site/footerType/footerType01.html" target="blank">원본 소스 보기</a>
                             </div>
                             <div class="t_link">
-                                <a href="https://kimsangjunv1.github.io/coding/site/sliderType/sliderType01.html" target="blank">원본 페이지 보기</a>
+                                <a href="https://kimsangjunv1.github.io/coding/site/footerType/footerType01.html" target="blank">원본 페이지 보기</a>
                             </div>
                         </div>
                     </div>
