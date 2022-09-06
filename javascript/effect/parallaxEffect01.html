@@ -20,7 +20,7 @@
             position: fixed;
             right: 20px;
             top: 20px;
-            z-index: 10000;
+            z-index: 2000;
             background-color: rgba(0, 0, 0, 0.4);
             padding: 20px 30px;
             border-radius: 50px;
@@ -53,7 +53,7 @@
             width: 98%;
         }
 
-        .content__item{
+        .content__item {
             width: 1000px;
             max-width: 70vw;
             margin: 30vw auto;
@@ -61,45 +61,52 @@
             text-align: left;
             margin-right: 0;
             position: relative;
+            padding-top: 8vw;
         }
-        .content__item:nth-child(even){ /* 2n도 가능하고 even 도 가능하고 */
+
+        .content__item:nth-child(even) {
+            /* 2n도 가능하고 even 도 가능하고 */
             margin-left: 0;
             text-align: right;
         }
 
-        .content__item__num{
+        .content__item__num {
             font-size: 35vw;
             font-family: 'Lato';
             font-weight: 100;
             position: absolute;
             left: -5vw;
-            top: -20vw;
+            top: -16vw;
             opacity: 0.07;
+            z-index: -2;
         }
 
-        .content__item:nth-child(even) .content__item__num{
+        .content__item:nth-child(even) .content__item__num {
             right: -5vw;
-            left: auto; /* left 값 초기화 */
+            left: auto;
+            /* left 값 초기화 */
         }
 
-        .content__item__title{
+        .content__item__title {
             font-weight: 400;
             text-transform: capitalize;
         }
 
-        .content__item__imgWrap{
+        .content__item__imgWrap {
             width: 100%;
             padding-bottom: 56.25%;
             background-color: #000;
             position: relative;
             overflow: hidden;
+            z-index: -1;
         }
 
-        .content__item__img{
+        .content__item__img {
             background: url(../../assets/slider/effect_bg_01.jpg);
             background-position: center center;
             background-repeat: no-repeat;
-            background-size: cover; /* 내가 작아서 넣음 */
+            background-size: cover;
+            /* 내가 작아서 넣음 */
             position: absolute;
             width: 110%;
             height: 110%;
@@ -109,40 +116,107 @@
             transition: all 1s;
         }
 
-        .content__item:nth-child(1) .content__item__img{
+        .content__item:nth-child(1) .content__item__img {
             background-image: url(../../assets/slider/effect_bg_01.jpg);
         }
 
-        .content__item:nth-child(2) .content__item__img{
+        .content__item:nth-child(2) .content__item__img {
             background-image: url(../../assets/slider/effect_bg_02.jpg);
         }
 
-        .content__item:nth-child(3) .content__item__img{
+        .content__item:nth-child(3) .content__item__img {
             background-image: url(../../assets/slider/effect_bg_03.jpg);
         }
 
-        .content__item:nth-child(4) .content__item__img{
+        .content__item:nth-child(4) .content__item__img {
             background-image: url(../../assets/slider/effect_bg_04.jpg);
         }
 
-        .content__item:nth-child(5) .content__item__img{
+        .content__item:nth-child(5) .content__item__img {
             background-image: url(../../assets/slider/effect_bg_05.jpg);
         }
 
-        .content__item:nth-child(6) .content__item__img{
+        .content__item:nth-child(6) .content__item__img {
             background-image: url(../../assets/slider/effect_bg_06.jpg);
         }
 
-        .content__item:nth-child(7) .content__item__img{
+        .content__item:nth-child(7) .content__item__img {
             background-image: url(../../assets/slider/effect_bg_07.jpg);
         }
 
-        .content__item:nth-child(8) .content__item__img{
+        .content__item:nth-child(8) .content__item__img {
             background-image: url(../../assets/slider/effect_bg_08.jpg);
         }
 
-        .content__item:nth-child(9) .content__item__img{
+        .content__item:nth-child(9) .content__item__img {
             background-image: url(../../assets/slider/effect_bg_09.jpg);
+        }
+
+        .content__item__desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            margin-top: -5vw;
+            margin-left: -4vw;
+            word-break: keep-all;
+        }
+
+        .content__item:nth-child(even) .content__item__desc {
+            margin-left: auto;
+            margin-right: 4vw;
+        }
+
+        #parallax__info {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #parallax__info li,
+        .scrollTop {
+            line-height: 1.4;
+        }
+
+        @media (max-width: 800px) {
+            #parallax__cont {
+                margin-top: 70vw;
+            }
+
+            #parallax__nav {
+                padding: 10px;
+                right: auto;
+                left: 10px;
+                top: 10px;
+                transform: translateY(50%);
+                border-radius: 5px;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            #parallax__nav li {
+                display: block;
+                margin: 5px;
+            }
+
+            #parallax__nav li a {
+                font-size: 14px;
+                padding: 5px;
+                border-radius: 5px;
+                height: auto;
+                line-height: 1;
+            }
+
+            #parallax__nav li.active a {
+                border-radius: 5px;
+            }
+
+            #parallax__info {
+                left: 10px;
+                bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -281,6 +355,25 @@
         </div>
     </main>
     <!-- //main -->
+
+    <aside id="parallax__info">
+        <div class="scroll">scrollTop : <span>0</span>px</div>
+        <div class="infoTop">
+            <ul>
+                <li>#section1 offset() : <span class="offset1">0</span>px</li>
+                <li>#section2 offset() : <span class="offset2">0</span>px</li>
+                <li>#section3 offset() : <span class="offset3">0</span>px</li>
+                <li>#section4 offset() : <span class="offset4">0</span>px</li>
+                <li>#section5 offset() : <span class="offset5">0</span>px</li>
+                <li>#section6 offset() : <span class="offset6">0</span>px</li>
+                <li>#section7 offset() : <span class="offset7">0</span>px</li>
+                <li>#section8 offset() : <span class="offset8">0</span>px</li>
+                <li>#section9 offset() : <span class="offset9">0</span>px</li>
+            </ul>
+        </div>
+    </aside>
+    <!-- parallax__info -->
+
     <footer id="footer">
         <div class="modal__wrap">
             <div class="modal__btn">소스 보기</div>
@@ -402,6 +495,118 @@
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
+        // const scroll = document.querySelector("#parallax__info .scroll span")
+
+        window.addEventListener("scroll", () => {
+            // let scrollTop = window.pageYOffset; // 윈도우의 페이지 Y 값을 가져옴
+            // let scrollTop = window.scrollY; // 윈도우의 페이지 Y 값을 가져옴
+            // let scrollTop = document.documentElement.scrollTop; // 윈도우의 페이지 Y 값을 가져옴
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //이렇게 3개 중첩해서 사용 가능
+
+
+            //forEach 문
+            document.querySelectorAll(".content__item").forEach((e,i)=>{
+                if(scrollTop >=  e.offsetTop -2){ //scrollTop이 id값 이상이면
+                    document.querySelectorAll("#parallax__nav li").forEach((li)=>{
+                        li.classList.remove("active");
+                    })
+                    document.querySelector("#parallax__nav li:nth-child("+(i+1)+")").classList.add("active");
+                }
+            })
+
+
+            // if(scrollTop >=  document.getElementById("section1").offsetTop){ //scrollTop이 id값 이상이면
+            //     document.querySelectorAll("#parallax__nav li").forEach((li)=>{
+            //         li.classList.remove("active");
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(1)").classList.add("active");
+            // } 
+
+            // if(scrollTop >=  document.getElementById("section2").offsetTop){ //scrollTop이 id값 이상이면
+            //     document.querySelectorAll("#parallax__nav li").forEach((li)=>{
+            //         li.classList.remove("active");
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(2)").classList.add("active");
+            // } 
+
+            // if(scrollTop >=  document.getElementById("section3").offsetTop){ //scrollTop이 id값 이상이면
+            //     document.querySelectorAll("#parallax__nav li").forEach((li)=>{
+            //         li.classList.remove("active");
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(3)").classList.add("active");
+            // } 
+
+            // if(scrollTop >=  document.getElementById("section4").offsetTop){ //scrollTop이 id값 이상이면
+            //     document.querySelectorAll("#parallax__nav li").forEach((li)=>{
+            //         li.classList.remove("active");
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(4)").classList.add("active");
+            // }
+
+            // if(scrollTop >=  document.getElementById("section5").offsetTop){ //scrollTop이 id값 이상이면
+            //     document.querySelectorAll("#parallax__nav li").forEach((li)=>{
+            //         li.classList.remove("active");
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(5)").classList.add("active");
+            // } 
+
+            // if(scrollTop >=  document.getElementById("section6").offsetTop){ //scrollTop이 id값 이상이면
+            //     document.querySelectorAll("#parallax__nav li").forEach((li)=>{
+            //         li.classList.remove("active");
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(6)").classList.add("active");
+            // } 
+            // if(scrollTop >=  document.getElementById("section7").offsetTop){ //scrollTop이 id값 이상이면
+            //     document.querySelectorAll("#parallax__nav li").forEach((li)=>{
+            //         li.classList.remove("active");
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(7)").classList.add("active");
+            // } 
+            // if(scrollTop >=  document.getElementById("section8").offsetTop){ //scrollTop이 id값 이상이면
+            //     document.querySelectorAll("#parallax__nav li").forEach((li)=>{
+            //         li.classList.remove("active");
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(8)").classList.add("active");
+            // } 
+            // if(scrollTop >=  document.getElementById("section9").offsetTop){ //scrollTop이 id값 이상이면
+            //     document.querySelectorAll("#parallax__nav li").forEach((li)=>{
+            //         li.classList.remove("active");
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(9)").classList.add("active");
+            // } 
+
+            //info
+            document.querySelector(".scroll span").innerText = Math.round(scrollTop);
+
+            // document.querySelector(".offset1").innerText = document.getElementById("section1").offsetTop;
+            // document.querySelector(".offset2").innerText = document.getElementById("section2").offsetTop;
+            // document.querySelector(".offset3").innerText = document.getElementById("section3").offsetTop;
+            // document.querySelector(".offset4").innerText = document.getElementById("section4").offsetTop;
+            // document.querySelector(".offset5").innerText = document.getElementById("section5").offsetTop;
+            // document.querySelector(".offset6").innerText = document.getElementById("section6").offsetTop;
+            // document.querySelector(".offset7").innerText = document.getElementById("section7").offsetTop;
+            // document.querySelector(".offset8").innerText = document.getElementById("section8").offsetTop;
+            // document.querySelector(".offset9").innerText = document.getElementById("section9").offsetTop;
+    
+            for (let i = 1; i <= 9; i++) {
+                document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
+            }
+        })
+
+        //스크롤 이동
+        document.querySelectorAll("#parallax__nav li a").forEach(li => {
+            li.addEventListener("click", (e)=>{
+                e.preventDefault(); //클릭하면 이동하는걸 막아줌
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            })
+        })
+
+
+        // document.querySelectorAll(".infoTop span").forEach((e,i)=>{
+        //     document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
+        // })
     </script>
 </body>
 

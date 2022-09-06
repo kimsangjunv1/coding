@@ -50,7 +50,7 @@ li {
     top: 0;
     color: #fff;
     padding: 20px 0px 0px 25px;
-    display: none;
+    /* display: none; */
 }
 #header h1 {
     display: inline-block;
