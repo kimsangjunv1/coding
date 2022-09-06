@@ -88,39 +88,127 @@
                     <!-- 01번 메인 샘플 시작 -->
                     <h2 class="t_tit2">mouseenter/mouseover의 차이점에는 무엇이 있을까?</h2>
                     <p class="t_box">
-                        비슷한듯 다른 두 이벤트는 각각 미세한 차이가 있는데요 한번 이번 시간에는 그 차이에 대하여 알아보겠습니다 ^^v
+                        비슷한듯 다른 두 이벤트는 각각 미세한 차이가 있는데요 한번 이번 시간에는 그 차이에 대하여 알아보겠습니다 ^^v<br>
+                        <i>이해를 돕기위해 가시적인 부분을 생각하여 좌표값도 넣어주었습니다</i>
                     </p>
                     <hr>
                     <h2 class="t_tit2">mouseover</h2>
                     <p class="t_desc2_css">
                         "mouseeover" 이벤트는 직접 이벤트를 걸지 않은 자식 요소에 마우스 포인터가 와도 발생하는 이벤트 입니다.
                     </p>
-                    <hr>
-                    <h2 class="t_tit2">mouseenter</h2>
-                    <p class="t_desc2_css">
-                        "mouseenter" 이벤트는 요소에 마우스 포인터가 진입하기만 해도 바로 발생하게 되며 어떤 html 요소가 있던간에 이 이벤트를 실행시킬 수 있습니다!
-                    </p>
-                    <hr>
-                    <h2 class="t_tit2">예제</h2>
-                    <p class="t_box"></p>
-                    <div style="background: #ddd" class="test">
-                        <div style="background: #ededed"class="test_enter"></div>
-                    </div>
                     <div class="mouse__info">
-                        <ul>
-                            <li>clientX : <span class="clientX">0</span>px</li>
-                            <li>clientY : <span class="clientY">0</span>px</li>
-                            <li>offsetX : <span class="offsetX">0</span>px</li>
-                            <li>offsetY : <span class="offsetY">0</span>px</li>
-                            <li>pageX : <span class="pageX">0</span>px</li>
-                            <li>pageY : <span class="pageY">0</span>px</li>
-                            <li>screenX : <span class="screenX">0</span>px</li>
-                            <li>screenY : <span class="screenY">0</span>px</li>
-                        </ul>
+                        <div style="background: #4231df; border-radius: 10px; padding: 15px; color: #fff;" class="test_box">
+                            <div>예시:: mouseover - 어느곳에 마우스를 가져다 대도 계산됩니다.</div>
+                            <div class="test_text">마우스를 올려보세요!</div>
+                            <div class="text">[마우스가 올라오면 숫자가 카운팅 됩니다!]</div>
+                            <ul style="background: rgb(30, 18, 141); border-radius: 10px; color: #fff !important; padding: 10px 10px 10px 20px;">
+                                <li style="color: #fff !important;">clientX : <span class="clientX">0</span>px</li>
+                                <li style="color: #fff !important;">clientY : <span class="clientY">0</span>px</li>
+                                <li style="color: #fff !important;">offsetX : <span class="offsetX">0</span>px</li>
+                                <li style="color: #fff !important;">offsetY : <span class="offsetY">0</span>px</li>
+                                <li style="color: #fff !important;">pageX : <span class="pageX">0</span>px</li>
+                                <li style="color: #fff !important;">pageY : <span class="pageY">0</span>px</li>
+                                <li style="color: #fff !important;">screenX : <span class="screenX">0</span>px</li>
+                                <li style="color: #fff !important;">screenY : <span class="screenY">0</span>px</li>
+                            </ul>
+                        </div>
+                        <details>
+                            <summary class="t_box">예제용 코드 보기</summary>
+                            <div class=t_code>
+<pre><code class="language-js">const testBox = document.querySelector(".test_box")
+let i = 0;
+
+//마우스가 들어왔다면
+testBox.addEventListener("mouseover", (event) => {
+    document.querySelector(".clientX").innerHTML=event.clientX;
+    document.querySelector(".clientY").innerHTML=event.clientY;
+    document.querySelector(".offsetX").innerHTML=event.offsetX;
+    document.querySelector(".offsetY").innerHTML=event.offsetY;
+    document.querySelector(".pageX").innerHTML=event.pageX;
+    document.querySelector(".pageY").innerHTML=event.pageY;
+    document.querySelector(".screenX").innerHTML=event.screenX;
+    document.querySelector(".screenY").innerHTML=event.screenY;
+    document.querySelector(".test_text").innerHTML="[mouseover 실행] 마우스가 올려졌구요~";
+    
+    //숫자 카운팅을 위한 i값 증가
+    i++
+    if(i<=100){
+        document.querySelector(".text").innerHTML=i+"번";
+    }else{
+        document.querySelector(".text").innerHTML=i+"번"+"째야 이제 그만돌려줘~~~~";
+    }
+})
+
+//마우스가 나온다면
+testBox.addEventListener("mouseout", (event) => {
+    document.querySelector(".test_text").innerHTML="[mouseout 실행] 마우스가 빠져나왔네용";
+    
+})
+</code></pre>
+                            </div>
+                        </details>
+                        <hr>
+                        <h2 class="t_tit2">mouseenter</h2>
+                        <p class="t_desc2_css">
+                            "mouseenter" 이벤트는 요소에 마우스 포인터가 진입하기만 해도 바로 발생하게 되며 어떤 html 요소가 있던간에 이 이벤트를 실행시킬 수 있으나 정해진 요소에만 이벤트 발생이 가능합니다.
+                        </p>
+                        <div style="background: #df3142; border-radius: 10px; padding: 15px; color: #fff;" class="test_box_two">
+                            <div>예시:: mouseenter - 마우스 이벤트를 설정해놓은 영역에만 계산됩니다.</div>
+                            <div class="test_text_two">마우스를 올려보세요!</div>
+                            <span class="text_two">[마우스가 올라오면 숫자가 카운팅 됩니다!]</span>
+                            <ul class="two" style="background: rgb(141, 18, 18); border-radius: 10px; color: #fff !important; padding: 10px 10px 10px 20px;">
+                                <li style="width:200px; background:#b22332; color: #fff !important;">clientX : <span class="clientX">0</span>px</li>
+                                <li style="width:200px; background:#b22332; color: #fff !important;">clientY : <span class="clientY">0</span>px</li>
+                                <li style="width:200px; background:#b22332; color: #fff !important;">offsetX : <span class="offsetX">0</span>px</li>
+                                <li style="width:200px; background:#b22332; color: #fff !important;">offsetY : <span class="offsetY">0</span>px</li>
+                                <li style="width:200px; background:#b22332; color: #fff !important;">pageX : <span class="pageX">0</span>px</li>
+                                <li style="width:200px; background:#b22332; color: #fff !important;">pageY : <span class="pageY">0</span>px</li>
+                                <li style="width:200px; background:#b22332; color: #fff !important;">screenX : <span class="screenX">0</span>px</li>
+                                <li style="width:200px; background:#b22332; color: #fff !important;">screenY : <span class="screenY">0</span>px</li>
+                            </ul>
+                        </div>
+                        <details>
+                            <summary class="t_box">예제용 코드 보기</summary>
+                            <div class=t_code>
+<pre><code class="language-js">const testBoxTwo = document.querySelector(".two")
+let q = 0;
+
+//마우스가 들어왔다면
+testBoxTwo.addEventListener("mouseenter", (event) => {
+    document.querySelector(".two .clientX").innerHTML=event.clientX;
+    document.querySelector(".two .clientY").innerHTML=event.clientY;
+    document.querySelector(".two .offsetX").innerHTML=event.offsetX;
+    document.querySelector(".two .offsetY").innerHTML=event.offsetY;
+    document.querySelector(".two .pageX").innerHTML=event.pageX;
+    document.querySelector(".two .pageY").innerHTML=event.pageY;
+    document.querySelector(".two .screenX").innerHTML=event.screenX;
+    document.querySelector(".two .screenY").innerHTML=event.screenY;
+    document.querySelector(".test_text_two").innerHTML="[mouseover 실행] 마우스가 올려졌구요~";
+    
+    //숫자 카운팅을 위한 i값 증가
+    q++
+    if(q<=100){
+        document.querySelector(".text_two").innerHTML=q+"번";
+    }else{
+        document.querySelector(".text_two").innerHTML=q+"번"+"째야 이제 그만돌려줘~~~~";
+    }
+})
+
+//마우스가 나온다면
+testBoxTwo.addEventListener("mouseleave", (event) => {
+    document.querySelector(".test_text_two").innerHTML="[mouseout 실행] 마우스가 빠져나왔네용";
+    
+})
+</code></pre>
+                            </div>
+                        </details>
                     </div>
                     <script>
-                        const cursor = document.querySelector(".mouse__cursor")
-                        window.addEventListener("mouseover", (event) => {
+                        const testBox = document.querySelector(".test_box")
+                        let i = 0;
+
+                        //마우스가 들어왔다면
+                        testBox.addEventListener("mouseover", (event) => {
                             document.querySelector(".clientX").innerHTML=event.clientX;
                             document.querySelector(".clientY").innerHTML=event.clientY;
                             document.querySelector(".offsetX").innerHTML=event.offsetX;
@@ -129,6 +217,52 @@
                             document.querySelector(".pageY").innerHTML=event.pageY;
                             document.querySelector(".screenX").innerHTML=event.screenX;
                             document.querySelector(".screenY").innerHTML=event.screenY;
+                            document.querySelector(".test_text").innerHTML="[mouseover 실행] 마우스가 올려졌구요~";
+                            
+                            //숫자 카운팅을 위한 i값 증가
+                            i++
+                            if(i<=100){
+                                document.querySelector(".text").innerHTML=i+"번";
+                            }else{
+                                document.querySelector(".text").innerHTML=i+"번"+"째야 이제 그만돌려줘~~~~";
+                            }
+                        })
+
+                        //마우스가 나온다면
+                        testBox.addEventListener("mouseout", (event) => {
+                            document.querySelector(".test_text").innerHTML="[mouseout 실행] 마우스가 빠져나왔네용";
+                            
+                        })
+                    </script>
+                    <script>
+                        const testBoxTwo = document.querySelector(".two")
+                        let q = 0;
+
+                        //마우스가 들어왔다면
+                        testBoxTwo.addEventListener("mouseenter", (event) => {
+                            document.querySelector(".two .clientX").innerHTML=event.clientX;
+                            document.querySelector(".two .clientY").innerHTML=event.clientY;
+                            document.querySelector(".two .offsetX").innerHTML=event.offsetX;
+                            document.querySelector(".two .offsetY").innerHTML=event.offsetY;
+                            document.querySelector(".two .pageX").innerHTML=event.pageX;
+                            document.querySelector(".two .pageY").innerHTML=event.pageY;
+                            document.querySelector(".two .screenX").innerHTML=event.screenX;
+                            document.querySelector(".two .screenY").innerHTML=event.screenY;
+                            document.querySelector(".test_text_two").innerHTML="[mouseover 실행] 마우스가 올려졌구요~";
+                            
+                            //숫자 카운팅을 위한 i값 증가
+                            q++
+                            if(q<=100){
+                                document.querySelector(".text_two").innerHTML=q+"번";
+                            }else{
+                                document.querySelector(".text_two").innerHTML=q+"번"+"째야 이제 그만돌려줘~~~~";
+                            }
+                        })
+
+                        //마우스가 나온다면
+                        testBoxTwo.addEventListener("mouseleave", (event) => {
+                            document.querySelector(".test_text_two").innerHTML="[mouseout 실행] 마우스가 빠져나왔네용";
+                            
                         })
                     </script>
                 </div>
