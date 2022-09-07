@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <!-- 01번 메인 샘플 시작 -->
+                    <h2 class="t_tit">SVG로 도형 만들어보기</h2>
+                    <p class="t_desc">svg 태그안에 rect를 point로 수치를 조정해 도형을 구현해낼 수 있는데 한번 이번 시간에는 해당 부분에 대하여 학습해봅시다!</p>
+                    <hr>
+                    <h2 class="t_tit2">벡터 이미지</h2>
+                    <P class="t_desc2">벡터 이미지란 아무리 확대하여도 깨지지 않는 이미지를 의미하는데요, 보통 일러스트레이터에서 사용하는 도형이 벡터 이미지 입니다!</P>
+                    <div style="display:flex"class="t_box">
+                        <svg>
+                            <rect width="100" height="100" fill="#f48fb1" x="30" y="30"/>
+                            <!-- <rect x="23" y="20" class="st0" width="243" height="243"/> -->
+                        </svg>
+                        <svg>
+                            <circle fill="#F48FB1" r="60" cx="80" cy="80" />
+                        </svg>
+                        <svg>
+                            <polygon points="115,134 71,144 30,124 12,82 26,39 64,14 108,20 139,53 142,98" fill="#F48FB1" />
+                        </svg>
+                        <svg class="svg">
+                            <path fill="none" stroke="#880E4F" stroke-width="2" d="M82.671,81.243c50.565,48.259,14.182,69.191-2.135,1.229
+                            c16.316,67.962-25.611,65.895-2.46-0.122c-23.151,66.017-57.304,41.617-2.004-1.432c-55.3,43.049-70.84,4.057-0.912-2.288
+                            c-69.929,6.345-61.919-34.86,0.47-2.417c-62.389-32.442-33.374-62.777,1.703-1.78c-35.076-60.997,5.73-70.826,2.395-0.577
+                            c3.335-70.249,42.981-56.458,2.326,0.81c40.655-57.268,66.554-24.232,1.521,1.938c65.033-26.17,68.953,15.62,0.23,2.452
+                            C152.526,92.225,133.236,129.502,82.671,81.243z"/>
+                        </svg>
+                        <svg>
+                            <polyline points="21,17.2 21,139.2 122,28.2 141,139.2" stroke="#0D47A1" stroke-width="2" fill="none" />
+                        </svg>
+                        
+                    </div>
+                    <div class="t_code">
+<pre><code>&lt;svg&gt;
+    &lt;rect width="100" height="100" fill="#f48fb1" x="30" y="30"/&gt;
+    &lt;!-- &lt;rect x="23" y="20" class="st0" width="243" height="243"/&gt; --&gt;
+&lt;/svg&gt;
+&lt;svg&gt;
+    &lt;circle fill="#F48FB1" r="60" cx="80" cy="80" /&gt;
+&lt;/svg&gt;
+&lt;svg&gt;
+    &lt;polygon points="115,134 71,144 30,124 12,82 26,39 64,14 108,20 139,53 142,98" fill="#F48FB1" /&gt;
+&lt;/svg&gt;
+&lt;svg class="svg"&gt;
+    &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M82.671,81.243c50.565,48.259,14.182,69.191-2.135,1.229
+    c16.316,67.962-25.611,65.895-2.46-0.122c-23.151,66.017-57.304,41.617-2.004-1.432c-55.3,43.049-70.84,4.057-0.912-2.288
+    c-69.929,6.345-61.919-34.86,0.47-2.417c-62.389-32.442-33.374-62.777,1.703-1.78c-35.076-60.997,5.73-70.826,2.395-0.577
+    c3.335-70.249,42.981-56.458,2.326,0.81c40.655-57.268,66.554-24.232,1.521,1.938c65.033-26.17,68.953,15.62,0.23,2.452
+    C152.526,92.225,133.236,129.502,82.671,81.243z"/&gt;
+&lt;/svg&gt;
+&lt;svg&gt;
+    &lt;polyline points="21,17.2 21,139.2 122,28.2 141,139.2" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+&lt;/svg&gt;
+&lt;svg style="background: #E3F3FD; border-radius:10px; margin-right: 10px"&gt;
+    &lt;clipPath id="clipPath4"&gt;
+        &lt;polygon points="80,8.15 81.84,70.37 106.02,13.02 85.26,71.69 128.53,26.96 87.98,74.17 144.49,48.08 89.62,77.46
+151.73,73.55 89.96,81.12 149.29,99.91 88.95,84.65 137.49,123.61 86.74,87.59 117.93,141.45 83.61,89.52 93.24,151.01 80,90.2
+66.76,151.01 76.39,89.52 42.07,141.45 73.26,87.59 22.51,123.61 71.05,84.65 10.71,99.91 70.04,81.12 8.27,73.55 70.38,77.46
+15.51,48.08 72.02,74.17 31.47,26.96 74.74,71.69 53.98,13.02 78.16,70.37" fill="#F48FB1" /&gt;
+    &lt;/clipPath&gt;
+
+    &lt;image xlink:href="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_10.png" width="160" height="160" clip-path="url(#clipPath4)"&gt; &lt;!-- 클리핑 마스크 --&gt;
+&lt;/svg&gt;
+&lt;svg style="background: #e3f1fd; border-radius:10px;"&gt;
+    &lt;pattern id="pattern1" patternunites="useSpaceOuUse" width="100%" height="100%"&gt;
+        &lt;image xlink:href="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_10.png" width="160" height="160" /&gt;
+    &lt;/pattern&gt;
+    &lt;text fill="url(#pattern1)" x="7" y="110" font-family="SCoreDream" font-size="70" font-weight="900"&gt;SVG&lt;/text&gt;
+&lt;/svg&gt;
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">클리핑 마스크</h2>
+                    <p class="t_desc2_css">
+                        포토샵에 클리핑 마스크를 이용하면 변화시키고 싶은 도형에 다양한 변화를 줄 수 있듯, css로도 해당 부분에 대한 처리가 가능합니다
+                    </p>
+                    <div style="display:flex"class="t_box">
+                        <svg style="background: #E3F3FD; border-radius:10px; margin-right: 10px">
+                            <clipPath id="clipPath4">
+                                <polygon points="80,8.15 81.84,70.37 106.02,13.02 85.26,71.69 128.53,26.96 87.98,74.17 144.49,48.08 89.62,77.46
+                    151.73,73.55 89.96,81.12 149.29,99.91 88.95,84.65 137.49,123.61 86.74,87.59 117.93,141.45 83.61,89.52 93.24,151.01 80,90.2
+                    66.76,151.01 76.39,89.52 42.07,141.45 73.26,87.59 22.51,123.61 71.05,84.65 10.71,99.91 70.04,81.12 8.27,73.55 70.38,77.46
+                    15.51,48.08 72.02,74.17 31.47,26.96 74.74,71.69 53.98,13.02 78.16,70.37" fill="#F48FB1" />
+                            </clipPath>
+                    
+                            <image xlink:href="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_10.png" width="160" height="160" clip-path="url(#clipPath4)"> <!-- 클리핑 마스크 -->
+                        </svg>
+                        <svg style="background: #e3f1fd; border-radius:10px;">
+                            <pattern id="pattern1" patternunites="useSpaceOuUse" width="100%" height="100%">
+                                <image xlink:href="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_10.png" width="160" height="160" />
+                            </pattern>
+                            <text fill="url(#pattern1)" x="7" y="110" font-family="SCoreDream" font-size="70" font-weight="900">SVG</text>
+                        </svg>
+                    </div>
+                    <div class="t_code">
+<pre><code>&lt;svg style="background: #E3F3FD; border-radius:10px; margin-right: 10px"&gt;
+    &lt;clipPath id="clipPath4"&gt;
+        &lt;polygon points="80,8.15 81.84,70.37 106.02,13.02 85.26,71.69 128.53,26.96 87.98,74.17 144.49,48.08 89.62,77.46
+151.73,73.55 89.96,81.12 149.29,99.91 88.95,84.65 137.49,123.61 86.74,87.59 117.93,141.45 83.61,89.52 93.24,151.01 80,90.2
+66.76,151.01 76.39,89.52 42.07,141.45 73.26,87.59 22.51,123.61 71.05,84.65 10.71,99.91 70.04,81.12 8.27,73.55 70.38,77.46
+15.51,48.08 72.02,74.17 31.47,26.96 74.74,71.69 53.98,13.02 78.16,70.37" fill="#F48FB1" /&gt;
+    &lt;/clipPath&gt;
+
+    &lt;image xlink:href="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_10.png" width="160" height="160" clip-path="url(#clipPath4)"&gt; &lt;!-- 클리핑 마스크 --&gt;
+&lt;/svg&gt;
+&lt;svg style="background: #e3f1fd; border-radius:10px;"&gt;
+    &lt;pattern id="pattern1" patternunites="useSpaceOuUse" width="100%" height="100%"&gt;
+        &lt;image xlink:href="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_10.png" width="160" height="160" /&gt;
+    &lt;/pattern&gt;
+    &lt;text fill="url(#pattern1)" x="7" y="110" font-family="SCoreDream" font-size="70" font-weight="900"&gt;SVG&lt;/text&gt;
+&lt;/svg&gt;
+</code></pre>
+                    </div>
+                </div>
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+    
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>

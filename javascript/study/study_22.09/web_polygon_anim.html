@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <!-- 01번 메인 샘플 시작 -->
+                    <h2 class="t_tit">SVG ANIMATION</h2>
+                    <p class="t_desc">svg에 애니메이션을 줄 수도 있습니다 해당 부분에 대하여 학습해봅시다!</p>
+                    <hr>
+                    <h2 class="t_tit2">기초적인 애니메이션</h2>
+                    <P class="t_desc2">stroke-width 값을 조정하는 애니메이션을 만들어 기존에 만들어둔 벡터 도형(선)에 애니메이션을 불어넣습니다!</P>
+                    <div style="display:flex"class="t_box">
+                        <svg>
+                            <rect class="ani1"></rect>
+                        </svg>
+                        <svg>
+                            <rect class="ani2"></rect>
+                        </svg>
+                        <svg>
+                            <path class="ani3" fill="none" stroke="#0D47A1" stroke-width="2" d="M7,154.667c0-82.358,65.152-149,145.667-149"/>
+                        </svg>
+                        <svg>
+                            <path class="ani4" fill="none" stroke="#0D47A1" stroke-width="2" d="M151.534,123.547c-33.711,33.711-88.369,33.711-122.08,0
+                    c-26.97-26.969-26.97-70.695,0-97.665c21.575-21.576,56.556-21.576,78.131,0c17.261,17.26,17.261,45.245,0.001,62.504
+                    c-13.809,13.809-36.196,13.809-50.005,0c-11.046-11.046-11.046-28.956,0-40.002c8.837-8.837,23.166-8.837,32.003,0
+                    c7.069,7.07,7.07,18.532,0,25.602c-5.656,5.657-14.826,5.657-20.482,0c-4.524-4.524-4.524-11.86,0-16.385"/>
+                        </svg>
+                        <svg>
+                            <path class="ani5" fill="none" stroke="#0D47A1" stroke-width="2" d="M58.665,139.312c0-6.873,42-6.873,42-13.747s-42-6.874-42-13.748
+                            s42-6.874,42-13.748c0-6.872-42-6.872-42-13.744c0-6.874,42-6.874,42-13.747c0-6.877-42-6.877-42-13.753
+                            c0-6.874,42-6.874,42-13.748c0-6.878-42-6.878-42-13.757s42-6.879,42-13.758"/>
+                        </svg>
+                        <svg>
+                            <path class="ani6" fill="none" stroke="#0D47A1" stroke-width="2" d="M93.108,91.478c42.049,30.58-13.048,57.425-13.347,6.503
+                            c0.299,50.922-55.041,24.58-13.405-6.381c-41.636,30.961-55.545-28.728-3.37-14.458c-52.176-14.27-14.181-62.359,9.204-11.649
+                            c-23.385-50.71,37.901-50.989,14.846-0.067c23.055-50.922,61.484-3.179,9.309,11.565C148.521,62.245,135.157,122.058,93.108,91.478
+                            z"/>
+                        </svg>
+                        <style>
+                            .ani1 {
+                                width: 100px; height: 100px;
+                                x: 30px; y: 30px;
+                                fill: none;
+                                stroke: #880E41;
+                                stroke-width: 2px;
+                                stroke-dasharray: 50;
+                                stroke-dashoffset: 50;
+                                animation: ani1 1s infinite linear alternate-reverse;
+                            }
+                            @keyframes ani1 {
+                                0%   {stroke-dashoffset: 50;}
+                                100% {stroke-dashoffset: 0;}
+                            }
+                            .ani2 {
+                                width: 100px; height: 100px;
+                                x: 30px; y: 30px;
+                                fill: none;
+                                stroke: #880E41;
+                                stroke-width: 2px;
+                                stroke-dasharray: 400;
+                                stroke-dashoffset: 400;
+                                animation: ani2 2s infinite linear alternate-reverse;
+                            }
+                            @keyframes ani2 {
+                                0%   {stroke-dashoffset: 400;}
+                                100% {stroke-dashoffset: 0;}
+                            }
+                            .ani3 {
+                                animation: ani3 1s infinite linear alternate-reverse;
+                                stroke-dasharray: 230px;
+                                stroke-dashoffset: 230px;
+                            }
+                            @keyframes ani3 {
+                                0%   {stroke-dashoffset: 230px;}
+                                100% {stroke-dashoffset: 0;}
+                            }
+                            .ani4 {
+                                animation: ani4 1s infinite linear alternate-reverse;
+                                stroke-dasharray: 605px;
+                                stroke-dashoffset: 605px;
+                            }
+                            @keyframes ani4 {
+                                0%   {stroke-dashoffset: 605px;}
+                                100% {stroke-dashoffset: 0;}
+                            }
+                            .ani5 {
+                                animation: ani5 1s infinite linear alternate-reverse;
+                                stroke-dasharray: 411px;
+                                stroke-dashoffset: 411px;
+                            }
+                            @keyframes ani5 {
+                                0%   {stroke-dashoffset: 411px;}
+                                100% {stroke-dashoffset: 0;}
+                            }
+                            .ani6 {
+                                animation: ani6 1s infinite linear alternate-reverse;
+                                stroke-dasharray: 614px;
+                                stroke-dashoffset: 614px;
+                            }
+                            @keyframes ani6 {
+                                0%   {stroke-dashoffset: 614px;}
+                                100% {stroke-dashoffset: 0;}
+                            }
+                        </style>
+                    </div>
+                    <h2 class="t_tit2">HTML</h2>
+                    <p class="t_box">하단의 HTML 코드를 입력하여 기초 뼈대를 잠아주고 대신 stroke-width값이 조절 가능한 애니메이션이 동작 할 수 있도록 stroke-width값을 각각 도형에 알맞게 넣어줍니다.</p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;svg&gt;
+    &lt;rect class="ani1"&gt;&lt;/rect&gt;
+&lt;/svg&gt;
+&lt;svg&gt;
+    &lt;rect class="ani2"&gt;&lt;/rect&gt;
+&lt;/svg&gt;
+&lt;svg&gt;
+    &lt;path class="ani3" fill="none" stroke="#0D47A1" stroke-width="2" d="M7,154.667c0-82.358,65.152-149,145.667-149"/&gt;
+&lt;/svg&gt;
+&lt;svg&gt;
+    &lt;path class="ani4" fill="none" stroke="#0D47A1" stroke-width="2" d="M151.534,123.547c-33.711,33.711-88.369,33.711-122.08,0
+c-26.97-26.969-26.97-70.695,0-97.665c21.575-21.576,56.556-21.576,78.131,0c17.261,17.26,17.261,45.245,0.001,62.504
+c-13.809,13.809-36.196,13.809-50.005,0c-11.046-11.046-11.046-28.956,0-40.002c8.837-8.837,23.166-8.837,32.003,0
+c7.069,7.07,7.07,18.532,0,25.602c-5.656,5.657-14.826,5.657-20.482,0c-4.524-4.524-4.524-11.86,0-16.385"/&gt;
+&lt;/svg&gt;
+&lt;svg&gt;
+    &lt;path class="ani5" fill="none" stroke="#0D47A1" stroke-width="2" d="M58.665,139.312c0-6.873,42-6.873,42-13.747s-42-6.874-42-13.748
+    s42-6.874,42-13.748c0-6.872-42-6.872-42-13.744c0-6.874,42-6.874,42-13.747c0-6.877-42-6.877-42-13.753
+    c0-6.874,42-6.874,42-13.748c0-6.878-42-6.878-42-13.757s42-6.879,42-13.758"/&gt;
+&lt;/svg&gt;
+&lt;svg&gt;
+    &lt;path class="ani6" fill="none" stroke="#0D47A1" stroke-width="2" d="M93.108,91.478c42.049,30.58-13.048,57.425-13.347,6.503
+    c0.299,50.922-55.041,24.58-13.405-6.381c-41.636,30.961-55.545-28.728-3.37-14.458c-52.176-14.27-14.181-62.359,9.204-11.649
+    c-23.385-50.71,37.901-50.989,14.846-0.067c23.055-50.922,61.484-3.179,9.309,11.565C148.521,62.245,135.157,122.058,93.108,91.478
+    z"/&gt;
+&lt;/svg&gt;
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">CSS : KEYFRAMES</h2>
+                    <p class="t_box">CSS 작성시 stroke-width 값을 조절하는 애니메이션을 만들어 줍시다!</p>
+                    <div class="t_code">
+<pre><code class="language-css">.ani1 {
+    width: 100px; height: 100px;
+    x: 30px; y: 30px;
+    fill: none;
+    stroke: #880E41;
+    stroke-width: 2px;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: ani1 1s infinite linear alternate-reverse;
+}
+@keyframes ani1 {
+    0%   {stroke-dashoffset: 50;}
+    100% {stroke-dashoffset: 0;}
+}
+.ani2 {
+    width: 100px; height: 100px;
+    x: 30px; y: 30px;
+    fill: none;
+    stroke: #880E41;
+    stroke-width: 2px;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: ani2 2s infinite linear alternate-reverse;
+}
+@keyframes ani2 {
+    0%   {stroke-dashoffset: 400;}
+    100% {stroke-dashoffset: 0;}
+}
+.ani3 {
+    animation: ani3 1s infinite linear alternate-reverse;
+    stroke-dasharray: 230px;
+    stroke-dashoffset: 230px;
+}
+@keyframes ani3 {
+    0%   {stroke-dashoffset: 230px;}
+    100% {stroke-dashoffset: 0;}
+}
+.ani4 {
+    animation: ani4 1s infinite linear alternate-reverse;
+    stroke-dasharray: 605px;
+    stroke-dashoffset: 605px;
+}
+@keyframes ani4 {
+    0%   {stroke-dashoffset: 605px;}
+    100% {stroke-dashoffset: 0;}
+}
+.ani5 {
+    animation: ani5 1s infinite linear alternate-reverse;
+    stroke-dasharray: 411px;
+    stroke-dashoffset: 411px;
+}
+@keyframes ani5 {
+    0%   {stroke-dashoffset: 411px;}
+    100% {stroke-dashoffset: 0;}
+}
+.ani6 {
+    animation: ani6 1s infinite linear alternate-reverse;
+    stroke-dasharray: 614px;
+    stroke-dashoffset: 614px;
+}
+@keyframes ani6 {
+    0%   {stroke-dashoffset: 614px;}
+    100% {stroke-dashoffset: 0;}
+}
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">응용 예제</h2>
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="Text Animation" src="https://codepen.io/webstoryboy/embed/qBYOmWX?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/webstoryboy/pen/qBYOmWX">
+                        Text Animation</a> by Webstoryboy (<a href="https://codepen.io/webstoryboy">@webstoryboy</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+    
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>

@@ -68,11 +68,67 @@
                     <h2 class="t_tit">패럴렉스 이펙트 구현하기</h2>
                     <p class="t_desc">페럴렉스 이펙트를 구현하기 위해서는 브라우저 상단의 값을 기준으로 스크롤을 내렸을때 각각 요소들과 비교를 하여 변화를 주도록 구현해야하는데요 한번 이번시간에는 그 방법에 대하여 알아보겠습니다!</p>
                     <hr>
+                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_10.png" alt="">
                     <h2 class="t_tit2">자바스크립트 : 패럴렉스 이펙트 구현 예제</h2>
                     <p class="t_desc2_css">
                         스크롤 높이 값을 구하기 위해 하단의 스크립트를 작성합니다<br>
                         <i>브라우저마다 지원여부가 다르기 때문에 "||"을 적어 셋 중 한가지를 선택해 작동하도록 적습니다.</i>
                     </p>
+                    <!-- //Intro0 -->
+                <style>
+                    .timing.bg1 > div {background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);}
+                    .timing.bg7 > div {background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);}
+                    .timing {padding: 20px;}
+                    .timing > div {
+                        width: 100px; height: 100px;
+                        border-radius: 50%;
+                        color: #fff;
+                        text-align: center;
+                        line-height: 100px;
+                        margin: 10px;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    .timing1.show {animation: move 2s 1 linear;}
+                    .timing2.show {animation: move 2s 1 ease;}
+                    .timing3.show {animation: move 2s 1 ease-in;}
+                    .timing4.show {animation: move 2s 1 ease-out;}
+                    .timing5.show {animation: move 2s 1 ease-in-out;}
+
+                    @keyframes move {
+                        0% {left: 0%;}
+                        50% {left: calc(100% - 120px)}
+                        100% {left: 0%;}
+                    }
+                </style>
+                <!-- Intro1 -->
+                
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">timing-function <button type="button" class="btn btn-warning start1">Start</button></h2>
+                    <div class="sample">
+                        <h3><span></span><em class="sr-only">border-radius</em></h3>
+                        <div class="timing bg1">
+                            <div class="timing1"><span>linear</span></div>
+                            <div class="timing2"><span>ease</span></div>
+                            <div class="timing3"><span>ease-in</span></div>
+                            <div class="timing4"><span>ease-out</span></div>
+                            <div class="timing5"><span>ease-in-out</span></div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.timing1.show {animation: move 2s 1 linear;}
+.timing2.show {animation: move 2s 1 ease;}
+.timing3.show {animation: move 2s 1 ease-in;}
+.timing4.show {animation: move 2s 1 ease-out;}
+.timing5.show {animation: move 2s 1 ease-in-out;}
+
+@keyframes move {
+    0% {left: 0%;}
+    50% {left: 100%;}
+    100% {left: 0%;}
+}
+</code></pre>
+                </div>
+                <!-- //Intro1 -->
                     <div class="t_code">
 <pre><code>let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop
 </code></pre>
@@ -86,7 +142,7 @@
                     번외. 번외로 n번째 값에 active를 추가해줄때 i는 배열이라 0부터 시작하기 때문에 +1을 해줍니다.
                     </p>
                     <div class="t_code">
-<pre><code>//forEach 문
+<pre><code class="language-js">//forEach 문
 document.querySelectorAll(".content__item").forEach((e,i)=>{                                      //1.forEach를 통해 각 .content__item 클래스의 각 요소를 가져옵니다.
     if(scrollTop >=  e.offsetTop -2){                                                             //scrollTop=[여기서 if를 통해 만약 scrollTop(브라우저의 최상단에서 스크롤 한 값)]이 e=[.content__item 클래스 요소의 상단과의 거리 값]의 이상이라면
         document.querySelectorAll("#parallax__nav li").forEach((li)=>{

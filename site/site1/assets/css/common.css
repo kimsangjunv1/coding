@@ -20,6 +20,12 @@
     left: 5px;
 }
 
+.actived{
+    background: #ededed;
+    padding: 10px 0px;
+    border-radius: 5px;
+}
+
 /* 컨테이너 */
 .container {
     width: 1160px;
