@@ -62,6 +62,16 @@
             </div>
         </div>
     </header>
+    <div class="header__menu__media">
+        <ul>
+            <li><a href="#headerType">헤더 영역</a></li>
+            <li><a href="#sliderType">슬라이드 영역</a></li>
+            <li><a href="#imageType01">배너 영역</a></li>
+            <li><a href="#imgTextType">컨텐츠 영역</a></li>
+            <li><a href="#cardType">카드 영역</a></li>
+            <li><a href="#footerType">푸터 영역</a></li>
+        </ul>
+    </div>
     <!-- //headerType -->
 
 
@@ -379,7 +389,7 @@
 
             //forEach 문
             document.querySelectorAll(".section").forEach((e,i)=>{
-                if(scrollTop >=  e.offsetTop){ //scrollTop이 id값 이상이면
+                if(scrollTop >=  e.offsetTop-2){ //scrollTop이 id값 이상이면
                     document.querySelectorAll(".header__menu ul li").forEach((li)=>{
                         li.classList.remove("actived");
                     })
@@ -390,6 +400,17 @@
 
         //스크롤 이동
         document.querySelectorAll(".header__menu ul li a").forEach(li => {
+            // console.log(li)
+            li.addEventListener("click", (e)=>{
+                e.preventDefault(); //클릭하면 이동하는걸 막아줌
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            })
+        })
+
+        //스크롤 이동
+        document.querySelectorAll(".header__menu__media ul li a").forEach(li => {
             // console.log(li)
             li.addEventListener("click", (e)=>{
                 e.preventDefault(); //클릭하면 이동하는걸 막아줌

@@ -21,9 +21,15 @@
 }
 
 .actived{
-    background: #ededed;
+    background: #767676b3;
     padding: 10px 0px;
     border-radius: 5px;
+    border: 0.5px solid #fff;
+    /* color: #fff !important; */
+}
+
+.actived a{
+    color: #fff !important;
 }
 
 /* 컨테이너 */

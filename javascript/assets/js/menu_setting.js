@@ -46,6 +46,6 @@ showContainer.addEventListener("click", ()=>{
 const modeBtn = document.querySelector(".mode__change__button__test")
 const allCont = document.querySelector("html")
 
-modeBtn.addEventListener("click",()=>{
-    allCont.classList.add("dark_main")
-})
+// modeBtn.addEventListener("click",()=>{
+//     allCont.classList.add("dark_main")
+// })

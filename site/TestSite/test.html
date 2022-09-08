@@ -13,6 +13,13 @@
             font-family: 'NexonLv1Gothic';
             font-weight: 400;
         }
+        
+        .flex{
+            display: flex;
+        }
+        .align{
+            align-items: center;
+        }
 
         /* Reset */
         * {
@@ -38,14 +45,14 @@
             font-weight: normal;
         }
 
-        hr{
+        hr {
             border: 0.1px solid #ededed;
             margin-bottom: 20px;
         }
 
         /* common(공통) */
         .container {
-            width: 960px;
+            width: 1000px;
             padding: 0 20px;
             margin: 0 auto;
         }
@@ -72,200 +79,239 @@
             margin-bottom: 70px;
         }
 
-        /* header */
-        #header {
-            /* background-color: #ededed5b; */
+        /* custom */
+        /* 상단 */
+        .nav_container {
+            background-color: #fff;
             width: 100%;
-            height: 100px;
+            height: 59px;
             display: flex;
             justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .nav_logo{
+            background: url(./assets/img2/1.jpg) no-repeat;
+            width: 175px;
+            height: 51px;
+            background-size: cover;
+        }
+        .nav_menu{
+            display: flex;
             align-items: center;
-            margin-bottom: 20px;
-            box-sizing: border-box;
         }
 
-        .menu_cont {
-            display: flex;
+        .nav_menu img{
+            /* width: 200px; */
+            height: 28px;
+            padding: 20px;
+        }
+        .nav_menu img:nth-child(5){
+            padding-right: 0;
         }
 
-        /* main */
-        #main{
-            margin-bottom: 20px;
-        }
-        .slider_banner_view{
+        /* 중간 */
+        .section_container {
+            /* background-color: #cbcbcb; */
+            width: 100%;
+            /* height: 442px; */
             overflow: hidden;
-            width: 960px;
-            height: 400px;
         }
-
-        .slider_banner_moving{
+        .sub_banner{
+            padding: 20px;
+            height: 100px;
+            background: #f2f2f2;
+            width: 45%;
+            justify-content: space-between;
+            /* box-sizing: border-box; */
+        }
+        .sub_banner img{
+            padding: 10px;
+            height: 53px;
+            width: 70px;
+        }
+        .section_banner_cont{
             display: flex;
-            flex-wrap: nowrap;
+            /* background-color: #999; */
+            /* overflow: hidden; */
+            margin-bottom: 18px;
         }
-        .event_banner {
-            background-color: #ededed;
-            /* width: 100%;
-            height: 400px; */
-            margin-bottom: 20px;
+        .section_banner_slider{
+            display: flex;
         }
 
-        /* 공지 */
-        .notice_cont {
+        .sub_banner_title:nth-child(1){
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .sub_banner_title:nth-child(2){
+            margin-bottom: 30px;
+        }
+
+
+        .section_sub_banner_cont{
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
         }
 
-        .notice {
+        /* 하단 */
+        .footer_container {
             /* background-color: #ededed; */
-            width: 50%;
-            height: 200px;
-            box-sizing: border-box;
-            margin-right: 20px;
-            padding: 30px;
+            width: 100%;
+            /* height: 500px; */
         }
-
-        .notice_banner{
-            width: 450px;
-        }
-
-        .notice_desc{
+        .footer_item{
             display: flex;
-            justify-content: space-between;
+            /* height: 100px; */
+            margin-bottom: 70px;
+            position: relative;
+        }
+        .footer_item_title{
+            font-weight: bold;
             margin-bottom: 10px;
         }
-
-
-        .title_all_container{
+        .footer_item_detail{
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
+            align-items: baseline;
         }
-
-        .title_container{
+        .footer_tab{
             display: flex;
+            height: 100px;
+            align-items: center;
         }
-
-        .notice_title:nth-child(1){
-            border-right: 2px solid #000;
+        .footer_tab .tab{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .footer_tab .tab:nth-child(1){
+            border-right: 1px solid #000;
             margin-right: 10px;
             padding-right: 10px;
-            font-weight: bold;
         }
 
-        /* 공지 타이틀 더 보기 */
-        .title_more{
-            display: flex;
+        .footer_tab .tab:nth-child(2){
+            color: #aaa6a6;
         }
-
-        .more_plus{
-            background-color: #5931df;
-            border-radius: 50px;
-            width: 20px;
-            height: 20px;
-            color: #fff;
-            text-align: center;
-            padding-top: 2px;
-            box-sizing: border-box;
-        }
-
-        /* 메인 메뉴 */
-        .logo {
-            background: url(assets/img/logo.jpg) center;
-            background-size: cover;
-            height: 100px;
-            width: 200px;
-        }
-        .more_text{
-            font-size: 12px;
-            color: rgba(0, 0, 0, 0.491);
+        .footer_item_1:nth-child(1),
+        .footer_item_1:nth-child(2){
             margin-right: 10px;
-            padding-top: 2px;
         }
-        .menu_img{
-            height: 40px;
-        }
-        .menu_img:nth-child(1),
-        .menu_img:nth-child(2),
-        .menu_img:nth-child(3),
-        .menu_img:nth-child(4){
-            margin-right: 5px;
-        }
-/* 
-        .menu_img:nth-child(1) {
-            background-size: cover;
-            background: url(assets/img/menu_01.jpg);
-        }
-
-        .menu_img:nth-child(2) {
-            background: url(assets/img/menu_02.jpg);
-            background-size: cover;
-        }
-
-        .menu_img:nth-child(3) {
-            background: url(assets/img/menu_03.jpg);
-            background-size: cover;
-        }
-
-        .menu_img:nth-child(4) {
-            background: url(assets/img/menu_04.jpg);
-            background-size: cover;
-        }
-
-        .menu_img:nth-child(5) {
-            background: url(assets/img/menu_05.jpg);
-            background-size: cover;
-        } */
-
-        /* 특별한 경험 */
-        .experience_title{
+        .footer_item_1 img{
+            /* width: 33.3%; */
             margin-bottom: 10px;
-            font-weight: bold;
         }
-        .experience_cont {
+        .footer_desc{
             display: flex;
             justify-content: space-between;
-            background-size: cover;
+            /* height: 100px; */
+            background: #202020;
+            color: #fff;
+            padding: 40px;
+            /* align-items: center; */
+        }
+        .footer_desc img{
+            height: 44px;
+            width: 165px;
         }
 
-        .experience_img {
-            width: 230px;
-            /* height: 200px; */
-            box-sizing: border-box;
-            background-color: #ededed;
+        .footer_desc_menu_cont{
+            display: flex;
+            /* justify-content: space-between; */
+            margin-bottom: 40px;
+        }
+
+        .footer_desc_menu_cont_menu{
+            font-weight:bold;
+            /* font-size: 13px; */
+            border-right: 1px solid rgba(255, 255, 255, 0.293);
+            padding-right: 30px;
+            margin-right: 30px;
+        }
+
+        .footer_desc_cont{
+            /* width: 430px; */
+        }
+        .footer_desc_submenu_cont{
+            color: rgba(255, 255, 255, 0.385);
+            /* margin-bottom: 10px; */
+            font-size: 14px;
+        }
+        .footer_desc_submenu_cont.one,
+        .footer_desc_submenu_cont.two{
             margin-bottom: 10px;
         }
 
-        /* 푸터 */
-        footer > p {
-            color: rgba(0, 0, 0, 0.424);
+        .footer_desc_submenu_cont p:nth-child(1){
+            border-right: 0.1px solid rgba(255, 255, 255, 0.236);
+            margin-right: 10px;
+            padding-right: 10px;
         }
 
-        .popup{
-            width: 25%;
-            height: 25%;
-            z-index: 1;
-            background-color: #fff;
+        .free_number{
+            position: absolute;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.66);
+            color: #fff;
+            left: 10px;
+            top: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .free_number2{
+            position: absolute;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.66);
+            color: #fff;
+            left: 347px;
+            top: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .free_number3{
+            position: absolute;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.66);
+            color: #fff;
+            left: 685px;
+            top: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .active{
+            color: #000 !important;
+        }
+        .none{
+            color: #aaa6a6;
+        }
+
+        .popup_container{
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate( -50%, -50%);
-            border-radius: 15px;
-            box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.283);
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: #fff;
+            border-radius: 20px;
+            z-index: 1000;
             display: none;
         }
 
-        /* 블라인드 효과 */
-        .blind {
-            position: absolute;
-            clip: rect(0 0 0 0);
-            width: 1px;
-            height: 1px;
-            margin: -1px;
-            overflow: hidden;
+        .show{
+            display: block;
         }
 
-        /* 이미지 대체(ir) */
+        .popup_close{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background: #ededed;
+        }
+
+       /* 이미지 대체(ir) */
         .ir {
             display: block;
             overflow: hidden;
@@ -276,97 +322,138 @@
     </style>
 </head>
 
-<body class="container nexon">
-    <header id="header">
-        <!-- <div class="logo"></div> -->
-        <img class="logo" src="assets/img/logo.jpg" alt="로고">
-        <div class="menu_cont">
-            <img class="menu_img" src="assets/img/menu_01.jpg" alt="즐길거리">
-            <img class="menu_img" src="assets/img/menu_02.jpg" alt="요금/우대혜택">
-            <img class="menu_img" src="assets/img/menu_03.jpg" alt="참여프로그램">
-            <img class="menu_img" src="assets/img/menu_04.jpg" alt="이용가이드">
-            <img class="menu_img" src="assets/img/menu_05.jpg" alt="소통서비스">
+<body class="nexon">
+    <div class="container section">
+        <div class="popup_container">
+            <div class="popup_close">X</div>
         </div>
-    </header>
-    <main id="main">
-        <div class="popup">안녕!</div>
-        <div class="slider_banner_view">
-            <div class="slider_banner_moving">
-                <img class="event_banner" src="assets/img/main.jpg" alt="메인 배너 01">
-                <img class="event_banner" src="assets/img/main_02.jpg" alt="메인 배너 02">
-    
+        <nav class="nav_container">
+            
+            <div class="nav_logo"><span class="ir">logo</span></div>
+            <div class="nav_menu">
+                <img src="assets/img2/2.jpg" alt="cookit 소개">
+                <img src="assets/img2/3.jpg" alt="cookit 메">
+                <img src="assets/img2/4.jpg" alt="리뷰">
+                <img src="assets/img2/5.jpg" alt="이벤트">
+                <img src="assets/img2/6.jpg" alt="MY쿡킷">
             </div>
-        </div>
-        <div class="notice_cont">
-            <div class="notice">
-                <div class="title_all_container">
-                    <div class="title_container">
-                        <div class="notice_title">롯데월드 소식</div>
-                        <div class="notice_title">뉴스.공지</div>
-                    </div>
-                    <div class="title_more">
-                        <div class="more_text">더보기</div>
-                        <div class="more_plus">+</div>
-                    </div>
-                </div>
-                <div class="notice_container">
-                    <div class="notice_desc">
-                        <p>그럴싸진관 미라클</p>
-                        <p>2018.11.19</p>
-                    </div>
-                    <div class="notice_desc">
-                        <p>드림스테이지 '힘내 소중한 너'</p>
-                        <p>2018.11.20</p>
-                    </div>
-                    <div class="notice_desc">
-                        <p>'힘내 소중한 너' 음원 발매</p>
-                        <p>2018.11.13</p>
-                    </div>
-                    <div class="notice_desc">
-                        <p>이용 요금 조정 안내</p>
-                        <p>2018.11.12</p>
-                    </div>
+        </nav>
+        <section class="section_container">
+            <div class="section_banner_cont">
+                <div class="section_banner_slider">
+                    <img class="slider_item" src="assets/img2/banner1.jpg" alt="cookit 소개">
+                    <img class="slider_item" src="assets/img2/banner2.jpg" alt="cookit 소개">
+                    <img class="slider_item" src="assets/img2/banner3.jpg" alt="cookit 소개">
                 </div>
             </div>
-            <img class="notice_banner" src="assets/img/event_01.jpg" alt="이벤트 배너">
+            <div class="section_sub_banner_cont">
+                <div class="sub_banner flex align">
+                    <div>
+                        <div class="sub_banner_title">우리집도 cookit 배송이 되나요?</div>
+                        <div class="sub_banner_title">배송이 가능한지 알려드려요</div>
+                        <div class="sub_banner_title">배송지 검색</div>
+                    </div>
+                    <img class="popup_button"  src="assets/img2/8.jpg" alt="cookit 소개">
+                </div>
+                <div class="sub_banner flex align">
+                    <div>
+                        <div class="sub_banner_title">7월 30일(화)에 받을 수 있어요</div>
+                        <div class="sub_banner_title">배송이 가능한지 알려드려요</div>
+                        <div class="sub_banner_title">배송지 검색</div>
+                    </div>
+                    <img class="popup_button" src="assets/img2/9.jpg" alt="cookit 소개">
+                </div>
+            </div>
+        </section>
+        <footer class="footer_container">
+            <div class="footer_tab">
+                <div class="tab item1">실시간 베스트</div>
+                <div class="tab item2">생생한 리뷰</div>
+            </div>
+            <div class="footer_item">
+                <div class="footer_item_1">
+                    <div class="free_number">BEST<br>01</div>
+                    <img class="popup" src="assets/img2/10.jpg" alt="MY쿡킷">
+                    <div class="footer_item_title">평양식 어복쟁반</div>
+                    <div class="footer_item_detail">
+                        <div style="font-weight:bold; margin-right: 10px;">33,800원</div>
+                        <div style="font-size: 13px;">/ 3인분</div>
+                    </div>
+                </div>
+                <div class="footer_item_1">
+                    <div class="free_number2">BEST<br>02</div>
+                    <img src="assets/img2/11.jpg" alt="MY쿡킷">
+                    <div class="footer_item_title">평양식 어복쟁반</div>
+                    <div class="footer_item_detail">
+                        <div style="font-weight:bold; margin-right: 10px;">33,800원</div>
+                        <div style="font-size: 13px;">/ 3인분</div>
+                    </div>
+                </div>
+                <div class="footer_item_1">
+                    <div class="free_number3">BEST<br>03</div>
+                    <img src="assets/img2/12.jpg" alt="MY쿡킷">
+                    <div class="footer_item_title">평양식 어복쟁반</div>
+                    <div class="footer_item_detail">
+                        <div style="font-weight:bold; margin-right: 10px;">33,800원</div>
+                        <div style="font-size: 13px;">/ 3인분</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_desc">
+                <img src="assets/img2/13.jpg" alt="cookit 소개">
+                <div class="footer_desc_cont">
 
-        </div>
-        <div class="experience_title">특별한 경험</div>
-        <div class="experience_cont">
-            <div class="experience_box ">
-                <img class="experience_img" src="assets/img/desc_01.jpg" alt="즐길거리">
-                <div class="experience_desc">연간회원안내</div>
+                    <div class="footer_desc_menu_cont">
+                        <div class="footer_desc_menu_cont_menu">이용약관</div>
+                        <div class="footer_desc_menu_cont_menu">개인정보처리 방침</div>
+                        <div class="footer_desc_menu_cont_menu">법적고지</div>
+                        <div style="font-weight: bold">사업자정보 확인</div>
+                    </div>
+                    <div class="footer_desc_submenu_cont one flex">
+                        <p>씨제이제일제당(주)</p>
+                        <p>대표자:신현재</p>
+                    </div>
+                    <div class="footer_desc_submenu_cont two flex">
+                        <p>주소:서울 중구 동호로 330 CJ 제일제당 센터(우)0456</p>
+                        <p>사업자등록번호:104-86-09585</p>
+                    </div>
+                    <div class="footer_desc_submenu_cont flex">
+                        <p>통신판매업신고 중구 제 07767호</p>
+                        <p>개인정보보호책임자:류화정</p>
+                    </div>
+                </div>
             </div>
-            <div class="experience_box ">
-                <img class="experience_img" src="assets/img/desc_02.jpg" alt="즐길거리">
-                <div class="experience_desc">연간회원안내</div>
-            </div>
-            <div class="experience_box ">
-                <img class="experience_img" src="assets/img/desc_03.jpg" alt="즐길거리">
-                <div class="experience_desc">연간회원안내</div>
-            </div>
-            <div class="experience_box ">
-                <img class="experience_img" src="assets/img/desc_04.jpg" alt="즐길거리">
-                <div class="experience_desc">연간회원안내</div>
-            </div>
-        </div>
-    </main>
-    <hr>
-    <footer id="footer">
-        <p>서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드 | 대표자: 박동기</p>
-        <p>사업자등록번호 : 219-85-00014 | 통신판매업신고번호 : 송파 제5513호 | 전화 : 1661-2000<br><br></p>
-        <p>COPYRIGHT 2018LOTTEWORLD ALL RIGHTS RESERVED.</p>
-    </footer>
-</body>
-<script>
-        const popupMenu = document.querySelector(".popup")
-        const noticeBanner = document.querySelector(".notice_banner")
-        noticeBanner.addEventListener("click",()=>{
-            popupMenu.style.display="block"
+        </footer>
+    </div>
+    <script>
+        const popup_btn = document.querySelector(".popup_button")
+        const popup_cont = document.querySelector(".popup_container")
+        const popup_close = document.querySelector(".popup_close")
+
+        popup_btn.addEventListener("click",()=>{
+            popup_cont.classList.add("show")
         })
-        const sliderImg = document.querySelector(".slider_banner_view")        //보여지는 영역
-        const sliderInner = document.querySelector(".slider_banner_moving")    //움직이는 영역
-        const slider = document.querySelectorAll(".event_banner")             //각각 이미지 
+
+        popup_close.addEventListener("click",()=>{
+            popup_cont.classList.remove("show")
+        })
+        
+
+        const tab1 = document.querySelector(".item1")
+        const tab2 = document.querySelector(".item2")
+
+        tab2.addEventListener("click",()=>{
+            tab2.classList.add("active")
+            tab1.classList.add("none")
+        })
+
+        tab1.addEventListener("click",()=>{
+            tab2.classList.remove("active")
+            tab1.classList.remove("none")
+        })
+        const sliderImg = document.querySelector(".section_banner_cont")        //보여지는 영역
+        const sliderInner = document.querySelector(".section_banner_slider")    //움직이는 영역
+        const slider = document.querySelectorAll(".slider_item")             //각각 이미지 
 
         let currentIndex = 0;                                                   //현재 보이는 이미지
         let sliderCount = slider.length;                                        //이미지 갯수
@@ -392,6 +479,8 @@
         }
 
         setInterval(sliderEffect, 2000)                             //슬라이더 이펙트 함수 실행은 2초마다
-</script>
+    </script>
+
+</body>
 
 </html>

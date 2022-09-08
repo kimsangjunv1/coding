@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <!-- 01번 메인 샘플 시작 -->
+                    <h2 class="t_tit">패럴렉스 이펙트_02 구현하기</h2>
+                    <p class="t_desc">스크롤을 내릴때 각 요소의 위치마다 번호에 show를 붙여 해당 속성의 스타일을 불어넣는 에제를 구현해보도록 하겠습니다!</p>
+                    <hr>
+                    <h2 class="t_tit2">동작원리</h2>
+                    <p class="t_desc">말로만 설명해드리면 이해가 어려울 수 있기에 하단의 사진을 통해 설명해드리겠습니다.</p>
+                    <img src="#" alt="">
+                    <hr>
+                    <h2 class="t_tit2">HTML 작성</h2>
+                    <p class="t_desc2">스크롤을 내릴때마다 선택되는 메뉴를 구현하기 위해 하단의 구조를 HTML에 추가시켜줍니다..</p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;nav id="parallax__nav"&gt;
+    &lt;ul&gt;
+        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+                                            </div>
+                    <hr>
+                    <!-- <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_10.png" alt=""> -->
+                   
+                    <h2 class="t_tit2">CSS 작성</h2>
+                    <p class="t_desc2_css">
+                        간단한 CSS 를 통한 살을 붙여줍니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">/* parallax__nav */
+    #parallax__nav {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 2000;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        border-radius: 50px;
+    }
+
+    #parallax__nav li {
+        display: inline;
+        margin: 0 5px;
+    }
+
+    #parallax__nav li a {
+        display: inline-block;
+        height: 30px;
+        padding: 5px 20px;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    #parallax__nav li.active a {
+        background: #fff;
+        color: #000;
+        border-radius: 20px;
+        box-sizing: content-box;
+    }
+
+    #parallax__cont {
+        max-width: 1600px;
+        /* background-color: rgba(255, 255, 255, 0.1); */
+        margin: 0 auto;
+        width: 98%;
+    }
+
+    .content__item {
+        width: 1000px;
+        max-width: 70vw;
+        margin: 30vw auto;
+        /* background-color: rgba(255, 255, 255, 0.3); */
+        text-align: left;
+        margin-right: 0;
+        position: relative;
+        padding-top: 8vw;
+    }
+
+    .content__item:nth-child(even) {
+        /* 2n도 가능하고 even 도 가능하고 */
+        margin-left: 0;
+        text-align: right;
+    }
+
+    .content__item__num {
+        font-size: 35vw;
+        font-family: 'Lato';
+        font-weight: 100;
+        position: absolute;
+        left: -5vw;
+        top: -16vw;
+        opacity: 0.07;
+        z-index: -2;
+    }
+
+    .content__item:nth-child(even) .content__item__num {
+        right: -5vw;
+        left: auto;
+        /* left 값 초기화 */
+    }
+
+    .content__item__title {
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+
+    .content__item__imgWrap {
+        width: 100%;
+        padding-bottom: 56.25%;
+        background-color: #000;
+        position: relative;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .content__item__img {
+        background: url(../../assets/slider/effect_bg_01.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* 내가 작아서 넣음 */
+        position: absolute;
+        width: 110%;
+        height: 110%;
+        left: -5%;
+        top: -5%;
+        filter: saturate(0%);
+        transition: all 1s;
+    }
+
+    .content__item:nth-child(1) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_01.jpg);
+    }
+
+    .content__item:nth-child(2) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_02.jpg);
+    }
+
+    .content__item:nth-child(3) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_03.jpg);
+    }
+
+    .content__item:nth-child(4) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_04.jpg);
+    }
+
+    .content__item:nth-child(5) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_05.jpg);
+    }
+
+    .content__item:nth-child(6) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_06.jpg);
+    }
+
+    .content__item:nth-child(7) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_07.jpg);
+    }
+
+    .content__item:nth-child(8) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_08.jpg);
+    }
+
+    .content__item:nth-child(9) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_09.jpg);
+    }
+
+    .content__item__desc {
+        font-size: 4vw;
+        line-height: 1.4;
+        margin-top: -5vw;
+        margin-left: -4vw;
+        word-break: keep-all;
+    }
+
+    .content__item:nth-child(even) .content__item__desc {
+        margin-left: auto;
+        margin-right: 4vw;
+    }
+
+    #parallax__info {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 2000;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    #parallax__info li,
+    .scrollTop {
+        line-height: 1.4;
+    }
+
+    @media (max-width: 800px) {
+        #parallax__cont {
+            margin-top: 70vw;
+        }
+
+        #parallax__nav {
+            padding: 10px;
+            right: auto;
+            left: 10px;
+            top: 10px;
+            transform: translateY(50%);
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #parallax__nav li {
+            display: block;
+            margin: 5px;
+        }
+
+        #parallax__nav li a {
+            font-size: 14px;
+            padding: 5px;
+            border-radius: 5px;
+            height: auto;
+            line-height: 1;
+        }
+
+        #parallax__nav li.active a {
+            border-radius: 5px;
+        }
+
+        #parallax__info {
+            left: 10px;
+            bottom: 10px;
+        }
+    }
+</code></pre>
+                    </div>
+                </div>
+                
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>

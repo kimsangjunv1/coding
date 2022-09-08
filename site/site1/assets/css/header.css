@@ -11,8 +11,11 @@
     position: fixed;
     left: 0;
     top: 0;
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.637);
     z-index: 100;
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.494);
+    white-space: nowrap;
 }
 
 .header__logo{
@@ -34,13 +37,16 @@
     display: inline;
 }
 .header__menu li a{
-    padding: 13px 30px;
+    padding: 13px 10px;
     margin: 0 5px;
     transition: background-color 0.3s;
 }
 .header__menu li a:hover{
     background-color: #f1f1f1;
     border-radius: 5px;
+}
+.header__menu__media{
+    display: none;
 }
 .header__member{
     width: 20%;
@@ -57,4 +63,36 @@
 .header__member a:hover{
     background-color: #000;
     color: #fff;
+}
+
+@media (max-width: 1030px){
+    .header__menu{
+        display: none;
+    }
+    .header__logo{
+        margin: 0 auto;
+        text-align: center;
+    }
+    .header__menu__media{
+        display: block;
+        width: 100%;
+        text-align: center;
+        overflow: scroll hidden;
+        white-space: nowrap;
+        margin-top: 70px;
+        position: fixed;
+        background: rgba(255, 255, 255, 0.637);
+        backdrop-filter: blur(15px);
+        z-index: 1000;
+        height: 55px;
+        padding-top: 20px;
+    }
+    .header__menu__media li{
+        display: inline;
+    }
+    .header__menu__media li a{
+        padding: 13px 30px;
+        margin: 0 5px;
+        transition: background-color 0.3s;
+    }
 }

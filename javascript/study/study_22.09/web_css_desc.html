@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,12 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/dracula.css">
 </head>
+
 <body>
     <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
     <header id="header">
-        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"
+            class="compact_menu">x</div>
         <h1><a href="index.html">Javascript</a></h1>
         <div style="margin:0 auto;
                     background-color: #f2f2f7;
@@ -68,11 +71,531 @@
                     <h2 class="t_tit">SVG로 도형 만들어보기</h2>
                     <p class="t_desc">svg 태그안에 rect를 point로 수치를 조정해 도형을 구현해낼 수 있는데 한번 이번 시간에는 해당 부분에 대하여 학습해봅시다!</p>
                     <hr>
+                    <h2 class="t_tit2">animation</h2>
+                    <table class="t_table">
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>예시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>animation-name</td>
+                                <td>@keyframe에 지정된 이름을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>animation-duration</td>
+                                <td>애니메이션이 실행되는 시간을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>animation-timing-function</td>
+                                <td>애니메이션 키프레임 움직임을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>animation-delay</td>
+                                <td>애니메이션이 시작되기 전까지 시간을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>animation-iteration</td>
+                                <td>애니메이션 반복 횟수를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>animation-derection</td>
+                                <td>애니메이션 방향을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>animation-fill-mode</td>
+                                <td>애니메이션 끝나고 난 뒤 어떤 값을 적용할지 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>animation-play-state</td>
+                                <td>애니메이션 실행 상태를 설정합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <h2 class="t_tit2">transition</h2>
+                    <table class="t_table">
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>예시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>transition-property</td>
+                                <td>트렌지션을 적용할 CSS 속성 대상을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>transition-druation</td>
+                                <td>트렌지션 작동시간을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>transition-timing-function</td>
+                                <td>트렌지션 움직임 효과를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>transition-delay</td>
+                                <td>트렌지션이 시작되기 전까지 시간을 설정합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 class="t_tit2">timing-function</h2>
+                    <table class="t_table">
+                        <colgroup>
+                            <col style="width: 30%">
+                            <col style="width: 70%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>예시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>linear</td>
+                                <td>일정한 간격으로 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>ease</td>
+                                <td>처음에는 서서히 가속하고 마지막 부분에서 급격히 감속합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>ease-in</td>
+                                <td>처음에는 천천히 시작하고 마지막에 가속합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>ease-out</td>
+                                <td>처음에는 최대 속도로 시작하고 마지막에 감속합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>ease-in-out</td>
+                                <td>처음에는 제로 속도로 시작하고, 중간 지점에서 최고 속도로 움직이고, 마지막 부분에서 서서히 감속합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>step-start</td>
+                                <td>애니메이션을 시작점에서 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>step-end</td>
+                                <td>애니메이션을 끝점에서 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>steps(int, start/end)</td>
+                                <td>애니메이션을 단계별을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>cubic-bezier(n,n,n,n)</td>
+                                <td>버지니아 곡선 값을 만들어서 설정합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //Intro0 -->
+
+                    <!-- //Intro0 -->
+                    <style>
+                        .timing.bg1>div {
+                            background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+                        }
+
+                        .timing.bg7>div {
+                            background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+                        }
+
+                        .timing {
+                            padding: 20px;
+                        }
+
+                        .timing>div {
+                            width: 100px;
+                            height: 100px;
+                            border-radius: 50%;
+                            color: #fff;
+                            text-align: center;
+                            line-height: 100px;
+                            margin: 10px;
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+                        .timing1.show {
+                            animation: move 2s 1 linear;
+                        }
+
+                        .timing2.show {
+                            animation: move 2s 1 ease;
+                        }
+
+                        .timing3.show {
+                            animation: move 2s 1 ease-in;
+                        }
+
+                        .timing4.show {
+                            animation: move 2s 1 ease-out;
+                        }
+
+                        .timing5.show {
+                            animation: move 2s 1 ease-in-out;
+                        }
+
+                        @keyframes move {
+                            0% {
+                                left: 0%;
+                            }
+
+                            50% {
+                                left: calc(100% - 120px)
+                            }
+
+                            100% {
+                                left: 0%;
+                            }
+                        }
+                    </style>
+                    <!-- Intro1 -->
+
+                    <h2 class="t_tit2">움직이는 공</h2>
+                    <p class="t_desc2">start를 누르면 움직이며, 애니메이션이 끝날시 Go를 눌렀을때 추가했던 클래스 "show"를 제거합니다.</p>
+                    <div class="bs-docs-section">
+                        <div class="start1 btn">Go</div>
+                        <div class="sample">
+                            <div class="timing bg1">
+                                <div class="timing1"><span>linear</span></div>
+                                <div class="timing2"><span>ease</span></div>
+                                <div class="timing3"><span>ease-in</span></div>
+                                <div class="timing4"><span>ease-out</span></div>
+                                <div class="timing5"><span>ease-in-out</span></div>
+                            </div>
+                        </div>
+                        <div class="t_code">
+<pre class="line-numbers language-css"><code>.timing1.show {animation: move 2s 1 linear;}
+.timing2.show {animation: move 2s 1 ease;}
+.timing3.show {animation: move 2s 1 ease-in;}
+.timing4.show {animation: move 2s 1 ease-out;}
+.timing5.show {animation: move 2s 1 ease-in-out;}
+
+@keyframes move {
+    0% {left: 0%;}
+    50% {left: 100%;}
+    100% {left: 0%;}
+}
+</code></pre>
+                        </div>
+                    </div>
+                    <script>
+                        const startBtn = document.querySelector(".start1");
+                        const allCircle = document.querySelectorAll(".timing.bg1 > div");
+
+                        startBtn.addEventListener("click", () => {
+                            allCircle.forEach((e,i)=>{
+                                e.classList.add("show");
+                                setTimeout(function(){
+                                    e.classList.remove("show");
+                                },2000);
+                            });
+                        })
+                    </script>
+                    <!-- //Intro1 -->
+
+<hr>
+
+                    <!-- Intro2 -->
+                    <style>
+                        .timing.bg2 > div {background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);}
+                        .timing.bg9 > div {background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);}
+                        
+                        .timing6.show {animation: move 4s 1 step-start;}
+                        .timing7.show {animation: move 4s 1 step-end;}
+                        .timing8.show {animation: move 4s 1 steps(4, start);}
+                        .timing9.show {animation: move 4s 1 steps(4, end);}
+                        .timing10.show {animation: move 4s 1 steps(10, start);}
+                        .timing11.show {animation: move 4s 1 steps(10, end);}
+                    </style>
+                    <div class="bs-docs-section">
+                        <h2 id="intro2" class="page-header">timing-function <button type="button" class="btn btn-warning start2">Go</button></h2>
+                        <div class="sample">
+                            <div class="timing bg2">
+                                <div class="timing6"><span>step-start</span></div>
+                                <div class="timing7"><span>step-end</span></div>
+                                <div class="timing8"><span>steps(4, start)</span></div>
+                                <div class="timing9"><span>steps(4, end)</span></div>
+                                <div class="timing10"><span>steps(10, start)</span></div>
+                                <div class="timing11"><span>steps(10, start)</span></div>
+                            </div>
+                        </div>
+                        <div class="t_code">
+<pre class="line-numbers language-css"><code>.timing6.show {animation: move 4s 1 step-start;}
+.timing7.show {animation: move 4s 1 step-end;}
+.timing8.show {animation: move 4s 1 steps(4, start);}
+.timing9.show {animation: move 4s 1 steps(4, end);}
+.timing10.show {animation: move 4s 1 steps(10, start);}
+.timing11.show {animation: move 4s 1 steps(10, end);}
+</code></pre>       
+                        </div>
+                        <script>
+                            const startBtn2 = document.querySelector(".start2");
+                            const allCircle2 = document.querySelectorAll(".timing.bg2 > div");
+
+                            startBtn2.addEventListener("click", () => {
+                                allCircle2.forEach((e, i) => {
+                                    e.classList.add("show");
+                                    setTimeout(function () {
+                                        e.classList.remove("show");
+                                    }, 4000);
+                                });
+                            })
+                        </script>
+                    </div>
+                    <!-- intro 2 -->
+
+                    <style>
+                        .timing.bg3 > div {background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);}
+                        .timing12.show {animation: move 3s 2 cubic-bezier(0,.71,0,1);}
+                        .timing13.show {animation: move 3s 2 cubic-bezier(0,.71,1,-0.28);}
+                        .timing14.show {animation: move 3s 2 cubic-bezier(1,-0.52,1,-0.28);}
+                        .timing15.show {animation: move 3s 2 cubic-bezier(1,.02,0,1.01);}
+                        .timing16.show {animation: move 3s 2 cubic-bezier(.33,2.04,1,2.05);}
+                    </style>
+                    <!-- Intro3 -->
+                    <div class="bs-docs-section">
+                        <h2 id="intro3" class="page-header">cubic-bezier <button type="button" class="btn btn-warning start3">Start</button></h2>
+                        <div class="sample">
+                            <h3><span></span><em class="sr-only">border-radius</em></h3>
+                            <div class="timing bg3">
+                                <div class="timing12"><span>timing12</span></div>
+                                <div class="timing13"><span>timing13</span></div>
+                                <div class="timing14"><span>timing14</span></div>
+                                <div class="timing15"><span>timing15</span></div>
+                                <div class="timing16"><span>timing16</span></div>
+                            </div>
+                        </div>
+                        <div class="t_code">
+
+<pre class="line-numbers language-css"><code>.timing12.show {animation: move 3s 2 cubic-bezier(0,.71,0,1);}
+.timing13.show {animation: move 3s 2 cubic-bezier(0,.71,1,-0.28);}
+.timing14.show {animation: move 3s 2 cubic-bezier(1,-0.52,1,-0.28);}
+.timing15.show {animation: move 3s 2 cubic-bezier(1,.02,0,1.01);}
+.timing16.show {animation: move 3s 2 cubic-bezier(.33,2.04,1,2.05);}
+</code></pre> 
+                        </div>
+                    </div>
+                    <script>
+                        document.querySelector(".start3").addEventListener("click", () => {
+                            document.querySelectorAll(".timing.bg3 > div").forEach((e,i)=>{
+                                e.classList.add("show");
+                                setTimeout(function(){
+                                    e.classList.remove("show");
+                                },3000);
+                            });
+                        })
+                    </script>
+                    <!-- //Intro3 -->
+
+                    <hr>
+
+                    <style>
+                        .timing.bg4 > div {background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);}
+                        .timing.bg8 > div {background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);}
+                        .timing17.show {animation: move 3s 0.1s 2 ease;}
+                        .timing18.show {animation: move 3s 0.2s 2 ease;}
+                        .timing19.show {animation: move 3s 0.3s 2 ease;}
+                        .timing20.show {animation: move 3s 0.4s 2 ease;}
+                    </style>
+                    <!-- Intro4 -->
+                    <div class="bs-docs-section">
+                        <h2 id="intro4" class="page-header">animation-delay <button type="button" class="btn btn-warning start4">Start</button></h2>
+                        <div class="sample">
+                            <div class="timing bg4">
+                                <div class="timing17"><span>timing17</span></div>
+                                <div class="timing18"><span>timing18</span></div>
+                                <div class="timing19"><span>timing19</span></div>
+                                <div class="timing20"><span>timing20</span></div>
+                            </div>
+                        </div>
+                        <div class="t_code">
+<pre class="line-numbers language-css"><code>.timing17.show {animation: move 3s 0.1s 2 ease;}
+.timing18.show {animation: move 3s 0.2s 2 ease;}
+.timing19.show {animation: move 3s 0.3s 2 ease;}
+.timing20.show {animation: move 3s 0.4s 2 ease;}
+</code></pre> 
+                        </div>
+                    </div>
+                    <script>
+                        document.querySelector(".start4").addEventListener("click", () => {
+                            document.querySelectorAll(".timing.bg4 > div").forEach((e,i)=>{
+                                e.classList.add("show");
+                                setTimeout(function(){
+                                    e.classList.remove("show");
+                                },3000);
+                            });
+                        })
+                    </script>
+                    <!-- //Intro4 -->
+
+                    <hr>
+
+                    <style>
+                        .timing.bg5 > div {background-image: linear-gradient(to top, #0fd850 0%, #f9f047 100%);}
+                        .timing21.show {animation: move 1s 1 ease;}
+                        .timing22.show {animation: move 1s 2 ease;}
+                        .timing23.show {animation: move 1s 3 ease;}
+                        .timing24.show {animation: move 1s infinite ease;}
+                    </style>
+                    <!-- Intro5 -->
+                    <div class="bs-docs-section">
+                        <h2 id="intro5" class="page-header">animation-iteration-count <button type="button" class="btn btn-warning start5">Start</button></h2>
+                        <div class="sample">
+                            <div class="timing bg5">
+                                <div class="timing21"><span>timing21</span></div>
+                                <div class="timing22"><span>timing22</span></div>
+                                <div class="timing23"><span>timing23</span></div>
+                                <div class="timing24"><span>timing24</span></div>
+                            </div>
+                        </div>
+                        <div class="t_code">
+<pre class="line-numbers language-css"><code>.timing21.show {animation: move 1s 1 ease;}
+.timing22.show {animation: move 1s 2 ease;}
+.timing23.show {animation: move 1s 3 ease;}
+.timing24.show {animation: move 1s infinite ease;}
+</code></pre> 
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- //Intro5 -->
+                    <script>
+                        document.querySelector(".start5").addEventListener("click", () => {
+                            document.querySelectorAll(".timing.bg5 > div").forEach((e,i)=>{
+                                e.classList.add("show");
+                            });
+                        })
+                    </script>
+
+<style>
+    .timing.bg6 {height: 600px;}
+    .timing.bg6 > div {background-image: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);}
+    .timing25.normal {animation: move2 4s 5 ease normal;}
+    .timing25.reverse {animation: move2 4s 5 ease reverse;}
+    .timing25.alternate {animation: move2 4s 5 ease alternate;}
+    .timing25.alternate-reverse {animation: move2 4s 5 ease alternate-reverse;}
+
+    @keyframes move2 {
+        0%   {left: 0; top: 0;}
+        25%  {left: calc(100% - 120px); top: 0;}
+        50%  {left: calc(100% - 120px); top: calc(100% - 120px);}
+        75%  {left: 0; top: calc(100% - 120px);}
+        100% {left: 0; top: 0;}
+    }
+</style>
+<!-- Intro6 -->
+<div class="bs-docs-section">
+    <h2 id="intro6" class="page-header">animation-direction 
+        <button type="button" class="btn btn-warning start6-1">normal</button>
+        <button type="button" class="btn btn-warning start6-2">reverse</button>
+        <button type="button" class="btn btn-warning start6-3">alternate</button>
+        <button type="button" class="btn btn-warning start6-4">alternate-reverse</button>
+    </h2>
+    <div class="sample">
+        <div class="timing bg6">
+            <div class="timing25"><span>timing25</span></div>
+        </div>
+    </div>
+    <div class="t_code">
+<pre class="line-numbers language-css"><code>.timing25.normal {animation: move2 4s 5 ease normal;}
+.timing26.reverse {animation: move2 4s 5 ease reverse;}
+.timing27.alternate {animation: move2 4s 5 ease alternate;}
+.timing28.alternate-reverse {animation: move2 4s 5 ease alternate-reverse;}
+</code></pre> 
+    </div>
+</div>
+<script>
+    const timing = document.querySelector(".timing25")
+
+document.querySelectorAll("#intro6 > button").forEach((e,i)=>{
+    // console.log(e)
+     e.addEventListener("click", ()=>{
+        var txt = this.Text;
+        timing.classList.remove("normal", "reverse", "alternate", "alternate-reverse");
+        timing.classList.add('normal');
+    })
+})
+</script>
+<!-- //Intro6 -->
+
+<hr>
+
+<style>
+    .timing26.show {animation: move3 3s 1 ease; animation-fill-mode: none;}
+    .timing27.show {animation: move3 3s 1 ease; animation-fill-mode: forwards;}
+    .timing28.show {animation: move3 3s 1 ease; animation-fill-mode: backwards;}
+    .timing29.show {animation: move3 3s 1 ease; animation-fill-mode: both;}
+    @keyframes move3 {
+        0% {left: 0%;}
+        100% {left: calc(100% - 120px);}
+    }
+</style>
+<!-- Intro7 -->
+<div class="bs-docs-section">
+    <h2 id="intro7" class="page-header">animation-fill-mode 
+        <button type="button" class="btn btn-warning start7">Start</button>
+    </h2>
+    <div class="sample">
+        <div class="timing bg7">
+            <div class="timing26"><span>timing26</span></div>
+            <div class="timing27"><span>timing27</span></div>
+            <div class="timing28"><span>timing28</span></div>
+            <div class="timing29"><span>timing29</span></div>
+        </div>
+    </div>
+    <div class="t_code">
+<pre class="line-numbers language-css"><code>.timing26.show {animation: move3 3s 1 ease; animation-fill-mode: none;}
+.timing27.show {animation: move3 3s 1 ease; animation-fill-mode: forwards;}
+.timing28.show {animation: move3 3s 1 ease; animation-fill-mode: backwards;}
+.timing29.show {animation: move3 3s 1 ease; animation-fill-mode: both;}
+@keyframes move3 {
+0% {left: 0%;}
+100% {left: calc(100% - 120px);}
+}
+</code></pre> 
+    </div>
+</div>
+<!-- //Intro7 -->
+
+<hr>
+
+<style>
+    .timing.bg8 {height: 600px;}
+    .timing30.running {animation: move2 4s 100 ease; animation-play-state: running;}
+    .timing30.paused {animation: move2 4s 100 ease; animation-play-state: paused;}
+</style>
+<!-- Intro8 -->
+<div class="bs-docs-section">
+    <h2 id="intro8" class="page-header">animation-play-state
+        <button type="button" class="btn btn-warning start8-1">running</button>
+        <button type="button" class="btn btn-warning start8-2">paused</button>
+    </h2>
+    <div class="sample">
+        <div class="timing bg8">
+            <div class="timing30"><span>timing31</span></div>
+        </div>
+    </div>
+    <div class="t_code">
+<pre class="line-numbers language-css"><code>.timing30.running {animation: move2 4s 100 ease; animation-play-state: running;}
+.timing30.paused {animation: move2 4s 100 ease; animation-play-state: paused;}
+</code></pre> 
+    </div>
+</div>
+<!-- //Intro8 -->
+
                 </div>
             </main>
             <!-- 메인 샘플 끝 -->
         </div>
-    
+
     </main>
     <!-- //main -->
     <footer id="footer">
@@ -84,6 +607,32 @@
     <script>
         hljs.highlightAll();
     </script>
+    <script>
+        // document.querySelector(".stepBtnStart").addEventListener("click", (e) => {
+        //     e.preventDefault();
+        //     document.querySelectorAll(".stepbox").forEach(()=>{
+        //         e.classList.remove("stop")
+        //         e.classList.add("start")
+        //     })
+        // })
+
+        // $("#intro6 > button").click(function(){
+        //     let txt = $(this).text();
+        //     $(".timing25").removeClass("normal reverse alternate alternate-reverse").addClass(txt);
+        // });
+
+        // const timing = document.querySelector(".timing25")
+
+        // document.querySelectorAll("#intro6 > button").forEach((e,i)=>{
+        //     // console.log(e)
+        //      e.addEventListener("click", ()=>{
+        //         var txt = this.Text;
+        //         timing.classList.remove("normal", "reverse", "alternate", "alternate-reverse");
+        //         timing.classList.add('normal');
+        //     })
+        // })
+    </script>
 
 </body>
+
 </html>
