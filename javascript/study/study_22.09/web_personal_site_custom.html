@@ -73,15 +73,288 @@
                     </p>
                     <hr>
                     <h2 class="t_tit2">피그마를 통해 레이아웃 잡아보기</h2>
-                    <p class="t_desc2">처음 구상해볼때 뭔가 블로그라고 해서 꼭 블로그하면 떠오르는 레이아웃과 구성 그런것들을 할필요는 없을거같아 이 부분들에서 벗어나고 싶어서 좀 많이 엎어봤어요<br></p>
+                    <p class="t_desc2">처음 구상해볼때 뭔가 블로그라고 해서 꼭 블로그하면 떠오르는 모습들보다는 다르게 가고싶어서 이렇게 했는데<br>
+                    막상 하고 보니까 언제 끝낼까 라는 생각도 드네요 ㅋㅋㅋㅋ</p>
                     <img style="width: 100%;" src="https://github.com/kimsangjunv1/coding/blob/main/assets/img/screenshot_13.jpg?raw=true" alt="컨셉설명">
                     <hr>
+                    <h2 class="t_tit2">HTML : HEADER</h2>
+                    <p class="t_desc2">헤더 부분은 [ 제목 ] 과 [ 메뉴 및 프로필 사진 ] 이렇게 두 덩어리로 나눠 flex로 가로 정렬 후 space-between으로 양쪽 끝에 붙여 두었으며,<br>스크립트로 스크롤을 내릴 시 프로필 사진과 헤더 부분의 사이즈를 조정하는 클래스를 붙이도록 설정했습니다.</p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;header id="header"&gt;
+    &lt;div class="header_divider"&gt;
+        &lt;div&gt;
+            &lt;span&gt;
+                &lt;!-- 추가 수정 --&gt;
+                &lt;a href="/" class="numbertwo"&gt;TODAY CODING CODi&lt;/a&gt;
+            &lt;/span&gt;
+            &lt;span&gt;
+                &lt;a href="/" class="numberone"&gt;&lt;/CODi&gt;&lt;/a&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="util"&gt;
+        &lt;div&gt;
+            &lt;!--이 부분은 티스토리 치환자 입니다.--&gt;
+            &lt;ul class="tt_category"&gt;
+                &lt;li class=""&gt;
+                    &lt;a class="link_tit" href="/category"&gt;
+                        분류 전체보기
+                        &lt;img src="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-cd415d6e47146dfa13c383527a5e8d7fcc0d6114/blogs/image/category/new_ico_5.gif?_version_=tistory-cd415d6e47146dfa13c383527a5e8d7fcc0d6114"
+                            alt="N" style="vertical-align:middle;padding-left:2px;"&gt;
+                    &lt;/a&gt;
+
+                    &lt;ul class="category_list"&gt;
+                        &lt;li class=""&gt;
+                            &lt;a class="link_item" href="/category/MAIN"&gt;
+                                MAIN
+                                &lt;img src="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-cd415d6e47146dfa13c383527a5e8d7fcc0d6114/blogs/image/category/new_ico_5.gif?_version_=tistory-cd415d6e47146dfa13c383527a5e8d7fcc0d6114"
+                                    alt="N" style="vertical-align:middle;padding-left:2px;"&gt;
+                            &lt;/a&gt;
+
+
+                        &lt;/li&gt;
+                        &lt;li class=""&gt;
+                            &lt;a class="link_item" href="/category/STUDY"&gt;
+                                STUDY
+                                &lt;img src="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-cd415d6e47146dfa13c383527a5e8d7fcc0d6114/blogs/image/category/new_ico_5.gif?_version_=tistory-cd415d6e47146dfa13c383527a5e8d7fcc0d6114"
+                                    alt="N" style="vertical-align:middle;padding-left:2px;"&gt;
+                            &lt;/a&gt;
+
+
+                        &lt;/li&gt;
+                        &lt;li class=""&gt;
+                            &lt;a class="link_item" href="/category/PORTFOLIO"&gt;
+                                PORTFOLIO
+                                &lt;img src="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-cd415d6e47146dfa13c383527a5e8d7fcc0d6114/blogs/image/category/new_ico_5.gif?_version_=tistory-cd415d6e47146dfa13c383527a5e8d7fcc0d6114"
+                                    alt="N" style="vertical-align:middle;padding-left:2px;"&gt;
+                            &lt;/a&gt;
+
+
+                        &lt;/li&gt;
+                        &lt;li class=""&gt;
+                            &lt;a class="link_item" href="/category/APPLICATIONS"&gt;
+                                APPLICATIONS
+                                &lt;img src="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-cd415d6e47146dfa13c383527a5e8d7fcc0d6114/blogs/image/category/new_ico_5.gif?_version_=tistory-cd415d6e47146dfa13c383527a5e8d7fcc0d6114"
+                                    alt="N" style="vertical-align:middle;padding-left:2px;"&gt;
+                            &lt;/a&gt;
+
+
+                        &lt;/li&gt;
+                        &lt;li class=""&gt;
+                            &lt;a class="link_item" href="/category/ABOUT_ME"&gt;
+                                ABOUT_ME
+                                &lt;img src="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-cd415d6e47146dfa13c383527a5e8d7fcc0d6114/blogs/image/category/new_ico_5.gif?_version_=tistory-cd415d6e47146dfa13c383527a5e8d7fcc0d6114"
+                                    alt="N" style="vertical-align:middle;padding-left:2px;"&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;!--이 부분은 티스토리 치환자 끝 부분 입니다.--&gt;
+        &lt;/div&gt;
+        &lt;div class="profile"&gt;
+            &lt;button type="button"&gt;&lt;img
+                    src="https://tistory1.daumcdn.net/tistory/5622939/attach/d2365d221dfc47fca722aff55031f863"
+                    alt="블로그 이미지"&gt;&lt;/button&gt;
+            &lt;nav&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="https://web-codi.tistory.com/manage"&gt;관리&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="https://web-codi.tistory.com/manage/entry/post "&gt;글쓰기&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class="login" style="display: none;"&gt;&lt;a href="#"&gt;로그인&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class="logout"&gt;&lt;a href="#"&gt;로그아웃&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+        &lt;button type="button" class="menu"&gt;&lt;span&gt;메뉴&lt;/span&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;!-- progress-bar 영역 Start --&gt;
+    &lt;div class="progress-box"&gt;
+        &lt;div class="progress-container"&gt;
+            &lt;div class="progress-bar" id="indicator"&gt;
+                &lt;p class="test_gage"&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;!--&lt;a href="#" class="page-top"&gt;TOP&lt;/a&gt;--&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- progress-bar 영역 End --&gt;
+&lt;/header&gt;
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">HTML : 자기소개</h2>
+                    <p class="t_desc2">첫번째 자기 소개 부분의 사진은 최대한 불필요한 수정작업이 필요하지 않도록 [티스토리 치환자]를 통해 프로필 사진을 그대로 가져와 사용하도록 했습니다.<br>대신 두번째 사진은 그냥 깃허브를 통해 넣었습니다. 둘 모두 absolute를 통해 기호에 맞게 위치를 조정해주시면 됩니다</p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;div class="all__main__cont"&gt;
+    &lt;div&gt;
+        &lt;p style="font-size: 100px" class="main__total"&gt;HELLO!&lt;/p&gt;
+        &lt;p style="font-size: 19px" class="main__total"&gt;
+        어떤 일이라도 노력하고 즐기면&lt;br&gt;
+        그 결과는 빛을 바란다고 생각합니다.&lt;br&gt;&lt;br&gt;
+        신입의 열정과 도전정신을 깊숙히 새기며&lt;br&gt;
+        배움에 있어 겸손함을 유지하며 세부적인 곳까지 파고드는&lt;br&gt;
+        개발자가 되겠습니다.
+        &lt;/p&gt;
+        &lt;div class="more_desc_btn"&gt;
+        자세히 보기
+        &lt;/div&gt;
+        
+    &lt;/div&gt;
+    &lt;div style="position: relative"&gt;
+        &lt;div class="main__profile"&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/5622939/attach/d2365d221dfc47fca722aff55031f863" alt="블로그 이미지"&gt;&lt;/div&gt;
+        &lt;img class="main__sub_image" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_6.png" alt=""&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">HTML : 최근 내 소식</h2>
+                    <p class="t_desc2">
+                        1. 간단하게 카드 느낌을 주기위해 ::after로 카드 상단에 구멍을 내주었어요. <br>
+                        2. 좌우로 스크롤 하기 위해서 post-header 클래스 양쪽에 ::before, ::after로 그라데이션을 넣어 스크롤 해서 보여지는 부분을 넘어가면 자연스럽게 사라지는듯한 느낌을 주었어요!
+                        3. 사진위에 그냥 글씨를 넣으면 안보이기 때문에 그라데이션을 넣어두었습니다~
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;div class="all__main__cont"&gt;
+    &lt;div&gt;
+        &lt;p style="font-size: 100px" class="main__total"&gt;HELLO!&lt;/p&gt;
+        &lt;p style="font-size: 19px" class="main__total"&gt;
+        어떤 일이라도 노력하고 즐기면&lt;br&gt;
+        그 결과는 빛을 바란다고 생각합니다.&lt;br&gt;&lt;br&gt;
+        신입의 열정과 도전정신을 깊숙히 새기며&lt;br&gt;
+        배움에 있어 겸손함을 유지하며 세부적인 곳까지 파고드는&lt;br&gt;
+        개발자가 되겠습니다.
+        &lt;/p&gt;
+        &lt;div class="more_desc_btn"&gt;
+        자세히 보기
+        &lt;/div&gt;
+        
+    &lt;/div&gt;
+    &lt;div style="position: relative"&gt;
+        &lt;div class="main__profile"&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/5622939/attach/d2365d221dfc47fca722aff55031f863" alt="블로그 이미지"&gt;&lt;/div&gt;
+        &lt;img class="main__sub_image" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_6.png" alt=""&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <h2 class="t_tit2">JQUERY : 최근 내 소식</h2>
+                    <div class="t_code">
+<pre><code class="language-js">$.ajax({
+    url: "https://api.rss2json.com/v1/api.json?rss_url=https://web-codi.tistory.com/rss",
+    dataType: "json",
+    success: function(data) {
+        for (var i = 0; i < 10; i++) {
+            let articleData = `
+                &lt;article&gt;
+                     &lt;a href="${data.items[i].link}" target="_blank" class="link-article"&gt;
+                         &lt;div class="text_container"&gt;
+                             &lt;span class="author"&gt;${data.items[i].author}&lt;/span&gt;
+                             &lt;span class="title"&gt;${data.items[i].title}&lt;/span&gt;
+                             &lt;span class="desc"&gt;${data.items[i].pubDate}&lt;/span&gt;
+                         &lt;/div&gt;
+                         &lt;div class="gradient_bg"&gt;&lt;/div&gt;	
+                         &lt;img src="${data.items[i].thumbnail}" alt="" /&gt;
+                     &lt;/a&gt;
+                 &lt;/article&gt;
+            `;
+            $("#recent_data").append(articleData);
+        }
+    }
+});
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">HTML : 해시태그</h2>
+                    <p class="t_desc2">
+                        1. 해시태그는 치환자가 여러가지 있었는데 aside에 붙어있는 hashtag 치환자를 가져와 사용하시면 생각보다 쉽게 들어가더라구요~~
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-html">&gt;div class="hashtag"&gt;
+    &gt;h2&gt;#HASH_TAGS&gt;/h2&gt;
+    &gt;s_sidebar_element&gt;
+        &gt;!-- 해시태그 치환자 --&gt;
+        &gt;div class="tags"&gt;
+
+            &gt;a href="/tag/%EA%B2%80%EC%9D%80%EB%B3%B4%EB%94%B0%EB%A6%AC"&gt;검은보따리&gt;/a&gt;
+
+            &gt;a href="/tag/%EC%8B%A4%EC%A0%84%EC%B2%98%EB%9F%BC"&gt;실전처럼&gt;/a&gt;
+
+            &gt;a href="/tag/%ED%85%8C%EC%8A%A4%ED%8A%B8_01"&gt;테스트_01&gt;/a&gt;
+
+            &gt;a href="/tag/%EC%9D%B8%EC%83%9D%EC%9D%80"&gt;인생은&gt;/a&gt;
+
+            &gt;a href="/tag/%EA%B2%80%EC%9D%80%EB%B4%89%ED%88%AC"&gt;검은봉투&gt;/a&gt;
+
+            &gt;a href="/tag/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8"&gt;자바스크립트&gt;/a&gt;
+
+            &gt;a href="/tag/%EC%98%A4%EB%8A%98%EC%9D%80"&gt;오늘은&gt;/a&gt;
+
+            &gt;a href="/tag/%EC%95%84%EC%9D%B4%EC%8A%A4%ED%81%AC%EB%A6%BC"&gt;아이스크림&gt;/a&gt;
+
+            &gt;a href="/tag/%EC%82%AC%EC%9E%90"&gt;사자&gt;/a&gt;
+
+            &gt;a href="/tag/%EB%AD%90%ED%95%A0%EA%B9%8C"&gt;뭐할까&gt;/a&gt;
+
+        &gt;/div&gt;
+        &gt;!-- 해시태그 치환자 끝 --&gt;
+    &gt;/s_sidebar_element&gt;
+    &gt;p class="tags_counting_star"&gt;1&gt;/p&gt;
+&gt;/div&gt;
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">HTML : 해시태그</h2>
+                    <p class="t_desc2">
+                        하단에 붙여놓은 검색창은 헤더에 붙어있는 티스토리 치환자를 쓰면 제대로 작동을 안하더라구요,,<br>
+                        그래서 검사를 했을때 나오던 치환자 결과값 그대로 html에 붙여 사용하였습니다~~!
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;div class="search"&gt;
+    &lt;input type="text" class="article_search_field" placeholder="무엇이든 검색해보세요." name="search" value="" onkeypress="if (event.keyCode == 13) { try{window.location.href='/search/' + document.getElementsByName('search')[0].value.replaceAll('%', '%25');document.getElementsByName('search')[0].value = ''; return false;}catch(e){} }" id="article_search"&gt;
+    &lt;button type="submit" class="article_search_submit" value="검색" onclick="try{window.location.href='/search/' + document.getElementsByName('search')[0].value.replaceAll('%', '%25');document.getElementsByName('search')[0].value = ''; return false;}catch(e){}"&gt;검색&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">HTML : 갤러리</h2>
+                    <p class="t_desc2">
+                        1. thum 클래스에 마우스를 가져다 대면
+                        2. 숨겨두었던 ".gradient_two_bg" 클래스를 불러옵니다.
+                        3. .thum 클래스에 ::after 요소를 사용해 Go! 글자를 띄워주었습니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;div class="post-item"&gt;
+    &lt;a href="/15"&gt;
+        &lt;span class="thum"&gt;
+            &lt;span class="title"&gt;여기 한국 맞죠...? k-간판 있는거 보면..&lt;/span&gt;
+            &lt;span class="excerpt"&gt;실상은 그냥 골목길&lt;/span&gt;
+            &lt;div class="gradient_two_bg"&gt;&lt;/div&gt;
+            
+                &lt;img src="//i1.daumcdn.net/thumb/T650x650/?fname=https://blog.kakaocdn.net/dn/cggG94/btrLOm4ugNq/kLy1Vkknkrzjcy5evyBbKK/img.png" alt=""&gt;&lt;!--수정2--&gt;
+            
+        &lt;/span&gt;
+    &lt;span class="meta"&gt;
+            &lt;span class="date"&gt;2022. 9. 11.&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">후기</h2>
+                    <p class="t_desc2">
+                        저는 이거 두시간 생각하고 했던건데 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ,,,,,,,, 이렇게 까지 길줄은 몰랐어요 <br>
+                        아마 다른분들이 하셨으면 금방 끝났겠죠? 저는 티스토리 치환자 신경쓰면서 처음부터 다 엎다보니까 자꾸만 헤매이게 되었네요<br>
+                        그래도 구현은 가능할까 생각했던 부분들이 몇몇부분 빼고는 왠만하면 다 구현되어서 뿌듯했던 작업이였습니다 (๑′ᴗ‵๑)<br><br>
+
+                        * <i>CSS 부분은 제가 수정해놓은게 너무 많아서 적어두지 않고 홈페이지에 가셔서 확인해보시면 될거같아요!</i>
+                    </p>
+                    <img style="width: 100%;" src="https://github.com/kimsangjunv1/coding/blob/main/assets/img/screenshot_12.jpg?raw=true" alt="컨셉설명">
+                    
                     <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
                         <div class="t_link">
-                            <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/parallaxEffect03.html" target="blank">원본 소스 보기</a>
-                        </div>
-                        <div class="t_link">
-                            <a href="https://kimsangjunv1.github.io/coding/javascript/effect/parallaxEffect03" target="blank">원본 페이지 보기</a>
+                            <a style="width: 100%; border: 1px solid #000; " href="https://web-codi.tistory.com/" target="blank">페이지 보기</a>
                         </div>
                     </div>
                 </div>
