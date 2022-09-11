@@ -21,16 +21,16 @@
 }
 
 .actived{
-    background: #767676b3;
-    padding: 10px 0px;
-    border-radius: 5px;
+    padding: 13px 10px;
     border: 0.5px solid #fff;
-    /* color: #fff !important; */
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    color: #000 !important;
 }
 
-.actived a{
+/* .actived a{
     color: #fff !important;
-}
+} */
 
 /* 컨테이너 */
 .container {

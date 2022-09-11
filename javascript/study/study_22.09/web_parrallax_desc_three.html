@@ -65,48 +65,42 @@
             <main id="main">
                 <div class="document">
                     <!-- 01번 메인 샘플 시작 -->
-                    <h2 class="t_tit">패럴렉스 이펙트_02 구현하기</h2>
-                    <p class="t_desc">스크롤을 내릴때 각 요소의 위치마다 번호에 show를 붙여 해당 속성의 스타일을 불어넣는 에제를 구현해보도록 하겠습니다!</p>
-                    <hr>
-                    <h2 class="t_tit2">동작원리</h2>
-                    <p class="t_desc2">말로만 설명해드리면 이해가 어려울 수 있기에 하단의 사진을 통해 설명해드리겠습니다.</p>
-                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_11.png" alt="">
+                    <h2 class="t_tit">패럴렉스 이펙트_03 구현하기</h2>
+                    <p class="t_desc">이번 예제는 하단과 같은 기능을 구현해보도록 하겠습니다<br>
+                    1. 이전 스크롤값과 현재 스크롤값을 비교 후 스크롤을 올렸을때 이전 스크롤값보다 작으니 메뉴가 나타나는 기능<br>
+                    2. scrollTop값과 브라우저 내부 높이값을 더한 값보다 스크롤되지 않은 브라우저 내부 높이 보다 작을때 "top" 버튼에 클래스 show를 붙여 top버튼이 브라우저 맨 하단까지 내렸을때 버튼이 보이는 기능<br>
+                    </p>
                     <hr>
                     <h2 class="t_tit2">HTML 작성</h2>
-                    <p class="t_desc2">스크롤을 내릴때마다 선택되는 메뉴를 구현하기 위해 하단의 구조를 HTML에 추가시켜줍니다..</p>
+                    <p class="t_desc2">Top버튼 구현을 위해 하단 부분을 이전 예제에 추가시킵니다.</p>
                     <div class="t_code">
-<pre><code class="language-html">&lt;nav id="parallax__nav"&gt;
-    &lt;ul&gt;
-        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
+<pre><code class="language-html">&lt;div id="parallax__top"&gt;
+    Top
+&lt;/div&gt;
 </code></pre>
-                                            </div>
+                    </div>
                     <hr>
                     <!-- <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_10.png" alt=""> -->
                    
                     <h2 class="t_tit2">CSS 작성</h2>
                     <p class="t_desc2_css">
-                        간단한 CSS 를 통한 살을 붙여줍니다.
+                        이번 예제 구현을 위한 살을 붙여줍니다!
                     </p>
                     <div class="t_code">
 <pre><code class="language-css">/* parallax__nav */
     #parallax__nav {
         position: fixed;
         right: 20px;
-        top: 20px;
+        top: -200px;
         z-index: 2000;
         background-color: rgba(0, 0, 0, 0.4);
         padding: 20px 30px;
         border-radius: 50px;
+        transition: top 0.4s ease;
+    }
+
+    #parallax__nav.show{
+        top: 0;
     }
 
     #parallax__nav li {
@@ -301,55 +295,113 @@
             bottom: 10px;
         }
     }
+
+    #parallax__top{
+        position: fixed;
+        transform: translateX(-50%);
+        z-index: 10000;
+        left: 50%;
+        bottom: -200px;
+        width: 40px;
+        height: 40px;
+        background: rgba(0,0,0,0.4);
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        border-radius: 50%;
+        padding: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    #parallax__top.show {
+        bottom: 20px;
+    }
+
+    #parallax__top:hover{
+        background: #fff;
+        color: #000;
+    }
 </code></pre>
                     </div>
                     <hr>
-                    <h2 class="t_tit2">JS : 패럴렉스 이펙트 핵심</h2>
+                    <h2 class="t_tit2">JS : 브라우저의 맨 하단까지 스크롤을 하면 top 버튼 보여주기</h2>
                     <p class="t_desc2_css">
-                        자세한 설명은 상단의 사진을 통해 설명을 드렸으나 중요한 부분만 짚어드리자면,<br><br>
-                        .preventDefault() 를 통해 단순 클릭으로 해당 id값으로 틱! 이동해버리는 이벤트 발생을 막고 <br>
-                        스크롤을 내릴때마다 ".active" 클래스를 주는 기준은 "ScrollTop >= e.offsetTop - window.innerHeight" 조건으로 주어야 하는데<br>
-                        이 의미는 scrollTop의 값이 ".content__item" 클래스 요소의 오프셋 탑보다 클때 ".active" 클래스를 지우는 조건이 중요합니다.
+                        1. scrollTop(현재 스크롤된 값)값을 이용홰 만약 이 값과 브라우저 창 내부의 높이가 문서 전체의 높이보다 크다면<br>
+                        2. #parallax__top에 "show" 클래스를 추가해 top 버튼 보여주고 아닐시 show 클래스를 제거
                     </p>
                     <div class="t_code">
-<pre><code class="language-js">document.querySelectorAll("#parallax__dot a").forEach(el => { //#parallax__dot a 
-    el.addEventListener("click", e=> {                        //요소를 클릭했을때
-        e.preventDefault();                                   //이벤트가 발생했을때 걸려있는 링크 이동을 차단 시킴
-
-         // 이 한줄이 핵심
-        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"}); // 요소의 속성 href를 가져와 클릭이 되었을때 행동은 smooth
-    })
-})
-
-window.addEventListener("scroll",  () => {
-    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-
-    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
-
-    document.querySelectorAll(".content__item").forEach((e,i)=>{
-        if(scrollTop >= e.offsetTop - window.innerHeight){ // scrollTop 값이 e의 오프셋 탑 값보다 크다면
-            document.querySelectorAll("#parallax__dot li").forEach(li => {
-                li.classList.remove("active");
-            });
-        document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active");
+<pre><code class="language-js">//02
+    window.addEventListener("scroll", ()=>{
+        let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+        if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+            document.querySelector("#parallax__top").classList.add("show")
+        }else {
+            document.querySelector("#parallax__top").classList.remove("show")
         }
     })
+
+    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop)
 })
+document.querySelector("#parallax__top").addEventListener("click", ()=>{
+    window.scrollTo({left: 0, top: 0, behavior: "smooth"});
+})
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">JS : 스크롤을 내릴때 메뉴를 숨기고 살짝 올리면 나오는 네비 메뉴 구현!</h2>
+                    <p class="t_desc2_css">
+                        1. window.addEventListener("scroll",scrollProgress)에 의하여 스크롤 발생시 이벤트 발생<br>
+                        2. scrollProgress 함수에서 nowScroll을 처음 true로 서정해 setInterval 속 if 조건문을 무조건 실행시키고<br>
+                        3. 추후 재사용을 위해 nowScroll은 false로 변경 후 통해 hasScroll로 리턴해주는 변수를 만들어 작동시킵니다.<br>
+                        4. 이후 hasScroll의 scrollTop(현재 스크롤 값)값이 lastScroll(이전 스크롤 값)값보다 작다면<br>
+                        5. #parallax__nav(네비바)에 show 클래스를 추가시켜 보여주고 아닐 시 show 클래스르 제거<br>
+                        6. 위와같이 1~5번 과정을 거친 후 lastScroll(이전 스크롤 값)에는 scrollTop(현재 스크롤 값) 값을 넣습니다
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">//03
+    let nowScroll = true;  //실행 : 트리거 변수라고 부름
+    let lastScroll = 0;
+
+    function scrollProgress(){
+        nowScroll = true; 
+
+        setInterval(()=>{
+            if(nowScroll){ 
+                nowScroll = false;
+                hasScroll();
+            }
+        }, 300)
+    }
+
+    function hasScroll(){       // hasScroll에 일단 
+        let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+        if(scrollTop < lastScroll){ //현재 스크롤 값이 이전 스크롤 값보다 작다면
+            document.querySelector("#parallax__nav").classList.add("show")
+        } else {
+            document.querySelector("#parallax__nav").classList.remove("show")
+
+        }
+        lastScroll = scrollTop; // 지금 현재 스크롤 값을 이전 스크롤 값에 넣은 뒤
+    }
+    
+    window.addEventListener("scroll",scrollProgress);
 </code></pre>
                     </div>
                     <hr>
                     <h2 class="t_tit2">완성예제</h2>
-                    <p class="t_desc2">참으로 길고 긴 시간이였네요 ^_^.. 완성하고 나니 참 뿌듯하네요 그쵸?</p>
+                    <p class="t_desc2">이번것은 뭔가 복잡해보였는데 막상 한줄씩 읽어보면 또 별거 없는거 같은데 막상 시험보면 남고있는 자신의 모습이 상상가네요 그쵸 ^_____^?</p>
                     <div class="t_iframe" style="min-height : 750px; padding-top:0;">
-                        <iframe src="https://kimsangjunv1.github.io/coding/javascript/effect/parallaxEffect02" frameborder="0"></iframe>
+                        <iframe src="https://kimsangjunv1.github.io/coding/javascript/effect/parallaxEffect03" frameborder="0"></iframe>
                     </div>
                     <hr>
                     <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
                         <div class="t_link">
-                            <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/parallaxEffect02.html" target="blank">원본 소스 보기</a>
+                            <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/parallaxEffect03.html" target="blank">원본 소스 보기</a>
                         </div>
                         <div class="t_link">
-                            <a href="https://kimsangjunv1.github.io/coding/javascript/effect/parallaxEffect02" target="blank">원본 페이지 보기</a>
+                            <a href="https://kimsangjunv1.github.io/coding/javascript/effect/parallaxEffect03" target="blank">원본 페이지 보기</a>
                         </div>
                     </div>
                 </div>

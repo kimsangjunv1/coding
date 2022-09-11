@@ -9,6 +9,22 @@
 .slider__img {
     background: url(../img/slider_bg01.jpg) no-repeat center / cover;
 }
+
+.two {
+    background: url(../img/slider_bg02.jpg) no-repeat center / cover;
+    display: none;
+    z-index: 1;
+}
+.three {
+    background: url(../img/slider_bg03.jpg) no-repeat center / cover;
+    display: none;
+    z-index: 2;
+}
+
+.show{
+    display: block;
+}
+
 .slider__img .desc {
     width: 1160px;
     margin: 0 auto;
@@ -50,6 +66,12 @@
 .slider__img .desc .btn a.black {
     background: #000;
     color: #fff;
+}
+.slider__arrow{
+    z-index: 5;
+}
+.slider__dot{
+    z-index: 5;
 }
 
 .slider__arrow a{

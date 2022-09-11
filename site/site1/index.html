@@ -49,9 +49,9 @@
             </div>
             <div class="header__menu">
                 <ul>
-                    <li><a href="#headerType">헤더 영역</a></li>
+                    <li class="actived"><a href="#headerType">헤더 영역</a></li>
                     <li><a href="#sliderType">슬라이드 영역</a></li>
-                    <li><a href="#imageType01">배너 영역</a></li>
+                    <li><a href="#bannerType">배너 영역</a></li>
                     <li><a href="#imgTextType">컨텐츠 영역</a></li>
                     <li><a href="#cardType">카드 영역</a></li>
                     <li><a href="#footerType">푸터 영역</a></li>
@@ -66,7 +66,7 @@
         <ul>
             <li><a href="#headerType">헤더 영역</a></li>
             <li><a href="#sliderType">슬라이드 영역</a></li>
-            <li><a href="#imageType01">배너 영역</a></li>
+            <li><a href="#bannerType">배너 영역</a></li>
             <li><a href="#imgTextType">컨텐츠 영역</a></li>
             <li><a href="#cardType">카드 영역</a></li>
             <li><a href="#footerType">푸터 영역</a></li>
@@ -77,11 +77,33 @@
 
     <main id="mainType">
 
-        <section id="sliderType" class="slider__wrap section">
+        <section id="sliderType" class="slider__wrap">
             <h2 class="blind">슬라이드 영역</h2>
             <div class="slider__inner">
                 <div class="slider">
                     <div class="slider__img">
+                        <div class="desc">
+                            <span>CITY</span>
+                            <h3>SIGHTSEEING</h3>
+                            <p>각각의 도시는 고유의 모습이 있습니다 <br>한국은 과연 어떤 모습일까요?</p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__img two">
+                        <div class="desc">
+                            <span>CITY</span>
+                            <h3>SIGHTSEEING</h3>
+                            <p>각각의 도시는 고유의 모습이 있습니다 <br>한국은 과연 어떤 모습일까요?</p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__img three">
                         <div class="desc">
                             <span>CITY</span>
                             <h3>SIGHTSEEING</h3>
@@ -153,7 +175,7 @@
         </section>
         <!-- //imageType -->
 
-        <section id=imgTextType" class="imgText__wrap nexon section gray">
+        <section id="imgTextType" class="imgText__wrap nexon section gray">
             <h2 class="blind">유용한 사이트 살펴보기 🎮</h2>
             <div class="imgText__inner container">
                 <div class="imgText__txt">
@@ -389,7 +411,7 @@
 
             //forEach 문
             document.querySelectorAll(".section").forEach((e,i)=>{
-                if(scrollTop >=  e.offsetTop-2){ //scrollTop이 id값 이상이면
+                if(scrollTop >  e.offsetTop-2){ //scrollTop이 id값 이상이면
                     document.querySelectorAll(".header__menu ul li").forEach((li)=>{
                         li.classList.remove("actived");
                     })
@@ -418,6 +440,21 @@
                     behavior: "smooth"
                 });
             })
+        })
+
+        //이미지 넘기기
+        let i = 0;
+        document.querySelector(".right").addEventListener("click", ()=>{
+            i++
+            if(i<=3){
+                document.querySelectorAll(".slider__img").forEach((e,i)=>{
+                    e.classList.remove("show")
+                })
+                document.querySelector(".slider:nth-child("+i+")").classList.add("show")
+            } else{
+                i = 0;
+                document.querySelector(".slider:nth-child("+i+")").classList.add("show")
+            }
         })
     </script>
 </body>
