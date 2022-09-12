@@ -40,3 +40,18 @@
 .image__btn.yellow {
     background-color: #B59140;
 }
+
+@media (max-width: 600px){
+    .container{
+        width: 100%;
+    }
+    .image{
+        width: 100%;
+    }
+    .image:nth-child(1){
+        margin-bottom: 20px;
+    }
+    .image__inner{
+        flex-wrap: wrap;
+    }
+}

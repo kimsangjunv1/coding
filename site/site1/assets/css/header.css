@@ -19,7 +19,7 @@
 }
 
 .header__logo{
-    width: 20%;
+    width: 10%;
     font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
@@ -30,8 +30,10 @@
     font-weight: 400;
 }
 .header__menu{
-    width: 60%;
+    width: 80%;
     text-align: center;
+    /* overflow-x: scroll;
+    overflow-y: hidden; */
 }
 .header__menu li{
     display: inline;
@@ -49,7 +51,7 @@
     display: none;
 }
 .header__member{
-    width: 20%;
+    width: 10%;
     text-align: right;
 }
 .header__member a{

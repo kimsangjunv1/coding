@@ -65,16 +65,18 @@
             <main id="main">
                 <div class="document">
                     <!-- 01번 메인 샘플 시작 -->
-                    <h2 class="t_tit">컨셉 디자인 사이트 구현해보기 : 디지털 컨셉</h2>
-                    <p class="t_desc">음... 선생님이 저번주쯤인가 PHP로 블로그를 만들어보신다고 하셨었는데 다들 기억나시나요?<br>
+                    <h2 class="t_tit">'내'가 '디'자인 해보고 '코'딩하기</h2>
+                    <p class="t_desc">요번에 한거는 숙제는 아닌데 선생님이 저번주쯤인가 PHP로 블로그를 만들어보신다고 하셨었는데 다들 기억나시나요?<br>
                         그때 저한테 디자인 해보라고 말씀해주셔서 바로 그날 학원 끝나고 두개정도 만들어두었는데<br><br>
-                        무언가.... ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 조별작업도 그렇고 다른 배울것들도 많아서 왠지모르게 그대로 스윽 묻히게 될거같더라구요<br>
-                        그래서 차마 만들어둔건 못버리겠어서 제가 직접 구현해봤어요!
+                        무언가.... 조별작업도 그렇고 다른 배울것들도 많아서 왠지모르게 그대로 스윽 묻히게 될거같더라구요<br>
+                        그래서 차마 만들어둔건 못버리겠어서 눈물 똑똑 흘려가며 기록으로나마 남기려고 제가 직접 만들어보기 시작했어요🥲<br>
+                        이번것은 그 두개 중 첫번째 입니다!
                     </p>
                     <hr>
                     <h2 class="t_tit2">피그마를 통해 레이아웃 잡아보기</h2>
-                    <p class="t_desc2">처음 구상해볼때 뭔가 블로그라고 해서 꼭 블로그하면 떠오르는 모습들보다는 다르게 가고싶어서 이렇게 했는데<br>
-                    막상 하고 보니까 언제 끝낼까 라는 생각도 드네요 ㅋㅋㅋㅋ</p>
+                    <p class="t_desc2">디지-탈 느낌 조금 감도는 느낌으로 구상해봤는데 너무 강했으려나.. 뭐 아무렴 어떻습니까 ^^b<br>뭔가 블로그라고 해서 꼭 블로그하면 떠오르는 모습들로 가기보다는 조금은 다르게 가고싶어서 이렇게 했던건데<br>
+                        막상 하고 보니까 언제 끝낼까 라는 생각도 들었네요 만들때 조금 더 덜어둘껄 그랬나 하는 생각이 들었어요 😬ㅋㅋㅋㅋㅋ
+                    </p>
                     <img style="width: 100%;" src="https://github.com/kimsangjunv1/coding/blob/main/assets/img/screenshot_13.jpg?raw=true" alt="컨셉설명">
                     <hr>
                     <h2 class="t_tit2">HTML : HEADER</h2>
@@ -270,37 +272,14 @@
                         1. 해시태그는 치환자가 여러가지 있었는데 aside에 붙어있는 hashtag 치환자를 가져와 사용하시면 생각보다 쉽게 들어가더라구요~~
                     </p>
                     <div class="t_code">
-<pre><code class="language-html">&gt;div class="hashtag"&gt;
-    &gt;h2&gt;#HASH_TAGS&gt;/h2&gt;
-    &gt;s_sidebar_element&gt;
-        &gt;!-- 해시태그 치환자 --&gt;
-        &gt;div class="tags"&gt;
-
-            &gt;a href="/tag/%EA%B2%80%EC%9D%80%EB%B3%B4%EB%94%B0%EB%A6%AC"&gt;검은보따리&gt;/a&gt;
-
-            &gt;a href="/tag/%EC%8B%A4%EC%A0%84%EC%B2%98%EB%9F%BC"&gt;실전처럼&gt;/a&gt;
-
-            &gt;a href="/tag/%ED%85%8C%EC%8A%A4%ED%8A%B8_01"&gt;테스트_01&gt;/a&gt;
-
-            &gt;a href="/tag/%EC%9D%B8%EC%83%9D%EC%9D%80"&gt;인생은&gt;/a&gt;
-
-            &gt;a href="/tag/%EA%B2%80%EC%9D%80%EB%B4%89%ED%88%AC"&gt;검은봉투&gt;/a&gt;
-
-            &gt;a href="/tag/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8"&gt;자바스크립트&gt;/a&gt;
-
-            &gt;a href="/tag/%EC%98%A4%EB%8A%98%EC%9D%80"&gt;오늘은&gt;/a&gt;
-
-            &gt;a href="/tag/%EC%95%84%EC%9D%B4%EC%8A%A4%ED%81%AC%EB%A6%BC"&gt;아이스크림&gt;/a&gt;
-
-            &gt;a href="/tag/%EC%82%AC%EC%9E%90"&gt;사자&gt;/a&gt;
-
-            &gt;a href="/tag/%EB%AD%90%ED%95%A0%EA%B9%8C"&gt;뭐할까&gt;/a&gt;
-
-        &gt;/div&gt;
-        &gt;!-- 해시태그 치환자 끝 --&gt;
-    &gt;/s_sidebar_element&gt;
-    &gt;p class="tags_counting_star"&gt;1&gt;/p&gt;
-&gt;/div&gt;
+<pre><code class="language-html">&lt;div class="hashtag"&gt;
+    &lt;h2&gt;#HASH_TAGS&lt;/h2&gt;
+    &lt;s_sidebar_element&gt;
+        &lt;!-- 해시태그 치환자 --&gt;
+        &lt;!-- 해시태그 치환자 끝 --&gt;
+    &lt;/s_sidebar_element&gt;
+    &lt;p class="tags_counting_star"&gt;1&lt;/p&gt;
+&lt;/div&gt;
 </code></pre>
                     </div>
                     <hr>
@@ -342,21 +321,19 @@
 </code></pre>
                     </div>
                     <hr>
-                    <h2 class="t_tit2">후기</h2>
+                    <h2 class="t_tit2">완성 후기</h2>
                     <p class="t_desc2">
                         저는 이거 두시간 생각하고 했던건데 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ,,,,,,,, 이렇게 까지 길줄은 몰랐어요 <br>
-                        아마 다른분들이 하셨으면 금방 끝났겠죠? 저는 티스토리 치환자 신경쓰면서 처음부터 다 엎다보니까 자꾸만 헤매이게 되었네요<br>
-                        그래도 구현은 가능할까 생각했던 부분들이 몇몇부분 빼고는 왠만하면 다 구현되어서 뿌듯했던 작업이였습니다 (๑′ᴗ‵๑)<br><br>
+                        아마 다른분들이 하셨으면 금방 끝났겠죠? 티스토리 치환자 충돌나는거 신경쓰면서 처음부터 다 엎다보니까 자꾸만 헤매이게 되었네요<br>
+                        디자인할때 구현할거까지 감안해서 덜어냈기 때문에 지금 끝났지만 그래도 구현은 가능할까 생각했던 부분들이 몇몇부분 있었는데 조금 빼고는 왠만하면 다 구현되어서 뿌듯했던 작업이였습니다 (๑′ᴗ‵๑)<br><br>
 
-                        * <i>CSS 부분은 제가 수정해놓은게 너무 많아서 적어두지 않고 홈페이지에 가셔서 확인해보시면 될거같아요!</i>
+                        * <i>CSS 부분은 제가 수정해놓은게 너무 많아서 적어두지 않고 하단의 페이지 보기로 가셔서 확인해보시면 될거같아요!</i>
                     </p>
+                    <div class="t_link">
+                        <a style="width: 98%; border: 1px solid #ededed7a; " href="https://web-codi.tistory.com/" target="blank">페이지 보기</a>
+                    </div>
                     <img style="width: 100%;" src="https://github.com/kimsangjunv1/coding/blob/main/assets/img/screenshot_12.jpg?raw=true" alt="컨셉설명">
                     
-                    <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
-                        <div class="t_link">
-                            <a style="width: 100%; border: 1px solid #000; " href="https://web-codi.tistory.com/" target="blank">페이지 보기</a>
-                        </div>
-                    </div>
                 </div>
             </main>
             <!-- 메인 샘플 끝 -->

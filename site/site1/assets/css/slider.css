@@ -7,7 +7,17 @@
 }
 
 .slider__img {
+    /* background: url(../img/slider_bg01.jpg) no-repeat center / cover; */
+}
+
+.slider__img .show{
+    transition: 0.25s;
+}
+
+.one{
     background: url(../img/slider_bg01.jpg) no-repeat center / cover;
+    display: none;
+    z-index: 1;
 }
 
 .two {
@@ -28,7 +38,7 @@
 .slider__img .desc {
     width: 1160px;
     margin: 0 auto;
-    padding: 100px 20px
+    padding: 100px;
 }
 .slider__img .desc span {
     font-size: 16px;
