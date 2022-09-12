@@ -37,6 +37,9 @@ https://kimsangjunv1.github.io/coding/site/cardType/cardTypeTodayThree.html
 https://kimsangjunv1.github.io/coding/site/ImageType/imageType01.html   
 https://kimsangjunv1.github.io/coding/site/ImageType/imageType02.html   
 
+### 모든 유형   
+https://kimsangjunv1.github.io/coding/site/site1/index.html   
+
 ### 구조관련요소
 https://kimsangjunv1.github.io/coding/javascript/study/web_homework.html   
 
