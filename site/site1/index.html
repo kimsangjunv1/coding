@@ -30,6 +30,7 @@
 
 </head>
 <body>
+    <div style="position: fixed; width: 50px; height: 50px; bottom: 0; left: 0;" class="check">체크용</div>
     <!-- 웹표준 준수시 필요 -->
     <div id="skip">
         <a href="#">헤더 영역 바로가기</a>
@@ -45,7 +46,7 @@
     <header id="headerType" class="header__wrap nexon">
         <div class="header__inner">
             <div class="header__logo">
-                <a href="#">web <em>site</em></a>
+                <a href="#">#여행_가자!</a>
             </div>
             <div class="header__menu">
                 <ul>
@@ -67,7 +68,10 @@
     <div class="header__menu__media">
         <ul>
             <!-- <li><a href="#headerType">헤더 영역</a></li> -->
-            <li><a href="#sliderType">슬라이드 영역</a></li>
+            <div id="header_logo_media" class="header__logo media">
+                <a href="#">#여행_가자! <em>자연으로</em></a>
+            </div>
+            <li class="actived"><a href="#sliderType">슬라이드 영역</a></li>
             <li><a href="#imageType01">이미지 영역</a></li>
             <li><a href="#imgTextType">이미지 텍스트 영역</a></li>
             <li><a href="#cardType">카드 영역</a></li>
@@ -87,9 +91,9 @@
                 <div class="slider">
                     <div class="slider__img one show">
                         <div class="desc">
-                            <span>CITY</span>
-                            <h3>SIGHTSEEING</h3>
-                            <p>각각의 도시는 고유의 모습이 있습니다 <br>한국은 과연 어떤 모습일까요?</p>
+                            <span>어디로 가볼까?</span>
+                            <h3>#새하얀_눈.</h3>
+                            <p>눈 덮힌 마을 속<br>고히 잠들어 있는 새싹들</p>
                             <div class="btn">
                                 <a href="#">자세히 보기</a>
                                 <a href="#" class="black">사이트 보기</a>
@@ -98,9 +102,9 @@
                     </div>
                     <div class="slider__img two">
                         <div class="desc">
-                            <span>CITY</span>
-                            <h3>SIGHTSEEING</h3>
-                            <p>각각의 도시는 고유의 모습이 있습니다 <br>한국은 과연 어떤 모습일까요?</p>
+                            <span>시원한곳 없을까?</span>
+                            <h3>#보글보글</h3>
+                            <p>여기는 아름다운 민스크시의 보글거리는 바닷가.<br>마음도 보글보글</p>
                             <div class="btn">
                                 <a href="#">자세히 보기</a>
                                 <a href="#" class="black">사이트 보기</a>
@@ -109,9 +113,9 @@
                     </div>
                     <div class="slider__img three">
                         <div class="desc">
-                            <span>CITY</span>
-                            <h3>SIGHTSEEING</h3>
-                            <p>각각의 도시는 고유의 모습이 있습니다 <br>한국은 과연 어떤 모습일까요?</p>
+                            <span>자유로운곳 없을까?</span>
+                            <h3>#넓디_넓은_바닷가.</h3>
+                            <p>여기는 태평양 한가운데<br>주위에는 오직 나 혼자뿐인 이곳에서 휴가를 보내자!</p>
                             <div class="btn">
                                 <a href="#">자세히 보기</a>
                                 <a href="#" class="black">사이트 보기</a>
@@ -135,8 +139,8 @@
         <!-- //sliderType -->
 
         <section id="imageType01" class="image__wrap nexon section baegopa container">
-            <h2>도시에서 키우는 반려견!</h2>
-            <p>사람들이 북적이는 넓디 넓은 도시에서 어떤 동물을 한번 키워볼까요??</p>
+            <h2>#내_여행_동반자</h2>
+            <p>내 여행동안 내 외로움을 채워줄 소울 메이트는 어떠세요?</p>
             <div class="image__inner">
                 <article class="image img1">
                     <h3 class="image__title">불독은 어떠세요?</h3>
@@ -160,8 +164,8 @@
             <h2 class="blind">유용한 사이트 살펴보기 🎮</h2>
             <div class="imgText__inner container">
                 <div class="imgText__txt">
-                    <span>오늘은 어떤걸 할까요?</span>
-                    <h3>도시 생활을 즐겨봅시다!</h3>
+                    <span>여행 속 내 비즈니스</span>
+                    <h3>#일은_절대_놓을_수_없지</h3>
                     <p>우리 다 같이 도시 라이프를 다채로운 방식으로 함께 즐겨보아요!</p>       
                     <ul>
                         <li><a href="/">오늘의 티</a></li>
@@ -185,7 +189,7 @@
 
         <section id="cardType" class="card__wrap nexon section baegopa container">
             <!--다중 클래스 선택-->
-            <h2>지루한 도시생활 속 게임은 어떠세요 🎮</h2>
+            <h2>#여행_중_게임은_못참지🎮</h2>
             <p>새롭고 혁신적인 PS5™ 컨트롤러로 완전히 몰입할 수 있는 게임 경험을 즐겨보시기 바랍니다.</p>
             <div class="card__inner">
                 <article class="card">
@@ -255,7 +259,7 @@
         <section id="bannerType" class="banner__wrap nexon section baegopa">
             <h2 class="blind">배너 영역</h2>
             <div class="banner__inner">
-                <h3 class="title">오늘의 도시는 여기다!</h3>
+                <h3 class="title">#내_손으로_만들어_가는_루트</h3>
                 <p class="desc">
                     다양하고 다채로운 도시의 모습은 이곳을 참조하세요!
                     <a href="" title="유튜브 페이지로 이동">https://www.youtube.com/channel/UCqVDpXKLmKeBU_yyt_QkItQ/</a>
@@ -267,41 +271,42 @@
 
         <section id="textType" class="nexon text__wrap section baegopa container">
             <span>텍스트 유형01</span>
-            <h2 class="mb70">스크립트를 익히는 방법</h2>
+            <h2 class="mb70">#어느걸_찾으세요?</h2>
             <div class="text__inner">
                 <div class="text t1">
-                    <h3 class="text__title">검색이펙트</h3>
-                    <p class="text__desc">자바스크립트의 기본 메세더르르 통해 검색 스크립트를 완성하는 튜토리얼입니다 가끔은 이렇게 길게 적어볼때도 있습니다어어.</p>
+                    <h3 class="text__title">내 장소</h3>
+                    <p class="text__desc">가끔은 내가 원하는 장소를 찾아야 할떄가 있죠,, 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
                     <a class="text_btn" href="#">더보기</a>
                 </div>
                 <div class="text t2">
-                    <h3 class="text__title">검색이펙트</h3>
-                    <p class="text__desc">자바스크립트의 기본 메세더르르 통해 검색 스크립트를 완성하는 튜토리얼입니다 가끔은 이렇게 길게 적어볼때도 있습니다어어.</p>
+                    <h3 class="text__title">내 동반자</h3>
+                    <p class="text__desc">자신의 동반자를 찾는것은 중요합니다 그러기에 저희는 찾아드리는 서비스를 하고 있으며, 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
                     <a class="text_btn" href="#">더보기</a>
                 </div>
                 <div class="text t3">
-                    <h3 class="text__title">검색이펙트</h3>
-                    <p class="text__desc">자바스크립트의 기본 메세더르르 통해 검색 스크립트를 완성하는 튜토리얼입니다 가끔은 이렇게 길게 적어볼때도 있습니다어어.</p>
+                    <h3 class="text__title">여행패키지</h3>
+                    <p class="text__desc">여행 패키지를 찾음으로써 각종 사항에 굳이 시간을 소비할 필요가 없습니다 그래서 만약 찾고계시다면 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
                     <a class="text_btn" href="#">더보기</a>
                 </div>
                 <div class="text t4">
-                    <h3 class="text__title">검색이펙트</h3>
-                    <p class="text__desc">자바스크립트의 기본 메세더르르 통해 검색 스크립트를 완성하는 튜토리얼입니다 가끔은 이렇게 길게 적어볼때도 있습니다어어.</p>
+                    <h3 class="text__title">여행도구</h3>
+                    <p class="text__desc">여행도구는 정말 없어서는 안될 그런 도구입니다 그러니 꼭 필요한 물품으로써 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
                     <a class="text_btn" href="#">더보기</a>
                 </div>
                 <div class="text t5">
-                    <h3 class="text__title">검색이펙트</h3>
-                    <p class="text__desc">자바스크립트의 기본 메세더르르 통해 검색 스크립트를 완성하는 튜토리얼입니다 가끔은 이렇게 길게 적어볼때도 있습니다어어.</p>
+                    <h3 class="text__title">즐길거리</h3>
+                    <p class="text__desc">즐길거리가 또 빠지게 되면 섭하죠 그러니 혹여나 찾고계시다면 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
                     <a class="text_btn" href="#">더보기</a>
                 </div>
                 <div class="text t6">
-                    <h3 class="text__title">검색이펙트</h3>
-                    <p class="text__desc">자바스크립트의 기본 메세더르르 통해 검색 스크립트를 완성하는 튜토리얼입니다 가끔은 이렇게 길게 적어볼때도 있습니다어어.</p>
+                    <h3 class="text__title">다양한 참고자료</h3>
+                    <p class="text__desc">다양한 참고할만한 자료가 필요할때 분명 있습니다 그렇기에 저희는 데이터를 축적해놨는데요 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
                     <a class="text_btn" href="#">더보기</a>
                 </div>
             </div>
         </section>
         <!-- //textType -->
+        <div id="olaga">위로!</div>
 
     </main>
     <!-- //mainType -->
@@ -437,9 +442,60 @@
                 document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
                 document.querySelector(".dot:nth-child("+i+")").classList.add("active");
             } else{
-                i = 0;
+                i = 1;
+                document.querySelectorAll(".slider__img").forEach((e,i)=>{
+                    e.classList.remove("show")
+                })
+                document.querySelectorAll(".dot").forEach((e,i)=>{
+                    e.classList.remove("active")
+                })
+                document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+                document.querySelector(".dot:nth-child("+i+")").classList.add("active");
                 // document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
             }
+        })
+        document.querySelector(".left").addEventListener("click", ()=>{
+            i--
+            if(i===0){
+                i = 3;
+                document.querySelectorAll(".slider__img").forEach((e,i)=>{
+                    e.classList.remove("show")
+                })
+                document.querySelectorAll(".dot").forEach((e,i)=>{
+                    e.classList.remove("active")
+                })
+                document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+                document.querySelector(".dot:nth-child("+i+")").classList.add("active");
+            } else{
+                document.querySelectorAll(".slider__img").forEach((e,i)=>{
+                    e.classList.remove("show")
+                })
+                document.querySelectorAll(".dot").forEach((e,i)=>{
+                    e.classList.remove("active")
+                })
+                document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+                document.querySelector(".dot:nth-child("+i+")").classList.add("active");
+                // document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+            }
+        })
+        
+        //스크롤
+        window.addEventListener("scroll", ()=>{
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+            document.querySelector(".check").innerText=scrollTop;
+    
+            if(scrollTop>=70){
+                document.querySelector("#header_logo_media").classList.add("inline")
+                document.querySelector("#olaga").classList.add("opacity")
+            } else {
+                document.querySelector("#header_logo_media").classList.remove("inline")
+                document.querySelector("#olaga").classList.remove("opacity")
+            }
+        })
+
+        //스크롤 탑
+        document.querySelector("#olaga").addEventListener("click", ()=>{
+            window.scrollTo({left: 0, top: 0, behavior: "smooth"});
         })
     </script>
 </body>

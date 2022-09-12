@@ -1,5 +1,6 @@
 .slider__inner {
     margin-top: 70px;
+    position: relative;
 }
 
 .slider {
@@ -10,25 +11,38 @@
     /* background: url(../img/slider_bg01.jpg) no-repeat center / cover; */
 }
 
-.slider__img .show{
-    transition: 0.25s;
+.slider__img.show.one{
+    display: block;
 }
+
 
 .one{
     background: url(../img/slider_bg01.jpg) no-repeat center / cover;
     display: none;
-    z-index: 1;
+    z-index: -5;
+    position: relative;
 }
-
+.three::before,
+.two::before,
+.one::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.387);
+    position: absolute;
+    z-index: -1;
+}
 .two {
     background: url(../img/slider_bg02.jpg) no-repeat center / cover;
     display: none;
-    z-index: 1;
+    z-index: -5;
+    position: relative;
 }
 .three {
     background: url(../img/slider_bg03.jpg) no-repeat center / cover;
     display: none;
-    z-index: 2;
+    z-index: -5;
+    position: relative;
 }
 
 .show{
@@ -39,42 +53,52 @@
     /* width: 1160px; */
     /* margin: 0 auto; */
     padding: 100px;
+    text-align: center;
 }
 .slider__img .desc span {
     font-size: 16px;
-    background-color: #fff;
-    padding: 1px 14px 0px 14px;
-    border-radius: 30px;
+    background-color: #ffffff17;
+    padding: 7px 10px;
     text-transform: uppercase;
     margin-bottom: 10px;
     display: inline-block;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    color: #fff;
 }
 .slider__img .desc h3 {
-    font-size: 110px;
-    font-weight: 300;
+    font-size: 90px;
+    font-weight: bold;
     line-height: 1;
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 16px;
     margin-left: -8px;
+    margin-top: 20px;
 }
 .slider__img .desc p {
     font-size: 20px;
     font-weight: 300;
     color: #fff;
     line-height: 1.35;
-    margin-bottom: 130px;
+    margin-bottom: 80px;
 }
 
 .slider__img .desc .btn {}
 .slider__img .desc .btn a {
     font-size: 16px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.537);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     padding: 11px 50px;
     display: inline-block;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.48);
 }
 .slider__img .desc .btn a.black {
-    background: #000;
+    background: rgba(0, 0, 0, 0.457);
     color: #fff;
 }
 .slider__arrow{
@@ -125,4 +149,14 @@
 
 .slider__dot a.stop{
     background-position: -60px -70px;
+}
+
+.slider{
+    position: relative;
+}
+
+@media (max-width: 920px){
+    .slider__img .desc h3{
+        font-size: 50px;
+    }
 }

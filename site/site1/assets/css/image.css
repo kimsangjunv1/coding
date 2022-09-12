@@ -8,12 +8,15 @@
     color: #fff;
     padding: 200px 30px 30px 30px;
     box-sizing: border-box;
+    border-radius: 5px;
 }
 .image.img1 {
     background: url(../img/bg01_01.jpg) no-repeat center;
+    background-size: cover;
 }
 .image.img2 {
     background: url(../img/bg01_02.jpg) no-repeat center;
+    background-size: cover;
 }
 .image__title {
     font-size: 32px;
@@ -36,12 +39,13 @@
     background-color: #B45A30;
     padding: 10px 20px;
     display: inline-block;
+    border-radius: 5px;
 }
 .image__btn.yellow {
     background-color: #B59140;
 }
 
-@media (max-width: 750px){
+@media (max-width: 1215px){
     .container{
         width: 100%;
     }
@@ -53,5 +57,20 @@
     }
     .image__inner{
         flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 1150px){
+    .slider__inner{
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 750px){
+    .section>h2{
+        font-size: 30px;
+    }
+    .section>p{
+        font-size: 16px;
     }
 }
