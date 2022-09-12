@@ -14,6 +14,7 @@
     background: rgba(255, 255, 255, 0.637);
     z-index: 100;
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.494);
     white-space: nowrap;
 }
@@ -67,7 +68,10 @@
     color: #fff;
 }
 
-@media (max-width: 1030px){
+@media (max-width: 1150px){
+    .header__inner{
+        padding: 0 50px;
+    }
     .header__menu{
         display: none;
     }
@@ -85,6 +89,7 @@
         position: fixed;
         background: rgba(255, 255, 255, 0.637);
         backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
         z-index: 1000;
         height: 55px;
         padding-top: 20px;
@@ -98,5 +103,19 @@
         padding: 13px 30px;
         margin: 0 5px;
         transition: background-color 0.3s;
+    }
+}
+
+@media (max-width: 750px){
+    .header__inner{
+        /* padding: 0 100px; */
+        justify-content: space-between;
+    }
+    .header__logo{
+        width: 20%;
+        margin: 0;
+    }
+    .header__member{
+        width: 20%;
     }
 }

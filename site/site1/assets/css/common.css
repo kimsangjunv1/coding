@@ -33,6 +33,10 @@
 } */
 
 /* 컨테이너 */
+body{
+    width:100%;
+    overflow-x:hidden;
+}
 .container {
     width: 1160px;
     padding: 0 20px;

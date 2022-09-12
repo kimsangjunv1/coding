@@ -81,3 +81,13 @@
 .imgText__img.img2{
     background: url(../img/imgText_bg02.jpg) no-repeat center / cover;
 }
+
+@media (max-width: 600px){
+    .imgText__inner{
+        display: block;
+    }
+    .imgText__inner>div{
+        width: 100%;
+    }
+
+}

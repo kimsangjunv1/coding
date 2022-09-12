@@ -40,3 +40,11 @@
     -webkit-line-clamp: 4; /*줄 효과*/
     -webkit-box-orient: vertical;
 }
+
+@media (max-width: 600px){
+    .card__inner{
+        display: block;
+    }
+    .card{width: 100%;}
+    .card:nth-child(1),.card:nth-child(2){margin-bottom: 20px;;}
+}

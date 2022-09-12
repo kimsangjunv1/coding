@@ -36,8 +36,8 @@
 }
 
 .slider__img .desc {
-    width: 1160px;
-    margin: 0 auto;
+    /* width: 1160px; */
+    /* margin: 0 auto; */
     padding: 100px;
 }
 .slider__img .desc span {
