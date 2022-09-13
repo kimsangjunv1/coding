@@ -30,6 +30,10 @@
 
 </head>
 <body>
+    <div class="alert">
+        <p class="close">X</p>
+        <h2>로딩중...</h2>
+    </div>
     <div style="position: fixed; width: 50px; height: 50px; bottom: 0; left: 0;" class="check">체크용</div>
     <!-- 웹표준 준수시 필요 -->
     <div id="skip">
@@ -61,16 +65,16 @@
                 </ul>
             </div>
             <div class="header__member">
-                <a href="#">로그인</a>
+                <a href="#" class="loading">로그인</a>
             </div>
         </div>
     </header>
+    <div id="header_logo_media" class="header__logo media">
+        <a href="#">#여행_가자! <em>자연으로</em></a>
+    </div>
     <div class="header__menu__media">
         <ul>
             <!-- <li><a href="#headerType">헤더 영역</a></li> -->
-            <div id="header_logo_media" class="header__logo media">
-                <a href="#">#여행_가자! <em>자연으로</em></a>
-            </div>
             <li class="actived"><a href="#sliderType">슬라이드 영역</a></li>
             <li><a href="#imageType01">이미지 영역</a></li>
             <li><a href="#imgTextType">이미지 텍스트 영역</a></li>
@@ -95,8 +99,8 @@
                             <h3>#새하얀_눈.</h3>
                             <p>눈 덮힌 마을 속<br>고히 잠들어 있는 새싹들</p>
                             <div class="btn">
-                                <a href="#">자세히 보기</a>
-                                <a href="#" class="black">사이트 보기</a>
+                                <a class="loading" href="#">자세히 보기</a>
+                                <a href="#" class="black loading">사이트 보기</a>
                             </div>
                         </div>
                     </div>
@@ -147,14 +151,14 @@
                     <p class="image__desc">
                         불독은 혼종이라고 하는데, 사람들에게 인기많은 이유는<br>
                         생김새를 떠나서 강아지를 키운다는 그 사실이 좋은겁니다.</p>
-                    <a class="image__btn yellow" href="/" title="자세히 보기">자세히 보기</a>
+                    <a class="image__btn yellow loading" href="/" title="자세히 보기">자세히 보기</a>
                 </article>
                 <article class="image img2">
                     <h3 class="image__title">웰시코기는 어떠세요?</h3>
                     <p class="image__desc">
                         웰시코기는 다리가 참 짧죠? 그래서 키우는 사람들도 많은 편이고<br>
                         총총 걸어다니는 모습을 보고있자니 너무 귀엽답니다!</p>
-                    <a class="image__btn" href="/" title="자세히 보기">자세히 보기</a>
+                    <a class="image__btn loading" href="/" title="자세히 보기">자세히 보기</a>
                 </article>
             </div>
         </section>
@@ -201,7 +205,7 @@
                         <h3 class="tit">다양한 인터렉티브 반응</h3>
                         <p class="desc">인게임 기어 및 환경과 상호작용하면서 활시위를 당길 때 점점 팽팽해지는 느낌과 질주하는 자동차의 급브레이크를 밟는 느낌 등 액션과 함께 어우러집니다.
                         </p>
-                        <a class="btn" href="/">
+                        <a class="btn loading" href="/">
                             더 자세히 보기
                             <span aria-hidden="true"> <!--aria-hidden="true" 로 처리시 이 부분을 읽는것을 스킵한다.-->
                                 <svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -219,7 +223,7 @@
                     <div class="card__body">
                         <h3 class="tit">게임패드 지원</h3>
                         <p class="desc">내장 마이크를 사용하거나 3.5mm 잭에 미니멀하고 아이코닉한 헤드셋을 연결 전용 음소거 버튼을 사용하여 음성 캡처를 즉시 끌 수 있습니다.</p>
-                        <a class="btn" href="/">
+                        <a class="btn loading" href="/">
                             더 자세히 보기
                             <span aria-hidden="true">
                                 <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
@@ -240,7 +244,7 @@
                         <h3 class="tit">진동을 통한 생생한 현장감</h3>
                         <p class="desc">기존의 진동 모터 대신 듀얼 액추에이터가 선사하는 물리적 반응형 피드백을 경험해보세요, 게임 내 환경에서부터 실감 나는 역동적인 진동이 손을 타고
                             전해집니다.</p>
-                            <a class="btn" href="/">
+                            <a class="btn loading" href="/">
                                 더 자세히 보기
                                 <span aria-hidden="true">
                                     <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
@@ -276,32 +280,32 @@
                 <div class="text t1">
                     <h3 class="text__title">내 장소</h3>
                     <p class="text__desc">가끔은 내가 원하는 장소를 찾아야 할떄가 있죠,, 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
-                    <a class="text_btn" href="#">더보기</a>
+                    <a class="text_btn loading" href="#">더보기</a>
                 </div>
                 <div class="text t2">
                     <h3 class="text__title">내 동반자</h3>
                     <p class="text__desc">자신의 동반자를 찾는것은 중요합니다 그러기에 저희는 찾아드리는 서비스를 하고 있으며, 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
-                    <a class="text_btn" href="#">더보기</a>
+                    <a class="text_btn loading" href="#">더보기</a>
                 </div>
                 <div class="text t3">
                     <h3 class="text__title">여행패키지</h3>
                     <p class="text__desc">여행 패키지를 찾음으로써 각종 사항에 굳이 시간을 소비할 필요가 없습니다 그래서 만약 찾고계시다면 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
-                    <a class="text_btn" href="#">더보기</a>
+                    <a class="text_btn loading" href="#">더보기</a>
                 </div>
                 <div class="text t4">
                     <h3 class="text__title">여행도구</h3>
                     <p class="text__desc">여행도구는 정말 없어서는 안될 그런 도구입니다 그러니 꼭 필요한 물품으로써 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
-                    <a class="text_btn" href="#">더보기</a>
+                    <a class="text_btn loading" href="#">더보기</a>
                 </div>
                 <div class="text t5">
                     <h3 class="text__title">즐길거리</h3>
                     <p class="text__desc">즐길거리가 또 빠지게 되면 섭하죠 그러니 혹여나 찾고계시다면 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
-                    <a class="text_btn" href="#">더보기</a>
+                    <a class="text_btn loading" href="#">더보기</a>
                 </div>
                 <div class="text t6">
                     <h3 class="text__title">다양한 참고자료</h3>
                     <p class="text__desc">다양한 참고할만한 자료가 필요할때 분명 있습니다 그렇기에 저희는 데이터를 축적해놨는데요 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
-                    <a class="text_btn" href="#">더보기</a>
+                    <a class="text_btn loading" href="#">더보기</a>
                 </div>
             </div>
         </section>
@@ -317,69 +321,58 @@
         <div class="footer__inner">
             <div class="footer__menu">
                 <div>
-                    <h3>사이트</h3>
+                    <h3>도움말</h3>
                     <ul>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
+                        <li><a href="/">사이트 사용법</a></li>
+                        <li><a href="/">도움말 찾기</a></li>
+                        <li><a href="/">사이트맵</a></li>
+                        <li><a href="/">각 메뉴 설명</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>사이트</h3>
+                    <h3>행복상담</h3>
                     <ul>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
+                        <li><a href="/">고민거리</a></li>
+                        <li><a href="/">미래</a></li>
+                        <li><a href="/">과거</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>사이트</h3>
+                    <h3>여행</h3>
                     <ul>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
+                        <li><a href="/">한국</a></li>
+                        <li><a href="/">중국</a></li>
+                        <li><a href="/">일본</a></li>
+                        <li><a href="/">싱가포르</a></li>
+                        <li><a href="/">말레이시아</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>사이트</h3>
+                    <h3>팁</h3>
                     <ul>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
+                        <li><a href="/">여행가이드</a></li>
+                        <li><a href="/">위치</a></li>
+                        <li><a href="/">사진스팟</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>사이트</h3>
+                    <h3>고객센터</h3>
                     <ul>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
+                        <li><a href="/">여행 상담</a></li>
+                        <li><a href="/">고민 상담</a></li>
+                        <li><a href="/">권고 상담</a></li>
+                        <li><a href="/">행복 상담</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>사이트</h3>
+                    <h3>사업자등록</h3>
                     <ul>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
-                        <li><a href="/">웹표준 사이트</a></li>
+                        <li><a href="/">1. 표준사항</a></li>
+                        <li><a href="/">2. 법사항</a></li>
+                        <li><a href="/">3. 규범사항</a></li>
+                        <li><a href="/">4. 참조사항</a></li>
+                        <li><a href="/">5. 준수사항</a></li>
+                        <li><a href="/">6. 권고사항</a></li>
                     </ul>
                 </div>
             </div>
@@ -402,6 +395,15 @@
                         li.classList.remove("actived");
                     })
                     document.querySelector(".header__menu ul li:nth-child("+(i+1)+")").classList.add("actived");
+                }
+            })
+            //forEach 문
+            document.querySelectorAll(".baegopa").forEach((e,i)=>{
+                if(scrollTop >= e.offsetTop-500){ //scrollTop이 id값 이상이면
+                    document.querySelectorAll(".header__menu__media ul li").forEach((li)=>{
+                        li.classList.remove("actived");
+                    })
+                    document.querySelector(".header__menu__media ul li:nth-child("+(i+1)+")").classList.add("actived");
                 }
             })
         })
@@ -485,17 +487,26 @@
             document.querySelector(".check").innerText=scrollTop;
     
             if(scrollTop>=70){
-                document.querySelector("#header_logo_media").classList.add("inline")
+                // document.querySelector("#header_logo_media").classList.add("inline")
                 document.querySelector("#olaga").classList.add("opacity")
             } else {
-                document.querySelector("#header_logo_media").classList.remove("inline")
+                // document.querySelector("#header_logo_media").classList.remove("inline")
                 document.querySelector("#olaga").classList.remove("opacity")
+
             }
         })
 
         //스크롤 탑
         document.querySelector("#olaga").addEventListener("click", ()=>{
             window.scrollTo({left: 0, top: 0, behavior: "smooth"});
+        })
+
+        //로딩
+        document.querySelector(".loading").addEventListener("click", ()=>{
+            document.querySelector(".alert").classList.add("show")
+        })
+        document.querySelector(".close").addEventListener("click", ()=>{
+            document.querySelector(".alert").classList.remove("show")
         })
     </script>
 </body>

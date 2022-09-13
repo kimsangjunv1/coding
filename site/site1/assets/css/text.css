@@ -36,6 +36,23 @@
     background: url(../img/text_icon.svg);
 }
 
+@media (max-width: 600px){
+    .text__inner{
+        display: block;
+    }
+    .text{
+        width: 100%;
+        text-align: center;
+        border: 1px solid #ededed;
+        border-radius: 0;
+    }
+    .text__title::before{
+        left: 50%;
+        transform: translate(-50%, 0px);
+
+    }
+}
+
 .text.t1 .text__title::before{
     background-position: 0 0;
 }

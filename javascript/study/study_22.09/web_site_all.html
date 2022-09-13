@@ -1150,8 +1150,125 @@
 </code></pre>
                     </div>
                     <hr>
-                    <h2 class="t_tit2">완성예제</h2>
-                    <p class="t_desc2">이번것은 뭔가 복잡해보였는데 막상 한줄씩 읽어보면 또 별거 없는거 같은데 막상 시험보면 남고있는 자신의 모습이 상상가네요 그쵸 ^_____^?</p>
+
+                    <h2 class="t_tit2">JS : 모든 동작</h2>
+                    <p class="t_desc2">제가 사용한 스크립트의 전부이며 각 스크립트가 무엇인지는 주석으로 적어두었습니다.</p>
+                    <div class="t_code">
+<pre><code class="language-js">//메뉴선택
+window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //이렇게 3개 중첩해서 사용 가능
+
+    //forEach 문
+    document.querySelectorAll(".baegopa").forEach((e,i)=>{
+        if(scrollTop >= e.offsetTop-500){ //scrollTop이 id값 이상이면
+            document.querySelectorAll(".header__menu ul li").forEach((li)=>{
+                li.classList.remove("actived");
+            })
+            document.querySelector(".header__menu ul li:nth-child("+(i+1)+")").classList.add("actived");
+        }
+    })
+})
+
+//스크롤 이동
+document.querySelectorAll(".header__menu ul li a").forEach(li => {
+    // console.log(li)
+    li.addEventListener("click", (e)=>{
+        e.preventDefault(); //클릭하면 이동하는걸 막아줌
+        document.querySelector(li.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    })
+})
+
+//스크롤 이동
+document.querySelectorAll(".header__menu__media ul li a").forEach(li => {
+    // console.log(li)
+    li.addEventListener("click", (e)=>{
+        e.preventDefault(); //클릭하면 이동하는걸 막아줌
+        document.querySelector(li.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    })
+})
+
+//이미지 넘기기
+let i = 1;
+document.querySelector(".right").addEventListener("click", ()=>{
+    i++
+    if(i<=3){
+        document.querySelectorAll(".slider__img").forEach((e,i)=>{
+            e.classList.remove("show")
+        })
+        document.querySelectorAll(".dot").forEach((e,i)=>{
+            e.classList.remove("active")
+        })
+        document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+        document.querySelector(".dot:nth-child("+i+")").classList.add("active");
+    } else{
+        i = 1;
+        document.querySelectorAll(".slider__img").forEach((e,i)=>{
+            e.classList.remove("show")
+        })
+        document.querySelectorAll(".dot").forEach((e,i)=>{
+            e.classList.remove("active")
+        })
+        document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+        document.querySelector(".dot:nth-child("+i+")").classList.add("active");
+        // document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+    }
+})
+document.querySelector(".left").addEventListener("click", ()=>{
+    i--
+    if(i===0){
+        i = 3;
+        document.querySelectorAll(".slider__img").forEach((e,i)=>{
+            e.classList.remove("show")
+        })
+        document.querySelectorAll(".dot").forEach((e,i)=>{
+            e.classList.remove("active")
+        })
+        document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+        document.querySelector(".dot:nth-child("+i+")").classList.add("active");
+    } else{
+        document.querySelectorAll(".slider__img").forEach((e,i)=>{
+            e.classList.remove("show")
+        })
+        document.querySelectorAll(".dot").forEach((e,i)=>{
+            e.classList.remove("active")
+        })
+        document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+        document.querySelector(".dot:nth-child("+i+")").classList.add("active");
+        // document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+    }
+})
+
+//스크롤
+window.addEventListener("scroll", ()=>{
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+    document.querySelector(".check").innerText=scrollTop;
+
+    if(scrollTop>=70){
+        document.querySelector("#header_logo_media").classList.add("inline")
+        document.querySelector("#olaga").classList.add("opacity")
+    } else {
+        document.querySelector("#header_logo_media").classList.remove("inline")
+        document.querySelector("#olaga").classList.remove("opacity")
+    }
+})
+
+//스크롤 탑
+document.querySelector("#olaga").addEventListener("click", ()=>{
+    window.scrollTo({left: 0, top: 0, behavior: "smooth"});
+})
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">완성!</h2>
+                    <p class="t_desc2">
+                        이미 저번 티스토리 스킨 만들기에서 수많은 치환자에 지쳐가지고 쌍으로 신경쓰다보니까 너무나 지치네요<br>
+                        아마 다시한번 해보라고 하면 못할것같네요 ^___^...<br>
+                        내일은 차 끌고 스타필드라도 가서 야무~~~~~~~~~지게 놀아야지~~~~ 제발 세일만 해줘,,,
+                    </p>
                     <div class="t_iframe" style="min-height : 750px; padding-top:0;">
                         <iframe src="https://kimsangjunv1.github.io/coding/site/site1/index" frameborder="0"></iframe>
                     </div>

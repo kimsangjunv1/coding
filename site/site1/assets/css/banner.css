@@ -47,5 +47,6 @@
     .banner__inner .desc a{
         text-overflow: ellipsis;
         overflow-y: clip;
+        width: 60%;
     }
 }

@@ -1,10 +1,21 @@
 .slider__inner {
     margin-top: 70px;
     position: relative;
+    overflow: hidden;
 }
 
 .slider {
     position: relative;
+}
+
+.slider:not(:hover) .slider__img{
+    transition: 0.25s;
+}
+
+.slider:hover .slider__img{
+    /* background: #000; */
+    transform: scale(1.1);
+    transition: 0.25s;
 }
 
 .slider__img {
@@ -19,7 +30,7 @@
 .one{
     background: url(../img/slider_bg01.jpg) no-repeat center / cover;
     display: none;
-    z-index: -5;
+    z-index: 0;
     position: relative;
 }
 .three::before,
@@ -35,13 +46,15 @@
 .two {
     background: url(../img/slider_bg02.jpg) no-repeat center / cover;
     display: none;
-    z-index: -5;
+    z-index: 0;
+
     position: relative;
 }
 .three {
     background: url(../img/slider_bg03.jpg) no-repeat center / cover;
     display: none;
-    z-index: -5;
+    z-index: 0;
+
     position: relative;
 }
 

@@ -45,8 +45,8 @@ body{
 #olaga{
     opacity: 0;
     position: fixed;
-    bottom: 100px;
-    right: 100px;
+    bottom: 50px;
+    left: 50px;
     background: #00000069;
     border: 1px solid #fff;
     color: #fff;
@@ -55,6 +55,10 @@ body{
     -webkit-backdrop-filter: blur(15px);
     transition: 0.25s;
     cursor: pointer;
+}
+#olaga:hover{
+    transform: translateY(-20px);
+    box-shadow:0px 15px 20px 0px #15164033;
 }
 .opacity{
     opacity: 1 !important;
@@ -93,6 +97,18 @@ body{
     margin-bottom: 16px;
     text-underline-position: under;
     margin-bottom: 20px;
+}
+.show{
+    display: block;
+}
+.alert{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.483);
+    display: none;
 }
 
 /* 폰트 */

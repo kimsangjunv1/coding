@@ -40,6 +40,22 @@
     -webkit-line-clamp: 4; /*줄 효과*/
     -webkit-box-orient: vertical;
 }
+.card:hover span{
+    margin-left: 30px;
+    transition: 0.4s;
+}
+.card:hover img{
+    scale: 1.2;
+    overflow: hidden;
+    transition: 0.25s;
+}
+.card:not(:hover) span,
+.card:not(:hover) img{
+    transition: 0.25s;
+}
+figure{
+    overflow: hidden;
+}
 
 @media (max-width: 600px){
     .card__inner{

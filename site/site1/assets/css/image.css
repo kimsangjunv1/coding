@@ -41,6 +41,10 @@
     display: inline-block;
     border-radius: 5px;
 }
+.image__btn:hover .img1{
+    scale: 1.2;
+    transition: 0.25s;
+}
 .image__btn.yellow {
     background-color: #B59140;
 }
@@ -60,7 +64,7 @@
     }
 }
 
-@media (max-width: 1150px){
+@media (max-width: 1220px){
     .slider__inner{
         margin-top: 0 !important;
     }
