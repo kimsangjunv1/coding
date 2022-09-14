@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="assets/css/fonts.css">     <!-- 폰트 -->
     <link rel="stylesheet" href="assets/css/reset.css">     <!-- 리셋 -->
     <link rel="stylesheet" href="assets/css/common.css">    <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/swiper.css">    <!-- 공통 -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" /> -->
 
     <!-- CSS(섹션별) -->
     <link rel="stylesheet" href="assets/css/card.css">    <!-- 공통 -->
@@ -27,6 +29,14 @@
     <link rel="stylesheet" href="assets/css/footer.css">    <!-- 공통 -->
     <link rel="stylesheet" href="assets/css/slider.css">    <!-- 공통 -->
 
+    <style>
+        /* #headerType {display: none;}
+        #sliderType {display: none;}
+        #imageType {display: none;}
+        #imgTextType {display: none;}
+        #cardType {display: none;}
+        #bannerType {display: none;} */
+    </style>
 
 </head>
 <body>
@@ -92,7 +102,7 @@
         <section id="sliderType" class="slider__wrap baegopa">
             <h2 class="blind">슬라이드 영역</h2>
             <div class="slider__inner">
-                <div class="slider">
+                <!-- <div class="slider">
                     <div class="slider__img one show">
                         <div class="desc">
                             <span>어디로 가볼까?</span>
@@ -137,7 +147,47 @@
                         <a href="#" class="play"><span class="ir">플레이</span></a>
                         <a href="#" class="stop"><span class="ir">정지</span></a>
                     </div>
-                </div>
+                </div> -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="desc">
+                            <span>어디로 가볼까?</span>
+                            <h3>#새하얀_눈.</h3>
+                            <p>눈 덮힌 마을 속<br>고히 잠들어 있는 새싹들</p>
+                            <div class="btn">
+                                <a class="loading" href="#">자세히 보기</a>
+                                <a href="#" class="black loading">사이트 보기</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="desc">
+                            <span>어디로 가볼까?</span>
+                            <h3>#새하얀_눈.</h3>
+                            <p>눈 덮힌 마을 속<br>고히 잠들어 있는 새싹들</p>
+                            <div class="btn">
+                                <a class="loading" href="#">자세히 보기</a>
+                                <a href="#" class="black loading">사이트 보기</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="desc">
+                            <span>어디로 가볼까?</span>
+                            <h3>#새하얀_눈.</h3>
+                            <p>눈 덮힌 마을 속<br>고히 잠들어 있는 새싹들</p>
+                            <div class="btn">
+                                <a class="loading" href="#">자세히 보기</a>
+                                <a href="#" class="black loading">사이트 보기</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
             </div>
         </section>
         <!-- //sliderType -->
@@ -430,56 +480,56 @@
             })
         })
 
-        //이미지 넘기기
-        let i = 1;
-        document.querySelector(".right").addEventListener("click", ()=>{
-            i++
-            if(i<=3){
-                document.querySelectorAll(".slider__img").forEach((e,i)=>{
-                    e.classList.remove("show")
-                })
-                document.querySelectorAll(".dot").forEach((e,i)=>{
-                    e.classList.remove("active")
-                })
-                document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
-                document.querySelector(".dot:nth-child("+i+")").classList.add("active");
-            } else{
-                i = 1;
-                document.querySelectorAll(".slider__img").forEach((e,i)=>{
-                    e.classList.remove("show")
-                })
-                document.querySelectorAll(".dot").forEach((e,i)=>{
-                    e.classList.remove("active")
-                })
-                document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
-                document.querySelector(".dot:nth-child("+i+")").classList.add("active");
-                // document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
-            }
-        })
-        document.querySelector(".left").addEventListener("click", ()=>{
-            i--
-            if(i===0){
-                i = 3;
-                document.querySelectorAll(".slider__img").forEach((e,i)=>{
-                    e.classList.remove("show")
-                })
-                document.querySelectorAll(".dot").forEach((e,i)=>{
-                    e.classList.remove("active")
-                })
-                document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
-                document.querySelector(".dot:nth-child("+i+")").classList.add("active");
-            } else{
-                document.querySelectorAll(".slider__img").forEach((e,i)=>{
-                    e.classList.remove("show")
-                })
-                document.querySelectorAll(".dot").forEach((e,i)=>{
-                    e.classList.remove("active")
-                })
-                document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
-                document.querySelector(".dot:nth-child("+i+")").classList.add("active");
-                // document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
-            }
-        })
+        // //이미지 넘기기
+        // let i = 1;
+        // document.querySelector(".right").addEventListener("click", ()=>{
+        //     i++
+        //     if(i<=3){
+        //         document.querySelectorAll(".slider__img").forEach((e,i)=>{
+        //             e.classList.remove("show")
+        //         })
+        //         document.querySelectorAll(".dot").forEach((e,i)=>{
+        //             e.classList.remove("active")
+        //         })
+        //         document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+        //         document.querySelector(".dot:nth-child("+i+")").classList.add("active");
+        //     } else{
+        //         i = 1;
+        //         document.querySelectorAll(".slider__img").forEach((e,i)=>{
+        //             e.classList.remove("show")
+        //         })
+        //         document.querySelectorAll(".dot").forEach((e,i)=>{
+        //             e.classList.remove("active")
+        //         })
+        //         document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+        //         document.querySelector(".dot:nth-child("+i+")").classList.add("active");
+        //         // document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+        //     }
+        // })
+        // document.querySelector(".left").addEventListener("click", ()=>{
+        //     i--
+        //     if(i===0){
+        //         i = 3;
+        //         document.querySelectorAll(".slider__img").forEach((e,i)=>{
+        //             e.classList.remove("show")
+        //         })
+        //         document.querySelectorAll(".dot").forEach((e,i)=>{
+        //             e.classList.remove("active")
+        //         })
+        //         document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+        //         document.querySelector(".dot:nth-child("+i+")").classList.add("active");
+        //     } else{
+        //         document.querySelectorAll(".slider__img").forEach((e,i)=>{
+        //             e.classList.remove("show")
+        //         })
+        //         document.querySelectorAll(".dot").forEach((e,i)=>{
+        //             e.classList.remove("active")
+        //         })
+        //         document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+        //         document.querySelector(".dot:nth-child("+i+")").classList.add("active");
+        //         // document.querySelector(".slider__img:nth-child("+i+")").classList.add("show");
+        //     }
+        // })
         
         //스크롤
         window.addEventListener("scroll", ()=>{
@@ -508,6 +558,26 @@
         document.querySelector(".close").addEventListener("click", ()=>{
             document.querySelector(".alert").classList.remove("show")
         })
+    </script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 2000,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+        },
+      });
     </script>
 </body>
 </html>

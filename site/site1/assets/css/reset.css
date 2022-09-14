@@ -29,7 +29,9 @@ figure,
 figcaption{
     margin: 0;
     padding: 0;
+    -webkit-text-size-adjust:100%;
 }
+
 
 /* 시멘틱 태그 초기화 */
 article,
@@ -80,6 +82,7 @@ h5,
 h6{
     font-weight: normal;
 }
+
 
 /* 폰트 스타일 초기화 */
 em, address {

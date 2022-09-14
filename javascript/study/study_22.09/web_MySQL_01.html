@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"
+            class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <!-- 01번 메인 샘플 시작 -->
+                    <div class="col-md-9">
+                        <div class="bs-docs-section">
+                            <h2 id="intro1" class="t_tit">MySQL?</h2>
+                            <p class="t_desc">
+                                MySQL은 데이터 소프트웨어입니다.
+                                일반적으로 <i>데이터를 추가하거나 검색, 추출하는 기능을 모두 포함해서 데이터베이스</i>라고 부릅니다.
+                            </p>
+                            <p class="t_desc">
+                                MySQL은 세계에서 가장 많이 쓰이는 오픈 소스의 관계형 데이터베이스 관리시스템(RDBMS)입니다.
+                                MySQL은 PHP 스크립트 언어와 상호 연동이 잘 되면서 오픈소스를 개발된 무료 프로그램입니다.
+                                그래서 홈페이지나 쇼핑몰(워드프레스, cafe24, 제로보드, 그누보드)등 일반적으로 웹 개발에 널리 사용하고 있습니다.
+                            </p>
+                        </div>
+                        <hr>
+                        <!-- //intro1 -->
+                        <div class="bs-docs-section">
+                            <h2 id="intro2" class="t_tit2">MySQL 설치</h2>
+                            <div class="t_box">
+                                MAMP란 웹사이트를 개발할 때 쓰이는 기술 스택인 macOS, Apache, MySQL, pHP 의 약어이자 솔루션 스텍이다<br>
+                                <a href="https://www.mamp.info/en/downloads/">https://www.mamp.info/en/downloads/</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- //intro2 -->
+                        <div class="bs-docs-section">
+                            <h2 id="intro3" class="t_tit2">MySQL 실행</h2>
+                            <div class="t_box">
+                                윈도우 : cs MAMP/bin/mysql/bin<br>
+                                로그인 : mysql -uroot -proot
+                            </div>
+                            <div class="t_code">
+<pre><code class="t_code language-js">Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.7.24 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</code></pre>
+                            </div>
+                            <div class="t_box">
+                                맥 : cd Application/mamp/Library/bin<br>
+                                로그인 : ./mysql -uroot -proot
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">gimsangjun@gimsangjun-ui-MacBookAir bin % ./mysql -uroot -proot                           
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.7.34 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+</code></pre>
+                        </div>
+                        </div>
+                        <!-- //intro2 -->
+                        <!-- //intro1 -->
+                        <hr>
+                        <div class="bs-docs-section">
+                            <h2 id="intro4" class="t_tit">데이터베이스</h2>
+                            <h3 id="intro4-1" class="t_tit2">데이터베이스 만들기</h3>
+                            <div class="t_box">
+                                create database [데이터 베이스 이름];
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">mysql> create database sample01;
+Query OK, 1 row affected (0.01 sec)
+</code></pre>
+                            </div>
+                            <h3 id="intro4-2" class="t_tit2">데이터베이스 보기</h3>
+                            <div class="t_box">
+                                show databases;
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample01           |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+</code></pre>
+                            </div>
+                            <h3 id="intro4-3" class="t_tit2">데이터베이스 사용</h3>
+                            <div class="t_box">
+                                use 데이터베이스 이름;
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">mysql> use sample01;
+Database changed
+</code></pre>
+                            </div>
+                            <h3 id="intro4-4" class="t_tit2">데이터베이스 삭제</h3>
+                            <div class="t_box">
+                                drop database [데이터 베이스 이름];
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">mysql> drop database sample02;
+Query OK, 0 rows affected (0.01 sec)
+</code></pre>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- //intro4 -->
+                        <div class="bs-docs-section">
+                            <h2 id="intro5" class="t_tit">테이블</h2>
+                            <h3 id="intro5-1" class="t_tit2">테이블 만들기</h3>
+                            <div class="t_box">
+                                create table member (
+                                myMemberID int(10) unsigned auto_increment,
+                                youEmail varchar(40) NOT NULL,
+                                youName varchar(20) NOT NULL,
+                                youPass varchar(20) NOT NULL,
+                                youBirth int(20) NOT NULL,
+                                regTime int(20) NOT NULL,
+                                PRIMARY KEY (myMemberID)
+                                ) charset=utf8;
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">mysql> create table member (
+->     myMemberID int(10) unsigned auto_increment,
+->     youEmail varchar(40) NOT NULL,
+->     youName varchar(20) NOT NULL,
+->     youPass varchar(20) NOT NULL,
+->     youBirth int(20) NOT NULL,
+->     regTime int(20) NOT NULL,
+->     PRIMARY KEY (myMemberID)
+-> ) charset=utf8;
+Query OK, 0 rows affected (0.03 sec)
+</code></pre>
+                            </div>
+
+                            <h3 id="intro5-2" class="t_tit2">테이블 전체보기</h3>
+                            <div class="t_box">
+                                show tables;
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">mysql> show tables;
++--------------------+
+| Tables_in_sample01 |
++--------------------+
+| member             |
++--------------------+
+1 row in set (0.00 sec)
+</code></pre>
+                            </div>
+
+                            <h3 id="intro5-3" class="t_tit2">테이블 보기</h3>
+                            <div class="t_box">
+                                desc 테이블 이름;
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">mysql> desc member;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youEmail   | varchar(40)      | NO   |     | NULL    |                |
+| youName    | varchar(20)      | NO   |     | NULL    |                |
+| youPass    | varchar(20)      | NO   |     | NULL    |                |
+| youBirth   | int(20)          | NO   |     | NULL    |                |
+| regTime    | int(20)          | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+6 rows in set (0.02 sec)
+</code></pre>
+                            </div>
+
+                            <h3 id="intro5-4" class="t_tit2">테이블 삭제</h3>
+                            <div class="t_box">
+                                drop table 테이블 이름;
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">mysql> drop table member;
+Query OK, 0 rows affected (0.01 sec)
+</code></pre>
+                            </div>
+
+                            <!-- <h3 id="intro5-5" class="t_tit2">테이블 복사</h3>
+                            <div class="t_box">
+                            </div>
+                            <pre><code class="language-js">
+        </code></pre>
+                        </div> -->
+                        <!-- //intro5 -->
+                        <hr>
+                        <!-- //intro6 -->
+                        <div class="bs-docs-section">
+                            <h2 id="intro6" class="t_tit">테이블 데이터</h2>
+                            <h3 id="intro6-1" class="t_tit2">테이블 데이터 추가</h3>
+                            <div class="t_box">
+                                INSERT INTO 테이블 이름(필드명) VALUE(데이터)
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">NSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooooo@naver.com', '1234', '19940404', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@naver.com','1234','19990303','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@naver.com', '1234', '19970415', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@naver.com', '1234', '19970530', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@naver.com', '1234', '19941009', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@naver.com', '1234', '19990303', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@gmail.com', '1234', '20011009','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@naver.com','1234','19970205','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@naver.com','1234','19990303','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@naver.com','1234','19990303','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@gmail.com', '1234', '19990303', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUE('ooooo_oooooo@gmail.com', '1234', '19990303', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@gmail.com','1234','19970731','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@naver.com','1234','19960530','1234567')
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@gmail.com','1234','19971007','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@gmail.com','1234','19960331','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@gmail.com','1234','19990303','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@gmail.com', '1234', '19981010', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUE('ooooo_oooooo@gmail.com', '1234', '19700101', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@gmail.com', '1234', '19990303', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ooooo_oooooo@naver.com', '3950', '20010415', '1234567');
+</code></pre>
+                            </div>
+                            <hr>
+                            <h3 id="intro6-2" class="t_tit2">테이블 불러오기</h3>
+                            <div class="t_box">
+                                SELECT 필드명 FROM 테이븗명 WHERE 조건
+                            </div>
+                            <h4 class="t_tit2">전체 데이터 불러오기</h4>
+                            <div class="t_box">
+                                예)SELECT * FROM member;
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">mysql> SELECT * FROM member;
++------------+------------------------+------------+---------+----------+---------+
+| myMemberID | youEmail               | youName    | youPass | youBirth | regTime |
++------------+------------------------+------------+---------+----------+---------+
+|          1 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19940404 |       4 |
+|          2 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19940404 | 1234567 |
+|          3 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19990303 | 1234567 |
+|          4 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19970415 | 1234567 |
+|          5 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19970530 | 1234567 |
+|          6 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19941009 | 1234567 |
+|          7 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19990303 | 1234567 |
+|          8 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 20011009 | 1234567 |
+|          9 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19970205 | 1234567 |
+|         10 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19990303 | 1234567 |
+|         11 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19990303 | 1234567 |
+|         12 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19990303 | 1234567 |
+|         13 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19990303 | 1234567 |
+|         14 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19970731 | 1234567 |
+|         15 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19960331 | 1234567 |
+|         16 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19990303 | 1234567 |
+|         17 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19981010 | 1234567 |
+|         18 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19700101 | 1234567 |
+|         19 | ooooo_oooooo@naver.com | 홍길동       | 1234    | 19990303 | 1234567 |
+|         20 | ooooo_oooooo@naver.com | 홍길동       | 3950    | 20010415 | 1234567 |
++------------+------------------------+------------+---------+----------+---------+
+20 rows in set (0.01 sec)
+</code></pre>
+                            </div>
+                            <h4 class="t_tit2">myMemberID가 6번인 경우</h4>
+                            <div class="t_box">
+                                예) SELECT * FROM member WHERE myMemberID = 6
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">mysql> SELECT * FROM member WHERE myMemberID = 6;
++------------+-----------------------+-----------+---------+----------+---------+
+| myMemberID | youEmail              | youName   | youPass | youBirth | regTime |
++------------+-----------------------+-----------+---------+----------+---------+
+|          6 | tjrwnsrkdtj@naver.com | 김석준    | 1234    | 19941009 | 1234567 |
++------------+-----------------------+-----------+---------+----------+---------+
+1 row in set (0.01 sec)
+</code></pre>
+                            </div>
+                            <h4 class="t_tit2">email 중에 naver 텍스트를 포함하고 있는 경우</h4>
+                            <div class="t_box">
+                                예) SELECT * FROM member WHERE youEmail LIKE '%naver%';
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">mysql> SELECT * FROM member WHERE youEmail LIKE '%naver%';
++------------+------------------------+------------+---------+----------+---------+
+| myMemberID | youEmail               | youName    | youPass | youBirth | regTime |
++------------+------------------------+------------+---------+----------+---------+
+|          1 | oooo_ooooooo@gmail.com | 홍길동       | 1234    | 19940404 |       4 |
+|          2 | oooo_ooooooo@gmail.com | 홍길동       | 1234    | 19940404 | 1234567 |
+|          3 | oooo_ooooooo@gmail.com | 홍길동       | 1234    | 19990303 | 1234567 |
+|          4 | oooo_ooooooo@gmail.com | 홍길동       | 1234    | 19970415 | 1234567 |
+|          5 | oooo_ooooooo@gmail.com | 홍길동       | 1234    | 19970530 | 1234567 |
+|          6 | oooo_ooooooo@gmail.com | 홍길동       | 1234    | 19941009 | 1234567 |
+|          7 | oooo_ooooooo@gmail.com | 홍길동       | 1234    | 19990303 | 1234567 |
+|          9 | oooo_ooooooo@gmail.com | 홍길동       | 1234    | 19970205 | 1234567 |
+|         10 | oooo_ooooooo@gmail.com | 홍길동       | 1234    | 19990303 | 1234567 |
+|         11 | oooo_ooooooo@gmail.com | 홍길동       | 1234    | 19990303 | 1234567 |
+|         20 | oooo_ooooooo@gmail.com | 홍길동       | 3950    | 20010415 | 1234567 |
++------------+------------------------+------------+---------+----------+---------+
+11 rows in set (0.01 sec)
+</code></pre>
+                            </div>
+                            <h3 id="intro6-3" class="t_tit2">테이블 데이터</h3>
+                            <div class="t_box">
+                                INSERT INTO 테이블 이름(필드명) VALUE(데이터)
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('to_before@naver.com', '김상준', '1234', '19940404', '04')
+</code></pre>
+                            </div>
+                            <h3 id="intro6-4" class="t_tit2">테이블 데이터</h3>
+                            <div class="t_box">
+                                INSERT INTO 테이블 이름(필드명) VALUE(데이터)
+                            </div>
+                            <div class="t_code">
+<pre><code class="language-js">INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('to_before@naver.com', '김상준', '1234', '19940404', '04')
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+
+</html>
