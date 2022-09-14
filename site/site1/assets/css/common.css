@@ -31,7 +31,9 @@
 /* .actived a{
     color: #fff !important;
 } */
-
+html{
+    overflow-x: hidden;
+}
 /* 컨테이너 */
 body{
     width:100%;
