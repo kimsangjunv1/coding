@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <!-- 01번 메인 샘플 시작 -->
+                    <h2 class="t_tit">사이트 유형 종합_02</h2>
+                    <p class="t_desc">저번에는 기초적인 유형의 틀 자체만 만들었었는데 지금까지 만들었던 사이트 유형들을 모두 조합해 버그들을 fix한 사이트 유형을 만들어보도록 하겠습니다~!</p>
+                    <hr>
+                    <h2 class="t_tit2">HTML 코드</h2>
+                    <p class="t_desc2">햄버거 메뉴 / swiper을 이용한 이미지 슬라이드 이 두가지만 유의해 저번 유형때 만들었던 코드에 추가시켜줍니다.</p>
+                    <p class="t_box">##햄버거 메뉴 : html 코드에 적혀있는 span은 햄버거 메뉴의 막대기 역할을 담당합니다.</p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;!--햄버거 메뉴 설명--&gt;
+&lt;div class="header__ham"&gt;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <p class="t_box">##swiper : 슬라이드 유형 구현을 위한 기본적인 틀이 잡혀있는 플러그인을 사용하기 위해 하단과 같은 코드를 삽입하였습니다.</p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;div class="swiper mySwiper"&gt;
+    &lt;div class="swiper-wrapper"&gt;
+        &lt;div class="swiper-slide"&gt;
+            &lt;div class="desc"&gt;
+                &lt;span&gt;어디로 가볼까?&lt;/span&gt;
+                &lt;h3&gt;#새하얀_눈.&lt;/h3&gt;
+                &lt;p&gt;눈 덮힌 마을 속&lt;br&gt;고히 잠들어 있는 새싹들&lt;/p&gt;
+                &lt;div class="btn"&gt;
+                    &lt;a class="loading" href="#"&gt;자세히 보기&lt;/a&gt;
+                    &lt;a href="#" class="black loading"&gt;사이트 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="swiper-slide"&gt;
+            &lt;div class="desc"&gt;
+                &lt;span&gt;어디로 가볼까?&lt;/span&gt;
+                &lt;h3&gt;#새하얀_눈.&lt;/h3&gt;
+                &lt;p&gt;눈 덮힌 마을 속&lt;br&gt;고히 잠들어 있는 새싹들&lt;/p&gt;
+                &lt;div class="btn"&gt;
+                    &lt;a class="loading" href="#"&gt;자세히 보기&lt;/a&gt;
+                    &lt;a href="#" class="black loading"&gt;사이트 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="swiper-slide"&gt;
+            &lt;div class="desc"&gt;
+                &lt;span&gt;어디로 가볼까?&lt;/span&gt;
+                &lt;h3&gt;#새하얀_눈.&lt;/h3&gt;
+                &lt;p&gt;눈 덮힌 마을 속&lt;br&gt;고히 잠들어 있는 새싹들&lt;/p&gt;
+                &lt;div class="btn"&gt;
+                    &lt;a class="loading" href="#"&gt;자세히 보기&lt;/a&gt;
+                    &lt;a href="#" class="black loading"&gt;사이트 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+        &lt;div class="swiper-button"&gt;
+            &lt;div class="swiper-button-play"&gt;&lt;span class="ir"&gt;play&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="swiper-button-stop"&gt;&lt;span class="ir"&gt;stop&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+    &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <h2 class="t_tit2">HTML 최종 전체 코드</h2>
+                    <p class="t_box">결과적으로 하단과 같이 코드가 짜여져 있어야 합니다.</p>
+                    <details>
+                        <summary class="t_box">HTML 코드 전체 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-html">&lt;div class="alert"&gt;
+    &lt;p class="close"&gt;X&lt;/p&gt;
+    &lt;h2&gt;로딩중...&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div style="position: fixed; width: 50px; height: 50px; bottom: 0; left: 0;" class="check"&gt;체크용&lt;/div&gt;
+&lt;!-- 웹표준 준수시 필요 --&gt;
+&lt;div id="skip"&gt;
+    &lt;a href="#"&gt;헤더 영역 바로가기&lt;/a&gt;
+    &lt;a href="#"&gt;슬라이드 영역 바로가기&lt;/a&gt;
+    &lt;a href="#"&gt;이미지 영역 바로가기&lt;/a&gt;
+    &lt;a href="#"&gt;이미지/텍스트 영역 바로가기&lt;/a&gt;
+    &lt;a href="#"&gt;카드 영역 바로가기&lt;/a&gt;
+    &lt;a href="#"&gt;배너 영역 바로가기&lt;/a&gt;
+    &lt;a href="#"&gt;텍스트 영역 바로가기&lt;/a&gt;
+    &lt;a href="#"&gt;푸터 영역 바로가기&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;header id="headerType" class="header__wrap nexon"&gt;
+    &lt;div class="header__inner"&gt;
+        &lt;div class="header__logo"&gt;
+            &lt;a href="#"&gt;#여행_가자!&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="header__menu"&gt;
+            &lt;ul&gt;
+                &lt;!-- &lt;li&gt;&lt;a href="#headerType"&gt;헤더 영역&lt;/a&gt;&lt;/li&gt; --&gt;
+                &lt;li class="actived"&gt;&lt;a href="#sliderType"&gt;슬라이드 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#imageType01"&gt;이미지 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#imgTextType"&gt;이미지/텍스트 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#cardType"&gt;카드 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#bannerType"&gt;배너 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#textType"&gt;텍스트 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#footerType"&gt;푸터 영역&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="header__member"&gt;
+            &lt;a href="#" class="loading"&gt;로그인&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="header__ham"&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;span&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+&lt;!-- //headerType --&gt;
+
+
+&lt;main id="mainType"&gt;
+
+    &lt;section id="sliderType" class="slider__wrap baegopa"&gt;
+        &lt;h2 class="blind"&gt;슬라이드 영역&lt;/h2&gt;
+        &lt;div class="slider__inner"&gt;
+            &lt;div class="swiper mySwiper"&gt;
+                &lt;div class="swiper-wrapper"&gt;
+                    &lt;div class="swiper-slide"&gt;
+                        &lt;div class="desc"&gt;
+                            &lt;span&gt;어디로 가볼까?&lt;/span&gt;
+                            &lt;h3&gt;#새하얀_눈.&lt;/h3&gt;
+                            &lt;p&gt;눈 덮힌 마을 속&lt;br&gt;고히 잠들어 있는 새싹들&lt;/p&gt;
+                            &lt;div class="btn"&gt;
+                                &lt;a class="loading" href="#"&gt;자세히 보기&lt;/a&gt;
+                                &lt;a href="#" class="black loading"&gt;사이트 보기&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="swiper-slide"&gt;
+                        &lt;div class="desc"&gt;
+                            &lt;span&gt;어디로 가볼까?&lt;/span&gt;
+                            &lt;h3&gt;#새하얀_눈.&lt;/h3&gt;
+                            &lt;p&gt;눈 덮힌 마을 속&lt;br&gt;고히 잠들어 있는 새싹들&lt;/p&gt;
+                            &lt;div class="btn"&gt;
+                                &lt;a class="loading" href="#"&gt;자세히 보기&lt;/a&gt;
+                                &lt;a href="#" class="black loading"&gt;사이트 보기&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="swiper-slide"&gt;
+                        &lt;div class="desc"&gt;
+                            &lt;span&gt;어디로 가볼까?&lt;/span&gt;
+                            &lt;h3&gt;#새하얀_눈.&lt;/h3&gt;
+                            &lt;p&gt;눈 덮힌 마을 속&lt;br&gt;고히 잠들어 있는 새싹들&lt;/p&gt;
+                            &lt;div class="btn"&gt;
+                                &lt;a class="loading" href="#"&gt;자세히 보기&lt;/a&gt;
+                                &lt;a href="#" class="black loading"&gt;사이트 보기&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+                    &lt;div class="swiper-button"&gt;
+                        &lt;div class="swiper-button-play"&gt;&lt;span class="ir"&gt;play&lt;/span&gt;&lt;/div&gt;
+                        &lt;div class="swiper-button-stop"&gt;&lt;span class="ir"&gt;stop&lt;/span&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+                &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- //sliderType --&gt;
+
+    &lt;section id="imageType01" class="image__wrap nexon section baegopa container"&gt;
+        &lt;h2&gt;#내_여행_동반자&lt;/h2&gt;
+        &lt;p&gt;내 여행동안 내 외로움을 채워줄 소울 메이트는 어떠세요?&lt;/p&gt;
+        &lt;div class="image__inner"&gt;
+            &lt;article class="image img1"&gt;
+                &lt;h3 class="image__title"&gt;불독은 어떠세요?&lt;/h3&gt;
+                &lt;p class="image__desc"&gt;
+                    불독은 혼종이라고 하는데, 사람들에게 인기많은 이유는&lt;br&gt;
+                    생김새를 떠나서 강아지를 키운다는 그 사실이 좋은겁니다.&lt;/p&gt;
+                &lt;a class="image__btn yellow loading" href="/" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/article&gt;
+            &lt;article class="image img2"&gt;
+                &lt;h3 class="image__title"&gt;웰시코기는 어떠세요?&lt;/h3&gt;
+                &lt;p class="image__desc"&gt;
+                    웰시코기는 다리가 참 짧죠? 그래서 키우는 사람들도 많은 편이고&lt;br&gt;
+                    총총 걸어다니는 모습을 보고있자니 너무 귀엽답니다!&lt;/p&gt;
+                &lt;a class="image__btn loading" href="/" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- //imageType --&gt;
+
+    &lt;section id="imgTextType" class="imgText__wrap nexon section gray baegopa"&gt;
+        &lt;h2 class="blind"&gt;유용한 사이트 살펴보기 🎮&lt;/h2&gt;
+        &lt;div class="imgText__inner container"&gt;
+            &lt;div class="imgText__txt"&gt;
+                &lt;span&gt;여행 속 내 비즈니스&lt;/span&gt;
+                &lt;h3&gt;#일은_절대_놓을_수_없지&lt;/h3&gt;
+                &lt;p&gt;우리 다 같이 도시 라이프를 다채로운 방식으로 함께 즐겨보아요!&lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;오늘의 티&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;오늘의 공원&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;오늘의 장소&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;오늘의 가게&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;오늘의 춤&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;오늘의 회사 출근 음악&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="imgText__img img1"&gt;
+                &lt;a href="/"&gt;비즈니스&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="imgText__img img2"&gt;
+                &lt;a href="/" class="blue"&gt;작업할때&lt;/a&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- //imgTextType --&gt;
+
+    &lt;section id="cardType" class="card__wrap nexon section baegopa container"&gt;
+        &lt;!--다중 클래스 선택--&gt;
+        &lt;h2&gt;#여행_중_게임은_못참지🎮&lt;/h2&gt;
+        &lt;p&gt;새롭고 혁신적인 PS5™ 컨트롤러로 완전히 몰입할 수 있는 게임 경험을 즐겨보시기 바랍니다.&lt;/p&gt;
+        &lt;div class="card__inner"&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;!--img를 쓰기 위한 웹 표준 방법--&gt;
+                    &lt;img src="assets/img/card_bg01_01.jpg" alt="다양한 인터렉티브 반응"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;다양한 인터렉티브 반응&lt;/h3&gt;
+                    &lt;p class="desc"&gt;인게임 기어 및 환경과 상호작용하면서 활시위를 당길 때 점점 팽팽해지는 느낌과 질주하는 자동차의 급브레이크를 밟는 느낌 등 액션과 함께
+                        어우러집니다.
+                    &lt;/p&gt;
+                    &lt;a class="btn loading" href="/"&gt;
+                        더 자세히 보기
+                        &lt;span aria-hidden="true"&gt;
+                            &lt;!--aria-hidden="true" 로 처리시 이 부분을 읽는것을 스킵한다.--&gt;
+                            &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path
+                                    d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                    fill="black" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure&gt;
+                    &lt;!--img를 쓰기 위한 웹 표준 방법--&gt;
+                    &lt;img src="assets/img/card_bg01_02.jpg" alt="게임패드 지원"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;게임패드 지원&lt;/h3&gt;
+                    &lt;p class="desc"&gt;내장 마이크를 사용하거나 3.5mm 잭에 미니멀하고 아이코닉한 헤드셋을 연결 전용 음소거 버튼을 사용하여 음성 캡처를 즉시 끌 수 있습니다.
+                    &lt;/p&gt;
+                    &lt;a class="btn loading" href="/"&gt;
+                        더 자세히 보기
+                        &lt;span aria-hidden="true"&gt;
+                            &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path
+                                    d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                    fill="black" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure&gt;
+                    &lt;!--img를 쓰기 위한 웹 표준 방법--&gt;
+                    &lt;img src="assets/img/card_bg01_03.jpg" alt="진동을 통한 생생한 현장감"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;진동을 통한 생생한 현장감&lt;/h3&gt;
+                    &lt;p class="desc"&gt;기존의 진동 모터 대신 듀얼 액추에이터가 선사하는 물리적 반응형 피드백을 경험해보세요, 게임 내 환경에서부터 실감 나는 역동적인 진동이 손을
+                        타고
+                        전해집니다.&lt;/p&gt;
+                    &lt;a class="btn loading" href="/"&gt;
+                        더 자세히 보기
+                        &lt;span aria-hidden="true"&gt;
+                            &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path
+                                    d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                    fill="black" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- //cardType --&gt;
+
+    &lt;section id="bannerType" class="banner__wrap nexon section baegopa"&gt;
+        &lt;h2 class="blind"&gt;배너 영역&lt;/h2&gt;
+        &lt;div class="banner__inner"&gt;
+            &lt;h3 class="title"&gt;#내_손으로_만들어_가는_루트&lt;/h3&gt;
+            &lt;p class="desc"&gt;
+                다양하고 다채로운 도시의 모습은 이곳을 참조하세요!&lt;br&gt;
+                &lt;a href="" title="유튜브 페이지로 이동"&gt;https://www.youtube.com/channel/UCqVDpXKLmKeBU_yyt_QkItQ/&lt;/a&gt;
+            &lt;/p&gt;
+            &lt;span class="small"&gt;도시 속 모습_01&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- //bannerType --&gt;
+
+    &lt;section id="textType" class="nexon text__wrap section baegopa container"&gt;
+        &lt;span&gt;도와드릴게요.&lt;/span&gt;
+        &lt;h2 class="mb70"&gt;#어느걸_찾으세요?&lt;/h2&gt;
+        &lt;div class="text__inner"&gt;
+            &lt;div class="text t1"&gt;
+                &lt;h3 class="text__title"&gt;내 장소&lt;/h3&gt;
+                &lt;p class="text__desc"&gt;가끔은 내가 원하는 장소를 찾아야 할떄가 있죠,, 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 &lt;/p&gt;
+                &lt;a class="text_btn loading" href="#"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t2"&gt;
+                &lt;h3 class="text__title"&gt;내 동반자&lt;/h3&gt;
+                &lt;p class="text__desc"&gt;자신의 동반자를 찾는것은 중요합니다 그러기에 저희는 찾아드리는 서비스를 하고 있으며, 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해
+                    앞으로 맞게 될 여행을 &lt;/p&gt;
+                &lt;a class="text_btn loading" href="#"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t3"&gt;
+                &lt;h3 class="text__title"&gt;여행패키지&lt;/h3&gt;
+                &lt;p class="text__desc"&gt;여행 패키지를 찾음으로써 각종 사항에 굳이 시간을 소비할 필요가 없습니다 그래서 만약 찾고계시다면 그럴때에는 이 메뉴를 클릭해 다음과 같은
+                    사항을 숙지해 앞으로 맞게 될 여행을 &lt;/p&gt;
+                &lt;a class="text_btn loading" href="#"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t4"&gt;
+                &lt;h3 class="text__title"&gt;여행도구&lt;/h3&gt;
+                &lt;p class="text__desc"&gt;여행도구는 정말 없어서는 안될 그런 도구입니다 그러니 꼭 필요한 물품으로써 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로
+                    맞게 될 여행을 &lt;/p&gt;
+                &lt;a class="text_btn loading" href="#"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t5"&gt;
+                &lt;h3 class="text__title"&gt;즐길거리&lt;/h3&gt;
+                &lt;p class="text__desc"&gt;즐길거리가 또 빠지게 되면 섭하죠 그러니 혹여나 찾고계시다면 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을
+                &lt;/p&gt;
+                &lt;a class="text_btn loading" href="#"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t6"&gt;
+                &lt;h3 class="text__title"&gt;다양한 참고자료&lt;/h3&gt;
+                &lt;p class="text__desc"&gt;다양한 참고할만한 자료가 필요할때 분명 있습니다 그렇기에 저희는 데이터를 축적해놨는데요 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을
+                    숙지해 앞으로 맞게 될 여행을 &lt;/p&gt;
+                &lt;a class="text_btn loading" href="#"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- //textType --&gt;
+    &lt;div id="olaga"&gt;위로!&lt;/div&gt;
+
+&lt;/main&gt;
+&lt;!-- //mainType --&gt;
+
+
+&lt;footer id="footerType" class="footer__wrap nexon section gray baegopa"&gt;
+    &lt;h2 class="blind"&gt;푸터 영역&lt;/h2&gt;
+    &lt;div class="footer__inner"&gt;
+        &lt;div class="footer__menu"&gt;
+            &lt;div&gt;
+                &lt;h3&gt;도움말&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;사이트 사용법&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;도움말 찾기&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;사이트맵&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;각 메뉴 설명&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;행복상담&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;고민거리&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;미래&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;과거&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;여행&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;한국&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;중국&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;일본&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;싱가포르&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;말레이시아&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;팁&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;여행가이드&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;위치&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;사진스팟&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;고객센터&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;여행 상담&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;고민 상담&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;권고 상담&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;행복 상담&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;사업자등록&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;1. 표준사항&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;2. 법사항&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;3. 규범사항&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;4. 참조사항&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;5. 준수사항&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;6. 권고사항&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="footer__right"&gt;
+            2022 CODi. Portfolio is power&lt;br&gt;
+            All rights reserved.
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;
+&lt;!-- //footerType --&gt;
+</code></pre>
+                        </div>
+                    </details>
+                    
+                    <hr>
+
+                    <h2 class="t_tit2">CSS 코드</h2>
+                    <p class="t_desc2">햄버거 메뉴 / swiper의 뼈대를 상단 HTML에서 구성했기 떄문에 하단의 CSS를 작성하여 살을 붙여줍니다.</p>
+                    <p class="t_box">##햄버거 메뉴</p>
+                    <div class="t_code">
+<pre><code class="language-css">.header__ham {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    display: none;
+    cursor: pointer;
+}
+.header__ham span {
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 2px;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-top: 5px;
+    transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.header__ham span:nth-child(1){
+    margin-top: 18px;
+}
+.header__ham.active span {
+    transition: 0.25s margin, 0.25s transform 0.25s;
+}
+.header__ham.active span:nth-child(1){
+    margin-top: 25px;
+    margin-bottom: -7px;
+    transform: rotate(45deg);
+}
+.header__ham.active span:nth-child(2){
+    transform: rotate(45deg);
+}
+.header__ham.active span:nth-child(3){
+    margin-top: -2px;
+    transform: rotate(135deg);
+}
+
+</code></pre>
+                    </div>
+                    <p class="t_box">##SWIPER 슬라이드 : 하단과 같이 별개의 swiper.css 가 필요합니다 </p>
+                    <details>
+                        <summary class="t_box">SWIPER 슬라이드 CSS 코드 전체보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">/**
+    * Swiper 8.3.2
+    * Most modern mobile touch slider and framework with hardware accelerated transitions
+    * https://swiperjs.com
+    *
+    * Copyright 2014-2022 Vladimir Kharlampidi
+    *
+    * Released under the MIT License
+    *
+    * Released on: July 26, 2022
+    */
+    
+    @font-face {
+        font-family: swiper-icons;
+        src: url("data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA");
+        font-weight: 400;
+        font-style: normal;
+    }
+    :root {
+        --swiper-theme-color: #007aff;
+    }
+    
+    .swiper-button-next, .swiper-button-prev{
+        width: 30px !important;
+        height: 56px !important;
+        background: url(../img/slider_icon.svg);
+    }
+    .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after,
+    .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+        display: none;
+    }
+    .swiper-button-next{
+        background-position-x: -50px;
+    }
+    .swiper {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        overflow: hidden;
+        list-style: none;
+        padding: 0;
+        z-index: 1;
+    }
+    .swiper-vertical > .swiper-wrapper {
+        flex-direction: column;
+    }
+    .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        transition-property: transform;
+        box-sizing: content-box;
+    }
+    .swiper-android .swiper-slide,
+    .swiper-wrapper {
+        transform: translate3d(0px, 0, 0);
+    }
+    .swiper-pointer-events {
+        touch-action: pan-y;
+    }
+    .swiper-pointer-events.swiper-vertical {
+        touch-action: pan-x;
+    }
+    .swiper-slide {
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition-property: transform;
+    }
+    .swiper-slide-invisible-blank {
+        visibility: hidden;
+    }
+    .swiper-autoheight,
+    .swiper-autoheight .swiper-slide {
+        height: auto;
+    }
+    .swiper-autoheight .swiper-wrapper {
+        align-items: flex-start;
+        transition-property: transform, height;
+    }
+    .swiper-backface-hidden .swiper-slide {
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    .swiper-3d,
+    .swiper-3d.swiper-css-mode .swiper-wrapper {
+        perspective: 1200px;
+    }
+    .swiper-3d .swiper-cube-shadow,
+    .swiper-3d .swiper-slide,
+    .swiper-3d .swiper-slide-shadow,
+    .swiper-3d .swiper-slide-shadow-bottom,
+    .swiper-3d .swiper-slide-shadow-left,
+    .swiper-3d .swiper-slide-shadow-right,
+    .swiper-3d .swiper-slide-shadow-top,
+    .swiper-3d .swiper-wrapper {
+        transform-style: preserve-3d;
+    }
+    .swiper-3d .swiper-slide-shadow,
+    .swiper-3d .swiper-slide-shadow-bottom,
+    .swiper-3d .swiper-slide-shadow-left,
+    .swiper-3d .swiper-slide-shadow-right,
+    .swiper-3d .swiper-slide-shadow-top {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+    }
+    .swiper-3d .swiper-slide-shadow {
+        background: rgba(0, 0, 0, 0.15);
+    }
+    .swiper-3d .swiper-slide-shadow-left {
+        background-image: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0)
+        );
+    }
+    .swiper-3d .swiper-slide-shadow-right {
+        background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0)
+        );
+    }
+    .swiper-3d .swiper-slide-shadow-top {
+        background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0)
+        );
+    }
+    .swiper-3d .swiper-slide-shadow-bottom {
+        background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0)
+        );
+    }
+    .swiper-css-mode > .swiper-wrapper {
+        overflow: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .swiper-css-mode > .swiper-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    .swiper-css-mode > .swiper-wrapper > .swiper-slide {
+        scroll-snap-align: start start;
+    }
+    .swiper-horizontal.swiper-css-mode > .swiper-wrapper {
+        scroll-snap-type: x mandatory;
+    }
+    .swiper-vertical.swiper-css-mode > .swiper-wrapper {
+        scroll-snap-type: y mandatory;
+    }
+    .swiper-centered > .swiper-wrapper::before {
+        content: "";
+        flex-shrink: 0;
+        order: 9999;
+    }
+    .swiper-centered.swiper-horizontal
+        > .swiper-wrapper
+        > .swiper-slide:first-child {
+        margin-inline-start: var(--swiper-centered-offset-before);
+    }
+    .swiper-centered.swiper-horizontal > .swiper-wrapper::before {
+        height: 100%;
+        min-height: 1px;
+        width: var(--swiper-centered-offset-after);
+    }
+    .swiper-centered.swiper-vertical > .swiper-wrapper > .swiper-slide:first-child {
+        margin-block-start: var(--swiper-centered-offset-before);
+    }
+    .swiper-centered.swiper-vertical > .swiper-wrapper::before {
+        width: 100%;
+        min-width: 1px;
+        height: var(--swiper-centered-offset-after);
+    }
+    .swiper-centered > .swiper-wrapper > .swiper-slide {
+        scroll-snap-align: center center;
+    }
+    .swiper-virtual .swiper-slide {
+        -webkit-backface-visibility: hidden;
+        transform: translateZ(0);
+    }
+    .swiper-virtual.swiper-css-mode .swiper-wrapper::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+    }
+    .swiper-virtual.swiper-css-mode.swiper-horizontal .swiper-wrapper::after {
+        height: 1px;
+        width: var(--swiper-virtual-size);
+    }
+    .swiper-virtual.swiper-css-mode.swiper-vertical .swiper-wrapper::after {
+        width: 1px;
+        height: var(--swiper-virtual-size);
+    }
+    :root {
+        --swiper-navigation-size: 44px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: 50%;
+        width: calc(var(--swiper-navigation-size) / 44 * 27);
+        height: var(--swiper-navigation-size);
+        margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--swiper-navigation-color, var(--swiper-theme-color));
+    }
+    .swiper-button-next.swiper-button-disabled,
+    .swiper-button-prev.swiper-button-disabled {
+        opacity: 0.35;
+        cursor: auto;
+        pointer-events: none;
+    }
+    .swiper-button-next.swiper-button-hidden,
+    .swiper-button-prev.swiper-button-hidden {
+        opacity: 0;
+        cursor: auto;
+        pointer-events: none;
+    }
+    .swiper-navigation-disabled .swiper-button-next,
+    .swiper-navigation-disabled .swiper-button-prev {
+        display: none !important;
+    }
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-family: swiper-icons;
+        font-size: var(--swiper-navigation-size);
+        text-transform: none !important;
+        letter-spacing: 0;
+        font-variant: initial;
+        line-height: 1;
+        color: #fff;
+    }
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+        left: 10px;
+        right: auto;
+    }
+    .swiper-button-prev:after,
+    .swiper-rtl .swiper-button-next:after {
+        content: "prev";
+    }
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+        right: 10px;
+        left: auto;
+    }
+    .swiper-button-next:after,
+    .swiper-rtl .swiper-button-prev:after {
+        content: "next";
+    }
+    .swiper-button-lock {
+        display: none;
+    }
+    .swiper-pagination {
+        position: absolute;
+        text-align: center;
+        transition: 0.3s opacity;
+        transform: translate3d(0, 0, 0);
+        z-index: 10;
+    }
+    .swiper-pagination.swiper-pagination-hidden {
+        opacity: 0;
+    }
+    .swiper-pagination-disabled > .swiper-pagination,
+    .swiper-pagination.swiper-pagination-disabled {
+        display: none !important;
+    }
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+    }
+    .swiper-pagination-bullets-dynamic {
+        overflow: hidden;
+        font-size: 0;
+    }
+    .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+        transform: scale(0.33);
+        position: relative;
+    }
+    .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
+        transform: scale(1);
+    }
+    .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main {
+        transform: scale(1);
+    }
+    .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
+        transform: scale(0.66);
+    }
+    .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev {
+        transform: scale(0.33);
+    }
+    .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next {
+        transform: scale(0.66);
+    }
+    .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {
+        transform: scale(0.33);
+    }
+    .swiper-pagination-bullet {
+        width: var(
+        --swiper-pagination-bullet-width,
+        var(--swiper-pagination-bullet-size, 8px)
+        );
+        height: var(
+        --swiper-pagination-bullet-height,
+        var(--swiper-pagination-bullet-size, 8px)
+        );
+        display: inline-block;
+        border-radius: 50%;
+        background: var(--swiper-pagination-bullet-inactive-color, #000);
+        opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+    }
+    button.swiper-pagination-bullet {
+        border: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    .swiper-pagination-clickable .swiper-pagination-bullet {
+        cursor: pointer;
+    }
+    .swiper-pagination-bullet:only-child {
+        display: none !important;
+    }
+    .swiper-pagination-bullet-active {
+        opacity: var(--swiper-pagination-bullet-opacity, 1);
+        background: var(--swiper-pagination-color, var(--swiper-theme-color));
+    }
+    .swiper-pagination-vertical.swiper-pagination-bullets,
+    .swiper-vertical > .swiper-pagination-bullets {
+        right: 10px;
+        top: 50%;
+        transform: translate3d(0px, -50%, 0);
+    }
+    .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: var(--swiper-pagination-bullet-vertical-gap, 6px) 0;
+        display: block;
+    }
+    .swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+    .swiper-vertical
+        > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+    }
+    .swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+        .swiper-pagination-bullet,
+    .swiper-vertical
+        > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+        .swiper-pagination-bullet {
+        display: inline-block;
+        transition: 0.2s transform, 0.2s top;
+    }
+    .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets
+        .swiper-pagination-bullet {
+        margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
+    }
+    .swiper-horizontal
+        > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+    .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+    .swiper-horizontal
+        > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+        .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+        .swiper-pagination-bullet {
+        transition: 0.2s transform, 0.2s left;
+    }
+    .swiper-horizontal.swiper-rtl
+        > .swiper-pagination-bullets-dynamic
+        .swiper-pagination-bullet {
+        transition: 0.2s transform, 0.2s right;
+    }
+    .swiper-pagination-progressbar {
+        background: rgba(0, 0, 0, 0.25);
+        position: absolute;
+    }
+    .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+        background: var(--swiper-pagination-color, var(--swiper-theme-color));
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: scale(0);
+        transform-origin: left top;
+    }
+    .swiper-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+        transform-origin: right top;
+    }
+    .swiper-horizontal > .swiper-pagination-progressbar,
+    .swiper-pagination-progressbar.swiper-pagination-horizontal,
+    .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
+    .swiper-vertical
+        > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+        width: 100%;
+        height: 4px;
+        left: 0;
+        top: 0;
+    }
+    .swiper-horizontal
+        > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
+    .swiper-pagination-progressbar.swiper-pagination-horizontal.swiper-pagination-progressbar-opposite,
+    .swiper-pagination-progressbar.swiper-pagination-vertical,
+    .swiper-vertical > .swiper-pagination-progressbar {
+        width: 4px;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+    .swiper-pagination-lock {
+        display: none;
+    }
+    .swiper-scrollbar {
+        border-radius: 10px;
+        position: relative;
+        -ms-touch-action: none;
+        background: rgba(0, 0, 0, 0.1);
+    }
+    .swiper-scrollbar-disabled > .swiper-scrollbar,
+    .swiper-scrollbar.swiper-scrollbar-disabled {
+        display: none !important;
+    }
+    .swiper-horizontal > .swiper-scrollbar,
+    .swiper-scrollbar.swiper-scrollbar-horizontal {
+        position: absolute;
+        left: 1%;
+        bottom: 3px;
+        z-index: 50;
+        height: 5px;
+        width: 98%;
+    }
+    .swiper-scrollbar.swiper-scrollbar-vertical,
+    .swiper-vertical > .swiper-scrollbar {
+        position: absolute;
+        right: 3px;
+        top: 1%;
+        z-index: 50;
+        width: 5px;
+        height: 98%;
+    }
+    .swiper-scrollbar-drag {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        left: 0;
+        top: 0;
+    }
+    .swiper-scrollbar-cursor-drag {
+        cursor: move;
+    }
+    .swiper-scrollbar-lock {
+        display: none;
+    }
+    .swiper-zoom-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .swiper-zoom-container > canvas,
+    .swiper-zoom-container > img,
+    .swiper-zoom-container > svg {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    .swiper-slide-zoomed {
+        cursor: move;
+    }
+    .swiper-lazy-preloader {
+        width: 42px;
+        height: 42px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -21px;
+        margin-top: -21px;
+        z-index: 10;
+        transform-origin: 50%;
+        box-sizing: border-box;
+        border: 4px solid var(--swiper-preloader-color, var(--swiper-theme-color));
+        border-radius: 50%;
+        border-top-color: transparent;
+    }
+    .swiper-watch-progress .swiper-slide-visible .swiper-lazy-preloader,
+    .swiper:not(.swiper-watch-progress) .swiper-lazy-preloader {
+        animation: swiper-preloader-spin 1s infinite linear;
+    }
+    .swiper-lazy-preloader-white {
+        --swiper-preloader-color: #fff;
+    }
+    .swiper-lazy-preloader-black {
+        --swiper-preloader-color: #000;
+    }
+    @keyframes swiper-preloader-spin {
+        0% {
+        transform: rotate(0deg);
+        }
+        100% {
+        transform: rotate(360deg);
+        }
+    }
+    .swiper .swiper-notification {
+        position: absolute;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        opacity: 0;
+        z-index: -1000;
+    }
+    .swiper-free-mode > .swiper-wrapper {
+        transition-timing-function: ease-out;
+        margin: 0 auto;
+    }
+    .swiper-grid > .swiper-wrapper {
+        flex-wrap: wrap;
+    }
+    .swiper-grid-column > .swiper-wrapper {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .swiper-fade.swiper-free-mode .swiper-slide {
+        transition-timing-function: ease-out;
+    }
+    .swiper-fade .swiper-slide {
+        pointer-events: none;
+        transition-property: opacity;
+    }
+    .swiper-fade .swiper-slide .swiper-slide {
+        pointer-events: none;
+    }
+    .swiper-fade .swiper-slide-active,
+    .swiper-fade .swiper-slide-active .swiper-slide-active {
+        pointer-events: auto;
+    }
+    .swiper-cube {
+        overflow: visible;
+    }
+    .swiper-cube .swiper-slide {
+        pointer-events: none;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        z-index: 1;
+        visibility: hidden;
+        transform-origin: 0 0;
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-cube .swiper-slide .swiper-slide {
+        pointer-events: none;
+    }
+    .swiper-cube.swiper-rtl .swiper-slide {
+        transform-origin: 100% 0;
+    }
+    .swiper-cube .swiper-slide-active,
+    .swiper-cube .swiper-slide-active .swiper-slide-active {
+        pointer-events: auto;
+    }
+    .swiper-cube .swiper-slide-active,
+    .swiper-cube .swiper-slide-next,
+    .swiper-cube .swiper-slide-next + .swiper-slide,
+    .swiper-cube .swiper-slide-prev {
+        pointer-events: auto;
+        visibility: visible;
+    }
+    .swiper-cube .swiper-slide-shadow-bottom,
+    .swiper-cube .swiper-slide-shadow-left,
+    .swiper-cube .swiper-slide-shadow-right,
+    .swiper-cube .swiper-slide-shadow-top {
+        z-index: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    .swiper-cube .swiper-cube-shadow {
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        z-index: 0;
+    }
+    .swiper-cube .swiper-cube-shadow:before {
+        content: "";
+        background: #000;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        filter: blur(50px);
+    }
+    .swiper-flip {
+        overflow: visible;
+    }
+    .swiper-flip .swiper-slide {
+        pointer-events: none;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        z-index: 1;
+    }
+    .swiper-flip .swiper-slide .swiper-slide {
+        pointer-events: none;
+    }
+    .swiper-flip .swiper-slide-active,
+    .swiper-flip .swiper-slide-active .swiper-slide-active {
+        pointer-events: auto;
+    }
+    .swiper-flip .swiper-slide-shadow-bottom,
+    .swiper-flip .swiper-slide-shadow-left,
+    .swiper-flip .swiper-slide-shadow-right,
+    .swiper-flip .swiper-slide-shadow-top {
+        z-index: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    .swiper-creative .swiper-slide {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        overflow: hidden;
+        transition-property: transform, opacity, height;
+    }
+    .swiper-cards {
+        overflow: visible;
+    }
+    .swiper-cards .swiper-slide {
+        transform-origin: center bottom;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        overflow: hidden;
+    }
+    
+</code></pre>
+                        </div>
+                    </details>
+                    <h2 class="t_tit2">CSS : 버그 픽스</h2>
+                    <p class="t_desc2">하단의 코드들은 사이트 유형 제작시 생겨난 오류들을 방지 및 해결하기 위한 CSS 코드 입니다.</p>
+                    <div class="t_code">
+<pre><code class="language-css">/* 윈도우 OS 사용시 페이지 스크롤바로 인한 웹 뷰화면 흔들림 overlay를 통한 투명한 영역으로 제어 */
+body{
+    overflow: overlay;
+}
+
+/* 햄버거 메뉴 클릭 후 스크롤 방지 */
+body.fixed{
+    height: 100vh;
+    overflow: hidden;
+}
+</code></pre>
+                    </div>
+                    
+                    <h2 class="t_tit2">CSS : 헤더 유형</h2>
+                    <p class="t_desc2">헤더유형의 CSS의 전부입니다</p>
+                    <details>
+                        <summary class="t_box">코드 전체 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">.header__inner {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    background: #fff;
+}
+.header__logo {
+    width: 20%;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.header__logo em {
+    font-size: 18px;
+    font-weight: 400;
+}
+.header__menu {
+    width: 60%;
+    text-align: center;
+}
+.header__menu li {
+    display: inline;
+}
+.header__menu li a {
+    padding: 13px 3px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+.header__menu li a:hover {
+    background-color: #F1F1F1;
+    border-radius: 5px;
+}
+.header__member {
+    width: 20%;
+    text-align: right;
+}
+.header__member a {
+    font-size: 16px;
+    border: 1px solid #000;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+.header__member a:hover {
+    background-color: #000;
+    color: #fff;
+}
+.header__ham {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    display: none;
+    cursor: pointer;
+}
+.header__ham span {
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 2px;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-top: 5px;
+    transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.header__ham span:nth-child(1){
+    margin-top: 18px;
+}
+.header__ham.active span {
+    transition: 0.25s margin, 0.25s transform 0.25s;
+}
+.header__ham.active span:nth-child(1){
+    margin-top: 25px;
+    margin-bottom: -7px;
+    transform: rotate(45deg);
+}
+.header__ham.active span:nth-child(2){
+    transform: rotate(45deg);
+}
+.header__ham.active span:nth-child(3){
+    margin-top: -2px;
+    transform: rotate(135deg);
+}
+/* media */
+@media (max-width: 1300px){
+    .header__menu {
+        position: fixed;
+        right: -100%;
+        top: 69px;
+        background: #fff;
+        width: 60%;
+        height: 100vh;
+        padding: 20px;
+        text-align: right;
+        transition: right 0.4s ease-in;
+    }
+    .header__menu ul li {
+        display: block;
+        margin: 20px;
+    }
+    .header__menu ul li a {
+        padding: 10px;
+        white-space: nowrap;
+    }
+    .header__menu.active {
+        right: 0;
+    }
+    .header__member {
+        margin-right: 50px;
+    }
+    .header__ham {
+        display: block;
+    }
+    .header__logo {
+        width: 50%;
+    }
+    .header__member {
+        width: 50%;
+    }
+}
+</code></pre>
+                        </div>
+                    </details>
+
+                    <hr>
+
+                    <h2 class="t_tit2">CSS : 이미지 유형</h2>
+                    <p class="t_desc2">이미지유형의 CSS의 전부입니다</p>
+                    <details>
+                        <summary class="t_box">코드 전체 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">.image__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.image {
+    width: 49%;
+    height: 370px;
+    color: #fff;
+    padding: 200px 30px 30px 30px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.image.img1 {
+    background: url(../img/bg01_01.jpg) no-repeat center;
+    background-size: cover;
+}
+.image.img2 {
+    background: url(../img/bg01_02.jpg) no-repeat center;
+    background-size: cover;
+}
+.image__title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.image__desc {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.image__btn {
+    font-size: 16px;
+    color: #fff;
+    background-color: #B45A30;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+}
+.image__btn:hover .img1{
+    scale: 1.2;
+    transition: 0.25s;
+}
+.image__btn.yellow {
+    background-color: #B59140;
+}
+
+@media (max-width: 1215px){
+    .container{
+        width: 100%;
+    }
+    .image{
+        width: 100%;
+    }
+    .image:nth-child(1){
+        margin-bottom: 20px;
+    }
+    .image__inner{
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    .image__title{
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1220px){
+    .slider__inner{
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 750px){
+    .section>h2{
+        font-size: 30px;
+    }
+    .section>p{
+        font-size: 16px;
+    }
+}
+</code></pre>
+                        </div>
+                    </details>
+                        
+                    <hr>
+
+                    <h2 class="t_tit2">CSS : 이미지+텍스트 유형</h2>
+                    <p class="t_desc2">이미지+텍스트 유형의 CSS의 전부입니다</p>
+                    <details>
+                        <summary class="t_box">코드 전체 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">/* imgTextType */
+.imgText__inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgText__inner>div{
+    width: 32%;
+    height: 500px;
+}
+.imgText__txt{}
+.imgText__txt span{
+    font-size: 16px;
+    color: #666;
+    text-decoration: underline;
+    text-underline-position: under;
+    margin-bottom: 20px;
+}
+.imgText__txt h3{
+    font-size: 50px;
+    font-weight: bold;
+    word-break: keep-all;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.imgText__txt p{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 10px;
+}
+.imgText__txt ul{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.imgText__txt ul li{
+    position: relative;
+    padding-left: 20px;
+}
+
+.imgText__txt ul li a{
+    color: #666;
+}
+
+.imgText__txt ul li::before{
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: #666;
+}
+
+.imgText__img{
+    border-radius: 10px;
+    position: relative;
+}
+
+.imgText__img a{
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    background-color: #7c2b39;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    display: inline-block;
+}
+.imgText__img a.blue{
+    background-color: #2b387c;
+}
+.imgText__img.img1{
+    background: url(../img/imgText_bg01.jpg) no-repeat center / cover;
+}
+.imgText__img.img2{
+    background: url(../img/imgText_bg02.jpg) no-repeat center / cover;
+}
+
+@media (max-width: 600px){
+    .imgText__inner{
+        display: block;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .imgText__img{
+        margin-bottom: 20px;
+    }
+    .imgText__inner>div{
+        width: 100%;
+        /* height: 385px; */
+    }
+    .section:nth-child(3){
+        padding: 20px 0;
+    }
+
+}
+</code></pre>
+                        </div>
+                    </details>
+                    <hr>
+
+                    <h2 class="t_tit2">CSS : 배너 유형</h2>
+                    <p class="t_desc2">배너 유형의 CSS의 전부입니다</p>
+                    <details>
+                        <summary class="t_box">코드 전체 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">.banner__inner {
+    background-image: url(../img/BANNER-TYPE01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
+}
+.banner__inner .title {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: bold;
+    padding-bottom: 20px;
+    /* margin-bottom: 20px; */
+}
+.banner__inner .desc {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+.banner__inner .desc a{
+    color: #fff;
+    display: inline-block;
+    background: #00000021;
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    padding: 3px 10px;
+    border: 1px solid #ffffff29;
+    margin-top: 40px;
+}
+.banner__inner .desc a:hover{
+    text-decoration: underline;
+}
+.banner__inner .small {
+    font-size: 16px;
+    /* text-decoration: underline; */
+}
+
+
+@media (max-width: 600px){
+    .banner__inner{
+        padding: 120px 20px;
+        box-sizing: border-box;
+    }
+    .banner__inner .desc a{
+        text-overflow: ellipsis;
+        overflow-y: clip;
+        width: 60%;
+    }
+}
+</code></pre>
+                        </div>
+                    </details>
+                    <hr>
+
+                    <h2 class="t_tit2">CSS : 슬라이더 유형</h2>
+                    <p class="t_desc2">슬라이더 유형의 CSS의 전부입니다, 다만 swiper 슬라이드를 사용하기 위해 따로 하단과 같은 코드를 css의 슬라이더에 삽입해줍니다.</p>
+                    <div class="t_code">
+<pre><code class="language-css">.swiper-button{
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    z-index: 1000;
+    margin-left: 40px;
+}
+.swiper-button-stop{
+    background-image: url(../img/slider_icon.svg);
+    background-position: -40px -70px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+.swiper-button-play{
+    background-image: url(../img/slider_icon.svg);
+    background-position: -60px -70px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: none;
+}
+
+.swiper-slide{
+    background: url(../img/slider_bg01.jpg) no-repeat center / cover;
+    height: 500px;
+}
+
+.swiper-slide:nth-child(2){
+    background: url(../img/slider_bg02.jpg) no-repeat center / cover;
+}
+
+.swiper-slide:nth-child(3){
+    background: url(../img/slider_bg03.jpg) no-repeat center / cover;
+}
+
+.swiper-slide .desc {
+    /* width: 1160px; */
+    /* margin: 0 auto; */
+    padding: 100px;
+    text-align: center;
+}
+.swiper-slide .desc span {
+    font-size: 16px;
+    background-color: #ffffff17;
+    padding: 7px 10px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+.swiper-slide .desc h3 {
+    font-size: 90px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-left: -8px;
+    margin-top: 20px;
+}
+.swiper-slide .desc p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 20px;
+}
+
+.swiper-slide .desc .btn {}
+.swiper-slide .desc .btn a {
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.537);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 11px 30px;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.48);
+}
+.swiper-slide .desc .btn a.black {
+    background: rgba(0, 0, 0, 0.457);
+    color: #fff;
+}
+
+.swiper-pagination-bullet{
+    /* display: inline-block; */
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/slider_icon.svg);
+    background-position: -20px -70px;
+    opacity: 1;
+    background-color: #000 !important;
+}
+.swiper-pagination-bullet-active{
+    background-position: 0px 70px !important;
+}
+@media (max-width: 960px){
+    .swiper-slide .desc p{
+        margin-bottom: 60px;
+        font-size: 16px;
+    }
+    .swiper-slide{
+        text-align: center;
+    }
+    .swiper-slide .desc h3{
+        font-size: 60px;
+    }
+    .swiper-slide .desc{
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+}
+    
+</code></pre>
+                    </div>
+                    <details>
+                        <summary class="t_box">코드 전체 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">.slider__inner {
+    margin-top: 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+}
+
+.slider:not(:hover) .slider__img{
+    transition: 0.25s;
+}
+
+.slider:hover .slider__img{
+    /* background: #000; */
+    transform: scale(1.1);
+    transition: 0.25s;
+}
+
+.slider__img {
+    /* background: url(../img/slider_bg01.jpg) no-repeat center / cover; */
+}
+
+.slider__img.show.one{
+    display: block;
+}
+
+
+.one{
+    background: url(../img/slider_bg01.jpg) no-repeat center / cover;
+    display: none;
+    z-index: 0;
+    position: relative;
+}
+.three::before,
+.two::before,
+.one::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.387);
+    position: absolute;
+    z-index: -1;
+}
+.two {
+    background: url(../img/slider_bg02.jpg) no-repeat center / cover;
+    display: none;
+    z-index: 0;
+
+    position: relative;
+}
+.three {
+    background: url(../img/slider_bg03.jpg) no-repeat center / cover;
+    display: none;
+    z-index: 0;
+
+    position: relative;
+}
+
+.show{
+    display: block;
+}
+
+.slider__img .desc {
+    /* width: 1160px; */
+    /* margin: 0 auto; */
+    padding: 100px;
+    text-align: center;
+}
+.slider__img .desc span {
+    font-size: 16px;
+    background-color: #ffffff17;
+    padding: 7px 10px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+.slider__img .desc h3 {
+    font-size: 90px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-left: -8px;
+    margin-top: 20px;
+}
+.slider__img .desc p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 80px;
+}
+
+.slider__img .desc .btn {}
+.slider__img .desc .btn a {
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.537);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 11px 30px;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.48);
+}
+.slider__img .desc .btn a.black {
+    background: rgba(0, 0, 0, 0.457);
+    color: #fff;
+}
+.slider__arrow{
+    z-index: 5;
+}
+.slider__dot{
+    z-index: 5;
+}
+
+.slider__arrow a{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 56px;
+    background-image: url(../img/slider_icon.svg);
+    
+}
+.slider__arrow a.left{
+    left: 20px;
+}
+.slider__arrow a.right{
+    right: 20px;
+    background-position: -50px 0;
+}
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+}
+
+.slider__dot a {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/slider_icon.svg);
+    background-position: -20px -70px;
+}
+
+.slider__dot a.active{
+    background-position: 0px -70px;
+}
+
+.slider__dot a.play{
+    background-position: -40px -70px;
+}
+
+.slider__dot a.stop{
+    background-position: -60px -70px;
+}
+
+.slider{
+    position: relative;
+}
+.swiper-button{
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    z-index: 1000;
+    margin-left: 40px;
+}
+.swiper-button-stop{
+    background-image: url(../img/slider_icon.svg);
+    background-position: -40px -70px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+.swiper-button-play{
+    background-image: url(../img/slider_icon.svg);
+    background-position: -60px -70px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: none;
+}
+
+.swiper-slide{
+    background: url(../img/slider_bg01.jpg) no-repeat center / cover;
+    height: 500px;
+}
+
+.swiper-slide:nth-child(2){
+    background: url(../img/slider_bg02.jpg) no-repeat center / cover;
+}
+
+.swiper-slide:nth-child(3){
+    background: url(../img/slider_bg03.jpg) no-repeat center / cover;
+}
+
+.swiper-slide .desc {
+    /* width: 1160px; */
+    /* margin: 0 auto; */
+    padding: 100px;
+    text-align: center;
+}
+.swiper-slide .desc span {
+    font-size: 16px;
+    background-color: #ffffff17;
+    padding: 7px 10px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+.swiper-slide .desc h3 {
+    font-size: 90px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-left: -8px;
+    margin-top: 20px;
+}
+.swiper-slide .desc p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 20px;
+}
+
+.swiper-slide .desc .btn {}
+.swiper-slide .desc .btn a {
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.537);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 11px 30px;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.48);
+}
+.swiper-slide .desc .btn a.black {
+    background: rgba(0, 0, 0, 0.457);
+    color: #fff;
+}
+
+.swiper-pagination-bullet{
+    /* display: inline-block; */
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/slider_icon.svg);
+    background-position: -20px -70px;
+    opacity: 1;
+    background-color: #000 !important;
+}
+.swiper-pagination-bullet-active{
+    background-position: 0px 70px !important;
+}
+
+/* media */
+@media (max-width: 920px){
+    .slider__img .desc h3{
+        font-size: 50px;
+    }
+}
+@media (max-width: 960px){
+    .swiper-slide .desc p{
+        margin-bottom: 60px;
+        font-size: 16px;
+    }
+    .swiper-slide{
+        text-align: center;
+    }
+    .swiper-slide .desc h3{
+        font-size: 60px;
+    }
+    .swiper-slide .desc{
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+}
+</code></pre>
+                        </div>
+                    </details>
+                    <hr>
+
+                    <h2 class="t_tit2">JS : 모든 동작</h2>
+                    <p class="t_desc2">제가 사용한 스크립트의 전부이며 각 스크립트가 무엇인지는 주석으로 적어두었습니다.</p>
+                        <div class="t_code">
+<pre><code class="language-js">//1. 페이지 스크롤시 메뉴에 스크롤된 값에 따라 active 삽입여부 스크립트 ------------------------------------------------
+window.addEventListener("scroll", () => {
+let scrollTop = window.pageYOffset || window.scrollY || document.documentElement
+.scrollTop; //이렇게 3개 중첩해서 사용 가능
+
+//forEach 문
+document.querySelectorAll(".baegopa").forEach((e, i) => {
+    if (scrollTop >= e.offsetTop - 500) { //scrollTop이 id값 이상이면
+        document.querySelectorAll(".header__menu ul li").forEach((li) => {
+            li.classList.remove("actived");
+        })
+        document.querySelector(".header__menu ul li:nth-child(" + (i + 1) + ")").classList
+            .add("actived");
+    }
+})
+})
+
+//2. 메뉴 항목을 눌렀을때 기존 이벤트 방지 및 "smooth" 이벤트 실행 ------------------------------------------------
+document.querySelectorAll(".header__menu ul li a").forEach(li => {
+// console.log(li)
+li.addEventListener("click", (e) => {
+    e.preventDefault(); //클릭하면 이동하는걸 막아줌
+    document.querySelector(li.getAttribute("href")).scrollIntoView({
+        behavior: "smooth"
+    });
+})
+})
+
+//3. 설정해둔 값 이상으로 스크롤 시 화면의 최상단으로 올려주는 버튼 보이게 해주는 스크립트 ------------------------------------------------
+window.addEventListener("scroll", () => {
+let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+document.querySelector(".check").innerText = scrollTop;
+
+if (scrollTop >= 70) {
+    // document.querySelector("#header_logo_media").classList.add("inline")
+    document.querySelector("#olaga").classList.add("opacity")
+} else {
+    // document.querySelector("#header_logo_media").classList.remove("inline")
+    document.querySelector("#olaga").classList.remove("opacity")
+
+}
+})
+
+//4. 최상단으로 이동시켜주는 버튼 클릭시 "smooth" 하게 이동 설정해주는 스크립트 ------------------------------------------------
+document.querySelector("#olaga").addEventListener("click", () => {
+window.scrollTo({
+    left: 0,
+    top: 0,
+    behavior: "smooth"
+});
+})
+
+//5. Swiper JS 가져와줍니다 ------------------------------------------------
+&lt;script src="assets/js/swiper-bundle.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"&gt;&lt;/script&gt;
+
+//6. swiper 코드 (이미지 슬라이더를 위한 구현 코드)
+var swiper = new Swiper(".mySwiper", {
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+    },
+});
+
+const btnStop = document.querySelector(".swiper-button-stop");
+const btnStart = document.querySelector(".swiper-button-play");
+const btnHam = document.querySelector(".header__ham");
+const btnMenu = document.querySelector(".header__menu")
+
+//7. swiper의 버튼 클릭시 나올 이벤트 제어 ------------------------------------------------
+btnStop.addEventListener("click",()=>{
+    swiper.autoplay.stop();
+    btnStart.style.display = "block";
+    btnStop.style.display = "none";
+
+})
+btnStart.addEventListener("click", () => {
+    swiper.autoplay.start();
+    btnStart.style.display = "none";
+    btnStop.style.display = "block";
+})
+
+btnHam.addEventListener("click", ()=> {
+    btnHam.classList.toggle("active");
+    btnMenu.classList.toggle("active")
+    document.body.classList.toggle("fixed")
+})
+
+//8. 햄버거 메뉴 버튼 클릭에 따른 출현 여부 ------------------------------------------------
+document.querySelectorAll(".header__menu ul li a").forEach((e,i)=>{
+    e.addEventListener("click",()=>{
+        btnHam.classList.toggle("active");
+        btnMenu.classList.toggle("active")
+    })
+})
+
+//9. 창이 리사이징 될때 발동시킬 이벤트 ------------------------------------------------
+window.addEventListener("resize",()=>{
+    let width = window.innerWidth;
+    if(width>1300){
+        document.querySelector("body").classList.remove("fixed");
+        btnMenu.classList.remove("active")
+        btnHam.classList.remove("active")
+    }
+})
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">완성!</h2>
+                    <p class="t_desc2">
+                        대체 이 코드의 끝은 어디에,,,,<br>
+                        왠지 내일도 그 다음날도 수정할거같죠?
+                    </p>
+                    <div class="t_iframe" style="min-height : 750px; padding-top:0;">
+                        <iframe src="https://kimsangjunv1.github.io/coding/site/site1/index" frameborder="0"></iframe>
+                    </div>
+                    <hr>
+                    <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
+                        <div class="t_link">
+                            <a href="https://github.com/kimsangjunv1/coding/blob/main/site/site1/index.html" target="blank">원본 소스 보기</a>
+                        </div>
+                        <div class="t_link">
+                            <a href="https://kimsangjunv1.github.io/coding/site/site1/index" target="blank">원본 페이지 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>

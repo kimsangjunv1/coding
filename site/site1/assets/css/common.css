@@ -20,6 +20,15 @@
     left: 5px;
 }
 
+body{
+    overflow: overlay;
+}
+
+body.fixed{
+    height: 100vh;
+    overflow: hidden;
+}
+
 .actived{
     padding: 13px 0px;
     border: 0.5px solid #fff;
