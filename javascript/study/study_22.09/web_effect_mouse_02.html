@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="j../avascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 01번 메인 샘플 시작 -->
+                <h2 class="t_tit2">마우스 이펙트_02</h2>
+                <p class="t_desc2_css">
+                    저번 "마우스 이펙트_01"예제에서는 <i>단순히 마우스 포인터를 마우스가 위치한 좌표값에 따라 붙여주는 예제</i>였다면,<br>
+                    이번 "마우스 이펙트_02"예제에서는 <i>마우스 포인터를 마우스가 위치한 좌표값에 따라 자연스럽고 알잘딱하게 따라가주는 이펙트</i>를 구현해보도록 하겠습니다 ^----^v<br>
+                    알잘딱한 마우스 포인터 추적 이펙트를 구현하기 위해서는 <i>GSAP 라이브러리</i>를 이용하는것이 효율적이에요!
+                </p>
+                <hr>
+                <h2 class="t_tit2">GSAP 라이브러리 가져오기</h2>
+                <p class="t_desc2">
+                    <a href="https://greensock.com/">[GSAP 다운로드]</a>에 들어가 라이브러리를 가져오고 자신의 폴더에 저장합니다.
+                </p>
+                <p class="t_box">
+                    &lt;script src="[gsap.min.js를 저장해놓은 위치]"&gt;&lt;/script&gt; 를 자신이 구현하려는 파일의 스크립트로 삽입해줍니다.<br>
+                    경로는 자신의 경로로 해주시면 됩니다.
+                </p>
+                <hr>
+                <h2 class="t_tit2">HTML 코드 : 마우스 포인터용 div 생성</h2>
+                <p class="t_desc2">
+                    [mouse__cursor / mouse__cursor2] 이 두개의 클래스를 생성해 마우스 포인터를 구성해주도록 합시다!
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">&lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+&lt;div class="mouse__cursor2"&gt;&lt;/div&gt;
+</code></pre>
+                </div>
+                <details>
+                    <summary>코드 전체보기</summary>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__cursor2"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;p&gt;&lt;span class="style1"&gt;Go&lt;/span&gt; to &lt;span class=style2&gt;sleep&lt;/span&gt;,  then you are the &lt;span class="style3"&gt;winner.&lt;/span&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;span class="style4"&gt;일찍 자라&lt;/span&gt; 개운한 너가 바로 &lt;span class="style5"&gt;진정한&lt;/span&gt; 지금 순간의 &lt;span class="style6"&gt;승리자이다.&lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+                    </div>
+                </details>
+                <hr>
+                <h2 class="t_tit2">HTML 코드 : 마우스 포인터용 div 생성</h2>
+                <p class="t_desc2">하단의 코드를 보며 이벤트를 실행시킬 스크립트를 작성해줍니다!</p>
+                <div class="t_code">
+<pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor");
+const cursor2 = document.querySelector(".mouse__cursor2");
+const span = document.querySelectorAll(".mouse__wrap span");
+
+//마우스가 움직인다면(mousemove) 실행시킬 스크립트 설정
+window.addEventListener("mousemove", e => {
+
+    //gsap를 통한 [cursor, cursor2] 클래스를 가진 요소의 효과 설정
+    gsap.to(cursor, {duration: 0.3, left: e.pageX -5, top: e.pageY -5})
+    gsap.to(cursor2, {duration: 0.8, left: e.pageX -15, top: e.pageY -15})
+
+    //마우스가 들어옴(mouseenter), 마우스가 나갔을때(mouseleave)의 오버 효과
+    //mouseenter(자식 요소만) / mouseover(부모요소부터 자식까지 모두) / 이벤트 버블링라 부름
+    //span요소에 마우스가 들어오고 나갔을때
+    span.forEach(span => {
+        
+        //마우스가 들어옴(mouseenter)
+        span.addEventListener("mouseenter", ()=>{
+            cursor.classList.add("active"); //cursor 클래스에 active 클래스 추가
+            cursor2.classList.add("active"); //cursor2 클래스에 active 클래스 추가
+        })
+
+        //마우스가 나갔을때(mouseleave)
+        span.addEventListener("mouseleave", ()=>{
+            cursor.classList.remove("active"); //cursor 클래스에 active 클래스 제거
+            cursor2.classList.remove("active"); //cursor2 클래스에 active 클래스 제거
+        })
+    });
+
+    //메뉴에 마우스 들어오고 나갔을때
+    document.querySelectorAll("#header ul li a").forEach(a => {
+
+        a.addEventListener("mouseenter", ()=>{
+            cursor.classList.add("active");
+            cursor2.classList.add("active");
+        })
+
+        a.addEventListener("mouseleave", ()=>{
+            cursor.classList.remove("active");
+            cursor2.classList.remove("active");
+        })
+    })
+
+    //소스보기에 마우스가 들어왔을때
+    document.querySelector(".modal__btn").addEventListener("mouseenter",()=>{
+        cursor.classList.add("active");
+        cursor2.classList.add("active");
+    })
+
+    //소스보기에 마우스가 나갔을때
+    document.querySelector(".modal__btn").addEventListener("mouseleave",()=>{
+        cursor.classList.remove("active");
+        cursor2.classList.remove("active");
+    })
+})
+</code></pre>
+                </div>
+                <hr>
+
+                <h2 class="t_tit2">결과</h2>
+                <div class="t_iframe" style="min-height : 300px; padding-top:0;">
+                    <iframe src="https://kimsangjunv1.github.io/coding/site/headerType/headerType01.html" frameborder="0"></iframe>
+                </div>
+                <hr>
+                <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
+                    <div class="t_link">
+                        <a href="https://github.com/kimsangjunv1/coding/blob/main/site/headerType/headerType01.html" target="blank">원본 소스 보기</a>
+                    </div>
+                    <div class="t_link">
+                        <a href="https://kimsangjunv1.github.io/coding/site/headerType/headerType01.html" target="blank">원본 페이지 보기</a>
+                    </div>
+                </div>
+                <!-- 01번 메인 샘플 끝 -->
+            </div>
+            
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
