@@ -555,7 +555,7 @@ body{
 .container {
         max-width: 1160px;
         margin: 0 auto;
-        padding: 40px 0px 0px 245px;
+        padding: 40px 0px 100px 245px;
         /* transition: 0.25s; */
 }
 

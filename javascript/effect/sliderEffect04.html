@@ -452,26 +452,26 @@ setInterval(sliderEffect, 2000)                             //슬라이더 이�
         let sliderCount = slider.length;         //이미지 갯수
         let sliderWidth = sliderImg.offsetWidth; //이미지 가로값
 
+        //2. 각 버튼이 눌린값을 토대로 transform을 이용해 이동
         function gotoSlider(num){
             sliderInner.style.transition = "all 400ms";
             sliderInner.style.transform = "translateX("+ -sliderWidth*num+"px)";
             currentIndex = num;
         };
 
-        //왼쪽 버튼 클릭
+        //1. 왼쪽 버튼 클릭
         sliderBtnPrev.addEventListener("click", ()=>{
             
-            let nextIndex = (currentIndex + (slider.length-1) % sliderCount
+            let nextIndex = (currentIndex + sliderCount-1) % sliderCount;
             gotoSlider(nextIndex);
             //0 1 2 3 4
         });
         
-        //오른쪽 버튼 클릭
+        //1. 오른쪽 버튼 클릭
         sliderBtnNext.addEventListener("click", ()=>{
-            let nextIndex = (currentIndex + 1) % sliderCount
+            let nextIndex = (currentIndex + 1) % sliderCount;
             gotoSlider(nextIndex);
-            //0 1 2 3 4
-            
+            //0 1 2 3 4 
         });
 
     </script>

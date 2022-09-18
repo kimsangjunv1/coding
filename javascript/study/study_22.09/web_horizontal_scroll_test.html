@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <!-- 예제용 스크립트 -->
+                    <script>
+                        // const slider = document.querySelector(".slider_move");
+                        // let isMouseDown = false;
+                        // let startX, scrollLeft;
+
+                        // slider.addEventListener("mousedown", (e)=>{
+                        //     isMouseDown = true;
+                        //     slider.classList.add("active");
+
+                        //     startX = e.pageX - slider.offsetLeft;
+                        //     scrollLeft = slider.scrollLeft;
+                        // });
+
+                        // slider.addEventListener("mouseleave", ()=>{
+                        //     isMouseDown = false;
+                        //     slider.classList.remove("active");
+                        // });
+
+                        // slider.addEventListener("mouseup", ()=>{
+                        //     isMouseDown = false;
+                        //     slider.classList.remove("active");
+                        // });
+
+                        // slider.addEventListener("mousemove", (e)=>{
+                        //     if(!isMouseDown) return;
+
+                        //     e.preventDefault();
+                        //     const x = e.pageX - slider.offsetLeft;
+                        //     const walk = (x - startX) * 1;
+                        //     slider.scrollLeft = scrollLeft - walk;
+                        // });
+                    </script>
+                    <!-- 예제용 스크립트 끝 -->
+                
+                    <!-- 예제용 CSS -->
+                    <style>
+                        .slider_view{
+                            overflow: hidden;
+                            width: 400px;
+                            height: 400px;
+                        }
+                        .slider_move{
+                            display: flex;
+                            overflow-x: scroll;
+                            scroll-snap-type: x mandatory;
+                        }
+                        .slider_move_vertical{
+                            height: 100%;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+                            scroll-snap-type: y mandatory;
+                        }
+                        .item{
+                            width: 400px;
+                            object-fit: cover;
+                            scroll-snap-align: start;
+                            /* scroll-snap-type: x mandatory; */
+                        }
+                        .custom{
+                            margin-right: 10px;
+                        }
+                        .custom:first-child{
+                            margin-right: 0;
+                        }
+                        .custom:nth-child(2){
+                            margin-left: 10px;
+                        }
+                        .custom:last-child{
+                            margin-right: 0;
+                        }
+
+                        .custom_2{
+                            width: 415px !important;
+                        }
+                    </style>
+                    <!-- 예제용 CSS 끝 -->
+
+                    <h2 class="t_tit2">스크롤시 다음 요소에 딱! 멈춰주는 듯한 효과를 CSS로 줘보자!</h2>
+                    <p class="t_desc2">
+                        저번에 올렸던 prefers-color-scheme 을 통해 간단하게 다크모드를 구현했던것처럼 이번에도 간단한 방법이 있길래 올려봤어요!<br>
+                        홈페이지를 둘러보면 스크롤을 할때 무언가 탁탁 걸린듯한 원하는 item에 스크롤이 멈추는 효과가 적용되어있는 홈페이지가 있지 않나요?<br>
+                        이번에는 그 효과를 CSS를 통해서 간단한 문구 추가로 구현이 가능하기에 적어보았습니다 ^----^
+                    </p>
+
+                    <hr>
+                    <h2 class="t_tit2">HTML 코드 : 간단한 예제용</h2>
+                    <p class="t_desc2">
+                        저는 간단한 예제를 본문에 첨부하기위해 하단과 같이 사용했어요!<br>
+                        클래스는 좀 더 직관적이게 [ slider_view / slider_move / item ] 라고 편하게 적었습니다~<br>
+                        * 사실 이래야 제가 보기 편했어요....
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;div class="slider_view"&gt;  &lt;!--이미지를 보여줄 영역--&gt;
+    &lt;div class="slider_move"&gt; &lt;!--이미지가 담긴 틀을 움직여줄 영역--&gt;
+        &lt;img class="item" src="../../../site/site1/assets/img/bg01_01.jpg" alt=""&gt; &lt;!--움직여질 n번 이미지--&gt;
+        &lt;img class="item" src="../../../site/site1/assets/img/bg01_02.jpg" alt=""&gt; &lt;!--움직여질 n번 이미지--&gt;
+        &lt;img class="item" src="../../../site/site1/assets/img/card_bg01_01.jpg" alt=""&gt; &lt;!--움직여질 n번 이미지--&gt;
+        &lt;img class="item" src="../../../site/site1/assets/img/card_bg01_02.jpg" alt=""&gt; &lt;!--움직여질 n번 이미지--&gt;
+        &lt;img class="item" src="../../../site/site1/assets/img/card_bg01_03.jpg" alt=""&gt; &lt;!--움직여질 n번 이미지--&gt;
+        &lt;img class="item" src="../../../site/site1/assets/img/slider_bg01.jpg" alt=""&gt; &lt;!--움직여질 n번 이미지--&gt;
+        &lt;img class="item" src="../../../site/site1/assets/img/slider_bg02.jpg" alt=""&gt; &lt;!--움직여질 n번 이미지--&gt;
+        &lt;img class="item" src="../../../site/site1/assets/img/slider_bg03.jpg" alt=""&gt; &lt;!--움직여질 n번 이미지--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">CSS 코드 : 간단한 예제용</h2>
+                    <p class="t_desc2">
+                        1. 부모요소에 "scroll-snap-type" 을 정하셔야 아이템 요소에 적용이 가능해요.<br>
+                        2. 부모요소에 적용한 속성은 "x(가로) 또는 y(세로)" + mandatory 로 설정해 사용하세요!<br>
+                        3. 각 이미지에 "scroll-snap-align" 을 "start"로 설정해주세요! 
+
+                        * 저는 예시에 사용한 이미지의 크기(높이/너비)가 각각 달라서 item에 추가적으로 아래와 같은 설정을 하였습니다.
+                        * object-fit: cover = 요소에 정해놓은 크기에 가능한 맞게끔 조정되고 정 비율로 확대시켜 줍니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">.slider_view{
+    overflow: hidden;
+    width: 400px;
+    height: 274px;
+}
+.slider_move{
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+.slider_move_vertical{
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+.item{
+    width: 400px;
+    object-fit: cover;
+    scroll-snap-align: start;
+}
+</code></pre>
+                    </div>
+
+                    <h2 class="t_tit2">완성!</h2>
+                    <p class="t_desc2">저번 다크모드에 이어 이번것도 이게 전부라서 글을 올려봤어요...🙄💦<br>
+                    그래도 간단한 방법을 통해 js 없이 고급스러운 방식을 구현 할 수 있다는것에 초점을 맞춰보면<br>
+                    나중에 필요하실때 사용하시면 좋을거 같아요 😚
+                    </p>
+                    <!-- 01번 메인 샘플 시작 -->
+                    <div style="display:flex; justify-content: center;">
+                        <div style="display:block; margin-right: 20px;">
+                            <h2 class="t_tit2">scroll-snap-type : x mandatory</h2>
+                            <p class="t_desc">가로 스크롤(X축) 입니다.</p>
+                            <p class="t_desc">* PC버전에서 스크롤시 SHIFT을 누른 상태에서 스크롤을 하셔야합니다.</p>
+
+                            <div style="height: 415px;" class="slider_view">
+                                <div class="slider_move">
+                                <img class="item custom" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/QUIZ 11 jpg" alt="">
+                                <img class="item custom" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/QUIZ 15.jpg" alt="">
+                                <img class="item custom" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/SITE 03.jpg" alt="">
+                                <img class="item custom" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/SITE 20.jpg" alt="">
+                                <img class="item custom" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/TIP 01.jpg" alt="">
+                                <img class="item custom" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/MySQL 01.jpg" alt="">
+                                <img class="item custom" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/ANIMATION 03.jpg" alt="">
+                                <img class="item custom" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/SITE 05.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display:block">
+                            <h2 class="t_tit2">scroll-snap-type : y mandatory</h2>
+                            <p class="t_desc">세로 스크롤(Y축) 입니다.</p>
+                            <p class="t_desc">* 마우스로 그냥 스크롤 하시면 됩니다.</p>
+
+                            <div class="slider_view custom_2">
+                                <div class="slider_move_vertical">
+                                <img class="item" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/QUIZ 11 jpg" alt="">
+                                <img class="item" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/QUIZ 15.jpg" alt="">
+                                <img class="item" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/SITE 03.jpg" alt="">
+                                <img class="item" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/SITE 20.jpg" alt="">
+                                <img class="item" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/TIP 01.jpg" alt="">
+                                <img class="item" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/MySQL 01.jpg" alt="">
+                                <img class="item" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/ANIMATION 03.jpg" alt="">
+                                <img class="item" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/tistory/SITE 05.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>
