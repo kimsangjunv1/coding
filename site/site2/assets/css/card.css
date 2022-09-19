@@ -1,0 +1,70 @@
+/* cardType */
+.card__inner {
+    display: flex;
+    /* 생성한 요소들을 flex로 정렬합니다. */
+    justify-content: space-between;
+    /*창 크기에 맞게 좌우로 정렬합니다 */
+    /*콘텐츠를 양쪽으로 정렬*/
+}
+
+.card {
+    width: 32%;
+    background-color: #f5f5f5;
+}
+
+.card__body {
+    padding: 24px;
+}
+
+.card__body .tit {
+    font-size: 24px;
+    margin-bottom: 10px;
+
+    /* 한줄 효과 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 20px;
+}
+
+.card__body .desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 300;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /*줄 효과*/
+    -webkit-box-orient: vertical;
+}
+.card:hover span{
+    margin-left: 30px;
+    transition: 0.4s;
+}
+.card:hover img{
+    scale: 1.2;
+    overflow: hidden;
+    transition: 0.25s;
+}
+.card:not(:hover) span,
+.card:not(:hover) img{
+    transition: 0.25s;
+}
+figure{
+    overflow: hidden;
+}
+
+@media (max-width: 600px){
+    .card__inner{
+        display: block;
+    }
+    .card{width: 100%;}
+    .card:nth-child(1),.card:nth-child(2){margin-bottom: 20px;}
+    .section:nth-child(4){
+        padding: 120px 20px;
+        box-sizing: border-box;
+    }
+}
