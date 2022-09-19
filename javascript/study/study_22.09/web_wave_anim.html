@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <h2 class="t_tit2">웨이브 애니메이션 주기!</h2>
+                    <p class="t_desc2">
+                        PUG와 SCSS를 통해 원을 생성하고 그 원이 펄럭이는듯한 애니메이션을 구현해보도록 하겠습니다!
+                    </p>
+                    <h2 class="t_tit2">HTML 코드 : PUG를 사용</h2>
+                    <p class="t_desc2">이번 예제는 PUG를 사용하여 HTML 보다 효율적으로 작업 해보겠습니다<br>각 원을 만들어주기 위해 for문을 통해 반복시켜 생성해줍니다.</p>
+                    <div class="t_code">
+<pre><code class="language-css">div.circle-wrap
+    - for (var x = 1; x<=12; x++)
+      div.row
+        - for (var y = 1; y<=12; y++)
+          .circle
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">CSS 코드 : SCSS를 사용</h2>
+                    <p class="t_desc2">
+                        1. SCSS를 사용해 각 줄 마다 만들어준 원을 flex를 통해 일렬로 정렬한 뒤<br>
+                        2. 한줄마다 똑같은 방식으로 스타일을 지정해줍니다.<br>
+                        3. 그리고 각 줄의 circle(원은 애니메이션에 딜레이를 주어 펄럭이는 느낌을 줍니다<br>
+                        4. 또한 각 원에 애니메이션을 설정해 각각의 애니메이션이 다르게 나타나게 해줍니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  @include center;
+  height: 100vh;
+  background-image: linear-gradient(45deg, #999 0%, #121 100%)
+}
+
+.row {
+  display: flex;
+  .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    background: #fff;
+    transform-origin : top center;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+    0% {transform:scale(1.1) rotate(0deg)}
+    50% {transform:scale(0.2) rotate(180deg)}
+    100% {transform:scale(1.1) rotate(360deg)}
+  }
+  // .row:nth-child(1) .circle {
+  //   animation-delay:100ms
+  // }
+  // .row:nth-child(2) .circle {
+  //   animation-delay:200ms
+  // }
+  // .row:nth-child(3) .circle {
+  //   animation-delay:300ms
+  // }
+  // .row:nth-child(4) .circle {
+  //   animation-delay:400ms
+  // }
+  @for $i from 1 through 12 {
+    .row:nth-child(#{$i}) .circle {animation-delay:100ms * $i}
+}
+</code></pre>
+                    </div>
+                    <hr>
+
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="circle" src="https://codepen.io/kimsangjunv1/embed/wvjdPXP?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/wvjdPXP">
+                        circle</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>
