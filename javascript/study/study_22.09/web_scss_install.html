@@ -64,21 +64,56 @@
             <!-- 메인 샘플 시작 -->
             <main id="main">
                 <div class="document">
-                    <h2 class="t_tit2">웨이브 애니메이션 주기!</h2>
+                    <h2 class="t_tit2">SASS 설치하는 법</h2>
                     <p class="t_desc2">
-                        PUG와 SCSS를 통해 원을 생성하고 그 원이 펄럭이는듯한 애니메이션을 구현해보도록 하겠습니다!
+                        SASS 설치하는 법에 대하여 알아보도록 하겠습니다~!
                     </p>
-                    <h2 class="t_tit2">HTML 코드 : PUG를 사용</h2>
-                    <p class="t_desc2">이번 예제는 PUG를 사용하여 HTML 보다 효율적으로 작업 해보겠습니다<br>각 원을 만들어주기 위해 for문을 통해 반복시켜 생성해줍니다.</p>
-                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_8.png" alt="">
-                    <h2 class="t_tit2">prettier 세팅 확인_02</h2>
-                    <p class="t_desc2_css">나타난 "settings.json"에서 "editor.formatOnSave": true, 부분이 'true'로 맞게 설정 되어있는지 확인 후 <br>
-                    만약 'false' 로 설정되어있을시 'true'로 설정해줍니다.
+                    <h2 class="t_tit2">1. "live sass compiler"를 설치</h2>
+                    <p class="t_desc2">하단 사진과 같이 live sass compiler를 설치해 SCSS가 잘 동작 할 수 있도록 설치해주도록 합시다!</p>
+                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_14.png" alt="">
+                    <h2 class="t_tit2">2. 하단에 "watch sass"가 나왔는지 확인</h2>
+                    <p class="t_desc2_css">설치가 완료되면 사진과 같이 하단에 "Watch SASS"가 나옵니다<br>
+                        혹여나 나오지 않았다면 3번으로 넘어가 세부 세팅 설정을 마쳐주시기 바랍니다.
                     </p>
-                    <h2>빨간색 박스의 경우 세팅 값</h2>
-                    <p class="t_box">
-                        "editor.formatOnSave": true,
+                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_15.png" alt="">
+                    <h2 class="t_tit2">3. command palette에 들어가기</h2>
+                    <p class="t_desc2">
+                        하단의 톱니바퀴 아이콘을 클릭한 뒤 command palette에 들어가 다음 과정을 진행 할 수 있도록 합시다!
                     </p>
+                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_16.png" alt="">
+                    <h2 class="t_tit2">4. settings.json에 들어가기</h2>
+                    <p class="t_desc2">
+                        settings.json에 들어가 SASS 설치의 세부적인 사항을 마치기 위해 하단과 같이 검색 후 <br>
+                        "Open User Settings"에 들어가주세요!
+                    </p>
+                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_17.png" alt="">
+                    <h2 class="t_tit2">5. SASS를 통해 만들었던 코드 .css/.min.css를 자동으로 배출 설정</h2>
+                    <p class="t_desc2">
+                        SASS를 통해 만들었던 코드를 자동으로 .css/.min.css 로 자동으로 변환될 수 있도록 하단의 코드를<br>
+                        4번에서 들어갔던 "settings.json" 하단에 사진과 같이 코드를 붙여넣어 주세요
+                    </p>
+                    <div class="t_box">##설정 코드 보기</div>
+                    <div class="t_code">
+<pre><code class="language-js">"liveSassCompile.settings.autoprefix": [],
+"liveSassCompile.settings.generateMap": false,
+"liveSassCompile.settings.formats": [
+    // This is Default.
+    {
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": "~/../css/"
+    },
+    // You can add more
+    {
+        "format": "compressed",
+        "extensionName": ".min.css",
+        "savePath": "~/../css/"
+    }
+</code></pre>
+                    </div>
+                    <img style="width: 100%; border-radius: 15px; border: 1px solid #ededed; margin-top:15px;" src="https://raw.githubusercontent.com/kimsangjunv1/coding/main/assets/img/screenshot_18.png" alt="">
+                
+                
                 </div>
             </main>
             <!-- 메인 샘플 끝 -->
