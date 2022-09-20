@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <h2 class="t_tit2">패럴렉스 이펙트 05 : 스크롤 할때 각 요소에 이질감 효과 주기</h2>
+                    <p class="t_desc2">
+                        사이트를 돌아다니다보면 스크롤 할때마다 각 요소가 일정한 차이를 두고 높이가 달라지는 효과가 있는데 이번에는 그 효과를 구현해보도록 하겠습니다.
+                    </p>
+                    <hr>
+                    <h2 class="t_tit2">HTML 코드 : 간단한 예제용</h2>
+                    <p class="t_desc2">이번 예제는 이전 예제의 뼈대만 필요하니 하단의 HTML코드를 그대로 작성해줍니다!</p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;body class="img07"&gt;
+    &lt;header id="header"&gt;
+        &lt;h1&gt;&lt;a href="parallaxEffect.html"&gt;Javascript parallax Effect05&lt;/a&gt;&lt;/h1&gt;
+        &lt;p&gt;패럴렉스 이펙트 - 나타나기&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="parallaxEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/header&gt;
+    &lt;!-- //header --&gt;
+    
+    &lt;main id="parallax__cont"&gt;
+        &lt;div id="contents"&gt;
+
+            &lt;!-- section1 시작 --&gt;
+            &lt;section id="section1" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;우리는 사랑하는 친구들에 의해서만 알려진다. &lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- section1 끝 --&gt;
+
+            &lt;!-- section2 시작 --&gt;
+            &lt;section id="section2" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;사랑은 눈으로 보지 않고 마음으로 보는 거지. &lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- section2 끝 --&gt;
+
+            &lt;!-- section3 시작 --&gt;
+            &lt;section id="section3" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;두 분은 상처 하나 입지 않고, 대용사가 된 셈이오.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- section3 끝 --&gt;
+
+            &lt;!-- section4 시작 --&gt;
+            &lt;section id="section4" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;그의 믿음은 그가 쓰는 모자의 유행처럼 변한다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- section4 끝 --&gt;
+
+            &lt;!-- section5 시작 --&gt;
+            &lt;section id="section5" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;잘 있거라! 우리가 언제 다시 만날지는 아무도 모른다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- section5 끝 --&gt;
+
+            &lt;!-- section6 시작 --&gt;
+            &lt;section id="section6" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;죄를 짓고 잘되는 사람도 있고, 덕을 베풀고 망하는 사람도 있다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- section6 끝 --&gt;
+
+            &lt;!-- section7 시작 --&gt;
+            &lt;section id="section7" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;모두를 사랑하되, 몇 사람만 믿으라. 누구에게도 잘못을 저지르지 말라.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- section7 끝 --&gt;
+
+            &lt;!-- section8 시작 --&gt;
+            &lt;section id="section8" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;누구에게나 결점은 있기 마련이지. 그분의 경우는 솔직하다는 게 결점이야.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- section8 끝 --&gt;
+
+            &lt;!-- section9 시작 --&gt;
+            &lt;section id="section9" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;사람은 누구나 주어진 일과 원하는 것이 있다, 비록 보잘 것 없을 지라도. &lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- section9 끝 --&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">CSS 코드 : 예제에 살 붙이기</h2>
+                    <p class="t_desc2">
+                        이전 예제에서 큰 차이는 없습니다<br>
+                        그저 살을 붙여주기만 하면 되기 때문에 하단의 코드를 작성해줍시다!
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">/* parallax__nav */
+    #parallax__nav {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 2000;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        border-radius: 50px;
+        transition: top 0.4s ease;
+    }
+
+    #parallax__nav li {
+        display: inline;
+        margin: 0 5px;
+    }
+
+    #parallax__nav li a {
+        display: inline-block;
+        height: 30px;
+        padding: 5px 20px;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    #parallax__nav li.active a {
+        background: #fff;
+        color: #000;
+        border-radius: 20px;
+        box-sizing: content-box;
+    }
+
+    #parallax__cont {
+        max-width: 1600px;
+        /* background-color: rgba(255, 255, 255, 0.1); */
+        margin: 0 auto;
+        width: 98%;
+    }
+
+    .content__item {
+        width: 1000px;
+        max-width: 70vw;
+        margin: 30vw auto;
+        /* background-color: rgba(255, 255, 255, 0.3); */
+        text-align: left;
+        margin-right: 0;
+        position: relative;
+        padding-top: 8vw;
+    }
+
+    .content__item:nth-child(even) {
+        /* 2n도 가능하고 even 도 가능하고 */
+        margin-left: 0;
+        text-align: right;
+    }
+
+    .content__item__num {
+        font-size: 35vw;
+        font-family: 'Lato';
+        font-weight: 100;
+        position: absolute;
+        left: -5vw;
+        top: -16vw;
+        opacity: 0.07;
+        z-index: -2;
+    }
+
+    .content__item:nth-child(even) .content__item__num {
+        right: -5vw;
+        left: auto;
+        /* left 값 초기화 */
+    }
+
+    .content__item__title {
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+
+    .content__item__imgWrap {
+        width: 100%;
+        padding-bottom: 56.25%;
+        background-color: #000;
+        position: relative;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .content__item__img {
+        background: url(../../assets/slider/effect_bg_01.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* 내가 작아서 넣음 */
+        position: absolute;
+        width: 110%;
+        height: 110%;
+        left: -5%;
+        top: -5%;
+        filter: saturate(0%);
+        /* transition: all 1s; */
+    }
+
+    .content__item:nth-child(1) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_01.jpg);
+    }
+
+    .content__item:nth-child(2) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_02.jpg);
+    }
+
+    .content__item:nth-child(3) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_03.jpg);
+    }
+
+    .content__item:nth-child(4) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_04.jpg);
+    }
+
+    .content__item:nth-child(5) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_05.jpg);
+    }
+
+    .content__item:nth-child(6) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_06.jpg);
+    }
+
+    .content__item:nth-child(7) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_07.jpg);
+    }
+
+    .content__item:nth-child(8) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_08.jpg);
+    }
+
+    .content__item:nth-child(9) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_09.jpg);
+    }
+
+    .content__item__desc {
+        font-size: 4vw;
+        line-height: 1.4;
+        margin-top: -5vw;
+        margin-left: -4vw;
+        word-break: keep-all;
+    }
+
+    .content__item:nth-child(even) .content__item__desc {
+        margin-left: auto;
+        margin-right: 4vw;
+    }
+    #parallax__info {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 2000;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    #parallax__info li,
+    .scrollTop {
+        line-height: 1.4;
+    }
+
+    @media (max-width: 800px) {
+        #parallax__cont {
+            margin-top: 70vw;
+        }
+
+        #parallax__nav {
+            padding: 10px;
+            right: auto;
+            left: 10px;
+            top: 10px;
+            transform: translateY(50%);
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #parallax__nav li {
+            display: block;
+            margin: 5px;
+        }
+
+        #parallax__nav li a {
+            font-size: 14px;
+            padding: 5px;
+            border-radius: 5px;
+            height: auto;
+            line-height: 1;
+        }
+
+        #parallax__nav li.active a {
+            border-radius: 5px;
+        }
+    }
+    
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">JS 코드 : 예제에 살 붙이기</h2>
+                    <p class="t_desc2">
+                        1. 각 요소의 이질감 효과를 주기위해 offsetTop 을 이용하여 각 요소의 브라우저 최상단에서의 거리를 구합니다 <br>
+                        2. 그 값을 scrollTop(내가 스크롤한 값)을 빼주어 각 요소가 브라우저 내부에서 스크롤한 값에 맞춰 실시간으로 어디에 위치하는지 알아낸뒤<br>
+                        3. 각 요소의 translateY,X 값을 offset 값으로 설정해주어 이동시키도록 설정해줍니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">function scroll(){
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    document.querySelector("#parallax__info span").innerHTML=Math.ceil(scrollTop);
+
+    document.querySelectorAll(".content__item").forEach(item => {
+        const target1 = item.querySelector(".content__item__img");
+        const target2 = item.querySelector(".content__item__desc");
+        const target3 = item.querySelector(".content__item__num");
+
+        let offset = (scrollTop - item.offsetTop) * 0.1; //스크롤한 값 - 각 아이템의 브라우저 TOp값
+        let offset2 = (scrollTop - item.offsetTop) * 0.15; //스크롤한 값 - 각 아이템의 브라우저 TOp값
+        let offset3 = (scrollTop - item.offsetTop) * 0.2; //스크롤한 값 - 각 아이템의 브라우저 TOp값
+
+        // target1.style.transform = `translateY(${offset}px)`;
+        // target2.style.transform = `translateX(${offset2}px)`;
+        gsap.to(target1, {duration: 0.3, y: offset, ease: "power4.out"});
+        gsap.to(target2, {duration: 0.3, y: offset2});
+        gsap.to(target3, {duration: 0.3, y: offset3});
+        
+    });
+
+    requestAnimationFrame(scroll);
+}
+scroll();
+</code></pre>
+                    </div>
+                    <hr>
+
+                    <div class="t_iframe" style="min-height : 700px; padding-top:0;">
+                        <iframe src="https://kimsangjunv1.github.io/coding/javascript/effect/parallaxEffect05.html" frameborder="0"></iframe>
+                    </div>
+                    <hr>
+                    <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
+                        <div class="t_link">
+                            <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/parallaxEffect05.html" target="blank">원본 소스 보기</a>
+                        </div>
+                        <div class="t_link">
+                            <a href="https://kimsangjunv1.github.io/coding/javascript/effect/parallaxEffect05.html" target="blank">원본 페이지 보기</a>
+                        </div>
+                    </div>
+                    <!-- 01번 메인 샘플 끝 -->
+                </div>
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"
+            class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <h3 class="t_tit2">재귀함수 : 자기 자신을 호출</h3>
+                    <p class="t_desc2">
+                        재귀함수란? 자기 자신을 호출시켜주는 함수입니다!
+                    </p>
+                    <div class="t_code">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">// 반복적으로
+function func(num){
+    if(num<=1){
+        document.write("함수가 실행되었습니다."+num);
+    } else {
+        document.write("함수가 실행되었습니다."+num);
+        func(num - 1);
+    }
+    // func()
+}
+
+func(10);
+
+//애니메이션
+function animation(){
+    document.write("함수가 실행되었습니다.");
+    
+    requestAnimationFrame(animation);
+}
+animation();
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary class="t_box">결과보기</summary>
+                            <div class="sample23_result">
+                                함수가 실행되었습니다.10함수가 실행되었습니다.9함수가 실행되었습니다.8함수가 실행되었습니다.7함수가 실행되었습니다.6함수가 실행되었습니다.5함수가 실행되었습니다.4함수가 실행되었습니다.3함수가 실행되었습니다.2함수가 실행되었습니다.1
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+
+                    <h3 class="t_tit2">콜백함수</h3>
+                        <p class="t_desc2">
+                            콜백함수는 하나의 함수가 실행되고 두번째 함수를 실행 가능한 함수입니다.
+                        </p>
+                        <div class="t_code">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">function func(){
+    document.write("함수가 실행되었습니다. 1");
+}
+
+function callback(str){
+    document.write("함수가 실행되었습니다. 2");
+    str();
+}
+callback(func);
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <!-- 결과보기 -->
+                            <details>
+                                <summary class="t_box">결과보기</summary>
+                                <div class="sample24_result">
+
+                                </div>
+                            </details>
+                            <!-- 결과보기 끝 -->
+                        </div>
+
+                        <h3 class="t_tit2">콜백함수 : 반복문</h3>
+                        <p class="t_desc2">
+                            콜백함수를 반복문을 사용해 반복 할 수 있는 방법을 말합니다.
+                        </p>
+                        <div class="t_code">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">//웹사이트 이미지 로딩이 순서대로 나온것과 비슷
+    function func(index){
+        document.write("함수가 실행되었습니다." + index);
+    }
+
+    function callback(num){
+        for(let i=1; i<=10; i++){
+            num(i);    
+        }
+    }
+    callback(func);
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <!-- 결과보기 -->
+                            <details>
+                                <summary class="t_box">결과보기</summary>
+                                <div class="sample24_result">
+                                    함수가 실행되었습니다.1함수가 실행되었습니다.2함수가 실행되었습니다.3함수가 실행되었습니다.4함수가 실행되었습니다.5함수가 실행되었습니다.6함수가 실행되었습니다.7함수가 실행되었습니다.8함수가 실행되었습니다.9함수가 실행되었습니다.10
+                                </div>
+                            </details>
+                            <!-- 결과보기 끝 -->
+                        </div>
+
+                        <h3 class="t_tit2">콜백함수 : 동기/비동기</h3>
+                        <p class="t_desc2">
+                            콜백함수의 동기/비동기 이며, 여기서 동기는 동시에 실행 가능함을 말합니다.
+                        </p>
+                        <div class="t_code">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">function funcA(callback){
+    setTimeout(()=>{
+        console.log("funcA가 실행되었습니다.<br>");
+        callback();
+    },1000);
+}
+function funcB(){
+    setTimeout(()=>{
+        console.log("funcB가 실행되었습니다.<br>");
+        callback();
+    },1000);
+}
+function funcC(){
+    setTimeout(()=>{
+        console.log("funcC가 실행되었습니다.<br>");
+        callback();
+    },1000);
+}
+function funcD(){
+    setTimeout(()=>{
+        console.log("funcD가 실행되었습니다.<br>");
+    },1000);
+}
+// 출력 되기 전에 콜백함수를 통해 출력 값을 뒤바꿈
+// 1초 뒤에 funcA가 실행되었을때 funcB를 불러들임
+funcA(function(){
+    funcB(function(){
+        funcC(function(){
+            funcD();
+        });
+    });
+});
+
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <!-- 결과보기 -->
+                            <details>
+                                <summary class="t_box">결과보기</summary>
+                                <div class="sample26_result">
+                                    funcA가 실행되었습니다.<br>
+                                    funcB가 실행되었습니다.<br>
+                                    funcC가 실행되었습니다.<br>
+                                    funcD가 실행되었습니다.
+                                </div>
+                            </details>
+                            <!-- 결과보기 끝 -->
+                        </div>
+
+
+                        <h3 class="t_tit2">스코프, 클로저</h3>
+                        <p class="t_desc2">
+                            함수 안에 또 다른 함수를 선언한게 내부함수이며, 스코프는 어느 범위까지 참조되는지를 뜻하고 클로저는 함수가 선언된 환경의 스코프를 기억하여 함수가 스코프 밖에서 실행될 때에도 이 스코프에 접근 가능하게 합니다.
+                        </p>
+                        <div class="t_code">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">//28번
+    function func(){
+        function funcA(){
+            console.log("함수가 실행되었습니다.");
+        };
+        funcA();
+
+        function funcB(){
+            console.log("함수가 실행되었습니다.");
+        };
+        funcB();
+    }
+    func();
+}
+
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <!-- 결과보기 -->
+                            <details>
+                                <summary class="t_box">결과보기</summary>
+                                <div class="sample28_result">
+                                    함수가 실행되었습니다.함수가 실행되었습니다.
+                                </div>
+                            </details>
+                            <!-- 결과보기 끝 -->
+                        </div>
+
+
+                        <h3 class="t_tit2">클래스</h3>
+                        <p class="t_desc2">
+                            클래스는 함수의 집합체로 구성되어 있습니다!
+                        </p>
+                        <div class="t_code">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">class study{
+    constructor(num, name){
+        this.num = num;
+        this.name = name;
+        this.job = name;
+    }
+
+    result(){
+        document.write(this.num + ",내 이름은 "+this.name+"이며, 직업은"+this.job+"입니다.");
+    };
+}
+const info1 = new study("1", "웹쓰", "웹퍼블리셔");
+const info2 = new study("2", "웹쓰", "웹퍼블리셔");
+
+info1.result();
+info2.result();
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <!-- 결과보기 -->
+                            <details>
+                                <summary class="t_box">결과보기</summary>
+                                <div class="sample28_result">
+                                    1. 내 이름은 웹쓰이며, 직업은 웹퍼블리셔입니다.2. 내 이름은 웹스토리보이이며, 직업은 프론트앤드 개발자입니다.
+                                </div>
+                            </details>
+                            <!-- 결과보기 끝 -->
+                        </div>
+
+
+                        <h3 class="t_tit2">클래스 상속</h3>
+                        <p class="t_desc2">
+                            클래스 상속을 사용하면 클래스를 다른 클래스로 확장 가능하며, 기존에 존재하던 기능을 토대로 새로운 기능을 만들 수 있어요!
+                        </p>
+                        <div class="t_code">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">class study{
+    constructor(num, name){
+        this.num = num;
+        this.name = name;
+        this.job = name;
+    }
+
+    result(){
+        document.write(this.num + ",내 이름은 "+this.name+"이며, 직업은"+this.job+"입니다.");
+    };
+}
+
+class study2 extends study {
+    constructor(num, name, job, age){
+        super(num, name, job);
+        this.age = age;
+    }
+
+    result(){
+        document.write(this.num + ",내 이름은 "+this.name+"이며, 직업은"+this.job+"이며, 나이는"+this.age+"살 입니다.");
+    };
+}
+const info1 = new study("1", "웹쓰", "웹퍼블리셔");
+const info2 = new study2("2", "웹쓰", "웹퍼블리셔", 100);
+
+info1.result();
+info2.result();
+info2.result2();
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <!-- 결과보기 -->
+                            <details>
+                                <summary class="t_box">결과보기</summary>
+                                <div class="sample28_result">
+                                    1. 내 이름은 웹쓰이며, 직업은 웹퍼블리셔입니다.2. 내 이름은 웹스토리보이이며, 직업은 프론트앤드 개발자이며 나이는 100세 입니다.2. 내 이름은 웹스토리보이이며, 직업은 프론트앤드 개발자이며 나이는 100세 입니다.
+                                </div>
+                            </details>
+                            <!-- 결과보기 끝 -->
+                        </div>
+
+                </div>
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+
+</html>

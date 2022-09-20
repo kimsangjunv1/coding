@@ -669,8 +669,194 @@
                         <!-- 결과보기 끝 -->
                     </div>
                 </div>
+                
             </div>
             <!-- 14번 메인 샘플 끝 -->
+
+             <!-- 19번 메인 샘플 시작 -->
+             <div class="main_sample">
+                <div id="sample19" class="sample">
+                    <h3>19. 펼침연산자 - 복사</h3>
+                    <p>
+                        
+                    </p>
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">let result = document.querySelector(“.sample19_result”);
+const obj = {
+    a: 100,
+    b: 200,
+    c: “javascript”,
+};
+const spread = { ...obj };
+result.innerHTML += spread.a;
+result.innerHTML += spread.b;
+result.innerHTML += spread.c;
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary>결과보기</summary>
+                            <div>
+                                100<br>200<br>javascript
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                </div>
+                
+            </div>
+            <!-- 19번 메인 샘플 끝 -->
+             <!-- 20번 메인 샘플 시작 -->
+             <div class="main_sample">
+                <div id="sample20" class="sample">
+                    <h3>20. 펼침연산자 추가</h3>
+                    <p>
+                        -
+                    </p>
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js"> //추가의 의미
+let result = document.querySelector(“.sample20_result”);
+const obj = {
+    a: 100,
+    b: 200,
+    c: “javascript”,
+};
+
+const spread = { ...obj, d: “jquery” };
+result.innerHTML += spread.a;
+result.innerHTML += spread.b;
+result.innerHTML += spread.c;
+result.innerHTML += spread.d;
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary>결과보기</summary>
+                            <div>
+                                100<br>200<br>javascript
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                </div>
+                
+            </div>
+            <!-- 20번 메인 샘플 끝 -->
+             <!-- 21번 메인 샘플 시작 -->
+             <div class="main_sample">
+                <div id="sample10" class="sample">
+                    <h3>21. 펼침연산자 결합</h3>
+                    <p>
+                        -
+                    </p>
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">//결합의 의미
+let result = document.querySelector(“.sample21_result”);
+const objA = {
+    a: 100,
+    b: 200,
+};
+const objB = {
+    c: “javascript”,
+    d: “jquery”,
+};
+const spread = { ...objA, ...objB };
+result.innerHTML += spread.a;
+result.innerHTML += spread.b;
+result.innerHTML += spread.c;
+result.innerHTML += spread.d;
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary>결과보기</summary>
+                            <div>
+                                100<br>200<br>javascript
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                </div>
+                
+            </div>
+            <!-- 21번 메인 샘플 끝 -->
+             <!-- 22번 메인 샘플 시작 -->
+             <div class="main_sample">
+                <div id="sample10" class="sample">
+                    <h3>22. 비구조화 할당</h3>
+                    <p>
+                        -
+                    </p>
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">let result = document.querySelector(“.sample22_result”);
+const obj = {
+    a: 100,
+    b: 200,
+    c: “javascript”,
+};
+const { a, b, c } = obj;
+result.innerHTML += a;
+result.innerHTML += b;
+result.innerHTML += c;
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary>결과보기</summary>
+                            <div>
+                                100<br>200<br>javascript
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                </div>
+                
+            </div>
+            <!-- 22번 메인 샘플 끝 -->
+              <!-- 23번 메인 샘플 시작 -->
+              <div class="main_sample">
+                <div id="sample10" class="sample">
+                    <h3>23. 객체구조분해할당</h3>
+                    <p>
+                        -
+                    </p>
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">const obj = {
+    a: 100,
+    b: 200,
+    c: "javascript"
+}
+const {a:name1, b:name2, c:name3} = obj
+
+document.write(name1);
+document.write(name2);
+document.write(name3);
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary>결과보기</summary>
+                            <div>
+                                100<br>200<br>javascript
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                </div>
+                
+            </div>
+            <!-- 23번 메인 샘플 끝 -->
+            <h2 class="t_tit2 good">여기로 쏨</h2>
         </div>
     </main>
 
@@ -945,6 +1131,79 @@
             // document.write("d" in obj);             //obj안에 d가 있냐 확인 출력값 : false
         }
 
+        //19. 객체 : 데이터 불러오기 : 펼침연산자 - 복사
+        {
+            //복사의 의미
+            // let result = document.querySelector(“.sample19_result”);
+            // const obj = {
+            //     a: 100,
+            //     b: 200,
+            //     c: “javascript”,
+            // };
+            // const spread = { ...obj };
+            // result.innerHTML += spread.a;
+            // result.innerHTML += spread.b;
+            // result.innerHTML += spread.c;
+        }
+        //20. 객체 : 데이터 불러오기 : 펼침연산자 - 추가
+        {
+            //추가의 의미
+            let result = document.querySelector(“.sample20_result”);
+            const obj = {
+                a: 100,
+                b: 200,
+                c: “javascript”,
+            };
+            const spread = { ...obj, d: “jquery” };
+            result.innerHTML += spread.a;
+            result.innerHTML += spread.b;
+            result.innerHTML += spread.c;
+            result.innerHTML += spread.d;
+        }
+        //21. 객체 : 데이터 불러오기 : 펼침연산자 - 결합
+        {
+            //결합의 의미
+            let result = document.querySelector(“.sample21_result”);
+            const objA = {
+                a: 100,
+                b: 200,
+            };
+            const objB = {
+                c: “javascript”,
+                d: “jquery”,
+            };
+            const spread = { ...objA, ...objB };
+            result.innerHTML += spread.a;
+            result.innerHTML += spread.b;
+            result.innerHTML += spread.c;
+            result.innerHTML += spread.d;
+        }
+        //22. 객체 : 데이터 불러오기 : 비구조화 할당
+        {
+            let result = document.querySelector(“.sample22_result”);
+            const obj = {
+                a: 100,
+                b: 200,
+                c: “javascript”,
+            };
+            const { a, b, c } = obj;
+            result.innerHTML += a;
+            result.innerHTML += b;
+            result.innerHTML += c;
+        }
+        //23. 객체 : 데이터 불러오기 : 객체구조분해할당
+        {
+            let result = document.querySelector(“.sample23_result”);
+            const obj = {
+                a: 100,
+                b: 200,
+                c: “javascript”,
+            };
+            const { a: name1, b: name2, c: name3 } = obj;
+            result.innerHTML += name1;
+            result.innerHTML += name2;
+            result.innerHTML += name3;
+        }
 
 
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>패럴렉스 이펙트 - 사이트 메뉴</title>
+    <title>패럴렉스 이펙트05 - 이질감 효과</title>
 
     <link rel="stylesheet" href="../assets/css/parallax.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -24,6 +24,7 @@
             background-color: rgba(0, 0, 0, 0.4);
             padding: 20px 30px;
             border-radius: 50px;
+            transition: top 0.4s ease;
         }
 
         #parallax__nav li {
@@ -113,7 +114,7 @@
             left: -5%;
             top: -5%;
             filter: saturate(0%);
-            transition: all 1s;
+            /* transition: all 1s; */
         }
 
         .content__item:nth-child(1) .content__item__img {
@@ -164,7 +165,6 @@
             margin-left: auto;
             margin-right: 4vw;
         }
-
         #parallax__info {
             position: fixed;
             left: 20px;
@@ -212,94 +212,27 @@
             #parallax__nav li.active a {
                 border-radius: 5px;
             }
-
-            #parallax__info {
-                left: 10px;
-                bottom: 10px;
-            }
-            
-            /* .content__item{
-                height: 100vh;
-            } */
         }
-        #parallax__dot{
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY((-50%));
-            z-index: 2000;
-            background: rgba(0,0,0,0.4);
-            padding: 20px 10px;
-            border-radius: 30px;
-        }
-
-        #parallax__dot li {
-            position: relative;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin: 12px 8px;
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
-            transition: box-shadow 0.2s ease;
-        }
-
-        #parallax__dot li a{
-            background: #fff;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: 50%;
-            transition: transform 0.2s ease;
-        }
-
-        #parallax__dot li.active{
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
-        }
-
-        #parallax__dot li.active a{
-            transform: scale(0.4);
-        }
-
-        #parallax__dot li span{
-            display: none;
-        }
-
+        
     </style>
 </head>
 
 <body class="img07">
     <header id="header">
-        <h1><a href="parallaxEffect.html">Javascript parallax Effect02</a></h1>
-        <p>패럴렉스 이펙트 - 메뉴 active 활성화</p>
+        <h1><a href="parallaxEffect.html">Javascript parallax Effect05</a></h1>
+        <p>패럴렉스 이펙트 - 나타나기</p>
         <ul>
             <li><a href="parallaxEffect01.html">1</a></li>
-            <li class="active"><a href="parallaxEffect02.html">2</a></li>
+            <li><a href="parallaxEffect02.html">2</a></li>
             <li><a href="parallaxEffect03.html">3</a></li>
             <li><a href="parallaxEffect04.html">4</a></li>
-            <li><a href="parallaxEffect05.html">5</a></li>
+            <li class="active"><a href="parallaxEffect05.html">5</a></li>
             <li><a href="parallaxEffect06.html">6</a></li>
             <li><a href="parallaxEffect07.html">7</a></li>
         </ul>
     </header>
     <!-- //header -->
-
-    <nav id="parallax__dot">
-        <ul>
-            <li class="active"><a href="#section1"><span>메뉴1</span></a></li>
-            <li><a href="#section2"><span>메뉴2</span></a></li>
-            <li><a href="#section3"><span>메뉴3</span></a></li>
-            <li><a href="#section4"><span>메뉴4</span></a></li>
-            <li><a href="#section5"><span>메뉴5</span></a></li>
-            <li><a href="#section6"><span>메뉴6</span></a></li>
-            <li><a href="#section7"><span>메뉴7</span></a></li>
-            <li><a href="#section8"><span>메뉴8</span></a></li>
-            <li><a href="#section9"><span>메뉴9</span></a></li>
-        </ul>
-    </nav>
-
-    <!-- //parallax__nav -->
+    
     <main id="parallax__cont">
         <div id="contents">
 
@@ -405,11 +338,6 @@
     </main>
     <!-- //main -->
 
-    <aside id="parallax__info">
-        <div class="scroll">scrollTop : <span>0</span>px</div>
-    </aside>
-    <!-- parallax__info -->
-
     <footer id="footer">
         <div class="modal__wrap">
             <div class="modal__btn">소스 보기</div>
@@ -503,436 +431,15 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
+                            <pre><code class="language-js">
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background-color: #222;
-    color: #fff;
-    font-family: 'NexonLv1Gothic';
-    font-weight: 300;
-}
-
-img {
-    width: 100%;
-    vertical-align: top;
-}
-
-a{
-    color: #fff;
-    text-decoration: none;
-}
-
-li {
-    list-style: none;
-}
-
-/* layout */
-#header{
-    z-index: 2000;
-}
-#main{
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    z-index: 1000;
-}
-#footer{
-    position: relative;
-    z-index: 3000;
-}
-
-/* header */
-#header {
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #fff;
-    padding: 20px 0px 0px 25px;
-    /* display: none; */
-}
-#header h1 {
-    display: inline-block;
-    font-weight: 300;
-    margin-bottom: 18px;
-    border-bottom: 1px dashed #fff;
-    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.659);
-    padding-bottom: 10px;
-}
-#header p {
-    margin-bottom: 15px;
-}
-#header ul {}
-#header li {
-    display: inline-block;
-}
-#header li a {
-    border: 1px solid #fff;
-    border-radius: 50%;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    font-size: 14px;
-}
-#header li.active a{
-    color: black;
-    background-color: #fff;
-}
-
-#header li a:hover{
-    background-color: #fff;
-    color: black;
-    transition: 0.25s;
-}
-#header li a:not(:hover){
-    transition: 0.25s;
-}
-
-
-/* footer */
-#footer {}
-#footer .source {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    border-radius: 1px solid #fff;
-    border-radius: 40px;
-    padding: 10px 20px;
-    font-size: 14px;
-}
-
-
-/* modal__wrap */
-.modal__wrap {}
-.modal__btn {
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 50px;
-    display: inline-block;
-    padding: 10px 20px;
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.modal__btn:hover{
-    background-color: #fff;
-    color: #33377d
-}
-
-.modal__cont {
-    /* display: none; */
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.155);
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    visibility: hidden;
-    transform: scale(0);
-}
-
-/* 요소를 안보이게 하는 방법
-    1. display: none;       (애니메이션 x, 영역x)
-    2. opacity: 0;          (애니메이션 o, 영역o)
-    3. visibility: hidden;  (애니메이션 x, 영역x)
-    4. width: 0; height: 0; (애니메이션 x, 영역x) : blind 효과
-    5. transform: scale(0)  (애니메이션 o, 영역x)
-*/
-
-.modal__box {
-    width: 80%;
-    height: 50vh;
-    border-radius: 0.6rem;
-    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
-    /* max-width: 800px;
-    margin: 0 auto;
-    height: 600px; */
-
-    /* background-color: rgb(255, 255, 255); 블러 */
-
-    /* position: relative;
-    transform: scale(0); */
-    /* overflow: hidden; */
-}
-
-.modal__box .title{
-    padding-inline: 1rem;
-    cursor: grab;
-    background-color: hsl(236deg 16% 16%);
-    display: flex;
-    align-items: center;
-    color: #fff;
-    height: 50px;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-}
-
-.modal__box .title .dot {
-    width: 15px;
-    height: 15px;
-    background-color: hsl(180 2% 50%);
-    display: inline-block;
-    border-radius: 50%;
-    position: relative;
-    margin-left: 30px;
-}
-
-.modal__box .title .dot::before {
-    content: '';
-    position: absolute;
-    left: 25px;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    background-color: hsl(180 2% 50%);
-    border-radius: 50%;
-}
-.modal__box .title .dot::after {
-    content: '';
-    position: absolute;
-    right: 25px;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    background-color: hsl(180 2% 50%);
-    border-radius: 50%;
-}
-
-.modal__box .title .plus{
-    background: hsl(236deg 15% 20%);
-    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
-    border-radius: 0.5rem;
-}
-
-.modal__box .title .tabs {
-    display: flex;
-    margin-left: 50px;
-}
-
-.modal__box .title .tabs > div{
-    color: hsl(322deg 78% 62%);
-    background-color: hsl(236deg 15% 20%);
-    padding: 0.35rem 0.8rem 0.25rem 0.8rem;
-    margin-right: 0.5rem;
-    display: flex;
-    align-items: center;
-    border-radius: 0.4rem;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.modal__box .title .tabs > div.active{
-    background-color: rgb(240, 36, 114);
-    color: #fff;
-}
-.modal__box .title .tabs > div em {
-    font-style: normal;
-}
-
-.modal__box .title .tabs > div .favicon {
-    margin-right: 0.4rem;
-    margin-top: 0.2rem;
-}
-.modal__box .title .tabs > div .close {
-    margin-left: 5rem;
-
-}
-
-
-.modal__box .cont {
-    background-color: hsl(236deg 15% 18% / 33%);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    height: 550px;
-    box-sizing: border-box;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    overflow-y: auto;
-    scrollbar-width: none;
-
-    height: 100%; /*수정 */
-}
-
-/* 세로 스크롤 */
-.modal__box .cont::-webkit-scrollbar {
-    width: 4px;
-    border-radius: 20px;
-}
-
-.modal__box .cont:hover::-webkit-scrollbar {
-    opacity: 1;
-}
-
-.modal__box .cont::-webkit-scrollbar-thumb {
-    background-color: hsl(337deg 87% 54%); /*스크롤바의 색상*/
-    background-clip: padding-box;
-}
-
-.modal__box .cont::-webkit-scrollbar-track {
-    background-color: transparent; /*스크롤바 트랙 색상*/
-}
-
-/* 가로 스크롤 */
-.modal__box .cont .scroll::-webkit-scrollbar {
-    height: 4px;
-    border-radius: 20px;
-}
-
-.modal__box .cont .scroll:hover::-webkit-scrollbar {
-    opacity: 1;
-}
-
-.modal__box .cont .scroll::-webkit-scrollbar-thumb {
-    background-color: hsl(337deg 87% 54%); /*스크롤바의 색상*/
-    background-clip: padding-box;
-}
-
-.modal__box .cont .scroll::-webkit-scrollbar-track {
-    background-color: transparent; /*스크롤바 트랙 색상*/
-}
-
-
-.modal__box .cont > div {
-    display: none;
-}
-
-.modal__box .cont > div.active {
-    display: block;
-    height: 100%;
-}
-
-.modal__close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    background-color: #1f224a;
-    padding: 1rem 1rem 0.8rem 1rem;
-    border-radius: 5px;
-    box-shadow: 0 5px 7px -5px rgba(25, 26, 26, 0.602);
-    cursor: pointer;
-    transition: all 0.25s;
-    /* opacity: 0; */
-    transform: scale(0);
-}
-
-.modal__close:hover{
-    background-color: #33377d;
-}
-
-.modal__close svg{
-    color: #fff;
-}
-
-/* 모달 애니메이션 */
-.modal__cont.show{ /* 전체 배경 */
-    visibility: visible;
-    animation:  foldOut 1s ease forwards;
-}
-
-.modal__cont.show .modal__box {
-    transform: scale(0);
-    animation: zoomOut 0.5s 1s ease forwards; /*뒤에껀 딜레이*/
-}
-
-.modal__cont.show .modal__close { /* 닫기 배경 */
-    animation:  foldOut 0.3s 1.5s ease backwards;
-    transform: scale(1);
-    /* opacity: 1; */
-}
-
-
-.modal__cont.show.hide{ /* 스크립트 배경 */
-    animation:  foldIn 0.3s 0.9s ease backwards;
-}
-
-.modal__cont.show.hide .modal__box {
-    transform: scale(1);
-    animation: zoomIn 0.5s 0.3s ease forwards; /*뒤에껀 딜레이*/
-    
-}
-
-.modal__cont.show.hide .modal__close { /* 닫기 배경 */
-    transform: scale(0);
-    animation: foldIn 0.5s ease backwards; /*뒤에s껀 딜레이*/
-}
-
-
-@keyframes foldOut {
-    0% {transform: scaleX(0) scaleY(0.001);}
-    50% {transform: scaleX(1) scaleY(0.001);}
-    100% {transform: scaleX(1) scaleY(1);}
-}
-
-@keyframes foldIn {
-    0% {transform: scaleX(1) scaleY(1);}
-    50% {transform: scaleX(1) scaleY(0.001);}
-    100% {transform: scaleX(0) scaleY(0.001);}
-}
-
-@keyframes zoomOut {
-    0% {transform: scale(0);}
-    100% {transform: scale(1);}
-}
-
-@keyframes zoomIn {
-    0% {transform: scale(1);}
-    100% {transform: scale(0);}
-}
-
-@media (max-width: 1100px){
-    .modal__box .title{
-        overflow: hidden;
-    }
-    .modal__box .title .dot{
-        display: none;
-    }
-
-    .modal__box .title .tab{
-        margin-left: 0;
-    }
-    .modal__box .title .tabs > div .close{
-        display: none;
-    }
-}
-
-@media (max-width: 800px){
-    #header {
-        text-align: center;
-        width: 100%;
-    }
-    #header h1 {
-        line-height: 1.4;
-    }
-    .modal__box {
-        width: 96%;
-    }
-
-}
-
+                            <pre><code class="language-html">
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">
+                            <pre><code class="language-css">
 </code></pre>
                         </div>
                     </div>
@@ -949,49 +456,55 @@ li {
         </div>
     </footer>
     <!-- //footer -->
+    <aside id="parallax__info">
+        <div class="scroll">scrollTop : <span>0</span>px</div>
+    </aside>
+    <!-- parallax__info -->
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/gsap.min.js"></script>
     <script>
-        document.querySelectorAll("#parallax__dot a").forEach(el => { //#parallax__dot a 
-            el.addEventListener("click", e=> {                        //요소를 클릭했을때
-                e.preventDefault();                                   //이벤트가 발생했을때 걸려있는 링크 이동을 차단 시킴
+        // window.addEventListener("scroll", scrollProgress);
 
+        //재귀 함수
+        // function scroll(){
+        //     let scrollTop = window.pageYoffest || document.documentElement.scrollTop || window.screenY;
+
+        //     document.querySelectorAll(".content__item").forEach(item => {
+        //         if(scrollTop > item.offsetTop-window.innerHeight/2){
+        //             item.classList.add("show")
+        //         }
+        //     })
+        //     requestAnimationFrame(scroll);
+        // }
+
+        // scroll(); //함수 호출
+
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            document.querySelector("#parallax__info span").innerHTML=Math.ceil(scrollTop);
+
+            document.querySelectorAll(".content__item").forEach(item => {
+                const target1 = item.querySelector(".content__item__img");
+                const target2 = item.querySelector(".content__item__desc");
+                const target3 = item.querySelector(".content__item__num");
+
+                let offset = (scrollTop - item.offsetTop) * 0.1; //스크롤한 값 - 각 아이템의 브라우저 TOp값
+                let offset2 = (scrollTop - item.offsetTop) * 0.15; //스크롤한 값 - 각 아이템의 브라우저 TOp값
+                let offset3 = (scrollTop - item.offsetTop) * 0.2; //스크롤한 값 - 각 아이템의 브라우저 TOp값
+
+                // target1.style.transform = `translateY(${offset}px)`;
+                // target2.style.transform = `translateX(${offset2}px)`;
+                gsap.to(target1, {duration: 0.3, y: offset, ease: "power4.out"});
+                gsap.to(target2, {duration: 0.3, y: offset2});
+                gsap.to(target3, {duration: 0.3, y: offset3});
                 
-                 // 이 한줄이 핵식
-                document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"}); // 요소의 속성 href를 가져와 클릭이 되었을때 행동은 smooth
+            });
 
-            })
-        })
-
-        window.addEventListener("scroll",  () => {
-            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-
-            document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
-
-            document.querySelectorAll(".content__item").forEach((e,i)=>{
-                if(scrollTop >= e.offsetTop - window.innerHeight){ // scrollTop 값이 e의 오프셋 탑 값보다 크다면
-                    document.querySelectorAll("#parallax__dot li").forEach(li => {
-                        li.classList.remove("active");
-                    });
-                document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active");
-                }
-            })
-        })
-
-        //일반
-                // window.scroll(0, 1000);                               //x 좌표는 0 y 좌표는 1000 강제로 이동시킴
-                // window.scroll({left: 0, top: 2000});                     //x 좌표는 0 y 좌표는 2000 강제로 이동시킴
-                // window.scroll({left: 0, top: 2000, behavior: "smooth"});                     //x 좌표는 0 y 좌표는 2000 강제로 이동시킴
-
-                //절대기준
-                // window.scrollTo(0, 1000);                               //x 좌표는 0 y 좌표는 1000 강제로 이동시킴
-                // window.scrollTo({left: 0, top: 2000});                     //x 좌표는 0 y 좌표는 2000 강제로 이동시킴
-                // window.scrollTo({left: 0, top: 2000, behavior: "smooth"});                     //x 좌표는 0 y 좌표는 2000 강제로 이동시킴
-
-                //상대 기준 (현재 위치를 기준으로 작동함)
-                // window.scrollBy(0, 1000);                               //x 좌표는 0 y 좌표는 1000 강제로 이동시킴 
-                // window.scrollBy({left: 0, top: 2000});                     //x 좌표는 0 y 좌표는 2000 강제로 이동시킴
-                // window.scrollBy({left: 0, top: 2000, behavior: "smooth"});                     //x 좌표는 0 y 좌표는 2000 강제로 이동시킴
+            requestAnimationFrame(scroll);
+        }
+        scroll();
     </script>
 </body>
 

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <h3>펼침연산자 - 복사</h3>
+                    <p>
+                        펼침연산자를 사용해 데이터를 복사합니다!
+                    </p>
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">{
+    const obj = {
+        a : 100,
+        b : 200,
+        c : "javascript"
+    }
+
+    const name1 = obj.a;            //객체의 a키 값을 상수 name1에 저장
+    const name2 = obj.b;            //객체의 b키 값을 상수 name2에 저장
+    const name3 = obj.c;            //객체의 c키 값을 상수 name3에 저장
+
+    document.write(name1);          //상수 name1 출력
+    document.write(name2);          //상수 name2 출력
+    document.write(name3);          //상수 name3 출력
+}
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary>결과보기</summary>
+                            <div>
+                                100200javascript
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+
+                    <div id="sample20" class="sample">
+                        <h3>펼침연산자-추가</h3>
+                        <p>
+                            펼침연산자를 사용해 데이터를 추가합니다!
+                        </p>
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">//추가의 의미
+let result = document.querySelector(“.sample20_result”);
+const obj = {
+    a: 100,
+    b: 200,
+    c: “javascript”,
+};
+
+const spread = { ...obj, d: “jquery” };
+result.innerHTML += spread.a;
+result.innerHTML += spread.b;
+result.innerHTML += spread.c;
+result.innerHTML += spread.d;
+</code></pre>
+                    </div>
+                        <div class="result">
+                            <!-- 결과보기 -->
+                            <details>
+                                <summary>결과보기</summary>
+                                <div>
+                                    100<br>200<br>javascript
+                                </div>
+                            </details>
+                            <!-- 결과보기 끝 -->
+                        </div>
+                    </div>
+                    <h3>21. 펼침연산자 결합</h3>
+                    <p>
+                        펼침연산자를 사용해 데이터를 결합합니다.
+                    </p>
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">//결합의 의미
+let result = document.querySelector(“.sample21_result”);
+const objA = {
+    a: 100,
+    b: 200,
+};
+const objB = {
+    c: “javascript”,
+    d: “jquery”,
+};
+const spread = { ...objA, ...objB };
+result.innerHTML += spread.a;
+result.innerHTML += spread.b;
+result.innerHTML += spread.c;
+result.innerHTML += spread.d;
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary>결과보기</summary>
+                            <div>
+                                100<br>200<br>javascript
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                    <h3>22. 비구조화 할당</h3>
+                    <p>
+                        변수에 객체를 비구조화 할당시켜줍니다!
+                    </p>
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">let result = document.querySelector(“.sample22_result”);
+const obj = {
+    a: 100,
+    b: 200,
+    c: “javascript”,
+};
+const { a, b, c } = obj;
+result.innerHTML += a;
+result.innerHTML += b;
+result.innerHTML += c;
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary>결과보기</summary>
+                            <div>
+                                100<br>200<br>javascript
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                    <h3>23. 객체구조분해할당</h3>
+                    <p>
+                        객체의 구조를 분해 후 객체 키의 이름을 할당해줍니다.
+                    </p>
+                    <div class="script">
+                        <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">const obj = {
+    a: 100,
+    b: 200,
+    c: "javascript"
+}
+const {a:name1, b:name2, c:name3} = obj
+
+document.write(name1);
+document.write(name2);
+document.write(name3);
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary>결과보기</summary>
+                            <div>
+                                100<br>200<br>javascript
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+
+                </div>
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>
