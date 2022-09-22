@@ -97,24 +97,31 @@
 
             <div class="slider__inner">
                 <div class="desc_sub">ART</div>
+                <img class="scroll_here" src="assets/img/scroll_here.svg" alt="">
                 <div class="desc">
                     <span>EXP 22. 08 - 22. 09</span>
-                    <h3>THE GRAIN.</h3>
+                    <h3>BLUE EXHIBITION.</h3>
                     <p>HENRISK DENNESTAD</p>
                     <div class="btn">
                         <!-- <a class="loading" href="#">VIEW ARTIST</a> -->
                         <a href="#" class="black loading">VIEW ARTIST</a>
                     </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                <div class="button_cont">
+
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button">
                     <div class="swiper-button-play"><span class="ir">play</span></div>
                     <div class="swiper-button-stop"><span class="ir">stop</span></div>
                 </div>
+                <!-- <div class="bg_dim"></div> -->
                 <div class="swiper mySwiper">
-                    
+                    <div class="bg_dim"></div>
+
+
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <!-- <div class="desc">
@@ -154,6 +161,16 @@
             </div>
         </section>
         <!-- //sliderType -->
+
+        <section id="imageType01" class="image__wrap nexon section baegopa container">
+            <h2>#TEST</h2>
+            <p>TEST</p>
+            
+        </section>
+        <!-- //imageType -->
+
+        
+        <!-- //imgTextType -->
         <div id="olaga">위로!</div>
 
     </main>
@@ -210,6 +227,20 @@
                 top: 0,
                 behavior: "smooth"
             });
+        })
+
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+            document.querySelector(".check").innerText = scrollTop;
+
+            if (scrollTop >= 10) {
+                // document.querySelector("#header_logo_media").classList.add("inline")
+                document.querySelector(".header__inner").classList.add("custom")
+            } else {
+                // document.querySelector("#header_logo_media").classList.remove("inline")
+                document.querySelector(".header__inner").classList.remove("custom")
+
+            }
         })
     </script>
 

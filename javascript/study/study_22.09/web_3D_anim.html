@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <h2 class="t_tit">3D 이펙트 오버 효과!</h2>
+                    <p class="t_desc">
+                        이야 오늘 정말 괜찮은 애니메이션이 올라온거 같아요<br>
+                        마우스를 오버했을때 3D 효과를 주는듯한 오버 효과인데<br>
+                        이번 시간에 한번 배워보도록 하겠습니다 가~~~~~~~~~~~~~~~~~~~~~~~보자고 ♪ ( - ࿀ - و(و "
+                    </p>
+                    <hr>
+                    <h2 class="t_tit2">HTML 코드 : </h2>
+                    <p class="t_desc2">이번 예제는 각각 왼쪽 오른쪽 사진에 오버했을때 앞뒷면을 다른 사진으로 구성하는것이 특징인데<br>
+                    그러기 위해서는 하단과 같이 작성하여 [front/back]각각의 사진을 img태그를 사용하여 넣어줍시다!
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">&lt;div class="hover__wrap"&gt;
+    &lt;div class="hover__updown"&gt;
+      &lt;figure class="front"&gt;
+        &lt;img src="https://kimsangjunv1.github.io/coding/site/site2/assets/img/rotate_dog_01.jpg" alt=""&gt;
+        &lt;figcaption&gt;
+          &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+          &lt;p&gt;마우스 올리면 UP 💙&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+      &lt;figure class="back"&gt;
+        &lt;img src="https://kimsangjunv1.github.io/coding/site/site2/assets/img/rotate_dog_02.jpg" alt=""&gt;
+        &lt;figcaption&gt;
+          &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+          &lt;p&gt;마우스 내리면 DOWN 👇&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="hover__leftright"&gt;
+      &lt;figure class="front"&gt;
+        &lt;img src="https://kimsangjunv1.github.io/coding/site/site2/assets/img/rotate_dog_03.jpg" alt=""&gt;
+        &lt;figcaption&gt;
+          &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+          &lt;p&gt;마우스 올리면 RIGHT 👉&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+      &lt;figure class="back"&gt;
+        &lt;img src="https://kimsangjunv1.github.io/coding/site/site2/assets/img/rotate_dog_04.jpg" alt=""&gt;
+        &lt;figcaption&gt;
+          &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+          &lt;p&gt;마우스 내리면 LEFT 👈&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">CSS 코드 : SCSS를 사용</h2>
+                    <p class="t_desc2">
+                        제일 핵심이 되는 부분은 CSS 코드 부분인데 이 중 가장 핵심은<br>
+                        1. .front 클래스를 가진 요소는 'transform-style'을 'preserve-3d'로 설정해 가상공간을 설정해줍니다.<br>
+                        2. 원근감 효과를 위해 각 div는 'perspertive' 를 1000px로 설정해 원근감 효과를 극대화 시킵니다.<br>
+                        3. 각 이미지는 front/back 클래스를 가진 요소에게 rotate[X/Y]를 설정해 오버시 돌아가는듯한 효과를 주며 뒷 이미지를 보여주게 합니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">@font-face {
+    font-family: 'LocusSangsang';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.ttf') format("truetype");
+    font-display: swap;
+}
+body{
+  font-family: 'LocusSangsang';
+  background-image: linear-gradient(135deg, #191970 0%, #483D8B 40%, #9370DB 100%);
+  height: 100vh;
+}
+
+.hover__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hover__wrap > div{
+  max-width : 400px;
+  margin: 3%;
+  position: relative;
+  perspective: 1000px;
+}
+
+.hover__wrap > div img{
+  width : 100%;
+  border: 10px solid #f0f8ff;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.hover__wrap > div .front {
+  transition: transform 1s;
+  backface-visibility: hidden;
+  transform-style : preserve-3d;
+}
+.hover__wrap > div .back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 1s;
+  z-index: -1;
+  transform-style : preserve-3d;
+}
+.hover__wrap > div figcaption {
+  background: rgba(255,255,255,0.4);
+  border: 1px solid #fff;
+  color: #000;
+  padding: 10px;
+  text-align: center;
+  line-height: 1.5;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateZ(100px);
+  width: 60%;
+  backface-visibility: hidden;
+}
+
+/* mouse hover effect */
+.hover__updown .front {
+  transform: rotateX(0deg);
+}
+.hover__updown:hover .front {
+  transform: rotateX(180deg);
+}
+
+.hover__updown .back {
+  transform: rotateX(-180deg);
+}
+
+.hover__updown:hover .back {
+  transform: rotateX(0deg);
+}
+
+/* mouse hover effect */
+.hover__leftright .front {
+  transform: rotateY(0deg);
+}
+.hover__leftright:hover .front {
+  transform: rotateY(180deg);
+}
+
+.hover__leftright .back {
+  transform: rotateY(-180deg);
+}
+
+.hover__leftright:hover .back {
+  transform: rotateY(0deg);
+}
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">완성~~~~~~~~~</h2>
+                    <p class="t_desc2">무~~~야~~호 드디어 완성되었습니다 너무 멋진 예제라 눈물이 찔끔 나와버렸네요<br>
+                    본 효과를 잘 이용한다면 멋진 디자인으로 구성 가능할것같아요 그렇다면 저는 20000 |･ω･`*)ッ</p>
+                    <iframe height="1000" style="width: 100%;" scrolling="no" title="3D parallax Effect" src="https://codepen.io/kimsangjunv1/embed/yLjXavm?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/yLjXavm">
+                        3D parallax Effect</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>

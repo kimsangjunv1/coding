@@ -288,9 +288,13 @@
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-  bottom: 20px;
-  left: 0;
-  width: 100%;
+  /* bottom: 50px;
+  left: 0; */
+  /* width: 100%; */
+  top: 50%;
+  left: 50px;
+  /* width: 100%; */
+  transform: translate(0, -50%);
 }
 .swiper-pagination-bullets-dynamic {
   overflow: hidden;
@@ -342,6 +346,7 @@ button.swiper-pagination-bullet {
 }
 .swiper-pagination-clickable .swiper-pagination-bullet {
   cursor: pointer;
+  display: block;
 }
 .swiper-pagination-bullet:only-child {
   display: none !important;
@@ -380,6 +385,7 @@ button.swiper-pagination-bullet {
 .swiper-pagination-horizontal.swiper-pagination-bullets
   .swiper-pagination-bullet {
   margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
+  margin-bottom: 20px;
 }
 .swiper-horizontal
   > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,

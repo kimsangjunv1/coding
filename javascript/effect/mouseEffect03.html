@@ -67,50 +67,31 @@
             color: #fff;
         }
 
-        .mouse__cursor {
+        .mouse__cursor{
             position: absolute;
             left: 0;
             top: 0;
-            width: 10px;
-            height: 10px;
-            z-index: 9999;
+            width: 200px;
+            height: 200px;
+            z-index: -1;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.866);
-            user-select: none;
-            pointer-events: none;
-            transition: transform 0.3s, opacity 0.2s;
-        }
-        .mouse__cursor2 {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 30px;
-            height: 30px;
-            z-index: 9998;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.342);
-            user-select: none;
-            pointer-events: none;
-            transition: transform 0.3s, opacity 0.2s;
-        }
-        .mouse__cursor.active{
-            transform: scale(0);
-        }
-        .mouse__cursor2.active{
-            transform: scale(10);
-            background: rgba(255,166,0,0.6);
+            background-image: url(../../../assets/slider/effect_bg_08.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            border: 5px solid #fff;
         }
     </style>
 </head>
 
-<body class="img10">
+<body class="img08">
     <header id="header">
-        <h1>Javascript Mouse Effect02</h1>
+        <h1>Javascript Mouse Effect03</h1>
         <p>마우스 이펙트 - 마우스 따라다니기</p>
         <ul>
             <li><a href="mouseEffect01.html">1</a></li>
-            <li class="active"><a href="mouseEffect02.html">2</a></li>
-            <li><a href="mouseEffect03.html">3</a></li>
+            <li><a href="mouseEffect02.html">2</a></li>
+            <li class="active"><a href="mouseEffect03.html">3</a></li>
             <li><a href="mouseEffect04.html">4</a></li>
             <li><a href="mouseEffect05.html">5</a></li>
             <li><a href="mouseEffect06.html">6</a></li>
@@ -123,8 +104,8 @@
             <div class="mouse__cursor"></div>
             <div class="mouse__cursor2"></div>
             <div class="mouse__wrap">
-                <p><span class="style1">Go</span> to <span class=style2>sleep</span>,  then you are the <span class="style3">winner.</span></p>
-                <p><span class="style4">일찍 자라</span> 개운한 너가 바로 <span class="style5">진정한</span> 지금 순간의 <span class="style6">승리자이다.</span></p>
+                <p><span>Trust</span> My Self, Then you will be the <span>winner</span></p>
+                <p><span>너 자신</span>을 믿어라 그리하면 <span>승리자</span>가 될 수 있다</p>
             </div>
         </section>
     </main>
@@ -251,56 +232,30 @@
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
     <script>
-        const cursor = document.querySelector(".mouse__cursor");
-        const cursor2 = document.querySelector(".mouse__cursor2");
-        const span = document.querySelectorAll(".mouse__wrap span");
+        const cursor = document.querySelector(".mouse__cursor")
 
-        window.addEventListener("mousemove", e => {
-            //커서 좌표값 할당
-            // cursor.style.left = e.pageX -5 + "px";
-            // cursor.style.top = e.pageY -5+ "px";
-            // cursor2.style.left = e.pageX -15+ "px";
-            // cursor2.style.top = e.pageY -15+ "px";
+        // const circleW = cursor.offsetWidth; //200 : 보더값 포함
+        // const circleH = cursor.offsetHeight; //200 : 보더값 포함
+        // const circle2 = cursor.clientWidth; //190 : 보더값 제와
 
-            gsap.to(cursor, {duration: 0.3, left: e.pageX -5, top: e.pageY -5})
-            gsap.to(cursor2, {duration: 0.8, left: e.pageX -15, top: e.pageY -15})
+        const circle = cursor.getBoundingClientRect();
+        console.log(circle);
+        // const DOMRect = {
+        //     x: 0,
+        //     y: 0,
+        //     bottom: 200,
+        //     height: 200,
+        //     left: 0,
+        //     right: 200,
+        //     top: 0
+        // }
 
-            //오버 효과
-            //mouseenter(자식 요소만) / mouseover(부모요소부터 자식까지 모두) / 이벤트 버블링
-            span.forEach(span => {
-                span.addEventListener("mouseenter", ()=>{
-                    cursor.classList.add("active");
-                    cursor2.classList.add("active");
-                })
-                span.addEventListener("mouseleave", ()=>{
-                    cursor.classList.remove("active");
-                    cursor2.classList.remove("active");
-                })
+        window.addEventListener("mousemove", (e)=>{
+            gsap.to(cursor, {
+                duration: 0.5, 
+                left: e.pageX - circle.width/2, 
+                top: e.pageY - circle.height/2,
             });
-            document.querySelectorAll("#header ul li a").forEach(a => {
-                a.addEventListener("mouseenter", ()=>{
-                    cursor.classList.add("active");
-                    cursor2.classList.add("active");
-                })
-                a.addEventListener("mouseleave", ()=>{
-                    cursor.classList.remove("active");
-                    cursor2.classList.remove("active");
-                })
-            })
-
-            document.querySelector(".modal__btn").addEventListener("mouseenter",()=>{
-                cursor.classList.add("active");
-                cursor2.classList.add("active");
-            })
-            document.querySelector(".modal__btn").addEventListener("mouseleave",()=>{
-                cursor.classList.remove("active");
-                cursor2.classList.remove("active");
-            })
-
-            // 화살표 함수가 없어야만 this 사용 가능합니다.
-            // span.forEach(function(){
-            //     this.addEventListener("mouseenter", function(){});
-            // })
         })
     </script>
 </body>
