@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!-- 티스토리 용 -->
+        <div id="sample01" class="container sample document">
+        <!-- 메인 샘플 시작 -->
+            <h2 class="t_tit">마우스 이펙트 만들기!</h2>
+            <P>JS의 금붕어의 눈처럼 마우스가 움직였을때 명언이 튀어나올듯한 효과를 구현해볼게요!</P>
+            <hr>
+            <h2 class="t_tit2">HTML 코드 : 뼈대</h2>
+            <p class="t_desc2">
+                마우스 이펙트의 핵심은 cursor를 구성하는것이에요!<br>
+                꼭 간단한 div를 통한 Cursor를 구성하도록 합시다!
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;section id="mouseType"&gt;
+  &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+  &lt;div class="mouse__wrap"&gt;
+      &lt;div class="mouse__img"&gt;
+          &lt;figure&gt;
+              &lt;img src="../../../assets/slider/effect_bg_07.jpg" alt=""&gt;
+          &lt;/figure&gt;
+          &lt;figcaption&gt;
+              &lt;p&gt;If you feel &lt;span&gt;refreshed&lt;/span&gt; when you &lt;span&gt;wake up&lt;/span&gt;, yes, you are
+                  &lt;span&gt;late.!&lt;/span&gt;&lt;/p&gt;
+              &lt;p&gt;잠에서 깨어났을때 &lt;span&gt;개운함&lt;/span&gt;을 느꼈다면 예, &lt;span&gt;지각&lt;/span&gt;입니다.&lt;/p&gt;
+          &lt;/figcaption&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+
+            <hr>
+
+            <h2 class="t_tit2">CSS 코드 : 살</h2>
+            <p class="t_desc2">
+                마우스가 이미지에 닿으면 반전이 되게끔 "mouse__cursor" 클래스에 "mix-blend-mode: difference;"를 설정해줍시다!<br><br>
+
+                이후에는 여러분의 쉽게 늘어가는 여러분의 몸무게처럼<br>
+                간단하게 html에도 css를 통해 살을 붙여봅시다!
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">.mouse__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  cursor: none;
+}
+
+.mouse__img {
+  transform: perspective(600px) rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: all 0.1s;
+}
+
+.mouse__wrap figure {
+  width: 40vw;
+  position: relative;
+}
+
+.mouse__img figure::before {
+  content: '';
+  position: absolute;
+  left: 5%;
+  bottom: -30px;
+  width: 90%;
+  height: 100px;
+  background: url(../../../assets/slider/effect_bg_07.jpg) center no-repeat;
+  background-size: 100% 40px;
+  filter: blur(15px) grayscale(50%);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.mouse__wrap figcaption {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 1vw;
+  line-height: 1.4;
+  transform: translate3d(-50%, -50%, 100px);
+  padding: 1vw;
+  white-space: nowrap;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.mouse__cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 1000;
+  pointer-events: none;
+  user-select: none;
+  mix-blend-mode: difference;
+}
+
+.mouse__info {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+}
+</code></pre>
+            </div>
+            <hr>
+            <h2 class="t_tit2">JS 코드 : 좌표 값을 통한 원근감 효과 및 커서 구성하기</h2>
+            <p>
+                저는 최대한 간단하게 설명만 가능하므로 비교적 전문적인 용어는 배제한 형태로 설명해볼게요!<br><br>
+                1. 좌표에 대한 설명은 각각 구간별로 무엇을 구하는 스크립트인지 적어두었습니다<br>
+                2. imgMove(".mouse__img")의 원근감을 주기위해 perspective를 600px로 설정해두고<br>
+                3. rotateX/Y의 값을 anglePageX/Y의 변화된 값을 대입해 x/y축을 마우스 위치에 따라 회전시키고<br>
+                4. perspective를 통해 주었던 원근감 효과에 의해 desc(설명) 부분에 3d로 보이는듯한 느낌을 줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">const mouseMove = (e) => {
+
+  //마우스 좌표값
+  let mousePageX = e.pageX;
+  let mousePageY = e.pageY;
+
+  //마우스 좌표 기준점을 가운데로 변경
+  let centerPageX = window.innerWidth / 2 - mousePageX;
+  let centerPageY = window.innerWidth / 2 - mousePageY;
+
+
+  //최소값은 -100 최대값은 100 설정
+  let maxPageX = Math.max(-200, Math.min(200, centerPageX));
+  let maxPageY = Math.max(-200, Math.min(200, centerPageY));
+
+  //각도 줄이는 설정
+  let anglePageX = maxPageX * 0.1;
+  let anglePageY = maxPageY * 0.1;
+
+
+  //부드럽게 설정
+  let softPageX = 0,
+      softPageY = 0;
+  softPageX += (anglePageX - softPageX) * 0.4;
+  softPageY += (anglePageY - softPageY) * 0.4;
+
+  //이미지 움직이기
+  const imgMove = document.querySelector(".mouse__img");
+  imgMove.style.transform = "perspective(600px) rotateX(" + anglePageY + "deg) rotateY(" + -anglePageX +
+      "deg)"
+
+  //커서
+  gsap.to(".mouse__cursor", {
+      duration: .3,
+      left: mousePageX - 50,
+      top: mousePageY - 50
+  })
+
+  //출력
+  document.querySelector(".mousePageX").textContent = mousePageX;
+  document.querySelector(".mousePageY").textContent = mousePageY;
+
+  document.querySelector(".centerPageX").textContent = centerPageX;
+  document.querySelector(".centerPageY").textContent = centerPageY;
+
+  document.querySelector(".maxPageX").textContent = maxPageX;
+  document.querySelector(".maxPageY").textContent = maxPageY;
+
+  document.querySelector(".anglePageX").textContent = Math.round(anglePageX);
+  document.querySelector(".anglePageY").textContent = Math.round(anglePageY);
+}
+
+window.addEventListener("mousemove", mouseMove);
+
+</code></pre>
+            </div>
+            <hr>
+            <h2 class="t_tit2">완성!</h2>
+            <p class="t_desc2">
+                마우스를 움직일때마다 꼭 튀어나와 보이는게 신기하죠?<br>
+                하지만 수업할때 스크립트를 보는 여러분의 눈 만큼 튀어나오진 못했을겁니다...
+            </p>
+            <div class="t_iframe" style="min-height : 700px; padding-top:0;">
+                <iframe src="https://kimsangjunv1.github.io/coding/javascript/effect/mouseEffect05.html" frameborder="0"></iframe>
+            </div>
+            <hr>
+            <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
+                <div class="t_link">
+                    <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/mouseEffect05.html" target="blank">원본 소스 보기</a>
+                </div>
+                <div class="t_link">
+                    <a href="https://kimsangjunv1.github.io/coding/javascript/effect/mouseEffect05.html" target="blank">원본 페이지 보기</a>
+                </div>
+            </div>
+            <!-- 01번 메인 샘플 끝 -->
+
+
+            
+        </div>
+        <!-- 티스토리 용 끝 -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>
