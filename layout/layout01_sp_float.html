@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 유형_01 floa</title>
+    <!-- 전체를 감싸는 박스 하나가 있고 세부요소 박스 다섯가지 -->
+    <!-- 순서 2 : 각 요소에 스타일을 어떻게 넣을건지 -->
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            background-color: #fff3e0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #ffe0b2;
+
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #ffcc80;
+        }
+        #aside {
+            width: 30%;
+            height: 780px;
+            background-color: #ffb74d;
+            float: left;
+        }
+        #section {
+            width: 70%;
+            height: 780px;
+            background-color: #ffa726;
+            float: left;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #ff9800;
+            clear: both;
+        }
+        @media(max-width:1280px){
+            #wrap {
+                width: 96%;
+                margin: 0 auto;
+            }
+        }
+        @media(max-width:768px){
+            #wrap {
+                width: 100%;
+            }
+            #aside {
+                width: 30%;
+                height: 780px;
+                float: left;
+            }
+            #section {
+                width: 70%;
+                height: 780px;
+                float: left;
+            }
+        }
+        @media(max-width:480px){
+            #wrap {
+                width: 100%;
+            }
+            #aside {
+                width: 100%;
+                height: 300px;
+            }
+            #section {
+                width: 100%;
+                height: 480px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"> <!-- 순서 1 : 무슨 요소가 들어가는지 -->
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="aside"></div>
+        <div id="section"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

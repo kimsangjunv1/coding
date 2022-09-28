@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃01</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        body {
+            background-color: #ede8f9
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #937cc8;
+        }
+        #main {
+            display: flex;
+        }
+        #aside {
+            width: 400px;
+            height: 780px;
+            background-color: #7a60bc;
+        }
+        #section {
+            width: 800px;
+            height: 780px;
+            background-color: #6346b1;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #5b41ab;
+        }
+
+        @media(max-width:1280px){
+            #wrap{
+                width: 96%;
+            }
+        }
+        @media(max-width:768px){
+            #wrap{
+                width: 100%;
+            }
+        }
+        @media(max-width:480px){
+            #wrap{
+                width: 100%;
+            }
+            #main {
+                flex-direction: column;
+            }
+            #aside {
+                height: 300px;
+                background-color: #7a60bc;
+            }
+            #section {
+                height: 480px;
+                background-color: #6346b1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <main id="main">
+            <aside id="aside"></aside>
+            <section id="section"></section>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!-- 티스토리 용 -->
+        <div id="sample01" class="container sample document">
+        <!-- 메인 샘플 시작 -->
+            <h2 class="t_tit2">reverse</h2>
+            <p class="t_desc2">
+                배열의 순서를 반전합니다. 첫 번째 요소는 마지막 요소가 되며 마지막 요소는 첫 번째 요소가 됩니다
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">const arrNum1 = [100, 200, 300, 400, 500];
+const arrNumReverse = arrNum1.reverse();
+</code></pre>
+            </div>
+
+            <hr>
+
+            <h2 class="t_tit2">sort</h2>
+            <p class="t_desc2">
+                배열의 요소를 적절한 위치에 정렬한 후 그 배열을 반환합니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">const arrNum2 = [100, 200, 300, 400, 500];
+const arrNumSort2 = arrNum2.sort();
+</code></pre>
+            </div>
+            <div class="t_tit2">예시보기</div>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 5%">
+                        <col style="width: 32%">
+                        <col style="width: 22%">
+                        <col style="width: 42%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>기본값</th>
+                            <th>메서드</th>
+                            <th>리턴값</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sample05_N1">1</td>
+                            <td class="sample05_Q1">[100,200,300,500,500]</td>
+                            <td class="sample05_M1">push(600)</td>
+                            <td class="sample05_P1"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample05_N2">2</td>
+                            <td class="sample05_Q2">[100,200,300,500,500]</td>
+                            <td class="sample05_M2">push(600)</td>
+                            <td class="sample05_P2"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample05_N3">3</td>
+                            <td class="sample05_Q3">[100,200,300,500,500]</td>
+                            <td class="sample05_M3">push(600)</td>
+                            <td class="sample05_P3"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample05_N4">4</td>
+                            <td class="sample05_Q4">[100,200,300,500,500]</td>
+                            <td class="sample05_M4">push(600)</td>
+                            <td class="sample05_P4"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample05_N5">5</td>
+                            <td class="sample05_Q5">[100,200,300,500,500]</td>
+                            <td class="sample05_M5">push(600)</td>
+                            <td class="sample05_P5"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample05_N6">6</td>
+                            <td class="sample05_Q6">[100,200,300,500,500]</td>
+                            <td class="sample05_M6">push(600)</td>
+                            <td class="sample05_P6"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <script>
+                {
+                    const arrNum1 = [100, 200, 300, 400, 500];
+                    const arrNumReverse = arrNum1.reverse();
+
+                    document.querySelector(".sample05_N1").innerHTML = "1";
+                    document.querySelector(".sample05_Q1").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample05_M1").innerHTML = "reverse()";
+                    document.querySelector(".sample05_P1").innerHTML = arrNumReverse; //600을 추가하고 숫자레르 셈
+
+                    const arrNum2 = [100, 200, 300, 400, 500];
+                    const arrNumSort2 = arrNum2.sort();
+
+                    document.querySelector(".sample05_N2").innerHTML = "2";
+                    document.querySelector(".sample05_Q2").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample05_M2").innerHTML = "sort()";
+                    document.querySelector(".sample05_P2").innerHTML = arrNumSort2; //600을 추가하고 숫자레르 셈
+
+                    const arrNum3 = [100, 200, 300, 400, 500];
+                    const arrNumSort3 = arrNum3.sort(function (a, b) {
+                        return b - a
+                    });
+
+                    document.querySelector(".sample05_N3").innerHTML = "3";
+                    document.querySelector(".sample05_Q3").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample05_M3").innerHTML = "sort(function (a,b){return b-a})";
+                    document.querySelector(".sample05_P3").innerHTML = arrNumSort3; //600을 추가하고 숫자레르 셈
+
+                    const arrNum4 = [500, 400, 300, 200, 100];
+                    const arrNumSort4 = arrNum4.sort(function (a, b) {
+                        return a - b
+                    });
+
+                    document.querySelector(".sample05_N4").innerHTML = "4";
+                    document.querySelector(".sample05_Q4").innerHTML = "[500,400,300,200,100]";
+                    document.querySelector(".sample05_M4").innerHTML = "sort(function (a,b){return a-b})";
+                    document.querySelector(".sample05_P4").innerHTML = arrNumSort4; //600을 추가하고 숫자레르 셈
+
+                    const arrNum5 = ['c', 'b', 'e', 'w', 'h'];
+                    const arrNumSort5 = arrNum5.sort(function (a, b) {
+                        return a.localeCompare(b)
+                    });
+
+                    document.querySelector(".sample05_N5").innerHTML = "5";
+                    document.querySelector(".sample05_Q5").innerHTML = "['c','b','e','w','h']";
+                    document.querySelector(".sample05_M5").innerHTML = "a.localeCompare(b)";
+                    document.querySelector(".sample05_P5").innerHTML = arrNumSort5; //600을 추가하고 숫자레르 셈
+
+                    const arrNum6 = ['c', 'b', 'e', 'w', 'h'];
+                    const arrNumSort6 = arrNum6.sort(function (a, b) {
+                        return b.localeCompare(a)
+                    });
+
+                    document.querySelector(".sample05_N6").innerHTML = "6";
+                    document.querySelector(".sample05_Q6").innerHTML = "['c','b','e','w','h']";
+                    document.querySelector(".sample05_M6").innerHTML = "b.localeCompare(a)";
+                    document.querySelector(".sample05_P6").innerHTML = arrNumSort6; //600을 추가하고 숫자레르 셈
+                }
+            </script>
+
+            
+        </div>
+        <!-- 티스토리 용 끝 -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>

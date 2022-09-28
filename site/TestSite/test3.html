@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .align {
+            align-items: center;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        hr {
+            border: 0.1px solid #ededed;
+            margin-bottom: 20px;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1000px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+
+
+
+        /* 기초 틀 */
+        .cont_divider {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            margin-bottom: 60px;
+        }
+
+        .cont_aside {
+            width: 20%;
+            /* background: #ededed; */
+            height: 100%;
+        }
+
+        .cont_contents {
+            width: 70%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+
+
+
+        /* 사이드바 */
+        .cont_aside img {
+            padding-right: 80px;
+            box-sizing: border-box;
+            margin-bottom: 60px;
+        }
+
+        .cont_aside ul {
+            list-style: none;
+            font-size: 20px;
+        }
+
+        .cont_aside ul li {
+            padding: 10px 0;
+        }
+
+        .cont_aside ul li a {
+            display: block;
+            margin-left: 20px;
+            padding: 10px 0;
+            border-bottom: 1px solid #ededed;
+            font-size: 16px;
+        }
+
+
+
+
+        /* 오른쪽 컨텐츠 */
+
+        /* 슬라이드 */
+        .slider__wrap {
+            overflow: hidden;
+            height: 382px;
+        }
+
+        .slide__inner {
+            display: flex;
+            transform: translateX(0px);
+            transition: 0.25s;
+        }
+
+        .slide__inner2 {
+            /* display: flex; */
+            transform: translateY(0px);
+            transition: 0.25s;
+        }
+
+        /* 자주찾는 서비스 상단 */
+        .contents__service {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+
+        .contents__service a:nth-child(1) {
+            border-right: 2px solid #000;
+            padding-right: 10px;
+            /* font-weight: bold; */
+        }
+
+        .contents__service a:nth-child(2) {
+            padding-left: 10px;
+        }
+
+
+
+
+
+        /* 자주찾는 서비스 하단 */
+        .contents__service__desc {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .desc__cont__01,
+        .desc__cont__02,
+        .desc__cont__03,
+        .desc__cont__04,
+        .desc__cont__05 {
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .desc__cont__01 p,
+        .desc__cont__02 p,
+        .desc__cont__03 p,
+        .desc__cont__04 p,
+        .desc__cont__05 p {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+
+
+
+
+        /* 공지사항 */
+        .contents__notice {
+            display: flex;
+            justify-content: space-between;
+            background: #f7f7f7;
+            padding: 20px;
+        }
+
+        .notice__cont__01,
+        .notice__cont__02,
+        .notice__cont__03,
+        .notice__cont__04,
+        .notice__cont__05 {
+            padding: 20px;
+            box-sizing: border-box;
+            background: #fff;
+            position: relative;
+            text-align: center;
+        }
+
+        .notice__cont__01 img,
+        .notice__cont__02 img,
+        .notice__cont__03 img,
+        .notice__cont__04 img,
+        .notice__cont__05 img {
+            width: 90px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            /* height: 50px; */
+        }
+
+        .notice_emergency_left {
+            text-align: left;
+            font-size: 10px;
+            text-overflow: ellipsis;
+            text-indent: 3;
+            -webkit-line-clamp: 1;
+
+        }
+
+        .notice_emergency_left:nth-child(1),
+        .notice_emergency_left:nth-child(2) {
+            margin-bottom: 10px;
+        }
+
+        .plus {
+            border-radius: 50px;
+            border: 1px solid #ededed;
+
+            width: 30px;
+            height: 30px;
+            padding: 2px 0;
+            font-size: 25px;
+            text-align: center;
+            box-sizing: border-box;
+
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+
+
+
+
+        /* 푸터 설명 */
+        .cont_footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px;
+            box-sizing: border-box;
+            background: #edf2f8;
+            align-items: center;
+        }
+
+        .footer_govern {
+            /* width: 10%; */
+            margin-right: 10px;
+        }
+
+        .footer_govern img {
+            width: 60px;
+        }
+
+        .footer__desc {
+            width: 68%;
+            margin-right: 10px;
+        }
+
+        .footer__sns {
+            /* width: 30%; */
+            display: flex;
+        }
+
+        .footer__sns img {
+            width: 60px;
+        }
+
+        .show {
+            /* border-right: 2px solid #000;
+            padding-right: 10px; */
+            font-weight: bold;
+        }
+
+
+        /* 팝업 */
+        .popup_bg {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.455);
+            z-index: 2;
+            display: none;
+
+        }
+
+        .popup {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            width: 100px;
+            height: 500px;
+        }
+
+        .open {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="nexon">
+    <section class="container section">
+        <div class="popup_bg">
+            <div class="popup">
+                <p class="close_popup">x</p>
+            </div>
+        </div>
+        <div class="cont_divider">
+            <div class="cont_aside">
+                <img class="aside_logo" src="assets/img3/1.jpg" alt="로고">
+                <ul>
+                    <li style="font-weight:bold; color:rgb(66, 32, 255)">서비스</li>
+                    <li>
+                        <a href="">분야별 정책정보</a>
+                        <a href="">정책뉴스</a>
+                        <a href="">연구보고서</a>
+                        <a href="">정책자료</a>
+                    </li>
+                    <li>정책정보</li>
+                    <li>기관정보</li>
+                    <li>고객센터</li>
+                </ul>
+            </div>
+            <div class="cont_contents">
+                <div class="slider__wrap">
+                    <div class="slide__inner">
+                        <img class="slider__item" src="assets/img3/2_slider.jpg" alt="슬라이드1">
+                        <img class="slider__item" src="assets/img3/3_slider.jpg" alt="슬라이드2">
+                        <img class="slider__item" src="assets/img3/4_slider.jpg" alt="슬라이드3">
+                    </div>
+                    <!-- <div class="slide__inner2">
+                        <img class="slider__item" src="assets/img3/2_slider.jpg" alt="슬라이드1">
+                        <img class="slider__item" src="assets/img3/3_slider.jpg" alt="슬라이드2">
+                        <img class="slider__item" src="assets/img3/4_slider.jpg" alt="슬라이드3">
+                    </div> -->
+                </div>
+                <div class="contents__service">
+                    <a class="right" href="#">자주 찾는 서비스</a>
+                    <a class="left" href="#">키워드 서비스</a>
+                </div>
+                <div class="contents__service__desc">
+                    <div class="desc__cont__01">
+                        <img src="assets/img3/5_service.jpg" alt="주민등록본 (초본)교부">
+                        <p>주민등록본<br>(초본)교부</p>
+                    </div>
+                    <div class="desc__cont__02">
+                        <img src="assets/img3/6_service.jpg" alt="주민등록본 (초본)교부">
+                        <p>토지(임야)대장<br>알람/등본 발급신청</p>
+                    </div>
+                    <div class="desc__cont__03">
+                        <img src="assets/img3/7_service.jpg" alt="건축물대장 등/초본 발급(연람) 신청">
+                        <p>건축물대장 등/초본<br>발급(연람) 신청</p>
+                    </div>
+                    <div class="desc__cont__04">
+                        <img src="assets/img3/8_service.jpg" alt="지방세 납세증명">
+                        <p>지방세 납세증명</p>
+                    </div>
+                    <div class="desc__cont__05">
+                        <img src="assets/img3/9_service.jpg" alt="지적도(임야도) 등본 발급 및 열람">
+                        <p>지적도(임야도) 등본<br>발급 및 열람</p>
+                    </div>
+                </div>
+                <div class="contents__notice">
+                    <div class="notice__cont__01">
+                        <p class="plus">+</p>
+                        <p>공지사항</p>
+                        <img src="assets/img3/10_notice.jpg" alt="공지사항">
+                        <li class="notice_emergency_left">[어디서나 대학민원] 호서대학교 팩・・・</li>
+                        <li class="notice_emergency_left">[전라북도 고창군] 새올행정시스템 ・・・</li>
+                        <li class="notice_emergency_left">교육부 행정전자서명인증센터 시스・・・</li>
+                    </div>
+                    <div class="notice__cont__02">
+                        <p class="plus">+</p>
+                        <p>자료실</p>
+                        <img src="assets/img3/11_notice.jpg" alt="자료실">
+                        <li class="notice_emergency_left">인터넷 민원발급 위한 프로그램(주・・・</li>
+                        <li class="notice_emergency_left">정부24 발급물 등록 프로그・・・</li>
+                        <li class="notice_emergency_left">전자문서 관련 설치 프로그・・・</li>
+                    </div>
+                    <div class="notice__cont__03">
+                        <p class="plus">+</p>
+                        <p>FAQ</p>
+                        <img src="assets/img3/12_notice.jpg" alt="FAQ">
+                        <li class="notice_emergency_left">'민원발급불가' 또는 '발급문가'프린・・・</li>
+                        <li class="notice_emergency_left">가족관계증명서 프린터 발급이 가・・・</li>
+                        <li class="notice_emergency_left">온라인 전입신고 시 [세대주확인]은 ・・・</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cont_footer">
+            <div class="footer_govern">
+                <img src="assets/img3/13_footer.jpg" alt="정부 24">
+            </div>
+            <div class="footer__desc">
+                <p>03171 서울특별시 세종대로 209 (세종로) 행정안전부</p>
+                <p>정부24 콜센터 1588-2188 정부민원안내콜센터 국번없이 110</p>
+                <p>Copyright Ministry of the Interior and Safety. All Rights reserved.</p>
+            </div>
+            <div class="footer__sns">
+                <img src="assets/img3/14_footer.jpg" alt="naver band">
+                <img src="assets/img3/15_footer.jpg" alt="twitter">
+                <img src="assets/img3/16_footer.jpg" alt="facebook">
+            </div>
+        </div>
+    </section>
+    <script>
+        const slideInner = document.querySelector(".slide__inner");
+        const slideInner2 = document.querySelector(".slide__inner2");
+        const slideWrap = document.querySelector(".slider__wrap");
+        const slideItem = document.querySelectorAll(".slider__item");
+
+        let width = slideInner.offsetWidth
+        let currentIndex = 0;
+
+        setInterval(() => {
+            console.log(width)
+            slideInner.style.transform = "translateX(" + -currentIndex + "px)"
+            if (currentIndex == 2100) {
+                slideInner.style.transform = "translateX(0px)"
+                currentIndex = 0;
+            }
+            currentIndex++;
+        }, 10)
+
+        // setInterval(() => {
+        //     slideInner2.style.transform = "translateY(" + -currentIndex * 384 + "px)"
+        //     if (currentIndex == 3) {
+        //         slideInner2.style.transform = "translateY(0px)"
+        //         currentIndex = 0;
+        //     }
+        //     // console.log(currentIndex)
+        //     currentIndex++;
+        // }, 1000)
+
+        const righttab = document.querySelector(".right");
+        const lefttab = document.querySelector(".left");
+
+        lefttab.addEventListener("click", () => {
+            lefttab.classList.add("show");
+            righttab.classList.remove("show");
+        })
+        righttab.addEventListener("click", () => {
+            lefttab.classList.remove("show");
+            righttab.classList.add("show");
+        })
+
+        const popup = document.querySelector(".popup_bg");
+        const button = document.querySelectorAll(".plus")
+        const close = document.querySelector(".close_popup")
+
+        button.forEach((e, i) => {
+            e.addEventListener("click", () => {
+                popup.classList.add("open")
+            })
+        })
+        close.addEventListener("click", () => {
+            popup.classList.remove("open")
+        })
+    </script>
+</body>
+
+</html>

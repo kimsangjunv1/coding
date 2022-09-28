@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-areas: 
+            "header header"
+            "nav nav"
+            "aside section"
+            "footer footer"
+            ;
+            grid-template-columns: 25% 75%;
+            grid-template-rows: 100px 100px 780px 100px;
+        }
+        body{
+            background-color: #fff3e0;
+        }
+        #header {
+            grid-area: header;
+            background-color: #FFE082;
+
+        }
+        #nav {
+            grid-area: nav;
+            
+            background-color: #ffcc80;
+        }
+        #aside {
+            grid-area: aside;
+            
+            background-color: #ffb74d;
+            float: left;
+        }
+        #section {
+            grid-area: section;
+            
+            background-color: #ffa726;
+            float: left;
+        }
+        #footer {
+            grid-area: footer;
+            
+            background-color: #ff9800;
+            
+        }
+        @media(max-width:1280px){ /* 창 최대 크기가 1280px이 되었을때 */
+            #wrap {
+                width: 96%;
+            }
+        }
+        @media(max-width:768px){ /* 창 최대 크기가 1280px이 되었을때 */
+            #wrap {
+                width: 100%; /* width(넓이) 값을 1280의 96%만 사용합니다. */
+
+                grid-template-columns: 22% 78%;
+                grid-template-rows: 100px 100px 780px 100px;
+            }
+        }
+        @media(max-width:480px){ /* 창 최대 크기가 1280px이 되었을때 */
+            #wrap {
+                /* width: 100%; 해석 : 어차피 창 크기가 768에 도달했을때 width:100%가 실행되었으니까 또 쓸 필요가 없다 */
+                
+                grid-template-areas: /* 이제 한줄이니까 하나씩 */
+                "header"
+                "nav"
+                "aside"
+                "section"
+                "footer"
+                ;
+
+                grid-template-columns: 100%;
+                grid-template-rows: 100px 100px 300px 480px 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"> <!-- 순서 1 : 무슨 요소가 들어가는지 -->
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="aside"></div>
+        <div id="section"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

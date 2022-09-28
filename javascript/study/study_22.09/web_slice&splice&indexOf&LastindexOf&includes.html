@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!-- 티스토리 용 -->
+        <div id="sample01" class="container sample document">
+        <!-- 메인 샘플 시작 -->
+            <h2 class="t_tit2">slice/splice</h2>
+            <p class="t_desc2">
+                slice : 어떤 배열의 begin부터 end까지(end 미포함)에 대한 얕은 복사본을 새로운 배열 객체로 반환합니다.<br>
+                splice : 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">const arrNum1 = [100, 200, 300];
+const arrNum2 = [400, 500, 600];
+const arrConcat = arrNum1.concat(arrNum2);
+
+
+const arrSpread = [...arrNum1, ...arrNum2];
+</code></pre>
+            </div>
+
+            <hr>
+
+            <h2 class="t_tit2">indexOf/LastIndexOf</h2>
+            <p class="t_desc2">
+                indexOf : 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고 존재하지 않으면 -1을 반환해요<br>
+                LastIndexOf : 주어진 값과 일치하는 부분을 fromIndex로부터 역순으로 탐색하여, 최초로 마주치는 인덱스를 반환하며, 만약 찾을 수 없을시 -1을 반환하게 되요!<br>
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">const arrNum1 = [100, 200, 300];
+const arrNum2 = [400, 500, 600];
+const arrConcat = arrNum1.concat(arrNum2);
+
+
+const arrSpread = [...arrNum1, ...arrNum2];
+</code></pre>
+            </div>
+            <div class="t_tit2">예시보기</div>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 5%">
+                        <col style="width: 32%">
+                        <col style="width: 22%">
+                        <col style="width: 42%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>기본값</th>
+                            <th>메서드</th>
+                            <th>리턴값</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sample06_N1">concat</td>
+                            <td class="sample06_Q1">[100,200,300,500,500]</td>
+                            <td class="sample06_M1">push(600)</td>
+                            <td class="sample06_P1"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample06_N2">spread</td>
+                            <td class="sample06_Q2">[100,200,300,500,500]</td>
+                            <td class="sample06_M2">push(600)</td>
+                            <td class="sample06_P2"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample07_N3">reduce</td>
+                            <td class="sample07_Q3">[100,200,300,500,500]</td>
+                            <td class="sample07_M3">push(600)</td>
+                            <td class="sample07_P3"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample07_N4">reduce&concat</td>
+                            <td class="sample07_Q4">[100,200,300,500,500]</td>
+                            <td class="sample07_M4">push(600)</td>
+                            <td class="sample07_P4"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample07_N5">reduce&concat</td>
+                            <td class="sample07_Q5">[100,200,300,500,500]</td>
+                            <td class="sample07_M5">push(600)</td>
+                            <td class="sample07_P5"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+
+            <h2 class="t_tit2">includes</h2>
+            <p class="t_desc2">
+                includes : 배열이 특정 요소를 포함하고 있는지 판별합니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">const arrNum1 = [100, 200, 300];
+const arrNum2 = [400, 500, 600];
+const arrConcat = arrNum1.concat(arrNum2);
+
+
+const arrSpread = [...arrNum1, ...arrNum2];
+</code></pre>
+            </div>
+            <div class="t_tit2">예시보기</div>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 5%">
+                        <col style="width: 32%">
+                        <col style="width: 22%">
+                        <col style="width: 42%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>기본값</th>
+                            <th>메서드</th>
+                            <th>리턴값</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sample06_N1">concat</td>
+                            <td class="sample06_Q1">[100,200,300,500,500]</td>
+                            <td class="sample06_M1">push(600)</td>
+                            <td class="sample06_P1"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample06_N2">spread</td>
+                            <td class="sample06_Q2">[100,200,300,500,500]</td>
+                            <td class="sample06_M2">push(600)</td>
+                            <td class="sample06_P2"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample07_N3">reduce</td>
+                            <td class="sample07_Q3">[100,200,300,500,500]</td>
+                            <td class="sample07_M3">push(600)</td>
+                            <td class="sample07_P3"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample07_N4">reduce&concat</td>
+                            <td class="sample07_Q4">[100,200,300,500,500]</td>
+                            <td class="sample07_M4">push(600)</td>
+                            <td class="sample07_P4"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample07_N5">reduce&concat</td>
+                            <td class="sample07_Q5">[100,200,300,500,500]</td>
+                            <td class="sample07_M5">push(600)</td>
+                            <td class="sample07_P5"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <script>
+                //slice
+                {
+                    const arrNum = [100, 200, 300, 400, 500];
+                    const result = arrNum.slice(2);
+
+                    document.querySelector(".sample08_N1").innerHTML = "1";
+                    document.querySelector(".sample08_Q1").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample08_M1").innerHTML = "arrNum.slice(2)";
+                    document.querySelector(".sample08_P1").innerHTML = result; //600을 추가하고 숫자레르 셈
+
+                    const result2 = arrNum.slice(2, 3);
+
+                    document.querySelector(".sample08_N1").innerHTML = "2";
+                    document.querySelector(".sample08_Q1").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample08_M1").innerHTML = "arrNum.slice(2, 3)";
+                    document.querySelector(".sample08_P1").innerHTML = result2; //600을 추가하고 숫자레르 셈
+
+                    const result3 = arrNum.slice(2, 4);
+
+                    document.querySelector(".sample08_N1").innerHTML = "3";
+                    document.querySelector(".sample08_Q1").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample08_M1").innerHTML = "arrNum.slice(2, 4)";
+                    document.querySelector(".sample08_P1").innerHTML = result3; //600을 추가하고 숫자레르 셈
+
+                    const result4 = arrNum.slice(2, 5);
+
+                    document.querySelector(".sample08_N1").innerHTML = "4";
+                    document.querySelector(".sample08_Q1").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample08_M1").innerHTML = "arrNum.slice(2, 5)";
+                    document.querySelector(".sample08_P1").innerHTML = result4; //600을 추가하고 숫자레르 셈
+
+                    const result5 = arrNum.slice(-2);
+
+                    document.querySelector(".sample08_N1").innerHTML = "5";
+                    document.querySelector(".sample08_Q1").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample08_M1").innerHTML = "arrNum.slice(-2)";
+                    document.querySelector(".sample08_P1").innerHTML = result5; //600을 추가하고 숫자레르 셈
+
+                    const result6 = arrNum.slice(-2, 5);
+
+                    document.querySelector(".sample08_N1").innerHTML = "6";
+                    document.querySelector(".sample08_Q1").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample08_M1").innerHTML = "arrNum.slice(-2, 5)";
+                    document.querySelector(".sample08_P1").innerHTML = result6; //600을 추가하고 숫자레르 셈
+                }
+
+                //splice
+                {
+                    arrNum = [100, 200, 300, 400, 500]
+                    const result = arrNum.splice(2);
+
+                    document.querySelector(".sample09_N1").innerHTML = "1";
+                    document.querySelector(".sample09_Q1").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample09_M1").innerHTML = "arrNum.slice(2)";
+                    document.querySelector(".sample09_P1").innerHTML = result; //600을 추가하고 숫자레르 셈
+                    document.querySelector(".sample09_A1").innerHTML = arrNum; //600을 추가하고 숫자레르 셈
+
+
+                    arrNum2 = [100, 200, 300, 400, 500]
+                    const result2 = arrNum.splice(2, 3);
+
+                    document.querySelector(".sample09_N2").innerHTML = "2";
+                    document.querySelector(".sample09_Q2").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample09_M2").innerHTML = "arrNum.slice(2, 3)";
+                    document.querySelector(".sample09_P2").innerHTML = result2; //600을 추가하고 숫자레르 셈
+                    document.querySelector(".sample09_A2").innerHTML = arrNum2; //600을 추가하고 숫자레르 셈
+
+
+                    arrNum3 = [100, 200, 300, 400, 500]
+                    const result3 = arrNum3.splice(2, 3, 'javascript');
+
+                    document.querySelector(".sample09_N3").innerHTML = "3";
+                    document.querySelector(".sample09_Q3").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample09_M3").innerHTML = "arrNum3.splice(2, 3, 'javascript')";
+                    document.querySelector(".sample09_P3").innerHTML = result3; //600을 추가하고 숫자레르 셈
+                    document.querySelector(".sample09_A3").innerHTML = arrNum3; //600을 추가하고 숫자레르 셈
+
+
+                    arrNum4 = [100, 200, 300, 400, 500]
+                    const result4 = arrNum4.splice(1, 1, 'javascript');
+
+                    document.querySelector(".sample09_N4").innerHTML = "4";
+                    document.querySelector(".sample09_Q4").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample09_M4").innerHTML = "arrNum4.splice(1, 1, 'javascript')";
+                    document.querySelector(".sample09_P4").innerHTML = result4; //600을 추가하고 숫자레르 셈
+                    document.querySelector(".sample09_A4").innerHTML = arrNum4; //600을 추가하고 숫자레르 셈
+
+                    arrNum5 = [100, 200, 300, 400, 500];
+                    const result5 = arrNum5.splice(1, 1, 'javascript');
+
+                    document.querySelector(".sample09_N5").innerHTML = "5";
+                    document.querySelector(".sample09_Q5").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample09_M5").innerHTML = "arrNum5.splice(1, 1, 'javascript')";
+                    document.querySelector(".sample09_P5").innerHTML = result5; //600을 추가하고 숫자레르 셈
+                    document.querySelector(".sample09_A5").innerHTML = arrNum5; //600을 추가하고 숫자레르 셈
+
+                    arrNum6 = [100, 200, 300, 400, 500];
+                    const result6 = arrNum5.splice(1, 1, 'javascript');
+
+                    document.querySelector(".sample09_N6").innerHTML = "6";
+                    document.querySelector(".sample09_Q6").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample09_M6").innerHTML = "arrNum6.splice(1, 1, 'javascript')";
+                    document.querySelector(".sample09_P6").innerHTML = result6; //600을 추가하고 숫자레르 셈
+                    document.querySelector(".sample09_A6").innerHTML = arrNum6; //600을 추가하고 숫자레르 셈
+                }
+
+                //indexOf
+                {
+                    const arrNum = [100, 200, 300, 400, 500];
+                    const arrIndex = arrNum.indexOf(200);
+
+                    document.querySelector(".sample10_N1").innerHTML = "1";
+                    document.querySelector(".sample10_Q1").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample10_M1").innerHTML = "arrNum.indexOf(200)";
+                    document.querySelector(".sample10_P1").innerHTML = arrIndex; //600을 추가하고 숫자레르 셈
+
+                    const arrNum2 = [100, 200, 300, 400, 500];
+                    const arrIndex2 = arrNum.indexOf(300);
+
+                    document.querySelector(".sample10_N2").innerHTML = "2";
+                    document.querySelector(".sample10_Q2").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample10_M2").innerHTML = "arrNum.indexOf(300)";
+                    document.querySelector(".sample10_P2").innerHTML = arrIndex2; //600을 추가하고 숫자레르 셈
+
+                    const arrNum3 = [100, 200, 300, 400, 500];
+                    const arrIndex3 = arrNum.indexOf(300);
+
+                    document.querySelector(".sample10_N3").innerHTML = "3";
+                    document.querySelector(".sample10_Q3").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample10_M3").innerHTML = "arrNum.indexOf(600)";
+                    document.querySelector(".sample10_P3").innerHTML = arrIndex3; //600을 추가하고 숫자레르 셈
+
+                    const arrNum4 = [100, 200, 300, 400, 500];
+                    const arrIndex4 = arrNum.lastIndexOf(300);
+
+                    document.querySelector(".sample10_N4").innerHTML = "4";
+                    document.querySelector(".sample10_Q4").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample10_M4").innerHTML = "arrNum.lastIndexOf(200)";
+                    document.querySelector(".sample10_P4").innerHTML = arrIndex4; //600을 추가하고 숫자레르 셈
+
+
+                    const arrNum5 = [100, 200, 300, 400, 500];
+                    const arrIndex5 = arrNum5.includes(200);
+
+                    document.querySelector(".sample10_N5").innerHTML = "5";
+                    document.querySelector(".sample10_Q5").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample10_M5").innerHTML = "arrNum.includes(200)";
+                    document.querySelector(".sample10_P5").innerHTML = arrIndex5; //600을 추가하고 숫자레르 셈
+
+
+                    const arrNum6 = [100, 200, 300, 400, 500];
+                    const arrIndex6 = arrNum6.includes(600);
+
+                    document.querySelector(".sample10_N6").innerHTML = "6";
+                    document.querySelector(".sample10_Q6").innerHTML = "[100,200,300,400,500]";
+                    document.querySelector(".sample10_M6").innerHTML = "arrNum.includes(600)";
+                    document.querySelector(".sample10_P6").innerHTML = arrIndex6; //600을 추가하고 숫자레르 셈
+                }
+                
+                //lastIndexOf
+                {
+                    
+                }
+            </script>
+
+            
+        </div>
+        <!-- 티스토리 용 끝 -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>

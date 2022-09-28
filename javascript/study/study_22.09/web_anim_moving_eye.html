@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <!-- 메인 샘플 시작 -->
+            <main id="main">
+                <div class="document">
+                    <h2 class="t_tit">공이 돌아가는 애니메이션을 구현해보자~!</h2>
+                    <p class="t_desc">
+                        이번에는 눈알이 마우스를 따라 돌아가는 효과를 한번 구현해볼게요!!
+                    </p>
+                    <hr>
+                    <h2 class="t_tit2">HTML 코드</h2>
+                    <p class="t_desc2">html 코드는 별로 작성할게 없습니다<br>
+                      하단과 같이 작성 후 원하는 글자를 .text 클래스에 작성해 커스텀 하면 되더라구요!
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;div class="wrapper"&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="me"&gt;
+      &lt;div class="eye"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="text"&gt;ABCDE&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">CSS 코드</h2>
+                    <p class="t_desc2">기본 적으로 모든 요소가 가운데에 정렬되고 살을 붙여주기 위해 하단과 같이 css 코드를 작성합니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  height: 100%;
+  overflow: hidden;
+}
+
+.wrapper{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 369px;
+  height: 547px;
+  transform-style: preserve-3d;
+  perspective: 600px;
+}
+
+.me{
+  position: absolute;
+  width: 369px;
+  height: 547px;
+  transform: translateZ(80px) scale(0.8);
+}
+
+.me::before,
+.me::after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  background: url(http://www.supah.it/dribbble/006/profile.png) no-repeat 0 0;
+}
+
+.me::after {
+  height: 30px;
+  top: auto;
+  bottom: -15px;
+  filter: blur(15px);
+  background-size: 100% 30px;
+  border-radius: 100px;
+  
+}
+
+.eye, .eye::before{
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 175px;
+  left: 119px;
+  z-index: -1;
+  background: url(http://www.supah.it/dribbble/006/eye.png)
+}
+
+.eye::before{
+  content: '';
+  top: -3px;
+  left: 99px; 
+}
+
+.text{
+  position; absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 390px;
+  height: 595px;
+  transform: translatez(150px) translatex(-11px) translatey(-26px) scale(.55);
+  border: 3px solid #fff;
+  text-align: center;
+  line-height: 1000px;
+  color: #fff;
+  opacity: 0.3;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.36) 39%, rgba(255,255,255,0) 51%, #000 100%)
+}
+
+.text::after {
+  content: 'eye moving';
+  width: 100%;
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  z-index: 1;
+  line-height: 1;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  text-indent: 20px;
+}
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">JS 코드</h2>
+                    <p class="t_desc2">
+                      1. wrap이라는 변수에 .wrapper 클래스를 담아 가운데에 고정시켜준뒤<br> 
+                      2. 브라우저의 중심을 기준으로 마우스가 위치한 좌표의 값을 구한 뒤<br> 
+                      3. 각각 wrap(.wrapper) 와 eye(.eye) 변수에 translate를 통해<br>
+                      4. 이를 통해 마우스를 따라 눈이 움직이고 카드가 같이 움직이는 듯한 효과를 줍니다!
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">const wrap = document.querySelector('.wrapper');
+  const eye = document.querySelector('.eye');
+  const speed = 1;
+  let x = 0;
+  let y = 0;
+  let followX = 0;
+  let followY = 0;
+  function animate() {
+    x += (followX - x) * speed;
+    y += (followY - y) * speed;
+    eye.style.transform = `translate(${-x}px, ${-y}px)`;
+    wrap.style.transform = `translate(-50%,-50%) perspective(600px) rotateX(${-y}deg) rotateY(${-x}deg)`;
+    requestAnimationFrame(animate);
+  }
+  window.addEventListener('mousemove', (e) => {
+    let mouseX = Math.max(-100, Math.min(100,window.innerWidth / 2 - e.clientX));
+    let mouseY = Math.max(-100, Math.min(100,window.innerHeight / 2 - e.clientY));
+     followX = (12 * mouseX) / 100;
+     followY = (10 * mouseY) / 100;
+  });
+  window.addEventListener('keydown', (e)=>{
+    switch(e.keyCode) {
+      case 37:
+        followX = 12;
+        break;
+      case 38:
+        followY = 10;
+        break;
+      case 39:
+        followX = -12;
+        break;
+      case 40:
+        followY = -10;
+        break;
+      default:
+        break;
+    }
+  });
+  animate()
+</code></pre>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">왼성!</h2>
+                    <p class="t_desc2">완성하고 나니까 많이 기괴하네요 ㅋㅋㅋㅋㅋㅋㅋ</p>
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kimsangjunv1/embed/mdLqKjX?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                      See the Pen <a href="https://codepen.io/kimsangjunv1/pen/mdLqKjX">
+                      Untitled</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                      on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </div>
+            </main>
+            <!-- 메인 샘플 끝 -->
+        </div>
+        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>

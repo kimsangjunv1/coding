@@ -64,73 +64,112 @@
             <!-- 메인 샘플 시작 -->
             <main id="main">
                 <div class="document">
-                    <h2 class="t_tit2">마우스 이펙트_03 : 마우스 포인터 부분에만 하이라이트 효과 줘보기!</h2>
-                    <p class="t_desc2">
-                        이미지 두장을 이용해 마우스 포인터에도 이미지를 백그라운드와 동일하게 주고<br>
-                        백그라운드 이미지에 하이라이트 효과를 주는 듯한 방식을 구현해보도록 할게요!
+                    <h2 class="t_tit">공이 돌아가는 애니메이션을 구현해보자~!</h2>
+                    <p class="t_desc">
+                        공이 .ball 클래스를 중심으로 .ball:after가 360도로 돌아가는 효과를 구현해보도록 하겠습니다.<br>
+                        기대되는 마음을 품고 가~~~~~~보자고
                     </p>
-                    <h2 class="t_tit2">HTML 코드 : 이미지 두개 사용</h2>
-                    <p class="t_desc2">이번 예제는 PUG를 사용하여 HTML 보다 효율적으로 작업 해보겠습니다<br>각 원을 만들어주기 위해 for문을 통해 반복시켜 생성해줍니다.</p>
+                    <hr>
+                    <h2 class="t_tit2">HTML 코드</h2>
+                    <p class="t_desc2">공이 돌아갈 수 있게 공들을 .ball 클래스를 적어 만들어주었어요!</p>
                     <div class="t_code">
-<pre><code class="language-css">&lt;main id="main"&gt;
-    &lt;section id="mouseType"&gt;
-        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
-        &lt;div class="mouse__cursor2"&gt;&lt;/div&gt;
-        &lt;div class="mouse__wrap"&gt;
-            &lt;p&gt;&lt;span&gt;Trust&lt;/span&gt; My Self, Then you will be the &lt;span&gt;winner&lt;/span&gt;&lt;/p&gt;
-            &lt;p&gt;&lt;span&gt;너 자신&lt;/span&gt;을 믿어라 그리하면 &lt;span&gt;승리자&lt;/span&gt;가 될 수 있다&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-&lt;/main&gt;
+<pre><code class="language-css">&lt;div class="loader"&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+  &lt;/div&gt;
 </code></pre>
                     </div>
                     <hr>
-                    <h2 class="t_tit2">CSS 코드 : 마우스 커서에 이미지 넣기 </h2>
-                    <p class="t_desc2">GSAP를 통해 부드럽게 이동시켜주기 위해 js 코드는 gsap를 사용하여 작성해주도록 합시다!
-                        1. 백그라운드에 색상을 주는 대신 background-image를 통해 뒷배경과 동일한 이미지를 넣어줍니다!.<br>
-                        2. 백그라운드 이미지는 마우스 커서 크기에 딱 맞도록'background-size' 를 설정해줍니다.<br>
-                        3. 배경은 가운데로 모아주기 위해 'background-position'을 'center cneter'를 설정해 정 가운데에 위치시켜줍니다.
-                        4. 'background-attachment'를 'fixed'로 설정해 배경화면을 고정해주도록 합시다!
+                    <h2 class="t_tit2">CSS 코드</h2>
+                    <p class="t_desc2">사실상 이번 예제의 핵심인데 아래의 사항들을 생각하며 만들어 주시면 되더라구요!<br>
+                        1. .ball 클래스는 absolute로 설정해 중심을 각각 top,left,transform을 통해 가운데로 중심을 잡고
+                        2. 그 .ball 클래스의 원을 :after를 이용해 생성해줍니다
+                        3. .ball 주위를 돌아갈 수 있게 떨어트리기 위해서 :after에 absolute를 설정해 top을 0으로 설정해 떨어트려 만들어 줍니다
                     </p>
                     <div class="t_code">
-<pre><code class="language-js">.mouse__cursor{
+<pre><code class="language-js">body {
+    background-color: rgba(100,20,240,0.7);
+  }
+  .loader {
     position: absolute;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    animation: spin .6s linear infinite reverse;
+  }
+  .ball {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    animation: spin 1s infinite ease-in-out;
+  }
+  
+  .ball:after {
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
     top: 0;
-    width: 200px;
-    height: 200px;
-    z-index: -1;
-    border-radius: 50%;
-    background-image: url(../../../assets/slider/effect_bg_08.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    border: 5px solid #fff;
-}
+  }
+  .ball:nth-child(2) {
+    animation-delay: -0.1s;
+  }
+  .ball:nth-child(3) {
+    animation-delay: -0.2s;
+  }
+  .ball:nth-child(4) {
+    animation-delay: -0.3s;
+  }
+  .ball:nth-child(5) {
+    animation-delay: -0.4s;
+  }
+  .ball:nth-child(6) {
+    animation-delay: -0.5s;
+  }
+  .ball:nth-child(7) {
+    animation-delay: -0.6s;
+  }
+  .ball:nth-child(8) {
+    animation-delay: -0.7s;
+  }
+  .ball:nth-child(9) {
+    animation-delay: -0.8s;
+  }
+  .ball:nth-child(10) {
+    animation-delay: -0.9s;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
 </code></pre>
                     </div>
                     <hr>
-                    <h2 class="t_tit2">JS 코드 : GSAP를 통해 부드럽게 이동시켜주기 </h2>
-                    <p class="t_desc2">GSAP를 통해 부드럽게 이동시켜주기 위해 js 코드는 gsap를 사용하여 작성해주도록 합시다!</p>
-                    <div class="t_code">
-<pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor")
-
-    const circle = cursor.getBoundingClientRect();
-    
-    window.addEventListener("mousemove", (e)=>{
-        gsap.to(cursor, {
-            duration: 0.5, 
-            left: e.pageX - circle.width/2, 
-            top: e.pageY - circle.height/2,
-        });
-    })
-</code></pre>
-                    </div>
-                    <hr>
-
-                    <iframe height="300" style="width: 100%;" scrolling="no" title="circle" src="https://codepen.io/kimsangjunv1/embed/wvjdPXP?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/wvjdPXP">
-                        circle</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
+                    <h2 class="t_tit2">왼성~!~!~!~!</h2>
+                    <p class="t_desc2">가운데를 중심으로 원들이 돌아가면서 로딩화면을 만들다니 너무 신기하지 않나요?<br>
+                    신기하지 않아도 신기해 하십쇼.</p>
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="ball" src="https://codepen.io/kimsangjunv1/embed/oNdGYRq?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kimsangjunv1/pen/oNdGYRq">
+                        ball</a> by kimsangjunv1 (<a href="https://codepen.io/kimsangjunv1">@kimsangjunv1</a>)
                         on <a href="https://codepen.io">CodePen</a>.
                       </iframe>
                 </div>
