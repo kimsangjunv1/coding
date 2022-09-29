@@ -1545,10 +1545,10 @@
         const searchInfo = document.querySelector(".search__info .num"); //전체 갯수
         const searchInfo2 = document.querySelector(".search__info .num2"); //찾은 갯수
 
-
+        //누른 이름
         const name = document.querySelector(".search__info .name"); // 누른거 이름
 
-
+        //클릭했을때 누르면 나올 이름
         searchInfo.textContent = searchList.length;
         searchKeyword.forEach((el) => {
             el.addEventListener("click", () => {
@@ -1580,12 +1580,21 @@
             });
         });
 
+        //클릭하기
+        // document.querySelectorAll(".search__list span").forEach(span => {
+        //     span.addEventListener("click", ()=>{
+        //         const clickWord = span.innerText;
+        //     })
+        // })
+
+        //all 클릭했을때 모두 보여줄 값
         const allshow = document.querySelector(".all")
 
         allshow.addEventListener("click", ()=>{
             searchList.forEach((e,i)=>{
                 e.classList.remove("hide");
             })
+            //나오게 하기
             const hidingNum = document.querySelectorAll(".search__list ul li");
             document.querySelector(".num2").textContent = hidingNum.length;
         })

@@ -1693,43 +1693,59 @@ document.querySelector(".sample13_P4").innerHTML = result4; //600을 추가하�
             const num = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k']
 
             // for
-            // for(let i=0; i<=num.length; i++){
-            //     if(i%2==1){
-            //         console.log(num[i]);
-            //     }
-            // }
+            for(let i=0; i<=num.length; i++){
+                if(i%2==1){
+                    console.log(num[i]);
+                }
+            }
 
             //forEach
-            // num.forEach((e, i) => {
-            //     if (e == 'b' || e == 'd' || e == 'f' || e == 'h' || e == 'k') {
-            //         console.log(num[i]);
-            //     }
-            // })
+            num.forEach((e, i) => {
+                if (e == 'b' || e == 'd' || e == 'f' || e == 'h' || e == 'k') {
+                    console.log(num[i]);
+                }
+            })
             // console.log(num.includes('a','b'))
 
-            //if
-            // if(num.includes('b')&&num.includes('d')&&num.includes('f')&&num.includes('h')&&num.includes('k')){
-            //     for(let i=1; i<=num.length; i+=2){
-            //         console.log(num[i])
-            //     }
-            // }
+            //includes
+            if(num.includes('b')&&num.includes('d')&&num.includes('f')&&num.includes('h')&&num.includes('k')){
+                for(let i=1; i<=num.length; i+=2){
+                    console.log(num[i])
+                }
+            }
 
             //map
-            // num.map((e, i) => {
-            //     if (e == 'b' || e == 'd' || e == 'f' || e == 'h' || e == 'k') {
-            //         console.log(num[i]);
-            //     }
-            // })
+            num.map((e, i) => {
+                if (e == 'b' || e == 'd' || e == 'f' || e == 'h' || e == 'k') {
+                    console.log(num[i]);
+                }
+            })
 
             //indexOf (이건아님)
-            // for(let i=0; i<=num.length; i+=2){
-            //     if(num.indexOf(num[i])%2==0){
-            //         console.log(num[i]);
-            //     }
-            // }
+            for(let i=0; i<=num.length; i+=2){
+                if(num.indexOf(num[i])%2==0){
+                    console.log(num[i]);
+                }
+            }
 
 
             // console.log(num.pop('k','b','c'))
+
+            //e, f(3가지)
+
+            //map
+            num.map((e, i) => {
+                if (e == 'e' || e == 'f') {
+                    console.log(num[i]);
+                }
+            })
+
+            //for
+            for(let i=0; i<=2; i++){
+                if(num[i]=='a'||num[i]=='b'){
+                    console.log(num[i]);
+                }
+            }
 
         }
     </script>

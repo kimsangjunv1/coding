@@ -190,6 +190,28 @@ li {
   color: #fff;
 }
 
+.search__list em {
+  float: right;
+  font-style: normal;
+}
+
+.search__list .line{
+  margin-top: 70px;
+}
+
+.search__list .line li{
+  background: #e3eaf5;
+  padding: 10px 30px;
+  margin-bottom: 5px;
+  border-radius: 50px;
+}
+
+.search__list .line li:hover{
+  background: #d3e2fa;
+  cursor: pointer;
+}
+
+
 .search__list li.hide {
   display: none;
 }
@@ -245,7 +267,7 @@ li {
   content: "";
   height: 35px;
   width: 100%;
-  background-color: #030385;
+  background-color: #464652;
   padding-top: 9px;
   padding-left: 10px;
   color: #fff;
@@ -256,7 +278,7 @@ li {
   bottom: 100px;
   padding: 5px;
   z-index: 10001;
-  border: 8px ridge #cacaca;
+  border: 1px solid #cacaca;
   background-color: #ededed;
   text-align: center;
   cursor: pointer;
@@ -279,7 +301,7 @@ li {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.381);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10001;
@@ -288,9 +310,6 @@ li {
 .source__box {
   background-color: rgb(255, 255, 255);
   width: 700px;
-
-  /* margin: auto; */
-  /* margin-top: 120px; */
   position: fixed;
   left: 50%;
   top: 50%;
@@ -298,7 +317,8 @@ li {
   backdrop-filter: blur(15px);
   box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.155);
   overflow: hidden;
-  border: 8px ridge #cacaca;
+  border: 1px solid #cacaca;
+  border-radius: 10px;
   animation: zoomOut 0.5s ease backwards; /*뒤에s껀 딜레이*/
 }
 .source__box.hide {
@@ -333,7 +353,7 @@ li {
 }
 
 .source__container {
-  background-color: #c2bcbc;
+  /* background-color: #c2bcbc; */
   height: 500px;
   overflow: scroll;
 }
@@ -380,6 +400,28 @@ li {
 
 .source__container::-webkit-scrollbar-track {
   background-color: transparent; /*스크롤바 트랙 색상*/
+}
+
+.search__click {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.search__click li {
+  display: inline;
+}
+
+.search__click li a {
+  display: inline-block;
+  border: 1px solid var(--htmlColor);
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 5px 0px;
+}
+
+.search__click li a:hover {
+  background-color: var(--htmlColor);
+  color: #fff;
 }
 
 @keyframes foldOut {

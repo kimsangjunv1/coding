@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!-- 티스토리 용 -->
+        <div id="sample01" class="container sample document">
+        <!-- 메인 샘플 시작 -->
+            <h2 class="t_tit">서치 이펙트_05 : 중요도 갯수에 부합하는 CSS 속성 & 중요도에 따른 CSS 속성 찾기!</h2>
+            <P>
+              방법은 여러가지가 있겠지만<br>
+              switch와 dataset을 통해 중요도와 특수한 조건에 따른 결과를 찾아 출력시켜주는 searchEffect를 구현해보도록 하겠습니다~~
+            </P>
+            <hr>
+            <h2 class="t_tit2">HTML 코드 : 뼈대</h2>
+            <p class="t_desc2">
+                간단한 html 구조를 만들어 뼈대를 구성해보도록 합시다!
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;div class="search__wrap"&gt;
+  &lt;span&gt;filter()를 이용하여 속성의 중요도 보여주기&lt;/span&gt;
+  &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+
+  &lt;div class="search__click"&gt;
+      &lt;ul&gt;
+          &lt;li data-star="0"&gt;&lt;a href="#"&gt;☆☆☆☆☆&lt;/a&gt;&lt;/li&gt;
+          &lt;li data-star="1"&gt;&lt;a href="#"&gt;★☆☆☆☆&lt;/a&gt;&lt;/li&gt;
+          &lt;li data-star="2"&gt;&lt;a href="#"&gt;★★☆☆☆&lt;/a&gt;&lt;/li&gt;
+          &lt;li data-star="3"&gt;&lt;a href="#"&gt;★★★☆☆&lt;/a&gt;&lt;/li&gt;
+          &lt;li data-star="4"&gt;&lt;a href="#"&gt;★★★★☆&lt;/a&gt;&lt;/li&gt;
+          &lt;li data-star="5"&gt;&lt;a href="#"&gt;★★★★★&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul&gt;
+          &lt;li data-num="1"&gt;&lt;a href="#"&gt;1개 이상&lt;/a&gt;&lt;/li&gt;
+          &lt;li data-num="2"&gt;&lt;a href="#"&gt;2개 이상&lt;/a&gt;&lt;/li&gt;
+          &lt;li data-num="3"&gt;&lt;a href="#"&gt;3개 이상&lt;/a&gt;&lt;/li&gt;
+          &lt;li data-num="4"&gt;&lt;a href="#"&gt;4개 이상&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/div&gt;
+
+  &lt;div class="search__info"&gt;
+      &lt;div&gt;찾은 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="search__list"&gt;
+      &lt;ul class="line"&gt;
+
+      &lt;/ul&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/main&gt;
+&lt;!-- //main --&gt;
+</code></pre>
+            </div>
+
+            <hr>
+
+            <h2 class="t_tit2">CSS 코드 : 살</h2>
+            <p class="t_desc2">
+                이제 뼈대를 구성하였으니 살을 붙여 searchEffect를 구현하기위한 준비를 마치겠습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "NexonLv1Gothic";
+  color: var(--htmlColor);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--htmlColor);
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  --htmlColor: #223547;
+  --cssColor: #302247;
+  --javascriptColor: #472231;
+}
+
+#header {
+  display: flex;
+}
+#header h1 {
+  margin: 10px;
+}
+#header nav {
+  margin: 10px;
+}
+#header nav ul {
+}
+#header nav li {
+  position: relative;
+  display: inline;
+}
+#header nav li a {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--htmlColor);
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  font-family: "NexonLv1Gothic";
+}
+
+#header nav li.active a {
+  background-color: var(--htmlColor);
+  color: #fff;
+}
+
+#header nav li .sub {
+  position: absolute;
+  left: 0;
+  top: 35px;
+  width: 400px;
+}
+
+#header nav li .sub li a {
+  width: auto;
+  background-color: transparent;
+  color: var(--htmlColor);
+  border: 0;
+  text-align: left;
+  line-height: 1.2;
+}
+
+#header nav li .sub li.active a {
+  text-decoration: underline;
+}
+
+/* main */
+#main {
+  margin: 50px 10px;
+}
+.search__wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  border: 2px solid var(--htmlColor);
+  border-radius: 20px;
+  background-color: #f1f3f6;
+  padding: 30px;
+  text-align: center;
+}
+
+.search__wrap > span {
+  font-size: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.search__wrap > h1 {
+  font-family: "Tmon";
+  color: var(--htmlColor);
+  font-size: 6vw;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.search__box {
+  margin-bottom: 20px;
+}
+
+.search__box label {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.search__box input {
+  border: 2px solid var(--htmlColor);
+  padding: 15px 40px;
+  width: 70%;
+  border-radius: 50px;
+  font-size: 20px;
+}
+
+.search__info {
+  text-align: right;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--htmlColor);
+}
+
+.search__info .type {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.search__info .keyword {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.search__info .keyword span {
+  border: 2px solid var(--htmlColor);
+  border-radius: 50px;
+  padding: 10px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.search__info .keyword span:hover {
+  background-color: var(--htmlColor);
+  color: #fff;
+  cursor: pointer;
+}
+
+.search__desc {
+  border: 1px solid var(--htmlColor);
+  padding: 20px 40px 20px 60px;
+  margin-bottom: 50px;
+  background-color: var(--htmlColor);
+  border-radius: 50px;
+  color: #fff;
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+  /* border-bottom: 2px solid var(--htmlColor); */
+  background-repeat: no-repeat;
+  background-position: 22px 17px;
+}
+
+.search__list {
+}
+
+.search__list li {
+  text-align: left;
+  line-height: 1.7;
+}
+.search__list span {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid var(--htmlColor);
+  border-radius: 50px;
+  transition: all 0.25s;
+  margin: 5px;
+}
+
+.search__list span:hover {
+  background-color: var(--htmlColor);
+  color: #fff;
+}
+
+.search__list em {
+  float: right;
+  font-style: normal;
+}
+
+.search__list .line{
+  margin-top: 70px;
+}
+
+.search__list .line li{
+  background: #e3eaf5;
+  padding: 10px 30px;
+  margin-bottom: 5px;
+  border-radius: 50px;
+}
+
+.search__list .line li:hover{
+  background: #d3e2fa;
+  cursor: pointer;
+}
+
+
+.search__list li.hide {
+  display: none;
+}
+
+.search__list li.show {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .search__wrap {
+    padding: 20px;
+  }
+
+  .search__wrap > span {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .search__wrap > h1 {
+    font-size: 44px;
+  }
+  .search__box input {
+    font-size: 16px;
+    padding: 12px 30px;
+  }
+}
+
+/* footer */
+
+#footer {
+  text-align: center;
+}
+
+#footer a {
+  color: #000;
+  font-family: "NexonLv1Gothic";
+  padding-bottom: 50px;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+/* 소스보기 */
+.hljs {
+  background-color: #0f0f13 !important;
+  font-family: "NeoDunggeunmo" !important;
+  border-radius: 0px !important;
+}
+#main {
+  font-family: NeoDunggeunmo;
+}
+.status__bar {
+  content: "";
+  height: 35px;
+  width: 100%;
+  background-color: #464652;
+  padding-top: 9px;
+  padding-left: 10px;
+  color: #fff;
+}
+.source__button {
+  position: fixed;
+  right: 40px;
+  bottom: 100px;
+  padding: 5px;
+  z-index: 10001;
+  border: 1px solid #cacaca;
+  background-color: #ededed;
+  text-align: center;
+  cursor: pointer;
+}
+
+.source__tab__01:hover,
+.source__tab__02:hover,
+.source__tab__03:hover {
+  background-color: #b6b6b6;
+  cursor: pointer;
+}
+
+.source__close:hover,
+.source__button:hover {
+  border: 8px ridge #181818;
+  background-color: #a3a3a3;
+}
+
+.source__desc {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.381);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+}
+
+.source__box {
+  background-color: rgb(255, 255, 255);
+  width: 700px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(15px);
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.155);
+  overflow: hidden;
+  border: 1px solid #cacaca;
+  border-radius: 10px;
+  animation: zoomOut 0.5s ease backwards; /*뒤에s껀 딜레이*/
+}
+.source__box.hide {
+  /* animation: zoomIn 0.5s ease; */
+  animation: foldIn 0.3s 0.9s ease;
+}
+
+.source__tab {
+  display: flex;
+  align-items: center;
+  background-color: #ededed;
+  height: 35px;
+  position: relative;
+}
+
+.source__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2px 0px 0px 2px;
+  /* padding: 15px; */
+  border: 8px ridge #cacaca;
+  background-color: #ededed;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.source__tab > div {
+  padding: 8px;
+}
+
+.source__container {
+  /* background-color: #c2bcbc; */
+  height: 500px;
+  overflow: scroll;
+}
+
+.hide {
+  display: none;
+}
+
+.active {
+  background-color: #c7bcbc;
+  /* margin: 5px; */
+  color: #3a3232;
+}
+
+.source__contaienr__html {
+  display: none;
+}
+
+.source__contaienr__javascript {
+  display: none;
+}
+
+.source__contaienr__css {
+  display: none;
+}
+
+/* 세로 스크롤 */
+.source__container::-webkit-scrollbar {
+  width: 20px;
+  height: 0px;
+  border-radius: 20px;
+}
+
+.source__container:hover::-webkit-scrollbar {
+  opacity: 1;
+}
+
+.source__container::-webkit-scrollbar-thumb {
+  background-color: rgb(95, 95, 95); /*스크롤바의 색상*/
+  border: 20px ridge #cacaca;
+
+  background-clip: padding-box;
+}
+
+.source__container::-webkit-scrollbar-track {
+  background-color: transparent; /*스크롤바 트랙 색상*/
+}
+
+.search__click {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.search__click li {
+  display: inline;
+}
+
+.search__click li a {
+  display: inline-block;
+  border: 1px solid var(--htmlColor);
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 5px 0px;
+}
+
+.search__click li a:hover {
+  background-color: var(--htmlColor);
+  color: #fff;
+}
+
+@keyframes foldOut {
+  0% {
+    transform: scaleX(0) scaleY(0.001);
+  }
+  50% {
+    transform: scaleX(1) scaleY(0.001);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+
+@keyframes foldIn {
+  0% {
+    transform: scaleX(1) scaleY(1);
+  }
+  50% {
+    transform: scaleX(1) scaleY(0.001);
+  }
+  100% {
+    transform: scaleX(0) scaleY(0.001);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(100%, 0%);
+  }
+  100% {
+    transform: scale(-50%);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(-50%);
+  }
+  100% {
+    transform: scale(100%, 0%);
+  }
+}
+</code></pre>
+            </div>
+            <hr>
+            <h2 class="t_tit2">JS 코드 : dataset을 통해 값을 찾고 switch를 통해 중요도 표시하기</h2>
+            <p>
+                저는 최대한 간단하게 설명만 가능하므로 비교적 전문적인 용어는 배제한 형태로 설명해볼게요!<br><br>
+              1. data-star라는 이름으로 지정해준 li에 클릭이 발생하면<br>
+              2. 그 dataset 값을 target 상수에 대입합니다. <br>
+              3. cssProperty(모든 데이터)에 Filter를 통해 기존에 보유했던 star와 target(dataset값)과 같은것을 filterList에 넣어 updateList에 매개변수로 update함수로 리턴해줍니다.<br>
+              4. 매개변수(list)를 통해 listCSS의 안에 for of를 이용해서 매개변수(list)를 상수 data에 삽입 후<br>
+              5. switch 를 통해 data의 star 값이 0~5에 해당할때 경우마다 표시할 별을 표시해줍니다!  
+            </p>
+            <hr>
+            <div class="t_code">
+<pre><code class="language-js">//데이터를 채우기 위한 공간입니다!
+
+//선택자~~
+const searchList = document.querySelector(".search__list ul");
+const searchClick = document.querySelectorAll(".search__click ul li");
+
+//출력하기 (매개변수 사용)
+function updateList(list){
+listCSS = "";
+
+  for(const data of list){
+    switch(data.star){
+        case 0:
+        listCSS += `<li>${data.name} : ${data.desc}<em>☆☆☆☆☆</em></li>`;
+        break;
+        case 1:
+        listCSS += `<li>${data.name} : ${data.desc}<em>★☆☆☆☆</em></li>`;
+        break;
+        case 2:
+        listCSS += `<li>${data.name} : ${data.desc}<em>★★☆☆☆</em></li>`;
+        break;
+        case 3:
+        listCSS += `<li>${data.name} : ${data.desc}<em>★★★☆☆</em></li>`;
+        break;
+        case 4:
+        listCSS += `<li>${data.name} : ${data.desc}<em>★★★★☆</em></li>`;
+        break;
+        case 5:
+        listCSS += `<li>${data.name} : ${data.desc}<em>★★★★★</em></li>`;
+        break;
+        default:
+        listCSS += `<li>${data.name} : ${data.desc}<em>값이 없음</em></li>`;
+        break;
+    }
+  }
+
+searchList.innerHTML = listCSS;
+
+const searchList2 = document.querySelectorAll(".search__list ul li");
+  document.querySelector(".num").textContent=searchList2.length;
+}
+updateList(cssProperty);
+
+//클릭하기
+searchClick.forEach((star) => {
+  star.addEventListener("click",()=>{
+    const target = star.dataset.star;
+    const target2 = star.dataset.num;
+    const filterList = cssProperty.filter(data => data.star == target || data.star >= target2 );
+    
+    
+    updateList(filterList);
+  });
+})
+</code></pre>
+            </div>
+            <h2 class="t_tit2">완성!</h2>
+            <p class="t_desc2">
+               드디어~ 모든 과정이 끝났습니다<br>
+               다음이 두렵네요.
+            </p>
+            <div class="t_iframe" style="min-height : 700px; padding-top:0;">
+                <iframe src="https://kimsangjunv1.github.io/coding/javascript/effect/searchEffect05.html" frameborder="0"></iframe>
+            </div>
+            <hr>
+            <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
+                <div class="t_link">
+                    <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/searchEffect05.html" target="blank">원본 소스 보기</a>
+                </div>
+                <div class="t_link">
+                    <a href="https://kimsangjunv1.github.io/coding/javascript/effect/searchEffect05.html" target="blank">원본 페이지 보기</a>
+                </div>
+            </div>
+            <!-- 01번 메인 샘플 끝 -->
+
+
+            
+        </div>
+        <!-- 티스토리 용 끝 -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>
