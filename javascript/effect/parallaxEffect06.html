@@ -586,13 +586,14 @@
             //         }
             //     }
             // })
-                let i=0;
+                
             document.querySelectorAll(".content__item").forEach(item=>{
                 if(scrollTop >= item.offsetTop){
                     item.querySelectorAll(".split span").forEach((e,i)=>{
                         e.classList.add("show")
-                        item.querySelector(".split span:nth-child("+(i+1)+")").style.transform="translateX(10px)"
-                        item.querySelector(".split span:nth-child("+(i+1)+")").style.opacity="1"
+                        item.querySelector(".split span:nth-child("+(i+1)+")").style.transform="translateX(10px)";
+                        item.querySelector(".split span:nth-child("+(i+1)+")").style.transitionDelay=i+"00ms";//"0."+i+"s"
+                        item.querySelector(".split span:nth-child("+(i+1)+")").style.opacity="1";
                     })
                 }
             })

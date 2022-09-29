@@ -309,28 +309,16 @@
             gsap.to(".mouse__cursor", {duration: 0.3, left: e.pageX -5, top: e.pageY -5});
         }
         window.addEventListener("mousemove", mouseMove)
-
-        // document.querySelector(".mouse__text").addEventListener("mouseenter", ()=>{
-        //     document.querySelector(".mouse__cursor").style.transform="scale(2.5)"
-        // })
-        // document.querySelector(".mouse__text").addEventListener("mouseleave", ()=>{
-        //     document.querySelector(".mouse__cursor").style.transform="scale(1)"
-        // })
+        
         const spanWrap = document.querySelectorAll(".spanWrap span");
         spanWrap.forEach((e,i)=>{
             e.addEventListener("mouseenter", ()=>{
-                document.querySelector(".mouse__cursor").style.transform="scale(2.5)"
+                document.querySelector(".mouse__cursor").style.transform="scale(3.5)"
             })
             e.addEventListener("mouseleave", ()=>{
                 document.querySelector(".mouse__cursor").style.transform="scale(1)"
             })
         })
-
-        // document.querySelector(".mouse__text").addEventListener("mouseleave", ()=>{
-        //     document.querySelector(".mouse__cursor").style.transform="scale(1)"
-        // })
-
-        //마우스 커서가 글씨 위에 올라가면 크기는 5배 정도 크게 작업... 글씨 반적효과 추가
     </script>
 </body>
 
