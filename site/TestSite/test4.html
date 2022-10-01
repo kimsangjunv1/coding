@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://webfontworld.github.io/naver/NanumGothic.css');
+
+        .nanum {
+            font-family: 'NanumGothic';
+            font-weight: 400;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        hr {
+            border: 0.1px solid #ededed;
+            margin-bottom: 20px;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1100px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            /* padding: 120px 0; */
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* 헤더 */
+        .header_cont{
+            display: flex;
+            justify-content: space-between;
+            /* width: 100%; */
+            height: 50px;
+            align-items: center;
+            /* background-color: #eee; */
+        }
+        .menu_cont span{
+            margin-right: 30px;
+        }
+        .menu_cont span:last-child{
+            margin-right: 0px;
+        }
+        .header_cont img{
+            height: 30px;
+            width: 150px;
+        }
+
+        /* 메인 */
+        .ad_cont{
+            width: 100%;
+            position: relative;
+            /* background-color: #eee; */
+        }
+
+        .ad_cont_arrow{
+            position: absolute;
+            top: 50%;
+            transform: translate(0,-50%);
+            color: #fff;
+            width: 100%;
+            z-index: 1;
+        }
+        .ad_cont_arrow .left{
+            position: absolute;
+            left: 20px;
+        }
+        .ad_cont_arrow .right{
+            position: absolute;
+            right: 20px;
+        }
+
+        .ad_cont_desc{
+            position: absolute;
+            bottom: 20px;
+            left: 260px;
+            background: rgba(0, 0, 0, 0.732);
+            color: #fff;
+            padding: 20px;
+            z-index: 1;
+        }
+        .ad_cont_desc h2{
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        /* 메인_사업일정 */
+        .business_header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* margin-bottom: 20px; */
+            padding: 20px;
+            position: relative;
+        }
+        .business_header h2{
+            font-size: 22px;
+            font-weight: normal;
+        }
+        .business_scedule_cont{
+            background-color: #f4f8f9;
+            margin-bottom: 50px;
+        }
+
+
+
+
+        /* 비즈니스 */
+        .business_main{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .main_cont_1{
+            background-color: #fff;
+            padding: 20px;
+            margin-right: 20px;
+            border: 1px solid #ededed;
+        }
+        .main_cont_1 .end{
+            border: 2.5px solid #839ab9;
+            padding: 5px 7px;
+            display: inline-block;
+            font-size: 11px;
+            color: #59708f;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        .main_cont_1 h2{
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .main_cont_1 .date{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .main_cont_1 .date span{
+            font-size: 11px;
+        }
+        .main_cont_1 .date span:nth-child(1){
+            background: #6b91d8;
+            border-radius: 5px;
+            color: #fff;
+            padding: 5px;
+        }
+        
+        .main_cont_1 .date2{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main_cont_1 .date2 span{
+            font-size: 11px;
+        }
+        .main_cont_1 .date2 span:nth-child(1){
+            background: #6b91d8;
+            border-radius: 5px;
+            color: #fff;
+            padding: 5px;
+        }
+
+
+
+
+
+        /* 보도자료 / 연구보고서 / 온라인 세미나 / 통상정보 */
+        .sub_cont{
+            display: flex;
+            justify-content: space-between;
+            /* width: 100%; */
+            margin-bottom: 70px;
+        }
+        .sub_right,
+        .sub_left{
+            width: 49%;
+        }
+
+        .sub_news_cont{
+            background: #fff;
+            border: 1px solid #ededed;
+            padding: 25px;
+            margin-bottom: 20px;
+            height: 190px;
+            position: relative;
+        }
+        .sub_news_cont .tab{
+            margin-bottom: 40px;
+        }
+        .sub_news_cont .tab span{
+            font-size: 20px;
+            /* padding: 0 10px; */
+        }
+        .sub_news_cont .tab span:nth-child(1){
+            /* font-weight: bold; */
+            padding-right: 20px;
+            margin-right: 10px;
+            border-right: 2.5px solid #000;
+        }
+        .sub_news_cont .tab span:nth-child(2){
+            color: rgba(0, 0, 0, 0.411);
+        }
+
+        .sub_news_desc p:nth-child(1){
+            margin-bottom: 10px;
+        }
+        .sub_news_desc p:nth-child(2){
+            color: rgba(0, 0, 0, 0.244);
+            font-size: 14px;
+        }
+
+
+        /* 세미나 */
+        .sub_cemina_cont{
+            background-image: url(assets/img4/3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 20px;
+            height: 190px;
+        }
+
+        .sub_cemina_cont p,
+        .sub_cemina_cont h2{
+            color: #fff;
+        }
+
+        .sub_cemina_cont h2{
+            margin-bottom: 40px;
+        }
+
+        .sub_cemina_cont p{
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .sub_cemina_cont .quick{
+            border: 2px solid #fff;
+            display: inline-block;
+            color: #fff;
+            padding: 10px 50px;
+        }
+
+
+
+
+        /* 연구보고서 */
+        .sub_research_desc{
+            display: flex;
+            justify-content: space-between;
+        }
+        .sub_research_cont{
+            padding: 20px;
+            border: 1px solid #ededed;
+            margin-bottom: 20px;
+            height: 201px;
+        }
+        .sub_research_cont h2{
+            margin-bottom: 20px;
+        }
+        .sub_research_desc:nth-child(1),
+        .sub_research_desc:nth-child(2),
+        .sub_research_desc:nth-child(3),
+        .sub_research_desc:nth-child(5),
+        .sub_research_desc:nth-child(4){
+            margin-bottom: 15px;
+        }
+
+        .sub_research_desc span{
+            padding: 5px;
+            font-size: 14px;
+            width: 20%;
+        }
+        .sub_research_desc span:nth-child(1){
+            /* padding: 5px 25px; */
+            width: 20%;
+            text-align: center;
+            background: #3073ce;
+            color: #fff;
+            margin-right: 20px;
+        }
+        .sub_research_desc span:nth-child(2){
+            width: 60%;
+            text-align: left;
+        }
+
+        .sub_all_info_cont{
+            border: 1px solid #ededed;
+            padding: 20px;
+
+        }
+        .sub_all_info_cont h2{
+            margin-bottom: 44px;
+        }
+
+
+        /* 통상정보 */
+        .sub_all_info_controll{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sub_all_info_left{
+            border-right: 1px solid #ededed;
+            padding-right: 20px;
+            margin-right: 20px;
+            width: 50%;
+        }
+
+        .sub_all_info_right{
+            width: 50%;
+        }
+
+        .sub_all_info_right .info_desc p,
+        .sub_all_info_left .info_desc p{
+            font-size: 14px;
+        }
+
+        .sub_all_info_left .info_desc p:nth-child(1){
+            margin-bottom: 10px;
+        }
+        .sub_all_info_left .info_desc p:nth-child(2){
+            color: rgba(0, 0, 0, 0.412);
+        }
+        .sub_all_info_left .info_desc:nth-child(1){
+            margin-bottom: 20px;
+        }
+        .sub_all_info_right .info_desc p:nth-child(1){
+            margin-bottom: 10px;
+        }
+        .sub_all_info_right .info_desc p:nth-child(2){
+            color: rgba(0, 0, 0, 0.412);
+        }
+        .sub_all_info_right .info_desc:nth-child(1){
+            margin-bottom: 20px;
+        }
+
+
+        /* 푸터 */
+        /* 푸터 탑 */
+        .footer_menu_cont{
+            background-color: #27405f;
+            padding: 30px;
+            height: 152px;
+        }
+        .footer_menu_top{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #8291a02b;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        .footer_menu_my_info,
+        .footer_menu_call,
+        .footer_menu_top,
+        .footer_menu_top_agree{
+            color: #7f8f9f;
+            font-size: 13px;
+        }
+
+        .footer_menu_top_drop{
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #7f8f9f;
+            padding: 10px 20px;
+        }
+
+
+        .footer_menu_top_agree span{
+            /* font-size: 16px; */
+            border-right: 1px solid #7f8f9f;
+            padding-right: 20px;
+            margin-right: 20px;
+        }
+
+
+        .footer_menu_bottom{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer_menu_desc{
+            display: flex;
+            align-items: center;
+        }
+        .footer_menu_sns{
+            display: flex;
+        }
+        .footer_menu_desc > img{
+            width: 160px;
+            margin-right: 40px;
+            
+        }
+        .footer_menu_my_info{
+            margin-right: 30px;
+        }
+
+        .footer_menu_call{
+            border-left: 1px solid #7f8f9f;
+            padding-left: 30px;
+        }
+        .footer_menu_call p:nth-child(1){
+            margin-bottom: 10px;
+        }
+        .footer_menu_call p:nth-child(2){
+            font-size: 20px;
+            color: #fff;
+        }
+        .footer_menu_sns img{
+            width: 30px;
+            margin-right: 10px;
+        }
+
+
+        .ad_cont_view{
+            width: 100%;
+            overflow: hidden;
+        }
+        .ad_cont_inner{
+            display: flex;
+            transition: transform 0.2s;
+            height: 760px;
+            width: 5760px;
+        }
+        
+
+        .plus{
+            position: absolute;
+            right: 20px;
+            top:50%;
+            transform: translate(0, -50%);
+            /* width: 20px; */
+            text-align: center;
+            padding: 10px 15px;
+            border: 1px solid #d7dfe1;
+
+        }
+
+        .sub_research_cont,
+        .sub_all_info_cont{
+            position: relative;
+        }
+
+
+        .plus2{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            text-align: center;
+            padding: 10px 15px;
+            border: 1px solid #d7dfe1;
+        }
+
+        .show{
+            color: black !important;
+        }
+
+        .default{
+            color: rgba(0, 0, 0, 0.381);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section nanum">
+
+
+
+
+        <header class="header_cont container">
+            <img src="assets/img4/1.jpg" alt="로고">
+            <div class="menu_cont">
+                <span>무역통상정보</span>
+                <span>회원/업무지원</span>
+                <span>무역통계</span>
+                <span>협회안내</span>
+            </div>
+        </header>
+
+
+
+
+        <main>
+            <div class="ad_cont">
+                <div class="ad_cont_arrow">
+                    <div class="left">&lt;</div>
+                    <div class="right">&gt;</div>
+                </div>
+                <div class="ad_cont_desc">
+                    <h2>STARTUP Germany<br>2019 참가업체 모집</h2>
+                    <p>사업기간2019-07-02 ~ 2019-08-09</p>
+                </div>
+                <div class="ad_cont_view">
+                    <div class="ad_cont_inner">
+                        <img src="assets/img4/2.jpg" alt="1">
+                        <img src="assets/img4/2_1.jpg" alt="1">
+                        <img src="assets/img4/2_2.jpg" alt="1">
+                    </div>
+                </div>
+            </div>
+            <div class="business_scedule_cont container">
+                <div class="business_header">
+                    <h2>KITA 사업 일정</h2>
+                    <div class="plus">+</div>
+                </div>
+                <div class="business_main">
+                    <div class="main_cont_1">
+                        <p class="end">모집마감 -4일</p>
+                        <h2>2019 태국 국제식품전시회 업체모집</h2>
+                        <div class="date">
+                            <span>사업기간</span>
+                            <span>2019-05-28 ~ 2019-06-01</span>
+                        </div>
+                        <div class="date2">
+                            <span>사업기간</span>
+                            <span>2019-05-28 ~ 2019-06-01</span>
+                        </div>
+                    </div>
+                    <div class="main_cont_1">
+                        <p class="end">모집마감 -4일</p>
+                        <h2>2019 태국 국제식품전시회 업체모집</h2>
+                        <div class="date">
+                            <span>사업기간</span>
+                            <span>2019-05-28 ~ 2019-06-01</span>
+                        </div>
+                        <div class="date2">
+                            <span>사업기간</span>
+                            <span>2019-05-28 ~ 2019-06-01</span>
+                        </div>
+                    </div>
+                    <div class="main_cont_1">
+                        <p class="end">모집마감 -4일</p>
+                        <h2>2019 태국 국제식품전시회 업체모집</h2>
+                        <div class="date">
+                            <span>사업기간</span>
+                            <span>2019-05-28 ~ 2019-06-01</span>
+                        </div>
+                        <div class="date2">
+                            <span>사업기간</span>
+                            <span>2019-05-28 ~ 2019-06-01</span>
+                        </div>
+                    </div>
+                    <div class="main_cont_1">
+                        <p class="end">모집마감 -4일</p>
+                        <h2>2019 태국 국제식품전시회 업체모집</h2>
+                        <div class="date">
+                            <span>사업기간</span>
+                            <span>2019-05-28 ~ 2019-06-01</span>
+                        </div>
+                        <div class="date2">
+                            <span>사업기간</span>
+                            <span>2019-05-28 ~ 2019-06-01</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub_cont container">
+                <div class="sub_left">
+                    <div class="sub_news_cont">
+                        <div class="plus2">+</div>
+                        <div class="tab">
+                            <span class="default bodo">보도자료</span>
+                            <span class="default unlon">언론기고</span>
+                        </div>
+                        <div style="margin-bottom: 30px;" class="sub_news_desc">
+                            <p>민관합동 현장중심 수출활력촉진단 가동</p>
+                            <p>2019-01-31</p>
+                        </div>
+                        <div class="sub_news_desc">
+                            <p>민관합동 현장중심 수출활력촉진단 가동</p>
+                            <p>2019-01-31</p>
+                        </div>
+                    </div>
+                    <div class="sub_cemina_cont">
+                        <h2>온라인세미나</h2>
+                        <p>무역협회에서 실시하는 국내 무역 관련 세미나,<br>설명회 등을 VOD 서비스로 제공</p>
+                        <div class="quick">바로가기</div>
+                    </div>
+                </div>
+                <div class="sub_right">
+                    <div class="sub_research_cont">
+                        <div class="plus2">+</div>
+                        <h2>KITA 연구보고서</h2>
+                        <div class="sub_research_desc">
+                            <span>[Trade Brief]</span>
+                            <span>2019년 수출기업의 경영환경 전망 조사</span>
+                            <span>2019-01-17</span>
+                        </div>
+                        <div class="sub_research_desc">
+                            <span>[KITA]</span>
+                            <span>[토론회 자료]WTO 전자 겸 디지털통・・・</span>
+                            <span>2019-01-17</span>
+                        </div>
+                        <div class="sub_research_desc">
+                            <span>[KITA]</span>
+                            <span>2019년 수출기업의 경영환경 전망 조사</span>
+                            <span>2019-01-17</span>
+                        </div>
+                        <div class="sub_research_desc">
+                            <span>[Trade Brief]</span>
+                            <span>2019년 수출기업의 경영환경 전망 조사</span>
+                            <span>2019-01-17</span>
+                        </div>
+                    </div>
+                    <div class="sub_all_info_cont">
+                        <div class="plus2">+</div>
+                        <h2>KITA 통상정보</h2>
+                        <div class="sub_all_info_controll">
+                            <div class="sub_all_info_left">
+                                <div class="info_desc">
+                                    <p>한미 통상현안 사례분석집</p>
+                                    <p>2019-01-15</p>
+                                </div>
+                                <div class="info_desc">
+                                    <p>[통상리포트] 킥오프된 브렉시트 후반전 : 향・・・</p>
+                                    <p>2019-01-15</p>
+                                </div>
+                            </div>
+                            <div class="sub_all_info_right">
+                                <div class="info_desc">
+                                    <p>한미 통상현안 사례분석집</p>
+                                    <p>2019-01-15</p>
+                                </div>
+                                <div class="info_desc">
+                                    <p>한미 통상현안 사례분석집</p>
+                                    <p>2019-01-15</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+
+
+        <footer>
+            <div class="footer_menu_cont">
+                <div class="footer_menu_top">
+                    <div class="footer_menu_top_agree">
+                        <span>이용약관</span>
+                        <span>개인정보처리방침</span>
+                        <span>개인정보처리방침</span>
+                        <span>이메일주소무단수집거부</span>
+                        <span>온라인 고객상담</span>
+                        <span>신문고</span>
+                    </div>
+                    <div class="footer_menu_top_drop">
+                        <p>국내외 지부</p>
+                        <p>^</p>
+                    </div>
+                </div>
+                <div class="footer_menu_bottom">
+                    <div class="footer_menu_desc">
+                        <img class="img" src="assets/img4/4.jpg" alt="">
+                        <div class="footer_menu_my_info">
+                            <p>(06164) 서울시 강남구 영동대로 511 (삼성동)</p>
+                            <p>Copyright @KITA All rights reserved</p>
+                        </div>
+                        <div class="footer_menu_sns">
+                            <img src="assets/img4/5.jpg" alt="">
+                            <img src="assets/img4/6.jpg" alt="">
+                            <img src="assets/img4/7.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="footer_menu_call">
+                        <p>트레이드 콜센터</p>
+                        <p>1566-5114</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <img src="" alt="">
+    <script>
+        const imgItem = document.querySelectorAll(".img")
+        const imgMoving = document.querySelector(".ad_cont_inner")
+
+        const naemaemleft = document.querySelector(".left")
+        const naemaemright = document.querySelector(".right")
+
+        const tabItem = document.querySelectorAll(".tab span")
+
+        const tabBodo = document.querySelector(".bodo")
+        const tabUnlon = document.querySelector(".unlon")
+
+        // console.log(tabItem)
+        tabBodo.addEventListener("click",()=>{
+            tabBodo.classList.add("show");
+            tabUnlon.classList.remove("show");
+        })
+        tabUnlon.addEventListener("click",()=>{
+            tabUnlon.classList.add("show");
+            tabBodo.classList.remove("show");
+        })
+
+        let sliderCount = 0;
+        let setTime = 1000;
+        setInterval(()=>{
+            sliderCount++
+            if(sliderCount==3){
+                sliderCount=0;
+            }
+            let eeeee = (-sliderCount*1920)
+            imgMoving.style.transform="translate("+ eeeee+"px)"
+            naemaemleft.addEventListener("click", ()=>{
+                if(sliderCount<1){
+                    sliderCount=2;
+                    eeeee;
+                    imgMoving.style.transform="translate("+ eeeee+"px)"
+                } else{
+                    sliderCount--;
+                    imgMoving.style.transform="translate("+ -sliderCount*1920+"px)"
+                }
+            })
+            naemaemright.addEventListener("click", ()=>{
+                if(sliderCount>2){
+                    sliderCount=1;
+                    imgMoving.style.transform="translate("+ -sliderCount*1920+"px)"
+                } else{
+                    sliderCount++;
+                    imgMoving.style.transform="translate("+ -sliderCount*1920+"px)"
+                }
+            })
+        },setTime)
+
+    </script>
+</body>
+
+</html>

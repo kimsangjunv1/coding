@@ -300,6 +300,7 @@
     <script src="../assets/js/gsap.min.js"></script>
 
     <script>
+        //마우스 움직임 및 커서 설정
         const mouseMove = (e) =>{
             let positionSlow = (e.pageX - (window.innerWidth/2))*0.1;
             let positionFast = (e.pageX - (window.innerWidth/2))*0.2;
@@ -309,7 +310,8 @@
             gsap.to(".mouse__cursor", {duration: 0.3, left: e.pageX -5, top: e.pageY -5});
         }
         window.addEventListener("mousemove", mouseMove)
-        
+
+        //마우스 진입/아웃시 적용할 효과
         const spanWrap = document.querySelectorAll(".spanWrap span");
         spanWrap.forEach((e,i)=>{
             e.addEventListener("mouseenter", ()=>{

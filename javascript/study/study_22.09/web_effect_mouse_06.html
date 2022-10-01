@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!-- 티스토리 용 -->
+        <div id="sample01" class="container sample document">
+        <!-- 메인 샘플 시작 -->
+            <h2 class="t_tit">마우스 이펙트 만들기!</h2>
+            <P>마우스 위치에 따라 이미지들이 좌우로 움직이고 텍스트에 마우스가 올라가면 커서가 커지는 효과를 만들어볼게요!</P>
+            <hr>
+            <h2 class="t_tit2">HTML 코드 : 뼈대</h2>
+            <p class="t_desc2">
+                마우스 이펙트의 핵심은 cursor를 구성하는것이에요!<br>
+                꼭 간단한 div를 통한 Cursor를 구성하도록 합시다!
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;section id="mouseType"&gt;
+    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+    &lt;div class="mouse__wrap"&gt;
+        &lt;div class="mouse__img"&gt;
+            &lt;figure&gt;
+                &lt;img src="../../../assets/slider/effect_bg_01.jpg" alt=""&gt;
+            &lt;/figure&gt;
+        &lt;/div&gt;
+
+        &lt;div class="mouse__text"&gt;
+            &lt;div class="line"&gt;
+                &lt;div class="left"&gt;
+                    &lt;div class="spanWrap"&gt;
+                        &lt;span class="spanSlow"&gt;Pain Past&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;div class="spanWrap"&gt;
+                        &lt;span class="spanSlow"&gt;Pain Past&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="line"&gt;
+                &lt;div class="left"&gt;
+                    &lt;div class="spanWrap"&gt;
+                        &lt;span class="spanFast"&gt;is pleasure.&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;div class="spanWrap"&gt;
+                        &lt;span class="spanFast"&gt;is pleasure.&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="line"&gt;
+                &lt;div class="left"&gt;
+                    &lt;div class="spanWrap"&gt;
+                        &lt;span class="spanSlow"&gt;지나간 고통은&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;div class="spanWrap"&gt;
+                        &lt;span class="spanSlow"&gt;지나간 고통은&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="line"&gt;
+                &lt;div class="left"&gt;
+                    &lt;div class="spanWrap"&gt;
+                        &lt;span class="spanFast"&gt;쾌락이다.&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;div class="spanWrap"&gt;
+                        &lt;span class="spanFast"&gt;쾌락이다&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+
+            <hr>
+
+            <h2 class="t_tit2">CSS 코드 : 살</h2>
+            <p class="t_desc2">
+                1. 마우스가 이미지에 닿으면 반전이 되게끔 "mouse__cursor" 클래스에 "mix-blend-mode: difference;"를 설정해줍시다!<br>
+                2. 화면을 절반으로 나눠 왼쪽에 오렌지 박스를 하나 만들어 놓습니다!
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">.mouse__wrap {
+    color: #fff;
+    height: 100vh;
+    width: 100%;
+    cursor: none;
+}
+
+.mouse__img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.mouse__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -20%);
+    font-size: 3vw;
+    line-height: 1.5;
+}
+
+.mouse__text .line {
+    width: 100%;
+    display: flex;
+}
+
+.mouse__text .line .left {
+    width: 50vw;
+    color: orange;
+    overflow: hidden;
+    transform: skew(0deg, -15deg);
+}
+
+.mouse__text .line .left .spanWrap {
+    width: 100vw;
+    text-align: center;
+}
+
+.mouse__text .line .right {
+    width: 50vw;
+    overflow: hidden;
+    transform: skew(0deg, 15deg);
+}
+
+.mouse__text .line .right .spanWrap {
+    width: 100vw;
+    text-align: center;
+    transform: translateX(-50vw);
+}
+
+.mouse__text span {
+    display: inline-block;
+}
+
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    z-index: 9999;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    user-select: none;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: transform 0.25s;
+}
+</style>
+</code></pre>
+            </div>
+            <hr>
+            <h2 class="t_tit2">JS 코드 : 좌표 값을 통한 원근감 효과 및 커서 구성하기</h2>
+            <p class="t_desc2">
+                저는 최대한 간단하게 설명만 가능하므로 비교적 전문적인 용어는 배제한 형태로 설명해볼게요!<br><br>
+                
+                0. 마우스의 좌표는 내부 창 너비를 절반으로 나눠 중심을 구한 뒤 각각 속도 조절을 위해 slow는 0.1을 곱하고 fast는 0.2를 곱합니다.<br>
+                1. gsap를 이용해서 .spanSlow/Fast 클래스를 가진 요소에 마우스 좌표값에 따라 변화를 줍니다!<br>
+                2. spanWrap span에 마우스가 들어오고 나갈때 효과를 주기위해서 forEach를 통해 선택해<br>
+                3. 각각의 요소에 마우스가 들어올경우 .mouse__cursor 요소의 크기를 변형시킵니다!
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">//마우스 움직임 및 커서 설정
+const mouseMove = (e) =>{
+    let positionSlow = (e.pageX - (window.innerWidth/2))*0.1;
+    let positionFast = (e.pageX - (window.innerWidth/2))*0.2;
+
+    gsap.to(".spanSlow", {duration: 0.4, x: positionSlow});
+    gsap.to(".spanFast", {duration: 0.4, x: -positionFast});
+    gsap.to(".mouse__cursor", {duration: 0.3, left: e.pageX -5, top: e.pageY -5});
+}
+window.addEventListener("mousemove", mouseMove)
+
+
+//마우스 진입/아웃시 적용할 효과
+const spanWrap = document.querySelectorAll(".spanWrap span");
+spanWrap.forEach((e,i)=>{
+    e.addEventListener("mouseenter", ()=>{
+        document.querySelector(".mouse__cursor").style.transform="scale(3.5)"
+    })
+    e.addEventListener("mouseleave", ()=>{
+        document.querySelector(".mouse__cursor").style.transform="scale(1)"
+    })
+})
+</code></pre>
+            </div>
+            <hr>
+            <h2 class="t_tit2">완성!</h2>
+            <p class="t_desc2">
+                내일은 금요일 과연 집에 갈 수 있을까요...?
+            </p>
+            <div class="t_iframe" style="min-height : 700px; padding-top:0;">
+                <iframe src="https://kimsangjunv1.github.io/coding/javascript/effect/mouseEffect06.html" frameborder="0"></iframe>
+            </div>
+            <hr>
+            <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
+                <div class="t_link">
+                    <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/mouseEffect06.html" target="blank">원본 소스 보기</a>
+                </div>
+                <div class="t_link">
+                    <a href="https://kimsangjunv1.github.io/coding/javascript/effect/mouseEffect06.html" target="blank">원본 페이지 보기</a>
+                </div>
+            </div>
+            <!-- 01번 메인 샘플 끝 -->
+
+
+            
+        </div>
+        <!-- 티스토리 용 끝 -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>
