@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
+
+    <style>
+        /* PrismJS 1.26.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NEXON Lv1 Gothic OTF';
+            line-height: 1.6;
+        }
+
+        body {
+            padding: 5%;
+            margin-bottom: 400px;
+        }
+
+        h1 {
+            padding-bottom: 40px;
+        }
+
+        hr {
+            margin: 5% 0;
+            border-style: dashed;
+            border-color: #e6e6e6;
+            border-width: 1px;
+        }
+
+        img {
+            vertical-align: top;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .sample {
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+        }
+
+        .sample h2 {
+            position: relative;
+            font-size: 16px;
+            background-color: #f2f2f2;
+            padding: 15px 15px 12px 15px;
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .sample h2 .dot {
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .sample h2 .dot::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 0;
+        }
+
+        .sample h2 .dot::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            position: absolute;
+            border-radius: 50%;
+            right: -15px;
+            top: 0;
+        }
+
+        .sample .ex {
+            padding: 20px;
+        }
+
+        .sample .ex .text {
+            margin: 10px 0;
+        }
+
+        .sample .re {
+            padding: 20px;
+            border-top: 1px solid #e6e6e6;
+        }
+
+        .sample .re a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .sample .re a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .sample .problem {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+            line-height: 1.6;
+        }
+
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0;
+            ;
+        }
+
+        .sample .desc {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .desc dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .desc dd {
+            padding: 3px 0 16px 0;
+            line-height: 1.6;
+        }
+
+        .sample .sam {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .sam dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .sam dd {
+            padding: 3px 0 16px 0;
+        }
+
+        ol {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        ol li {
+            display: inline;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 5px;
+        }
+
+        ol li a {
+            display: inline-block;
+            border-radius: 30px;
+            padding: 2px 20px 0px 20px;
+            border: 1px solid #000;
+        }
+
+        ol li a:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        ol li.active {
+            background: #000;
+        }
+
+        ol li.active a {
+            color: #fff;
+        }
+        .mt20 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Javascript Test01</h1>
+
+    <div id="sample1" class="sample">
+        <h2>01. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    var x = 100; 
+    var y = 200; 
+    var z = "javascript"; 
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample2" class="sample">
+        <h2>02. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+    x = 300;   
+    y = 400;
+    z = "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample3" class="sample">
+        <h2>03. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+    x += 300;       
+    y -= 400;       
+    z += "jquery";  
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample4" class="sample">
+        <h2>04. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const x = 100;
+    const y = 200;
+    const z = "javascript";
+    x = 300;
+    y = 400;
+    z = "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample5" class="sample">
+        <h2>05. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = new Array();    
+    arr[0] = 100;               
+    arr[1] = 200;               
+    arr[2] = "javascript";     
+
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample6" class="sample">
+        <h2>06. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = new Array(100, 200, "javascript");
+
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample7" class="sample">
+        <h2>07. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [];     
+    arr[0] = 100;              
+    arr[1] = 200;              
+    arr[2] = "javascript";   
+
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample8" class="sample">
+        <h2>08. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, "javascript"];    
+
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>09. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = new Object();
+    obj[0] = 100;
+    obj[1] = 200;
+    obj[2] = "javascript";
+
+    document.write(obj[0]);
+    document.write(obj[1]);
+    document.write(obj[2]);
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>10. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = new Object();
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>11. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = {};
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>12. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = {a:100, b:200, c:"javascript"};
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>13. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = [
+        {a:100, b:200},
+        {c:"javascript"}
+    ];
+
+    document.write(obj[0].a);
+    document.write(obj[0].b);
+    document.write(obj[1].c);
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>14. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: [200, 300],
+        c: "javascript"
+    }
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.b[0]);
+    document.write(obj.b[1]);
+    document.write(obj.c);
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+
+
+    <div id="sample9" class="sample">
+        <h2>15. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const a = 100;
+    const b = 200;
+    const c = "javascript";
+
+    const obj = { a, b, c }
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>16. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: [200,300],
+        c: "javascript",
+        d: function(){
+            document.write("javascript가 실행되었습니다.<br>");
+        },
+        e: function(){
+            document.write( obj.c + "가 실행되었습니다.<br>");
+        },
+        f: function(){
+            document.write( this.c + "가 실행되었습니다.<br>");
+        }
+    }
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.b[0]);
+    document.write(obj.b[1]);
+    document.write(obj.c);
+    obj.d();
+    obj.e();
+    obj.f();
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>17. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+
+    document.write(arr.length);
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>18. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, 300, 400, 500];
+
+    for( let i=0; i&lt;arr.length; i++ ){
+        document.write(arr[i]);
+    }
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>19. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const num = [100, 200, 300, 400, 500];
+
+    num.forEach(function(el){
+        document.write(el);
+    });
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>20. 변수, 상수, 배열, 객체에 개념을 설명하시오!<span class="dot"></span></h2>
+    </div>
+
+
+    <hr>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+    <script>
+        // document.write("****** 정답 ******<br><br>");
+        // //sample1
+        // //01. 변수 : 데이터 저장소
+        // {
+        //     var x = 100; //변수 x에 숫자 100을 저장
+        //     var y = 200; //변수 y에 숫자 200을 저장
+        //     var z = "javascript"; //변수 z에 문자 javascript 저장
+
+        //     document.write("*** 01. 변수 ***<br>");
+        //     document.write(x, "<br>");
+        //     document.write(y, "<br>");
+        //     document.write(z, "<br><br>");
+        // }
+
+        // //sample2
+        // //02. 변수 : 데이터 저장 + 데이터 변경
+        // {
+        //     let x = 100;
+        //     let y = 200;
+        //     let z = "javascript";
+        //     x = 300;    //변수 x에 값이 100에서 300으로 변경
+        //     y = 400;
+        //     z = "jquery";
+
+        //     document.write("*** 02. 변수 ***<br>");
+        //     document.write(x, "<br>");
+        //     document.write(y, "<br>");
+        //     document.write(z, "<br><br>");
+        // }
+
+        // //sample3
+        // //변수 : 데이터 저장 + 데이터 변경 + 데이터 추가
+        // {
+        //     let x = 100;
+        //     let y = 200;
+        //     let z = "javascript";
+        //     x += 300;       // x = x + 300; (대입연산자)
+        //     y -= 400;       // y = y + 400;
+        //     z += "jquery";  // z = z + "jquery";
+            
+        //     document.write("*** 03. 변수 ***<br>");
+        //     document.write(x, "<br>");
+        //     document.write(y, "<br>");
+        //     document.write(z, "<br><br>");
+        // }
+
+        // //sample4
+        // //상수 : 데이터 저장소 : 데이터 값이 변하지 않음
+        // {
+        //     const x = 100;
+        //     const y = 200;
+        //     const z = "javascript";
+        //     // x = 300;
+        //     // y = 400;
+        //     // z = "jquery";
+        //     //Uncaught TypeError: Assignment to constant variable.
+
+        //     document.write("*** 04. 상수 ***<br>");
+        //     document.write("에러발생<br>");
+        //     document.write("에러발생<br>");
+        //     document.write("에러발생<br><br>");
+        // }
+
+        // //sample5
+        // //배열 : 여러 개의 데이터 저장 : 표현 방법1
+        // {   
+        //     const arr = new Array();    //배열 선언
+        //     arr[0] = 100;               //첫번재 배열 저장소에 숫자 100을 저장
+        //     arr[1] = 200;               //두번재 배열 저장소에 숫자 200을 저장
+        //     arr[2] = "javascript";      //세번재 배열 저장소에 문자 javascript를 저장
+
+        //     document.write("*** 05. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br><br>");
+        // }
+
+        // //sample06
+        // //배열 : 표현 방법2
+        // {
+        //     const arr = new Array(100, 200, "javascript");
+
+        //     document.write("*** 06. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br><br>");
+        // }
+
+        // //sample07
+        // //배열 : 표현 방법3
+        // {
+        //     const arr = [];     
+        //     arr[0] = 100;              
+        //     arr[1] = 200;              
+        //     arr[2] = "javascript";   
+
+        //     document.write("*** 07. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br><br>");
+        // }
+
+        // //sample08
+        // //배열 : 표현 방법4
+        // {
+        //     const arr = [100, 200, "javascript"];    
+
+        //     document.write("*** 08. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br><br>");
+        // }
+
+        // //sample09
+        // //객체 : 데이터 저장(키와 값) : 표현 방법1 : 배열 스타일
+        // {
+        //     const obj = new Object();
+        //     obj[0] = 100;
+        //     obj[1] = 200;
+        //     obj[2] = "javascript";
+
+        //     document.write("*** 09. 객체 ***<br>");
+        //     document.write(obj[0], "<br>");
+        //     document.write(obj[1], "<br>");
+        //     document.write(obj[2], "<br><br>");
+        // }
+
+        // //sample10
+        // //객체 : 데이터 저장(키와 값) : 표현 방법2
+        // {
+        //     const obj = new Object();
+        //     obj.a = 100;
+        //     obj.b = 200;
+        //     obj.c = "javascript";
+
+        //     document.write("*** 10. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample11
+        // //객체 : 데이터 저장(키와 값) : 표현 방법3 : 키워드 생략
+        // {
+        //     const obj = {};
+        //     obj.a = 100;
+        //     obj.b = 200;
+        //     obj.c = "javascript";
+
+        //     document.write("*** 11. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample12
+        // //객체 : 데이터 저장(키와 값) : 표현 방법4 
+        // {
+        //     const obj = {a:100, b:200, c:"javascript"};
+
+        //     document.write("*** 12. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample13
+        // //객체 : 데이터 저장(키와 값) : 표현 방법5 : 배열 속에 객체
+        // {
+        //     const obj = [
+        //         {a:100, b:200},
+        //         {c:"javascript"}
+        //     ];
+
+        //     document.write("*** 13. 객체 ***<br>");
+        //     document.write(obj[0].a, "<br>");
+        //     document.write(obj[0].b, "<br>");
+        //     document.write(obj[1].c, "<br><br>");
+        // }
+
+        // //sample14
+        // //객체 : 데이터 저장(키와 값) : 표현 방법6 : 객체 속에 배열
+        // {
+        //     const obj = {
+        //         a: 100,
+        //         b: [200, 300],
+        //         c: "javascript"
+        //     }
+        //     document.write("*** 14. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.b[0], "<br>");
+        //     document.write(obj.b[1], "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample15
+        // //객체 : 데이터 저장(키와 값) : 표현 방법7 : 객체 속에 변수
+        // {
+        //     const a = 100;
+        //     const b = 200;
+        //     const c = "javascript";
+
+        //     const obj = { a, b, c }
+
+        //     document.write("*** 15. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample16
+        // //객체 : 데이터 저장(키와 값) : 표현 방법8 : 객체 속에 함수
+        // {
+        //     const obj = {
+        //         a: 100,
+        //         b: [200,300],
+        //         c: "javascript",
+        //         d: function(){
+        //             document.write("javascript가 실행되었습니다.<br>");
+        //         },
+        //         e: function(){
+        //             document.write( obj.c + "가 실행되었습니다.<br>");
+        //         },
+        //         f: function(){
+        //             document.write( this.c + "가 실행되었습니다.<br>");
+        //         }
+        //     }
+
+        //     document.write("*** 16. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.b[0], "<br>");
+        //     document.write(obj.b[1], "<br>");
+        //     document.write(obj.c, "<br>");
+        //     obj.d();
+        //     obj.e();
+        //     obj.f();
+        // }
+
+    </script>
+</body>
+
+</html>

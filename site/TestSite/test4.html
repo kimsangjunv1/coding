@@ -741,6 +741,20 @@
     </section>
     <img src="" alt="">
     <script>
+        const slide_next_item = document.querySelectorAll(".cover-thumbnail-3 ul");
+
+        let i=0;
+        slide_next_item.forEach((e,i)=>{
+            setInterval(()=>{
+                i++
+                e[i].classList.add("view")
+                if(i==5){
+                    i=0;
+                }
+            },2000)
+        })
+    </script>
+    <script>
         const imgItem = document.querySelectorAll(".img")
         const imgMoving = document.querySelector(".ad_cont_inner")
 
