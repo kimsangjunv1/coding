@@ -65,11 +65,16 @@
         <!-- 메인 샘플 시작 -->
             <h2 class="t_tit">오답노트</h2>
             <p class="t_desc">
+                다른분들꺼 보고 틀 자체가 다르단걸 알고서 이제서야 올리네요 🥲<br>
                 많이 틀렸으니 많이 적어야겠죠,,, 눙물 납니다...
             </p>
 
             <hr>
-            <div class="question_01">
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kimsangjunv1.github.io/coding/javascript/study/study_22.09/web_study_test.html" frameborder="0"></iframe>
+            </div>
+
+            <!--<div class="question_01">
                 <h2 class="t_tit2">5번</h2>
                 <p class="t_desc2">
                     2가 아닌 값을 만나게 되면 value를 1씩 증가시켜주는 문제입니다.
@@ -111,15 +116,14 @@
             <div class="t_code">
 <pre><code class="language-js">{
     function func(){
-        let a = [2,3,2,4,5,6,7,2,3,3,2];
-        let value = 0;
-        for(i=0; i&lt;a.length; i++){
-            if(a[i]!=2){
-                value++;
-            }
+        let i, j = 0;
+
+        for(i=0; i&lt;=8; i++){
+            j += i;
         }
-        document.write(value);
-    }    
+        document.write(j+i);
+    }
+    func()
 }
 </code></pre>
                 </div>
@@ -141,16 +145,18 @@
                 </p>
             <div class="t_code">
 <pre><code class="language-js">{
-    function func(){
-        let a = [2,3,2,4,5,6,7,2,3,3,2];
-        let value = 0;
-        for(i=0; i&lt;a.length; i++){
-            if(a[i]!=2){
-                value++;
-            }
+    function func() {
+        let a = 0,
+            sum = 0;
+
+        while (a < 10) {
+            a++;
+            if (a % 2 == 1) continue;
+            sum += a;
         }
-        document.write(value);
-    }    
+        document.write(sum);
+    }
+    func();  
 }
 </code></pre>
                 </div>
@@ -168,15 +174,16 @@
             <div class="t_code">
 <pre><code class="language-js">{
     function func(){
-        let a = [2,3,2,4,5,6,7,2,3,3,2];
-        let value = 0;
-        for(i=0; i&lt;a.length; i++){
-            if(a[i]!=2){
-                value++;
-            }
+        let i = 0, sum = 0;
+        while (0) {
+            i++;
+            if (i &gt; 10) break;
+            if (i % 5 == 0) continue;
+            sum += i;
         }
-        document.write(value);
-    }    
+        document.write(sum);
+    }
+    func()
 }
 </code></pre>
                 </div>
@@ -323,7 +330,7 @@
 </code></pre>
                 </div>
             </div>
-            <hr>
+            <hr>-->
             
         </div>
         <!-- 티스토리 용 끝 -->
