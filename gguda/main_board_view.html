@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    <style>
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+@import url('https://webfontworld.github.io/NanumSquare/NanumSquare.css');
+* {
+    margin: 0;
+    padding: 0;
+}
+/* 블라인드 효과 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+/* 이미지 대체(ir) */
+.ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+body {
+    margin: 0 auto;
+    font-family: 'NanumSquare';
+    font-weight: normal;
+    font-size: 50px;
+    color: #2B0667;
+    background-color: #fff;
+    background-image: url(assets/img/site_body_bg.jpg);
+    background-repeat: repeat;
+}
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+em {
+    font-style:normal;
+}
+/* 로그인 */
+fieldset{
+    border: none;
+}
+/* 메인 */
+.scroll{
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%,0);
+    text-align: center;
+}
+.scroll p{
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.header{
+    border-bottom: 1px solid #ededed;
+    box-shadow: 0px 20px 55px -30px #0000002e;
+    padding: 10px 0;
+    background: #ffffffb3;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(7px);
+}
+.header_inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 1160px;
+}
+.header_inner p{
+    font-size: 16px;
+    padding: 0 15px;
+}
+.profile_cont{
+    position: relative;
+}
+.profile_cont img{
+    display: block;
+}
+.profile_cont img:nth-child(2){
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    padding: 5px;
+    border: 1px solid #EDEDED;
+    background: #fff;
+}
+/* 게시판 */
+.board{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+    height: 100vh;
+}
+.board_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.board_info h2{
+    font-family: 'SCoreDream';
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.board_info p{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.board_info .notice_logo{
+    margin-bottom: 20px;
+}
+.section_selector{
+    background: #f9f9fca3;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    width: 200px;
+    top: 100px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    border:1px solid #ffffff9e;
+}
+.section_selector a{
+    font-size: 16px;
+    display: block;
+    padding: 20px;
+    color: #4B12A7;
+}
+.select{
+    background: #4B12A7;
+    color: #fff !important;
+    border-radius: 50px;
+    padding: 20px !important;
+}
+.notice_logo{
+    width: 154px;
+}
+.board_list{
+    width: 100%;
+}
+.board_list_inner{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 120px;
+    min-width: 437px;
+}
+.board_list_contents{
+    padding: 40px;
+    margin-bottom: 30px;
+    background: #f7f8fb;
+    border-radius: 25px;
+    border: 1px solid #f7f8fb;
+    width: 630px;
+}
+.board_list_contents:hover{
+    border: 1px solid #4b12a7;
+    box-shadow: 0px 50px 30px -35px #23084f2b;
+    background: #fff;
+    transition: 0.25s;
+}
+.board_list_contents:not(:hover){
+    transition: 0.25s;
+}
+.board_list_contents h2{
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.board_list_contents h2 > a {
+    color: #2b0667;
+}
+.board_list_contents_info{
+    display: flex;
+    justify-content: center;
+}
+.board_list_contents_info p{
+    font-size: 16px;
+}
+/* btn 관련 */
+.write_btn{
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 20px 100px;
+    background: #ffffffc9;
+    border: 1px solid;
+    color: #4b12a7;
+    border-radius: 50px;
+    font-size: 16px;
+    backdrop-filter: blur(6px);
+}
+.write_btn:hover{
+    background: #4b12a7;
+    color: #fff;
+    transition: 0.25s;
+    border: 1px solid #4b12a7;
+}
+.write_btn:not(:hover){
+    transition: 0.25s;
+}
+.modify_btn {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 20px 100px;
+    background: #ffffffc9;
+    border: 1px solid;
+    color: #FF416E;
+    border-radius: 50px;
+    font-size: 16px;
+    backdrop-filter: blur(6px);
+}
+.modify_btn:hover{
+    background: #FF416E;
+    color: #fff;
+    transition: 0.25s;
+    border: 1px solid #FF416E;
+}
+.modify_btn:not(:hover){
+    transition: 0.25s;
+}
+/* board__view */
+.board__view {
+    margin: 0 auto;
+    text-align: center;
+    /* padding: 30px; */
+    color: #000;
+}
+
+/* 수정됨 */
+.view-title {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    border: none;
+    padding: 15px;
+}
+
+.view-time {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.view-cont {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+}
+.view-cont > em {
+    font-weight: 700;
+}
+hr{
+    width: 32px;
+    border: 0.1px solid #ededed;
+    margin-bottom: 20px;
+}
+    </style>
+</head>
+<body>
+    <div style="display:none" class="scroll">
+        <p>아래로 스크롤 해주세요.</p>
+        <img src="assets/img/site_intro_scroll.png" alt="">
+    </div>
+    <div class="wrap">
+        <div class="site">
+            <div class="header">
+                <div class="header_inner">
+                    <img src="assets/img/site_header_logo.png" alt="logo">
+                    <p>공지사항</p>
+                    <p>이벤트</p>
+                    <p>이달의 순위</p>
+                    <p>일기쓰기</p>
+                    <p>꾸미기</p>
+                    <p>정보</p>
+                    <p>고객센터</p>
+                    <div class="profile_cont">
+                        <img src="assets/img/site_header_profile.png" alt="logo">
+                        <img src="assets/img/site_header_profile_heart.png" alt="logo">
+                    </div>
+                </div>
+            </div>
+            <div class="board">
+                <a class="modify_btn" href="board_Modify.html">수정</a>
+                <!-- <a href="boardModify.php?myBoardID=<?=$myBoardID?>">수정</a> -->
+                <div class="board_info">
+                    <img class="notice_logo" src="assets/img/site_board_notice_logo.png" alt="">
+                    <h2>NOTICE</h2>
+                    <p>공지사항은 이곳에서 확인해주세요!</p>
+                    <img src="assets/img/site_board_notice_cross.png" alt="">
+                </div>
+                <div class="section_selector">
+                    <a class="select" href="#">공지사항</a>
+                    <a href="#">이벤트</a>
+                </div>
+                <hr>
+                <div class="board__view">   
+                    <h3 class="view-title">대전 다이어리 꾸미기 페스테벌 일정 및 장소</h3>
+                    <p class="view-time"> notice | 2022.09.19 </p>
+                    <div class="view-cont">
+                        <em>또 모르지 내 마음이 저 날씨처럼 바뀔지 날 나조차 다 알 수 없으니</em><br><br>
+                        그게 뭐가 중요하니 지금 네게 완전히 푹 빠졌단 게 중요한 거지 <br>
+                        아마 꿈만 같겠지만 분명 꿈이 아니야 달리 설명할 수 없는 이건 사랑일 거야 <br>
+                        방금 내가 말한 감정 감히 의심하지 마 그냥 좋다는 게 아냐 What's after 'LIKE'? <br><br>
+                        You and I It's more than 'LIKE'<br>
+                        L 다음 또 O 다음 난 yeah You and I<br>
+                        It's more than 'LIKE' What's after 'LIKE'? What's after 'LIKE'?<br><br>
+                        조심해 두 심장에 핀 새파란 이 불꽃이 저 태양보다 뜨거울 테니<br>
+                        난 저 위로 또 아래로 내 그래프는 폭이 커 Yeah that's me<br><br>
+                        두 번 세 번 피곤하게 자꾸 질문하지 마 내 장점이 뭔지 알아? 바로 솔직한 거야<br>
+                        방금 내가 말한 감정 감히 의심하지 마 그냥 좋다는 게 아냐 What's after 'LIKE'?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

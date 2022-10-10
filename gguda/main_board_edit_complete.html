@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 꾸다 - 인덱스 </title>
+    <style>
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+        @import url('https://webfontworld.github.io/NanumSquare/NanumSquare.css');
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 블라인드 효과 */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+        /* 이미지 대체(ir) */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        body {
+            margin: 0 auto;
+            font-family: 'NanumSquare';
+            font-weight: normal;
+            font-size: 50px;
+            color: #2B0667;
+            background-color: #fff;
+            /* background-image:
+                linear-gradient(90deg, #e0e0e035 0px, #e0e0e035 1px, transparent 1px, transparent 99px, transparent 100px),
+                linear-gradient(#e0e0e035 0px, #e0e0e035 1px, transparent 1px, transparent 99px, transparent 100px),
+                linear-gradient(#e0e0e035 0px, #e0e0e035 1px, transparent 1px, transparent 99px, transparent 100px),
+                linear-gradient(90deg, #e0e0e035 0px, #e0e0e035 1px, transparent 1px, transparent 99px, transparent 100px),
+                linear-gradient(transparent 0px, transparent 5px, #fff 5px, #fff 95px, transparent 95px, transparent 100px),
+                linear-gradient(90deg, #e0e0e035 0px, #e0e0e035 1px, transparent 1px, transparent 99px, #e0e0e035 99px, #e0e0e035 100px),
+                linear-gradient(90deg, transparent 0px, transparent 5px, #fff 5px, #fff 95px, transparent 95px, transparent 100px),
+                linear-gradient(transparent 0px, transparent 1px, #fff 1px, #fff 99px, transparent 99px, transparent 100px),
+                linear-gradient(#e0e0e035, #e0e0e035);
+            background-size: 100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px; */
+            background-image: url(assets/img/site_body_bg.jpg);
+            background-repeat: repeat;
+        }
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        /* 로그인 */
+        .login-divider{
+            width: 40px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            border: 0.1px solid #E3E7F0;
+        }
+        fieldset{
+            border: none;
+        }
+        .login__popup{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #00000045;
+            backdrop-filter: blur(10px);
+        }
+        .login__inner{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 50px;
+            background: #fff;
+            border-radius: 44px;
+            box-shadow: 0px 15px 30px 5px #00000012;
+            width: 428px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .login__header{
+            /* margin-bottom: 10px; */
+            width: 100%;
+        }
+        .login__header h3{
+            font-family: 'SCoreDream';
+            font-weight: 800;
+            font-size: 30px;
+        }
+        .login__header img:nth-child(1){
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        .login__cont legend,
+        .login__header .login-txt,
+        .login__header h3,
+        .login__header .login-cross{
+            /* margin-bottom: 10px; */
+        }
+        .login-cross{
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+        .login-txt{
+            font-size: 16px;
+        }
+        .login-txt p{
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+        .login-txt .fail{
+            background: #ff416e14;
+            color: #FF416E;
+            border-radius: 50px;
+            padding: 10px 0;
+            display: none;
+        }
+        .login__cont{
+            width: 100%;
+        }
+        .login__cont label,
+        .login__cont legend{
+            font-size: 16px;
+        }
+        .login__cont input{
+            padding: 15px;
+            border-radius: 50px;
+            width: 100%;
+            height: 52px;
+            border: 1px solid #E4E7F0;
+            margin-bottom: 20px;
+            font-size: 16px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .login__cont input:focus{
+            outline: 1px solid #4B12A7
+        }
+        .login__cont div{
+            position: relative;
+        }
+        .login__cont div:nth-child(2)::after,
+        .login__cont div:nth-child(3)::after{
+            position: absolute;
+            left: 26px;
+            top: 2px;
+            padding: 0 10px;
+            background: #fff;
+            font-size: 16px;
+        }
+        .login__cont div:nth-child(2)::after{
+            content: '아이디';
+        }
+        .login__cont div:nth-child(3)::after{
+            content: '비밀번호';
+        }
+        /* .login__cont div:nth-child(3) input{
+            margin-bottom: 0px;
+        } */
+        .btn-close{
+            position: absolute;
+            top: 22px;
+            right: 22px;
+            border-radius: 50px;
+            padding: 13px;
+            width: 40px;
+            height: 40px;
+            border: none;
+        }
+        .login__cont .btom-btn a{
+            font-size: 16px;
+            color: #2B0667;
+        }
+        .btom-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .btom-btn a:nth-child(1),
+        .btom-btn a:nth-child(2){
+            border-right: 1px solid #E5E5E5;
+            margin-right: 10px;
+            padding-right: 10px;
+        }
+        .input__Btn{
+            padding: 15px;
+            width: 100%;
+            height: 52px;
+            border-radius: 50px;
+            background: #4B12A7;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            display: block;
+        }
+
+        /* 메인 */
+        .scroll{
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translate(-50%,0);
+            text-align: center;
+        }
+        .scroll p{
+            font-size: 16px;
+            margin-bottom: 20px;
+
+        }
+        .header{
+            border-bottom: 1px solid #ededed;
+            box-shadow: 0px 20px 55px -30px #0000002e;
+            padding: 10px 0;
+            background: #ffffffb3;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(7px);
+        }
+        .header_inner{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 1160px;
+        }
+        .header_inner p{
+            font-size: 16px;
+            padding: 0 15px;
+        }
+        .profile_cont{
+            position: relative;
+        }
+        .profile_cont img{
+            display: block;
+        }
+        .profile_cont img:nth-child(2){
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            padding: 5px;
+            border: 1px solid #EDEDED;
+            background: #fff;
+        }
+
+
+
+        /* 게시판 */
+        .write_btn{
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translate(-50%,0);
+            padding: 20px 100px;
+            background: #ffffffc9;
+            border: 1px solid;
+            color: #4b12a7;
+            border-radius: 50px;
+            font-size: 16px;
+            backdrop-filter: blur(6px);
+        }
+        .write_btn:hover{
+            background: #4b12a7;
+            color: #fff;
+            transition: 0.25s;
+            border: 1px solid #4b12a7;
+        }
+        .write_btn:not(:hover){
+            transition: 0.25s;
+        }
+        .board{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        .board_info{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .board_info h2{
+            font-family: 'SCoreDream';
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .board_info p{
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .board_info .notice_logo{
+            margin-bottom: 20px;
+        }
+
+        .section_selector{
+            background: #f9f9fca3;
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            width: 200px;
+            top: 100px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border:1px solid #ffffff9e;
+        }
+        .section_selector a{
+            font-size: 16px;
+            display: block;
+            padding: 20px;
+            color: #4B12A7;
+        }
+        .select{
+            background: #4B12A7;
+            color: #fff !important;
+            border-radius: 50px;
+            padding: 20px !important;
+        }
+
+        .notice_logo{
+            width: 154px;
+        }
+        
+        .board_list{
+            width: 100%;
+        }
+        .board_list_inner{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 0 120px;
+            min-width: 437px;
+        }
+
+        .board_list_contents{
+            padding: 40px;
+            margin-bottom: 30px;
+            background: #f7f8fb;
+            border-radius: 25px;
+            border: 1px solid #f7f8fb;
+            width: 630px;
+        }
+        .board_list_contents:hover{
+            border: 1px solid #4b12a7;
+            box-shadow: 0px 50px 30px -35px #23084f2b;
+            background: #fff;
+            transition: 0.25s;
+        }
+        .board_list_contents:not(:hover){
+            transition: 0.25s;
+        }
+        .board_list_contents h2{
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .board_list_contents_info{
+            display: flex;
+            justify-content: center;
+        }
+        .board_list_contents_info p{
+            font-size: 16px;
+        }
+
+        /* 게시판 수정 */
+        .board_info img{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div style="display:none" class="login__popup">
+            <div class="login__inner">
+                <div class="login__header">
+                    <img src="assets/img/login_logo.png" alt="">
+                    <h3>LOGIN</h3>
+                    <div class="login-txt">
+                        <p>개인정보를 이곳에 입력해주세요!</p>
+                        <p class="fail">아이디 비밀번호를 다시 확인해주세요!</p>
+                    </div>
+                    <img class="login-cross"src="assets/img/login_cross.png" alt="">
+                </div>
+                <div class="login__cont">
+                    <form name="login" action="loginSave.php" method="post">
+                        <fieldset>
+                            <legend class="ir">로그인 입력폼</legend>
+                            <div>
+                                <label for="youEmail" class="ir">이메일</label>
+                                <input type="email" name="youEmail" id="youEmail" placeholder="이메일" class="input__style" required>
+                            </div>
+                            <div>
+                                <label for="youPass" class="ir">비밀번호</label>
+                                <input type="password" name="youPass" id="youPass" placeholder="비밀번호" class="input__style" required>
+                            </div>
+                            <div class="btom-btn">
+                                <a href="#">아이디 찾기</a>
+                                <a href="#">비밀번호 찾기</a>
+                                <a href="#">회원가입</a>
+                            </div>
+                            <hr class="login-divider">
+                            <button type="submit" class="input__Btn">로그인</button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="login__footer">
+                </div>
+                <button type="button" class="btn-close"><img src="assets/img/login_close.png" alt=""></button>
+            </div>
+        </div>
+        <div class="site">
+            <div class="header">
+                <div class="header_inner">
+                    <img src="assets/img/site_header_logo.png" alt="logo">
+                    <p>공지사항</p>
+                    <p>이벤트</p>
+                    <p>이달의 순위</p>
+                    <p>일기쓰기</p>
+                    <p>꾸미기</p>
+                    <p>정보</p>
+                    <p>고객센터</p>
+                    <div class="profile_cont">
+                        <img src="assets/img/site_header_profile.png" alt="logo">
+                        <img src="assets/img/site_header_profile_heart.png" alt="logo">
+                    </div>
+                </div>
+            </div>
+            <div class="board">
+                <div class="board_info">
+                    <img class="notice_logo" src="assets/img/site_board_edit_complete.png" alt="">
+                    <h2>수정완료</h2>
+                    <p class="cross">수정하신 내용이 반영되었습니다, 하단의 버튼을 눌러 확인해주세요!</p>
+                    <img src="assets/img/site_board_notice_cross.png" alt="">
+                    <button style="width:216px;" type="submit" class="input__Btn">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+</script>
+</html>

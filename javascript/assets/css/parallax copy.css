@@ -168,20 +168,19 @@ li {
 .modal__box .title{
     padding-inline: 1rem;
     cursor: grab;
-    background-color: #3232329e;
+    background-color: hsl(236deg 16% 16%);
     display: flex;
     align-items: center;
     color: #fff;
     height: 50px;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-    backdrop-filter: blur(6px);
 }
 
 .modal__box .title .dot {
     width: 15px;
     height: 15px;
-    background-color: #FFCC00;
+    background-color: hsl(180 2% 50%);
     display: inline-block;
     border-radius: 50%;
     position: relative;
@@ -195,7 +194,7 @@ li {
     top: 0;
     width: 15px;
     height: 15px;
-    background-color: #34C759;
+    background-color: hsl(180 2% 50%);
     border-radius: 50%;
 }
 .modal__box .title .dot::after {
@@ -205,7 +204,7 @@ li {
     top: 0;
     width: 15px;
     height: 15px;
-    background-color: #FF3B30;
+    background-color: hsl(180 2% 50%);
     border-radius: 50%;
 }
 
@@ -233,7 +232,7 @@ li {
 }
 
 .modal__box .title .tabs > div.active{
-    background-color: #5727ff;
+    background-color: rgb(240, 36, 114);
     color: #fff;
 }
 .modal__box .title .tabs > div em {
@@ -246,20 +245,7 @@ li {
 }
 .modal__box .title .tabs > div .close {
     margin-left: 5rem;
-    border-radius: 50px;
-    width: 25px;
-    height: 25px;
-    background: #0000002e;
-    padding: 5px;
 
-}
-.close svg{
-    width: 15px;
-    height: 15px;
-}
-.close svg path{
-    width: 10px;
-    height: 10px;
 }
 
 

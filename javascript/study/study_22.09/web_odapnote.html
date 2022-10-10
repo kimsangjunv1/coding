@@ -65,272 +65,163 @@
         <!-- 메인 샘플 시작 -->
             <h2 class="t_tit">오답노트</h2>
             <p class="t_desc">
-                다른분들꺼 보고 틀 자체가 다르단걸 알고서 이제서야 올리네요 🥲<br>
-                많이 틀렸으니 많이 적어야겠죠,,, 눙물 납니다...
+                그저,,반성 🥲
             </p>
 
             <hr>
-            <div class="t_iframe" style="background: #fff; height: 1000px; padding-top: 0;">
-                <iframe src="https://kimsangjunv1.github.io/coding/javascript/study/study_22.09/web_study_test.html" frameborder="0"></iframe>
-            </div>
 
-            <!--<div class="question_01">
-                <h2 class="t_tit2">5번</h2>
+            <div class="question_01">
+                <h2 class="t_tit2">1번</h2>
                 <p class="t_desc2">
-                    2가 아닌 값을 만나게 되면 value를 1씩 증가시켜주는 문제입니다.
+                    매개변수로 받아온 1996을 num에 넣어준뒤 num의 값을 10과 나눠 몫을 answer에 더해준뒤 num의 값을 num / 10을 해줘 나온 나머지를 num에 넣고 반복하는 문제입니다.
                 <p class="t_box">
-                    1. for을 통해 i 값을 1씩 증가시켜 a배열의 i번째 값을 가져옵니다.<br>
-                    2. 그 i번째의 값이 2가 아니라면(!=2)<br>
-                    3. value의 값을 1씩 증가(value++)시킵니다.<br>
-                    4. a 배열 속 2가 아닌것은 [3,4,5,6,7,3,3] 총 7개 이므로 value에 1씩 7번을 더해주게 됩니다.<br>
-                    5. 그래서 답은 "7"
+                    1. answer에는 0을 대입해줍니다.
+                    2. num동안 while을 통해 반복하는데
+                    3. answer에는 num(1996)을 10 나눠준 나머지를 더해줍니다.
+                    4. num을 10이랑 나눠준 몫을 정수로 변환시켜준 후 num에 대입해줍니다.
+                    * 반복시 [1996/10=6],[199/10=9],[19/10=1],[1/10=1]
+                    5. 
                 </p>
             <div class="t_code">
-<pre><code class="language-js">{
-    function func(){
-        let a = [2,3,2,4,5,6,7,2,3,3,2];
-        let value = 0;
-        for(i=0; i&lt;a.length; i++){
-            if(a[i]!=2){
-                value++;
-            }
-        }
-        document.write(value);
-    }    
+<pre><code class="language-js">function q1(num) {
+    let answer = 0;
+    while(num) {
+        answer += num % 10;
+        num = parseInt(num / 10);
+    }
+    return answer;
 }
+
+console.log(q1(1996));
 </code></pre>
                 </div>
             </div>
             <hr>
             <div class="question_02">
-                <h2 class="t_tit2">6번</h2>
+                <h2 class="t_tit2">2번</h2>
                 <p class="t_desc2">
-                    i의 값이 8이하가 될때까지 1씩 증가시켜주고 그 값을 j에 넣어준뒤 마지막에 i와 j값을 더해준 값을 출력하는 문제입니다.
+                    array에 있는 배열을 아무런 조건없이 앞 자리의 숫자를 기준으로 정렬해줍니다.
                 <p class="t_box">
-                    1. for를 통해 i의 값을 1씩 증가시킵니다 <br>
-                    2. i의 값은 j에 더해줍니다.<br>
-                    3. 그렇게 i의 값이 9가 되어지면 j에 더해줌을 멈춥니다.<br>
-                    4. j[1+2+3+4+5+6+7+8]+i[9] 를 계신한 결과를 document.write를 통해 출력합니다.<br>
-                    5. 정답은 45
+                    1. array 배열 안에는 10,31,1,2,3,4,32 가 있으므로 sort에 의해 앞자리를 기준으로 정렬하면<br>
+                    2. 답은 1,10,2,3,31,32,4가 출력
                 </p>
             <div class="t_code">
-<pre><code class="language-js">{
-    function func(){
-        let i, j = 0;
-
-        for(i=0; i&lt;=8; i++){
-            j += i;
-        }
-        document.write(j+i);
-    }
-    func()
+<pre><code class="language-js">function q2() {
+    const array = [10, 31, 1, 2, 3 ,4, 32];
+    return array.sort();
 }
+
+console.log(q2());
 </code></pre>
                 </div>
             </div>
             <hr>
             <div class="question_03">
-                <h2 class="t_tit2">9번</h2>
+                <h2 class="t_tit2">3번</h2>
                 <p class="t_desc2">
                     while을 통해 a의 값이 10미만이 될때가지 a를 1씩 더해 a의 값에 2를 나눈 나머지 값이 1이면 건너뛰고<br>
                     이외에는 sum에 a의 현재값을 더한 후 sum을 출력하는 문제입니다.
                 <p class="t_box">
-                    1. while을 통해 a의 값이 10 미만(a&lt;10)이 될때까지 하단의 2~4을 반복해줍니다.<br>
-                    2. a의 값을 1씩 더해주고(a++)<br>
-                    3. 만약 a의 값에 2를 나눈 나머지가 1과 같으면(a%2==1) continue를 통해 다시 처음으로 돌아갑니다.<br>
-                    4. a의 값에 2를 나눈 나머지가 1이 안나왔다면 현재 a의 값을 sum에 더해줍니다.<br>
-                    5. a가 9에 도달 했을때에는 a&lt;10 조건에 부합하므로 a++를 해줘 a를 10으로 만들고 마지막으로 a의 값 10을 sum에 더해줍니다.
-                    6. a가 10이 되었으니 while의 조건에 부합하지 않으니 document.write(sum)을 출력하게 됩니다.<br>
-                    7. 답은 30
+                    1. array 배열 안에는 10,31,1,2,3,4,32 가 있으며<br>
+                    2. array에서 filter를 통해 x(배열)를 string을 통해 문자열로 변경후 .Length를 통해 길이가 2이상인 값만 배열로 반환합니다.
+                    3. 답은 10,31,32
                 </p>
             <div class="t_code">
-<pre><code class="language-js">{
-    function func() {
-        let a = 0,
-            sum = 0;
-
-        while (a < 10) {
-            a++;
-            if (a % 2 == 1) continue;
-            sum += a;
-        }
-        document.write(sum);
-    }
-    func();  
+<pre><code class="language-js">function q3() {
+    const array = [10, 31, 1, 2, 3 ,4, 32];
+    return array.filter(x =&gt; String(x).length >= 2);
 }
+
+console.log(q3());
 </code></pre>
                 </div>
             </div>
             <hr>
             <div class="question_04">
-                <h2 class="t_tit2">10번</h2>
+                <h2 class="t_tit2">4번</h2>
                 <p class="t_desc2">
                     while의 조건에 부합할때까지 sum에 i값을 if 조건에따라 더해주는것을 반복해줍니다.
                 <p class="t_box">
-                    1. while의 조건이 0(false)였기 때문에<br>
-                    2. 정답은 false<br>
-                    3. 대어가 잡혔네요
-                </p>
+                    1. reduce를 사용하여 배열의 prev, curr을 가지고<br>
+                    2. 현재값을 이전값에 더해줍니다.<br>
+                    3. 현재값은 10,20,30,40,50을 각각 prev에 더해주게 되므로 150이 나오고<br>
+                    4. 150을 배열의 길이만큼 나눠주면<br>
+                    5. 답은 30
             <div class="t_code">
-<pre><code class="language-js">{
-    function func(){
-        let i = 0, sum = 0;
-        while (0) {
-            i++;
-            if (i &gt; 10) break;
-            if (i % 5 == 0) continue;
-            sum += i;
-        }
-        document.write(sum);
-    }
-    func()
+<pre><code class="language-js">function q4() {
+    const array = [10,20,30,40,50];
+    return array.reduce((prev, curr) =&gt; prev += curr, 0) / array.length;
 }
+
+console.log(q4());
 </code></pre>
                 </div>
             </div>
             <hr>
             <div class="question_05">
-                <h2 class="t_tit2">14번</h2>
+                <h2 class="t_tit2">9번</h2>
                 <p class="t_desc2">
-                    for of를 통해 x의 값(webstoryboy)에서 w가 아닌것은 "#"으로 대체해 출력하는 문제입니다.
+                    i가 증가한 숫자가 배열에 있는지 찾고 0또한 있으면 answer를 1씩 증가시켜주는 문제입니다.
                 <p class="t_box">
-                    1. str에 "webstoryboy" 저장 후 document.write를 통해 함수 func(str=매개변수)를 호출합니다.<br>
-                    2. 이 문제에 만들어진 함수명 func 속에서만 활용할 매개변수 이름은 s(하단 func(str)로 인해 s에는 webstoryboy가 저장되어있음)로 지정 후<br>
-                    3. for of를 이용해 s의 내용을 let x에 저장시킨 뒤<br>
-                    4. x의 값 중 t가 아닌 문자열을 마다 answer값을 1씩 더해준 뒤(answer++)<br>
-                    5. func함수 실행시 반환되어질 값은 answer의 값을 반환(return answer; = 10)<br>
-                    6. 답은 10
-
+                    1. array에는 배열 1,2,3,4,5가 저장되어 있습니다.<br>
+                    2. i는 기본 3으로 시작해 8미만이 될때까지 i를 1씩 증가시켜주는 for문을 통해<br>
+                    3. 만약(if) array에 i값이 포함되어있는지와 0도 있다면 answer을 1씩 증가시킵니다.<br>
+                    4. 하지만 배열 자체에 0이 없기 때문에 더해주지 못하며<br>
+                    5. 답은 0이 나옵니다.
                 </p>
             <div class="t_code">
-<pre><code class="language-js">{
-    function func(s){
-        let answer = "";
-        for(let x of s){
-            if(x != 'w') answer+= '#';
-            else answer += x;
+<pre><code class="language-js">function q8() {
+    let answer = 0;
+    const array = [1,2,3,4,5];
+    for(let i = 3; i &lt; 8; i++) {
+        if(array.includes(i) && 0) {
+            answer++;
         }
-        return(answer);
     }
-    let str = "webstoryboy"
-    document.write(func(str));
 }
+    return answer;
+console.log(q8());
 </code></pre>
                 </div>
             </div>
             <hr>
             <div class="question_06">
-                <h2 class="t_tit2">16번</h2>
+                <h2 class="t_tit2">10번</h2>
                 <p class="t_desc2">
-                    for of를 통해 x의 값 중 대문자인것은 소문자로 바꾸고 이외에는 대문자로 바꾸는 문제입니다.
+                    flag가 false로 변할때까지 n을 1씩 증가시켜 for을 통해 if로 flag를 true로 할지 false로 할지 결정짓는 문제입니다.
                 <p class="t_box">
-                    1. document.write를 통해 func("webStorBOY10"=매개변수)를 실행시킵니다.
-                    2. 함수의 이름은 func로 설정 후 매개변수의 이름은 s로 설정합니다.<br>
-                    3. s의 값은 for of 를 통해 let x에 대입 후 x("webStorBOY10")의 값 중 x를 대문자로 변환한것과 같은 문자가 있다면
-                    4. 대문자는 소문자로 이외에는 소문자는 대문자로 변환 합니다.<br>
-                    5. return answer를 통해 함수 func를 실행 시킬때에는 answer의 값을 출력시킵니다.
-                    6. 답은 "WEBsTORboy10"
+                    1. flag가 flag가 false가 아닐때까지 while을 통해 하단의 내용을 반복합니다
+                    2. n을 1씩 증가시켜
+                    3. for을 통해 i를 1부터 arr의 배열의 길이 만큼 1씩 증가시키는데
+                    4. arr의 i값으로 나눌때 계속 첫번째 자리로 나눴을때 나머지가 0이 나오질 않으면 flag를 false로 유지시키고 break를 통해 빠져나오게 되어서 계속 반복하게 됩니다.
+                    4. 그렇게 만약 arr의 0번째(2) * n(84)한 값을 arr의 배열의 6이랑 나눴을때 나머지가 0 이면
+                    5. flag 를 true로 만들어 while의 실행을 멈추고
+                    6. arr 0번째와 n을 곱한값을 반환 후 출력합니다.
+                    7. 답은 168
                 </p>
             <div class="t_code">
-<pre><code class="language-js">{
-    function func(s) {
-        let answer = '';
-
-        for (let x of s) {
-            if (x === x.toUpperCase()) {
-                answer += x.toLowerCase();
-            } else {
-                answer += x.toUpperCase();
+<pre><code class="language-js">function q10(arr) {
+    let flag = false;
+    let n = 1;
+    while(!flag) {
+        n++;
+        for(let i = 1; i &lt; arr.length; i++) {
+            if((arr[0] * n) % arr[i] === 0) {
+                flag = true;
+            }
+            else {
+                flag = false;
+                break;
             }
         }
-        return answer;
     }
-    document.write(func("webStorBOY10"))
+    return arr[0] * n
 }
-</code></pre>
-                </div>
-            </div>
-            <hr>
-            <div class="question_07">
-                <h2 class="t_tit2">18번</h2>
-                <p class="t_desc2">
-                    filter를 이용해 원하는 요소만 가져와 그 값을 가지고 어느것을 answer에 대입 할지 결정한뒤 함수의 값을 answer의 값으로 반환하는 문제입니다.
-                <p class="t_box">
-                    1. 매개변수를 통한 arr([1,2,3,4,5])/divisor(2)의 값을 함수 solution에 가져온뒤<br>
-                    2. filter를 이용하여 요소와 divisor(2)를 나누었을때 나머지가 영이 되는것만 찾아 상수 div에 넣은 뒤<br>
-                    3. answer에 대입할 값을 결정하기 위해서 div의 길이(2)가 0보다 클때<br>
-                    4. sort의 값에 [div의 값을 순서대로 정렬 후 a-b를 한 값을 할건지] 아니면 [-1로 설정할건지] 결정 후 answer을 반환하는 문제입니다.
-                </p>
-            <div class="t_code">
-<pre><code class="language-js">{
-    function solution(arr, divisor) {
-        var answer = [];
 
-        const div = arr.filter((el) => el % divisor == 0);
-        answer = div.length > 0 ? div.sort((a, b) => a - b) : [-1];
-
-        return answer;
-    }
-    document.write(solution([1, 2, 3, 4, 5], 2));
-}
+console.log(q10([2,6,8,14]));
 </code></pre>
                 </div>
             </div>
-            <hr>
-            <div class="question_08">
-                <h2 class="t_tit2">19번</h2>
-                <p class="t_desc2">
-                    includes를 통해 배열에 1씩 증가되는 i의 값중 배열과 일치하지 않는 값은 answer에 더하는 문제.
-                <p class="t_box">
-                    1. 간단합니다 solution([1,2,3,4,5,6,7,8,0]=매개변수)을 출력시키기 위해<br>
-                    2. solution 함수에는 매개변수 이름을 numbers로 설정하고<br>
-                    3. for를 이용해 i의 값을 1씩 증가시켜 numbers 값에 i값이 포함되어있지 않으면 i의 값을 answer에 저장<br>
-                    4. numbers의 값은 5와 9가 없기 때문에 i가 10이 될때까지 5와 9 이 두가지만 answer에 더할 수 있으므로<br>
-                    5. 답은 14<br>
-                    6. 간단한데 틀렸네요 역시 난..
-                </p>
-            <div class="t_code">
-<pre><code class="language-js">{
-    function solution(numbers){
-        let answer = 0;
-        for(let i=0; i&lt;10; i++){
-            if(!numbers.includes(i)){
-                answer += i;
-            }
-        }
-        return answer;
-    }
-    document.write(solution([1,2,3,4,5,6,7,8,0]));
-}
-</code></pre>
-                </div>
-            </div>
-            <hr>
-            <div class="question_09">
-                <h2 class="t_tit2">20번</h2>
-                <p class="t_desc2">
-                    solution의 매개변수를 통해 1씩 증가시킨 i의 값과 매개변수(10)을 나눴을때 나머지가 1이 나오게 되면 i의 값을 리턴시켜주는 문제입니다.
-                <p class="t_box">
-                    1. document.write로 인해 solution의 매개변수에는 10이 설정되었습니다.
-                    2. 함수 이름 solution의 매개변수의 이름은 n으로 설정 후
-                    3. for를 통해 i의 값이 n(10) 미만일때까지 i의 값을 1씩 증가시킵니다.
-                    4. if를 통해 만약 n(10)과 i(1씩 증가된 값)을 나눴을때 나머지가 1이 나오게 된다면
-                    5. 현재값 i로 반환합니다(return i)
-                    6. i의 값이 3이 되는순간 return i가 실행되어지기에 답은 3
-                </p>
-            <div class="t_code">
-<pre><code class="language-js">{
-    function solution(n) {
-        for (let i = 1; i < n; i++) {
-            if (n % i === 1) return i;
-        }
-    }
-    document.write(solution(10));
-}
-</code></pre>
-                </div>
-            </div>
-            <hr>-->
             
         </div>
         <!-- 티스토리 용 끝 -->

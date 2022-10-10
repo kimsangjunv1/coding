@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!-- 티스토리 용 -->
+        <div id="sample01" class="container sample document">
+            <!-- 메인 샘플 시작 -->
+            <h2 class="t_tit">패럴렉스 이펙트_07</h2>
+            <p class="t_desc2">각 span태그가 감싸여있지 않은 문장들을 span태그로 감싸 각 이미지와 span태그에 after/before 요소를 통해 효과를 주도록 해보겠습니다 👩🏻‍💻</p>
+            <hr>
+            <h2 class="t_tit2">HTML 코드</h2>
+            <p class="t_desc2">HTML 코드는 크게 신경쓸것이 없으나,<br>
+            각 desc에 data-delay를 추가시켜 각 애니메이션에 딜레이를 줄겁니다!🏄‍♂️
+            </p>
+            <div class="t_code">
+                <pre><code class="language-html">&lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+
+        &lt;!-- section1 시작 --&gt;
+        &lt;section id="section1" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal"&gt;우리는 사랑하는 친구들에 의해서만 알려진다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section1 끝 --&gt;
+
+        &lt;!-- section2 시작 --&gt;
+        &lt;section id="section2" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-RTL"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal reveal-RTL" data-delay="500"&gt;사랑은 눈으로 보지 않고 마음으로 보는 거지.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section2 끝 --&gt;
+
+        &lt;!-- section3 시작 --&gt;
+        &lt;section id="section3" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TTB"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal reveal-TTB" data-delay="500"&gt;두 분은 상처 하나 입지 않고, 대용사가 된 셈이오.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section3 끝 --&gt;
+
+        &lt;!-- section4 시작 --&gt;
+        &lt;section id="section4" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-BTT" data-delay="1500"&gt;
+                &lt;div class="content__item__img" data-delay="1500"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal reveal-BTT"&gt;그의 믿음은 그가 쓰는 모자의 유행처럼 변한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section4 끝 --&gt;
+
+        &lt;!-- section5 시작 --&gt;
+        &lt;section id="section5" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO"&gt;잘 있거라! 우리가 언제 다시 만날지는 아무도 모른다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section5 끝 --&gt;
+
+        &lt;!-- section6 시작 --&gt;
+        &lt;section id="section6" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-RTL"&gt;죄를 짓고 잘되는 사람도 있고, 덕을 베풀고 망하는 사람도 있다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section6 끝 --&gt;
+
+        &lt;!-- section7 시작 --&gt;
+        &lt;section id="section7" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-TTB"&gt;모두를 사랑하되, 몇 사람만 믿으라. 누구에게도 잘못을 저지르지 말라.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section7 끝 --&gt;
+
+        &lt;!-- section8 시작 --&gt;
+        &lt;section id="section8" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-TTB"&gt;누구에게나 결점은 있기 마련이지. 그분의 경우는 솔직하다는 게 결점이야.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section8 끝 --&gt;
+
+        &lt;!-- section9 시작 --&gt;
+        &lt;section id="section9" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-TTB"&gt;사람은 누구나 주어진 일과 원하는 것이 있다, 비록 보잘 것 없을 지라도.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section9 끝 --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+            </div>
+            <hr>
+            <h2 class="t_tit2">CSS 코드 : 애니메이션</h2>
+            <p class="t_desc2">
+                총 5가지(opacity/reveal/reveal-RTL/reveal-TTB/reveal-BTT)의 애니메이션을 사용하였습니다.<br>
+                또한 각각의 애니메이션은 속성을 변경해줌으로써 0%~100%까지의 크기 변경 과정을 보여주도록 하였으며<br>
+                일부 속성은 기본값을 사용하기 위해 'auto'를 지정해 변경값을 초기화 해주었습니다 👀
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">@keyframes opacity{
+    0%   {opacity: 0;}
+    60%  {opacity: 0;}
+    70%  {opacity: 1;}
+    100% {opacity: 1;}
+}
+
+@keyframes reveal{
+    0%   {width: 0;    left: 0;}
+    50%  {width: 100%; left: 0;}
+    80%  {width: 100%; left: 0;}
+    100% {width: 0;    left: 100%;}
+}
+
+@keyframes reveal-RTL{
+    0%   {width: 0;    right: 0; left: auto;}
+    50%  {width: 100%; right: 0; left: auto;}
+    80%  {width: 100%; right: 0; left: auto;}
+    100% {width: 0;    right: 100%; left: auto;}
+}
+
+@keyframes reveal-TTB{
+    0%   {width: 100%;    height: 0; top: 0;}
+    50%  {width: 100%; height: 100%; top: 0;}
+    80%  {width: 100%; height: 100%; top: 0;}
+    100% {width: 100%;    height: 0; top: 100%;}
+}
+@keyframes reveal-BTT{
+    0%   {width: 100%;    height: 0;    bottom: 0;    top:auto;}
+    50%  {width: 100%;    height: 100%; bottom: 0;    top:auto;}
+    80%  {width: 100%;    height: 100%; bottom: 0;    top:auto;}
+    100% {width: 100%;    height: 0;    bottom: 100%; top:auto;}
+}
+</code></pre>
+            </div>
+            <hr>
+            <div class="t_box">after/before 요소를 움직임으로써 애니메이션을 구성하는것이기 떄문에 하단의 코드가 꼭 필요합니다 🙄</div>
+            <div class="t_code">
+<pre><code class="language-css">
+.reveal > div, .reveal > span {
+    opacity: 0;
+}
+.reveal.show > div,.reveal.show > span  {
+    animation: opacity 1s linear forwards;
+}
+.reveal {
+    position: relative;
+}
+.reveal::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.527);
+    backdrop-filter: blur(15px);
+    z-index: 1;
+}
+.reveal.reveal-TWO::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.445);
+    backdrop-filter: blur(15px);
+}
+
+.reveal.show::before{
+    animation: reveal 1s;
+}
+.reveal.reveal-RTL.show::before{
+    animation: reveal-RTL 1s;
+}
+.reveal.reveal-TTB.show::before{
+    animation: reveal-TTB 1s;
+}
+.reveal.reveal-BTT.show::before{
+    animation: reveal-BTT 1s;
+}
+
+/* 2개 */
+.reveal.show::after{
+    animation: reveal 1s 0.3s;
+}
+.reveal.reveal-RTL.show::after{
+    animation: reveal-RTL 1s 0.3s;
+}
+.reveal.reveal-TTB.show::after{
+    animation: reveal-TTB 1s 0.3s;
+}
+.reveal.reveal-BTT.show::after{
+    animation: reveal-BTT 1s 0.3s;
+}
+</code></pre>
+            </div>
+            <hr>
+            <h2 class="t_tit2">JS 코드 : split 기준으로 한글자씩 span으로 감싸주기!</h2>
+            <p class="t_desc2">
+                //reveal이 붙었을때 한문장씩 span태그가 없는 문장들은 span태그를 붙여줍니다.<br><br>
+
+                1. .content__item__desc에 reveal이 붙었을때의 상태만을 다중으로 선택 후 해당 요소를 forEach를 통해 추출합니다.<br>
+                2. 각 꺼낸 요소를 .innerText로 문자열로 변환 후 splitText라는 변수안에 넣고<br>
+                3. "&lt;span aria-hidden='true'&gt;" + splitWrap + "&lt;/span&gt;";를 통해 splitText 양쪽에 span 태그를 열고 닫는 태그를 넣어줍니다.<br>
+                5. splitText을 각 뽑아낸 요소에 innerHTML로 넣습니다~<br><br>
+
+                //스크롤시 딜레이를 걸어 show를 붙여주는 원리<br><br>
+
+                0. revealDelay 에는 el.dataset.delay(각 요소의 data-delay여부)를 넣어주고<br>
+                1. 만약 revealDelay(data-delay 여부)가 찾을 수 없음과 같다면<br>
+                2. 각 요소에 show 클래스를 붙여주고<br>
+                3. 만약 찾을 수 있다면 각 요소는 setTimeout에 revealDelay(data-delay 여부)초 만큼 딜레이 후 show를 붙여줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">document.querySelectorAll(".content__item__desc.reveal").forEach(text => {
+    let splitText = text.innerHTML;
+    splitText = "&lt;span&gt;" + splitText + "&lt;/span&gt;";
+    text.innerHTML = splitText;
+})
+
+//reveal 클래스 자식에 글씨만 있다면, 가상으로 span 태그를 만들어서 넣어주세요
+function scroll(){
+
+    let scrollTop = window.scrollY;
+    const reveal = document.querySelectorAll(".reveal");
+    
+    reveal.forEach(el => {
+        let revealOffset =  el.offsetTop + el.parentElement.offsetTop;
+        let revealDelay = el.dataset.delay;
+        
+        if(scrollTop >= revealOffset - window.innerHeight){
+            if(revealDelay == undefined){
+                el.classList.add("show");
+            } else {
+                setTimeout(() => {
+                    el.classList.add("show");
+                }, revealDelay)
+            }
+        }
+    })
+
+    requestAnimationFrame(scroll);
+}
+scroll();
+</code></pre>
+            </div>
+            <h2 class="t_tit2">결과</h2>
+            <p class="t_desc2">
+                느무느무 믓즈인~~~~~ 패럴렉스 이펙트 07번 완승~~~💃🏻
+            </p>
+            <div class="t_iframe" style="min-height : 700px; padding-top:0;">
+                <iframe src="https://kimsangjunv1.github.io/coding/javascript/effect/parallaxEffect07.html" frameborder="0"></iframe>
+            </div>
+            <hr>
+            <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
+                <div class="t_link">
+                    <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/parallaxEffect07.html" target="blank">원본 소스 보기</a>
+                </div>
+                <div class="t_link">
+                    <a href="https://kimsangjunv1.github.io/coding/javascript/effect/parallaxEffect07.html" target="blank">원본 페이지 보기</a>
+                </div>
+            </div>
+            <!-- 01번 메인 샘플 끝 -->
+        </div>
+        <!-- 티스토리 용 끝 -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>
