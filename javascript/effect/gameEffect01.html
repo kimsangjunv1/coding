@@ -22,29 +22,38 @@
     <div class="mouse__cursor">
         <!-- <img src="../../assets/img/mouseCursor.png" alt="유지"> -->
     </div>
+    <iframe class="sourceOpen" src="https://github1s.com/kimsangjunv1/coding/blob/main/javascript/effect/gameEffect01.html" frameborder="0"></iframe>
     <main id="main">
         <div class="icon_box">
             <div class="icon1">
-                <img src="../../assets/img/iconGame01.png" alt="유지">
-                <span>뮤직 듣기</span>
+                <div class="cont">
+                    <img src="../../assets/img/iconGame01.png" alt="유지">
+                    <span>게임 01</span>
+                </div>
             </div>
             <div class="icon2">
-                <img src="../../assets/img/iconGame02.png" alt="유지">
-                <span>뮤직 듣기</span>
+                <div class="cont">
+                    <img src="../../assets/img/iconGame02.png" alt="유지">
+                    <span>게임 02</span>
+                </div>
             </div>
             <div class="icon3">
                 <div class="cont">
                     <img src="../../assets/img/iconGame03.png" alt="유지">
-                    <span>뮤직 듣기</span>
+                    <span>게임 03</span>
                 </div>
             </div>
             <div class="icon4">
-                <img src="../../assets/img/iconGame04.png" alt="유지">
-                <span>뮤직 듣기</span>
+                <div class="cont">
+                    <img src="../../assets/img/iconGame04.png" alt="유지">
+                    <span>게임 04</span>
+                </div>
             </div>
-            <div class="icon4">
-                <img src="../../assets/img/iconGame05.png" alt="유지">
-                <span>뮤직 듣기</span>
+            <div class="icon5">
+                <div class="cont">
+                    <img src="../../assets/img/iconGame05.png" alt="유지">
+                    <span>소스 보기</span>
+                </div>
             </div>
         </div>
     </main>
@@ -497,6 +506,15 @@
 
         a.addEventListener("click", ()=>{
             beee.style.display="none";
+        });
+    </script>
+
+    <script>
+        const sourceIcon = document.querySelector(".icon5")
+        const sourceOpen = document.querySelector(".sourceOpen")
+
+        sourceIcon.addEventListener("click", ()=>{
+            sourceOpen.style.display="block";
         });
     </script>
 
