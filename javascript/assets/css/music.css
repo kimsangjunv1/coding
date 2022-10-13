@@ -1,0 +1,291 @@
+.music__wrap {
+}
+.music__inner {
+    width: 450px;
+    background-color: #351e54e0;
+    backdrop-filter: blur(8px);
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    padding: 26px;
+    padding-top: 10px;
+    box-shadow: 0px 5px 26px 5px #300e504a;
+    overflow: hidden;
+}
+.music__inner::before{
+    content: '';
+    background: #ffffff6b;
+    width: 74px;
+    height: 2px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.music__header {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+.music__header h2 {
+    font-size: 14px;
+}
+.music__contents {
+    /* background: #dfe0e6; */
+    width: 100%;
+    margin-bottom: 20px;
+}
+.music__view {
+    display: flex;
+    padding: 40px 0;
+    justify-content: space-around;
+}
+.music__view .img {
+    width: 25%;
+}
+.music__view .img img {
+    width: 100%;
+}
+
+img.two{
+    position: absolute;
+    top: -70px;
+    left: 0;
+    /* width: 100%; */
+    height: 150%;
+    object-fit: cover;
+    filter: blur(12px);
+    z-index: -6;
+    opacity: 0.4;
+}
+.music__view .title {
+    width: 65%;
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+}
+.music__view .title h3 {
+    margin-bottom: 5px;
+    font-size: 25px;
+    line-height: 1.2;
+    color: #fff;
+}
+.music__view .title p {
+    color: #ffffff8d;
+}
+.music__control {
+    /* background: #666; */
+    width: 100%;
+    height: 100px;
+    /* padding: 20px; */
+    /* padding-top: 10px; */
+}
+
+.music__control .progress {
+    width: 100%;
+    height: 10px;
+    /* background: #000; */
+    border-radius: 5px;
+    position: relative;
+}
+.music__control .progress::after{
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    /* transform: translate(0,-50%); */
+    height: 1px;
+    width: 100%;
+    content: '';
+    background: rgba(255, 255, 255, 0.18);
+}
+.music__control .progress .bar {
+    width: 0;
+    height: 4px;
+    background: #fff;
+    /* border-radius: 5px; */
+    z-index: 1;
+    position: relative;
+    /* overflow: hidden; */
+}
+.music__control .progress .bar::after{
+    content: '';
+    width: 1px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    transform: translate(0,-50%);
+    box-shadow:0px 0px 60px 10px #fff;
+    border-radius: 50px;
+}
+.music__control .progress .bar::before{
+    content: '';
+    width: 2px;
+    height: 10px;
+    background-color: rgb(255 255 255 / 30%);
+    position: absolute;
+    right: -1px;
+    top: -15px;
+}
+.music__control .progress .timer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.music__control .progress .timer span:nth-child(1){
+    color: #c9ff00;
+}
+.music__control .progress .timer span{
+    color: #fff;
+}
+.music__control .control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.music__control .control i{
+    filter: invert(1);
+}
+.music__control .control .repeat {
+    width: 20px;
+    height: 25px;
+    background-image: url(../music_img/MusicRepeatBtn.png);
+    background-size: cover;
+}
+.music__control .control .repeat_one {
+    width: 20px;
+    height: 25px;
+    background-image: url(../music_img/MusicRepeatOneBtn.png);
+    background-size: cover;
+}
+.music__control .control .shuffle {
+    width: 20px;
+    height: 20px;
+    transform: scale(1.5);
+    background-image: url(../music_img/MusicShuffleBtn.png);
+    background-size: cover;
+}
+.music__control .control .prev {
+    width: 24px;
+    height: 24px;
+    background-image: url(../music_img/MusicPrevBtn.png);
+    background-size: cover;
+}
+.music__control .control .next {
+    width: 24px;
+    height: 24px;
+    background-image: url(../music_img/MusicNextBtn.png);
+    background-size: cover;
+}
+.music__control .control .play {
+    width: 24px;
+    height: 24px;
+    background-image: url(../music_img/MusicPlayBtn.png);
+    background-size: cover;
+
+    transform: scale(1.8);
+}
+.music__control .control .stop {
+    width: 24px;
+    height: 24px;
+    background-image: url(../music_img/MusicStopBtn.png);
+    background-size: cover;
+    transform: scale(1.5);
+}
+.music__control .control .list {
+    width: 20px;
+    height: 20px;
+    background-image: url(../music_img/MusicListBtn.png);
+    background-size: cover;
+}
+
+.music__footer {
+    background: #fff;
+}
+
+.music__list{
+    padding: 20px;
+    box-shadow: 0px 15px 20px 10px #1a1c3e85;
+}
+.music__list h3{
+    font-size: 20px;
+    border-bottom: 1px solid rgb(22 2 121 / 28%);
+    padding-bottom: 15px;
+}
+.music__list h3 .list{
+    display: inline-block;
+    width: 15px;
+    height: 13px;
+    background-image: url(../music_img/MusicControl.png);
+    background-size: cover;
+    margin-right: 5px;
+}
+.music__list h3 .close{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url(../music_img/MusicListCloseBtn.png);
+    background-size: cover;
+    margin-right: 5px;
+    float: right;
+}
+.music__list h3 .close span{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background: #000;
+    margin: 5px;
+}
+.music__list ul{
+    max-height: 400px;
+    overflow-y: scroll;
+}
+.music__list ul::-webkit-scrollbar-thumb{
+    background-color: #6808ca;
+}
+.music__list ul::-webkit-scrollbar{
+    background: transparent;
+    width: 3px;
+}
+
+.music__list li{
+    border-bottom: 1px solid #00000017;
+    list-style: none;
+    position: relative;
+    padding: 15px 0;
+}
+.music__list li.playing{
+    background: #e9e9f0;
+}
+
+.music__list strong{
+    display: block;
+    font-size: 20px;
+    border-bottom: 4px;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 289px;
+    white-space: nowrap;
+    color: #41057e;
+}
+.music__list li em{
+    font-style: normal;
+    color: #5b5a7284;
+}
+.music__list li span{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: #5b5a7284;
+    font-size: 14px;
+}
