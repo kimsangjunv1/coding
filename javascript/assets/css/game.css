@@ -36,15 +36,38 @@ body {
     padding: 0 10px;
     background-color: #272949ad;
     backdrop-filter: blur(5px);
+    height: 40px;
 }
+#header img{
+    width: 15px;
+    filter: invert(1);
+    display: inline;
+    margin-right: 5px;
+  }
 
 #header h1{
+    display: inline;
     font-size: 20px;
     color: #fff;
     padding: 5px 0;
 }
 #header .time{
     color: #fff;
+}
+.header_icon_cont{
+    display: flex;
+
+}
+.header_icon_cont img{
+    width: 16px !important;
+    height: 15px;
+    margin-right: 23px !important;
+}
+.header_icon_cont img:nth-child(4){
+    width: 20px !important;
+}
+.header_icon_cont img:nth-child(7){
+    width: 20px !important;
 }
 
 #footer{
@@ -71,24 +94,24 @@ body {
     color: #58e54e;
 }
 .icon1{
-    left: 100px;
-    top: 100px;
-}
-.icon2{
-    left: 150px;
-    top: 130px;
-}
-.icon3{
     right: 30px;
     top: 60px;
 }
+.icon2{
+    right: 30px;
+    top: 150px;
+}
+.icon3{
+    right: 30px;
+    top: 240px;
+}
 .icon4{
     right: 30px;
-    bottom: 60px;
+    top: 360px;
 }
 .icon5{
-    left: 30px;
-    bottom: 60px;
+    right: 30px;
+    top: 450px;
 }
 
 .icon1,
@@ -133,7 +156,7 @@ body {
     top: 0;
     width: 40px;
     height: 73px;
-    z-index: 1;
+    z-index: 100;
     background-image: url(../../../assets/img/mouseCursor.png);
     background-repeat: no-repeat;
     background-size: 20px;
@@ -142,4 +165,9 @@ body {
 }
 .mouse__cursor img{
     transform: scale(0.5);
+}
+
+.music__header div:last-child{
+    border: 1px solid #fff;
+    padding: 5px 10px;
 }

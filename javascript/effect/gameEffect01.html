@@ -15,14 +15,32 @@
 
 <body>
     <header id="header">
-        <h1>gamneeffect</h1>
-        <div class="time"></div>
+        <div class="header_cont">
+            <img src="../assets/music_img/appleLogo.png" alt="">
+            <h1>gamneeffect</h1>
+        </div>
+        <div class="header_icon_cont" style="display:flex;">
+            <img src="../assets/music_img/logo_4k.png" alt="">
+            <img src="../assets/music_img/logo_alarm.png" alt="">
+            <img src="../assets/music_img/logo_moon.png" alt="">
+            <img src="../assets/music_img/logo_cloud.png" alt="">
+            <img src="../assets/music_img/logo_sound.png" alt="">
+            <img src="../assets/music_img/logo_signal.png" alt="">
+            <img src="../assets/music_img/logo_battery.png" alt="">
+            <div class="time"></div>
+        </div>
     </header>
     <!-- header -->
     <div class="mouse__cursor">
         <!-- <img src="../../assets/img/mouseCursor.png" alt="유지"> -->
     </div>
-    <iframe class="sourceOpen" src="https://github1s.com/kimsangjunv1/coding/blob/main/javascript/effect/gameEffect01.html" frameborder="0"></iframe>
+    <div class="sourceCont">
+        <div class="sourceCont_header">
+            <p>SOURCE VIEW</p>
+            <img src="../assets/music_img/logo_moon.png" alt="">
+        </div>
+        <iframe class="sourceOpen" src="https://github1s.com/kimsangjunv1/coding/blob/main/javascript/effect/gameEffect01.html" frameborder="0"></iframe>
+    </div>
     <main id="main">
         <div class="icon_box">
             <div class="icon1">
@@ -46,7 +64,7 @@
             <div class="icon4">
                 <div class="cont">
                     <img src="../../assets/img/iconGame04.png" alt="유지">
-                    <span>게임 04</span>
+                    <span>뮤직</span>
                 </div>
             </div>
             <div class="icon5">
@@ -68,9 +86,9 @@
     <div class="music__wrap">
         <div class="music__inner">
             <div class="music__header">
-                <div>***</div>
+                <img src="../assets/music_img/logo_sound.png" alt="">
                 <h2>Music player</h2>
-                <div>+++</div>
+                <div>x</div>
             </div>
             <div class="music__contents">
                 <div class="music__view">
@@ -94,6 +112,9 @@
                             <span class="duration">4:00</span>
                         </div>
                     </div>
+                    <div class="volumeCont">
+                        <input type="range" id="volume-control" min="0" max="10" value="5" step="0.1">							
+                    </div> 
                     <div class="control">
                         <i title="전체 반복" class="repeat" id="control-repeat"></i>
                         <i title="이전곡 재생" class="prev" id="control-prev"></i>
@@ -154,24 +175,30 @@
             },
         });
         $( ".music__inner" ).draggable();
+        $( ".sourceCont" ).draggable();
 
+        //헤더 시계
         function printTime() {
             const clock = document.querySelector(".time");
             const now = new Date();
-            const nowTime = "오늘은 " + now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 ";
-
-            // clock.innerText = nowTime;
+            const nowTime =now.getFullYear() + "." + (now.getMonth() + 1) + "." + now.getDate() + " ";
+            
             
             //진행시간
             let headerHour = Math.floor(now.getHours() % 60);
             let headerMin = Math.floor(now.getMinutes() % 60);
             let headerSec = Math.floor(now.getSeconds() % 60);
+            let headerText = "";
+
+            if (headerHour >= 12){ headerText = "오후"} else {headerText = "오전"}
             if (headerHour < 10) headerHour = `0${headerHour}`;
             if (headerMin < 10) headerMin = `0${headerMin}`;
             if (headerSec < 10) headerSec = `0${headerSec}`;
-            clock.innerText = nowTime+`${headerHour}시 ${headerMin}분 ${headerSec}초 입니다.`;
+
+            clock.innerText = nowTime+headerText+` ${headerHour}:${headerMin}:${headerSec}`;
+
+            setTimeout("printTime()", 1000);
         }
-        setTimeout("printTime()", 1000);
 
         function printAgent() {
             const agent = document.querySelector(".agent");
@@ -224,26 +251,26 @@
                 audio: "music_audio03"
             },
             {
-                name: "4. By Gone days",
+                name: "4. il porco rosso - By Gone days",
                 artist: "hisaishi Joe",
                 img: "music_view04",
                 audio: "music_audio04"
             },
             {
-                name: "5. Brad pitt",
-                artist: "coin",
+                name: "5. Ocean Waves",
+                artist: "hisaishi Joe",
                 img: "music_view05",
                 audio: "music_audio05"
             },
             {
                 name: "6. American Cliche",
-                artist: "Finneas",
+                artist: "Tony Bennetts",
                 img: "music_view06",
                 audio: "music_audio06"
             },
             {
-                name: "7. Hate me",
-                artist: "Nico Colins",
+                name: "7. The Sixth Station",
+                artist: "hisaishi Joe",
                 img: "music_view07",
                 audio: "music_audio07"
             },
@@ -485,7 +512,7 @@
             let getLiIndex = el.getAttribute("data-index");              // 클릭한 데이터 값
             musicIndex = getLiIndex;                                     // 클릭한 인덱스 값을 뮤직 인덱스에 저장
             loadMusic(musicIndex);                                       // 해당 인덱스 뮤직 로드
-            pauseMusic();                                                // 음악 재생
+            playMusic();                                                // 음악 재생
             playListMusic();                                             // 음악 리스트 업데이트
         }
 
@@ -511,11 +538,51 @@
 
     <script>
         const sourceIcon = document.querySelector(".icon5")
-        const sourceOpen = document.querySelector(".sourceOpen")
+        const sourceOpen = document.querySelector(".sourceCont")
+        const sourceClose = document.querySelector(".sourceCont_header img")
 
         sourceIcon.addEventListener("click", ()=>{
             sourceOpen.style.display="block";
         });
+        sourceClose.addEventListener("click", ()=>{
+            sourceOpen.style.display="none";
+        })
+    </script>
+    <script>
+        const audioIcon = document.querySelector(".music__header img")
+        let i=0;
+        audioIcon.addEventListener("click",()=>{
+            if(i==0){
+                // document.querySelector(".volumeCont").style.display="block";
+                document.querySelector(".volumeCont").style.transform="translate(-50%, 0)";
+                audioIcon.style.transform="translatex(88px)";
+                i++;
+            } else{
+                // document.querySelector(".volumeCont").style.display="none";
+                document.querySelector(".volumeCont").style.transform="translate(-50%, -100px)";
+                audioIcon.style.transform="translatex(0)";
+                i--;
+            }
+        })
+
+        const audio = document.getElementById('main-audio');
+        const audioVolume = document.getElementById('volume-control');
+
+        audioVolume.addEventListener("change", function(e) {
+            audio.volume = this.value/10;
+        })
+
+        //뮤직플레이어 닫기
+        const musicPlayerClose = document.querySelector(".music__header div");
+        const musicPlayer = document.querySelector(".music__wrap");
+        const musicIcon = document.querySelector(".icon4")
+
+        musicPlayerClose.addEventListener("click", ()=>{
+            musicPlayer.style.display="none";
+        })
+        musicIcon.addEventListener("click",()=>{
+            musicPlayer.style.display="block";
+        })
     </script>
 
 </body>
