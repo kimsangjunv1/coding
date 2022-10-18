@@ -64,15 +64,74 @@
             <div class="main_menu">
                 <ul>
                     <li><a href="#">01. 수학 메서드 : Math.round() : 반올림 : 반환(숫자)</a></li>
-                    <li><a href="#">01. 수학 메서드 : Math.floor() : 버림 : 반환(숫자)</a></li>
-                    <li><a href="#">01. 수학 메서드 : Math.ceil() : 올림 : 반환(숫자)</a></li>
-                    <li><a href="#">01. 수학 메서드 : Math.max() : 가장 큰 값 반환 : 반환(숫자)</a></li>
-                    <li><a href="#">01. 수학 메서드 : Math.min() : 가장 큰 값 반환 : 반환(숫자)</a></li>
-                    <li><a href="#">01. 수학 메서드 : Math.abs() : 절대값 값 반환 : 반환(숫자)</a></li>
-                    <li><a href="#">01. 수학 메서드 : Math.trulc() : 값의 정수 부분만 반환 : 반환(숫자)</a></li>
-                    <li><a href="#">01. 수학 메서드 : Math.random() : 랜덤 값 반환(0~1 사이에 난수 값을 반환) : 반환(숫자)</a></li>
+                    <li><a href="#">02. 수학 메서드 : Math.floor() : 버림 : 반환(숫자)</a></li>
+                    <li><a href="#">03. 수학 메서드 : Math.ceil() : 올림 : 반환(숫자)</a></li>
+                    <li><a href="#">04. 수학 메서드 : Math.max() : 가장 큰 값 반환 : 반환(숫자)</a></li>
+                    <li><a href="#">05. 수학 메서드 : Math.min() : 가장 큰 값 반환 : 반환(숫자)</a></li>
+                    <li><a href="#">06. 수학 메서드 : Math.abs() : 절대값 값 반환 : 반환(숫자)</a></li>
+                    <li><a href="#">07. 수학 메서드 : Math.trulc() : 값의 정수 부분만 반환 : 반환(숫자)</a></li>
+                    <li><a href="#">08. 수학 메서드 : Math.random() : 랜덤 값 반환(0~1 사이에 난수 값을 반환) : 반환(숫자)</a></li>
                 </ul>
             </div>
+            <!-- 1번 -->
+            <div id="sample01" class="sample">
+                <h3>01. 수학 메서드 : Math.random() : 0과 1사이의 난수 값을 반환 : 반환(숫자)</h3>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 4%">
+                            <col style="width: 22%">
+                            <col style="width: 32%">
+                            <col style="width: 37%">
+                            <col style="width: 5%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>기본값</th>
+                                <th>메서드</th>
+                                <th>리턴값</th>
+                                <th>클릭</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sample01_N1"></td>
+                                <td class="sample01_Q1"></td>
+                                <td class="sample01_M1"></td>
+                                <td class="sample01_P1"></td>
+                                <td class="sample01_B1"><button>클릭</button></td>
+                            </tr>
+                            <tr>
+                                <td class="sample01_N2"></td>
+                                <td class="sample01_Q2"></td>
+                                <td class="sample01_M2"></td>
+                                <td class="sample01_P2"></td>
+                                <td class="sample01_B2"><button>클릭</button></td>
+                            </tr>
+                            <tr>
+                                <td class="sample01_N3"></td>
+                                <td class="sample01_Q3"></td>
+                                <td class="sample01_M3"></td>
+                                <td class="sample01_P3"></td>
+                                <td class="sample01_B3"><button>클릭</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="script">
+                    <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+                    <pre><code class="language-js">const arrNum1 = [100, 200, 300];
+const arrNum2 = [400, 500, 600];
+const arrConcat = arrNum1.concat(arrNum2);
+
+
+const arrSpread = [...arrNum1, ...arrNum2];
+</code></pre>
+                </div>
+            </div>
+            <!-- 6번 끝 -->
         </div>
     </main>
     <!-- //main -->
@@ -84,6 +143,36 @@
     <script src="assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
     <script>
         hljs.highlightAll();
+    </script>
+
+    <script>
+        document.querySelector(".sample01_N1").innerHTML = 1;
+        document.querySelector(".sample01_Q1").innerHTML = "0 ~ 1";
+        document.querySelector(".sample01_M1").innerHTML = "Math.random()";
+        document.querySelector(".sample01_P1").style.color="black !important";
+        // document.querySelector(".sample01_P1").style.opacity="1";
+
+        document.querySelector(".sample01_B1").addEventListener("click", ()=>{
+            document.querySelector(".sample01_P1").innerHTML = Math.random();
+        })
+
+        document.querySelector(".sample01_N2").innerHTML = 1;
+        document.querySelector(".sample01_Q2").innerHTML = "1 ~ 9";
+        document.querySelector(".sample01_M2").innerHTML = "Math.random()";
+        document.querySelector(".sample01_P2").style.color="#000 !important";
+
+        document.querySelector(".sample01_B2").addEventListener("click", ()=>{
+            document.querySelector(".sample01_P2").innerHTML = Math.floor(Math.random()*10);
+        })
+
+        document.querySelector(".sample01_N3").innerHTML = 1;
+        document.querySelector(".sample01_Q3").innerHTML = "10 ~ 19";
+        document.querySelector(".sample01_M3").innerHTML = "Math.random()";
+        document.querySelector(".sample01_P3").style.color="#000 !important";
+        
+        document.querySelector(".sample01_B3").addEventListener("click", ()=>{
+            document.querySelector(".sample01_P3").innerHTML = 10 + Math.floor(Math.random()*10);
+        })
     </script>
 
     

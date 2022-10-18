@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,7 +15,7 @@
 a {
   color: var(--htmlColor);
   text-decoration: none;
-}
+} */
 
 li {
   list-style: none;
@@ -80,7 +80,7 @@ li {
 
 /* main */
 #main {
-  margin: 50px 10px;
+  /* margin: 50px 10px; */
 }
 .search__wrap {
   max-width: 1400px;
@@ -107,6 +107,7 @@ li {
 
 .search__box {
   margin-bottom: 20px;
+  position: relative;
 }
 
 .search__box label {
@@ -131,6 +132,15 @@ li {
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--htmlColor);
+}
+
+.search__info.center{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 20px;
 }
 
 .search__info .type {
@@ -363,8 +373,6 @@ li {
 }
 
 .active {
-  background-color: #c7bcbc;
-  /* margin: 5px; */
   color: #3a3232;
 }
 
@@ -378,6 +386,71 @@ li {
 
 .source__contaienr__css {
   display: none;
+}
+
+.search__wrap .time {
+  width: 140px;
+  height: 140px;
+  line-height: 140px;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: var(--htmlColor);
+}
+.search__wrap .time span {
+  color: #fff;
+  font-size: 34px;
+  font-weight: 100;
+}
+.search__wrap .desc{
+  margin-bottom: 20px;
+}
+.search__box .start {
+  position: absolute;
+  left: 50%; bottom: 0;
+  transform: translateX(-50%);
+  background: #223547;
+  width: 30%;
+  border-radius: 50px;
+  font-size: 20px;
+  border: 2px solid var(--htmlColor);
+  padding: 15px 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search__box input {
+  border: 2px solid var(--htmlColor);
+  padding: 15px 40px;
+  width: 30%;
+  border-radius: 50px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.search__answers {
+  border-bottom: 2px dashed var(--htmlColor);
+  padding-bottom: 40px;
+}
+.search__answers span {
+  display: inline-block;
+  background: var(--htmlColor);
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 30px;
+  margin: 5px;
+}
+.search__missAnswers {
+  border-bottom: 2px dashed var(--htmlColor);
+  padding: 40px 0;
+}
+.search__missAnswers span {
+  display: inline-block;
+  border: 1px solid var(--htmlColor);
+  color: var(--htmlColor);
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin: 5px;
 }
 
 /* 세로 스크롤 */
@@ -464,4 +537,111 @@ li {
   100% {
     transform: scale(100%, 0%);
   }
+}
+
+.search__audio {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.search__audio .play{
+  display: none;
+}
+
+.search__result{
+  position: fixed;
+  left: 50%;
+  top: 1vw;
+  width: 50vw;
+  height: 50vw;
+  transform: scale3d(0, 0, 0);
+  /* background: #ccc; */
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #000;
+}
+
+.search__result.show{
+  display: flex;
+  animation: rubberBand 1s 0.6s ease;
+  transform: scale3d(1, 1, 1);
+  flex-direction: column;
+}
+.search__result .result{
+  margin-top: 30px;
+  line-height: 1.4;
+  font-size: 2vw;
+}
+.search__result .restart{
+  background: #9468c5;
+  color: #fff;
+  border: 0;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 50px;
+}
+@keyframes rubberBand {
+  from {
+    transform: scale3d(0, 0, 0);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.sourceContWord{
+  display: none;
+  width: 50vw;
+  height: 50vh;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  z-index: 11;
+}
+.sourceContWord_header{
+  background: rgba(71, 42, 177, 0.796);
+  width: 100%;
+  height: 40px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  color: #fff;
+}
+.sourceContWord_header img{
+  filter: invert(1);
+  width: 22px;
+}
+.sourceOpen{
+  width: 100%;
+  height: 100%;
 }
