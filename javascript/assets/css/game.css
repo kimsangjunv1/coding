@@ -1,23 +1,11 @@
-@font-face {
-    font-family: 'LABDigital';
-    font-weight: normal;
-    font-style: normal;
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot');
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf') format("truetype");
-    font-display: swap;
-}
-@import url('//cdn.jsdelivr.net/gh/neodgm/neodgm-pro-webfont@1.020/neodgm_pro/style.css');
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 
-.font-neodgm-pro { font-family: 'NeoDunggeunmo Pro'; }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'NeoDunggeunmo Pro';
+    font-family: 'galmuri11';
     cursor: none;
 }
 

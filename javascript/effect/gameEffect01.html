@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../assets/css/bg.css">
     <link rel="stylesheet" href="../assets/css/game.css">
     <link rel="stylesheet" href="../assets/css/music.css">
-    <link rel="stylesheet" href="../assets/css/search.css">
+    <link rel="stylesheet" href="../assets/css/search_copy.css">
 
 
 </head>
@@ -41,8 +41,8 @@
             <img src="../assets/music_img/logo_moon.png" alt="">
         </div>
         <div class="search__wrap">
-            <span>CSS 속성 검색 이벤트</span>
-            <h1><a href="#"></a>CSS 랜덤 검색하기</h1>
+            <span>얼마나 알고있나</span>
+            <h1><a href="#"></a>CSS 속성...!</h1>
             <div class="desc">
                 2분 동안 CSS 속성을 많이 검색하면 점수가 올라갑니다.<br>
                 기억이 나지 않으면 힌트보기를 한번 이용할 수 있습니다.
@@ -55,7 +55,7 @@
             <div class="search__box">
                 <label for="search">검색하기</label>
                 <input type="text" id="search" placeholder="CSS 속성을 검색해주세요.">
-                <div class="start">버튼을 누르면 게임이 시작됩니다.</div>
+                <div class="start">게임 시작 :3</div>
             </div>
 
             <div class="search__audio">
@@ -399,6 +399,13 @@
         $( ".music__inner" ).draggable();
         $( ".sourceCont" ).draggable();
         $( ".sourceContWord" ).draggable();
+
+        document.querySelector(".icon5").addEventListener("click",()=>{
+            document.querySelector(".sourceCont").style.display="block";
+        })
+        document.querySelector(".sourceCont_header img").addEventListener("click",()=>{
+            document.querySelector(".sourceCont").style.display="none";
+        })
 
         //헤더 시계
         function printTime() {

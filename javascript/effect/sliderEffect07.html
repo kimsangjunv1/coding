@@ -544,11 +544,13 @@ setInterval(sliderEffect, 2000)                             //슬라이더 이�
             autoPlay();                                     //자동 플레이
         }
         init();
+        // console.log(currentIndex)
 
         function autoPlay(){
+            
             sliderTimer = setInterval(()=>{
                 let intervalNum = currentIndex + 1;
-
+                
                 gotoSlider(intervalNum);
             }, interval)
         }
@@ -582,12 +584,23 @@ setInterval(sliderEffect, 2000)                             //슬라이더 이�
             sliderInner.style.left = -sliderWidth * (index + 1) + "px";
 
             currentIndex = index;
+
+            let sliderDotAcive = document.querySelectorAll(".slider__dot .dot");
+            sliderDotAcive.forEach(el => el.classList.remove("active"));
+            sliderDotAcive[index].classList.add("active");
+
+            // console.log(currentIndex+1)
+            // console.log(currentIndex-1)
+            
+            // document.querySelector(".dot:nth-child("+(currentIndex+1)+")").classList.add("active");
+            // document.querySelector(".dot:nth-child("+(currentIndex-1)+")").classList.remove("active");
+            // if(currentIndex==5){
+            //     document.querySelector(".dot:last-child").classList.remove("active");
+            // }
         }
 
         function checkIndex(){
             sliderInner.classList.remove("transition");
-            document.querySelector(".dot:nth-child("+currentIndex+")").classList.add("active");
-            document.querySelector(".dot:nth-child("+(currentIndex-1)+")").classList.remove("active");
 
             //마지막 이미지
             if(currentIndex == sliderLength){
@@ -615,6 +628,12 @@ setInterval(sliderEffect, 2000)                             //슬라이더 이�
         sliderInner.addEventListener("mouseleave", autoPlay);
         sliderInner.addEventListener("transitionend", checkIndex)
         
+        document.querySelectorAll(".slider__dot .dot").forEach((dot, index)=>{
+            dot.addEventListener("click", ()=>{
+                gotoSlider(index);
+            });
+        });
+
         document.querySelector(".slider__dot .play").addEventListener("click", ()=>{
             autoPlay();
             document.querySelector(".slider__dot .play").style.display="none";
