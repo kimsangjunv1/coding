@@ -524,6 +524,8 @@ setInterval(sliderEffect, 2000)                             //슬라이더 이�
         const sliderBtnNext = document.querySelector(".slider__btn .next")      // 오른쪽 버튼
         const sliderBtnPlay = document.querySelector(".slider__dot .play")      // 오른쪽 버튼
         const sliderBtnStop = document.querySelector(".slider__dot .stop")      // 오른쪽 버튼
+
+        console.log(sliderBtnStop)
         
         let currentIndex = 0,
             sliderLength = slider.length,
@@ -645,6 +647,31 @@ setInterval(sliderEffect, 2000)                             //슬라이더 이�
             document.querySelector(".slider__dot .play").style.display="inline-block";
             document.querySelector(".slider__dot .stop").style.display="none";
         });
+    </script>
+    <script>
+        // 1번
+        const arr = [1,1,3,3,0,1,1];
+
+        function solution(arr){
+            return arr.filter((item,idx)=>item !== arr[idx+1]);
+        }
+
+        console.log(solution(arr));
+
+
+        //6번
+        const num = "webstoryboy";
+
+        function solution(s) {
+            let answer;
+            let arr = [...s]
+            if(arr.length % 2 == 0){
+                answer = arr.splice(arr.length/2-1, 2);
+                
+            } else {
+                answer = arr.splice(Math.floor(arr.))
+            }
+        }
     </script>
 </body>
 

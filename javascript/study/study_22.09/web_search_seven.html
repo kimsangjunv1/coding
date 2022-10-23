@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!-- 티스토리 용 -->
+        <div id="sample01" class="container sample document">
+            <!-- 메인 샘플 시작 -->
+            <h2 class="t_tit">서치 이펙트_07</h2>
+            <p class="t_desc2">각 요소가 정확히 있는지 확인 후 일정 시간이 지나면 SVG와 맞은 갯수를 출력해주는 예제를 구현해보도록 하겠습니다 👩🏻‍💻</p>
+            <hr>
+            <h2 class="t_tit2">HTML 코드</h2>
+            <p class="t_desc2">HTML 코드는 크게 신경쓸것이 없으나,<br>
+                서치게임, 오디오, 꿀벌 SVG 형성을 위한 HTML 뼈대이므로 잘 작성해줍니다 🏄‍♂️
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;div class="search__wrap"&gt;
+    &lt;span&gt;CSS 속성 검색 이벤트&lt;/span&gt;
+    &lt;h1&gt;&lt;a href="#"&gt;&lt;/a&gt;CSS 랜덤 검색하기&lt;/h1&gt;
+    &lt;div class="desc"&gt;
+        2분 동안 CSS 속성을 많이 검색하면 점수가 올라갑니다.&lt;br&gt;
+        기억이 나지 않으면 힌트보기를 한번 이용할 수 있습니다.
+    &lt;/div&gt;
+
+    &lt;div class="time"&gt;
+        &lt;span&gt;2:00&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class="search__box"&gt;
+        &lt;label for="search"&gt;검색하기&lt;/label&gt;
+        &lt;input type="text" id="search" placeholder="CSS 속성을 검색해주세요."&gt;
+        &lt;div class="start"&gt;버튼을 누르면 게임이 시작됩니다.&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="search__audio"&gt;
+        &lt;span class="play sound"&gt;
+            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                &lt;path d="M15 6.3706C15 4.65827 12.9884 3.73774 11.6926 4.85712L8.36317 7.73321C7.99989 8.04704 7.53583 8.21972 7.05576 8.21973L5.49998 8.21974C4.11928 8.21975 3 9.33903 3 10.7197V14.0127C3 15.3934 4.11929 16.5127 5.5 16.5127H7.0558C7.53587 16.5127 7.99993 16.6854 8.36322 16.9992L11.6926 19.8753C12.9884 20.9947 15 20.0741 15 18.3618V12.3662V6.3706Z" fill="#223547" stroke="#223547" stroke-width="1.5"/&gt;
+                &lt;path d="M18 15.3667C18.6279 14.531 19 13.4923 19 12.3667C19 11.2411 18.6279 10.2024 18 9.3667" stroke="#223547" stroke-width="1.5" stroke-linecap="round"/&gt;
+                &lt;path d="M20 18.3667C21.2558 16.6954 22 14.6179 22 12.3667C22 10.1155 21.2558 8.03802 20 6.3667" stroke="#223547" stroke-width="1.5" stroke-linecap="round"/&gt;
+            &lt;/svg&gt;
+        &lt;/span&gt;
+        &lt;span class="stop sound"&gt;
+            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                &lt;path d="M14 6.3706C14 4.65827 11.9884 3.73774 10.6926 4.85712L7.36317 7.73321C6.99989 8.04704 6.53583 8.21972 6.05576 8.21973L4.49998 8.21974C3.11928 8.21975 2 9.33903 2 10.7197V14.0127C2 15.3934 3.11929 16.5127 4.5 16.5127H6.0558C6.53587 16.5127 6.99993 16.6854 7.36322 16.9992L10.6926 19.8753C11.9884 20.9947 14 20.0741 14 18.3618V12.3662V6.3706Z" fill="#223547" stroke="#223547" stroke-width="1.5"/&gt;
+                &lt;path d="M18 14.1215L22.2427 9.87891" stroke="#223547" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;
+                &lt;path d="M18 9.87894L22.2427 14.1216" stroke="#223547" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;
+            &lt;/svg&gt;
+        &lt;/span&gt;
+        &lt;audio id="audio" src="../../javascript/assets/music/music_audio04.mp3" loop="loop"&gt;&lt;/audio&gt;
+        &lt;audio id="success" src="../../assets/music/success.m4a"&gt;&lt;/audio&gt;
+        &lt;audio id="fail" src="../../assets/music/fail.m4a"&gt;&lt;/audio&gt;
+    &lt;/div&gt;
+
+    &lt;div class="search__count"&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="search__info center"&gt;
+        &lt;div&gt;전체 속성 갯수 : &lt;span class="all"&gt;0&lt;/span&gt;&lt;/div&gt;
+        현재 맞춘 갯수 : &lt;span class="now"&gt;0&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class="search__answers"&gt;&lt;/div&gt;
+
+    &lt;div class="search__missAnswers"&gt; &lt;/div&gt;
+
+    &lt;div class="search__list"&gt;&lt;/div&gt;
+
+    &lt;div class="search__result"&gt;
+        &lt;div class="svg__wrap"&gt;
+            &lt;svg xmlns="http://www.w3.org/2000/svg" width="448px" height="386px" viewBox="0 0 448 386"&gt;
+                &lt;g filter="none" transform="translate(218.184,198.765) translate(-217.528,-187.235)" style="animation: 3.9s linear infinite both bee-a0_ft;"&gt;
+                    &lt;g id="bee-Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(217.528,187.235) translate(-218.184,-198.765)"&gt;
+                    &lt;g id="bee-Artboard" transform="translate(218.184,198.765) translate(-1258.18,-1122.76)"&gt;
+                        &lt;g id="bee-drop" fill="#946BC6" transform="translate(1394.27,1301.5) translate(-27.7667,-6.5)"&gt;
+                        &lt;rect id="bee-Rectangle" width="25.9539" height="13" rx="6.5" transform="translate(12.977,6.5) translate(-12.977,-6.5)" /&gt;
+                        &lt;path id="bee-Oval" d="M6.5,0C7.80436,3.3445,3.58985,6.5,0,6.5C-3.58985,6.5,-7.26635,3.5071,-6.5,0C-4.53336,-9,-3.53336,-17.5,0,-17.5C3.46664,-17.5,4.55118,-4.99697,6.5,0Z" transform="translate(49.0334,-83.5)" style="animation: 3.9s linear infinite both bee-Oval_t, 3.9s linear infinite both bee-Oval_d;" /&gt;
+                        &lt;/g&gt;
+                        &lt;g id="bee-scene" transform="translate(1258.18,1122.76) translate(-218.184,-198.765)"&gt;
+                        &lt;g id="bee-flower-2" transform="translate(90.0588,372) translate(0,-206.381)" style="animation: 3.9s linear infinite both bee-flower-2_t;"&gt;
+                            &lt;path id="bee-Path-9" d="M0.941176,206.381C-1.72549,120.715,1.27451,69.7147,9.94118,53.3814C11.9977,49.5056,14.27,45.7426,16.7582,42.0921L16.7582,42.0921C30.4776,21.9638,51.6942,8.17626,75.6598,3.81498C105.444,-1.60524,131.705,-1.24978,154.441,4.88136C198.941,16.8814,204.941,19.8814,210.441,24.8814C214.108,28.2147,234.275,48.8814,270.941,86.8814" stroke="#7AB6AE" stroke-width="6" transform="translate(135.471,103.191) translate(-135.471,-103.191)" /&gt;
+                            &lt;g id="bee-Group-3-Copy-3" fill="#7AB6AE" transform="translate(264.26,81.0804) rotate(91) translate(-15.2019,-15.6629)"&gt;
+                            &lt;rect id="bee-Rectangle-2" width="29.6325" height="13.1271" rx="6.56355" transform="translate(15.2019,6.88946) translate(-14.8162,-6.56355)" /&gt;
+                            &lt;rect id="bee-Rectangle-Copy-7" width="29.6325" height="12.5416" rx="6.27078" transform="translate(23.7473,16.1837) rotate(-90) translate(-14.8162,-6.27078)" /&gt;
+                            &lt;/g&gt;
+                            &lt;g id="bee-Flower-Copy-2" transform="translate(288.54,108.447) rotate(133) translate(-30.4805,-32.3833)"&gt;
+                            &lt;g id="bee-Group-2" fill="#946BC4" transform="translate(30.2037,10.1784) translate(-22.289,-10.1784)"&gt;
+                                &lt;rect id="bee-Rectangle-3" width="11" height="16.6487" rx="5.5" transform="translate(5.5,12.0325) translate(-5.5,-8.32434)" /&gt;
+                                &lt;rect id="bee-Rectangle-Copy-5" width="11" height="16.6487" rx="5.5" transform="translate(22.5658,8.32434) translate(-5.5,-8.32434)" /&gt;
+                                &lt;rect id="bee-Rectangle-Copy-6" width="11" height="16.6487" rx="5.5" transform="translate(39.078,12.0325) translate(-5.5,-8.32434)" /&gt;
+                            &lt;/g&gt;
+                            &lt;path id="bee-Combined-Shape" d="M30.3952,4.26124C39.0927,4.26124,46.9394,7.90412,52.4926,13.7473C50.6453,14.7714,49.3952,16.74,49.3952,19.0006L49.3952,19.0006L49.395,34.1675C47.7715,34.6076,46.0485,34.5367,44.4656,33.9634L44.4656,33.9634L44.4666,23.8117C44.4666,20.498,41.7803,17.8117,38.4666,17.8117C35.1529,17.8117,32.4666,20.498,32.4666,23.8117L32.4666,23.8117L32.4657,33.5686L32.0548,33.797C31.0514,34.3544,29.8179,34.2904,28.8775,33.6322L28.8775,33.6322L28.8427,33.6076L28.8432,23.8117C28.8432,20.498,26.1569,17.8117,22.8432,17.8117C19.5295,17.8117,16.8432,20.498,16.8432,23.8117L16.8432,23.8117L16.8427,33.1626L16.31,33.502C15.1865,34.217,13.7261,34.1057,12.7239,33.2288L12.7239,33.2288L11.9147,32.5206L11.9147,19.0006C11.9147,16.6001,10.505,14.5289,8.46835,13.5696C14.0105,7.83045,21.786,4.26124,30.3952,4.26124Z" fill="#CB90EB" transform="translate(30.4805,19.3569) translate(-30.4805,-19.3569)" /&gt;
+                            &lt;path id="bee-Combined-Shape-2" d="M55.0037,12.6397C58.2938,12.6397,60.961,15.3069,60.961,18.5971L60.961,33.7508L60.9587,33.9117C60.9602,34.0363,60.961,34.1611,60.961,34.2861C60.961,51.12,47.3144,64.7666,30.4805,64.7666C13.6466,64.7666,0,51.12,0,34.2861L0.00219882,33.9143C0.000736059,33.86,0,33.8055,0,33.7508L0,18.5971C0,15.3069,2.66719,12.6397,5.95733,12.6397C9.24747,12.6397,11.9147,15.3069,11.9147,18.5971L11.9147,32.1618L12.7239,32.87C13.7261,33.7469,15.1865,33.8582,16.31,33.1432L16.8427,32.8038L16.8432,23.4529C16.8432,20.1392,19.5295,17.4529,22.8432,17.4529C26.1569,17.4529,28.8432,20.1392,28.8432,23.4529L28.8427,33.2488L28.8775,33.2734C29.8179,33.9316,31.0514,33.9956,32.0548,33.4382L32.4657,33.2098L32.4666,23.4529C32.4666,20.1392,35.1529,17.4529,38.4666,17.4529C41.7803,17.4529,44.4666,20.1392,44.4666,23.4529L44.4656,33.6046C45.9365,34.1374,47.5285,34.2363,49.0492,33.8944C49.0469,33.8466,49.0463,33.7988,49.0463,33.7508L49.0463,18.5971C49.0463,15.3069,51.7135,12.6397,55.0037,12.6397Z" fill="#946BC6" transform="translate(30.4805,38.7032) translate(-30.4805,-38.7032)" /&gt;
+                            &lt;/g&gt;
+                        &lt;/g&gt;
+                        &lt;g id="bee-flower-3" transform="translate(89.1929,372.5) translate(0,-241)" style="animation: 3.9s linear infinite both bee-flower-3_t;"&gt;
+                            &lt;g id="bee-Group-3-Copy-5" fill="#7AB6AE" transform="translate(286.509,69.6629) translate(-15.2019,-15.6629)"&gt;
+                            &lt;rect id="bee-Rectangle-4" width="29.6325" height="13.1271" rx="6.56355" transform="translate(15.2019,6.88946) translate(-14.8162,-6.56355)" /&gt;
+                            &lt;rect id="bee-Rectangle-Copy-7-2" width="29.6325" height="12.5416" rx="6.27078" transform="translate(23.7473,16.1837) rotate(-90) translate(-14.8162,-6.27078)" /&gt;
+                            &lt;/g&gt;
+                            &lt;path id="bee-Path-10" d="M0.8071,241C-0.269033,219.056,-0.269033,203.389,0.8071,194C5.58952,152.274,26.6818,123.699,66.3071,107.5C97.6881,94.6713,146.256,109.316,194.807,104C240.474,99,273.64,85.3333,294.307,63" stroke="#7AB6AE" stroke-width="5" transform="translate(147.154,152) translate(-147.154,-152)" /&gt;
+                            &lt;g id="bee-Flower-Copy-3" transform="translate(312.878,45.4049) rotate(46) translate(-30.4805,-32.3833)"&gt;
+                            &lt;g id="bee-Group-2-2" fill="#946BC4" transform="translate(30.2037,10.1784) translate(-22.289,-10.1784)"&gt;
+                                &lt;rect id="bee-Rectangle-5" width="11" height="16.6487" rx="5.5" transform="translate(5.5,12.0325) translate(-5.5,-8.32434)" /&gt;
+                                &lt;rect id="bee-Rectangle-Copy-5-2" width="11" height="16.6487" rx="5.5" transform="translate(22.5658,8.32434) translate(-5.5,-8.32434)" /&gt;
+                                &lt;rect id="bee-Rectangle-Copy-6-2" width="11" height="16.6487" rx="5.5" transform="translate(39.078,12.0325) translate(-5.5,-8.32434)" /&gt;
+                            &lt;/g&gt;
+                            &lt;path id="bee-Combined-Shape-3" d="M30.3952,4.26124C39.0927,4.26124,46.9394,7.90412,52.4926,13.7473C50.6453,14.7714,49.3952,16.74,49.3952,19.0006L49.3952,19.0006L49.395,34.1675C47.7715,34.6076,46.0485,34.5367,44.4656,33.9634L44.4656,33.9634L44.4666,23.8117C44.4666,20.498,41.7803,17.8117,38.4666,17.8117C35.1529,17.8117,32.4666,20.498,32.4666,23.8117L32.4666,23.8117L32.4657,33.5686L32.0548,33.797C31.0514,34.3544,29.8179,34.2904,28.8775,33.6322L28.8775,33.6322L28.8427,33.6076L28.8432,23.8117C28.8432,20.498,26.1569,17.8117,22.8432,17.8117C19.5295,17.8117,16.8432,20.498,16.8432,23.8117L16.8432,23.8117L16.8427,33.1626L16.31,33.502C15.1865,34.217,13.7261,34.1057,12.7239,33.2288L12.7239,33.2288L11.9147,32.5206L11.9147,19.0006C11.9147,16.6001,10.505,14.5289,8.46835,13.5696C14.0105,7.83045,21.786,4.26124,30.3952,4.26124Z" fill="#CB90EB" transform="translate(30.4805,19.3569) translate(-30.4805,-19.3569)" /&gt;
+                            &lt;path id="bee-Combined-Shape-4" d="M55.0037,12.6397C58.2938,12.6397,60.961,15.3069,60.961,18.5971L60.961,33.7508L60.9587,33.9117C60.9602,34.0363,60.961,34.1611,60.961,34.2861C60.961,51.12,47.3144,64.7666,30.4805,64.7666C13.6466,64.7666,0,51.12,0,34.2861L0.00219882,33.9143C0.000736059,33.86,0,33.8055,0,33.7508L0,18.5971C0,15.3069,2.66719,12.6397,5.95733,12.6397C9.24747,12.6397,11.9147,15.3069,11.9147,18.5971L11.9147,32.1618L12.7239,32.87C13.7261,33.7469,15.1865,33.8582,16.31,33.1432L16.8427,32.8038L16.8432,23.4529C16.8432,20.1392,19.5295,17.4529,22.8432,17.4529C26.1569,17.4529,28.8432,20.1392,28.8432,23.4529L28.8427,33.2488L28.8775,33.2734C29.8179,33.9316,31.0514,33.9956,32.0548,33.4382L32.4657,33.2098L32.4666,23.4529C32.4666,20.1392,35.1529,17.4529,38.4666,17.4529C41.7803,17.4529,44.4666,20.1392,44.4666,23.4529L44.4656,33.6046C45.9365,34.1374,47.5285,34.2363,49.0492,33.8944C49.0469,33.8466,49.0463,33.7988,49.0463,33.7508L49.0463,18.5971C49.0463,15.3069,51.7135,12.6397,55.0037,12.6397Z" fill="#946BC6" transform="translate(30.4805,38.7032) translate(-30.4805,-38.7032)" /&gt;
+                            &lt;/g&gt;
+                        &lt;/g&gt;
+                        &lt;g id="bee-leg-l" transform="translate(192,343.25) translate(-9.5,-40.75)"&gt;
+                            &lt;path id="bee-leg1" d="M9,71.5L14,71.5C16.7614,71.5,19,73.7386,19,76.5C19,79.2614,16.7614,81.5,14,81.5L0,81.5L0,81.5L0,80.5C0,75.5294,4.02944,71.5,9,71.5Z" fill="#283138" transform="translate(9.5,76.5) translate(-9.5,-76.5)" /&gt;
+                        &lt;/g&gt;
+                        &lt;g id="bee-leg-m-r" transform="translate(237.5,340.75) translate(-9.5,-43.25)"&gt;
+                            &lt;path id="bee-leg3" d="M9,76.5L14,76.5C16.7614,76.5,19,78.7386,19,81.5C19,84.2614,16.7614,86.5,14,86.5L0,86.5L0,86.5L0,85.5C0,80.5294,4.02944,76.5,9,76.5Z" fill="#283138" transform="translate(9.5,81.5) scale(-1,1) translate(-9.5,-81.5)" /&gt;
+                        &lt;/g&gt;
+                        &lt;g id="bee-leg-r" transform="translate(258.693,329) translate(-9.5,-55)" /&gt;
+                        &lt;g id="bee-plants" transform="translate(94.5778,321.5) translate(-94.5778,-64.5)"&gt;
+                            &lt;path id="bee-Rectangle-6" d="M42.5,0C67.9051,0,88.5,20.5949,88.5,46L88.5,96C88.5,100.418,84.9183,104,80.5,104L50.5,104C46.0817,104,42.5,100.418,42.5,96L42.5,0L42.5,0Z" fill="#537B88" transform="translate(65.5,52) translate(-65.5,-52)" /&gt;
+                            &lt;path id="bee-Path" d="M13,11.5L63.9874,61.1217C67.3073,64.3527,70.0833,68.0989,72.208,72.2155L73.3927,74.5109C75.7858,79.1475,77.5192,84.0959,78.5425,89.2124L80,96.5L80,96.5L85.9454,92.1761C89.2899,89.7437,93.0299,87.9079,97,86.75L97.3619,86.6444C101.108,85.5518,104.968,84.8927,108.864,84.6801L130.5,83.5L130.5,83.5L133.11,88.4305C134.33,90.735,136.329,92.5316,138.75,93.5L138.964,93.5858C141.228,94.4913,143.759,94.4604,146,93.5C148.265,92.5294,150.129,90.8123,151.282,88.6346L154,83.5L154,83.5L188.5,83.5L186.564,93.1802C185.859,96.7031,184.584,100.087,182.789,103.199L181.04,106.232C179.027,109.72,176.458,112.857,173.434,115.518L171.75,117C167.619,120.636,162.854,123.48,157.693,125.392L152,127.5L152,127.5L66.5,129L10.5,73L7.25395,67.3194C4.11471,61.8257,2.07543,55.7733,1.25,49.5L1.03648,47.8772C0.350899,42.6668,0.592462,37.3762,1.75,32.25C2.90438,27.1377,5.09549,22.3167,8.18776,18.0852L13,11.5L13,11.5Z" fill="#7AB6AE" transform="translate(94.5778,70.25) translate(-94.5778,-70.25)" /&gt;
+                        &lt;/g&gt;
+                        &lt;g id="bee-flower-1" transform="translate(105,344.5) translate(-62.9058,-344.5)" style="animation: 3.9s linear infinite both bee-flower-1_t;"&gt;
+                            &lt;g id="bee-Group-3-Copy-2" fill="#7AB6AE" transform="translate(32.4334,179.29) rotate(-136) translate(-15.2019,-15.6629)"&gt;
+                            &lt;rect id="bee-Rectangle-7" width="29.6325" height="13.1271" rx="6.56355" transform="translate(15.2019,6.88946) translate(-14.8162,-6.56355)" /&gt;
+                            &lt;rect id="bee-Rectangle-Copy-7-3" width="29.6325" height="12.5416" rx="6.27078" transform="translate(23.7473,16.1837) rotate(-90) translate(-14.8162,-6.27078)" /&gt;
+                            &lt;/g&gt;
+                            &lt;g id="bee-Group-9" transform="translate(81.0586,181.765) translate(-81.0586,-181.765)"&gt;
+                            &lt;g id="bee-Group-3" fill="#7AB6AE" transform="translate(103.222,73.0275) translate(-14.8162,-15.337)"&gt;
+                                &lt;rect id="bee-Rectangle-8" width="29.6325" height="13.1271" rx="6.56355" transform="translate(14.8162,6.56355) translate(-14.8162,-6.56355)" /&gt;
+                                &lt;rect id="bee-Rectangle-Copy-7-4" width="29.6325" height="12.5416" rx="6.27078" transform="translate(23.3617,15.8578) rotate(-90) translate(-14.8162,-6.27078)" /&gt;
+                            &lt;/g&gt;
+                            &lt;g id="bee-flower-1-2" transform="translate(81.0586,181.765) translate(-81.0586,-181.765)"&gt;
+                                &lt;g id="bee-leaves" transform="translate(35.6112,110.782) translate(-35.4924,-37.2335)"&gt;
+                                &lt;path id="bee-Rectangle-9" d="M35.287,0C54.8931,0,70.787,15.8939,70.787,35.5L70.787,59.5C70.787,66.1274,65.4144,71.5,58.787,71.5L53.037,71.5C43.2339,71.5,35.287,63.5531,35.287,53.75L35.287,0L35.287,0Z" fill="#527B88" transform="translate(53.037,35.75) translate(-53.037,-35.75)" /&gt;
+                                &lt;path id="bee-Rectangle-10" d="M18,22.0124C36.8613,22.0124,52.2317,37.1494,52.5203,56.0085L52.9848,86.3585L52.9848,86.3585L48.979,85.8952C31.3224,83.8532,18,68.9013,18,51.127L18,22.0124L18,22.0124Z" fill="#7AB6AE" transform="translate(35.4924,54.1855) rotate(-46) translate(-35.4924,-54.1855)" /&gt;
+                                &lt;/g&gt;
+                                &lt;g id="bee-Group-8" transform="translate(81.0586,181.765) translate(-81.0586,-181.765)"&gt;
+                                &lt;g id="bee-Group-7" stroke="#7AB6AE" stroke-width="6" transform="translate(63.9058,205.5) translate(-49.5,-146.5)"&gt;
+                                    &lt;path id="bee-Path-7" d="M99,0C86.5722,15.2623,78.2389,26.929,74,35C63.5795,54.8408,58.5351,71.8019,57.5,86.5C55,122,58.406,210.019,56,247C53.594,283.981,43.5,285,41,293" transform="translate(70,146.5) translate(-70,-146.5)" /&gt;
+                                    &lt;path id="bee-Path-8" d="M0,120L13.25,120C17.3956,120,21.5202,120.589,25.5,121.75C29.4648,122.906,33.1775,124.796,36.4455,127.322L37,127.75C40.6505,130.571,43.9104,133.864,46.6944,137.543L56.5,150.5L56.5,150.5" transform="translate(28.25,135.25) translate(-28.25,-135.25)" /&gt;
+                                &lt;/g&gt;
+                                &lt;g id="bee-flower1" transform="translate(19.4275,179.229) translate(-19.4275,-22.5293)"&gt;
+                                    &lt;g id="bee-Group-3-Copy" fill="#7AB6AE" transform="translate(32.4334,22.5899) rotate(-136) translate(-15.2019,-15.6629)"&gt;
+                                    &lt;rect id="bee-Rectangle-11" width="29.6325" height="13.1271" rx="6.56355" transform="translate(15.2019,6.88946) translate(-14.8162,-6.56355)" /&gt;
+                                    &lt;rect id="bee-Rectangle-Copy-7-5" width="29.6325" height="12.5416" rx="6.27078" transform="translate(23.7473,16.1837) rotate(-90) translate(-14.8162,-6.27078)" /&gt;
+                                    &lt;/g&gt;
+                                    &lt;ellipse id="bee-Oval-2" fill="#BB80DC" rx="14.4572" ry="14.4572" transform="translate(14.4572,22.5)" /&gt;
+                                &lt;/g&gt;
+                                &lt;g id="bee-Flower" transform="translate(128.476,45.4049) rotate(46) translate(-30.4805,-32.3833)"&gt;
+                                    &lt;g id="bee-Group-2-3" fill="#946BC4" transform="translate(30.2037,10.1784) translate(-22.289,-10.1784)"&gt;
+                                    &lt;rect id="bee-Rectangle-12" width="11" height="16.6487" rx="5.5" transform="translate(5.5,12.0325) translate(-5.5,-8.32434)" /&gt;
+                                    &lt;rect id="bee-Rectangle-Copy-5-3" width="11" height="16.6487" rx="5.5" transform="translate(22.5658,8.32434) translate(-5.5,-8.32434)" /&gt;
+                                    &lt;rect id="bee-Rectangle-Copy-6-3" width="11" height="16.6487" rx="5.5" transform="translate(39.078,12.0325) translate(-5.5,-8.32434)" /&gt;
+                                    &lt;/g&gt;
+                                    &lt;path id="bee-Combined-Shape-5" d="M30.3952,4.26124C39.0927,4.26124,46.9394,7.90412,52.4926,13.7473C50.6453,14.7714,49.3952,16.74,49.3952,19.0006L49.3952,19.0006L49.395,34.1675C47.7715,34.6076,46.0485,34.5367,44.4656,33.9634L44.4656,33.9634L44.4666,23.8117C44.4666,20.498,41.7803,17.8117,38.4666,17.8117C35.1529,17.8117,32.4666,20.498,32.4666,23.8117L32.4666,23.8117L32.4657,33.5686L32.0548,33.797C31.0514,34.3544,29.8179,34.2904,28.8775,33.6322L28.8775,33.6322L28.8427,33.6076L28.8432,23.8117C28.8432,20.498,26.1569,17.8117,22.8432,17.8117C19.5295,17.8117,16.8432,20.498,16.8432,23.8117L16.8432,23.8117L16.8427,33.1626L16.31,33.502C15.1865,34.217,13.7261,34.1057,12.7239,33.2288L12.7239,33.2288L11.9147,32.5206L11.9147,19.0006C11.9147,16.6001,10.505,14.5289,8.46835,13.5696C14.0105,7.83045,21.786,4.26124,30.3952,4.26124Z" fill="#CB90EB" transform="translate(30.4805,19.3569) translate(-30.4805,-19.3569)" /&gt;
+                                    &lt;path id="bee-Combined-Shape-6" d="M55.0037,12.6397C58.2938,12.6397,60.961,15.3069,60.961,18.5971L60.961,33.7508L60.9587,33.9117C60.9602,34.0363,60.961,34.1611,60.961,34.2861C60.961,51.12,47.3144,64.7666,30.4805,64.7666C13.6466,64.7666,0,51.12,0,34.2861L0.00219882,33.9143C0.000736059,33.86,0,33.8055,0,33.7508L0,18.5971C0,15.3069,2.66719,12.6397,5.95733,12.6397C9.24747,12.6397,11.9147,15.3069,11.9147,18.5971L11.9147,32.1618L12.7239,32.87C13.7261,33.7469,15.1865,33.8582,16.31,33.1432L16.8427,32.8038L16.8432,23.4529C16.8432,20.1392,19.5295,17.4529,22.8432,17.4529C26.1569,17.4529,28.8432,20.1392,28.8432,23.4529L28.8427,33.2488L28.8775,33.2734C29.8179,33.9316,31.0514,33.9956,32.0548,33.4382L32.4657,33.2098L32.4666,23.4529C32.4666,20.1392,35.1529,17.4529,38.4666,17.4529C41.7803,17.4529,44.4666,20.1392,44.4666,23.4529L44.4656,33.6046C45.9365,34.1374,47.5285,34.2363,49.0492,33.8944C49.0469,33.8466,49.0463,33.7988,49.0463,33.7508L49.0463,18.5971C49.0463,15.3069,51.7135,12.6397,55.0037,12.6397Z" fill="#946BC6" transform="translate(30.4805,38.7032) translate(-30.4805,-38.7032)" /&gt;
+                                &lt;/g&gt;
+                                &lt;/g&gt;
+                            &lt;/g&gt;
+                            &lt;/g&gt;
+                        &lt;/g&gt;
+                        &lt;g id="bee-bee" transform="translate(224.5,185.29) translate(-105,-114.943)" style="animation: 3.9s linear infinite both bee-bee_t;"&gt;
+                            &lt;g transform="translate(99.4377,210.746) translate(-32.0265,-22.3044)" style="animation: 3.9s linear infinite both bee-a1_t;"&gt;
+                            &lt;rect id="bee-Rectangle-13" width="29.5" height="44" rx="14.75" fill="#FFA521" transform="translate(11.2509,22.975) translate(-14.75,-22)" style="animation: 3.9s linear infinite both bee-Rectangle-13_t;" /&gt;
+                            &lt;rect id="bee-Rectangle-Copy-12" width="29.5" height="44" rx="14.75" fill="#FFA521" transform="translate(45.3387,22.975) translate(-14.75,-22)" style="animation: 3.9s linear infinite both bee-Rectangle-Copy-12_t;" /&gt;
+                            &lt;/g&gt;
+                            &lt;g transform="translate(112.695,185.347) translate(-112.695,-199.854)" style="animation: 3.9s linear infinite both bee-a2_t;"&gt;
+                            &lt;g id="bee-body" transform="translate(105.5,147.52) translate(-77.5,-77.5)"&gt;
+                                &lt;ellipse id="bee-Oval-Copy-2" fill="#283138" rx="77.5" ry="77.5" transform="translate(77.5,77.5)" /&gt;
+                                &lt;path id="bee-Combined-Shape-7" d="M145.808,114.141C141.546,122.07,135.944,129.172,129.304,135.143L25.696,135.143C19.0564,129.172,13.4541,122.07,9.19189,114.141ZM154.248,66.658C154.744,70.2008,155,73.8205,155,77.5C155,80.9432,154.775,84.3339,154.34,87.6584L0.659782,87.6584C0.224542,84.3339,0,80.9432,0,77.5C0,73.8205,0.256423,70.2008,0.752375,66.658ZM123.524,15.1394C131.261,20.8595,137.897,27.9855,143.053,36.1401L11.9473,36.1401C17.1031,27.9855,23.7386,20.8595,31.4763,15.1394Z" fill="#FFA521" transform="translate(77.5,75.1411) translate(-77.5,-75.1411)" /&gt;
+                            &lt;/g&gt;
+                            &lt;g transform="translate(105,99.71) translate(-105,-83.7987)" style="animation: 3.9s linear infinite both bee-a3_t;"&gt;
+                                &lt;g id="bee-wings" fill="#B1E2EF" transform="translate(165.5,136.75) translate(-165,-151.855)" style="animation: 3.9s linear infinite both bee-wings_t;"&gt;
+                                &lt;rect id="bee-Rectangle-Copy-11" width="158" height="79.5" rx="39.75" transform="translate(168.025,157.166) rotate(60) translate(-158,-39.75)" style="animation: 3.9s linear infinite both bee-Rectangle-Copy-11_t;" /&gt;
+                                &lt;rect id="bee-Rectangle-14" width="188.5" height="81" rx="40.5" transform="translate(175.924,154.237) translate(-175.924,-70.8827)" style="animation: 3.9s linear infinite both bee-Rectangle-14_t;" /&gt;
+                                &lt;/g&gt;
+                                &lt;g id="bee-antennas" stroke="#202528" stroke-linecap="round" stroke-width="5" transform="translate(130,99.2503) translate(-19.4971,-35.5418)" style="animation: 3.9s linear infinite both bee-antennas_t;"&gt;
+                                &lt;path id="bee-Path-6" d="M0,36.5L0.139392,33.1081C0.854467,15.708,15.5398,2.18202,32.94,2.8971C33.4607,2.9185,33.9809,2.95281,34.5,3L34.5,3L34.5,3" transform="translate(17.25,19.685) translate(-17.25,-19.685)" /&gt;
+                                &lt;path id="bee-Path-6-Copy" d="M32.5,36.5L32.6394,33.1081C33.3545,15.708,48.0398,2.18202,65.44,2.8971C65.9607,2.9185,66.4809,2.95281,67,3L67,3L67,3" transform="translate(49.75,19.685) translate(-49.75,-19.685)" /&gt;
+                                &lt;/g&gt;
+                                &lt;g id="bee-face" transform="translate(105,129.75) translate(-105,-43.5)"&gt;
+                                &lt;path id="bee-Path-3" stroke="#336775" stroke-width="5" opacity="0.968169" d="M209.5,43.5L119,43.5" transform="translate(164.25,43.5) translate(-164.25,-43.5)" /&gt;
+                                &lt;g id="bee-Group-5" transform="translate(124.708,46.5) translate(-71,-36.5)"&gt;
+                                    &lt;rect id="bee-Rectangle-15" fill="#FFA521" width="142" height="73" rx="36" transform="translate(71,36.5) translate(-71,-36.5)" /&gt;
+                                    &lt;ellipse id="bee-Oval-3" fill="#FFFFFF" rx="29.8575" ry="29.8575" transform="translate(36.1492,36)" /&gt;
+                                    &lt;ellipse id="bee-Oval-Copy-3" fill="#FFFFFF" rx="29.8575" ry="29.8575" transform="translate(106.649,36)" /&gt;
+                                    &lt;path id="bee-Combined-Shape-8" d="M37.6205,15.3575C39.5734,15.3575,41.463,15.6287,43.2537,16.1355C41.0876,17.8939,39.7039,20.5773,39.7039,23.5838C39.7039,28.8795,43.9969,33.1725,49.2926,33.1725C52.512,33.1725,55.3608,31.5859,57.0998,29.152C57.8533,31.2948,58.263,33.5995,58.263,36L58.263,37.4713C58.263,48.8718,49.0211,58.1138,37.6205,58.1138L36.1492,58.1138C24.7487,58.1138,15.5067,48.8718,15.5067,37.4713L15.5067,36C15.5067,24.5995,24.7487,15.3575,36.1492,15.3575L37.6205,15.3575Z" fill="#283138" transform="translate(36.8849,36.7356) translate(-36.8849,-36.7356)" style="animation: 3.9s linear infinite both bee-Combined-Shape-8_t;" /&gt;
+                                    &lt;path id="bee-Combined-Shape-Copy-2" d="M97.0055,15.3575C98.9584,15.3575,100.848,15.6287,102.639,16.1355C100.473,17.8939,99.0889,20.5773,99.0889,23.5838C99.0889,28.8795,103.382,33.1725,108.678,33.1725C111.897,33.1725,114.746,31.5859,116.485,29.152C117.238,31.2948,117.648,33.5995,117.648,36L117.648,37.4713C117.648,48.8718,108.406,58.1138,97.0055,58.1138L95.5342,58.1138C84.1337,58.1138,74.8917,48.8718,74.8917,37.4713L74.8917,36C74.8917,24.5995,84.1337,15.3575,95.5342,15.3575L97.0055,15.3575Z" fill="#283138" transform="translate(96.2699,36.7356) translate(-96.2699,-36.7356)" style="animation: 3.9s linear infinite both bee-Combined-Shape-Copy-2_t;" /&gt;
+                                &lt;/g&gt;
+                                &lt;path id="bee-Path-11" stroke="#336775" stroke-width="5" d="M129.5,43.5L119.5,43.5" transform="translate(124.5,43.5) translate(-124.5,-43.5)" /&gt;
+                                &lt;g id="bee-eye-covers" transform="translate(125.475,15.1468) scale(0.8,0) translate(-65.4172,0)" style="animation: 3.9s linear infinite both bee-eye-covers_t;"&gt;
+                                    &lt;path fill="#ffa521" stroke="none" d="M30.5342,0C30.5566,2.49713,-30.5104,1.82316,-30.5342,0C-30.709,-13.3918,-16.8636,-24.25,0,-24.25C16.8636,-24.25,30.414,-13.3924,30.5342,0Z" transform="translate(30.535,0) scale(1,1.3) translate(0.000815516,24.25)" /&gt;
+                                    &lt;path fill="#ffa521" stroke="none" d="M30.5342,0C30.5566,2.49713,-30.5104,1.82316,-30.5342,0C-30.709,-13.3918,-16.8636,-24.25,0,-24.25C16.8636,-24.25,30.414,-13.3924,30.5342,0Z" transform="translate(100.299,0) scale(1,1.3) translate(0.000815516,24.25)" /&gt;
+                                &lt;/g&gt;
+                                &lt;g id="bee-eye-covers-2" transform="translate(125.475,79) rotate(180) scale(0.7,0) translate(-65.4172,0)" style="animation: 3.9s linear infinite both bee-eye-covers-2_t;"&gt;
+                                    &lt;path fill="#ffa521" stroke="none" d="M30.5342,0C30.5566,2.49713,-30.5104,1.82316,-30.5342,0C-30.709,-13.3918,-16.8636,-24.25,0,-24.25C16.8636,-24.25,30.414,-13.3924,30.5342,0Z" transform="translate(30.535,0) scale(1,1.3) translate(0.000815516,24.25)" /&gt;
+                                    &lt;path fill="#ffa521" stroke="none" d="M30.5342,0C30.5566,2.49713,-30.5104,1.82316,-30.5342,0C-30.709,-13.3918,-16.8636,-24.25,0,-24.25C16.8636,-24.25,30.414,-13.3924,30.5342,0Z" transform="translate(100.299,0) scale(1,1.3) translate(0.000815516,24.25)" /&gt;
+                                &lt;/g&gt;
+                                &lt;ellipse id="bee-Oval-4" stroke="#336775" stroke-width="6" rx="40.5" ry="40.5" transform="translate(79.5,43.5)" /&gt;
+                                &lt;ellipse id="bee-Oval-Copy-4" stroke="#336775" stroke-width="6" rx="40.5" ry="40.5" transform="translate(169.5,43.5)" /&gt;
+                                &lt;path id="bee-Path-4" d="M121.068,70C122.115,71,123.258,71.5,124.5,71.5C125.742,71.5,127.052,71,128.432,70" stroke="#313942" stroke-width="4" stroke-linecap="round" transform="translate(124.75,70.75) translate(-124.75,-70.75)" /&gt;
+                                &lt;path id="bee-Path-5" d="M39,43.5L21.0069,43.5C18.024,43.5,15.0628,44.0072,12.25,45C9.47075,45.9809,7.01648,47.7105,5.15796,49.9979L4.75,50.5C2.61996,53.1216,1.20802,56.2519,0.652707,59.5838L0,63.5L0,63.5" stroke="#336775" stroke-width="5" stroke-linecap="round" transform="translate(19.5,53.5) translate(-19.5,-53.5)" /&gt;
+                                &lt;/g&gt;
+                            &lt;/g&gt;
+                            &lt;/g&gt;
+                        &lt;/g&gt;
+                        &lt;g id="bee-leg-m-l" transform="translate(212.5,329.75) translate(-9.5,-54.25)"&gt;
+                            &lt;path id="bee-leg2" d="M9,98.5L14,98.5C16.7614,98.5,19,100.739,19,103.5C19,106.261,16.7614,108.5,14,108.5L0,108.5L0,108.5L0,107.5C0,102.529,4.02944,98.5,9,98.5Z" fill="#283138" transform="translate(9.5,103.5) translate(-9.5,-103.5)" /&gt;
+                        &lt;/g&gt;
+                        &lt;/g&gt;
+                    &lt;/g&gt;
+                    &lt;/g&gt;
+                    &lt;path d="M-1.66219,-1.66219L-1.66219,32.6228L-1.66219,72.6228" stroke="#283138" fill="none" stroke-width="5" stroke-linecap="round" transform="translate(197.506,293.347)" style="animation: 3.9s linear infinite both bee-a4_d;" /&gt;
+                    &lt;path d="M0,0L0,-65.1141L0,-99.2912" stroke="#283138" fill="none" stroke-width="5" stroke-linecap="round" transform="translate(215.806,362.47)" style="animation: 3.9s linear infinite both bee-a5_d;" /&gt;
+                    &lt;path d="M0,0L0.150197,-42.3555L0.25,-70.5" stroke="#283138" fill="none" stroke-width="5" stroke-linecap="round" transform="translate(231.594,362.47)" style="animation: 3.9s linear infinite both bee-a6_d;" /&gt;
+                    &lt;g transform="translate(258.037,321.72) translate(-9.5,-50.75)"&gt;
+                    &lt;path d="M0,0L0,-61.2126L0,-104.133" stroke="#283138" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" transform="translate(2.17979,95)" style="animation: 3.9s linear infinite both bee-a7_d;" /&gt;
+                    &lt;g transform="translate(0.5,96.5)" style="animation: 3.9s linear infinite both bee-a8_t;"&gt;
+                        &lt;path id="bee-leg4" d="M9,100L14,100C16.7614,100,19,102.239,19,105C19,107.761,16.7614,110,14,110L0,110L0,110L0,109C0,104.029,4.02944,100,9,100Z" fill="#283138" transform="translate(0,0) scale(-1,1) translate(-19,-105)" style="animation: 3.9s linear infinite both bee-leg4_t;" /&gt;
+                    &lt;/g&gt;
+                    &lt;/g&gt;
+                &lt;/g&gt;
+                &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;div class="result"&gt;&lt;/div&gt;
+        &lt;button class="restart"&gt;다시 도전하기&lt;/button&gt;
+    &lt;/div&gt;
+    
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <hr>
+            <h2 class="t_tit2">CSS 코드 : 애니메이션</h2>
+            <p class="t_desc2">
+                본 CSS를 통해 살을 붙여줍니다 👀
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "NexonLv1Gothic";
+    color: var(--htmlColor);
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  
+  a {
+    color: var(--htmlColor);
+    text-decoration: none;
+  } */
+  
+  li {
+    list-style: none;
+  }
+  
+  :root {
+    --htmlColor: #223547;
+    --cssColor: #302247;
+    --javascriptColor: #472231;
+  }
+  
+  #header {
+    display: flex;
+  }
+  #header h1 {
+    margin: 10px;
+  }
+  #header nav {
+    margin: 10px;
+  }
+  #header nav ul {
+  }
+  #header nav li {
+    position: relative;
+    display: inline;
+  }
+  #header nav li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-family: "NexonLv1Gothic";
+  }
+  
+  #header nav li.active a {
+    background-color: var(--htmlColor);
+    color: #fff;
+  }
+  
+  #header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+  }
+  
+  #header nav li .sub li a {
+    width: auto;
+    background-color: transparent;
+    color: var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+  }
+  
+  #header nav li .sub li.active a {
+    text-decoration: underline;
+  }
+  
+  /* main */
+  #main {
+    /* margin: 50px 10px; */
+  }
+  .search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 2px solid var(--htmlColor);
+    border-radius: 20px;
+    background-color: #f1f3f6;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .search__wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  .search__wrap > h1 {
+    font-family: "Tmon";
+    color: var(--htmlColor);
+    font-size: 6vw;
+    margin-bottom: 10px;
+    white-space: nowrap;
+  }
+  
+  .search__box {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .search__box label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+  }
+  
+  .search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 70%;
+    border-radius: 50px;
+    font-size: 20px;
+  }
+  
+  .search__info {
+    text-align: right;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--htmlColor);
+  }
+  
+  .search__info.center{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 20px;
+  }
+  
+  .search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .search__info .keyword {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .search__desc {
+    border: 1px solid var(--htmlColor);
+    padding: 20px 40px 20px 60px;
+    margin-bottom: 50px;
+    background-color: var(--htmlColor);
+    border-radius: 50px;
+    color: #fff;
+    display: inline-block;
+    background-image: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+    /* border-bottom: 2px solid var(--htmlColor); */
+    background-repeat: no-repeat;
+    background-position: 22px 17px;
+  }
+  
+  .search__list {
+  }
+  
+  .search__list li {
+    text-align: left;
+    line-height: 1.7;
+  }
+  .search__list span {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    transition: all 0.25s;
+    margin: 5px;
+  }
+  
+  .search__list span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+  }
+  
+  .search__list em {
+    float: right;
+    font-style: normal;
+  }
+  
+  .search__list .line{
+    margin-top: 70px;
+  }
+  
+  .search__list .line li{
+    background: #e3eaf5;
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+  }
+  
+  .search__list .line li:hover{
+    background: #d3e2fa;
+    cursor: pointer;
+  }
+  
+  
+  .search__list li.hide {
+    display: none;
+  }
+  
+  .search__list li.show {
+    display: block;
+  }
+  
+  @media (max-width: 600px) {
+    .search__wrap {
+      padding: 20px;
+    }
+  
+    .search__wrap > span {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .search__wrap > h1 {
+      font-size: 44px;
+    }
+    .search__box input {
+      font-size: 16px;
+      padding: 12px 30px;
+    }
+  }
+  
+  /* footer */
+  
+  #footer {
+    text-align: center;
+  }
+  
+  #footer a {
+    color: #000;
+    font-family: "NexonLv1Gothic";
+    padding-bottom: 50px;
+  }
+  
+  #footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 소스보기 */
+  .hljs {
+    background-color: #0f0f13 !important;
+    font-family: "NeoDunggeunmo" !important;
+    border-radius: 0px !important;
+  }
+  #main {
+    font-family: NeoDunggeunmo;
+  }
+  .status__bar {
+    content: "";
+    height: 35px;
+    width: 100%;
+    background-color: #464652;
+    padding-top: 9px;
+    padding-left: 10px;
+    color: #fff;
+  }
+  .source__button {
+    position: fixed;
+    right: 40px;
+    bottom: 100px;
+    padding: 5px;
+    z-index: 10001;
+    border: 1px solid #cacaca;
+    background-color: #ededed;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .source__tab__01:hover,
+  .source__tab__02:hover,
+  .source__tab__03:hover {
+    background-color: #b6b6b6;
+    cursor: pointer;
+  }
+  
+  .source__close:hover,
+  .source__button:hover {
+    border: 8px ridge #181818;
+    background-color: #a3a3a3;
+  }
+  
+  .source__desc {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.381);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+  }
+  
+  .source__box {
+    background-color: rgb(255, 255, 255);
+    width: 700px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.155);
+    overflow: hidden;
+    border: 1px solid #cacaca;
+    border-radius: 10px;
+    animation: zoomOut 0.5s ease backwards; /*뒤에s껀 딜레이*/
+  }
+  .source__box.hide {
+    /* animation: zoomIn 0.5s ease; */
+    animation: foldIn 0.3s 0.9s ease;
+  }
+  
+  .source__tab {
+    display: flex;
+    align-items: center;
+    background-color: #ededed;
+    height: 35px;
+    position: relative;
+  }
+  
+  .source__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2px 0px 0px 2px;
+    /* padding: 15px; */
+    border: 8px ridge #cacaca;
+    background-color: #ededed;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .source__tab > div {
+    padding: 8px;
+  }
+  
+  .source__container {
+    /* background-color: #c2bcbc; */
+    height: 500px;
+    overflow: scroll;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .active {
+    color: #3a3232;
+  }
+  
+  .source__contaienr__html {
+    display: none;
+  }
+  
+  .source__contaienr__javascript {
+    display: none;
+  }
+  
+  .source__contaienr__css {
+    display: none;
+  }
+  
+  .search__wrap .time {
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: var(--htmlColor);
+  }
+  .search__wrap .time span {
+    color: #fff;
+    font-size: 34px;
+    font-weight: 100;
+  }
+  .search__wrap .desc{
+    margin-bottom: 20px;
+  }
+  .search__box .start {
+    position: absolute;
+    left: 50%; bottom: 0;
+    transform: translateX(-50%);
+    background: #223547;
+    width: 30%;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 30%;
+    border-radius: 50px;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .search__answers {
+    border-bottom: 2px dashed var(--htmlColor);
+    padding-bottom: 40px;
+  }
+  .search__answers span {
+    display: inline-block;
+    background: var(--htmlColor);
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 30px;
+    margin: 5px;
+  }
+  .search__missAnswers {
+    border-bottom: 2px dashed var(--htmlColor);
+    padding: 40px 0;
+  }
+  .search__missAnswers span {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    color: var(--htmlColor);
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 5px;
+  }
+  
+  /* 세로 스크롤 */
+  .source__container::-webkit-scrollbar {
+    width: 20px;
+    height: 0px;
+    border-radius: 20px;
+  }
+  
+  .source__container:hover::-webkit-scrollbar {
+    opacity: 1;
+  }
+  
+  .source__container::-webkit-scrollbar-thumb {
+    background-color: rgb(95, 95, 95); /*스크롤바의 색상*/
+    border: 20px ridge #cacaca;
+  
+    background-clip: padding-box;
+  }
+  
+  .source__container::-webkit-scrollbar-track {
+    background-color: transparent; /*스크롤바 트랙 색상*/
+  }
+  
+  .search__click {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .search__click li {
+    display: inline;
+  }
+  
+  .search__click li a {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 5px 0px;
+  }
+  
+  .search__click li a:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+  }
+  
+  @keyframes foldOut {
+    0% {
+      transform: scaleX(0) scaleY(0.001);
+    }
+    50% {
+      transform: scaleX(1) scaleY(0.001);
+    }
+    100% {
+      transform: scaleX(1) scaleY(1);
+    }
+  }
+  
+  @keyframes foldIn {
+    0% {
+      transform: scaleX(1) scaleY(1);
+    }
+    50% {
+      transform: scaleX(1) scaleY(0.001);
+    }
+    100% {
+      transform: scaleX(0) scaleY(0.001);
+    }
+  }
+  
+  @keyframes zoomOut {
+    0% {
+      transform: scale(100%, 0%);
+    }
+    100% {
+      transform: scale(-50%);
+    }
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform: scale(-50%);
+    }
+    100% {
+      transform: scale(100%, 0%);
+    }
+  }
+  
+  .search__audio {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .search__audio .play{
+    display: none;
+  }
+  
+  .search__result{
+    position: fixed;
+    left: 50%;
+    top: 1vw;
+    width: 50vw;
+    height: 50vw;
+    transform: scale3d(0, 0, 0);
+    /* background: #ccc; */
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #000;
+  }
+  
+  .search__result.show{
+    display: flex;
+    animation: rubberBand 1s 0.6s ease;
+    transform: scale3d(1, 1, 1);
+    flex-direction: column;
+  }
+  .search__result .result{
+    margin-top: 30px;
+    line-height: 1.4;
+    font-size: 2vw;
+  }
+  .search__result .restart{
+    background: #9468c5;
+    color: #fff;
+    border: 0;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 50px;
+  }
+  @keyframes rubberBand {
+    from {
+      transform: scale3d(0, 0, 0);
+    }
+  
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+  
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+  
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+  
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+  
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+  
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  .sourceContWord{
+    display: none;
+    width: 50vw;
+    height: 50vh;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    z-index: 11;
+  }
+  .sourceContWord_header{
+    background: rgba(71, 42, 177, 0.796);
+    width: 100%;
+    height: 40px;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    color: #fff;
+  }
+  .sourceContWord_header img{
+    filter: invert(1);
+    width: 22px;
+  }
+  .sourceOpen{
+    width: 100%;
+    height: 100%;
+  }
+</code></pre>
+            </div>
+            <hr>
+            <h2 class="t_tit2">JS 코드 : split 기준으로 한글자씩 span으로 감싸주기!</h2>
+            <p class="t_desc2">
+                1. 필요한 요소들을 선택자로 잡고 변수들을 정의합니다.
+                2. updateList로 먼저 cssProperty 데이터를 출력합니다.
+                3. 오디오 함수를 만들고 addEventListener를 걸어서 키고 끌수 있게만듭니다.
+                4. 인풋체크 함수를 만들어 점수에 대한 내용까지 담아줍니다.
+                5. 정답체크, 오답보여주기, 시간설정 함수를 만들어줍니다.
+                6. 게임이 끝났을때 endQuiz 함수에 중지(숨기기),보여주기 요소들을 적절히 담습니다.
+                7. 다시 시작할때 restart함수에 초기화 시켜줄 요소들을 담습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">const cssProperty = [
+{ num: 1, name: "accent-color", desc: "요소의 강조 색상을 지정합니다." },
+{ num: 2, name: "align-content", desc: "콘텐츠 사이와 콘텐츠 주위 빈공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다" },
+{ num: 3, name: "align-items", desc: "교차축에서 아이템 정렬 하는 속성입니다. 주로 flex에서 item들을 정렬할 때 사용됩니다" },
+{ num: 4, name: "align-self", desc: "특정 item의 정렬을 따로 하고 싶을 때 사용합니다" },
+{ num: 5, name: "all", desc: "CSS 사용자 지정 속성을 제외한 모든 속성을 초기화합니다. 초깃값,상속값, 아니면 다른 스타일시트 출처의 값로 설정할 수 있습니다" },
+{ num: 6, name: "animation", desc: "애니메이션과 관련된 속성을 일괄적으로 처리합니다" },
+{ num: 7, name: "animation-delay", desc: "애니메이션 지연시간을 설정합니다" },
+{ num: 8, name: "animation-direction", desc: "애니메이션 움직임 방향을 설정합니다" },
+{ num: 9, name: "animation-duration", desc: "애니메이션움직인 시간을 설정합니다" },
+{ num: 10, name: "animation-fill-mode", desc: "애니메이션이 끝난 후의 상태를 설정합니다" },
+{ num: 11, name: "animation-iteration-count", desc: "애니메이션의 반복 횟수를 설정합니다" },
+{ num: 12, name: "animation-name", desc: "애니메이션 keyframe 이름을 설정합니다" },
+{ num: 13, name: "animation-play-state", desc: "애니메이션 진행상태를 설정합니다" },
+{ num: 14, name: "animation-timeline", desc: "애니메이션의 타임라인을 설정합니다" },
+{ num: 15, name: "animation-timing-function", desc: "애니메이션 움직임의 속도를 설정합니다" },
+{ num: 16, name: "appearance", desc: "운영체제 및 브라우저에 기본적로 설정되어있는 테마를 기반로 요소를 표현한다" },
+{ num: 17, name: "aspect-ratio", desc: "요소의 크기를 비율대로 조정할 수있게 한다" },
+{ num: 18, name: "backdrop-filter", desc: "요소 뒤 영역에 흐림이나색상 시프트 등 그래픽 효과를 적용할 수 있는 속성입니다" },
+{ num: 19, name: "backface-visibility", desc: "요소의뒷쪽에서 앞면이 보이게 할지 정하는 속성입니다" },
+{ num: 20, name: "background", desc: "백그라운드 속성을 일괄적로 설정합니다." },
+{ num: 21, name: "background-attachment", desc: "배경 이미지의 고정 여부를 설정합니다" },
+{ num: 22, name: "background-blend-mode", desc: "배경을 혼합했을 때 그래픽 효과를 설정합니다" },
+{ num: 23, name: "background-clip", desc: "백그라운드 이미지의위치 기준점을 설정합니다" },
+{ num: 24, name: "background-color", desc: "백그라운드 색을설정합니다" },
+{ num: 25, name: "background-image", desc: "백그라운드 이미지속성을 설정합니다" },
+{ num: 26, name: "background-origin", desc: "백그라운드이미지의 위치 기준점을 설정하기 위한 속성입니다" },
+{ num: 27, name: "background-position", desc: "백그라운드 이미지의 위치 영역을 설정합니다" },
+{ num: 28, name: "background-position-x", desc: "백그라운드 이미지의 X축위치 영역을 설정합니다" },
+{ num: 29, name: "background-position-y", desc: "백그라운드 이미지의 Y축위치 영역을 설정합니다" },
+{ num: 30, name: "background-repeat", desc: "백그라운드이미지 반복 여부를 설정합니다" },
+{ num: 31, name: "background-size", desc: "백그라운드 이미지사이즈를 설정합니다" },
+{ num: 32, name: "block-size", desc: "블럭의 크기를 지정합니다" },
+{ num: 33, name: "border", desc: "테두리 속성을 일괄적로 설정합니다" },
+{ num: 34, name: "border-block", desc: "보더블럭 속성을 지정합니다." },
+{ num: 35, name: "border-block-color", desc: "보더블럭색상을 지정합니다" },
+{ num: 36, name: "border-block-end", desc: "보더블럭 끝부분을설정합니다" },
+{ num: 37, name: "border-block-end-color", desc: "보더블럭 끝부분 색상을 설정합니다" },
+{ num: 38, name: "border-block-end-style", desc: "보더블럭 끝부분 스타일을 설정합니다" },
+{ num: 39, name: "border-block-end-width", desc: "보더블럭 끝부분 너비를 설정합니다" },
+{ num: 40, name: "border-block-start", desc: "보더블럭의시작부분을 설정합니다" },
+{ num: 41, name: "border-block-start-color", desc: "보더블럭 시작부분을 설정합니다" },
+{ num: 42, name: "border-block-start-style", desc: "보더블럭 시작부분 스타일을 설정합니다" },
+{ num: 43, name: "border-block-start-width", desc: "보더블럭 시작부분 너비값을 설정합니다" },
+{ num: 44, name: "border-block-style", desc: "보더블럭스타일을 설정합니다" },
+{ num: 45, name: "border-block-width", desc: "보더블럭의너비값을 지정합니다" },
+{ num: 46, name: "border-bottom", desc: "아래쪽 속성을 일괄적로설정합니다" },
+{ num: 47, name: "border-bottom-color", desc: "테두리아래쪽 색 속성을 설정합니다" },
+{ num: 48, name: "border-bottom-left-radius", desc: "아래 왼쪽 모서리 굴곡을 설정합니다" },
+{ num: 49, name: "border-bottom-right-radius", desc: "아래 오른쪽 모서리 굴곡을 설정합니다" },
+{ num: 50, name: "border-bottom-style", desc: "테두리아래쪽 스타일 속성을 설정합니다" },
+{ num: 51, name: "border-bottom-width", desc: "테두리아래쪽 두께 속성을 설정합니다" },
+{ num: 52, name: "border-collapse", desc: "테이블 cell 테두리의겹침 속성을 설정한다" },
+{ num: 53, name: "border-color", desc: "테두리의 색상을 지정합니다." },
+{ num: 54, name: "border-end-end-radius", desc: "속성은 요소의에 따라 물리적 경계 반경에 매핑하는 요소에 논리적 경계 반경 정의 writing-mode , direction , 및 text-orientation .이것은 텍스트 방향 및 쓰기 모드에 관계없이 작업 할 스타일을 작성할 때 유용 합니다 " },
+{ num: 55, name: "border-end-start-radius", desc: "이 속성은 요소의 블록 끝과 인라인 시작면 사이의 모서리에 영향을줍니다" },
+{ num: 56, name: "border-image", desc: "테두리의 이미지를 지정합니다." },
+{ num: 57, name: "border-image-outset", desc: "테두리를벗어나는 이미지 양을 지정" },
+{ num: 58, name: "border-image-repeat", desc: "원본이미지의 모서리 영역을 요소의 테두리 이미지 크기에 맞춰 조절할 때 사용할 방법을 지정합니다" },
+{ num: 59, name: "border-image-slice", desc: "border-image-source로 설정한 이미지를 여러 개의 영역로 나눕니다" },
+{ num: 60, name: "border-image-source", desc: "요소의테두리 이미지로 사용할 원본 이미지를 지정합니다" },
+{ num: 61, name: "border-image-width", desc: "요소의 테두리이미지로 사용할 원본 이미지를 지정합니다" },
+{ num: 62, name: "border-inline", desc: "스타일 시트에서 하나의 장소에서각각의 논리적 인라인 border 속성 값을 설정합니다" },
+{ num: 63, name: "border-inline-color", desc: "논리적인라인 테두리의 색상을 정의합니다" },
+{ num: 64, name: "border-inline-end", desc: "요소의 논리적인라인 엔드 테두리 폭을 정의합니다" },
+{ num: 65, name: "border-inline-end-color", desc: "요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 색상에 매핑하는 요소의 논리적 인라인 엔드 테두리 색상을 정의합니다" },
+{ num: 66, name: "border-inline-end-style", desc: "요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 스타일에 매핑하는 요소의 논리적 인라인 끝 테두리 스타일을 정의합니다" },
+{ num: 67, name: "border-inline-end-width", desc: "요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 폭 물리적 경계에 매핑하는 요소의 논리적 인라인 엔드 테두리 폭을 정의합니다" },
+{ num: 68, name: "border-inline-start", desc: "스타일시트에서 하나의 장소에서 각각의 논리적 인라인 시작 border 속성 값을 설정합니다" },
+{ num: 69, name: "border-inline-start-color", desc: "요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 색상에 매핑하는 요소의논리적 인라인 시작 테두리 색상을 정의합니다" },
+{ num: 70, name: "border-inline-start-style", desc: "속성은 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 스타일에매핑하는 요소의 논리적 인라인 시작 테두리 스타일을 정의합니다" },
+{ num: 71, name: "border-inline-start-width", desc: "속성은 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 폭 물리적 경계에 매핑하는요소의 논리적 인라인 시작 테두리 폭을 정의합니다" },
+{ num: 72, name: "border", desc: "요소의 쓰기 모드, 방향성,텍스트 방향에 따라 물리적 테두리 스타일에 매핑하는 요소의 논리적 인라인 테두리의 스타일을 정의합니다" },
+{ num: 73, name: "border-inline-width", desc: "요소의쓰기 모드, 방향성, 텍스트 방향에 따라 폭 물리적 경계에 매핑하는 요소의 논리적 인라인 테두리의 폭을 정의합니다" },
+{ num: 74, name: "border-left", desc: "왼쪽 테두리를 설정합니다" },
+{ num: 75, name: "border-left-color", desc: "박스의 왼쪽테두리 색상을 지정합니다" },
+{ num: 76, name: "border-left-style", desc: "박스의 왼쪽테두리 영역의 스타일을 지정합니다" },
+{ num: 77, name: "border-left-width", desc: "박스의 왼쪽테두리 영역의 너비를 지정합니다" },
+{ num: 78, name: "border-radius", desc: "테두리를 둥글게 만들 수 있는속성입니다" },
+{ num: 79, name: "border-right", desc: "오른쪽 테두리를 설정합니다." },
+{ num: 80, name: "border-right-color", desc: "박스의 오른쪽테두리 색상을 지정합니다" },
+{ num: 81, name: "border-right-style", desc: "박스의 오른쪽테두리 영역의 스타일을 지정합니다" },
+{ num: 82, name: "border-right-width", desc: "박스의 오른쪽테두리 영역의 너비를 지정합니다" },
+{ num: 83, name: "border-spacing", desc: "테이블 cell과 테두리와의간격을 지정한다" },
+{ num: 84, name: "border-start-end-radius", desc: "이것은 텍스트 방향 및 쓰기 모드에 관계없이 작업 할 스타일을 작성할 때 유용 합니다 " },
+{ num: 85, name: "border-start-start-radius", desc: "이것은 텍스트 방향 및 쓰기 모드에 관계없이 작업 할 스타일을 작성할 때 유용 합니다" },
+{ num: 86, name: "border-style", desc: "박스의 테두리 영역의 스타일을지정합니다" },
+{ num: 87, name: "border-top", desc: "위쪽 테두리를 설정합니다" },
+{ num: 88, name: "border-top-color ", desc: "박스의 상단테두리 색상을 지정합니다" },
+{ num: 89, name: "border-top-left-radius", desc: "라운드 코너의 곡률을 규정하는 타원의 반경 (또는 세미 메이저 및 세미 마이너 축의 반경)을 지정하여 소자의 왼쪽 상단" },
+{ num: 90, name: "border-top-right-radius", desc: "속성 라운드 코너의 곡률을 규정하는 타원의 반경 (또는 세미 메이저 및 세미 마이너 축의 반경)을 지정하여 소자의 오른쪽 상단" },
+{ num: 91, name: "border-top-style", desc: "박스의 상단 테두리영역의 스타일을 지정합니다" },
+{ num: 92, name: "border-top-width", desc: "박스의 상단 테두리영역의 너비를 지정합니다" },
+{ num: 93, name: "border-width", desc: "박스의 테두리 영역의 너비를지정합니다" },
+{ num: 94, name: "bottom", desc: "용기블럭의 높이를 참조합니다. 요소가 밑에서부터 어디쯤배치 될 지 결정합니다" },
+{ num: 95, name: "box-decoration-break", desc: "요소의방법 속성을 지정 조각이 여러 행, 열 또는 페이지에 걸쳐 깨진 경우 렌더링해야합니다" },
+{ num: 96, name: "box-shadow", desc: "요소의 프레임 주위에 그림자 효과를추가합니다" },
+{ num: 97, name: "box-sizing", desc: "박스의 크기를 어떤 것을 기준로 계산할지를정하는 속성입니다" },
+{ num: 98, name: "break-after", desc: "속성 설정 페이지, 열, 또는 지역구분은 생성 된 박스 후 행동해야하는 방법. 생성 된 상자가 없으면 속성이 무시됩니다" },
+{ num: 99, name: "break-before", desc: "세트 페이지, 열, 또는 지역 구분은생성 된 박스 전에 행동해야하는 방법. 생성 된 상자가 없으면 속성이 무시됩니다" },
+{ num: 100, name: "break-inside", desc: "속성 설정 페이지, 열, 또는 지역나누기 생성 된 상자 안에 행동해야하는 방법. 생성 된 상자가 없으면 속성이 무시됩니다" },
+{ num: 101, name: "caption-side", desc: "표(table)의 캡션의 위치를정하는 속성 입니다." },
+{ num: 102, name: "caret-color", desc: "색상 설정 삽입 캐럿 , 다음 문자 입력된 삽입 될 볼 마커를. 이를 텍스트 입력 커서 라고도합니다 " },
+{ num: 103, name: "clear", desc: "float 속성을 해제한다" },
+{ num: 104, name: "clip", desc: "요소의 보이는 부분을 정의합니다" },
+{ num: 105, name: "clip-path", desc: "요소의 어떤 부분 집합을 표시 할 것인지 클리핑영역을 생성한다" },
+{ num: 106, name: "color", desc: "텍스트 내용의 글자 색상을 지정합니다" },
+{ num: 107, name: "color-scheme", desc: "요소가 편안하게 렌더링 할 수있는 색구성표 표시 할 수 있습니다" },
+{ num: 108, name: "column-count", desc: "해당 요소를 몇 개의칼럼(column)로 나눌지를 설정합니다" },
+{ num: 109, name: "column-fill", desc: "컬럼로 쪼갤 때, 얼마나 요소들이균형이 맞는지 컨트롤 합니다" },
+{ num: 110, name: "column-gap(grid-column-gap)", desc: "그리드 레이아웃에서 컬럼 간의 간격을 정의합니다" },
+{ num: 111, name: "column-rule", desc: "다중 열 레이아웃의 열 사이에 그려진라인의 폭, 스타일, 색상을 설정한다" },
+{ num: 112, name: "column-rule-color", desc: "다중 열레이아웃의 열 사이에 그려진 라인의 색을 설정한다" },
+{ num: 113, name: "column-rule-style", desc: "다중 열레이아웃에서 열 사이에 그려진 라인의 스타일을 설정합니다" },
+{ num: 114, name: "column-rule-width", desc: "다중 열레이아웃의 열 사이에 그려진 라인의 폭을 설정한다" },
+{ num: 115, name: "column-span", desc: "컬럼 span을 설정합니다" },
+{ num: 116, name: "column-width", desc: "다중 열 레이아웃에서 이상적인컬럼 폭을 설정한다" },
+{ num: 117, name: "columns", desc: "다단을 정의 - 단축 속성" },
+{ num: 118, name: "contain", desc: "특정 요소와 콘텐츠가 문서 트리의 다른 부위와독립되어있음을 나타낼 때 사용합니다" },
+{ num: 119, name: "content", desc: "엘리먼트의 앞(:before)이나 뒤(:after)에내용을 생성합니다" },
+{ num: 120, name: "content-visibility", desc: "페이지로드성능을 개선하는 데 가장 영향력있는 속" },
+{ num: 121, name: "counter-increment", desc: "counter-reset로 설정한 값을 증가시키는 역" },
+{ num: 122, name: "counter-reset", desc: "카운터를 사용하려면,counter-reset로 먼저 카운터 이름과 시작값을 설정 해야 합니" },
+{ num: 123, name: "counter-set", desc: "CSS 카운터 를 주어진 값로설정합니다" },
+{ num: 124, name: "cursor", desc: "마우스 커서의 모양을 지정한다" },
+{ num: 125, name: "direction", desc: "텍스트의 표기 방향을 지정한다" },
+{ num: 126, name: "display", desc: "엘리먼트의 디스플레이 속성을 지정한다" },
+{ num: 127, name: "empty-cells", desc: "테두리와 배경이 주위에 표시할지 여부" },
+{ num: 128, name: "filter", desc: "요소 흐림 또는 색상 변화와 같은 그래픽 효과를적용한다" },
+{ num: 129, name: "flex", desc: "요소들을 자유자제로 위치 시키는 속성로, 레이아웃을 쉽게 잡을수 있다" },
+{ num: 130, name: "flex-basis", desc: "플렉스 항목의 초기 기본 크기를설정합니다" },
+{ num: 131, name: "flex-direction", desc: "CSS5에 추가된 속성로flexible item이 flex 컨테이너 안에 위치되는 방법을 지정한다" },
+{ num: 132, name: "flex-flow", desc: "플렉스 컨테이너의 방향,뿐만 아니라 포장동작을 지정한다" },
+{ num: 133, name: "flex-grow", desc: "flex-item 요소가,flex-container 요소 내부에서 할당 가능한 공간의 정도를 선언합니다" },
+{ num: 134, name: "flex-shrink", desc: "공간을 넘어갈 경우에 각 아이템들을줄이는 방법을 설정하는 방법입니다" },
+{ num: 135, name: "flex-wrap", desc: "flexible item을 wrap 할것인지아닌지를 지정한다" },
+{ num: 136, name: "float", desc: "용기박스를 왼쪽 또는 오른쪽로 이동하거나 이동하지 않음을지정한다" },
+{ num: 137, name: "font", desc: "엘리먼트안의 텍스트 컨텐츠의 font-style,font-variant, font-weight, font-size, line-height, font-family를 설정하는 약식속성이다" },
+{ num: 138, name: "font-family", desc: "특정 글꼴이나 대표 글꼴을 지정한다." },
+{ num: 139, name: "font-feature-settings", desc: "오픈타입 폰트의 다양한 오픈타입 피처를 설정합니다" },
+{ num: 140, name: "border", desc: "저장된 폰트 자간 정보의 사용을 설정한다." },
+{ num: 141, name: "font-language-override", desc: "서체에서 특정 언어의 상형 문자의 사용을 제어합니다" },
+{ num: 142, name: "font-optical-sizing", desc: "서로 다른크기로 볼 수 있도록 최적화되어 있는지 설정합니다" },
+{ num: 143, name: "font-size", desc: "글꼴의 크기를 지정한다" },
+{ num: 144, name: "font-size-adjust", desc: "(대문자의 크기를정의하는) 현재의 폰트 크기에 대한 소문자의 크기를 설정한다" },
+{ num: 145, name: "font-stretch", desc: "글꼴 에서 노멀, 압축 또는확장면을 선택합니다" },
+{ num: 146, name: "font-style", desc: "font-family에서 지정된 폰트의스타일을 지정합니다" },
+{ num: 147, name: "font-synthesis", desc: "브라우저가 굵은 글꼴과이탤릭 글꼴을 합성하는 것을 허용할지 설정합니다" },
+{ num: 148, name: "font-variant", desc: "소문자를 작은 대문자, 즉 소문자크기의 대문자로 바꾸는 속성입니다" },
+{ num: 149, name: "font-variant-alternates", desc: "대체 글리프의 사용을 제어합니다" },
+{ num: 150, name: "font-variant-caps", desc: "대문자를위한 대체글리프의 사용을 제어합니다" },
+{ num: 151, name: "font-variant-east-asian", desc: "일본과 중국 등 동아시아 스크립트를 대체 글리프의 사용" },
+{ num: 152, name: "font-variant-ligatures", desc: "ligatures 글꼴의 글자들을 서로 더 조화롭게 보이도록 하는 기능을 지정합니다" },
+{ num: 153, name: "font-variant-numeric", desc: "숫자,분수 및 서수 마커 대체 글리프의 사용을 제어합니다" },
+{ num: 154, name: "font-variant-position", desc: "글꼴에 내장된 윗 첨자 또는 아랫첨자를 사용하도록 지정합니다" },
+{ num: 155, name: "font-variation-settings", desc: "Variable fonts(가변 폰트) 의 폰트 스타일을 제어하는 CSS 속성입니다" },
+{ num: 156, name: "font-weight", desc: "글꼴의 굵기를 지정한다" },
+{ num: 157, name: "forced-color-adjust", desc: "강제 색상모드 중 선택 하여 특정 요소에 대한 저장을 할 수 있습니다" },
+{ num: 158, name: "gap (grid-gap)", desc: "row-gap 및column-gap 의 약어 입니다. (갭제어" },
+{ num: 159, name: "grid", desc: "2차원 표형태의 레이아웃을 만들 수 있는 속성입니다" },
+{ num: 160, name: "grid-area", desc: "grid-templete-areas에 지정한영역을 정의해준다" },
+{ num: 161, name: "grid-auto-columns", desc: "암시 적로 생성된 그리드 컬럼의 크기를 지정 트랙 이나 트랙의 패턴을 지정합니다" },
+{ num: 162, name: "grid-auto-flow", desc: "자동 배치 알고리즘이 자동배치 항목을 그리드로 유입 얻을 방법을 정확하게 지정 작동 방식 CSS 속성을 제어합니다" },
+{ num: 163, name: "grid-auto-rows", desc: "암시 적로 생성 된 그리드행의 크기를 지정 트랙 이나 트랙의 패턴을 지정합니다" },
+{ num: 164, name: "grid-column", desc: "격자 아이템의 크기 및 위치 지정합니다" },
+{ num: 165, name: "grid-column-end", desc: "그리드 열 내에서 그리드항목의 끝 위치를 지정합니다" },
+{ num: 166, name: "grid-column-start", desc: "그리드 열 내에서그리드 항목의 시작 위치를 지정합니다" },
+{ num: 167, name: "grid-row", desc: "그리드의 인라인 시작 및 인라인 끝 가장자리를지정합니다" },
+{ num: 168, name: "grid-row-end", desc: "그리드 영역 의 인라인 끝가장자리를 지정합니다" },
+{ num: 169, name: "grid-row-start", desc: "그리드 영역 의 가장자리를 지정합니다" },
+{ num: 170, name: "grid-template", desc: "그리드의 열, 행 정의하기위한 약식속성입니다" },
+{ num: 171, name: "grid-template-areas", desc: "어떤 형태로 구성되는지 설계도의 역할을 한다" },
+{ num: 172, name: "grid-template-columns", desc: "열 넓이를 지정한다" },
+{ num: 173, name: "grid-template-rows", desc: "지정한다" },
+{ num: 174, name: "hanging-punctuation", desc: "시작 정지 또는 텍스트 행의 종료 여부를 속성 지정합니다" },
+{ num: 175, name: "height", desc: "블럭레벨 요소의 높이를 지정한다" },
+{ num: 176, name: "hyphenate-character", desc: "나누기 전 줄 끝에서 사용되는 문자(또는 문자열)를 설정합니다" },
+{ num: 177, name: "hyphens", desc: "단어를 여러 줄에 걸쳐 때 하이픈되어야하는 속성을 지정합니다" },
+{ num: 178, name: "image-orientation", desc: "대한 레이아웃 독립적 수정을 지정합니다" },
+{ num: 179, name: "image-rendering", desc: "알고리즘을 설정한다" },
+{ num: 180, name: "image-resolution", desc: "해상도를 설정합니다." },
+{ num: 181, name: "ime-mode", desc: "IME(Input Method Editor)의상태를 반환하거나 설정합니다" },
+{ num: 182, name: "initial-letter", desc: "세트, 떨어 제기하고, 침몰초기 문자에 대한 스타일링" },
+{ num: 183, name: "initial-letter-align", desc: "단락내에서 초기 문자의 정렬을 지정합니다" },
+{ num: 184, name: "inline-size", desc: "요소의 블록의 수평과 수직 크기를정의한다" },
+{ num: 185, name: "inset", desc: "element와 테두리 사이의 element 내부에 있는공간을 의미합니다" },
+{ num: 186, name: "inset-block", desc: "요소의 쓰기 모드, 방향성, 텍스트방향에 따라 실제 오프셋에 매핑하는 요소의 논리 블록의 시작과 끝 오프셋을 정의합니다" },
+{ num: 187, name: "inset-block-end", desc: "요소의 쓰기 모드,방향성, 텍스트 방향에 따라 물리적 인 세트에 매핑하는 요소의 오프셋 (offset) 논리 블록의 끝을 정의합니다" },
+{ num: 188, name: "inset-block-start", desc: "논리적 블록 요소의쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 인 세트에 매핑하는 요소의 오프셋 시작을 정의합니다" },
+{ num: 189, name: "inset-inline", desc: "요소의 쓰기 모드, 방향성, 텍스트방향에 따라 실제 오프셋에 매핑 인라인 방향로 요소의 논리적 시작과 끝 오프셋을 정의합니다" },
+{ num: 190, name: "inset-inline-end", desc: "요소의 쓰기 모드,방향성, 텍스트 방향에 따라 오프셋에 매핑하는 요소의 논리적 인라인 최종 삽입을 정의합니다" },
+{ num: 191, name: "inset-inline-start", desc: "요소의 쓰기모드, 방향성, 텍스트 방향에 따라 오프셋에 매핑하는 요소의 논리적 인라인 시작 인 세트를 정의합니다" },
+{ num: 192, name: "isolation", desc: "요소가 새로운 생성해야하는지 여부를 결정합니다." },
+{ num: 193, name: "justify-content", desc: "가로축 - 중심축을기준으로 아이템들을 정렬한다. 주로 flex랑 사용된다" },
+{ num: 194, name: "justify-items", desc: "수직축을 중심로 좌우로 위치를조정하는 속성입니다. Flexbox와 같은 개념입니다" },
+{ num: 195, name: "justify-self", desc: "상자가 적절한 축 방향의 정렬컨테이너 내부 정당화되는 방법을 설정합니다" },
+{ num: 196, name: "left", desc: "용기블럭의 너비를 참조합니다. 요소가 왼쪽에서 어느 위치에 배치될 지 결정합니다" },
+{ num: 197, name: "letter-spacing", desc: "텍스트 문자 사이의 수평간격 동작을 설정합니다" },
+{ num: 198, name: "line-break", desc: "줄 바꿈 규칙을 어떻게 할지 결정합니다." },
+{ num: 199, name: "line-height", desc: "인라인 박스의 높이를 지정한다." },
+{ num: 200, name: "line-height-step", desc: "라인 박스의 높이에 대한 공정 유닛을 설정한다" },
+{ num: 201, name: "list-style", desc: "목록 항목의속성들(list-style-type, list-style-position, list-style-image)을 한꺼번에 지정하는 약식속성입니다" },
+{ num: 202, name: "list-style-image", desc: "목록 항목 마커로사용되는 이미지를 설정합니다" },
+{ num: 203, name: "list-style-position", desc: "속성의위치 설정 합니다" },
+{ num: 204, name: "list-style-type", desc: "목록 항목 요소 (예 :디스크, 문자, 또는 사용자 정의 카운터 스타일 등) 마커를 설정합니" },
+{ num: 205, name: "margin", desc: "엘리먼트와 엘리먼트 사이의 간격을 지" },
+{ num: 206, name: "margin-block", desc: "요소의 쓰기 모드, 방향성, 텍스트방향에 따라 물리적 한계에 매핑하는 요소의 논리 블록의 시작과 끝 여백을 정의합니다" },
+{ num: 207, name: "margin-block-end", desc: "요소의 쓰기 모드,방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 블록 끝 마진을 정의합니다" },
+{ num: 208, name: "margin-block-start", desc: "요소의 쓰기모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리 블록 시작 마진을 정의합니다" },
+{ num: 209, name: "margin-bottom", desc: "요소 밑에 쪽 마진을 설정합니다." },
+{ num: 210, name: "margin-inline", desc: "약식 속성입니다 정의하는 두요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 인라인 시작과 끝 여백" },
+{ num: 211, name: "margin-inline-end", desc: "요소의 쓰기 모드,방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 인라인 끝 마진을 정의합니다" },
+{ num: 212, name: "margin-inline-start", desc: "속성은요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 인라인 시작 마진을 정의합니다" },
+{ num: 213, name: "margin-left", desc: "소 왼쪽의 여백 영역을 설정 합니다." },
+{ num: 214, name: "margin-right", desc: "엘리먼트의 오른쪽 마진을 지정한다." },
+{ num: 215, name: "margin-top", desc: "엘리먼트의 상단 마진을 지정한다" },
+{ num: 216, name: "margin-trim", desc: "컨테이너가 컨테이너의 가장자리에 인접한자식의 여백을 트리밍할 수 있습니다 " },
+{ num: 217, name: "mask", desc: "아이템이 부분적로만 보여지게 하거나 혹은 완전히 가려서 보여지지않게 할 수 있는 기능을 가지고 있습니다" },
+{ num: 218, name: "mask-border", desc: "요소의 경계의 가장자리를 따라 마스크를만들 수 있습니다" },
+{ num: 219, name: "mask-border-mode", desc: "블렌딩 모드를 지정하는마스크의 테두" },
+{ num: 220, name: "mask-border-outset", desc: "요소의있는 거리지정 마스크 보더 의 경계 상자에서 밖로 설정됩니다" },
+{ num: 221, name: "mask-border-repeat", desc: "속성 세트 에지영역 , 소스 이미지가 요소의의 크기에 맞게 조정되는 마스크 테두리" },
+{ num: 222, name: "mask-border-slice", desc: "요소 마스크 테두리의 구성 요소를 형성하는 데 사용됩니다 " },
+{ num: 223, name: "mask-border-source", desc: "동적 최종마스크 테두리에 적용되는 영역로 소스 이미지를 분할하는데 사용된다" },
+{ num: 224, name: "mask-border-width", desc: "속성은 엘레멘트의너비 설정 마스크 경계를 설정합니다" },
+{ num: 225, name: "mask-clip", desc: "마스크에 의해 영향을받는 영역을 결정한다." },
+{ num: 226, name: "mask-composite", desc: "그 다음 마스크 층과 현재의마스크 층에 사용되는 합성 동작을 나타낸다" },
+{ num: 227, name: "mask-image", desc: "마스크 층로서 사용되는 화상을 설정한다." },
+{ num: 228, name: "mask-mode", desc: "정의 된 마스크 참조 여부 속성 세" },
+{ num: 229, name: "mask-origin", desc: "마스크의 원점을 설정합니다" },
+{ num: 230, name: "mask-position", desc: "마스크의 위치를 설정합니다." },
+{ num: 231, name: "mask-repeat", desc: "마스크 이미지를 반복하는 방법을 속성집합을 설정합니다" },
+{ num: 232, name: "mask-size", desc: "마스크 이미지의 크기를 지정합니다" },
+{ num: 233, name: "mask-type", desc: "마스크 타입을 설정합니다" },
+{ num: 234, name: "max-block-size", desc: "기입 방향로 규정되는 방향의반대측에있는 요소들의 최대 크기를 지정하는 writing-mode . 즉, 쓰기 방향이 수평이면 max-block-size 는 max-height 와 같습니다 ." },
+{ num: 235, name: "max-height", desc: "엘리먼트의 최대 높이를 지정한다" },
+{ num: 236, name: "max-inline-size", desc: "기록 모드에 따라서,요소의 블록의 수평 또는 수직의 최대 크기를 정의한다" },
+{ num: 237, name: "max-width", desc: "엘리먼트의 최대 넒이를 지정한다" },
+{ num: 238, name: "min-block-size", desc: "기록 모드에 따라서, 요소의블록의 최소 수평 또는 수직 크기를 정의한다" },
+{ num: 239, name: "min-height", desc: "엘리먼트의 내용영역 높이의 최소값을지정한다. 음수값은 지정할 수 없다" },
+{ num: 240, name: "min-inline-size", desc: "기록 모드에 따라서,요소의 블록의 수평 또는 수직의 최소 크기를 정의한다" },
+{ num: 241, name: "min-width", desc: "엘리먼트의 최소 넓이를 지정한다" },
+{ num: 242, name: "mix-blend-mode", desc: "요소의 내용은 요소의 부모의내용과 요소의 배경로 혼합하는 방법" },
+{ num: 243, name: "object-fit", desc: "img 나 video 요소와 같은 대체요소의 콘텐츠 크기를 어떤 방식로 조절해 요소에 맞출 것인지 지정합니다" },
+{ num: 244, name: "object-position", desc: "대체 요소의 콘텐츠 정렬방식을 지정합니다" },
+{ num: 245, name: "offset", desc: "정의 된 경로를 따라 애니메이션화 된 요소에 필요한 모든속성을 설정한다" },
+{ num: 246, name: "offset-anchor", desc: "실제로 경로를 따라 움직이는offset-path 를 따라 이동하는 요소의 상자 내부 지점을 지정합니다 " },
+{ num: 247, name: "offset-distance", desc: "CSS 속성 지정은 함께위치 offset-path 요소의 위치가된다" },
+{ num: 248, name: "offset-path", desc: "수행 할 요소의 이동 경로를 지정하고,부모 컨테이너 내의 요소의 위치를 정의 또는 SVG 좌표계" },
+{ num: 249, name: "offset-position", desc: "오프셋의 위치값을설정합니다" },
+{ num: 250, name: "offset-rotate", desc: "소자의 배향 / 정의 방향offset-path " },
+{ num: 251, name: "opacity", desc: "요소의 투명도를 결정합니다" },
+{ num: 252, name: "order", desc: "플렉스 또는 그리드 컨테이너에서 항목을 배치하는 순서를설정합니다" },
+{ num: 253, name: "orphans", desc: "표시해야하는 블록 컨테이너 선의 최소 설정 저면(A)의 페이지 , 영역 또는 컬럼 " },
+{ num: 254, name: "outline", desc: "단일 선언에서 대부분의 개요 속성을 설정합니다 ." },
+{ num: 255, name: "outline-color", desc: "요소의 외곽선의 색상을설정합니다" },
+{ num: 256, name: "outline-offset", desc: "간 공간 설정 윤곽 요소의가장자리 또는 경계" },
+{ num: 257, name: "outline-style", desc: "요소의 윤곽의 스타일을설정합니다. 윤곽선은 border 외부의 요소 주위에 그려지는 선입니다 " },
+{ num: 258, name: "outline-width", desc: "엘레멘트의 윤곽의 두께를설정합니다" },
+{ num: 259, name: "overflow", desc: "내용이 박스보다 큰 경우 밖로 넘친 부분을어떻게 표시할지를 지정한다" },
+{ num: 260, name: "overflow-anchor", desc: "조정 스크롤 위치가내용의 변화를 최소화하기 위해 브라우저의 스크롤 고정 행동을 거부 할 수있는 방법을 제공합니다" },
+{ num: 261, name: "overflow-block", desc: "상자의 블록 시작과 블록끝 가장자리를 오버 플로우 어떤 쇼 속성 집합. 이것은 아무것도, 스크롤 막대 또는 오버플로 내용 일 수 있습니다" },
+{ num: 262, name: "overflow-clip-margin", desc: "얼마나 외부의 경계를 가지는 요소를 결" },
+{ num: 263, name: "overflow-inline", desc: "내용이 상자의 인라인시작과 끝 가장자리를 오버 플로우 어떤 쇼 속성 집합" },
+{ num: 264, name: "overflow-wrap", desc: "라우저가 줄 상자를 넘쳐에서텍스트를 방지하기 위해 다른 깨지지 않는 문자열 내에서 줄 바꿈을 삽입할지 여부를 설정, 인라인 요소에 적용됩니다" },
+{ num: 265, name: "overflow-x", desc: "블록 레벨 요소의 왼쪽과 오른쪽가장자리를 오버 플로우 어떤 쇼 속성 집합" },
+{ num: 267, name: "overflow-y", desc: "블록 레벨 엘리먼트의 상부 및 하부가장자리를 넘쳐 어떤 방송 속성 세트. 이것은 아무것도 아니거나 스크롤 막대 또는 오버플로 내용 일 수 있습니다" },
+{ num: 268, name: "overscroll-behavior", desc: "스크롤영역의 경계에 도달 할 때 브라우저가 무엇 CSS 속성을 설정합니다" },
+{ num: 269, name: "overscroll-behavior-block", desc: "스크롤 영역의 블록 방향 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다." },
+{ num: 270, name: "overscroll-behavior-inline", desc: "스크롤 영역의 인라인 방향의 경계에 도달하면 CSS 속성은 브라우저의 동작을설정합니다" },
+{ num: 271, name: "overscroll-behavior-x", desc: "스크롤 영역의 수평 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다" },
+{ num: 272, name: "overscroll-behavior-y", desc: "스크롤 영역의 수직 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다" },
+{ num: 273, name: "padding", desc: "엘리먼트의 상, 하, 좌, 우 여백을 한꺼번에지정합니다" },
+{ num: 274, name: "padding-block-end", desc: "속성은 요소의 쓰기모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리적 블록 끝 패딩을 정의합니다" },
+{ num: 275, name: "padding-block-start", desc: "요소의 쓰기모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리 블록 시작 패딩을 정의합니다" },
+{ num: 276, name: "padding-bottom", desc: "요소 내부의 아래쪽 여백을설정합니다" },
+{ num: 277, name: "padding-inline-end", desc: "요소의 쓰기모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리적 인라인 최종 패딩을 정의합니다" },
+{ num: 278, name: "padding-inline-start", desc: "요소의쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리적 인라인 시작 패딩을 정의합니다" },
+{ num: 279, name: "padding-left", desc: "엘리먼트의 왼쪽 여백을 지정한다." },
+{ num: 280, name: "padding-right", desc: "엘리먼트의 오른쪽 여백을지정한다" },
+{ num: 281, name: "padding-top", desc: "요소의 위쪽 패딩을 결정합니다" },
+{ num: 282, name: "page-break-after", desc: "페이지 나누기 후 현재요소" },
+{ num: 283, name: "page-break-before", desc: "이 속성은break-before 속성 로 대체되었습니다 " },
+{ num: 284, name: "page-break-inside", desc: "이 속성은break-inside 속성로 대체되었습니다 " },
+{ num: 285, name: "perspective", desc: "3 차원 위치 요소 일부 관점을 제공하기위해, Z = 0 인 평면과 사용자 사이의 거리를 결정한다" },
+{ num: 286, name: "perspective-origin", desc: "변형되는 요소에배치되는 perspective() 변형 함수 와 달리 3차원 공간에서 변형된 자식의 부모에 첨부됩니다 " },
+{ num: 287, name: "place-content", desc: "CSS의 단축형 속성 (즉, 한번에 블록 및 인라인 두 방향을 따라 정렬 내용을 수행 할 수 있습니다 align-content 및 justify-content 등 관련 레이아웃 시스템의 특성)그리드 또는 인 flexbox " },
+{ num: 288, name: "place-items", desc: "약식 속성은 한 번에 블록 및 인라인 두방향을 따라 정렬 항목을 수행 할 수 있습니다 (즉, align-items 및 justify-items 속성)과 같은 관련 레이아웃 시스템에 그리드 또는 인flexbox . 두 번째 값이 설정되지 않은 경우 첫 번째 값도 사용됩니다" },
+{ num: 289, name: "place-self", desc: "단축형 속성은 당신이 (즉, 한 번에 블록과인라인 방향 모두에서 개별 항목을 정렬 할 수 있습니" },
+{ num: 290, name: "pointer-events", desc: "어떤 상황 (있는 경우)에따라 속성 집합은 특정 그래픽 요소가 될 수있는 대상 포인터 이벤트" },
+{ num: 291, name: "position", desc: "엘리먼트의 배치방법을 지정한다" },
+{ num: 292, name: "print-color-adjust", desc: "출력 장치에서요소의 모양을 최적화하기 위해 사용자 에이전트 가 수행할 수 있는 작업을 설정합니다" },
+{ num: 293, name: "quotes", desc: "브라우저가 사용하는 추가 인용 부호를 렌더링하는 방법을속성 집합을 설정합니다" },
+{ num: 294, name: "resize", desc: "요소 의 크기를 조정할 수 있는지 여부와 방향을결정합니다" },
+{ num: 295, name: "right", desc: "용기블럭의 너비를 참조합니다. 요소가 오른쪽에서 어디에 배치될 지 결정합니다" },
+{ num: 296, name: "rotate", desc: "각각 독립적로의 회전 변환을 지정할 수 있습니다" },
+{ num: 297, name: "row-gap (grid-row-gap)", desc: "요소의 행 사이 의 간격( gutter ) 크기를 설정합니다" },
+{ num: 298, name: "ruby-align", desc: "기재 위에 다른 루비 원소의 분포를정의한다" },
+{ num: 299, name: "ruby-position", desc: "기본 요소에 루비 요소 친척의위치를 정의합니다. 요소 위( over ), 요소 아래( under ) 또는 오른쪽에 있는 문자 사이( inter-character )에 위치할 수 있습니" },
+{ num: 300, name: "scale", desc: "개별적로 독립적 규모의 변환을 지정할 수 있습니다" },
+{ num: 301, name: "scroll-behavior", desc: "탐색 또는 CSSOM스크롤 API에서 트리거 스크롤 할 때 속성은 스크롤 상자의 동작을 설정합니다" },
+{ num: 302, name: "scroll-margin", desc: "훨씬처럼 값을 지정, 한 번에요소의 스크롤 여백의 모든 설정합니다" },
+{ num: 303, name: "scroll-margin-block", desc: "블록차원의 요소의 스크롤 마진을 설정한다" },
+{ num: 304, name: "scroll-margin-block-end", desc: "상자를 스냅포트에 맞추는 데 사용되는 블록 차원의 끝에서 스크롤 스냅 영역의 여백을 정의합니다 " },
+{ num: 305, name: "scroll-margin-block-start", desc: "이 상자를 스냅포트에 맞추는 데 사용되는 블록 차원의 시작 부분에서 스크롤 스냅영역의 여백을 정의합니다" },
+{ num: 306, name: "scroll-margin-bottom", desc: "엘리먼트의 하단 마진을 지정한다" },
+{ num: 307, name: "scroll-margin-inline", desc: "인라인차원의 요소의 스크롤 마진을 설정한다" },
+{ num: 308, name: "scroll-margin-inline-end", desc: "이 상자를 snapport에 맞추는 데 사용되는 인라인 차원의 끝에서 스크롤 스냅영역의 여백을 정의합니다 " },
+{ num: 309, name: "scroll-margin-inline-start", desc: "이 상자를 snapport에 맞추는 데 사용되는 인라인 차원의 시작 부분에서 스크롤스냅 영역의 여백을 정의합니다 " },
+{ num: 310, name: "scroll-margin-left", desc: "엘리먼트의왼쪽 마진을 지정한다" },
+{ num: 311, name: "scroll-margin-right", desc: "이 상자를snapport에 맞추는 데 사용되는 스크롤 스냅 영역의 오른쪽 여백을 정의합니다" },
+{ num: 312, name: "scroll-margin-top", desc: "이 상자를snapport에 맞추는 데 사용되는 스크롤 스냅 영역의 위쪽 여백을 정의합니다" },
+{ num: 313, name: "scroll-padding", desc: "한 번에 요소의 모든면에세트 스크롤 패딩을 설정합니다" },
+{ num: 314, name: "scroll-padding-block", desc: "블록차원의 요소의 스크롤 패딩을 설정한다" },
+{ num: 315, name: "scroll-padding-block-end", desc: "블록 사이즈의 단부 에지 오프셋을 정의합니다" },
+{ num: 316, name: "scroll-padding-block-start", desc: "블록 사이즈의 시작 에지에 대한 속성을 정의 오프셋을 설정합니다" },
+{ num: 317, name: "scroll-padding-bottom", desc: "밑바닥 오프셋을 정의 합니다." },
+{ num: 318, name: "scroll-padding-inline", desc: "인라인 차원의 요소의 스크롤 패딩을 설정한다" },
+{ num: 319, name: "scroll-padding-inline-end", desc: "인라인 측정에 단부 가장자리의 속성을 정" },
+{ num: 320, name: "scroll-padding-inline-start", desc: "인라인 측정의 시작 에지에 대한 속성을 정의 옵셋 영역 보는 최적의 사용자의관점에서 일을 배치하기위한 대상 영" },
+{ num: 321, name: "scroll-padding-left", desc: "좌측의속성을 정의 옵셋 최적 가시 영역 은 사용자의 관점에서 일을 배치하기위한 대상 영역로서 사용하는 영역을 정의합니다" },
+{ num: 322, name: "scroll-padding-right", desc: "우측에대한 오프셋을 정의합니다" },
+{ num: 323, name: "scroll-padding-top", desc: "속성의 상단에대해 오프셋을 정" },
+{ num: 324, name: "scroll-snap-align", desc: "상자의 스냅위치를 스냅 컨테이너의 스냅포트(정렬 컨테이너) 내에서 스냅 영역(정렬 주제)의 정렬로 지정합니다" },
+{ num: 325, name: "scroll-snap-coordinate", desc: "이 기능은 더 이상 권장되지 않습니다" },
+{ num: 326, name: "scroll-snap-destination", desc: "이 기능은 더 이상 권장되지 않습니다" },
+{ num: 327, name: "scroll-snap-points-x", desc: "물리보다는 논리상 방향과 차원 맵핑을 통해 레이아웃을 제어하는 능력을 제공하는 속성 및 값을 정의하는 CSS 모듈입니다" },
+{ num: 328, name: "scroll-snap-points-y", desc: "물리보다는 논리상 방향과 차원 맵핑을 통해 레이아웃을 제어하는 능력을 제공하는 속성 및 값을 정의하는 CSS 모듈입니" },
+{ num: 329, name: "scroll-snap-stop", desc: "스크롤 컨테이너가 건너 가능한 스냅 위치에 허용되는지 여부 속성을 정의합니다" },
+{ num: 330, name: "scroll-snap-type", desc: "포인트를 고정하는방법을 엄격 속성 집합 하나가 경우에 스크롤 컨테이너에 적용됩니" },
+{ num: 331, name: "scrollbar-color", desc: "속성은 스크롤 트랙과엄지 손가락의 색상을 설정합니다" },
+{ num: 332, name: "scrollbar-width", desc: "사용하면 작성자가 요소의 스크롤 막대가 표시될 때 최대 두께를 설정할 수 있습니다" },
+{ num: 333, name: "shape-image-threshold", desc: "속성에 대한 값로 이미지를 이용한 형상 추출 할 알파 채널 임계 값을 설정합니다" },
+{ num: 334, name: "shape-margin", desc: "속성 집합은 CSS 모양의 마진을사용하여 생성 된 shape-outside " },
+{ num: 335, name: "shape-outside", desc: "속성은 인접한 인라인 콘텐츠가둘러싸야 하는 사각형이 아닐 수 있는 모양을 정의합니다" },
+{ num: 336, name: "tab-size", desc: "탭 문자 (+ 3209 U)의 폭을 지정하는 데사용됩니다" },
+{ num: 337, name: "table-layout", desc: "테이블의 레이아웃을 정의합니다." },
+{ num: 338, name: "text-align", desc: "블럭안 인라인 인라인 요소의 수평 정렬을지정한" },
+{ num: 339, name: "text-align-last", desc: "블록 또는 행의 마지막줄 오른쪽 강제 줄 바꿈하기 전에, 정렬되는 방식 CSS 속성을 설정합니다" },
+{ num: 340, name: "text-combine-upright", desc: "속성세트는 문자의 조합을 단일 문자의 공간로. 결합 된 텍스트가 1em보다 넓은 경우 사용자 에이전트는 1em 이내의 콘텐츠에 맞아야합니다" },
+{ num: 341, name: "text-decoration", desc: "텍스트에 밑줄, 윗줄,가운데줄이나 깜빡거림의 장식적인 요소를 지정한다" },
+{ num: 342, name: "text-decoration-color", desc: "텍스트 요소의 밑줄의 색깔을 결정합니다" },
+{ num: 343, name: "text-decoration-line", desc: "속성집합 같은 밑줄 또는 윗줄로, 요소의 텍스트에 사용되는 장식의 종류" },
+{ num: 344, name: "text-decoration-skip", desc: "요소에영향을 미치는 텍스트 장식이 건너뛰어야 하는 요소 콘텐츠의 부분을 설정합니다" },
+{ num: 345, name: "text-decoration-skip-ink", desc: "글리프 센더와 디 센더를 통해 통과 할 때 overlines와 밑줄이 그려하는 방법속성 지정합니다" },
+{ num: 346, name: "text-decoration-style", desc: "속성에 의해 지정된 라인의 스타일 설정 text-decoration-line . 스타일은 text-decoration-line 로 설정된 모든 행에 적용됩니다 ." },
+{ num: 347, name: "text-emphasis", desc: "텍스트에 강조 표시를적용합니다" },
+{ num: 348, name: "text-emphasis-color", desc: "속성을강조 마크의 색상을 설정합니다" },
+{ num: 349, name: "text-emphasis-position", desc: "루비 텍스트처럼 강조 표시를위한 공간이 충분하지 않으면 줄 높이가 증가합니다" },
+{ num: 350, name: "text-emphasis-style", desc: "속성이강조 표시의 모양을 설정합니다" },
+{ num: 351, name: "text-indent", desc: "블록의 텍스트 행하기 전에 넣어 빈공간 (들여 쓰기)의 길이를 설정합니다" },
+{ num: 352, name: "text-justify", desc: "텍스트에 적용되어야한" },
+{ num: 353, name: "text-orientation", desc: "속성은 행의 텍스트문자의 방향을 설정합니다" },
+{ num: 354, name: "text-overflow", desc: "숨겨진 오버플로 콘텐츠가사용자에게 신호되는 방식을 설정합니다" },
+{ num: 355, name: "text-rendering", desc: "텍스트를 렌더링 할 때최적화 할 작업에 대한 렌더링 엔진에 대한 정보를 제공합니다" },
+{ num: 356, name: "text-shadow", desc: "텍스트에 그림자를 추가합니다" },
+{ num: 357, name: "text-size-adjust", desc: "(모바일 폰트 크기조정 관련" },
+{ num: 358, name: "text-transform", desc: "텍스트를 활용하는 CSS속성을 지정합니다" },
+{ num: 359, name: "text-underline-position", desc: "속성은 사용하여 설정 밑줄의 위치를 지정합니다" },
+{ num: 360, name: "top", desc: "용기블럭의 높이를 참조합니다. 위쪽에서 요소가 어디에 배치 될것인가 결정합니다" },
+{ num: 361, name: "touch-action", desc: "터치 스크린 사용자가 조작 할 수있는방법을 CSS 속성을 설정합니다" },
+{ num: 362, name: "transform", desc: "요소를 변형시킬 수 있습니다" },
+{ num: 363, name: "transform-box", desc: "박스의 변형효과를설정합니다" },
+{ num: 364, name: "transform-origin", desc: "요소의 변환에대한 원점을 설정합니다" },
+{ num: 365, name: "transform-style", desc: "요소의 아이들이 3D공간에 위치하거나 요소의 평면에 평평 여부 속성 집합" },
+{ num: 366, name: "transition", desc: "애니메이션 효과를 입힐 때 속도를조절하는 방법을 제공합니다" },
+{ num: 367, name: "transition-delay", desc: "속성의 시작하기전에 대기하는 CSS 속성 지정 기간 전환 효과 때 그 값 변경" },
+{ num: 368, name: "transition-duration", desc: "전환애니메이션 완료하는 데 소요되는 시간을 설정합니다" },
+{ num: 369, name: "transition-property", desc: "트렌지션 프로퍼티를 설정합니다" },
+{ num: 370, name: "transition-timing-function", desc: "트랜지션의 타이밍을 설정합니다" },
+{ num: 371, name: "translate", desc: "transform 속성로 요소에 회전,크기 조절, 기울이기, 이동 효과를 부여할 수 있습니다" },
+{ num: 372, name: "unicode-bidi", desc: "함께와 direction 특성,문서의 양방향 텍스트가 처리되는 방법을 결정합니다" },
+{ num: 373, name: "user-select", desc: "사용자가 텍스트를 선택할 수 있는지여부를 속성을 제어합니다" },
+{ num: 374, name: "vertical-align", desc: "인라인 엘리먼트나 테이블의셀 안에서 수직정렬을 지정한다" },
+{ num: 375, name: "visibility", desc: "문서의 레이아웃을 변경하지 않고 CSS 속성표시하거나 숨기는 소자입니다" },
+{ num: 376, name: "white-space", desc: "공백문자를 어떻게 다룰것인가를 정의한다" },
+{ num: 377, name: "widows", desc: "표시해야하는 블록 컨테이너 선의 최소 개수 설정 상부(A)의 페이지 , 영역 또는 컬럼 " },
+{ num: 378, name: "width", desc: "블럭레벨 요소의 너비를 지정한다" },
+{ num: 379, name: "will-change", desc: "요소에 예상되는 변화의 종류에 관한힌트를 브라우저에 제공케 한다" },
+{ num: 380, name: "word-break", desc: "단어의 분리를 어떻게 할 것인지결정합니다" },
+{ num: 381, name: "word-spacing", desc: "단어 사이의 간격을 지정한다." },
+{ num: 382, name: "writing-mode", desc: "텍스트의 선이 수평 또는 수직로배치 여부 속성 집합뿐만 아니라 블록이 진행되는 방향" },
+{ num: 383, name: "z-index", desc: "엘리먼트의 겹쳐지는 순서를 지정한다" },
+];
+
+const searchTime = document.querySelector(".time span");
+const searchList = document.querySelector(".search__list");
+const searchAnswers = document.querySelector(".search__answers");
+const searchMissAnswers = document.querySelector(".search__missAnswers");
+const searchStart = document.querySelector(".search__box .start");
+const searchInput = document.querySelector("#search");
+const searchAudio = document.querySelector("#audio");
+const searchAudioCorrect = document.querySelector("#success");
+const musicPlay = document.querySelector(".search__audio .play");
+const musicStop = document.querySelector(".search__audio .stop");
+const searchAudioBtn = document.querySelector(".search__audio > span");
+const searchScoreNow = document.querySelector(".search__info .now");
+const searchScoreAll = document.querySelector(".search__info .all");
+const searchResult = document.querySelector(".search__result .result");
+const searchResultWrap = document.querySelector(".search__result");
+const searchRestart = document.querySelector(".search__result .restart");
+
+searchScoreAll.innerHTML=cssProperty.length;
+
+let timeReamining = 120,  // 남은 시간
+    timeInterval = "",    // 시간 간격
+    score = 0;            // 점수
+    answers = {};         // 새로운 정답
+
+function updateList(){
+    cssProperty.forEach(data => {
+        searchList.innerHTML += `<span>${data.name}</span>`;
+    })
+}
+updateList();
+
+// 게임 시작하기
+function startQuiz(){
+
+    // 시작 버튼 숨기기
+    searchStart.style.display = "none";
+    searchList.style.display = "none";
+
+    // 다시 시작할때
+    searchAnswers.innerHTML = "";
+    searchMissAnswers.innerHTML = "";
+
+    // 시간 설정(1초에 한번씩 줄어듦)
+    timeInterval = setInterval(reduceTime, 1000);
+
+    // 속성 리스트 없애기
+    // 음악 추가
+    searchAudioBtn.classList.add("playing")
+    music();
+
+    // 점수 계산
+    let score = 0;
+
+    // 정답 체크
+    checkAnswers();
+}
+
+// 음악 재생
+function music(){
+    musicStop.addEventListener("click", () => {
+        musicStop.style.display = "none";
+        musicPlay.style.display = "block";
+        searchAudio.pause();
+    })
+    musicPlay.addEventListener("click", () => {
+        musicPlay.style.display = "none";
+        musicStop.style.display = "block";
+        searchAudio.play();
+    })
+    searchAudio.play();
+}
+
+// 인풋 체크하기
+function checkInput(){
+    let input = event.currentTarget.value.trim().toLowerCase();  // 사용자가 입력한 값 가져오기
+    if(answers.hasOwnProperty(input) && !answers[input]){
+        answers[input] = true;
+        // 정답 표시
+        searchAnswers.style.display = "block";
+        searchAnswers.innerHTML += `<span>${input}</span>`;
+        // 점수 반영
+        score++;
+        searchScoreNow.innerText = score;
+        searchAudioCorrect.play();
+        // 정답 초기화
+        searchInput.value = "";
+    }
+}
+
+// 정답 체크하기 : 정답을 객체 파일로 만들기
+function checkAnswers() {
+    cssProperty.forEach(item => {
+        let answer = item.name.trim().toLocaleLowerCase();
+        answers[answer] = false;
+    });
+}
+
+// 오답 보여주기
+function missAnswers(){
+    searchMissAnswers.style.display = "block";
+    cssProperty.forEach(item => {
+        let answer = item.name.trim().toLocaleLowerCase();
+        if(answers[answer] == false){
+            searchMissAnswers.innerHTML += `<span>${item.name}</span>`
+        }
+    })
+}
+
+// 시간 설정하기 0:00
+function reduceTime(){
+    timeReamining--;
+    if(timeReamining == 0) endQuiz();
+    searchTime.innerText = displayTime();
+}
+
+// 시간 표시하기
+function displayTime(){
+    if(timeReamining <= 0){
+        return "0:00";
+    } else {
+        let minutes = Math.floor(timeReamining / 60);
+        let seconds = timeReamining % 60;
+        // 초 단위가 한자리수일 때 0 추가
+        if(seconds < 10) seconds = "0" + seconds;
+        return minutes + ":" + seconds;
+    }
+}
+
+// 게임이 끝났을 때
+function endQuiz(){
+
+    // 시작 버튼 만들기
+    searchStart.style.display = "block";
+    searchStart.style.pointerEvents = "none";
+
+    // 오답 보여주기
+    missAnswers();
+
+    // 음악 끄기
+    searchAudio.pause();
+    searchAudioBtn.classList.remove("playing");
+
+    //시간 정지
+    clearInterval(timeInterval)
+
+    // 메시지 출력
+    searchResultWrap.classList.add("show");
+    let point = Math.round(score / cssProperty.length * 100);
+    searchResult.innerHTML = `게임이 종료되었습니다.<br>${cssProperty.length}개 중 ${score}개를 맞혔습니다.<br>점수는 ${point}점입니다.`;
+}
+
+// 다시 시작하기
+function restart(){
+    searchResultWrap.classList.remove("show");
+    timeReamining = 120;  // 시간
+    score = 0;
+    searchScoreNow.innerText = "0";
+    searchStart.style.display = "none";  // 버튼 숨김
+    searchList.style.display = "none";
+    searchAudioBtn.classList.remove("playing")
+    searchAudio.play();
+}
+// 다시 시작하기
+// function restart(){
+//     setTimeout(() => {
+//         searchResultWrap.classList.remove("show");
+//         timeReamining = 120;  // 시간
+//         score = 0;
+//         searchStart.style.display = "none";  // 버튼 숨김
+//         searchList.style.display = "none";
+//         searchAudioBtn.classList.remove("playing")
+//         searchAudio.play();
+//         // audio();
+//         // startQuiz();
+//     }, 1000)
+// }
+
+// 버튼 이벤트
+searchStart.addEventListener("click", startQuiz); // 게임 시작
+searchInput.addEventListener("input", checkInput);
+searchRestart.addEventListener("click", restart);
+
+$(searchResultWrap).draggable();
+</code></pre>
+            </div>
+            <h2 class="t_tit2">결과</h2>
+            <p class="t_desc2">
+                느무느무 믓즈인~~~~~ 서치 이펙트 08번 완승~~~💃🏻
+            </p>
+            <div class="t_iframe" style="min-height : 700px; padding-top:0;">
+                <iframe src="https://kimsangjunv1.github.io/coding/javascript/effect/searchEffect08.html" frameborder="0"></iframe>
+            </div>
+            <hr>
+            <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
+                <div class="t_link">
+                    <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/searchEffect08.html" target="blank">원본 소스 보기</a>
+                </div>
+                <div class="t_link">
+                    <a href="https://kimsangjunv1.github.io/coding/javascript/effect/searchEffect08.html" target="blank">원본 페이지 보기</a>
+                </div>
+            </div>
+            <!-- 01번 메인 샘플 끝 -->
+        </div>
+        <!-- 티스토리 용 끝 -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>

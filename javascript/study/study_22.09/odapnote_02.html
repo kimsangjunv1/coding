@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
+
+    <style>
+        /* PrismJS 1.26.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NEXON Lv1 Gothic OTF';
+            line-height: 1.6;
+        }
+
+        body {
+            padding: 5%;
+            margin-bottom: 400px;
+        }
+
+        h1 {
+            padding-bottom: 40px;
+        }
+
+        hr {
+            margin: 5% 0;
+            border-style: dashed;
+            border-color: #e6e6e6;
+            border-width: 1px;
+        }
+
+        img {
+            vertical-align: top;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .sample {
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+        }
+
+        .sample h2 {
+            position: relative;
+            font-size: 16px;
+            background-color: #f2f2f2;
+            padding: 15px 15px 12px 15px;
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .sample h2 .dot {
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .sample h2 .dot::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 0;
+        }
+
+        .sample h2 .dot::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            position: absolute;
+            border-radius: 50%;
+            right: -15px;
+            top: 0;
+        }
+
+        .sample .ex {
+            padding: 20px;
+        }
+
+        .sample .ex .text {
+            margin: 10px 0;
+        }
+
+        .sample .re {
+            padding: 20px;
+            border-top: 1px solid #e6e6e6;
+        }
+
+        .sample .re a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .sample .re a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .sample .problem {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+            line-height: 1.6;
+        }
+
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0;
+            ;
+        }
+
+        .sample .desc {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .desc dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .desc dd {
+            padding: 3px 0 16px 0;
+            line-height: 1.6;
+        }
+
+        .sample .sam {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .sam dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .sam dd {
+            padding: 3px 0 16px 0;
+        }
+
+        ol {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        ol li {
+            display: inline;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 5px;
+        }
+
+        ol li a {
+            display: inline-block;
+            border-radius: 30px;
+            padding: 2px 20px 0px 20px;
+            border: 1px solid #000;
+        }
+
+        ol li a:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        ol li.active {
+            background: #000;
+        }
+
+        ol li.active a {
+            color: #fff;
+        }
+        .mt20 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Javascript 10문제 만들기</h1>
+
+    <div id="sample1" class="sample">
+        <h2>01. 내가 조합해본 맛있을거 같은 음식은?<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">const vegetable = ['감자', '고구마', '오이', '참외', '피자'];
+
+    function solution(healthy){
+        let answer = "시원한";
+        for(let i=2; i&lt;healthy.length; i++){
+            if(i&lt;healthy.length){
+                answer += healthy[i]
+            }
+        }
+        console.log(answer)
+    }
+    
+    console.log(solution(vegetable));
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample2" class="sample">
+        <h2>02. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const num = [1, 2, 3, 4];
+
+    function solution(arr, divisor) {
+        var answer = [];
+
+        if(num.length&lt;4){
+            for(i=0; i&lt;arr.length; i++){
+                if(arr[i] % divisor ==0) answer.push(arr[i]);
+            }
+        } else{
+            for(i=0; i&lt;arr.length; i++){
+                if(arr[i] % divisor ==1) answer.unshift(arr[i]);
+            }
+        }
+
+        return answer.shift();
+    }
+    console.log(solution(num, 5))
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample3" class="sample">
+        <h2>03. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const num = "ezihiei";
+    const color = ['h','a','r','d'];
+
+    function solution(xx) {
+        let answer = xx.split("");
+        let i = 1;
+        while(i&lt;6){
+            i++
+            if(i>=color.length-1){
+                answer[i] = "#";
+            }
+
+        }
+        return answer.join("");
+    }
+    console.log(solution(num))
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample4" class="sample">
+        <h2>04. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const gazua = 4;
+
+    function solution(n){
+        let answer = "";
+        for(i=0; i&lt;n;i++){
+            if(i % 2 == 1){
+                answer +="네";
+                break;
+            } else {
+                answer +="이버";
+                break;
+            }
+        }
+        return answer.slice(1,2);
+    }
+    console.log(solution(gazua));
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample5" class="sample">
+        <h2>05. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const string = ["o","l","l","e","h"];
+
+    function solution(s){
+        let answer = [];
+
+        for(let i = s.length-1;i>0;i--){
+            answer = answer + s[i];
+        }
+        return answer;
+    }
+    console.log(solution(string))
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample6" class="sample">
+        <h2>06. 배열과 관련된 출력물은?<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const soon = ['h','p','p','a','y','h','l','l','w','e','a','e','n','o'];
+    const num = [1,2,5,4];
+    
+    function solution(bayeol, witch){
+        let answer = [];
+
+        for(i=0;i&lt;soon.length;i++){
+            if(num[i] % witch==1){
+                answer.push(soon[i])
+            } 
+        }
+        return answer;
+    }
+    console.log(solution(soon,2))
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample7" class="sample">
+        <h2>07. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const tween = [1,22,3,33,44,2,11,4];
+        
+    function solution(tween){
+        tween.sort();
+        return tween.filter((e,i) => e !== tween[i+1]);
+    }
+
+    console.log(solution(tween))
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample8" class="sample">
+        <h2>08. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const css = ['all','f','a','k','e'];
+
+    function solution(arr){
+        var answer=[];
+
+        for(i=0;i&lt;=arr.length;i++){
+            if(i&lt;arr.length){
+                answer.push(arr[i])
+            }
+        }
+        return answer.splice(0,1);
+    }
+    console.log(solution(css))
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>09. 다음 출력될 게임의 이름은?.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function game(s){
+        let answer = "";
+        for(let x of s){
+            if( x != 'o') answer += '#';
+            else answer += x;
+        }
+        answer.split('')
+        if(answer.includes('a')){
+            console.log("mabinogi")
+        } else {
+            console.log("pangya")
+        }
+    }
+    let str = "o2jam";
+
+    console.log(game(str));
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+
+    <div id="sample10" class="sample">
+        <h2>10. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const baseball = ['o', '번', '1', '타', '자'];
+
+    function solution(who){
+        let answer = "";
+        for(let i=3; i&lt;who.length; i++){
+            if(i&lt;who.length){
+                answer += who[i]
+            }
+        }
+        console.log(answer)
+    }
+    
+    console.log(solution(baseball));
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+    <script>
+        // document.write("****** 정답 ******<br><br>");
+        //sample1
+        {
+            // const arr = [1, 2, 3, 4, 5];
+
+            // function solution(numbers){
+            //     var answer = 20;
+            //     for(let i =0; i<numbers.length; i++){
+            //         if(i<arr.length){
+            //             answer = answer - numbers[i]
+            //         }
+            //     }
+            //     answer = answer/numbers.length;
+            //     return answer;
+            // }
+
+            // console.log(solution(arr));
+        }
+        //sample2
+        {
+            // const num = [6, 10, 15, 21];
+
+            // function solution(arr, divisor) {
+            //     var answer = [];
+
+            //     for(i=0; i<arr.length; i++){
+            //         if(arr[i] % divisor ==0) answer.push(arr[i]);
+            //     }
+            //     for(i=0; i<arr.length; i++){
+            //         if(arr[i] % divisor ==1) answer.unshift(arr[i]);
+            //     }
+
+            //     return answer.shift();
+            // }
+            // console.log(solution(num, 5))
+        }
+        //sample3
+        {
+            // const num = "coding";
+            // const color = ['blue','green','yellow'];
+
+            // function solution(xx) {
+            //     let answer = xx.split("");
+            //     let i = 1;
+            //     while(i<7){
+            //         i++
+            //         if(i>color.length){
+            //             answer[i] = "#";
+            //         }
+
+            //     }
+            //     return answer.join("");
+            // }
+            // console.log(solution(num))
+
+        }
+        //sample4
+        {
+            // const four = 4;
+
+            // function solution(n){
+            //     let answer = "";
+            //     for(i=0; i<n;i++){
+            //         if(i % 2 == 0){
+            //             answer +="이";
+            //         } else {
+            //             answer +="하";
+            //         }
+            //     }
+            //     return answer.slice(1,3);
+            // }
+            // console.log(solution(four));
+        }
+        //sample5
+        {
+            // const string = "Hello";
+
+            // function solution(s){
+            //     let answer = "";
+
+            //     for(let i = s.length-1;i>0;i--){
+            //         answer = answer + s[i];
+            //     }
+            //     return answer.indexOf("H");
+            // }
+            // console.log(solution(string))
+        }
+        //sample6
+        {
+            // const string = ['a','b','c','d'];
+            // const num = [2,3,5,6];
+
+            // function solution(arr, divi){
+            //     var answer = [];
+
+            //     for(i=0;i<arr.length;i++){
+            //         if(num[i] % divi==0){
+            //             answer.unshift(string[i])
+            //         } else{
+            //             answer.pop(string[i])
+            //         }
+            //     }
+            //     return answer;
+            // }
+            // console.log(solution(string,2))
+        }     
+        //sample7
+        {
+            // const arr = [1,21,3,3,0,40,0];
+        
+            // function solution(arr){
+            //     arr.sort();
+            //     return arr.filter((e,i) => e !== arr[i+1]);
+            // }
+        
+            // console.log(solution(arr))
+        }
+        //sample8
+        {
+            // const css = ['all','background','border','color'];
+
+            // function solution(arr){
+            //     var answer=[];
+
+            //     for(i=0;i<=arr.length;i++){
+            //         if(i<arr.length){
+            //             answer.push(arr[i])
+            //         }
+            //     }
+            //     return answer.splice(1,2);
+            // }
+            // console.log(solution(css))
+        }
+        //sample9
+        {
+            // function func(s){
+            //     let answer = "";
+            //     for(let x of s){
+            //         if( x != 'h') answer += '#';
+            //         else answer += x;
+            //     }
+            //     answer.split('')
+            //     return answer.includes('h');
+            // }
+            // let str = "helloworld";
+
+            // console.log(func(str));
+        }
+        //sample10
+        {
+            const string = "helloworld";
+
+            function solution(s) {
+                let answer;
+                let arr = [...s]
+                console.log(arr)
+                if(arr.length % 2 == 0) {
+                    answer = arr.splice(arr.length/2-1, 2);
+                } else {
+                    answer = arr.splice(Math.floor(arr.length/2), 1);
+                }
+                return answer.join("");
+            }
+
+            console.log(solution(string))
+        }
+
+        
+        </script>

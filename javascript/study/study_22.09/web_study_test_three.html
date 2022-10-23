@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
+
+    <style>
+        /* PrismJS 1.26.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NEXON Lv1 Gothic OTF';
+            line-height: 1.6;
+        }
+
+        body {
+            padding: 5%;
+            margin-bottom: 400px;
+        }
+
+        h1 {
+            padding-bottom: 40px;
+        }
+
+        hr {
+            margin: 5% 0;
+            border-style: dashed;
+            border-color: #e6e6e6;
+            border-width: 1px;
+        }
+
+        img {
+            vertical-align: top;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .sample {
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+        }
+
+        .sample h2 {
+            position: relative;
+            font-size: 16px;
+            background-color: #f2f2f2;
+            padding: 15px 15px 12px 15px;
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .sample h2 .dot {
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .sample h2 .dot::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 0;
+        }
+
+        .sample h2 .dot::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            position: absolute;
+            border-radius: 50%;
+            right: -15px;
+            top: 0;
+        }
+
+        .sample .ex {
+            padding: 20px;
+        }
+
+        .sample .ex .text {
+            margin: 10px 0;
+        }
+
+        .sample .re {
+            padding: 20px;
+            border-top: 1px solid #e6e6e6;
+        }
+
+        .sample .re a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .sample .re a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .sample .problem {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+            line-height: 1.6;
+        }
+
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0;
+            ;
+        }
+
+        .sample .desc {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .desc dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .desc dd {
+            padding: 3px 0 16px 0;
+            line-height: 1.6;
+        }
+
+        .sample .sam {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .sam dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .sam dd {
+            padding: 3px 0 16px 0;
+        }
+
+        ol {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        ol li {
+            display: inline;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 5px;
+        }
+
+        ol li a {
+            display: inline-block;
+            border-radius: 30px;
+            padding: 2px 20px 0px 20px;
+            border: 1px solid #000;
+        }
+
+        ol li a:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        ol li.active {
+            background: #000;
+        }
+
+        ol li.active a {
+            color: #fff;
+        }
+        .mt20 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Javascript Test01</h1>
+
+    <div id="sample1" class="sample">
+        <h2>05. 2가 아닌 값을 만나게 되면 value를 1씩 증가시켜주는 문제입니다.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">
+    //
+function q1(num) {
+    let answer = 0;
+    while(num) {
+        answer += num % 10;
+        num = parseInt(num / 10);
+
+        // 1996 % 10 == 6 (나머지값)
+        // answer += 6 
+        // num = 1996 ÷ 10 == 199
+
+        // 199 % 10 == 19
+        // answer += 19
+        
+        // 19 % 10 == 9
+        // answer += 9
+
+        // answer == 1+9+9+6
+    }
+    return answer;
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample2" class="sample">
+        <h2>06. i의 값이 8이하가 될때까지 1씩 증가시켜주고 그 값을 j에 넣어준뒤 마지막에 i와 j값을 더해준 값을 출력하는 문제입니다.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //1. for를 통해 i의 값을 1씩 증가시킵니다.
+    //2. i의 값은 j에 더해줍니다.
+    //3. 그렇게 i의 값이 9가 되어지면 j에 더해줌을 멈춥니다.
+    //4. j[1+2+3+4+5+6+7+8]+i[9] 를 계신한 결과를 document.write를 통해 출력합니다.
+    //5. 정답은 45
+    
+    function func(){
+        let i, j = 0;
+
+        for(i=0; i&lt;=8; i++){
+            j += i;
+        }
+        document.write(j+i);
+    }
+    func()   
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample3" class="sample">
+        <h2>09. while을 통해 a의 값이 10미만이 될때가지 a를 1씩 더해 a의 값에 2를 나눈 나머지 값이 1이면 건너뛰고 이외에는 sum에 a의 현재값을 더한 후 sum을 출력하는 문제입니다.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //1. while을 통해 a의 값이 10 미만(a&lt;10)이 될때까지 하단의 2~4을 반복해줍니다.<br>
+    //2. a의 값을 1씩 더해주고(a++)<br>
+    //3. 만약 a의 값에 2를 나눈 나머지가 1과 같으면(a%2==1) continue를 통해 다시 처음으로 돌아갑니다.<br>
+    //4. a의 값에 2를 나눈 나머지가 1이 안나왔다면 현재 a의 값을 sum에 더해줍니다.<br>
+    //5. a가 9에 도달 했을때에는 a&lt;10 조건에 부합하므로 a++를 해줘 a를 10으로 만들고 마지막으로 a의 값 10을 sum에 더해줍니다.
+    //6. a가 10이 되었으니 while의 조건에 부합하지 않으니 document.write(sum)을 출력하게 됩니다.<br>
+    //7. 답은 30
+    
+    function func() {
+        let a = 0,
+            sum = 0;
+
+        while (a < 10) {
+            a++;
+            if (a % 2 == 1) continue;
+            sum += a;
+        }
+        document.write(sum);
+    }
+    func();     
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample4" class="sample">
+        <h2>10. while의 조건에 부합할때까지 sum에 i값을 if 조건에따라 더해주는것을 반복해줍니다.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //1. while의 조건이 0(false)였기 때문에
+    //2. 정답은 false
+    //3. 대어가 잡혔네요
+    
+    function func(){
+        let i = 0, sum = 0;
+        while (0) {
+            i++;
+            if (i &gt; 10) break;
+            if (i % 5 == 0) continue;
+            sum += i;
+        }
+        document.write(sum);
+    }
+    func()    
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample5" class="sample">
+        <h2>14. for of를 통해 x의 값(webstoryboy)에서 w가 아닌것은 "#"으로 대체해 출력하는 문제입니다.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //1. str에 "webstoryboy" 저장 후 document.write를 통해 함수 func(str=매개변수)를 호출합니다.<br>
+    //2. 이 문제에 만들어진 함수명 func 속에서만 활용할 매개변수 이름은 s(하단 func(str)로 인해 s에는 webstoryboy가 저장되어있음)로 지정 후<br>
+    //3. for of를 이용해 s의 내용을 let x에 저장시킨 뒤<br>
+    //4. x의 값 중 t가 아닌 문자열을 마다 answer값을 1씩 더해준 뒤(answer++)<br>
+    //5. func함수 실행시 반환되어질 값은 answer의 값을 반환(return answer; = 10)<br>
+    //6. 답은 10
+    
+    function func(s){
+        let answer = "";
+        for(let x of s){
+            if(x != 'w') answer+= '#';
+            else answer += x;
+        }
+        return(answer);
+    }
+    let str = "webstoryboy"
+    document.write(func(str));   
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample6" class="sample">
+        <h2>16. for of를 통해 x의 값 중 대문자인것은 소문자로 바꾸고 이외에는 대문자로 바꾸는 문제입니다.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //1. document.write를 통해 func("webStorBOY10"=매개변수)를 실행시킵니다.
+    //2. 함수의 이름은 func로 설정 후 매개변수의 이름은 s로 설정합니다.<br>
+    //3. s의 값은 for of 를 통해 let x에 대입 후 x("webStorBOY10")의 값 중 x를 대문자로 변환한것과 같은 문자가 있다면
+    //4. 대문자는 소문자로 이외에는 소문자는 대문자로 변환 합니다.<br>
+    //5. return answer를 통해 함수 func를 실행 시킬때에는 answer의 값을 출력시킵니다.
+    //6. 답은 "WEBsTORboy10"
+    
+    function func(s) {
+        let answer = '';
+
+        for (let x of s) {
+            if (x === x.toUpperCase()) {
+                answer += x.toLowerCase();
+            } else {
+                answer += x.toUpperCase();
+            }
+        }
+        return answer;
+    }
+    document.write(func("webStorBOY10"))  
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample7" class="sample">
+        <h2>18. filter를 이용해 원하는 요소만 가져와 그 값을 가지고 어느것을 answer에 대입 할지 결정한뒤 함수의 값을 answer의 값으로 반환하는 문제입니다.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //1. 매개변수를 통한 arr([1,2,3,4,5])/divisor(2)의 값을 함수 solution에 가져온뒤<br>
+    //2. filter를 이용하여 요소와 divisor(2)를 나누었을때 나머지가 영이 되는것만 찾아 상수 div에 넣은 뒤<br>
+    //3. answer에 대입할 값을 결정하기 위해서 div의 길이(2)가 0보다 클때<br>
+    //4. sort의 값에 [div의 값을 순서대로 정렬 후 a-b를 한 값을 할건지] 아니면 [-1로 설정할건지] 결정 후 answer을 반환하는 문제입니다.
+    
+    function solution(arr, divisor) {
+        var answer = [];
+
+        const div = arr.filter((el) => el % divisor == 0);
+        answer = div.length > 0 ? div.sort((a, b) => a - b) : [-1];
+
+        return answer;
+    }
+    document.write(solution([1, 2, 3, 4, 5], 2));
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample8" class="sample">
+        <h2>19. includes를 통해 배열에 1씩 증가되는 i의 값중 배열과 일치하지 않는 값은 answer에 더하는 문제.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //1. solution([1,2,3,4,5,6,7,8,0]=매개변수)을 출력시키기 위해
+    //2. solution 함수에는 매개변수 이름을 numbers로 설정하고
+    //3. for를 이용해 i의 값을 1씩 증가시켜 numbers 값에 i값이 포함되어있지 않으면 i의 값을 answer에 저장
+    //4. numbers의 값은 5와 9가 없기 때문에 i가 10이 될때까지 5와 9 이 두가지만 answer에 더할 수 있으므로
+    //5. 답은 14
+    
+    function solution(numbers){
+        let answer = 0;
+        for(let i=0; i&lt;10; i++){
+            if(!numbers.includes(i)){
+                answer += i;
+            }
+        }
+        return answer;
+    }
+    document.write(solution([1,2,3,4,5,6,7,8,0]));
+}
+</code></pre>
+        </div>
+    </div>
+
+    <div id="sample9" class="sample">
+        <h2>20. solution의 매개변수를 통해 1씩 증가시킨 i의 값과 매개변수(10)을 나눴을때 나머지가 1이 나오게 되면 i의 값을 리턴시켜주는 문제입니다.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //1. document.write로 인해 solution의 매개변수에는 10이 설정되었습니다.
+    //2. 함수 이름 solution의 매개변수의 이름은 n으로 설정 후
+    //3. for를 통해 i의 값이 n(10) 미만일때까지 i의 값을 1씩 증가시킵니다.
+    //4. if를 통해 만약 n(10)과 i(1씩 증가된 값)을 나눴을때 나머지가 1이 나오게 된다면
+    //5. 현재값 i로 반환합니다(return i)
+    //6. i의 값이 3이 되는순간 return i가 실행되어지기에 답은 3
+    
+    function solution(numbers){
+        let answer = 0;
+        for(let i=0; i&lt;10; i++){
+            if(!numbers.includes(i)){
+                answer += i;
+            }
+        }
+        return answer;
+    }
+    document.write(solution([1,2,3,4,5,6,7,8,0]));
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+    <script>
+        // document.write("****** 정답 ******<br><br>");
+        // //sample1
+        // //01. 변수 : 데이터 저장소
+        // {
+        //     var x = 100; //변수 x에 숫자 100을 저장
+        //     var y = 200; //변수 y에 숫자 200을 저장
+        //     var z = "javascript"; //변수 z에 문자 javascript 저장
+
+        //     document.write("*** 01. 변수 ***<br>");
+        //     document.write(x, "<br>");
+        //     document.write(y, "<br>");
+        //     document.write(z, "<br><br>");
+        // }
+
+        // //sample2
+        // //02. 변수 : 데이터 저장 + 데이터 변경
+        // {
+        //     let x = 100;
+        //     let y = 200;
+        //     let z = "javascript";
+        //     x = 300;    //변수 x에 값이 100에서 300으로 변경
+        //     y = 400;
+        //     z = "jquery";
+
+        //     document.write("*** 02. 변수 ***<br>");
+        //     document.write(x, "<br>");
+        //     document.write(y, "<br>");
+        //     document.write(z, "<br><br>");
+        // }
+
+        // //sample3
+        // //변수 : 데이터 저장 + 데이터 변경 + 데이터 추가
+        // {
+        //     let x = 100;
+        //     let y = 200;
+        //     let z = "javascript";
+        //     x += 300;       // x = x + 300; (대입연산자)
+        //     y -= 400;       // y = y + 400;
+        //     z += "jquery";  // z = z + "jquery";
+            
+        //     document.write("*** 03. 변수 ***<br>");
+        //     document.write(x, "<br>");
+        //     document.write(y, "<br>");
+        //     document.write(z, "<br><br>");
+        // }
+
+        // //sample4
+        // //상수 : 데이터 저장소 : 데이터 값이 변하지 않음
+        // {
+        //     const x = 100;
+        //     const y = 200;
+        //     const z = "javascript";
+        //     // x = 300;
+        //     // y = 400;
+        //     // z = "jquery";
+        //     //Uncaught TypeError: Assignment to constant variable.
+
+        //     document.write("*** 04. 상수 ***<br>");
+        //     document.write("에러발생<br>");
+        //     document.write("에러발생<br>");
+        //     document.write("에러발생<br><br>");
+        // }
+
+        // //sample5
+        // //배열 : 여러 개의 데이터 저장 : 표현 방법1
+        // {   
+        //     const arr = new Array();    //배열 선언
+        //     arr[0] = 100;               //첫번재 배열 저장소에 숫자 100을 저장
+        //     arr[1] = 200;               //두번재 배열 저장소에 숫자 200을 저장
+        //     arr[2] = "javascript";      //세번재 배열 저장소에 문자 javascript를 저장
+
+        //     document.write("*** 05. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br><br>");
+        // }
+
+        // //sample06
+        // //배열 : 표현 방법2
+        // {
+        //     const arr = new Array(100, 200, "javascript");
+
+        //     document.write("*** 06. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br><br>");
+        // }
+
+        // //sample07
+        // //배열 : 표현 방법3
+        // {
+        //     const arr = [];     
+        //     arr[0] = 100;              
+        //     arr[1] = 200;              
+        //     arr[2] = "javascript";   
+
+        //     document.write("*** 07. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br><br>");
+        // }
+
+        // //sample08
+        // //배열 : 표현 방법4
+        // {
+        //     const arr = [100, 200, "javascript"];    
+
+        //     document.write("*** 08. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br><br>");
+        // }
+
+        // //sample09
+        // //객체 : 데이터 저장(키와 값) : 표현 방법1 : 배열 스타일
+        // {
+        //     const obj = new Object();
+        //     obj[0] = 100;
+        //     obj[1] = 200;
+        //     obj[2] = "javascript";
+
+        //     document.write("*** 09. 객체 ***<br>");
+        //     document.write(obj[0], "<br>");
+        //     document.write(obj[1], "<br>");
+        //     document.write(obj[2], "<br><br>");
+        // }
+
+        // //sample10
+        // //객체 : 데이터 저장(키와 값) : 표현 방법2
+        // {
+        //     const obj = new Object();
+        //     obj.a = 100;
+        //     obj.b = 200;
+        //     obj.c = "javascript";
+
+        //     document.write("*** 10. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample11
+        // //객체 : 데이터 저장(키와 값) : 표현 방법3 : 키워드 생략
+        // {
+        //     const obj = {};
+        //     obj.a = 100;
+        //     obj.b = 200;
+        //     obj.c = "javascript";
+
+        //     document.write("*** 11. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample12
+        // //객체 : 데이터 저장(키와 값) : 표현 방법4 
+        // {
+        //     const obj = {a:100, b:200, c:"javascript"};
+
+        //     document.write("*** 12. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample13
+        // //객체 : 데이터 저장(키와 값) : 표현 방법5 : 배열 속에 객체
+        // {
+        //     const obj = [
+        //         {a:100, b:200},
+        //         {c:"javascript"}
+        //     ];
+
+        //     document.write("*** 13. 객체 ***<br>");
+        //     document.write(obj[0].a, "<br>");
+        //     document.write(obj[0].b, "<br>");
+        //     document.write(obj[1].c, "<br><br>");
+        // }
+
+        // //sample14
+        // //객체 : 데이터 저장(키와 값) : 표현 방법6 : 객체 속에 배열
+        // {
+        //     const obj = {
+        //         a: 100,
+        //         b: [200, 300],
+        //         c: "javascript"
+        //     }
+        //     document.write("*** 14. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.b[0], "<br>");
+        //     document.write(obj.b[1], "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample15
+        // //객체 : 데이터 저장(키와 값) : 표현 방법7 : 객체 속에 변수
+        // {
+        //     const a = 100;
+        //     const b = 200;
+        //     const c = "javascript";
+
+        //     const obj = { a, b, c }
+
+        //     document.write("*** 15. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample16
+        // //객체 : 데이터 저장(키와 값) : 표현 방법8 : 객체 속에 함수
+        // {
+        //     const obj = {
+        //         a: 100,
+        //         b: [200,300],
+        //         c: "javascript",
+        //         d: function(){
+        //             document.write("javascript가 실행되었습니다.<br>");
+        //         },
+        //         e: function(){
+        //             document.write( obj.c + "가 실행되었습니다.<br>");
+        //         },
+        //         f: function(){
+        //             document.write( this.c + "가 실행되었습니다.<br>");
+        //         }
+        //     }
+
+        //     document.write("*** 16. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.b[0], "<br>");
+        //     document.write(obj.b[1], "<br>");
+        //     document.write(obj.c, "<br>");
+        //     obj.d();
+        //     obj.e();
+        //     obj.f();
+        // }
+
+    </script>
+</body>
+
+</html>
