@@ -1,100 +1,113 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <!-- seo 포폴때 참고 -->
-    <meta name="author" content="codi">
-    <meta name="description" content="사이트 만들기 연습해보기!">
-    <meta name="keyword" content="사이트, 만들기, 튜토리얼, 웹스토리보이">
-    <meta name="robots" content="all">
+    <meta name="author" content="codi" />
+    <meta name="description" content="사이트 만들기 연습해보기!" />
+    <meta name="keyword" content="사이트, 만들기, 튜토리얼, 웹스토리보이" />
+    <meta name="robots" content="all" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/fonts.css"> <!-- 폰트 -->
-    <link rel="stylesheet" href="assets/css/reset.css"> <!-- 리셋 -->
-    <link rel="stylesheet" href="assets/css/common.css"> <!-- 공통 -->
-    <link rel="stylesheet" href="assets/css/swiper.css"> <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <!-- 폰트 -->
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <!-- 리셋 -->
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+    <!-- 공통 -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" /> -->
 
     <!-- CSS(섹션별) -->
-    <link rel="stylesheet" href="assets/css/card.css"> <!-- 공통 -->
-    <link rel="stylesheet" href="assets/css/image.css"> <!-- 공통 -->
-    <link rel="stylesheet" href="assets/css/text.css"> <!-- 공통 -->
-    <link rel="stylesheet" href="assets/css/header.css"> <!-- 공통 -->
-    <link rel="stylesheet" href="assets/css/imgText.css"> <!-- 공통 -->
-    <link rel="stylesheet" href="assets/css/banner.css"> <!-- 공통 -->
-    <link rel="stylesheet" href="assets/css/footer.css"> <!-- 공통 -->
-    <link rel="stylesheet" href="assets/css/slider.css"> <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/card.css" />
+    <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/image.css" />
+    <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/text.css" />
+    <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/imgText.css" />
+    <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/banner.css" />
+    <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <!-- 공통 -->
+    <link rel="stylesheet" href="assets/css/slider.css" />
+    <!-- 공통 -->
 
     <style>
-        /* #headerType {display: none;}
+      /* #headerType {display: none;}
         #sliderType {display: none;}
         #imageType {display: none;}
         #imgTextType {display: none;}
         #cardType {display: none;}
         #bannerType {display: none;} */
     </style>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="alert">
-        <p class="close">X</p>
-        <h2>로딩중...</h2>
+      <p class="close">X</p>
+      <h2>로딩중...</h2>
     </div>
-    <div style="position: fixed; width: 50px; height: 50px; bottom: 0; left: 0;" class="check">체크용</div>
+    <div
+      style="position: fixed; width: 50px; height: 50px; bottom: 0; left: 0"
+      class="check"
+    >
+      체크용
+    </div>
     <!-- 웹표준 준수시 필요 -->
     <div id="skip">
-        <a href="#">헤더 영역 바로가기</a>
-        <a href="#">슬라이드 영역 바로가기</a>
-        <a href="#">이미지 영역 바로가기</a>
-        <a href="#">이미지/텍스트 영역 바로가기</a>
-        <a href="#">카드 영역 바로가기</a>
-        <a href="#">배너 영역 바로가기</a>
-        <a href="#">텍스트 영역 바로가기</a>
-        <a href="#">푸터 영역 바로가기</a>
+      <a href="#">헤더 영역 바로가기</a>
+      <a href="#">슬라이드 영역 바로가기</a>
+      <a href="#">이미지 영역 바로가기</a>
+      <a href="#">이미지/텍스트 영역 바로가기</a>
+      <a href="#">카드 영역 바로가기</a>
+      <a href="#">배너 영역 바로가기</a>
+      <a href="#">텍스트 영역 바로가기</a>
+      <a href="#">푸터 영역 바로가기</a>
     </div>
 
     <header id="headerType" class="header__wrap nexon">
-        <div class="header__inner">
-            <div class="header__logo">
-                <a href="#">#여행_가자!</a>
-            </div>
-            <div class="header__menu">
-                <ul>
-                    <!-- <li><a href="#headerType">헤더 영역</a></li> -->
-                    <li class="actived"><a href="#sliderType">슬라이드 영역</a></li>
-                    <li><a href="#imageType01">이미지 영역</a></li>
-                    <li><a href="#imgTextType">이미지/텍스트 영역</a></li>
-                    <li><a href="#cardType">카드 영역</a></li>
-                    <li><a href="#bannerType">배너 영역</a></li>
-                    <li><a href="#textType">텍스트 영역</a></li>
-                    <li><a href="#footerType">푸터 영역</a></li>
-                </ul>
-            </div>
-            <div class="header__member">
-                <a href="#" class="loading">로그인</a>
-            </div>
-            <div class="header__ham">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#">#여행_가자!</a>
         </div>
+        <div class="header__menu">
+          <ul>
+            <!-- <li><a href="#headerType">헤더 영역</a></li> -->
+            <li class="actived"><a href="#sliderType">슬라이드 영역</a></li>
+            <li><a href="#imageType01">이미지 영역</a></li>
+            <li><a href="#imgTextType">이미지/텍스트 영역</a></li>
+            <li><a href="#cardType">카드 영역</a></li>
+            <li><a href="#bannerType">배너 영역</a></li>
+            <li><a href="#textType">텍스트 영역</a></li>
+            <li><a href="#footerType">푸터 영역</a></li>
+          </ul>
+        </div>
+        <div class="header__member">
+          <a href="#" class="loading">로그인</a>
+        </div>
+        <div class="header__ham">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </header>
     <!-- //headerType -->
 
-
     <main id="mainType">
-
-        <section id="sliderType" class="slider__wrap baegopa">
-            <h2 class="blind">슬라이드 영역</h2>
-            <div class="slider__inner">
-                <!-- <div class="slider">
+      <section id="sliderType" class="slider__wrap baegopa">
+        <h2 class="blind">슬라이드 영역</h2>
+        <div class="slider__inner">
+          <!-- <div class="slider">
                     <div class="slider__img one show">
                         <div class="desc">
                             <span>어디로 가볼까?</span>
@@ -140,364 +153,431 @@
                         <a href="#" class="stop"><span class="ir">정지</span></a>
                     </div>
                 </div> -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="desc">
-                                <span>어디로 가볼까?</span>
-                                <h3>#새하얀_눈.</h3>
-                                <p>눈 덮힌 마을 속<br>고히 잠들어 있는 새싹들</p>
-                                <div class="btn">
-                                    <a class="loading" href="#">자세히 보기</a>
-                                    <a href="#" class="black loading">사이트 보기</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="desc">
-                                <span>어디로 가볼까?</span>
-                                <h3>#새하얀_눈.</h3>
-                                <p>눈 덮힌 마을 속<br>고히 잠들어 있는 새싹들</p>
-                                <div class="btn">
-                                    <a class="loading" href="#">자세히 보기</a>
-                                    <a href="#" class="black loading">사이트 보기</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="desc">
-                                <span>어디로 가볼까?</span>
-                                <h3>#새하얀_눈.</h3>
-                                <p>눈 덮힌 마을 속<br>고히 잠들어 있는 새싹들</p>
-                                <div class="btn">
-                                    <a class="loading" href="#">자세히 보기</a>
-                                    <a href="#" class="black loading">사이트 보기</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                        <div class="swiper-button">
-                            <div class="swiper-button-play"><span class="ir">play</span></div>
-                            <div class="swiper-button-stop"><span class="ir">stop</span></div>
-                        </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="desc">
+                  <span>어디로 가볼까?</span>
+                  <h3>#새하얀_눈.</h3>
+                  <p>눈 덮힌 마을 속<br />고히 잠들어 있는 새싹들</p>
+                  <div class="btn">
+                    <a class="loading" href="#">자세히 보기</a>
+                    <a href="#" class="black loading">사이트 보기</a>
+                  </div>
                 </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="desc">
+                  <span>어디로 가볼까?</span>
+                  <h3>#새하얀_눈.</h3>
+                  <p>눈 덮힌 마을 속<br />고히 잠들어 있는 새싹들</p>
+                  <div class="btn">
+                    <a class="loading" href="#">자세히 보기</a>
+                    <a href="#" class="black loading">사이트 보기</a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="desc">
+                  <span>어디로 가볼까?</span>
+                  <h3>#새하얀_눈.</h3>
+                  <p>눈 덮힌 마을 속<br />고히 잠들어 있는 새싹들</p>
+                  <div class="btn">
+                    <a class="loading" href="#">자세히 보기</a>
+                    <a href="#" class="black loading">사이트 보기</a>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
-        <!-- //sliderType -->
-
-        <section id="imageType01" class="image__wrap nexon section baegopa container">
-            <h2>#내_여행_동반자</h2>
-            <p>내 여행동안 내 외로움을 채워줄 소울 메이트는 어떠세요?</p>
-            <div class="image__inner">
-                <article class="image img1">
-                    <h3 class="image__title">불독은 어떠세요?</h3>
-                    <p class="image__desc">
-                        불독은 혼종이라고 하는데, 사람들에게 인기많은 이유는<br>
-                        생김새를 떠나서 강아지를 키운다는 그 사실이 좋은겁니다.</p>
-                    <a class="image__btn yellow loading" href="/" title="자세히 보기">자세히 보기</a>
-                </article>
-                <article class="image img2">
-                    <h3 class="image__title">웰시코기는 어떠세요?</h3>
-                    <p class="image__desc">
-                        웰시코기는 다리가 참 짧죠? 그래서 키우는 사람들도 많은 편이고<br>
-                        총총 걸어다니는 모습을 보고있자니 너무 귀엽답니다!</p>
-                    <a class="image__btn loading" href="/" title="자세히 보기">자세히 보기</a>
-                </article>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button">
+              <div class="swiper-button-play"><span class="ir">play</span></div>
+              <div class="swiper-button-stop"><span class="ir">stop</span></div>
             </div>
-        </section>
-        <!-- //imageType -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </section>
+      <!-- //sliderType -->
 
-        <section id="imgTextType" class="imgText__wrap nexon section gray baegopa">
-            <h2 class="blind">유용한 사이트 살펴보기 🎮</h2>
-            <div class="imgText__inner container">
-                <div class="imgText__txt">
-                    <span>여행 속 내 비즈니스</span>
-                    <h3>#일은_절대_놓을_수_없지</h3>
-                    <p>우리 다 같이 도시 라이프를 다채로운 방식으로 함께 즐겨보아요!</p>
-                    <ul>
-                        <li><a href="/">오늘의 티</a></li>
-                        <li><a href="/">오늘의 공원</a></li>
-                        <li><a href="/">오늘의 장소</a></li>
-                        <li><a href="/">오늘의 가게</a></li>
-                        <li><a href="/">오늘의 춤</a></li>
-                        <li><a href="/">오늘의 회사 출근 음악</a></li>
-                    </ul>
-                </div>
-                <div class="imgText__img img1">
-                    <a href="/">비즈니스</a>
-                </div>
-                <div class="imgText__img img2">
-                    <a href="/" class="blue">작업할때</a>
+      <section
+        id="imageType01"
+        class="image__wrap nexon section baegopa container"
+      >
+        <h2>#내_여행_동반자</h2>
+        <p>내 여행동안 내 외로움을 채워줄 소울 메이트는 어떠세요?</p>
+        <div class="image__inner">
+          <article class="image img1">
+            <h3 class="image__title">불독은 어떠세요?</h3>
+            <p class="image__desc">
+              불독은 혼종이라고 하는데, 사람들에게 인기많은 이유는<br />
+              생김새를 떠나서 강아지를 키운다는 그 사실이 좋은겁니다.
+            </p>
+            <a class="image__btn yellow loading" href="/" title="자세히 보기"
+              >자세히 보기</a
+            >
+          </article>
+          <article class="image img2">
+            <h3 class="image__title">웰시코기는 어떠세요?</h3>
+            <p class="image__desc">
+              웰시코기는 다리가 참 짧죠? 그래서 키우는 사람들도 많은 편이고<br />
+              총총 걸어다니는 모습을 보고있자니 너무 귀엽답니다!
+            </p>
+            <a class="image__btn loading" href="/" title="자세히 보기"
+              >자세히 보기</a
+            >
+          </article>
+        </div>
+      </section>
+      <!-- //imageType -->
 
-                </div>
+      <section
+        id="imgTextType"
+        class="imgText__wrap nexon section gray baegopa"
+      >
+        <h2 class="blind">유용한 사이트 살펴보기 🎮</h2>
+        <div class="imgText__inner container">
+          <div class="imgText__txt">
+            <span>여행 속 내 비즈니스</span>
+            <h3>#일은_절대_놓을_수_없지</h3>
+            <p>우리 다 같이 도시 라이프를 다채로운 방식으로 함께 즐겨보아요!</p>
+            <ul>
+              <li><a href="/">오늘의 티</a></li>
+              <li><a href="/">오늘의 공원</a></li>
+              <li><a href="/">오늘의 장소</a></li>
+              <li><a href="/">오늘의 가게</a></li>
+              <li><a href="/">오늘의 춤</a></li>
+              <li><a href="/">오늘의 회사 출근 음악</a></li>
+            </ul>
+          </div>
+          <div class="imgText__img img1">
+            <a href="/">비즈니스</a>
+          </div>
+          <div class="imgText__img img2">
+            <a href="/" class="blue">작업할때</a>
+          </div>
+        </div>
+      </section>
+      <!-- //imgTextType -->
+
+      <section id="cardType" class="card__wrap nexon section baegopa container">
+        <!--다중 클래스 선택-->
+        <h2>#여행_중_게임은_못참지🎮</h2>
+        <p>
+          새롭고 혁신적인 PS5™ 컨트롤러로 완전히 몰입할 수 있는 게임 경험을
+          즐겨보시기 바랍니다.
+        </p>
+        <div class="card__inner">
+          <article class="card">
+            <figure class="card__header">
+              <!--img를 쓰기 위한 웹 표준 방법-->
+              <img
+                src="assets/img/card_bg01_01.jpg"
+                alt="다양한 인터렉티브 반응"
+              />
+            </figure>
+            <div class="card__body">
+              <h3 class="tit">다양한 인터렉티브 반응</h3>
+              <p class="desc">
+                인게임 기어 및 환경과 상호작용하면서 활시위를 당길 때 점점
+                팽팽해지는 느낌과 질주하는 자동차의 급브레이크를 밟는 느낌 등
+                액션과 함께 어우러집니다.
+              </p>
+              <a class="btn loading" href="/">
+                더 자세히 보기
+                <span aria-hidden="true">
+                  <!--aria-hidden="true" 로 처리시 이 부분을 읽는것을 스킵한다.-->
+                  <svg
+                    width="65"
+                    height="8"
+                    viewBox="0 0 65 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+              </a>
             </div>
-        </section>
-        <!-- //imgTextType -->
-
-        <section id="cardType" class="card__wrap nexon section baegopa container">
-            <!--다중 클래스 선택-->
-            <h2>#여행_중_게임은_못참지🎮</h2>
-            <p>새롭고 혁신적인 PS5™ 컨트롤러로 완전히 몰입할 수 있는 게임 경험을 즐겨보시기 바랍니다.</p>
-            <div class="card__inner">
-                <article class="card">
-                    <figure class="card__header">
-                        <!--img를 쓰기 위한 웹 표준 방법-->
-                        <img src="assets/img/card_bg01_01.jpg" alt="다양한 인터렉티브 반응">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="tit">다양한 인터렉티브 반응</h3>
-                        <p class="desc">인게임 기어 및 환경과 상호작용하면서 활시위를 당길 때 점점 팽팽해지는 느낌과 질주하는 자동차의 급브레이크를 밟는 느낌 등 액션과 함께
-                            어우러집니다.
-                        </p>
-                        <a class="btn loading" href="/">
-                            더 자세히 보기
-                            <span aria-hidden="true">
-                                <!--aria-hidden="true" 로 처리시 이 부분을 읽는것을 스킵한다.-->
-                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
-                                        fill="black" />
-                                </svg>
-                            </span>
-                        </a>
-                    </div>
-                </article>
-                <article class="card">
-                    <figure>
-                        <!--img를 쓰기 위한 웹 표준 방법-->
-                        <img src="assets/img/card_bg01_02.jpg" alt="게임패드 지원">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="tit">게임패드 지원</h3>
-                        <p class="desc">내장 마이크를 사용하거나 3.5mm 잭에 미니멀하고 아이코닉한 헤드셋을 연결 전용 음소거 버튼을 사용하여 음성 캡처를 즉시 끌 수 있습니다.
-                        </p>
-                        <a class="btn loading" href="/">
-                            더 자세히 보기
-                            <span aria-hidden="true">
-                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
-                                        fill="black" />
-                                </svg>
-                            </span>
-
-                        </a>
-                    </div>
-                </article>
-                <article class="card">
-                    <figure>
-                        <!--img를 쓰기 위한 웹 표준 방법-->
-                        <img src="assets/img/card_bg01_03.jpg" alt="진동을 통한 생생한 현장감">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="tit">진동을 통한 생생한 현장감</h3>
-                        <p class="desc">기존의 진동 모터 대신 듀얼 액추에이터가 선사하는 물리적 반응형 피드백을 경험해보세요, 게임 내 환경에서부터 실감 나는 역동적인 진동이 손을
-                            타고
-                            전해집니다.</p>
-                        <a class="btn loading" href="/">
-                            더 자세히 보기
-                            <span aria-hidden="true">
-                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
-                                        fill="black" />
-                                </svg>
-                            </span>
-
-                        </a>
-                    </div>
-                </article>
+          </article>
+          <article class="card">
+            <figure>
+              <!--img를 쓰기 위한 웹 표준 방법-->
+              <img src="assets/img/card_bg01_02.jpg" alt="게임패드 지원" />
+            </figure>
+            <div class="card__body">
+              <h3 class="tit">게임패드 지원</h3>
+              <p class="desc">
+                내장 마이크를 사용하거나 3.5mm 잭에 미니멀하고 아이코닉한
+                헤드셋을 연결 전용 음소거 버튼을 사용하여 음성 캡처를 즉시 끌 수
+                있습니다.
+              </p>
+              <a class="btn loading" href="/">
+                더 자세히 보기
+                <span aria-hidden="true">
+                  <svg
+                    width="65"
+                    height="8"
+                    viewBox="0 0 65 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+              </a>
             </div>
-        </section>
-        <!-- //cardType -->
-
-        <section id="bannerType" class="banner__wrap nexon section baegopa">
-            <h2 class="blind">배너 영역</h2>
-            <div class="banner__inner">
-                <h3 class="title">#내_손으로_만들어_가는_루트</h3>
-                <p class="desc">
-                    다양하고 다채로운 도시의 모습은 이곳을 참조하세요!<br>
-                    <a href="" title="유튜브 페이지로 이동">https://www.youtube.com/channel/UCqVDpXKLmKeBU_yyt_QkItQ/</a>
-                </p>
-                <span class="small">도시 속 모습_01</span>
+          </article>
+          <article class="card">
+            <figure>
+              <!--img를 쓰기 위한 웹 표준 방법-->
+              <img
+                src="assets/img/card_bg01_03.jpg"
+                alt="진동을 통한 생생한 현장감"
+              />
+            </figure>
+            <div class="card__body">
+              <h3 class="tit">진동을 통한 생생한 현장감</h3>
+              <p class="desc">
+                기존의 진동 모터 대신 듀얼 액추에이터가 선사하는 물리적 반응형
+                피드백을 경험해보세요, 게임 내 환경에서부터 실감 나는 역동적인
+                진동이 손을 타고 전해집니다.
+              </p>
+              <a class="btn loading" href="/">
+                더 자세히 보기
+                <span aria-hidden="true">
+                  <svg
+                    width="65"
+                    height="8"
+                    viewBox="0 0 65 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+              </a>
             </div>
-        </section>
-        <!-- //bannerType -->
+          </article>
+        </div>
+      </section>
+      <!-- //cardType -->
 
-        <section id="textType" class="nexon text__wrap section baegopa container">
-            <span>도와드릴게요.</span>
-            <h2 class="mb70">#어느걸_찾으세요?</h2>
-            <div class="text__inner">
-                <div class="text t1">
-                    <h3 class="text__title">내 장소</h3>
-                    <p class="text__desc">가끔은 내가 원하는 장소를 찾아야 할떄가 있죠,, 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을 </p>
-                    <a class="text_btn loading" href="#">더보기</a>
-                </div>
-                <div class="text t2">
-                    <h3 class="text__title">내 동반자</h3>
-                    <p class="text__desc">자신의 동반자를 찾는것은 중요합니다 그러기에 저희는 찾아드리는 서비스를 하고 있으며, 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해
-                        앞으로 맞게 될 여행을 </p>
-                    <a class="text_btn loading" href="#">더보기</a>
-                </div>
-                <div class="text t3">
-                    <h3 class="text__title">여행패키지</h3>
-                    <p class="text__desc">여행 패키지를 찾음으로써 각종 사항에 굳이 시간을 소비할 필요가 없습니다 그래서 만약 찾고계시다면 그럴때에는 이 메뉴를 클릭해 다음과 같은
-                        사항을 숙지해 앞으로 맞게 될 여행을 </p>
-                    <a class="text_btn loading" href="#">더보기</a>
-                </div>
-                <div class="text t4">
-                    <h3 class="text__title">여행도구</h3>
-                    <p class="text__desc">여행도구는 정말 없어서는 안될 그런 도구입니다 그러니 꼭 필요한 물품으로써 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로
-                        맞게 될 여행을 </p>
-                    <a class="text_btn loading" href="#">더보기</a>
-                </div>
-                <div class="text t5">
-                    <h3 class="text__title">즐길거리</h3>
-                    <p class="text__desc">즐길거리가 또 빠지게 되면 섭하죠 그러니 혹여나 찾고계시다면 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을
-                    </p>
-                    <a class="text_btn loading" href="#">더보기</a>
-                </div>
-                <div class="text t6">
-                    <h3 class="text__title">다양한 참고자료</h3>
-                    <p class="text__desc">다양한 참고할만한 자료가 필요할때 분명 있습니다 그렇기에 저희는 데이터를 축적해놨는데요 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을
-                        숙지해 앞으로 맞게 될 여행을 </p>
-                    <a class="text_btn loading" href="#">더보기</a>
-                </div>
-            </div>
-        </section>
-        <!-- //textType -->
-        <div id="olaga">위로!</div>
+      <section id="bannerType" class="banner__wrap nexon section baegopa">
+        <h2 class="blind">배너 영역</h2>
+        <div class="banner__inner">
+          <h3 class="title">#내_손으로_만들어_가는_루트</h3>
+          <p class="desc">
+            다양하고 다채로운 도시의 모습은 이곳을 참조하세요!<br />
+            <a href="" title="유튜브 페이지로 이동"
+              >https://www.youtube.com/channel/UCqVDpXKLmKeBU_yyt_QkItQ/</a
+            >
+          </p>
+          <span class="small">도시 속 모습_01</span>
+        </div>
+      </section>
+      <!-- //bannerType -->
 
+      <section id="textType" class="nexon text__wrap section baegopa container">
+        <span>도와드릴게요.</span>
+        <h2 class="mb70">#어느걸_찾으세요?</h2>
+        <div class="text__inner">
+          <div class="text t1">
+            <h3 class="text__title">내 장소</h3>
+            <p class="text__desc">
+              가끔은 내가 원하는 장소를 찾아야 할떄가 있죠,, 그럴때에는 이
+              메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을
+            </p>
+            <a class="text_btn loading" href="#">더보기</a>
+          </div>
+          <div class="text t2">
+            <h3 class="text__title">내 동반자</h3>
+            <p class="text__desc">
+              자신의 동반자를 찾는것은 중요합니다 그러기에 저희는 찾아드리는
+              서비스를 하고 있으며, 그럴때에는 이 메뉴를 클릭해 다음과 같은
+              사항을 숙지해 앞으로 맞게 될 여행을
+            </p>
+            <a class="text_btn loading" href="#">더보기</a>
+          </div>
+          <div class="text t3">
+            <h3 class="text__title">여행패키지</h3>
+            <p class="text__desc">
+              여행 패키지를 찾음으로써 각종 사항에 굳이 시간을 소비할 필요가
+              없습니다 그래서 만약 찾고계시다면 그럴때에는 이 메뉴를 클릭해
+              다음과 같은 사항을 숙지해 앞으로 맞게 될 여행을
+            </p>
+            <a class="text_btn loading" href="#">더보기</a>
+          </div>
+          <div class="text t4">
+            <h3 class="text__title">여행도구</h3>
+            <p class="text__desc">
+              여행도구는 정말 없어서는 안될 그런 도구입니다 그러니 꼭 필요한
+              물품으로써 그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해
+              앞으로 맞게 될 여행을
+            </p>
+            <a class="text_btn loading" href="#">더보기</a>
+          </div>
+          <div class="text t5">
+            <h3 class="text__title">즐길거리</h3>
+            <p class="text__desc">
+              즐길거리가 또 빠지게 되면 섭하죠 그러니 혹여나 찾고계시다면
+              그럴때에는 이 메뉴를 클릭해 다음과 같은 사항을 숙지해 앞으로 맞게
+              될 여행을
+            </p>
+            <a class="text_btn loading" href="#">더보기</a>
+          </div>
+          <div class="text t6">
+            <h3 class="text__title">다양한 참고자료</h3>
+            <p class="text__desc">
+              다양한 참고할만한 자료가 필요할때 분명 있습니다 그렇기에 저희는
+              데이터를 축적해놨는데요 그럴때에는 이 메뉴를 클릭해 다음과 같은
+              사항을 숙지해 앞으로 맞게 될 여행을
+            </p>
+            <a class="text_btn loading" href="#">더보기</a>
+          </div>
+        </div>
+      </section>
+      <!-- //textType -->
+      <div id="olaga">위로!</div>
     </main>
     <!-- //mainType -->
 
-
     <footer id="footerType" class="footer__wrap nexon section gray baegopa">
-        <h2 class="blind">푸터 영역</h2>
-        <div class="footer__inner">
-            <div class="footer__menu">
-                <div>
-                    <h3>도움말</h3>
-                    <ul>
-                        <li><a href="/">사이트 사용법</a></li>
-                        <li><a href="/">도움말 찾기</a></li>
-                        <li><a href="/">사이트맵</a></li>
-                        <li><a href="/">각 메뉴 설명</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>행복상담</h3>
-                    <ul>
-                        <li><a href="/">고민거리</a></li>
-                        <li><a href="/">미래</a></li>
-                        <li><a href="/">과거</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>여행</h3>
-                    <ul>
-                        <li><a href="/">한국</a></li>
-                        <li><a href="/">중국</a></li>
-                        <li><a href="/">일본</a></li>
-                        <li><a href="/">싱가포르</a></li>
-                        <li><a href="/">말레이시아</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>팁</h3>
-                    <ul>
-                        <li><a href="/">여행가이드</a></li>
-                        <li><a href="/">위치</a></li>
-                        <li><a href="/">사진스팟</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>고객센터</h3>
-                    <ul>
-                        <li><a href="/">여행 상담</a></li>
-                        <li><a href="/">고민 상담</a></li>
-                        <li><a href="/">권고 상담</a></li>
-                        <li><a href="/">행복 상담</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>사업자등록</h3>
-                    <ul>
-                        <li><a href="/">1. 표준사항</a></li>
-                        <li><a href="/">2. 법사항</a></li>
-                        <li><a href="/">3. 규범사항</a></li>
-                        <li><a href="/">4. 참조사항</a></li>
-                        <li><a href="/">5. 준수사항</a></li>
-                        <li><a href="/">6. 권고사항</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer__right">
-                2022 CODi. Portfolio is power<br>
-                All rights reserved.
-            </div>
+      <h2 class="blind">푸터 영역</h2>
+      <div class="footer__inner">
+        <div class="footer__menu">
+          <div>
+            <h3>도움말</h3>
+            <ul>
+              <li><a href="/">사이트 사용법</a></li>
+              <li><a href="/">도움말 찾기</a></li>
+              <li><a href="/">사이트맵</a></li>
+              <li><a href="/">각 메뉴 설명</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>행복상담</h3>
+            <ul>
+              <li><a href="/">고민거리</a></li>
+              <li><a href="/">미래</a></li>
+              <li><a href="/">과거</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>여행</h3>
+            <ul>
+              <li><a href="/">한국</a></li>
+              <li><a href="/">중국</a></li>
+              <li><a href="/">일본</a></li>
+              <li><a href="/">싱가포르</a></li>
+              <li><a href="/">말레이시아</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>팁</h3>
+            <ul>
+              <li><a href="/">여행가이드</a></li>
+              <li><a href="/">위치</a></li>
+              <li><a href="/">사진스팟</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>고객센터</h3>
+            <ul>
+              <li><a href="/">여행 상담</a></li>
+              <li><a href="/">고민 상담</a></li>
+              <li><a href="/">권고 상담</a></li>
+              <li><a href="/">행복 상담</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>사업자등록</h3>
+            <ul>
+              <li><a href="/">1. 표준사항</a></li>
+              <li><a href="/">2. 법사항</a></li>
+              <li><a href="/">3. 규범사항</a></li>
+              <li><a href="/">4. 참조사항</a></li>
+              <li><a href="/">5. 준수사항</a></li>
+              <li><a href="/">6. 권고사항</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="footer__right">
+          2022 CODi. Portfolio is power<br />
+          All rights reserved.
+        </div>
+      </div>
     </footer>
     <!-- //footerType -->
 
     <script>
-        //1. 페이지 스크롤시 메뉴에 스크롤된 값에 따라 active 삽입여부 스크립트
-        window.addEventListener("scroll", () => {
-            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement
-            .scrollTop; //이렇게 3개 중첩해서 사용 가능
+      //1. 페이지 스크롤시 메뉴에 스크롤된 값에 따라 active 삽입여부 스크립트
+      window.addEventListener("scroll", () => {
+        let scrollTop =
+          window.pageYOffset ||
+          window.scrollY ||
+          document.documentElement.scrollTop; //이렇게 3개 중첩해서 사용 가능
 
-            //forEach 문
-            document.querySelectorAll(".baegopa").forEach((e, i) => {
-                if (scrollTop >= e.offsetTop - 500) { //scrollTop이 id값 이상이면
-                    document.querySelectorAll(".header__menu ul li").forEach((li) => {
-                        li.classList.remove("actived");
-                    })
-                    document.querySelector(".header__menu ul li:nth-child(" + (i + 1) + ")").classList
-                        .add("actived");
-                }
-            })
-        })
-
-        //2. 메뉴 항목을 눌렀을때 기존 이벤트 방지 및 "smooth" 이벤트 실행
-        document.querySelectorAll(".header__menu ul li a").forEach(li => {
-            // console.log(li)
-            li.addEventListener("click", (e) => {
-                e.preventDefault(); //클릭하면 이동하는걸 막아줌
-                document.querySelector(li.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                });
-            })
-        })
-
-        //3. 설정해둔 값 이상으로 스크롤 시 화면의 최상단으로 올려주는 버튼 보이게 해주는 스크립트
-        window.addEventListener("scroll", () => {
-            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-            document.querySelector(".check").innerText = scrollTop;
-
-            if (scrollTop >= 70) {
-                // document.querySelector("#header_logo_media").classList.add("inline")
-                document.querySelector("#olaga").classList.add("opacity")
-            } else {
-                // document.querySelector("#header_logo_media").classList.remove("inline")
-                document.querySelector("#olaga").classList.remove("opacity")
-
-            }
-        })
-
-        //4. 최상단으로 이동시켜주는 버튼 클릭시 "smooth" 하게 이동 설정해주는 스크립트
-        document.querySelector("#olaga").addEventListener("click", () => {
-            window.scrollTo({
-                left: 0,
-                top: 0,
-                behavior: "smooth"
+        //forEach 문
+        document.querySelectorAll(".baegopa").forEach((e, i) => {
+          if (scrollTop >= e.offsetTop - 500) {
+            //scrollTop이 id값 이상이면
+            document.querySelectorAll(".header__menu ul li").forEach((li) => {
+              li.classList.remove("actived");
             });
-        })
+            document
+              .querySelector(".header__menu ul li:nth-child(" + (i + 1) + ")")
+              .classList.add("actived");
+          }
+        });
+      });
+
+      //2. 메뉴 항목을 눌렀을때 기존 이벤트 방지 및 "smooth" 이벤트 실행
+      document.querySelectorAll(".header__menu ul li a").forEach((li) => {
+        // console.log(li)
+        li.addEventListener("click", (e) => {
+          e.preventDefault(); //클릭하면 이동하는걸 막아줌
+          document.querySelector(li.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      //3. 설정해둔 값 이상으로 스크롤 시 화면의 최상단으로 올려주는 버튼 보이게 해주는 스크립트
+      window.addEventListener("scroll", () => {
+        let scrollTop =
+          window.pageYOffset ||
+          window.scrollY ||
+          document.documentElement.scrollTop;
+        document.querySelector(".check").innerText = scrollTop;
+
+        if (scrollTop >= 70) {
+          // document.querySelector("#header_logo_media").classList.add("inline")
+          document.querySelector("#olaga").classList.add("opacity");
+        } else {
+          // document.querySelector("#header_logo_media").classList.remove("inline")
+          document.querySelector("#olaga").classList.remove("opacity");
+        }
+      });
+
+      //4. 최상단으로 이동시켜주는 버튼 클릭시 "smooth" 하게 이동 설정해주는 스크립트
+      document.querySelector("#olaga").addEventListener("click", () => {
+        window.scrollTo({
+          left: 0,
+          top: 0,
+          behavior: "smooth",
+        });
+      });
     </script>
 
     <!-- 5. Swiper JS 가져오기 -->
@@ -505,65 +585,63 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <script>
-        //6. swiper 코드 (이미지 슬라이더를 위한 구현 코드)
-        var swiper = new Swiper(".mySwiper", {
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-                clickable: true,
-            },
+      //6. swiper 코드 (이미지 슬라이더를 위한 구현 코드)
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+          clickable: true,
+        },
+      });
+
+      const btnStop = document.querySelector(".swiper-button-stop");
+      const btnStart = document.querySelector(".swiper-button-play");
+      const btnHam = document.querySelector(".header__ham");
+      const btnMenu = document.querySelector(".header__menu");
+
+      //7. swiper의 버튼 클릭시 나올 이벤트 제어
+      btnStop.addEventListener("click", () => {
+        swiper.autoplay.stop();
+        btnStart.style.display = "block";
+        btnStop.style.display = "none";
+      });
+      btnStart.addEventListener("click", () => {
+        swiper.autoplay.start();
+        btnStart.style.display = "none";
+        btnStop.style.display = "block";
+      });
+
+      btnHam.addEventListener("click", () => {
+        btnHam.classList.toggle("active");
+        btnMenu.classList.toggle("active");
+        document.body.classList.toggle("fixed");
+      });
+
+      //8. 햄버거 메뉴 버튼 클릭에 따른 출현 여부
+      document.querySelectorAll(".header__menu ul li a").forEach((e, i) => {
+        e.addEventListener("click", () => {
+          btnHam.classList.toggle("active");
+          btnMenu.classList.toggle("active");
         });
+      });
 
-        const btnStop = document.querySelector(".swiper-button-stop");
-        const btnStart = document.querySelector(".swiper-button-play");
-        const btnHam = document.querySelector(".header__ham");
-        const btnMenu = document.querySelector(".header__menu")
-
-        //7. swiper의 버튼 클릭시 나올 이벤트 제어
-        btnStop.addEventListener("click",()=>{
-            swiper.autoplay.stop();
-            btnStart.style.display = "block";
-            btnStop.style.display = "none";
-
-        })
-        btnStart.addEventListener("click", () => {
-            swiper.autoplay.start();
-            btnStart.style.display = "none";
-            btnStop.style.display = "block";
-        })
-
-        btnHam.addEventListener("click", ()=> {
-            btnHam.classList.toggle("active");
-            btnMenu.classList.toggle("active")
-            document.body.classList.toggle("fixed")
-        })
-
-        //8. 햄버거 메뉴 버튼 클릭에 따른 출현 여부
-        document.querySelectorAll(".header__menu ul li a").forEach((e,i)=>{
-            e.addEventListener("click",()=>{
-                btnHam.classList.toggle("active");
-                btnMenu.classList.toggle("active")
-            })
-        })
-
-        //9. 창이 리사이징 될때 발동시킬 이벤트
-        window.addEventListener("resize",()=>{
-            let width = window.innerWidth;
-            if(width>1300){
-                document.querySelector("body").classList.remove("fixed");
-                btnMenu.classList.remove("active")
-                btnHam.classList.remove("active")
-            }
-        })
+      //9. 창이 리사이징 될때 발동시킬 이벤트
+      window.addEventListener("resize", () => {
+        let width = window.innerWidth;
+        if (width > 1300) {
+          document.querySelector("body").classList.remove("fixed");
+          btnMenu.classList.remove("active");
+          btnHam.classList.remove("active");
+        }
+      });
     </script>
-</body>
-
+  </body>
 </html>
