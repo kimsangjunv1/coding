@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../assets/css/game.css">
     <link rel="stylesheet" href="../assets/css/music.css">
     <link rel="stylesheet" href="../assets/css/search_copy.css">
+    <link rel="stylesheet" href="../assets/css/memory.css">
 
 
 </head>
@@ -306,63 +307,140 @@
     </footer>
     <!-- footer -->
 
-    <!-- 뮤직 플레이어 -->
-    <div class="music__wrap">
-        <div class="music__inner">
-            <div class="music__header">
-                <img src="../assets/music_img/logo_sound.png" alt="">
-                <h2>Music player</h2>
-                <div>x</div>
-            </div>
-            <div class="music__contents">
-                <div class="music__view">
-                    <div class="img">
-                        <img src="../assets/music_img/music_view03.png" alt="">
-                        <img class="two" src="../assets/music_img/music_view03.png" alt="">
-                    </div>
-                    <div class="title">
-                        <h3>Average - Patrick Patrikios</h3>
-                        <p>youtuber music</p>
-                    </div>
+    <div class="game_box">
+        <!-- 뮤직 플레이어 -->
+        <div class="music__wrap">
+            <div class="music__inner">
+                <div class="music__header">
+                    <img src="../assets/music_img/logo_sound.png" alt="">
+                    <h2>Music player</h2>
+                    <div>x</div>
                 </div>
-                <div class="music__control">
-                    <div class="progress">
-                        <div class="bar">
-                            <audio id="main-audio" src="../assets/music/music_audio01.mp3"></audio>
-                            <audio id="main-audio" src="../assets/music/music_audio02.mp3"></audio>
+                <div class="music__contents">
+                    <div class="music__view">
+                        <div class="img">
+                            <img src="../assets/music_img/music_view03.png" alt="">
+                            <img class="two" src="../assets/music_img/music_view03.png" alt="">
                         </div>
-                        <div class="timer">
-                            <span class="current">0:00</span>
-                            <span class="duration">4:00</span>
+                        <div class="title">
+                            <h3>Average - Patrick Patrikios</h3>
+                            <p>youtuber music</p>
                         </div>
                     </div>
-                    <div class="volumeCont">
-                        <input type="range" id="volume-control" min="0" max="10" value="5" step="0.1">							
-                    </div> 
-                    <div class="control">
-                        <i title="전체 반복" class="repeat" id="control-repeat"></i>
-                        <i title="이전곡 재생" class="prev" id="control-prev"></i>
-                        <i title="재생" class="play" id="control-play"></i>
-                        <i title="다음곡 재생" class="next" id="control-next"></i>
-                        <i title="재생 목록" class="list" id="control-list"></i>
+                    <div class="music__control">
+                        <div class="progress">
+                            <div class="bar">
+                                <audio id="main-audio" src="../assets/music/music_audio01.mp3"></audio>
+                                <audio id="main-audio" src="../assets/music/music_audio02.mp3"></audio>
+                            </div>
+                            <div class="timer">
+                                <span class="current">0:00</span>
+                                <span class="duration">4:00</span>
+                            </div>
+                        </div>
+                        <div class="volumeCont">
+                            <input type="range" id="volume-control" min="0" max="10" value="5" step="0.1">							
+                        </div> 
+                        <div class="control">
+                            <i title="전체 반복" class="repeat" id="control-repeat"></i>
+                            <i title="이전곡 재생" class="prev" id="control-prev"></i>
+                            <i title="재생" class="play" id="control-play"></i>
+                            <i title="다음곡 재생" class="next" id="control-next"></i>
+                            <i title="재생 목록" class="list" id="control-list"></i>
 
-                        <!-- <i title="한곡 반복" class="repeat_one"></i>-->
-                        <!-- <i title="랜덤 반복" class="shuffle"></i> -->
-                        <!-- <i title="정지" class="stop"></i> -->
+                            <!-- <i title="한곡 반복" class="repeat_one"></i>-->
+                            <!-- <i title="랜덤 반복" class="shuffle"></i> -->
+                            <!-- <i title="정지" class="stop"></i> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="music__footer">
+                    <div class="music__list">
+                        <h3><span class="list"></span>뮤직 리스트 <a href="#" class="close"></a></h3>
+                        <ul>
+                            
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="music__footer">
-                <div class="music__list">
-                    <h3><span class="list"></span>뮤직 리스트 <a href="#" class="close"></a></h3>
-                    <ul>
-                        
+        </div>
+        <!-- //뮤직 플레이어 -->
+
+        <!-- 기억하기 게임  -->
+        <div class="memory__wrap">
+            <div class="memory__inner">
+                <!-- <div class="memory__info"></div> -->
+                <div class="memory__card">
+                    <ul class="cards">
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- //뮤직 플레이어 -->
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>

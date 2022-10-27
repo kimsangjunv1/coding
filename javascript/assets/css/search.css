@@ -29,6 +29,7 @@ li {
 
 #header {
   display: flex;
+  align-items: center;
 }
 #header h1 {
   margin: 10px;
@@ -206,7 +207,8 @@ li {
 }
 
 .search__list .line{
-  margin-top: 70px;
+  /* margin-top: 70px; */
+  padding-left: 0;
 }
 
 .search__list .line li{
