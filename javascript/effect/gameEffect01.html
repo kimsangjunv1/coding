@@ -19,7 +19,7 @@
     <header id="header">
         <div class="header_cont">
             <img src="../assets/music_img/appleLogo.png" alt="">
-            <h1>gamneeffect</h1>
+            <h1>Game Effect</h1>
         </div>
         <div class="header_icon_cont" style="display:flex;">
             <img src="../assets/music_img/logo_4k.png" alt="">
@@ -36,10 +36,10 @@
     <div class="mouse__cursor">
         <!-- <img src="../../assets/img/mouseCursor.png" alt="유지"> -->
     </div>
-    <div class="sourceContWord">
+    <div class="sourceContWord zIndex">
         <div class="sourceContWord_header">
             <p>SOURCE VIEW</p>
-            <img src="../assets/music_img/logo_moon.png" alt="">
+            <img src="../assets/music_img/MusicListCloseBtn.png" alt="">
         </div>
         <div class="search__wrap">
             <span>얼마나 알고있나</span>
@@ -56,7 +56,7 @@
             <div class="search__box">
                 <label for="search">검색하기</label>
                 <input type="text" id="search" placeholder="CSS 속성을 검색해주세요.">
-                <div class="start">게임 시작 :3</div>
+                <div class="start">게임 시작</div>
             </div>
 
             <div class="search__audio">
@@ -258,12 +258,12 @@
     </div>
 
     <!-- 소스보기 -->
-    <div class="sourceCont">
+    <div class="sourceCont zIndex">
         <div class="sourceCont_header">
             <p>SOURCE VIEW</p>
-            <img src="../assets/music_img/logo_moon.png" alt="">
+            <img src="../assets/music_img/MusicListCloseBtn.png" alt="">
         </div>
-        <iframe class="sourceOpen" src="https://github1s.com/kimsangjunv1/coding/blob/main/javascript/effect/gameEffect01.html" frameborder="0"></iframe>
+        <iframe class="sourceOpen" src="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/gameEffect01.html" frameborder="0"></iframe>
     </div>
 
     <main id="main">
@@ -271,13 +271,13 @@
             <div class="icon1">
                 <div class="cont">
                     <img src="../../assets/img/iconGame01.png" alt="유지">
-                    <span>게임 01</span>
+                    <span>단어 맞추기</span>
                 </div>
             </div>
             <div class="icon2">
                 <div class="cont">
                     <img src="../../assets/img/iconGame02.png" alt="유지">
-                    <span>게임 02</span>
+                    <span>맞는 그림 찾기</span>
                 </div>
             </div>
             <div class="icon3">
@@ -295,7 +295,7 @@
             <div class="icon5">
                 <div class="cont">
                     <img src="../../assets/img/iconGame05.png" alt="유지">
-                    <span>소스 보기</span>
+                    <span>Github 1s</span>
                 </div>
             </div>
         </div>
@@ -307,9 +307,10 @@
     </footer>
     <!-- footer -->
 
+    
     <div class="game_box">
         <!-- 뮤직 플레이어 -->
-        <div class="music__wrap">
+        <div class="music__wrap zIndex">
             <div class="music__inner">
                 <div class="music__header">
                     <img src="../assets/music_img/logo_sound.png" alt="">
@@ -367,88 +368,166 @@
         <!-- //뮤직 플레이어 -->
 
         <!-- 기억하기 게임  -->
-        <div class="memory__wrap">
-            <div class="memory__inner">
-                <!-- <div class="memory__info"></div> -->
-                <div class="memory__card">
-                    <ul class="cards">
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <div></div>
-                            <div></div>
-                        </li>
-                    </ul>
+        <div class="sourceContMemory zIndex">
+            <div class="sourceContMemory_header">
+                <p>단어 맞추기</p>
+                <img src="../assets/music_img/MusicListCloseBtn.png" alt="">
+            </div>
+            <div class="memory__wrap">
+                <div class="memory__inner">
+                    <!-- <div class="memory__info"></div> -->
+                    <div class="memory__card">
+                        <ul class="cards">
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/2.png" alt="img-2">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/2.png" alt="img-3">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/3.png" alt="img-4">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/3.png" alt="img-5">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/4.png" alt="img-6">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/4.png" alt="img-7">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/5.png" alt="img-8">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/5.png" alt="img-9">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/6.png" alt="img-10">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/6.png" alt="img-11">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/7.png" alt="img-12">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/7.png" alt="img-13">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/8.png" alt="img-14">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/8.png" alt="img-15">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/9.png" alt="img-16">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="view front">
+                                    <img src="../assets/memory/1.png" alt="img-1">
+                                </div>
+                                <div class="view back">
+                                    <img src="../assets/memory/9.png" alt="img-17">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
+    <script src="../assets/js/memory.js"></script>
     <script>
-        // $( function() {
-        //   $( "#draggable" ).draggable();
-        // } );
+        document.querySelectorAll(".ui-draggable").forEach((e,i) => {
+            // console.log(e)
+            e.addEventListener("click",()=>{
+                // document.querySelector(".ui-draggable").classList.remove("plus")
+                document.querySelector(".ui-draggable:nth-child("+i+")").classList.add("plus")
+                // console.log(e);
+                // console.log(i);
+            })
+        })
     </script>
     <script>
         // 각 아이콘을 움직일 수 있게 Jquery 라이브러리 사용
@@ -480,6 +559,20 @@
         $( ".music__inner" ).draggable();
         $( ".sourceCont" ).draggable();
         $( ".sourceContWord" ).draggable();
+        $( ".sourceContMemory" ).draggable();
+
+        const sourceMemoryOpen = document.querySelector(".sourceContMemory")
+        const sourceMemoryClose = document.querySelector(".sourceContMemory_header img")
+
+        document.querySelector(".icon2").addEventListener("click",()=>{
+            document.querySelector(".sourceContMemory").style.display="block";
+            shuffleCard();
+        })
+
+        sourceMemoryClose.addEventListener("click", ()=>{
+            document.querySelector(".sourceContMemory").style.display="none !important";
+        })
+
 
         document.querySelector(".icon5").addEventListener("click",()=>{
             document.querySelector(".sourceCont").style.display="block";
@@ -1434,14 +1527,23 @@
 
             // 다시 시작하기
             function restart(){
-                searchResultWrap.classList.remove("show");
-                timeReamining = 120;  // 시간
-                score = 0;
-                searchScoreNow.innerText = "0";
-                searchStart.style.display = "none";  // 버튼 숨김
-                searchList.style.display = "none";
-                searchAudioBtn.classList.remove("playing")
-                searchAudio.play();
+                setTimeout(()=>{
+                    searchResultWrap.classList.remove("show");
+
+                    timeReamining = 120;  // 시간
+                    score = 0;
+
+                    searchScoreNow.innerText = "0";
+                    searchStart.style.display = "none";  // 버튼 숨김
+                    searchList.style.display = "none";
+                    searchAudioBtn.classList.remove("playing")
+
+                    searchAnswers.innerHTML = "";
+                    searchMissAnswers.innerHTML = "";
+
+                    // searchAudio.play();
+                    startQuiz();
+                }, 1000);
             }
             // 다시 시작하기
             // function restart(){
@@ -1465,7 +1567,6 @@
 
             $(searchResultWrap).draggable();
     </script>
-
 </body>
 
 </html>

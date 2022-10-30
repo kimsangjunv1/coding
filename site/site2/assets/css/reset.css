@@ -24,14 +24,11 @@ th,
 td,
 input,
 button,
-image,
 figure,
-figcaption{
+figcaption {
     margin: 0;
     padding: 0;
-    -webkit-text-size-adjust:100%;
 }
-
 
 /* 시멘틱 태그 초기화 */
 article,
@@ -54,10 +51,10 @@ button,
 input,
 select,
 table,
-text,
 textarea {
     color: #000;
-    font-family: 'Oswald', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', dotum, 돋움
+    font-family: "GmarketSans", "AppleSDGothicNeo-Regular", "Malgun Gothic",
+        "맑은 고딕", dotum, 돋움;
 }
 
 /* 링크 초기화 */
@@ -65,7 +62,11 @@ a {
     text-decoration: none;
     color: #000;
 }
-
+/* 가로모드 초기화 */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
 /* 목록 초기화 */
 li,
 ol,
@@ -79,16 +80,14 @@ h2,
 h3,
 h4,
 h5,
-h6{
+h6 {
     font-weight: normal;
 }
-
-
 /* 폰트 스타일 초기화 */
-em, address {
+em,
+address {
     font-style: normal;
 }
-
 /* 이미지 초기화 */
 img {
     width: 100%;
@@ -96,34 +95,34 @@ img {
 }
 
 /* 보더 초기화 */
-img,fieldset, button {
+img,
+fieldset,
+button {
     border: 0;
 }
 
-/* clearfix 클리어 픽스 */
-.clearfix{
+/* 클리어픽스 */
+.clearfix {
     zoom: 1;
 }
-
 .clearfix::before,
-.clearfix::after{
-    content: '';
+.clearfix::after {
+    content: "";
     display: block;
     line-height: 0;
 }
-
-.clearfix::after{
+.clearfix::after {
     clear: both;
 }
 
 /* 블라인드 효과 */
-.blind{
-    position:absolute;
-    clip:rect(0 0 0 0);
-    width:1px;
-    height:1px;
-    margin:-1px;
-    overflow:hidden;
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
 }
 
 /* 이미지 대체(ir) */
@@ -133,4 +132,7 @@ img,fieldset, button {
     font-size: 0;
     line-height: 0;
     text-indent: -9999px;
+}
+body {
+    overflow: overlay;
 }

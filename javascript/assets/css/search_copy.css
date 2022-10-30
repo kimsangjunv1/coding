@@ -423,24 +423,25 @@ li {
   position: absolute;
   left: 50%;
   bottom: 0;
+  top: 0;
   transform: translateX(-50%);
   background: #6046b7;
-  /* width: 30%; */
-  /* border-radius: 50px; */
-  font-size: 20px;
-  /* border: 2px solid var(--htmlColor); */
-  padding: 5px;
   color: #fff;
   cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .search__box input {
   /* border: 2px solid var(--htmlColor); */
   padding: 5px;
-  width: 30%;
+  width:100%;
   /* border-radius: 50px; */
   font-size: 20px;
   margin-top: 20px;
+  text-align: center;
 }
 
 .search__answers {
@@ -587,6 +588,9 @@ li {
   animation: rubberBand 1s 0.6s ease;
   transform: scale3d(1, 1, 1);
   flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .search__result .result{
   margin-top: 30px;

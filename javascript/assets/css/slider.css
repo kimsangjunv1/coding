@@ -298,8 +298,10 @@ a{
     border-bottom-right-radius: 0.5rem;
     overflow-y: auto;
     scrollbar-width: none;
-
-    height: 100%; /*수정 */
+    height: 100%;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* 세로 스크롤 */

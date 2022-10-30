@@ -7,9 +7,10 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 /* Header Navigation */
 #top-nav{
 	border-bottom: 1px solid #e1e6dd;
-	background: #FFF;
-	-webkit-transform: translateZ(0)
-
+    background: #ffffffd1;
+    backdrop-filter: blur(15px);
+    -webkit-transform: translateZ(0);
+    -webkit-backdrop-filter: blur(15px);
 }
 #top-nav.navbar{
 	margin-bottom: 0px;

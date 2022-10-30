@@ -322,6 +322,22 @@ img.two{
     filter: invert(1);
     width: 22px;
 }
+.sourceContMemory_header{
+    background: rgba(71, 42, 177, 0.796);
+    width: 100%;
+    height: 40px;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    color: #fff;
+}
+.sourceContMemory_header img{
+    filter: invert(1);
+    width: 22px;
+}
 .sourceOpen{
     width: 100%;
     height: 100%;
