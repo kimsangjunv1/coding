@@ -950,6 +950,18 @@
         });
         sourceWordClose.addEventListener("click", ()=>{
             sourceWordOpen.style.display="none";
+
+            // 시간 설정(1초에 한번씩 줄어듦)
+            // timeInterval = setInterval(reduceTime, 1000);
+            timeReamining = 120;  // 시간
+            score = 0;
+            
+            // 음악 끄기
+            searchAudio.pause();
+            searchAudioBtn.classList.remove("playing");
+
+            //시간 정지
+            clearInterval(timeInterval)
         })
     </script>
     <script>
