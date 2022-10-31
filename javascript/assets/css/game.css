@@ -22,8 +22,8 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
-    background-color: #272949ad;
-    backdrop-filter: blur(5px);
+    background-color: #45424ecb;
+    backdrop-filter: blur(15px);
     height: 40px;
 }
 #header img{
@@ -44,6 +44,7 @@ body {
 }
 .header_icon_cont{
     display: flex;
+    align-items: center;
 
 }
 .header_icon_cont img{

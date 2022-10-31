@@ -38,7 +38,7 @@
     </div>
     <div class="sourceContWord zIndex">
         <div class="sourceContWord_header">
-            <p>SOURCE VIEW</p>
+            <p>CSS 속성 맞추기</p>
             <img src="../assets/music_img/MusicListCloseBtn.png" alt="">
         </div>
         <div class="search__wrap">
@@ -271,7 +271,7 @@
             <div class="icon1">
                 <div class="cont">
                     <img src="../../assets/img/iconGame01.png" alt="유지">
-                    <span>단어 맞추기</span>
+                    <span>속성 맞추기</span>
                 </div>
             </div>
             <div class="icon2">
@@ -375,6 +375,27 @@
             </div>
             <div class="memory__wrap">
                 <div class="memory__inner">
+                    <div class="memory_begin">
+                        <p>게임방법 ⍢</p>
+                        <ul>
+                            <li>1. 똑같은 그림을 맞춰야 합니다.</li>
+                            <li>2. 제한 시간은 딱 30초 입니다.</li>
+                            <li>3. 빠른 시간내에 생각해서 맞춰주세요.</li>
+
+                        </ul>
+                        <p>START</p>
+                    </div>
+                    <div class="memory_end" style="display:none">
+                        <p>게임 종료</p>
+                        <ul>
+                            <li>당신의 점수는?</li>
+                        </ul>
+                        <p class="memory_count">100점</p>
+                        <p>재시작</p>
+                    </div>
+                    <h2>단어 맞추기!</h2>
+                    <p class="memory_desc"><i></i>초 안에 맞춰주세요!<br>틀릴시 점수가 깎여요!</p>
+                    <p class="memory_count">100점</p>
                     <!-- <div class="memory__info"></div> -->
                     <div class="memory__card">
                         <ul class="cards">
@@ -560,26 +581,6 @@
         $( ".sourceCont" ).draggable();
         $( ".sourceContWord" ).draggable();
         $( ".sourceContMemory" ).draggable();
-
-        const sourceMemoryOpen = document.querySelector(".sourceContMemory")
-        const sourceMemoryClose = document.querySelector(".sourceContMemory_header img")
-
-        document.querySelector(".icon2").addEventListener("click",()=>{
-            document.querySelector(".sourceContMemory").style.display="block";
-            shuffleCard();
-        })
-
-        sourceMemoryClose.addEventListener("click", ()=>{
-            document.querySelector(".sourceContMemory").style.display="none !important";
-        })
-
-
-        document.querySelector(".icon5").addEventListener("click",()=>{
-            document.querySelector(".sourceCont").style.display="block";
-        })
-        document.querySelector(".sourceCont_header img").addEventListener("click",()=>{
-            document.querySelector(".sourceCont").style.display="none";
-        })
 
         //헤더 시계
         function printTime() {
@@ -988,6 +989,7 @@
         })
     </script>
 
+<!-- 단어 맞추기 -->
     <script>
         const cssProperty = [
             { num: 1, name: "accent-color", desc: "요소의 강조 색상을 지정합니다." },

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!-- 티스토리 용 -->
+        <div id="sample01" class="container sample document">
+        <!-- 메인 샘플 시작 -->
+            <h2 class="t_tit">프로그래머스 1단계</h2>
+            <p class="t_desc">
+                싹 잊고있다가<br>
+                지금 부랴부랴 맨둡니다,,,,,
+            </p>
+
+            <hr>
+
+            <div class="question_01">
+                <h2 class="t_tit2">약수의 합!</h2>
+                <p class="t_desc2">
+                    짝수면 even, 정수면 odd를 출력시킵니다.
+                <p class="t_box">
+                    1. for을 통해 i의 값을 1씩 증가시켜<br>
+                    2. 만약 i의 값을 2와 나누었을때 0이라면 짝수이므로 Even, 1이라면 Odd를 출력해줍니다.
+                </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(num) {
+    var answer = '';
+    if(num%2==0){
+        answer="Even"
+    } else {
+        answer="Odd"
+    }
+    return answer;
+}
+</code></pre>
+                </div>
+            </div>
+            <div class="question_02">
+                <h2 class="t_tit2">약수의 합 : 다른 사람 풀이</h2>
+                <p class="t_desc2">
+                    약수의 합을 구하는 방법입니다.
+                <p class="t_box">
+                    1. 삼항 연산자를 통해 evenOrOdd 함수 실행시<br>
+                    2, num을 2와 나누었을때의 값을 통해 0(짝수:틀림) 1(홀수:맞음)을 출력해줍니다.
+                </p>
+            <div class="t_code">
+<pre><code class="language-js">function evenOrOdd(num) {
+    return num % 2 ? "Odd" : "Even";
+  }
+</code></pre>
+                </div>
+            </div>
+            
+        </div>
+        <!-- 티스토리 용 끝 -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+
+</body>
+</html>
