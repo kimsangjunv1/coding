@@ -40,7 +40,7 @@ li {
   display: flex;
 }
 #header h1 {
-  margin: 10px;
+  /* margin: 10px; */
 }
 #header nav {
   margin: 10px;

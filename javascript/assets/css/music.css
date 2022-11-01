@@ -10,8 +10,9 @@
     top: 100px;
     padding: 26px;
     /* padding-top: 10px; */
-    box-shadow: 0px 5px 26px 5px #300e504a;
+    box-shadow: 0px 5px 20px 5px #0000004a;
     overflow: hidden;
+    z-index: 1;
 }
 .music__inner::before{
     content: '';
@@ -257,7 +258,7 @@ img.two{
     overflow-y: scroll;
 }
 .music__list ul::-webkit-scrollbar-thumb{
-    background-color: #6808ca;
+    background-color: #343f6d;
 }
 .music__list ul::-webkit-scrollbar{
     background: transparent;
@@ -283,7 +284,7 @@ img.two{
     overflow: hidden;
     width: 289px;
     white-space: nowrap;
-    color: #41057e;
+    color: #343f6d;
 }
 .music__list li em{
     font-style: normal;
