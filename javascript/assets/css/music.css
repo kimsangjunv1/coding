@@ -3,7 +3,7 @@
 }
 .music__inner {
     width: 450px;
-    background-color: #351e54e0;
+    background-color: #1f2645;
     backdrop-filter: blur(8px);
     position: absolute;
     right: 100px;
@@ -30,6 +30,7 @@
     align-items: center;
     justify-content: space-between;
     color: #fff;
+    text-shadow: 0px 3px #000;
 }
 .music__header img{
     width: 20px;
@@ -323,14 +324,14 @@ img.two{
     width: 22px;
 }
 .sourceContMemory_header{
-    background: #6b697278;
+    background: #1f2645;
     width: 100%;
     height: 40px;
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 24px;
     align-items: center;
     color: #fff;
 }
@@ -347,8 +348,8 @@ img.two{
 
 .volumeCont{
     position: absolute;
-    background: #342c4a8f;
-    padding: 10px 10px 6px 10px;
+    background: #0000008f;
+    padding: 7px 14px;
     z-index: 1000;
     backdrop-filter: blur(19px);
     top: 23px;

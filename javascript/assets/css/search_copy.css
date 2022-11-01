@@ -112,10 +112,12 @@ li {
 }
 .search__wrap > h1 {
   font-family: "galmuri11";
-  color: #45424ecb;
-  font-size: 6vw;
+  color: #1f2645;
+  font-size: 70px;
   margin-bottom: 10px;
-  white-space: nowrap;
+  /* white-space: nowrap; */
+  text-shadow: 0px 5px #bab9d2;
+  box-sizing: border-box;
 }
 
 .search__box {
@@ -409,7 +411,8 @@ li {
   text-align: center;
   /* border-radius: 50%; */
   margin: 0 auto;
-  background: #45424ecb;
+  background: #3f4766;
+  box-shadow: 0px 6px 0px #bab9d2;
 }
 .search__wrap .time span {
   color: #fff;
@@ -426,13 +429,14 @@ li {
   bottom: 0;
   top: 0;
   transform: translateX(-50%);
-  background: #6b6972;
+  background: #3f4766;
   color: #fff;
   cursor: pointer;
   padding: 5px;
   width: 100%;
   font-size: 20px;
   margin-top: 20px;
+  box-shadow: 0px 6px 0px #bab9d2;
   line-height: 1.7;
 }
 
@@ -640,7 +644,7 @@ li {
 
 .sourceContWord{
   display: none;
-  width: 50vw;
+  width: 30vw;
   height: 70vh;
   position: absolute;
   top: 25%;
@@ -650,14 +654,14 @@ li {
   box-shadow: 0px 50px 40px 5px #00000054;
 }
 .sourceContWord_header{
-  background: #45424ecb;
+  background: #1f2645;
   width: 100%;
   height: 40px;
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 24px;
   align-items: center;
   color: #fff;
 }

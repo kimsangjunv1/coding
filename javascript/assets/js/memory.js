@@ -59,18 +59,18 @@ function matchCards(img1, img2){
         }
         cardOne.removeEventListener("click", flipCard);
         cardTwo.removeEventListener("click", flipCard);
-        document.querySelector(".memory_count").innerText = point++;
+        // document.querySelector(".memory_count").innerText = point++;
         
         soundMatch.play();
         cardOne = cardTwo = "";
         disableDeck = false;
     } else {
-
+        point--
+        document.querySelector(".memory_count").innerText = point;
         setTimeout(()=>{
             //이미지가 일치하지 않는 경우(틀린음악, 이미지가 맞지 않는 경우)
             cardOne.classList.add("shakeX");
             cardTwo.classList.add("shakeX");
-            // document.querySelector(".memory_count").innerText = point--;
         }, 500);
 
         setTimeout(()=>{
