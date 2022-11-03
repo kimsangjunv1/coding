@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://webfontworld.github.io/pretendard/Pretendard.css"
+      rel="stylesheet"
+    />
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Pretendard";
+        font-weight: 100;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .fixed {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .scrollTop{
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        width: 65px;
+        height: 40px;
+        background: #000;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+        z-index: 100000;
+        font-weight: bold;
+        font-size: 22px;
+    }
+
+    /* layout */
+    #contents{}
+    #section1{
+        height: 10000px;
+    }
+    #section2{}
+    #section3{}
+    #section4{}
+    #section5{}
+    #section6{}
+    /* sec1 */
+    .sec1_text2,
+    .sec1_text1 {
+        font-size: 8vw;
+        white-space: nowrap;
+    }
+    .sec1_text3{
+        width: 100%;
+        height: 100vh;
+        background: url(https://images.unsplash.com/photo-1552596828-4e48cd784320?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80);
+        background-size: cover;
+    }
+    .sec1_text4{
+        width: 50vw;
+        height: 50vw;
+        border-radius: 50%;
+        background: #000;
+        color: #fff !important;
+        text-align: center;
+        line-height: 50vw;
+        font-size: 8vw;
+    }
+      
+    </style>
+  </head>
+  <body>
+    <div class="scrollTop">0</div>
+    <div id="contents">
+      <section id="section1">
+        <div class="sec1">
+          <div class="sec1_text1 fixed" data-0 = "top: 50%; opacity: 1"  data-500 = "top: 30%; opacity: 0">안녕하세요!</div>
+          <div class="sec1_text2 fixed"
+            data-500 = "top: 70%; opacity: 0; transform: scale(1) translate(-50%, -50%)" 
+            data-1000 = "top: 50%; opacity: 1; transform: scale(1) translate(-50%, -50%)"
+            data-1500 = "top: 50%; opacity: 1; transform: scale(0) translate(-50%, -50%)">
+            프론트앤드 개발자입니다!
+        </div>
+        <div class="sec1_text3 fixed"
+            data-1300 = "width: 0%; height: 0vh; transform: translate(-50%, -50%) rotate(180deg);"
+            data-2300 = "width: 100%; height: 30vh; transform: translate(-50%, -50%) rotate(60deg);">
+        </div>
+        <div class="sec1_text4 fixed"
+        data-2000 = "transform: translate(-50%, -50%) rotate(360deg) scale(0);"
+        data-3000 = "transform: translate(-50%, -50%) rotate(0deg) scale(1);">HELLO ⍥</div>
+        </div>
+      </section>
+      <section id="section2"></section>
+      <section id="section3"></section>
+      <section id="section4"></section>
+      <section id="section5"></section>
+      <section id="section6"></section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+
+        const s = skrollr.init();
+
+        //재귀 함수
+        function scroll(){
+            let scrollTop = window.pageYoffest || document.documentElement.scrollTop || window.screenY;
+
+            document.querySelector(".scrollTop").innerText=Math.ceil(scrollTop);
+
+            // document.querySelector(".sec1_text2").style.fontWeight = scrollTop*50;
+
+            // if(scrollTop > 1300) document.querySelector(".sec1_text2").style.opacity = 0;
+
+            requestAnimationFrame(scroll);
+        }
+
+        scroll(); //함수 호출
+    </script>
+  </body>
+</html>

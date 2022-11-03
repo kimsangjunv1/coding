@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!-- 티스토리 용 -->
+        <div id="sample01" class="container sample document">
+        <!-- 메인 샘플 시작 -->
+            <h2 class="t_tit">프로그래머스 1단계</h2>
+            <p class="t_desc">
+                각 자릿수의 모든 숫자의 합을 구해 리턴해주는 함수를 만들어 보겠습니다!
+            </p>
+
+            <hr>
+
+            <div class="question_01">
+                <h2 class="t_tit2">자릿수 더하기</h2>
+                <p class="t_desc2">
+                    split으로 숫자를 하나씩 분리해준뒤 forEach를 통해 꺼내온 값들을 정부로 변환 후 sum에 더해 값을 도출하는 문제입니다.
+                <p class="t_box">
+                    1. sum은 0이고<br>
+                    2. n에 담긴 값을 각각 배열로 나눈 뒤 그 값을 forEach를 통해 값들을 정수로 변환 후 sum에 더해줍니다!
+                </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(n)
+    {
+        var sum = 0;
+        n.toString().split('').forEach(a => sum += parseInt(a))
+        return sum;
+    }
+</code></pre>
+                </div>
+            </div>
+            <div class="question_02">
+                <h2 class="t_tit2">문자열을 정수로 바꾸기 : 다른 사람 풀이</h2>
+                <p class="t_desc2">
+                    while을 사용하여 n의 값이 조건에 도달할때까지 모든 자릿수의 합을 구하는 방법입니다!
+                <p class="t_box">
+                    1. Answer은 0<br>
+                    2. n이 0초과가 될 동안 하단의 스크립트를 실행합니다 <br>
+                    3. answer에는 n 나누기 10을 한 값을 더해주고<br>
+                    4. n에는 n나누기 10을 한뒤 반올림해준 값을 n에 담아 반복해 모든 자릿수의 합을 구해줍니다.
+                </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(n)
+    {
+        var answer = 0;
+
+        while(n &lt; 0) {
+            answer += n % 10;
+            n = Math.floor(n/10);
+        }
+    
+        return answer;
+    }
+</code></pre>
+                </div>
+            </div>
+            
+        </div>
+        <!-- 티스토리 용 끝 -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+
+</body>
+</html>

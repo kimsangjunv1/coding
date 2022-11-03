@@ -1,0 +1,17 @@
+@font-face {
+    src: url("../fonts/LINESeedKR-Bd.woff");
+    font-family: "LINESeedKR";
+    font-weight: 300;
+}
+
+@font-face {
+    src: url("../fonts/Signatie.ttf");
+    font-family: "Signatie";
+    font-weight: 300;
+}
+
+@font-face {
+    src: url("../fonts/aAutoSignature.ttf");
+    font-family: "aAutoSignature";
+    font-weight: 300;
+}

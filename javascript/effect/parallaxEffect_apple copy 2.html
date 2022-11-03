@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://webfontworld.github.io/pretendard/Pretendard.css" rel="stylesheet"/>
+    <link href="https://webfontworld.github.io/NanumMyeongjo/NanumMyeongjo.css" rel="stylesheet">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Pretendard";
+        font-weight: 100;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .fixed {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .fixed_right {
+        position: fixed;
+        /* left: 50%; */
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .scrollTop{
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        width: 65px;
+        height: 40px;
+        background: #000;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+        z-index: 100000;
+        font-weight: bold;
+        font-size: 22px;
+    }
+
+    /* layout */
+    #contents{}
+    #section1{
+        height: 10000px;
+    }
+    #section2{}
+    #section3{}
+    #section4{}
+    #section5{}
+    #section6{}
+    /* sec1 */
+    .sec1_text2,
+    .sec1_text1 {
+        font-size: 8vw;
+        white-space: nowrap;
+    }
+    .sec1_text2 em{
+        font-style: normal;
+        font-weight: bold;
+    }
+    .sec1_text3{
+        width: 100%;
+        height: 100vh;
+        background: url(../../assets/img/profile_img.jpeg);
+        background-size: cover;
+        color: #fff;
+        font-family: "NanumMyeongjo";
+        border: 1px solid #ededed;
+    }
+    .sec1_text4{
+        width: 3vw;
+        font-size: 4vw;
+        /* background: #000; */
+        color: #000;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .sec1_text4 em{
+        width: 100px;
+        height: 50px;
+        content: 'd';
+        border: 1px solid #000;
+    }
+
+    .sec1_text5{
+        font-size: 26px;
+        background: rgb(0, 0, 0);
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+    }
+    .sec1_text_white{
+        font-size: 26px;
+        background: #fff;
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+    }
+    .sec1_text_black{
+        font-size: 26px;
+        background: rgb(0, 0, 0);
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+    }
+      
+    </style>
+  </head>
+  <body>
+    <div class="scrollTop">0</div>
+    <div id="contents">
+      <section id="section1">
+        <div class="sec1">
+          <div class="sec1_text1 fixed" data-0 = "top: 50%; opacity: 1"  data-500 = "top: 30%; opacity: 0">Hi</div>
+          <div class="sec1_text2 fixed"
+            data-500 = "top: 70%; opacity: 0; transform: scale(1) translate(-50%, -50%)" 
+            data-1000 = "top: 50%; opacity: 1; transform: scale(1) translate(-50%, -50%)"
+            data-3100 = "top: 50%; opacity: 0; transform: scale(1) translate(-50%, -50%)">
+            저는 <em>김상준</em>입니다!
+        </div>
+        <div class="sec1_text3 fixed"
+            data-1300 = "left: 50%; width: 0%; height: 0.1vh; transform: translate(-50%, -50%);"
+            data-2300 = "left: 50%; width: 50%; height: 0.1vh; transform: translate(-50%, -50%);"
+            data-3000 = "left: 50%; width: 50%; height: 60vh; transform: translate(-50%, -50%)"
+            data-8400 = "top: 60%; left: 50%; width: 50%; height: 60vh; transform: translate(-50%, -50%)"
+            data-10500 = "left: 50%; width: 50%; height: 0vh; transform: translate(-50%, -50%)">
+        </div>
+        <div class="sec1_text4 fixed"
+        data-3700 = "top: 20%; padding: 5px 0; width: 0%; transform: translate(-50%, -50%);"
+        data-8300 = "top: 20%; padding: 5px 0; width: 50%; transform: translate(-50%, -50%);"
+        data-11000 = "top: 50%; padding: 5px 0; width: 50%; transform: translate(-50%, -50%);">저는
+        <em data-4500 = "padding: 0 0px"
+            data-6000 = "padding: 0 60px">
+        </em>
+        을 좋아해요.</div>
+        </div>
+        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+        <div class="sec1_text5 fixed_right"
+        data-3900 = "top: 30%; padding: 0px; right: 3%; width: 0px; transform: translate(0%, -50%);"
+        data-4100 = "top: 30%; padding: 0px; right: 30%; width: 60px; transform: translate(0%, -50%);"
+        data-6500 = "top: 30%; padding: 0px; right: 60%; width: 60px; transform: translate(0%, -50%);"
+        data-6700 = "top: 30%; padding: 1px; right: 100%; width: 0px; transform: translate(0%, -50%);"
+        >#음식</div>
+        <div class="sec1_text5 fixed_right"
+        data-3600 = "top: 60%; padding: 0px; right: 13%; width: 0px; transform: translate(0%, -50%);"
+        data-3800 = "top: 60%; padding: 0px; right: 30%; width: 60px; transform: translate(0%, -50%);"
+        data-6500 = "top: 60%; padding: 0px; right: 75%; width: 60px; transform: translate(0%, -50%);"
+        data-6700 = "top: 60%; padding: 1px; right: 100%; width: 0px; transform: translate(0%, -50%);"
+        >#물건</div>
+        <div class="sec1_text5 fixed_right"
+        data-4100 = "top: 50%; padding: 0px; right: 5%; width: 0px; transform: translate(0%, -50%);"
+        data-4300 = "top: 50%; padding: 0px; right: 30%; width: 60px; transform: translate(0%, -50%);"
+        data-6500 = "top: 50%; padding: 0px; right: 65%; width: 60px; transform: translate(0%, -50%);"
+        data-6700 = "top: 50%; padding: 1px; right: 100%; width: 0px; transform: translate(0%, -50%);"
+        >#장소</div>
+        <div class="sec1_text5 fixed_right"
+        data-4200 = "top: 32%; padding: 0px; right: 8%; width: 0px; transform: translate(0%, -50%);"
+        data-4600 = "top: 32%; padding: 0px; right: 30%; width: 60px; transform: translate(0%, -50%);"
+        data-5500 = "top: 32%; padding: 0px; right: 70%; width: 60px; transform: translate(0%, -50%);"
+        data-6700 = "top: 32%; padding: 1px; right: 100%; width: 0px; transform: translate(0%, -50%);"
+        >#취향</div>
+        <div>
+            <div class="sec1_text_white fixed_right"
+            data-3100 = "top: 55%; padding: 0px; right: 3%; width: 0px; height:13px; transform: translate(0%, -50%);"
+            data-3300 = "top: 55%; padding: 0px; right: 10%; width: 4px; height:13px; transform: translate(0%, -50%);"
+            data-6500 = "top: 55%; padding: 0px; right: 80%; width: 4px; height:13px; transform: translate(0%, -50%);"
+            data-6900 = "top: 55%; padding: 1px; right: 100%; width: 0px; height:13px; transform: translate(0%, -50%);"
+            >&nbsp;</div>
+            <div class="sec1_text_white fixed_right"
+            data-3500 = "top: 60%; padding: 0px; right: 6%; width: 0px; height:3px; transform: translate(0%, -50%);"
+            data-3900 = "top: 60%; padding: 0px; right: 20%; width: 10px; height:3px; transform: translate(0%, -50%);"
+            data-6500 = "top: 60%; padding: 0px; right: 70%; width: 10px; height:3px; transform: translate(0%, -50%);"
+            data-7300 = "top: 60%; padding: 1px; right: 100%; width: 0px; height:3px; transform: translate(0%, -50%);"
+            >&nbsp;</div>
+            <div class="sec1_text_white fixed_right"
+            data-3300 = "top: 50%; padding: 0px; right: 6%; width: 0px; height:1px; transform: translate(0%, -50%);"
+            data-3600 = "top: 50%; padding: 0px; right: 20%; width: 20px; height:1px; transform: translate(0%, -50%);"
+            data-6500 = "top: 50%; padding: 0px; right: 70%; width: 20px; height:1px; transform: translate(0%, -50%);"
+            data-7000 = "top: 50%; padding: 1px; right: 100%; width: 0px; height:1px; transform: translate(0%, -50%);"
+            >&nbsp;</div>
+        </div>
+        <div>
+            <div class="sec1_text_white fixed_right"
+            data-3100 = "top: 40%; padding: 0px; right: 3%; width: 0px; height:3px; transform: translate(0%, -50%);"
+            data-4000 = "top: 40%; padding: 0px; right: 30%; width: 30px; height:3px; transform: translate(0%, -50%);"
+            data-6500 = "top: 40%; padding: 0px; right: 80%; width: 30px; height:3px; transform: translate(0%, -50%);"
+            data-7200 = "top: 40%; padding: 1px; right: 100%; width: 0px; height:3px; transform: translate(0%, -50%);"
+            >&nbsp;</div>
+            <div class="sec1_text_white fixed_right"
+            data-3500 = "top: 60%; padding: 0px; right: 6%; width: 0px; height:3px; transform: translate(0%, -50%);"
+            data-4100 = "top: 60%; padding: 0px; right: 20%; width: 20px; height:3px; transform: translate(0%, -50%);"
+            data-6500 = "top: 60%; padding: 0px; right: 70%; width: 20px; height:3px; transform: translate(0%, -50%);"
+            data-7500 = "top: 60%; padding: 1px; right: 100%; width: 0px; height:3px; transform: translate(0%, -50%);"
+            >&nbsp;</div>
+            <div class="sec1_text_white fixed_right"
+            data-3400 = "top: 50%; padding: 0px; right: 6%; width: 0px; height:1px; transform: translate(0%, -50%);"
+            data-3800 = "top: 50%; padding: 0px; right: 20%; width: 20px; height:1px; transform: translate(0%, -50%);"
+            data-6500 = "top: 50%; padding: 0px; right: 70%; width: 20px; height:1px; transform: translate(0%, -50%);"
+            data-7300 = "top: 50%; padding: 1px; right: 100%; width: 0px; height:1px; transform: translate(0%, -50%);"
+            >&nbsp;</div>
+        </div>
+        <div>
+            <div class="sec1_text_black fixed_right"
+            data-3900 = "top: 30%; padding: 0px; right: 16%; width: 0px; height:3px; transform: translate(0%, -50%);"
+            data-4100 = "top: 30%; padding: 0px; right: 27%; width: 30px; height:3px; transform: translate(0%, -50%);"
+            data-6500 = "top: 30%; padding: 0px; right: 80%; width: 30px; height:3px; transform: translate(0%, -50%);"
+            data-6900 = "top: 30%; padding: 1px; right: 100%; width: 0px; height:3px; transform: translate(0%, -50%);"
+            >&nbsp;</div>
+            <div class="sec1_text_black fixed_right"
+            data-3900 = "top: 60%; padding: 0px; right: 6%; width: 0px; height:3px; transform: translate(0%, -50%);"
+            data-4100 = "top: 60%; padding: 0px; right: 20%; width: 20px; height:3px; transform: translate(0%, -50%);"
+            data-6500 = "top: 60%; padding: 0px; right: 67%; width: 20px; height:3px; transform: translate(0%, -50%);"
+            data-7600 = "top: 60%; padding: 1px; right: 100%; width: 0px; height:3px; transform: translate(0%, -50%);"
+            >&nbsp;</div>
+            <div class="sec1_text_black fixed_right"
+            data-3900 = "top: 80%; padding: 0px; right: 6%; width: 0px; height:1px; transform: translate(0%, -50%);"
+            data-4100 = "top: 80%; padding: 0px; right: 20%; width: 20px; height:1px; transform: translate(0%, -50%);"
+            data-6500 = "top: 80%; padding: 0px; right: 79%; width: 20px; height:1px; transform: translate(0%, -50%);"
+            data-7400 = "top: 80%; padding: 1px; right: 100%; width: 0px; height:1px; transform: translate(0%, -50%);"
+            >&nbsp;</div>
+        </div>
+      </section>
+      <section id="section2"></section>
+      <section id="section3"></section>
+      <section id="section4"></section>
+      <section id="section5"></section>
+      <section id="section6"></section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+
+        const s = skrollr.init();
+
+        //재귀 함수
+        function scroll(){
+            let scrollTop = window.pageYoffest || document.documentElement.scrollTop || window.screenY;
+
+            document.querySelector(".scrollTop").innerText=Math.ceil(scrollTop);
+
+            // document.querySelector(".sec1_text2 em").style.filter = hueRotate(scrollTop+"deg");
+            // document.querySelector(".sec1_text2").style.fontWeight = scrollTop*50;
+
+            // if(scrollTop > 1300) document.querySelector(".sec1_text2").style.opacity = 0;
+
+            requestAnimationFrame(scroll);
+        }
+
+        scroll(); //함수 호출
+    </script>
+  </body>
+</html>

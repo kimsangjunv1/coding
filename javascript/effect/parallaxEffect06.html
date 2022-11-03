@@ -1,230 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>패럴렉스 이펙트06 - 이질감 효과</title>
 
-    <link rel="stylesheet" href="../assets/css/parallax.css">
-    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <link rel="stylesheet" href="../assets/css/parallax.css" />
+    <link rel="stylesheet" href="../assets/css/dracula.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <link
+      href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css"
+      rel="stylesheet"
+    />
     <style>
-        /* parallax__nav */
+      /* parallax__nav */
+      #parallax__nav {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 2000;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        border-radius: 50px;
+        transition: top 0.4s ease;
+      }
+
+      #parallax__nav li {
+        display: inline;
+        margin: 0 5px;
+      }
+
+      #parallax__nav li a {
+        display: inline-block;
+        height: 30px;
+        padding: 5px 20px;
+        text-align: center;
+        line-height: 30px;
+      }
+
+      #parallax__nav li.active a {
+        background: #fff;
+        color: #000;
+        border-radius: 20px;
+        box-sizing: content-box;
+      }
+
+      #parallax__cont {
+        max-width: 1600px;
+        /* background-color: rgba(255, 255, 255, 0.1); */
+        margin: 0 auto;
+        width: 98%;
+      }
+
+      .content__item {
+        width: 1000px;
+        max-width: 70vw;
+        margin: 30vw auto;
+        /* background-color: rgba(255, 255, 255, 0.3); */
+        text-align: left;
+        margin-right: 0;
+        position: relative;
+        padding-top: 8vw;
+      }
+
+      .content__item:nth-child(even) {
+        /* 2n도 가능하고 even 도 가능하고 */
+        margin-left: 0;
+        text-align: right;
+      }
+
+      .content__item__num {
+        font-size: 35vw;
+        font-family: "Lato";
+        font-weight: 100;
+        position: absolute;
+        left: -5vw;
+        top: -16vw;
+        opacity: 0.07;
+        z-index: -2;
+      }
+
+      .content__item:nth-child(even) .content__item__num {
+        right: -5vw;
+        left: auto;
+        /* left 값 초기화 */
+      }
+
+      .content__item__title {
+        font-weight: 400;
+        text-transform: capitalize;
+      }
+
+      .content__item__imgWrap {
+        width: 100%;
+        padding-bottom: 56.25%;
+        background-color: #000;
+        position: relative;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .content__item__img {
+        background: url(../../assets/slider/effect_bg_01.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* 내가 작아서 넣음 */
+        position: absolute;
+        width: 110%;
+        height: 110%;
+        left: -5%;
+        top: -5%;
+        filter: saturate(0%);
+        /* transition: all 1s; */
+      }
+
+      .content__item:nth-child(1) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_01.jpg);
+      }
+
+      .content__item:nth-child(2) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_02.jpg);
+      }
+
+      .content__item:nth-child(3) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_03.jpg);
+      }
+
+      .content__item:nth-child(4) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_04.jpg);
+      }
+
+      .content__item:nth-child(5) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_05.jpg);
+      }
+
+      .content__item:nth-child(6) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_06.jpg);
+      }
+
+      .content__item:nth-child(7) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_07.jpg);
+      }
+
+      .content__item:nth-child(8) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_08.jpg);
+      }
+
+      .content__item:nth-child(9) .content__item__img {
+        background-image: url(../../assets/slider/effect_bg_09.jpg);
+      }
+
+      .content__item__desc {
+        font-size: 4vw;
+        line-height: 1.4;
+        margin-top: -5vw;
+        margin-left: -4vw;
+        word-break: keep-all;
+      }
+
+      .content__item:nth-child(even) .content__item__desc {
+        margin-left: auto;
+        margin-right: 4vw;
+      }
+
+      #parallax__info {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 2000;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      #parallax__info li,
+      .scrollTop {
+        line-height: 1.4;
+      }
+
+      @media (max-width: 800px) {
+        #parallax__cont {
+          margin-top: 70vw;
+        }
+
         #parallax__nav {
-            position: fixed;
-            right: 20px;
-            top: 20px;
-            z-index: 2000;
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 20px 30px;
-            border-radius: 50px;
-            transition: top 0.4s ease;
+          padding: 10px;
+          right: auto;
+          left: 10px;
+          top: 10px;
+          transform: translateY(50%);
+          border-radius: 5px;
+          background-color: rgba(0, 0, 0, 0.8);
         }
 
         #parallax__nav li {
-            display: inline;
-            margin: 0 5px;
+          display: block;
+          margin: 5px;
         }
 
         #parallax__nav li a {
-            display: inline-block;
-            height: 30px;
-            padding: 5px 20px;
-            text-align: center;
-            line-height: 30px;
+          font-size: 14px;
+          padding: 5px;
+          border-radius: 5px;
+          height: auto;
+          line-height: 1;
         }
 
         #parallax__nav li.active a {
-            background: #fff;
-            color: #000;
-            border-radius: 20px;
-            box-sizing: content-box;
+          border-radius: 5px;
         }
+      }
 
-        #parallax__cont {
-            max-width: 1600px;
-            /* background-color: rgba(255, 255, 255, 0.1); */
-            margin: 0 auto;
-            width: 98%;
-        }
+      .split span {
+        opacity: 0;
+        transform: translateX(0px);
+        transition: all 0.3s ease-in-out;
+        display: inline-block;
+        min-width: 1vw;
+      }
 
-        .content__item {
-            width: 1000px;
-            max-width: 70vw;
-            margin: 30vw auto;
-            /* background-color: rgba(255, 255, 255, 0.3); */
-            text-align: left;
-            margin-right: 0;
-            position: relative;
-            padding-top: 8vw;
-        }
-
-        .content__item:nth-child(even) {
-            /* 2n도 가능하고 even 도 가능하고 */
-            margin-left: 0;
-            text-align: right;
-        }
-
-        .content__item__num {
-            font-size: 35vw;
-            font-family: 'Lato';
-            font-weight: 100;
-            position: absolute;
-            left: -5vw;
-            top: -16vw;
-            opacity: 0.07;
-            z-index: -2;
-        }
-
-        .content__item:nth-child(even) .content__item__num {
-            right: -5vw;
-            left: auto;
-            /* left 값 초기화 */
-        }
-
-        .content__item__title {
-            font-weight: 400;
-            text-transform: capitalize;
-        }
-
-        .content__item__imgWrap {
-            width: 100%;
-            padding-bottom: 56.25%;
-            background-color: #000;
-            position: relative;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .content__item__img {
-            background: url(../../assets/slider/effect_bg_01.jpg);
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            /* 내가 작아서 넣음 */
-            position: absolute;
-            width: 110%;
-            height: 110%;
-            left: -5%;
-            top: -5%;
-            filter: saturate(0%);
-            /* transition: all 1s; */
-        }
-
-        .content__item:nth-child(1) .content__item__img {
-            background-image: url(../../assets/slider/effect_bg_01.jpg);
-        }
-
-        .content__item:nth-child(2) .content__item__img {
-            background-image: url(../../assets/slider/effect_bg_02.jpg);
-        }
-
-        .content__item:nth-child(3) .content__item__img {
-            background-image: url(../../assets/slider/effect_bg_03.jpg);
-        }
-
-        .content__item:nth-child(4) .content__item__img {
-            background-image: url(../../assets/slider/effect_bg_04.jpg);
-        }
-
-        .content__item:nth-child(5) .content__item__img {
-            background-image: url(../../assets/slider/effect_bg_05.jpg);
-        }
-
-        .content__item:nth-child(6) .content__item__img {
-            background-image: url(../../assets/slider/effect_bg_06.jpg);
-        }
-
-        .content__item:nth-child(7) .content__item__img {
-            background-image: url(../../assets/slider/effect_bg_07.jpg);
-        }
-
-        .content__item:nth-child(8) .content__item__img {
-            background-image: url(../../assets/slider/effect_bg_08.jpg);
-        }
-
-        .content__item:nth-child(9) .content__item__img {
-            background-image: url(../../assets/slider/effect_bg_09.jpg);
-        }
-
-        .content__item__desc {
-            font-size: 4vw;
-            line-height: 1.4;
-            margin-top: -5vw;
-            margin-left: -4vw;
-            word-break: keep-all;
-        }
-
-        .content__item:nth-child(even) .content__item__desc {
-            margin-left: auto;
-            margin-right: 4vw;
-        }
-
-        #parallax__info {
-            position: fixed;
-            left: 20px;
-            bottom: 20px;
-            z-index: 2000;
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        #parallax__info li,
-        .scrollTop {
-            line-height: 1.4;
-        }
-
-        @media (max-width: 800px) {
-            #parallax__cont {
-                margin-top: 70vw;
-            }
-
-            #parallax__nav {
-                padding: 10px;
-                right: auto;
-                left: 10px;
-                top: 10px;
-                transform: translateY(50%);
-                border-radius: 5px;
-                background-color: rgba(0, 0, 0, 0.8);
-            }
-
-            #parallax__nav li {
-                display: block;
-                margin: 5px;
-            }
-
-            #parallax__nav li a {
-                font-size: 14px;
-                padding: 5px;
-                border-radius: 5px;
-                height: auto;
-                line-height: 1;
-            }
-
-            #parallax__nav li.active a {
-                border-radius: 5px;
-            }
-        }
-
-        .split span {
-            opacity: 0;
-            transform: translateX(0px);
-            transition: all 0.3s ease-in-out;
-            display: inline-block;
-            min-width: 1vw;
-        }
-
-        /* option */
-        /* .split span {
+      /* option */
+      /* .split span {
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.3s ease-in-out;
@@ -278,580 +286,712 @@
         .split span:nth-child(39) {transition-delay: 2000ms;}
         .split span:nth-child(40) {transition-delay: 2050ms;}
         .split span:nth-child(41) {transition-delay: 2100ms;} */
-        .style1.split span {
-            opacity: 0;
-            min-width: 1vw;
-            transition: all 0.3s cubic-bezier(0.65, 0.16, 0.16, 0.97);
-            transform: translateY(50px);
-            display: inline-block;
+      .style1.split span {
+        opacity: 0;
+        min-width: 1vw;
+        transition: all 0.3s cubic-bezier(0.65, 0.16, 0.16, 0.97);
+        transform: translateY(50px);
+        display: inline-block;
+      }
+
+      .style1.split span.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .style2.split span {
+        opacity: 0;
+        min-width: 1vw;
+        transition: all 0.3s cubic-bezier(0.65, 0.16, 0.16, 0.97);
+        transform: translateY(50px);
+        display: inline-block;
+      }
+
+      .style2.split span.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .style3.split span {
+        opacity: 0;
+        min-width: 1vw;
+        transition: all 0.3s cubic-bezier(0.65, 0.16, 0.16, 0.97);
+        transform: translateY(50px) translateX(30px) rotate(360deg);
+        display: inline-block;
+      }
+
+      .style3.split span.show {
+        opacity: 1;
+        transform: translateY(0) translateX(0) rotate(0);
+      }
+
+      .style4.split span {
+        opacity: 0;
+        min-width: 1vw;
+        display: inline-block;
+      }
+
+      .style4.split span.show {
+        /* opacity: 1; */
+        animation: wobble 0.5s 1 ease-in forwards;
+      }
+
+      .style5.split span {
+        /* opacity: 0; */
+        min-width: 1vw;
+        display: inline-block;
+      }
+
+      .style5.split span.show {
+        /* opacity: 1; */
+        animation: bounceInLeft 0.5s 1 ease-in forwards;
+      }
+
+      .style6.split span {
+        /* opacity: 0; */
+        min-width: 1vw;
+        display: inline-block;
+      }
+
+      .style6.split span.show {
+        /* opacity: 1; */
+        animation: tada 0.5s 1 ease-in forwards;
+      }
+
+      .style7.split span {
+        /* opacity: 0; */
+        min-width: 1vw;
+        display: inline-block;
+      }
+
+      .style7.split span.show {
+        /* opacity: 1; */
+        animation: heartBeat 0.5s 1 ease-in forwards;
+      }
+
+      .style8.split span {
+        /* opacity: 0; */
+        min-width: 1vw;
+        display: inline-block;
+      }
+
+      .style8.split span.show {
+        /* opacity: 1; */
+        animation: jello 0.5s 1 ease-in forwards;
+      }
+
+      .style9.split span {
+        /* opacity: 0; */
+        min-width: 1vw;
+        display: inline-block;
+      }
+
+      .style9.split span.show {
+        /* opacity: 1; */
+        animation: swing 0.5s 1 ease-in forwards;
+      }
+
+      @keyframes wobble {
+        0% {
+          transform: translate3d(0, 0, 0);
+          opacity: 0;
         }
 
-        .style1.split span.show {
-            opacity: 1;
-            transform: translateY(0);
+        15% {
+          transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
         }
 
-        .style2.split span {
-            opacity: 0;
-            min-width: 1vw;
-            transition: all 0.3s cubic-bezier(0.65, 0.16, 0.16, 0.97);
-            transform: translateY(50px);
-            display: inline-block;
+        30% {
+          transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
         }
 
-        .style2.split span.show {
-            opacity: 1;
-            transform: translateY(0);
+        45% {
+          transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
         }
 
-        .style3.split span {
-            opacity: 0;
-            min-width: 1vw;
-            transition: all 0.3s cubic-bezier(0.65, 0.16, 0.16, 0.97);
-            transform: translateY(50px) translateX(30px) rotate(360deg);
-            display: inline-block;
+        60% {
+          transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
         }
 
-        .style3.split span.show {
-            opacity: 1;
-            transform: translateY(0) translateX(0) rotate(0);
+        75% {
+          transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
         }
 
-        .style4.split span {
-            opacity: 0;
-            min-width: 1vw;
-            display: inline-block;
+        100% {
+          transform: translate3d(0, 0, 0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes bounceInLeft {
+        0%,
+        60%,
+        75%,
+        90%,
+        100% {
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
         }
 
-        .style4.split span.show {
-            /* opacity: 1; */
-            animation: wobble 0.5s 1 ease-in forwards;
+        0% {
+          opacity: 0;
+          transform: translate3d(-3000px, 0, 0) scaleX(3);
         }
 
-        .style5.split span {
-            /* opacity: 0; */
-            min-width: 1vw;
-            display: inline-block;
+        60% {
+          opacity: 1;
+          transform: translate3d(25px, 0, 0) scaleX(1);
         }
 
-        .style5.split span.show {
-            /* opacity: 1; */
-            animation: bounceInLeft 0.5s 1 ease-in forwards;
+        75% {
+          opacity: 1;
+          transform: translate3d(-10px, 0, 0) scaleX(0.98);
         }
 
-        .style6.split span {
-            /* opacity: 0; */
-            min-width: 1vw;
-            display: inline-block;
+        90% {
+          opacity: 1;
+          transform: translate3d(5px, 0, 0) scaleX(0.995);
         }
 
-        .style6.split span.show {
-            /* opacity: 1; */
-            animation: tada 0.5s 1 ease-in forwards;
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      @keyframes tada {
+        0% {
+          transform: scale3d(1, 1, 1);
+          opacity: 0;
         }
 
-        .style7.split span {
-            /* opacity: 0; */
-            min-width: 1vw;
-            display: inline-block;
+        10%,
+        20% {
+          transform: scale3d(0.5, 0.5, 0.5) rotate3d(0, 0, 1, -10deg);
+          opacity: 1;
         }
 
-        .style7.split span.show {
-            /* opacity: 1; */
-            animation: heartBeat 0.5s 1 ease-in forwards;
+        30%,
+        50%,
+        70%,
+        90% {
+          transform: scale3d(1.5, 1.5, 1.5) rotate3d(0, 0, 1, 10deg);
+          opacity: 1;
         }
 
-        .style8.split span {
-            /* opacity: 0; */
-            min-width: 1vw;
-            display: inline-block;
+        40%,
+        60%,
+        80% {
+          transform: scale3d(1.5, 1.5, 1.5) rotate3d(0, 0, 1, -10deg);
+          opacity: 1;
         }
 
-        .style8.split span.show {
-            /* opacity: 1; */
-            animation: jello 0.5s 1 ease-in forwards;
+        100% {
+          transform: scale3d(1, 1, 1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes heartBeat {
+        0% {
+          opacity: 0;
+          transform: scale(1);
         }
 
-        .style9.split span {
-            /* opacity: 0; */
-            min-width: 1vw;
-            display: inline-block;
+        14% {
+          opacity: 1;
+          transform: scale(1.6);
         }
 
-        .style9.split span.show {
-            /* opacity: 1; */
-            animation: swing 0.5s 1 ease-in forwards;
+        28% {
+          opacity: 1;
+          transform: scale(0.5);
         }
 
-        @keyframes wobble {
-            0% {
-                transform: translate3d(0, 0, 0);
-                opacity: 0;
-            }
-
-            15% {
-                transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
-            }
-
-            30% {
-                transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
-            }
-
-            45% {
-                transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
-            }
-
-            60% {
-                transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
-            }
-
-            75% {
-                transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
-            }
-
-            100% {
-                transform: translate3d(0, 0, 0);
-                opacity: 1;
-            }
+        72% {
+          opacity: 1;
+          transform: scale(1.6);
         }
 
-        @keyframes bounceInLeft {
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
 
-            0%,
-            60%,
-            75%,
-            90%,
-            100% {
-                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-            }
-
-            0% {
-                opacity: 0;
-                transform: translate3d(-3000px, 0, 0) scaleX(3);
-            }
-
-            60% {
-                opacity: 1;
-                transform: translate3d(25px, 0, 0) scaleX(1);
-            }
-
-            75% {
-                opacity: 1;
-                transform: translate3d(-10px, 0, 0) scaleX(0.98);
-            }
-
-            90% {
-                opacity: 1;
-                transform: translate3d(5px, 0, 0) scaleX(0.995);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
-            }
+      @keyframes jello {
+        0% {
+          opacity: 0;
+          transform: translate3d(0, 0, 0);
         }
 
-        @keyframes tada {
-            0% {transform: scale3d(1, 1, 1); opacity: 0;}
-
-            10%,
-            20% {transform: scale3d(0.5, 0.5, 0.5) rotate3d(0, 0, 1, -10deg); opacity: 1;}
-
-            30%,
-            50%,
-            70%,
-            90% {transform: scale3d(1.5, 1.5, 1.5) rotate3d(0, 0, 1, 10deg); opacity: 1;}
-
-            40%,
-            60%,
-            80% {transform: scale3d(1.5, 1.5, 1.5) rotate3d(0, 0, 1, -10deg); opacity: 1;}
-
-            100% {transform: scale3d(1, 1, 1); opacity: 1;}
+        22.2% {
+          opacity: 1;
+          transform: skewX(-17.5deg) skewY(-17.5deg);
         }
 
-        @keyframes heartBeat {
-            0% {
-                opacity: 0;
-                transform: scale(1);
-            }
-
-            14% {
-                opacity: 1;
-                transform: scale(1.6);
-            }
-
-            28% {
-                opacity: 1;
-                transform: scale(0.5);
-            }
-
-            72% {
-                opacity: 1;
-                transform: scale(1.6);
-            }
-
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+        33.3% {
+          opacity: 1;
+          transform: skewX(16.25deg) skewY(16.25deg);
         }
 
-        @keyframes jello {
-            0% {
-                opacity: 0;
-                transform: translate3d(0, 0, 0);
-            }
-
-            22.2% {
-                opacity: 1;
-                transform: skewX(-17.5deg) skewY(-17.5deg);
-            }
-
-            33.3% {
-                opacity: 1;
-                transform: skewX(16.25deg) skewY(16.25deg);
-            }
-
-            44.4% {
-                opacity: 1;
-                transform: skewX(-13.125deg) skewY(-13.125deg);
-            }
-
-            55.5% {
-                opacity: 1;
-                transform: skewX(1.5625deg) skewY(1.5625deg);
-            }
-
-            66.6% {
-                opacity: 1;
-                transform: skewX(-0.78125deg) skewY(-0.78125deg);
-            }
-
-            77.7% {
-                opacity: 1;
-                transform: skewX(0.390625deg) skewY(0.390625deg);
-            }
-
-            100% {
-                opacity: 1;
-                transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
-            }
+        44.4% {
+          opacity: 1;
+          transform: skewX(-13.125deg) skewY(-13.125deg);
         }
-        
-        @keyframes swing {
-            0% {
-                opacity: 0;
-                transform: rotate3d(0, 0, 1, 15deg);
-            }
 
-            35% {
-                opacity: 1;
-                transform: rotate3d(0, 0, 1, -10deg);
-            }
-
-            60% {
-                opacity: 1;
-                transform: rotate3d(0, 0, 1, 5deg);
-            }
-
-            80% {
-                opacity: 1;
-                transform: rotate3d(0, 0, 1, -5deg);
-            }
-
-            100% {
-                opacity: 1;
-                transform: rotate3d(0, 0, 1, 0deg);
-            }
+        55.5% {
+          opacity: 1;
+          transform: skewX(1.5625deg) skewY(1.5625deg);
         }
+
+        66.6% {
+          opacity: 1;
+          transform: skewX(-0.78125deg) skewY(-0.78125deg);
+        }
+
+        77.7% {
+          opacity: 1;
+          transform: skewX(0.390625deg) skewY(0.390625deg);
+        }
+
+        100% {
+          opacity: 1;
+          transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+        }
+      }
+
+      @keyframes swing {
+        0% {
+          opacity: 0;
+          transform: rotate3d(0, 0, 1, 15deg);
+        }
+
+        35% {
+          opacity: 1;
+          transform: rotate3d(0, 0, 1, -10deg);
+        }
+
+        60% {
+          opacity: 1;
+          transform: rotate3d(0, 0, 1, 5deg);
+        }
+
+        80% {
+          opacity: 1;
+          transform: rotate3d(0, 0, 1, -5deg);
+        }
+
+        100% {
+          opacity: 1;
+          transform: rotate3d(0, 0, 1, 0deg);
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body class="img07">
+  <body class="img07">
     <header id="header">
-        <h1><a href="parallaxEffect.html">Javascript parallax Effect05</a></h1>
-        <p>패럴렉스 이펙트 - 나타나기</p>
-        <ul>
-            <li><a href="parallaxEffect01.html">1</a></li>
-            <li><a href="parallaxEffect02.html">2</a></li>
-            <li><a href="parallaxEffect03.html">3</a></li>
-            <li><a href="parallaxEffect04.html">4</a></li>
-            <li class="active"><a href="parallaxEffect05.html">5</a></li>
-            <li><a href="parallaxEffect06.html">6</a></li>
-            <li><a href="parallaxEffect07.html">7</a></li>
-        </ul>
+      <h1><a href="parallaxEffect.html">Javascript parallax Effect05</a></h1>
+      <p>패럴렉스 이펙트 - 나타나기</p>
+      <ul>
+        <li><a href="parallaxEffect01.html">1</a></li>
+        <li><a href="parallaxEffect02.html">2</a></li>
+        <li><a href="parallaxEffect03.html">3</a></li>
+        <li><a href="parallaxEffect04.html">4</a></li>
+        <li><a href="parallaxEffect05.html">5</a></li>
+        <li class="active"><a href="parallaxEffect06.html">6</a></li>
+        <li><a href="parallaxEffect07.html">7</a></li>
+      </ul>
     </header>
     <!-- //header -->
 
-
-
     <main id="parallax__cont">
-        <div id="contents">
+      <div id="contents">
+        <!-- section1 시작 -->
+        <section id="section1" class="content__item">
+          <span class="content__item__num">01</span>
+          <h2 class="content__item__title">section1</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="content__item__desc split style1">
+            우리는 사랑하는 친구들에 의해서만 알려진다.
+          </p>
+        </section>
+        <!-- section1 끝 -->
 
-            <!-- section1 시작 -->
-            <section id="section1" class="content__item">
-                <span class="content__item__num">01</span>
-                <h2 class="content__item__title">section1</h2>
-                <figure class="content__item__imgWrap">
-                    <div class="content__item__img"></div>
-                </figure>
-                <p class="content__item__desc split style1">우리는 사랑하는 친구들에 의해서만 알려진다. </p>
-            </section>
-            <!-- section1 끝 -->
+        <!-- section2 시작 -->
+        <section id="section2" class="content__item">
+          <span class="content__item__num">02</span>
+          <h2 class="content__item__title">section2</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="content__item__desc split style2">
+            사랑은 눈으로 보지 않고 마음으로 보는 거지.
+          </p>
+        </section>
+        <!-- section2 끝 -->
 
-            <!-- section2 시작 -->
-            <section id="section2" class="content__item">
-                <span class="content__item__num">02</span>
-                <h2 class="content__item__title">section2</h2>
-                <figure class="content__item__imgWrap">
-                    <div class="content__item__img"></div>
-                </figure>
-                <p class="content__item__desc split style2">사랑은 눈으로 보지 않고 마음으로 보는 거지. </p>
-            </section>
-            <!-- section2 끝 -->
+        <!-- section3 시작 -->
+        <section id="section3" class="content__item">
+          <span class="content__item__num">03</span>
+          <h2 class="content__item__title">section3</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="content__item__desc split style3">
+            두 분은 상처 하나 입지 않고, 대용사가 된 셈이오.
+          </p>
+        </section>
+        <!-- section3 끝 -->
 
-            <!-- section3 시작 -->
-            <section id="section3" class="content__item">
-                <span class="content__item__num">03</span>
-                <h2 class="content__item__title">section3</h2>
-                <figure class="content__item__imgWrap">
-                    <div class="content__item__img"></div>
-                </figure>
-                <p class="content__item__desc split style3">두 분은 상처 하나 입지 않고, 대용사가 된 셈이오.</p>
-            </section>
-            <!-- section3 끝 -->
+        <!-- section4 시작 -->
+        <section id="section4" class="content__item">
+          <span class="content__item__num">04</span>
+          <h2 class="content__item__title">section4</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="content__item__desc split style4">
+            그의 믿음은 그가 쓰는 모자의 유행처럼 변한다.
+          </p>
+        </section>
+        <!-- section4 끝 -->
 
-            <!-- section4 시작 -->
-            <section id="section4" class="content__item">
-                <span class="content__item__num">04</span>
-                <h2 class="content__item__title">section4</h2>
-                <figure class="content__item__imgWrap">
-                    <div class="content__item__img"></div>
-                </figure>
-                <p class="content__item__desc split style4">그의 믿음은 그가 쓰는 모자의 유행처럼 변한다.</p>
-            </section>
-            <!-- section4 끝 -->
+        <!-- section5 시작 -->
+        <section id="section5" class="content__item">
+          <span class="content__item__num">05</span>
+          <h2 class="content__item__title">section5</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="content__item__desc split style5">
+            잘 있거라! 우리가 언제 다시 만날지는 아무도 모른다.
+          </p>
+        </section>
+        <!-- section5 끝 -->
 
-            <!-- section5 시작 -->
-            <section id="section5" class="content__item">
-                <span class="content__item__num">05</span>
-                <h2 class="content__item__title">section5</h2>
-                <figure class="content__item__imgWrap">
-                    <div class="content__item__img"></div>
-                </figure>
-                <p class="content__item__desc split style5">잘 있거라! 우리가 언제 다시 만날지는 아무도 모른다.</p>
-            </section>
-            <!-- section5 끝 -->
+        <!-- section6 시작 -->
+        <section id="section6" class="content__item">
+          <span class="content__item__num">06</span>
+          <h2 class="content__item__title">section6</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="content__item__desc split style6">
+            죄를 짓고 잘되는 사람도 있고, 덕을 베풀고 망하는 사람도 있다.
+          </p>
+        </section>
+        <!-- section6 끝 -->
 
-            <!-- section6 시작 -->
-            <section id="section6" class="content__item">
-                <span class="content__item__num">06</span>
-                <h2 class="content__item__title">section6</h2>
-                <figure class="content__item__imgWrap">
-                    <div class="content__item__img"></div>
-                </figure>
-                <p class="content__item__desc split style6">죄를 짓고 잘되는 사람도 있고, 덕을 베풀고 망하는 사람도 있다.</p>
-            </section>
-            <!-- section6 끝 -->
+        <!-- section7 시작 -->
+        <section id="section7" class="content__item">
+          <span class="content__item__num">07</span>
+          <h2 class="content__item__title">section7</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="content__item__desc split style7">
+            모두를 사랑하되, 몇 사람만 믿으라. 누구에게도 잘못을 저지르지 말라.
+          </p>
+        </section>
+        <!-- section7 끝 -->
 
-            <!-- section7 시작 -->
-            <section id="section7" class="content__item">
-                <span class="content__item__num">07</span>
-                <h2 class="content__item__title">section7</h2>
-                <figure class="content__item__imgWrap">
-                    <div class="content__item__img"></div>
-                </figure>
-                <p class="content__item__desc split style7">모두를 사랑하되, 몇 사람만 믿으라. 누구에게도 잘못을 저지르지 말라.</p>
-            </section>
-            <!-- section7 끝 -->
+        <!-- section8 시작 -->
+        <section id="section8" class="content__item">
+          <span class="content__item__num">08</span>
+          <h2 class="content__item__title">section8</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="content__item__desc split style8">
+            누구에게나 결점은 있기 마련이지. 그분의 경우는 솔직하다는 게
+            결점이야.
+          </p>
+        </section>
+        <!-- section8 끝 -->
 
-            <!-- section8 시작 -->
-            <section id="section8" class="content__item">
-                <span class="content__item__num">08</span>
-                <h2 class="content__item__title">section8</h2>
-                <figure class="content__item__imgWrap">
-                    <div class="content__item__img"></div>
-                </figure>
-                <p class="content__item__desc split style8">누구에게나 결점은 있기 마련이지. 그분의 경우는 솔직하다는 게 결점이야.</p>
-            </section>
-            <!-- section8 끝 -->
-
-            <!-- section9 시작 -->
-            <section id="section9" class="content__item">
-                <span class="content__item__num">09</span>
-                <h2 class="content__item__title">section9</h2>
-                <figure class="content__item__imgWrap">
-                    <div class="content__item__img"></div>
-                </figure>
-                <p class="content__item__desc split style9">사람은 누구나 주어진 일과 원하는 것이 있다, 비록 보잘 것 없을 지라도. </p>
-            </section>
-            <!-- section9 끝 -->
-        </div>
+        <!-- section9 시작 -->
+        <section id="section9" class="content__item">
+          <span class="content__item__num">09</span>
+          <h2 class="content__item__title">section9</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="content__item__desc split style9">
+            사람은 누구나 주어진 일과 원하는 것이 있다, 비록 보잘 것 없을
+            지라도.
+          </p>
+        </section>
+        <!-- section9 끝 -->
+      </div>
     </main>
     <!-- //main -->
 
-
-
     <footer id="footer">
-        <div class="modal__wrap">
-            <div class="modal__btn">소스 보기</div>
-            <div class="modal__cont">
-                <div class="modal__box">
-                    <div class="title">
-                        <span class="dot" aria-label="true"></span>
-                        <div class="tabs">
-                            <div class="active">
-                                <span class="favicon" aria-label="true">
-                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
-                                        focusable="false">
-                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
-                                        <path
-                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
-                                            fill="orange"></path>
-                                        <path
-                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
-                                            fill="yellow"></path>
-                                    </svg>
-                                </span>
-                                <em>Javascript</em>
-                                <span class="close">
-                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
-                                        focusable="false">
-                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </span>
-                            </div>
-                            <div>
-                                <span class="favicon" aria-label="true">
-                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
-                                        focusable="false">
-                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
-                                        <path
-                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
-                                            fill="orange"></path>
-                                        <path
-                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
-                                            fill="yellow"></path>
-                                    </svg>
-                                </span>
-                                <em>HTML</em>
-                                <span class="close">
-                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
-                                        focusable="false">
-                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </span>
-                            </div>
-                            <div>
-                                <span class="favicon" aria-label="true">
-                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
-                                        focusable="false">
-                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
-                                        <path
-                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
-                                            fill="orange"></path>
-                                        <path
-                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
-                                            fill="yellow"></path>
-                                    </svg>
-                                </span>
-                                <em>CSS</em>
-                                <span class="close">
-                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
-                                        focusable="false">
-                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </span>
-                            </div>
-                        </div>
-                        <span class="plus" aria-label="true">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
-                                focusable="false">
-                                <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round"></path>
-                                <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round"></path>
-                            </svg>
-                        </span>
-                    </div>
-                    <div class="cont">
-                        <div class="active">
-                            <pre><code class="language-js">
-</code></pre>
-                        </div>
-                        <div>
-                            <pre><code class="language-html">
-</code></pre>
-                        </div>
-                        <div>
-                            <pre><code class="language-css">
-</code></pre>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal__close">
-                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round"></path>
-                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round"></path>
+      <div class="modal__wrap">
+        <div class="modal__btn">소스 보기</div>
+        <div class="modal__cont">
+          <div class="modal__box">
+            <div class="title">
+              <span class="dot" aria-label="true"></span>
+              <div class="tabs">
+                <div class="active">
+                  <span class="favicon" aria-label="true">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                      <path
+                        d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                        fill="orange"
+                      ></path>
+                      <path
+                        d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                        fill="yellow"
+                      ></path>
                     </svg>
+                  </span>
+                  <em>Javascript</em>
+                  <span class="close">
+                    <svg
+                      width="18"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12.5 3.5L3.5 12.5"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12.5 12.5L3.5 3.5"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </span>
                 </div>
+                <div>
+                  <span class="favicon" aria-label="true">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                      <path
+                        d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                        fill="orange"
+                      ></path>
+                      <path
+                        d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                        fill="yellow"
+                      ></path>
+                    </svg>
+                  </span>
+                  <em>HTML</em>
+                  <span class="close">
+                    <svg
+                      width="18"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12.5 3.5L3.5 12.5"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12.5 12.5L3.5 3.5"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <div>
+                  <span class="favicon" aria-label="true">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                      <path
+                        d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                        fill="orange"
+                      ></path>
+                      <path
+                        d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                        fill="yellow"
+                      ></path>
+                    </svg>
+                  </span>
+                  <em>CSS</em>
+                  <span class="close">
+                    <svg
+                      width="18"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12.5 3.5L3.5 12.5"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12.5 12.5L3.5 3.5"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <span class="plus" aria-label="true">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M2.5 8H13.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M8 2.5V13.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </span>
             </div>
+            <div class="cont">
+              <div class="active">
+                <pre><code class="language-js">
+</code></pre>
+              </div>
+              <div>
+                <pre><code class="language-html">
+</code></pre>
+              </div>
+              <div>
+                <pre><code class="language-css">
+</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="modal__close">
+            <svg
+              width="18"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M12.5 3.5L3.5 12.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M12.5 12.5L3.5 3.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
         </div>
+      </div>
     </footer>
     <!-- //footer -->
 
-
-
     <aside id="parallax__info">
-        <div class="scroll">scrollTop : <span>0</span>px</div>
+      <div class="scroll">scrollTop : <span>0</span>px</div>
     </aside>
     <!-- parallax__info -->
-
-
 
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
     <script>
-        //글씨 쪼개기
-        let text = document.querySelectorAll(".content__item__desc");
+      //글씨 쪼개기
+      let text = document.querySelectorAll(".content__item__desc");
 
-        document.querySelectorAll(".split").forEach(text => {
-            let splitText = text.innerText;
-            let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
-            splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
-            text.innerHTML = splitWrap;
-            text.setAttribute("aria-label", splitText);
-        })
+      document.querySelectorAll(".split").forEach((text) => {
+        let splitText = text.innerText;
+        let splitWrap = splitText
+          .split("")
+          .join("</span><span aria-hidden='true'>");
+        splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
+        text.innerHTML = splitWrap;
+        text.setAttribute("aria-label", splitText);
+      });
 
-        function scroll() {
-            let scrollTop = window.scrollY;
-            document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop);
+      function scroll() {
+        let scrollTop = window.scrollY;
+        document.querySelector("#parallax__info .scroll").innerText =
+          Math.round(scrollTop);
 
-            document.querySelectorAll(".content__item").forEach(item => {
-                if (scrollTop >= item.offsetTop) {
-                    item.querySelectorAll(".split span").forEach((e, i) => {
-                        setTimeout(() => {
-                            e.classList.add("show");
-                        }, i * i)
-                    })
-                }
-            })
+        document.querySelectorAll(".content__item").forEach((item) => {
+          if (scrollTop >= item.offsetTop) {
+            item.querySelectorAll(".split span").forEach((e, i) => {
+              setTimeout(() => {
+                e.classList.add("show");
+              }, i * i);
+            });
+          }
+        });
 
-            requestAnimationFrame(scroll);
-        }
-        scroll();
+        requestAnimationFrame(scroll);
+      }
+      scroll();
     </script>
-</body>
-
+  </body>
 </html>

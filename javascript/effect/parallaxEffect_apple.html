@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://webfontworld.github.io/pretendard/Pretendard.css" rel="stylesheet"/>
+    <link href="https://webfontworld.github.io/NanumMyeongjo/NanumMyeongjo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/fontlab/LABDigital.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/font.css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "LINESeedKR";
+        /* font-family: "Pretendard"; */
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .fixed {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .fixed_right {
+        position: fixed;
+        /* left: 50%; */
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .scrollTop{
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        width: 65px;
+        height: 40px;
+        /* background: #000; */
+        color: #dadada;
+        text-align: center;
+        line-height: 40px;
+        z-index: 100000;
+        font-weight: bold;
+        font-size: 22px;
+    }
+
+    /* layout */
+    #contents{}
+    #section1{
+        height: 10000px;
+    }
+    #section2{}
+    #section3{}
+    #section4{}
+    #section5{}
+    #section6{}
+    /* sec1 */
+    
+    .sec1_text2{
+        /* background-image: url(/assets/img/bg.png); */
+    }
+    .sec1_text2,
+    .sec1_text1 {
+        font-size: 8vw;
+        white-space: nowrap;
+    }
+    .sec1_text2 em{
+        font-style: normal;
+        font-weight: bold;
+        font-family: 'Signatie';
+        color: #f25b92;
+    }
+    .sec1_text3{
+        width: 100%;
+        height: 100vh;
+        background: url(/assets/img/bg.png);
+        background-size: cover;
+        color: #fff;
+        font-family: "NanumMyeongjo";
+        /* border: 1px solid #ededed; */
+    }
+    .sec1_text4{
+        width: 3vw;
+        font-size: 4vw;
+        /* background: #000; */
+        color: #000;
+        white-space: nowrap;
+        overflow: hidden;
+        font-family: "NanumMyeongjo";
+        /* z-index: -1; */
+        text-align: center;
+    }
+    .sec1_text4 em{
+        width: 100px;
+        height: 50px;
+        content: 'd';
+        border: 1px solid #000;
+        font-family: "NanumMyeongjo";
+        /* z-index: -1; */
+    }
+
+    .sec1_text5{
+        font-size: 45px;
+        color: rgb(0, 0, 0);
+        white-space: nowrap;
+        overflow: hidden;
+        font-family: "NanumMyeongjo";
+        /* z-index: -1; */
+    }
+
+    .sec1_text15,
+    .sec1_text14,
+    .sec1_text13,
+    .sec1_text12,
+    .sec1_text11,
+    .sec1_text10,
+    .sec1_text9,
+    .sec1_text8,
+    .sec1_text7,
+    .sec1_text6{
+        width: 100%;
+        height: 100vh;
+        background: url(/assets/img/bg_02.jpg);
+        background-size: cover;
+        color: #fff;
+        font-family: "NanumMyeongjo";
+        border: 1px solid #ededed;
+        filter: grayscale(1);
+        z-index: -1;
+        box-shadow: 0px 60px 50px -20px #00000054;
+    }
+    .sec1_text7{
+        background: url(/assets/img/bg_03.jpg);
+    }
+    .sec1_text8{
+        background: url(/assets/img/bg_04.jpg);
+    }
+    .sec1_text9{
+        background: url(/assets/img/bg_05.jpg);
+    }
+    .sec1_text10{
+        background: url(/assets/img/bg_06.jpg);
+    }
+    .sec1_text11{
+        background: url(/assets/img/bg_07.jpg);
+    }
+    .sec1_text12{
+        background: url(/assets/img/bg_08.jpg);
+    }
+    .sec1_text13{
+        background: url(/assets/img/bg_09.jpg);
+    }
+    .sec1_text14{
+        background: url(/assets/img/bg_10.jpg);
+    }
+    .sec1_text15{
+        background: url(/assets/img/bg_11.gif);
+    }
+    .setting{
+        position: fixed;
+        bottom: 120px;
+        left: -70px;
+        transform: rotate(270deg);
+        font-size: 20px;
+        font-family: 'NanumMyeongjo';
+    }
+    .setting::before{
+        position: absolute;
+        top: 49%;
+        transform: translate(0, -51%);
+        right: -104px;
+        content: '';
+        width: 95px;
+        height: 1px;
+        background: #000;
+    }
+      
+    </style>
+  </head>
+  <body>
+    <div class="scrollTop">0</div>
+    <div id="contents">
+      <section id="section1">
+        <div class="setting">test</div>
+        <div class="sec1">
+          <div class="sec1_text1 fixed" data-0 = "top: 50%; opacity: 1"  data-500 = "top: 30%; opacity: 0">Hi</div>
+          <div class="sec1_text2 fixed"
+            data-500 = "top: 70%; opacity: 0; font-size: 40px; transform: scale(1) translate(-50%, -50%)" 
+            data-1000 = "top: 50%; opacity: 1; font-size: 120px; transform: scale(1) translate(-50%, -50%)"
+            data-3100 = "top: 5%; opacity: 1; font-size: 30px; transform: scale(1) translate(-50%, -50%)"
+            data-32000 = "top: 5%; opacity: 1; font-size: 30px; transform: scale(1) translate(-50%, -50%)"
+            data-33000 = "top: 50%; opacity: 1; font-size: 120px; transform: scale(1) translate(-50%, -50%)">
+            <!-- 저는 <em>김상준</em>입니다! -->
+            I'M <em>KimSangJun</em>
+        </div>
+        <div class="sec1_text3 fixed"
+            data-1300 = "left: 50%; width: 0%; height: 0.1vh; transform: translate(-50%, -50%);"
+            data-2300 = "left: 50%; width: 30%; height: 0.1vh; transform: translate(-50%, -50%);"
+            data-3000 = "left: 50%; width: 30%; height: 60vh; transform: translate(-50%, -50%)"
+            data-8400 = "top: 60%; left: 50%; width: 30%; height: 60vh; transform: translate(-50%, -50%)"
+            data-10500 = "left: 50%; width: 30%; height: 0vh; transform: translate(-50%, -50%)">
+        </div>
+        <div class="sec1_text4 fixed"
+        data-3700 = "top: 20%; padding: 5px 0; width: 0%; transform: translate(-50%, -50%);"
+        data-8300 = "top: 20%; padding: 5px 0; width: 54%; transform: translate(-50%, -50%);"
+        data-11000 = "top: 50%; padding: 5px 0; width: 54%; transform: translate(-50%, -50%);"
+        data-30000 = "top: 50%; padding: 5px 0; width: 54%; transform: translate(-50%, -50%);"
+        data-32000 = "top: 50%; padding: 5px 0; width: 0%; transform: translate(-50%, -50%);">저는
+        <em data-4500 = "padding: 0 0px"
+            data-6000 = "padding: 0 150px">
+        </em>
+        을(를) 좋아해요</div>
+        </div>
+        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+        <div class="sec1_text5 fixed_right"
+        data-3900 = "top: 30%; padding: 0px; right: 3%; width: 0px; transform: translate(0%, -50%);"
+        data-4100 = "top: 30%; padding: 0px; right: 30%; width: 125px; transform: translate(0%, -50%);"
+        data-6500 = "top: 30%; padding: 0px; right: 60%; width: 125px; transform: translate(0%, -50%);"
+        data-6700 = "top: 30%; padding: 1px; right: 100%; width: 0px; transform: translate(0%, -50%);"
+        >#음식</div>
+        <div class="sec1_text5 fixed_right"
+        data-3600 = "top: 60%; padding: 0px; right: 13%; width: 0px; transform: translate(0%, -50%);"
+        data-3800 = "top: 60%; padding: 0px; right: 30%; width: 125px; transform: translate(0%, -50%);"
+        data-6500 = "top: 60%; padding: 0px; right: 75%; width: 125px; transform: translate(0%, -50%);"
+        data-6700 = "top: 60%; padding: 1px; right: 100%; width: 0px; transform: translate(0%, -50%);"
+        >#물건</div>
+        <div class="sec1_text5 fixed_right"
+        data-4100 = "top: 50%; padding: 0px; right: 5%; width: 0px; transform: translate(0%, -50%);"
+        data-4300 = "top: 50%; padding: 0px; right: 30%; width: 125px; transform: translate(0%, -50%);"
+        data-6500 = "top: 50%; padding: 0px; right: 65%; width: 125px; transform: translate(0%, -50%);"
+        data-6700 = "top: 50%; padding: 1px; right: 100%; width: 0px; transform: translate(0%, -50%);"
+        >#장소</div>
+        <div class="sec1_text5 fixed_right"
+        data-4200 = "top: 32%; padding: 0px; right: 2%; width: 0px; transform: translate(0%, -50%);"
+        data-4600 = "top: 32%; padding: 0px; right: 30%; width: 125px; transform: translate(0%, -50%);"
+        data-5500 = "top: 32%; padding: 0px; right: 70%; width: 125px; transform: translate(0%, -50%);"
+        data-6700 = "top: 32%; padding: 1px; right: 100%; width: 0px; transform: translate(0%, -50%);"
+        >#취향</div>
+        <div class="sec1_text5 fixed_right"
+        data-4200 = "top: 82%; padding: 0px; right: 1%; width: 0px; transform: translate(0%, -50%);"
+        data-4600 = "top: 82%; padding: 0px; right: 24%; width: 125px; transform: translate(0%, -50%);"
+        data-5500 = "top: 82%; padding: 0px; right: 57%; width: 125px; transform: translate(0%, -50%);"
+        data-6700 = "top: 82%; padding: 1px; right: 100%; width: 0px; transform: translate(0%, -50%);"
+        >#여행</div>
+        <div>
+            <div class="sec1_text4 fixed"
+            data-11000 = "top: 40%; padding: 5px 0; width: 30%; left: 41%; transform: translate(-50%, -50%); opacity:0;"
+            data-12000 = "top: 50%; padding: 5px 0; width: 30%; left: 41%; transform: translate(-50%, -50%); opacity:1;"
+            data-16000 = "top: 50%; padding: 5px 0; width: 30%; left: 41%; transform: translate(-50%, -50%); opacity:1;"
+            data-17000 = "top: 60%; padding: 5px 0; width: 30%; left: 41%; transform: translate(-50%, -50%); opacity:0;"
+            >컴퓨터</div>
+            <div class="sec1_text4 fixed"
+            data-17000 = "top: 40%; padding: 5px 0; width: 30%; left: 41%; transform: translate(-50%, -50%); opacity:0;"
+            data-18000 = "top: 50%; padding: 5px 0; width: 30%; left: 41%; transform: translate(-50%, -50%); opacity:1;"
+            data-22000 = "top: 50%; padding: 5px 0; width: 30%; left: 41%; transform: translate(-50%, -50%); opacity:1;"
+            data-23000 = "top: 60%; padding: 5px 0; width: 30%; left: 41%; transform: translate(-50%, -50%); opacity:0;"
+            >해외여행</div>
+            <div class="sec1_text4 fixed"
+            data-23000 = "top: 40%; padding: 5px 0; width: 30%; left: 41%; transform: translate(-50%, -50%); opacity:0;"
+            data-24000 = "top: 50%; padding: 5px 0; width: 30%; left: 41%; transform: translate(-50%, -50%); opacity:1;"
+            data-28000 = "top: 50%; padding: 5px 0; width: 30%; left: 41%; transform: translate(-50%, -50%); opacity:1;"
+            data-29000 = "top: 60%; padding: 5px 0; width: 30%; left: 41%; transform: translate(-50%, -50%); opacity:0;"
+            >그림</div>
+        </div>
+        <!-- 컴퓨터 -->
+        <div class="sec1_text6 fixed"
+            data-11000 = "top: 30%; left: 150%; width: 0%; height: 40vh; transform: translate(-50%, -50%);"
+            data-11500 = "top: 50%; left: 90%; width: 30%; height: 40vh; transform: translate(-50%, -50%);"
+            data-15000 = "top: 30%; left: 10%; width: 30%; height: 40vh; transform: translate(-50%, -50%)"
+            data-17000 = "top: 50%; left: -100%; width: 30%; height: 40vh; transform: translate(-50%, -50%)">
+        </div>
+        <div class="sec1_text10 fixed"
+            data-11000 = "top: 100%; left: 150%; width: 0%; height: 40vh; transform: scale(0.5) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-11500 = "top: 20%; left: 110%; width: 30%; height: 40vh; transform: scale(0.4) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-15000 = "top: 80%; left: 20%; width: 30%; height: 40vh; transform: scale(0.5) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-17000 = "top: 70%; left: -100%; width: 30%; height: 40vh; transform: scale(0.4) translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div>
+        <div class="sec1_text11 fixed"
+            data-11000 = "top: 100%; left: 150%; width: 0%; height: 40vh; transform: scale(0.5) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-11500 = "top: 20%; left: 110%; width: 30%; height: 40vh; transform: scale(0.4) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-15000 = "top: 80%; left: 20%; width: 30%; height: 40vh; transform: scale(0.5) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-17000 = "top: 70%; left: -100%; width: 30%; height: 40vh; transform: scale(0.4) translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div>
+        <!-- <div class="sec1_text8 fixed"
+            data-17000 = "top: 90%; left: 150%; width: 0%; height: 40vh; transform: scale(0.5)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-19000 = "top: 20%; left: 50%; width: 30%; height: 40vh; transform: scale(1)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-23000 = "top: 70%; left: 10%; width: 30%; height: 40vh; transform: scale(0.5)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-27000 = "top: 100%; left: -100%; width: 30%; height: 40vh; transform: scale(1)translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div>
+        <div class="sec1_text9 fixed"
+            data-17000 = "top: 95%; left: 150%; width: 0%; height: 40vh; transform: scale(0.3)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-19000 = "top: 60%; left: 100%; width: 30%; height: 40vh; transform: scale(0.6)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-23000 = "top: 10%; left: 30%; width: 30%; height: 40vh; transform: scale(0.6)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-27000 = "top: 30%; left: -100%; width: 30%; height: 40vh; transform: scale(0.3)translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div>
+        <div class="sec1_text10 fixed"
+            data-17000 = "top: 75%; left: 120%; width: 0%; height: 40vh; transform: scale(0.2)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-19000 = "top: 90%; left: 60%; width: 30%; height: 40vh; transform: scale(0.4)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-23000 = "top: 70%; left: 30%; width: 30%; height: 40vh; transform: scale(0.1)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-27000 = "top: 50%; left: -100%; width: 30%; height: 40vh; transform: scale(0.3)translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div> -->
+
+        <!-- 해외여행 -->
+        <div class="sec1_text7 fixed"
+            data-17000 = "top: 70%; left: 150%; width: 0%; height: 40vh; transform: translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-17500 = "top: 50%; left: 90%; width: 30%; height: 40vh; transform: translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-21000 = "top: 70%; left: 10%; width: 30%; height: 40vh; transform: translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-23000 = "top: 50%; left: -100%; width: 30%; height: 40vh; transform: translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div>
+        <div class="sec1_text8 fixed"
+            data-17000 = "top: 90%; left: 150%; width: 0%; height: 40vh; transform: scale(0.5)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-19000 = "top: 20%; left: 50%; width: 30%; height: 40vh; transform: scale(1)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-23000 = "top: 70%; left: 10%; width: 30%; height: 40vh; transform: scale(0.5)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-27000 = "top: 100%; left: -100%; width: 30%; height: 40vh; transform: scale(1)translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div>
+        <div class="sec1_text9 fixed"
+            data-17000 = "top: 95%; left: 150%; width: 0%; height: 40vh; transform: scale(0.3) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-19000 = "top: 60%; left: 100%; width: 30%; height: 40vh; transform: scale(0.6) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-23000 = "top: 10%; left: 30%; width: 30%; height: 40vh; transform: scale(0.6) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-27000 = "top: 30%; left: -100%; width: 30%; height: 40vh; transform: scale(0.3) translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div>
+        <div class="sec1_text10 fixed"
+            data-17000 = "top: 75%; left: 120%; width: 0%; height: 40vh; transform: scale(0.2)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-19000 = "top: 90%; left: 60%; width: 30%; height: 40vh; transform: scale(0.4)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-23000 = "top: 70%; left: 30%; width: 30%; height: 40vh; transform: scale(0.1)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-27000 = "top: 50%; left: -100%; width: 30%; height: 40vh; transform: scale(0.3)translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div>
+
+        <!-- 그림 -->
+        <div class="sec1_text12 fixed"
+            data-21000 = "top: 75%; left: 120%; width: 0%; height: 40vh; transform: scale(0.2)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-23000 = "top: 90%; left: 60%; width: 30%; height: 40vh; transform: scale(0.4)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-27000 = "top: 70%; left: 30%; width: 30%; height: 40vh; transform: scale(0.1)translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-29000 = "top: 50%; left: -100%; width: 30%; height: 40vh; transform: scale(0.3)translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div>
+        <div class="sec1_text13 fixed"
+            data-20000 = "top: 95%; left: 150%; width: 0%; height: 40vh; transform: scale(0.3) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-22000 = "top: 60%; left: 100%; width: 30%; height: 40vh; transform: scale(0.6) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-29000 = "top: 10%; left: 30%; width: 30%; height: 40vh; transform: scale(0.6) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-33000 = "top: 30%; left: -100%; width: 30%; height: 40vh; transform: scale(0.3) translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div>
+        <div class="sec1_text14 fixed"
+            data-20000 = "top: 35%; left: 150%; width: 0%; height: 40vh; transform: scale(0.2) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-22000 = "top: 60%; left: 70%; width: 30%; height: 40vh; transform: scale(0.4) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-29000 = "top: 50%; left: 10%; width: 30%; height: 40vh; transform: scale(0.7) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-33000 = "top: 90%; left: -100%; width: 30%; height: 40vh; transform: scale(0.5) translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div>
+        <div class="sec1_text15 fixed"
+            data-33000 = "top: 35%; left: 150%; width: 0%; height: 40vh; transform: scale(0.2) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-34000 = "top: 60%; left: 70%; width: 30%; height: 40vh; transform: scale(0.4) translate(-50%, -50%); background-size:cover; background-position:center;"
+            data-40000 = "top: 50%; left: 10%; width: 30%; height: 40vh; transform: scale(0.7) translate(-50%, -50%); background-size:cover; background-position:center;">
+        </div>
+      </section>
+      <section id="section2"></section>
+      <section id="section3"></section>
+      <section id="section4"></section>
+      <section id="section5"></section>
+      <section id="section6"></section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+
+        const s = skrollr.init();
+
+        //재귀 함수
+        function scroll(){
+            let scrollTop = window.pageYoffest || document.documentElement.scrollTop || window.screenY;
+
+            document.querySelector(".scrollTop").innerText=Math.ceil(scrollTop);
+
+            // document.querySelector(".sec1_text2 em").style.filter = hueRotate(scrollTop+"deg");
+            // document.querySelector(".sec1_text2").style.fontWeight = scrollTop*50;
+
+            // if(scrollTop > 1300) document.querySelector(".sec1_text2").style.opacity = 0;
+
+            requestAnimationFrame(scroll);
+        }
+
+        scroll(); //함수 호출
+
+
+        //헤더 시계
+        function printTime() {
+            const clock = document.querySelector(".setting");
+            const now = new Date();
+            const nowTime =now.getFullYear() + "." + (now.getMonth() + 1) + "." + now.getDate() + " ";
+            
+            
+            //진행시간
+            let headerHour = Math.floor(now.getHours() % 60);
+            let headerMin = Math.floor(now.getMinutes() % 60);
+            let headerSec = Math.floor(now.getSeconds() % 60);
+            let headerText = "";
+
+            if (headerHour >= 12){ headerText = "오후"} else {headerText = "오전"}
+            if (headerHour < 10) headerHour = `0${headerHour}`;
+            if (headerMin < 10) headerMin = `0${headerMin}`;
+            if (headerSec < 10) headerSec = `0${headerSec}`;
+
+            clock.innerText = nowTime+headerText+` ${headerHour}:${headerMin}:${headerSec}`;
+
+            setTimeout("printTime()", 1000);
+        }
+        window.onload = function () {
+            printTime();
+        }
+    </script>
+  </body>
+</html>
