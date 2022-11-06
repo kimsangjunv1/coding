@@ -22,6 +22,14 @@ https://kimsangjunv1.github.io/coding/javascript/effect/quizEffect03.html
 ### 슬라이드 이펙트
 https://kimsangjunv1.github.io/coding/javascript/effect/sliderEffect01.html   
 https://kimsangjunv1.github.io/coding/javascript/effect/sliderEffect02.html   
+https://kimsangjunv1.github.io/coding/javascript/effect/sliderEffect03.html   
+https://kimsangjunv1.github.io/coding/javascript/effect/sliderEffect04.html   
+https://kimsangjunv1.github.io/coding/javascript/effect/sliderEffect05.html   
+https://kimsangjunv1.github.io/coding/javascript/effect/sliderEffect06.html   
+
+### 게임 이펙트
+https://kimsangjunv1.github.io/coding/javascript/effect/gameEffect.html   
+https://kimsangjunv1.github.io/coding/javascript/effect/gameEffect01.html
 
 ### 카드 UI 01
 https://kimsangjunv1.github.io/coding/site/cardType/cardType01.html   
