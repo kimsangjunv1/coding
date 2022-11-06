@@ -225,7 +225,7 @@ img.two{
     display: none;
 }
 .music__list h3{
-    font-size: 20px;
+    font-size: 16px;
     border-bottom: 1px solid rgb(22 2 121 / 28%);
     padding-bottom: 15px;
 }
@@ -277,9 +277,8 @@ img.two{
 
 .music__list strong{
     display: block;
-    font-size: 20px;
+    font-size: 16px;
     border-bottom: 4px;
-    margin-bottom: 10px;
     text-overflow: ellipsis;
     overflow: hidden;
     width: 289px;
@@ -289,6 +288,7 @@ img.two{
 .music__list li em{
     font-style: normal;
     color: #5b5a7284;
+    font-size: 14px;
 }
 .music__list li span{
     position: absolute;

@@ -67,73 +67,74 @@
 /* Color shapes */
 
 .color-shape {
-  width: 220px;
-  height: 350px;
-  margin-bottom: 1%;
-  float: left;
-
-  border-bottom: 3px solid #4f47b9;
-  background-color: #fff;
+    width: 223px;
+    height: 350px;
+    margin-bottom: 1%;
+    float: left;
+    border-radius: 20px;
+    border-bottom: 5px solid #dedee6;
+    background-color: #fff;
+    overflow: hidden;
 }
 .color-shape:first-child:hover {
-    border-bottom: 3px solid #4c42cc;
+    border-bottom: 5px solid #4c42cc;
 }
 .color-shape:nth-child(2):hover {
-    border-bottom: 3px solid #82c60a;
+    border-bottom: 5px solid #82c60a;
 }
 .color-shape:nth-child(3):hover {
-    border-bottom: 3px solid #a46816;
+    border-bottom: 5px solid #7f4ef0;
 }
 .color-shape:nth-child(4):hover {
-    border-bottom: 3px solid #ff860d;
+    border-bottom: 5px solid #ff860d;
 }
 .color-shape:nth-child(5):hover {
-    border-bottom: 3px solid #934414;
+    border-bottom: 5px solid #934414;
 }
 .color-shape:nth-child(6):hover {
-    border-bottom: 3px solid #f04b3e;
+    border-bottom: 5px solid #f04b3e;
 }
 .color-shape:nth-child(7):hover {
-    border-bottom: 3px solid #df952f;
+    border-bottom: 5px solid #df952f;
 }
 .color-shape:nth-child(8):hover {
-    border-bottom: 3px solid #f04b3e;
+    border-bottom: 5px solid #f04b3e;
 }
 .color-shape:nth-child(9):hover {
-    border-bottom: 3px solid #a35a2d;
+    border-bottom: 5px solid #a35a2d;
 }
 .color-shape:nth-child(10):hover {
-    border-bottom: 3px solid #51b224;
+    border-bottom: 5px solid #51b224;
 }
 .color-shape:nth-child(11):hover {
-    border-bottom: 3px solid #a64b23;
+    border-bottom: 5px solid #a64b23;
 }
 .color-shape:nth-child(12):hover {
-    border-bottom: 3px solid #ab8e60;
+    border-bottom: 5px solid #ab8e60;
 }
 .color-shape:nth-child(13):hover {
-    border-bottom: 3px solid #ffd10a;
+    border-bottom: 5px solid #ffd10a;
 }
 .color-shape:nth-child(14):hover {
-    border-bottom: 3px solid #ab8e60;
+    border-bottom: 5px solid #ab8e60;
 }
 .color-shape:nth-child(15):hover {
-    border-bottom: 3px solid #ffd10a;
+    border-bottom: 5px solid #ffd10a;
 }
 .color-shape:nth-child(16):hover {
-    border-bottom: 3px solid #c52525;
+    border-bottom: 5px solid #c52525;
 }
 .color-shape:nth-child(17):hover {
-    border-bottom: 3px solid #f04b3e;
+    border-bottom: 5px solid #f04b3e;
 }
 .color-shape:nth-child(18):hover {
-    border-bottom: 3px solid #ab8e60;
+    border-bottom: 5px solid #ab8e60;
 }
 .color-shape:nth-child(19):hover {
-    border-bottom: 3px solid #a92c76;
+    border-bottom: 5px solid #a92c76;
 }
 .color-shape:nth-child(20):hover {
-    border-bottom: 3px solid #824b3d;
+    border-bottom: 5px solid #824b3d;
 }
 
 
@@ -167,7 +168,7 @@
 
 
 @media screen and (max-width:580px) {
-	.color-shape {width:95%; height: auto; float: none;}
+	/* .color-shape {width:95%; height: auto; float: none;} */
 }
 
 

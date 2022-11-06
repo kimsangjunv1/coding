@@ -68,12 +68,13 @@ html {
     letter-spacing: 10px;
     margin-top: -60px;
     padding-left: 10px;
+    z-index: -111;
   }
   #title span {
     background: -webkit-linear-gradient(#ffffff00, #ffffffb0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0px -8px #fff;
+    text-shadow: 0px -4px #fff;
     font-weight: bold;
   }
   

@@ -565,6 +565,17 @@ li {
   margin-bottom: 10px;
   cursor: pointer;
 }
+.search__audio span{
+  width: 40px;
+  border: 1px solid #00000012;
+  /* border-radius: 100%; */
+  height: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
 
 .search__audio .play{
   display: none;
@@ -573,44 +584,50 @@ li {
 .search__result{
   position: absolute;
   left: 0;
-  top: 37px;
-  width: 50vw;
-  height: 100%;
-  transform: scale3d(0, 0, 0);
-  /* background: #ccc; */
-  z-index: 10000;
-  display: flex;
+  top: 0;
+  width: 100%;
+  height: 64.5vh;
+  box-sizing: border-box;
+  background: #e8a91ec7;
+  border: 20px solid #ffffff61;
+  display: none;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  display: none;
-  /* border-radius: 50%; */
-  background: #ffffffab;
-  /* border: 1px solid #000; */
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .search__result.show{
   display: flex;
-  animation: rubberBand 1s 0.6s ease;
   transform: scale3d(1, 1, 1);
   flex-direction: column;
   position: absolute;
-  top: 0;
-  left: 0;
 }
 .search__result .result{
-  margin-top: 30px;
-  line-height: 1.4;
-  font-size: 2vw;
+    line-height: 1.4;
+    font-size: 16px;
+    color: #fff;
 }
 .search__result .restart{
-  background: #6046b7;
-  color: #fff;
+  background: #ffffff;
+  color: #b7821d;
   border: 0;
-  font-size: 20px;
-  padding: 10px 20px;
+  font-size: 16px;
+  padding: 10px;
   margin-top: 10px;
-  /* border-radius: 50px; */
+  font-weight: bold;
+  box-shadow: 0px 12px #ffffffa1;
+  transform: translateY(26px);
+  transition: transform 0.25s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.search__result .restart:hover{
+  box-shadow: 0px 0px #ffffffa1, 0px 0px 60px 5px #ffffffa1;
+  transform: translateY(39px);
+  transition: transform 0.25s, box-shadow 0.1s;
+}
+.search__result .restart:not(:hover){
 }
 @keyframes rubberBand {
   from {
@@ -644,13 +661,13 @@ li {
 
 .sourceContWord{
   display: none;
-  width: 30vw;
+  width: 530px;
   height: 70vh;
   position: absolute;
   top: 25%;
   left: 25%;
   z-index: 11;
-  overflow: hidden;
+  overflow-y: hidden;
   box-shadow: 0px 50px 40px 5px #00000054;
 }
 .sourceContWord_header{

@@ -14,9 +14,9 @@ let memoryTimeReamining = 120,  // 남은 시간
     point = 100;
 
 let sound = [
-    "../../../assets/music/success.m4a",
-    "../../../assets/music/fail.m4a",
-    "../../../assets/music/success.m4a"
+    "../../assets/music/success.m4a",
+    "../../assets/music/fail.m4a",
+    "../../assets/music/success.m4a"
 ]
 
 let soundMatch = new Audio(sound[0]);
@@ -52,9 +52,10 @@ function matchCards(img1, img2){
         //이미지가 일치하는 경우
 
         if(matchedCard == 8){
-            alert("게임오버");
-            soundUnSuccess.play();
-            document.querySelector(".memory_end").style.display="block";
+            // alert("게임오버");
+            // soundUnSuccess.play();
+            // document.querySelector(".memory_end").style.display="block";
+            endGame();
             // timeReamining = 120;  // 시간
         }
         cardOne.removeEventListener("click", flipCard);
@@ -84,18 +85,27 @@ function matchCards(img1, img2){
     soundUnMatch.play();
     }
 }
+
+// 게임종료
+function endGame(){
+    alert("게임오버");
+    soundUnSuccess.play();
+    document.querySelector(".memory_end").style.display="flex";
+    document.querySelector(".memory_end").style.transform="translateY(0px)";
+}2
+
 // 시간 설정하기 0:00
 function reduceTimes(){
     memoryTimeReamining--;
     if(memoryTimeReamining == 0){
         // matchedCard=8;
         document.querySelector(".memory_end").style.display="block";
+        endGame()
     }
-    soundUnSuccess.play();
+    // soundUnSuccess.play();
     
     document.querySelector(".memory_desc i").innerText = displayTimes();
 }
-// document.querySelector(".memory_end").style.display="block";
 
 
 // 시간 표시하기
@@ -116,6 +126,12 @@ function shuffleCard(){
     cardOne = cardTwo = "";
     disableDeck = false;
     matchedCard = 0;
+    point=100;
+    
+    memoryTimeInterval = setInterval(reduceTimes, 1000);
+    memoryTimeReamining=20;
+    clearInterval(memoryTimeInterval)
+
 
     let arr = [2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9];
     let result = arr.sort(()=>Math.random()>0.5 ? 1 : -1);
@@ -165,11 +181,11 @@ document.querySelector(".memory_begin p:nth-child(3)").addEventListener("click",
     shuffleCard();
 })
 
-document.querySelector(".memory_end p:nth-child(4)").addEventListener("click", ()=>{
+document.querySelector(".memory_restart").addEventListener("click", ()=>{
     document.querySelector(".memory_end").style.transform="translateY(1000px)";
-    memoryTimeInterval = setInterval(reduceTimes, 1000);
-    memoryTimeReamining=120;
-    clearInterval(memoryTimeInterval)
+    // memoryTimeInterval = setInterval(reduceTimes, 1000);
+    // memoryTimeReamining=120;
+    // clearInterval(memoryTimeInterval)
     shuffleCard();
 })
 

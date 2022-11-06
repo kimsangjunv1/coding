@@ -36,13 +36,14 @@ body {
 
 #header h1{
     display: inline;
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
     padding: 5px 0;
 }
 #header .time{
     color: #fff;
     font-size: 14px;
+    font-weight: bold;
 }
 .header_icon_cont{
     display: flex;
@@ -77,7 +78,7 @@ body {
 }
 
 #footer .agent{
-
+    width: 100%;
 }
 
 .mac #footer{}
@@ -85,24 +86,33 @@ body {
     color: #58e54e;
 }
 .icon1{
-    right: 30px;
     top: 60px;
 }
 .icon2{
-    right: 30px;
-    top: 150px;
+    top: 170px;
 }
 .icon3{
-    right: 30px;
-    top: 240px;
+    top: 290px;
 }
 .icon4{
-    right: 30px;
-    top: 360px;
+    top: 410px;
 }
 .icon5{
-    right: 30px;
-    top: 450px;
+    top: 530px;
+}
+.cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cont_desc{
+    display: flex;
+    flex-direction: column;
+}
+.cont_desc span:nth-child(2){
+    font-size: 10px;
+    color: white;
+    text-align: center;
 }
 
 .icon1,
@@ -111,7 +121,9 @@ body {
 .icon4,
 .icon5{
     position: absolute;
-    width: 54px;
+    width: 100px;
+    right: 20px;
+    z-index: 10;
 }
 
 .icon1 img,
@@ -128,13 +140,14 @@ body {
 .icon3 span,
 .icon4 span,
 .icon5 span{
-    /* display: block; */
-    background: #00000080;
+    background: #485db600;
     color: #fff;
-    font-size: 12px;
-    padding: 2px;
+    font-size: 14px;
+    padding: 3px;
     white-space: nowrap;
-    /* word-break: keep-all; */
+    font-weight: bold;
+    text-shadow: 0px 2px #ffffff59;
+    text-align: center;
 }
 .ui-draggable-dragging img{
     border: 1px dashed rgb(255, 255, 255) !important;

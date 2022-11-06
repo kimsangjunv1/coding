@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="webstoryboy">
+  <meta name="author" content="CODi">
   <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
   <meta name="keywords"
-    content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design">
-  <title>웹스토리보이 | Webstoryboy</title>
+    content="김상준, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, CODi, publisher, css3, html, markup, design">
+  <title>김상준 | CODi</title>
 
   <!-- css -->
   <link href="assets/css/bootstrapTheme.css" rel="stylesheet">
@@ -16,6 +16,7 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/isotope.css" rel="stylesheet">
   <link href="assets/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/font.css">
 
   <!-- 파비콘 -->
   <link rel="shortcut icon" href="assets/ico/favicon.png">
@@ -37,7 +38,7 @@
 
   <!-- twitter meta tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@webstoryboy" />
+  <meta name="twitter:site" content="@CODi" />
   <meta name="twitter:title" content="웹스토리보이" />
   <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
   <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
@@ -56,6 +57,7 @@
   <![endif]-->
 
   <style>
+
     #clock {
       display: block;
     }
@@ -96,6 +98,11 @@
       margin-right: 20px;
       margin-top: 40px;
     }
+
+    .navbar .btn-navbar{
+      background-color: #393940;
+      box-shadow: 0px 4px #00000038;
+    }
   </style>
 </head>
 
@@ -109,7 +116,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="brand" href="index.html">김상준</a>
+        <a class="title_name" href="index.html">KimSangjun</a>
         <div class="nav-collapse collapse pull-right">
           <ul class="nav">
             <li><a href="https://kimsangjun.tistory.com/">Blog</a></li>
@@ -128,7 +135,7 @@
       <div class="row">
         <div class="span12" style="text-align:center;">
           <div class="header_tit">
-            <a href="http://webstoryboy.co.kr"><img src="assets/img/penguin_3d.png" alt="main"></a>
+            <a href="http://CODi.co.kr"><img src="assets/img/penguin_3d.png" alt="main"></a>
             <h1>Professional web publishers</h1>
           </div>
           <div class="header_icon">
@@ -151,7 +158,7 @@
   <!-- contents_tit -->
   <div id="contents_tit">
     <div class="titt">
-      <p><a href="#" class="tit_btn">&quot;김상준 메인 페이지 입니다&quot;</a></p>
+      <p><a href="#" class="tit_btn">WORK LIST</a></p>
     </div>
   </div>
   <!-- //contents_tit -->
@@ -162,6 +169,10 @@
 
       <div class="row">
         <div id="options" class="gridly">
+          <div class="all_info">
+            <span id="clock"></span>
+            <span id="infor"></span>
+          </div>
           <ul class="filter option-set" data-filter-group="color">
             <li><a href="#filter-color-any" data-filter-value="" class="selected">ALL</a></li>
             <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".class">CLASS</a></li>
@@ -173,7 +184,41 @@
           </ul>
         </div>
       </div>
-
+      <style>
+        .img-text h6{
+          position: absolute;
+          top: 50px;
+          font-size: 80px;
+          color: #bcbfe21a;
+          text-shadow: none;
+          transform: rotate(341deg) scale(1.5);
+          font-weight: 500;
+          line-height: 0.8;
+          z-index: -1;
+          font-family: 'Signatie';
+        }
+        .image-wrap::before{
+          content: '';
+          position: absolute;
+          top: 14px;
+          right: 19px;
+          width: 10px;
+          height: 20px;
+          background: #17244d3d;
+          border-radius: 100px;
+          transform: rotate(45deg);
+        }
+        .img-text p{
+          margin-bottom: 15px;
+        }
+        .img-text span{
+          background: #393940;
+          border-radius: 100px;
+          padding: 3px 10px;
+          color: #fff;
+          font-weight: 500;
+        }
+      </style>
       <div class="row" id="middle" style="margin-left:16px;">
         <div id="container" class="clearfix">
 
@@ -189,6 +234,7 @@
                 <img src="assets/img/parrot_3d.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>CLASS</h5>
+                  <h6>CLASS</h6>
                   <p>클래스</p>
                   <span>CLASS</span>
                 </div>
@@ -200,14 +246,15 @@
           <section class="color-shape script">
               <div class="image-wrap">
                 <div class="hover-wrap">
-                  <span class="overlay-img-donut">JAVASCRIPT</span>
+                  <span class="overlay-img-donut">JAVA SCRIPT</span>
                   <a href="javascript/index.html" class="overlay-text-thumb-donut bts">바로보기</a>
                   <a href="https://github.com/kimsangjunv1/codingclass/blob/main/javascript/index.html" class="overlay-text-thumb1-donut bts">소스보기</a>
-                  <span class="overlay-text-thumb2-donut">JAVASCRIPT</span>
+                  <span class="overlay-text-thumb2-donut">JAVA SCRIPT</span>
                 </div>
-                <img src="assets/img/piñata_3d.png" alt="portfolio">
+                <img src="assets/img/pinata_3d.png" alt="portfolio">
                 <div class="img-text donutImg">
-                  <h5>JAVASCRIPT</h5>
+                  <h5>JAVA SCRIPT</h5>
+                  <h6>JAVA SCRIPT</h6>
                   <p>자바스크립트</p>
                   <span>JAVASCRIPT</span>
                 </div>
@@ -227,6 +274,7 @@
                 <img src="assets/img/polar_bear_3d.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>HTML</h5>
+                  <h6>HTML</h6>
                   <p>HTML 레퍼런스북</p>
                   <span>HTML</span>
                 </div>
@@ -247,6 +295,7 @@
                 <img src="assets/img/sloth_3d.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>CSS</h5>
+                  <h6>CSS</h6>
                   <p>CSS 레퍼런스북</p>
                   <span>CSS</span>
                 </div>
@@ -267,6 +316,7 @@
                 <img src="assets/img/lion_3d.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>SITE</h5>
+                  <h6>SITE</h6>
                   <p>SITE 유형_01</p>
                   <span>SITE</span>
                 </div>
@@ -286,6 +336,7 @@
                 <img src="assets/img/snowman_3d.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>SITE</h5>
+                  <h6>SITE</h6>
                   <p>SITE 유형_02</p>
                   <span>SITE</span>
                 </div>
@@ -305,6 +356,7 @@
                 <img src="assets/img/sun_with_face_3d.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>SITE</h5>
+                  <h6>SITE</h6>
                   <p>SITE 유형_03</p>
                   <span>SITE</span>
                 </div>
@@ -324,6 +376,7 @@
               <img src="assets/img/koala_3d.png" alt="portfolio">
               <div class="img-text donutImg">
                 <h5>SITE</h5>
+                <h6>SITE</h6>
                 <p>SITE 유형_04</p>
                 <span>SITE</span>
               </div>
@@ -343,6 +396,7 @@
               <img src="assets/img/hedgehog_3d.png" alt="portfolio">
               <div class="img-text donutImg">
                 <h5>SITE</h5>
+                <h6>SITE</h6>
                 <p>SITE 유형_05</p>
                 <span>SITE</span>
               </div>
@@ -362,6 +416,7 @@
                 <img src="assets/img/club_suit_3d.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>Search</h5>
+                  <h6>Search</h6>
                   <p>검색 효과</p>
                   <span>JAVASCRIPT</span>
                 </div>
@@ -400,6 +455,7 @@
                 <img src="assets/img/bear_3d.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>Slide</h5>
+                  <h6>Slide</h6>
                   <p>슬라이드 효과</p>
                   <span>JAVASCRIPT</span>
                 </div>
@@ -420,6 +476,7 @@
                 <img src="assets/img/speak-no-evil_monkey_3d 2.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>Mouse</h5>
+                  <h6>Mouse</h6>
                   <p>마우스 효과</p>
                   <span>JAVASCRIPT</span>
                 </div>
@@ -439,6 +496,7 @@
                 <img src="assets/img/panda_3d 1.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>Parallax</h5>
+                  <h6>Parallax</h6>
                   <p>패럴렉스 효과</p>
                   <span>JAVASCRIPT</span>
                 </div>
@@ -458,6 +516,7 @@
                 <img src="assets/img/frog_3d 1.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>Game</h5>
+                  <h6>Game</h6>
                   <p>게임 효과</p>
                   <span>JAVASCRIPT</span>
                 </div>
@@ -477,6 +536,7 @@
                 <img src="assets/img/t-rex_3d 1.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>SVG</h5>
+                  <h6>SVG</h6>
                   <p>SVG</p>
                   <span>SVG</span>
                 </div>
@@ -496,6 +556,7 @@
                 <img src="assets/img/elephant_3d 1.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>CSS</h5>
+                  <h6>CSS</h6>
                   <p>ANIMATION</p>
                   <span>CSS</span>
                 </div>
@@ -515,6 +576,7 @@
                 <img src="assets/img/eyes_3d 2.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>MySQL</h5>
+                  <h6>MySQL</h6>
                   <p>MySQL 유형</p>
                   <span>MySQL</span>
                 </div>
@@ -553,6 +615,7 @@
                 <img src="assets/img/deciduous_tree_3d 1.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>PROJECT</h5>
+                  <h6>PROJECT</h6>
                   <p>팀 프로젝트 : 꾸다</p>
                   <span>PROJECT</span>
                 </div>
@@ -573,6 +636,7 @@
                 <img src="assets/img/blossom_3d.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>PROJECT GITHUB</h5>
+                  <h6>PROJECT GITHUB</h6>
                   <p>팀 프로젝트 : 꾸다 깃허브</p>
                   <span>PROJECT GITHUB</span>
                 </div>
@@ -615,6 +679,7 @@
                 <img src="assets/img/fox_3d.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>React_01</h5>
+                  <h6>React_01</h6>
                   <p>리액트 01</p>
                   <span>React_01</span>
                 </div>
@@ -636,6 +701,7 @@
                 <img src="assets/img/hamster_3d.png" alt="portfolio">
                 <div class="img-text donutImg">
                   <h5>Vue_01</h5>
+                  <h6>Vue_01</h6>
                   <p>뷰 01</p>
                   <span>Vue_01</span>
                 </div>
@@ -660,7 +726,7 @@
       <div class="row">
         <div class="span12">
           <h5>
-            <a href="http://webstoryboy.co.kr" target="_blank">Webstoryboy</a>
+            <a href="#" target="_blank">CODi</a>
             <span id="clock"></span>
             <span id="infor"></span>
           </h5>
@@ -684,13 +750,13 @@
     let infor = document.getElementById("infor");
 
     if (os.indexOf("windows") >= 0) {
-      infor.innerHTML = "현재 윈도우를 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+      infor.innerHTML = "OS : Windows / 해상도 : " + sw + "x" + sh + ""
     } else if (os.indexOf("macintosh") >= 0) {
-      infor.innerHTML = "현재 맥을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+      infor.innerHTML = "OS : Mac / 해상도 : " + sw + "x" + sh + ""
     } else if (os.indexOf("iphone") >= 0) {
-      infor.innerHTML = "현재 아이폰을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+      infor.innerHTML = "OS : iOS / 해상도 : " + sw + "x" + sh + ""
     } else if (os.indexOf("android") >= 0) {
-      infor.innerHTML = "현재 안드로이드 폰을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+      infor.innerHTML = "OS : Android / 해상도 : " + sw + "x" + sh + ""
     }
 
 
